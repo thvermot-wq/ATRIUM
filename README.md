@@ -21,6 +21,13 @@ ATRIUM est conçu comme un parcours structuré et data-driven : l’élève prog
 - **Statut période** : validée si pourcentage `>= 80%`
 - Le scoring est contractuel et ne doit pas être modifié hors décision produit explicite.
 
+## État actuel de l’application
+Cette étape implémente l’**app shell navigable** (sans moteur de correction complet) :
+- accueil (`#/`)
+- dashboard (`#/dashboard`)
+- vue leçon (`#/lesson/:lessonId`)
+- vue résultats placeholder (`#/results`)
+
 ## Structure du repository
 
 ```text
@@ -76,18 +83,9 @@ Le projet est volontairement sans build lourd pour rester compatible GitHub Page
 1. Déclarer la leçon dans `assets/js/lessons.js` (format data-driven).
 2. Vérifier qu’elle respecte le contrat `/7 + /3 = /10`.
 3. Associer la leçon à une période existante (1 à 3).
-4. Vérifier les rendus UI (liste + détail) sans casser l’agrégation de période.
+4. Vérifier les rendus UI (dashboard + vue leçon) sans casser l’agrégation de période.
 
 ## Principe général de correction
 - **Entraînement (/7)** : auto-correction déterministe (réponses attendues définies dans les données).
 - **Production (/3)** : correction guidée sur réponse courte avec normalisation (`normalize.js`) pour éviter les faux négatifs dus aux accents, casse, espaces, ponctuation.
 - Le mécanisme exact sera implémenté dans une PR dédiée au moteur métier.
-
-## État de cette PR
-Cette étape pose :
-- la documentation de référence,
-- l’architecture de fichiers,
-- les garde-fous contractuels,
-- une page minimale qui charge l’application.
-
-Le moteur pédagogique complet n’est **pas** implémenté dans cette PR.
