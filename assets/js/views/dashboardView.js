@@ -3,13 +3,13 @@ import { createPeriodCard } from "../components/periodCard.js";
 
 export function renderDashboardView({ onOpenLesson, progress }) {
   const wrapper = document.createElement("section");
-  wrapper.className = "stack";
+  wrapper.className = "stack dashboard-view";
 
   const allLessons = periods.flatMap((period) => getLessonsByPeriod(period.id));
   const playedLessonsCount = allLessons.filter((lesson) => Boolean(progress?.lessons?.[lesson.id]?.playedAt)).length;
 
   const headerCard = document.createElement("article");
-  headerCard.className = "card";
+  headerCard.className = "card dashboard-header-card";
   headerCard.innerHTML = `
     <h2>Tableau de bord</h2>
     <p class="muted">3 périodes · 15 leçons · progression calculée automatiquement</p>

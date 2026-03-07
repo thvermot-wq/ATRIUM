@@ -1,4 +1,4 @@
-export function createProductionItemCard({ item, onEvaluate }) {
+export function createProductionItemCard({ item, index, onEvaluate }) {
   const card = document.createElement("article");
   card.className = "card production-item-card";
 
@@ -7,12 +7,12 @@ export function createProductionItemCard({ item, onEvaluate }) {
 
   const hint = document.createElement("p");
   hint.className = "muted";
-  hint.textContent = `${item.points || 1} point · réponse courte`;
+  hint.textContent = `Production ${index || "?"}/3 · ${item.points || 1} point · réponse courte`;
 
-  const input = document.createElement("input");
-  input.type = "text";
+  const input = document.createElement("textarea");
   input.name = item.id;
-  input.maxLength = 120;
+  input.maxLength = 180;
+  input.rows = 3;
   input.placeholder = "Écrire une réponse courte";
 
   const feedback = document.createElement("p");
@@ -26,7 +26,7 @@ export function createProductionItemCard({ item, onEvaluate }) {
   const button = document.createElement("button");
   button.type = "button";
   button.className = "btn btn-primary";
-  button.textContent = "Corriger cette production";
+  button.textContent = "Valider";
 
   button.addEventListener("click", () => {
     const result = onEvaluate(input.value);
