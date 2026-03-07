@@ -116,7 +116,9 @@ export function boot() {
 
   persistNow();
 
-  let currentRoute = null;
+  const appState = {
+    currentRoute: null,
+  };
 
   function getLocalProgressSummary() {
     return {
@@ -128,11 +130,11 @@ export function boot() {
   }
 
   function renderCurrentRoute(router) {
-    if (!currentRoute) return;
+    if (!appState.currentRoute) return;
 
     renderApp(root, {
       router,
-      route: currentRoute,
+      route: appState.currentRoute,
       progress,
       saveStatus,
       onSaveLessonScore,
@@ -141,24 +143,6 @@ export function boot() {
       onShareSave,
       onResetProgress,
       onUpdateStudentMeta,
-      canShareSave: canUseNativeShare(),
-    });
-  }
-
-  let currentRoute = null;
-
-  function renderCurrentRoute(router) {
-    if (!currentRoute) return;
-
-    renderApp(root, {
-      router,
-      route: currentRoute,
-      progress,
-      onSaveLessonScore,
-      onExportSave,
-      onImportSave,
-      onShareSave,
-      onResetProgress,
       canShareSave: canUseNativeShare(),
     });
   }
@@ -259,7 +243,7 @@ export function boot() {
 
   const router = initRouter({
     onRouteChange(route) {
-      currentRoute = route;
+      appState.currentRoute = route;
       renderCurrentRoute(router);
     },
   });
