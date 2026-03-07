@@ -214,3 +214,27 @@ select {
   border-radius: 8px;
   font: inherit;
 }
+
+.production-board {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.production-item-card {
+  display: grid;
+  gap: 0.65rem;
+}
+
+input[type="text"] {
+  width: min(460px, 100%);
+  padding: 0.45rem 0.55rem;
+  border: 1px solid #cfd5ea;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.answer-reveal {
+  padding: 0.3rem 0.45rem;
+  background: #f6f8ff;
+  border-radius: 6px;
+}

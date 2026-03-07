@@ -1,7 +1,9 @@
 import { LESSONS_SPEC, getLessonById } from "../lessons.js";
 import { createFeedbackBox } from "../components/feedbackBox.js";
 import { createTrainingItemCard } from "../components/trainingItemCard.js";
+import { createProductionItemCard } from "../components/productionItemCard.js";
 import { evaluateTrainingItem, computeTrainingProgress } from "../trainingEngine.js";
+import { evaluateProductionItem, computeProductionProgress } from "../productionEngine.js";
 
 export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults }) {
   const lesson = getLessonById(lessonId);
@@ -26,6 +28,7 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
   const savedBest = progressEntry?.best?.totalScore ?? 0;
 
   const trainingResults = {};
+  const productionResults = {};
 
   const hero = document.createElement("article");
   hero.className = "card";
@@ -49,13 +52,55 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
         const result = evaluateTrainingItem(item, userResponse);
         trainingResults[item.id] = result;
         syncTrainingState();
+        syncTotalPreview();
         return result;
       },
     });
     trainingBoard.appendChild(card);
   });
 
-  const currentTraining = syncTrainingState();
+  const productionBoard = document.createElement("div");
+  productionBoard.className = "production-board";
+
+  const productionState = document.createElement("p");
+  productionState.className = "muted";
+
+  const syncProductionState = () => {
+    const current = computeProductionProgress(lesson.production, productionResults);
+    productionState.textContent = `Production guidée: score ${current.score}/${LESSONS_SPEC.productionMax} · progression ${current.answeredCount}/${current.totalItems}`;
+    return current;
+  };
+
+  lesson.production.forEach((item) => {
+    const card = createProductionItemCard({
+      item,
+      onEvaluate: (userAnswer) => {
+        const result = evaluateProductionItem(item, userAnswer);
+        productionResults[item.id] = {
+          ...result,
+          userAnswer: String(userAnswer ?? ""),
+        };
+        syncProductionState();
+        syncTotalPreview();
+        return result;
+      },
+    });
+    productionBoard.appendChild(card);
+  });
+
+  const totalPreview = document.createElement("p");
+  totalPreview.className = "muted";
+
+  const syncTotalPreview = () => {
+    const training = computeTrainingProgress(lesson.training, trainingResults);
+    const production = computeProductionProgress(lesson.production, productionResults);
+    const total = training.score + production.score;
+    totalPreview.textContent = `Total leçon (prévisualisation) : ${total}/${LESSONS_SPEC.lessonMax} (entraînement ${training.score}/7 + production ${production.score}/3)`;
+  };
+
+  syncTrainingState();
+  syncProductionState();
+  syncTotalPreview();
 
   hero.innerHTML = `
     <h2>${lesson.title}</h2>
@@ -63,16 +108,13 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
     <p><strong>Objectif :</strong> ${lesson.objective}</p>
     <p class="muted">Score enregistré: courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
     <p class="muted">Phase entraînement: 7 micro-items (1 point/item), correction immédiate.</p>
+    <p class="muted">Phase production: 3 productions écrites guidées (1 point/item), correction automatique.</p>
   `;
 
   const form = document.createElement("form");
   form.className = "stack compact-form";
   form.id = "lesson-score-form";
   form.innerHTML = `
-    <label>
-      Production (/3)
-      <input type="number" name="productionScore" min="0" max="${LESSONS_SPEC.productionMax}" step="1" value="${progressEntry?.current?.productionScore ?? 0}" required />
-    </label>
     <div class="actions-row">
       <button type="submit" class="btn btn-primary">Enregistrer la leçon</button>
       <button type="button" class="btn btn-secondary" data-action="back">Retour dashboard</button>
@@ -82,13 +124,14 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const formData = new FormData(form);
+
     const latestTraining = computeTrainingProgress(lesson.training, trainingResults);
+    const latestProduction = computeProductionProgress(lesson.production, productionResults);
 
     onSaveLessonScore({
       lessonId: lesson.id,
       trainingScore: latestTraining.score,
-      productionScore: Number(formData.get("productionScore") || 0),
+      productionScore: latestProduction.score,
     });
 
     onOpenResults();
@@ -98,10 +141,19 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
   form.querySelector('[data-action="results"]').addEventListener("click", onOpenResults);
 
   const feedback = createFeedbackBox({
-    title: "Moteur entraînement générique",
-    text: "Types supportés: choix unique, choix multiple, appariement simple, remise en ordre. Le score entraînement est calculé automatiquement sur 7.",
+    title: "Moteur générique entraînement + production",
+    text: "La leçon reste data-driven. Entraînement (/7) et production guidée (/3) sont évalués séparément puis combinés en total /10.",
   });
 
-  wrapper.append(hero, trainingState, trainingBoard, form, feedback);
+  wrapper.append(
+    hero,
+    trainingState,
+    trainingBoard,
+    productionState,
+    productionBoard,
+    totalPreview,
+    form,
+    feedback,
+  );
   return wrapper;
 }

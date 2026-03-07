@@ -47,6 +47,8 @@ ATRIUM/
       scoring.js
       normalize.js
       answerChecker.js
+      trainingEngine.js
+      productionEngine.js
       lessons.js
       ui.js
       components/
@@ -110,6 +112,22 @@ Comportements :
 - score d’entraînement calculé automatiquement (sur 7)
 - score production saisi séparément (sur 3)
 - enregistrement final via moteur scoring/storage existant
+
+
+## Moteur de production guidée
+La phase de production écrite guidée est conservée en 3 micro-productions (1 point chacune, total /3).
+
+Architecture :
+- `assets/js/productionEngine.js` : logique d’évaluation des productions
+- `assets/js/components/productionItemCard.js` : rendu d’un champ texte + correction
+- `assets/js/views/lessonView.js` : orchestration de la phase production dans la leçon
+
+Comportements :
+- 3 champs courts de saisie (pour les leçons modèles)
+- correction automatique avec le moteur central (`answerChecker.js` + normalisation)
+- feedback juste/faux par item
+- affichage de la bonne réponse en cas d’erreur
+- score production `/3` et prévisualisation du total leçon `/10`
 
 ## API scoring, progression et persistance
 Fonctions principales :
