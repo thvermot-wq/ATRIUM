@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATRIUM — Latin as structure</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>ATRIUM</h1>
+      <p class="tagline">Le latin comme architecture · Latin as structure</p>
+      <p class="intro">
+        Parcours structuré en morphologie, syntaxe et thème guidé. Positionnement CECRL/CEFR indicatif et limité à la
+        production contrôlée.
+      </p>
+    </header>
+
+    <main>
+      <section id="period-summary" aria-label="Résumé des périodes"></section>
+      <section id="lesson-list" aria-label="Liste des leçons"></section>
+      <section id="lesson-detail" aria-live="polite"></section>
+    </main>
+
+    <template id="lesson-card-template">
+      <article class="lesson-card">
+        <h3></h3>
+        <p class="lesson-meta"></p>
+        <p class="lesson-score"></p>
+        <button type="button">Ouvrir</button>
+      </article>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
