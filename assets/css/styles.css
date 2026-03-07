@@ -1,0 +1,33 @@
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --ink: #1f2640;
+  --line: #d7dbea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.shell {
+  width: min(980px, 92vw);
+  margin: 0 auto;
+}
+
+header {
+  padding: 1.25rem 0 0.75rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+}

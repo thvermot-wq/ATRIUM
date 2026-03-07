@@ -3,34 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ATRIUM — Latin as structure</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>ATRIUM — Initialisation</title>
+    <meta name="description" content="ATRIUM - socle initial, structure et garde-fous." />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <header>
+    <header class="shell">
       <h1>ATRIUM</h1>
-      <p class="tagline">Le latin comme architecture · Latin as structure</p>
-      <p class="intro">
-        Parcours structuré en morphologie, syntaxe et thème guidé. Positionnement CECRL/CEFR indicatif et limité à la
-        production contrôlée.
-      </p>
+      <p>Socle d'initialisation (documentation + structure + garde-fous).</p>
     </header>
 
-    <main>
-      <section id="period-summary" aria-label="Résumé des périodes"></section>
-      <section id="lesson-list" aria-label="Liste des leçons"></section>
-      <section id="lesson-detail" aria-live="polite"></section>
+    <main id="app" class="shell" aria-live="polite">
+      <section class="card">
+        <h2>Projet initialisé</h2>
+        <p>L'ossature est en place. Le moteur pédagogique sera implémenté dans une prochaine PR.</p>
+      </section>
     </main>
 
-    <template id="lesson-card-template">
-      <article class="lesson-card">
-        <h3></h3>
-        <p class="lesson-meta"></p>
-        <p class="lesson-score"></p>
-        <button type="button">Ouvrir</button>
-      </article>
-    </template>
-
-    <script type="module" src="app.js"></script>
+    <script type="module" src="assets/js/app.js"></script>
   </body>
 </html>
