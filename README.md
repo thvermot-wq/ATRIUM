@@ -163,11 +163,14 @@ Comportements :
 ATRIUM conserve la progression localement et propose un transfert manuel entre appareils (sans backend).
 
 Fonctionnement :
-- **Autosave local** : la progression est sauvegardée automatiquement dans `localStorage` (`atrium-progress-v1`) et rechargée au démarrage.
-- **Export JSON** : depuis le dashboard, bouton *Télécharger ma sauvegarde* pour générer un fichier versionné (`atrium-progression-YYYY-MM-DD.json`).
-- **Import JSON** : bouton *Importer une sauvegarde* avec validation de format (`app`, `version`, `progress`) et confirmation avant écrasement.
-- **Partage mobile natif** : bouton *Partager ma sauvegarde* affiché activement quand `navigator.share` est disponible.
-- **Réinitialisation** : bouton *Réinitialiser ma progression* avec confirmation explicite.
+- **Autosave local contrôlé** : la progression est sauvegardée automatiquement dans `localStorage` (`atrium-progress-v1`) avec une écriture debounced et un horodatage de dernière sauvegarde locale.
+- **Profil élève local** : nom élève / classe (et identifiant optionnel) stockés localement pour enrichir les exports.
+- **Export JSON** : bouton *Télécharger ma sauvegarde* depuis le dashboard, avec nom de fichier utile (`atrium-<eleve>-<classe>-YYYY-MM-DD-HHmm.json`, fallback propre si métadonnées absentes).
+- **Import JSON strict** : validation de `app`, `version`, `savedAt`, `progress` et structure minimale (`progress.lessons`, `progress.periods`).
+- **Prévisualisation avant import** : élève, classe, date de sauvegarde et état global (période 1) affichés avant confirmation.
+- **Confirmation intelligente** : comparaison locale vs fichier importé avant écrasement.
+- **Backup local avant import/reset** : copie locale préalable stockée (`atrium-progress-backup-v1`) pour faciliter un futur “annuler le dernier import”.
+- **Partage mobile natif** : bouton *Partager ma sauvegarde* activé si `navigator.share` + fichiers est disponible.
 
 Format de sauvegarde :
 ```json
@@ -175,6 +178,9 @@ Format de sauvegarde :
   "app": "ATRIUM",
   "version": 1,
   "savedAt": "2026-03-07T10:42:00.000Z",
+  "studentName": "Lucas Dupont",
+  "className": "5eB",
+  "studentId": "",
   "progress": { ... }
 }
 ```

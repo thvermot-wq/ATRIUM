@@ -2,6 +2,8 @@ import { LESSONS_SPEC } from "./lessons.js";
 import { computeLessonScore, computePeriodScore } from "./scoring.js";
 
 export const STORAGE_KEY = "atrium-progress-v1";
+export const SAVE_STATUS_KEY = "atrium-save-status-v1";
+export const PROGRESS_BACKUP_KEY = "atrium-progress-backup-v1";
 
 function defaultLessonProgress() {
   return {
@@ -27,6 +29,18 @@ function defaultPeriodProgress() {
     maxScore: LESSONS_SPEC.periodMax,
     percent: 0,
     status: "période à reprendre",
+  };
+}
+
+function defaultSaveStatus() {
+  return {
+    studentName: "",
+    className: "",
+    studentId: "",
+    lastLocalSaveAt: null,
+    lastExportedAt: null,
+    lastImportedAt: null,
+    lastSharedAt: null,
   };
 }
 
@@ -134,6 +148,42 @@ export function hasMeaningfulProgress(progress) {
 
 export function saveProgress(progress) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+}
+
+export function loadSaveStatus() {
+  const raw = localStorage.getItem(SAVE_STATUS_KEY);
+  if (!raw) return defaultSaveStatus();
+
+  const parsed = safelyParse(raw);
+  if (!parsed || typeof parsed !== "object") return defaultSaveStatus();
+
+  return {
+    ...defaultSaveStatus(),
+    ...parsed,
+  };
+}
+
+export function saveSaveStatus(saveStatus) {
+  localStorage.setItem(SAVE_STATUS_KEY, JSON.stringify(saveStatus));
+}
+
+export function updateSaveStatus(currentSaveStatus, patch) {
+  const next = {
+    ...defaultSaveStatus(),
+    ...(currentSaveStatus || {}),
+    ...(patch || {}),
+  };
+  saveSaveStatus(next);
+  return next;
+}
+
+export function saveProgressBackup(progress) {
+  const backup = {
+    backedUpAt: new Date().toISOString(),
+    progress,
+  };
+  localStorage.setItem(PROGRESS_BACKUP_KEY, JSON.stringify(backup));
+  return backup;
 }
 
 export function clearProgressStorage() {

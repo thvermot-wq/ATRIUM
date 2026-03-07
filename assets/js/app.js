@@ -5,12 +5,23 @@ import {
   hasMeaningfulProgress,
   importProgressData,
   loadProgress,
+  loadSaveStatus,
   saveLessonProgress,
   saveProgress,
+  saveProgressBackup,
+  updateSaveStatus,
 } from "./storage.js";
-import { exportProgressToJson, importProgressFromFile, shareProgressSave, canUseNativeShare } from "./saveManager.js";
+import {
+  canUseNativeShare,
+  exportProgressToJson,
+  importProgressFromFile,
+  shareProgressSave,
+  summarizeSavePayload,
+} from "./saveManager.js";
 import { initRouter } from "./router.js";
 import { renderApp } from "./ui.js";
+
+const AUTOSAVE_DELAY_MS = 220;
 
 function assertInvariants() {
   const errors = [];
@@ -52,6 +63,19 @@ function assertInvariants() {
   return errors;
 }
 
+function formatDateTime(value) {
+  if (!value) return "—";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "—";
+  return date.toLocaleString("fr-FR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
 export function boot() {
   const root = document.getElementById("app");
   if (!root) {
@@ -72,7 +96,54 @@ export function boot() {
   }
 
   let progress = loadProgress({ lessons, periods });
-  saveProgress(progress);
+  let saveStatus = loadSaveStatus();
+
+  let autosaveTimer = null;
+  const persistNow = () => {
+    saveProgress(progress);
+    saveStatus = updateSaveStatus(saveStatus, { lastLocalSaveAt: new Date().toISOString() });
+  };
+
+  const persistDebounced = () => {
+    if (autosaveTimer) {
+      window.clearTimeout(autosaveTimer);
+    }
+    autosaveTimer = window.setTimeout(() => {
+      persistNow();
+      autosaveTimer = null;
+    }, AUTOSAVE_DELAY_MS);
+  };
+
+  persistNow();
+
+  let currentRoute = null;
+
+  function getLocalProgressSummary() {
+    return {
+      savedAt: saveStatus.lastLocalSaveAt || progress.updatedAt,
+      studentName: saveStatus.studentName || "Non renseigné",
+      className: saveStatus.className || "Non renseignée",
+      periodOnePercent: progress?.periods?.p1?.percent ?? 0,
+    };
+  }
+
+  function renderCurrentRoute(router) {
+    if (!currentRoute) return;
+
+    renderApp(root, {
+      router,
+      route: currentRoute,
+      progress,
+      saveStatus,
+      onSaveLessonScore,
+      onExportSave,
+      onImportSave,
+      onShareSave,
+      onResetProgress,
+      onUpdateStudentMeta,
+      canShareSave: canUseNativeShare(),
+    });
+  }
 
   let currentRoute = null;
 
@@ -102,7 +173,7 @@ export function boot() {
       periods,
     });
 
-    saveProgress(progress);
+    persistDebounced();
 
     const lessonData = lessons.find((lesson) => lesson.id === lessonId);
     return {
@@ -111,28 +182,67 @@ export function boot() {
     };
   }
 
-  function onExportSave() {
-    const filename = exportProgressToJson(progress);
-    return `Sauvegarde téléchargée (${filename}).`;
+  function onUpdateStudentMeta(patch) {
+    saveStatus = updateSaveStatus(saveStatus, {
+      studentName: String(patch?.studentName || "").trim(),
+      className: String(patch?.className || "").trim(),
+      studentId: String(patch?.studentId || "").trim(),
+    });
+    renderCurrentRoute(router);
+    return "Profil sauvegardé localement.";
   }
 
-  async function onImportSave(file, { confirmOverwrite }) {
+  function onExportSave() {
+    const result = exportProgressToJson(progress, saveStatus);
+    saveStatus = updateSaveStatus(saveStatus, {
+      lastExportedAt: new Date().toISOString(),
+      lastLocalSaveAt: new Date().toISOString(),
+    });
+    return `Sauvegarde téléchargée (${result.filename}).`;
+  }
+
+  async function onImportSave(file, { onPreview, confirmOverwrite }) {
     const parsed = await importProgressFromFile(file);
+    const preview = summarizeSavePayload(parsed);
+    if (typeof onPreview === "function") {
+      onPreview(preview);
+    }
 
     if (hasMeaningfulProgress(progress) && typeof confirmOverwrite === "function") {
-      const shouldReplace = confirmOverwrite();
+      const local = getLocalProgressSummary();
+      const message = [
+        "Une progression locale existe déjà.",
+        `Locale — élève: ${local.studentName} · classe: ${local.className} · date: ${formatDateTime(local.savedAt)} · période 1: ${local.periodOnePercent}%`,
+        `Fichier — élève: ${preview.studentName} · classe: ${preview.className} · date: ${formatDateTime(preview.savedAt)} · période 1: ${preview.periodOnePercent}%`,
+        "Confirmer l'écrasement ?",
+      ].join("\n");
+
+      const shouldReplace = confirmOverwrite(message);
       if (!shouldReplace) return "Import annulé.";
     }
 
+    saveProgressBackup(progress);
+
     progress = importProgressData({ data: parsed.progress, lessons, periods });
-    saveProgress(progress);
+    saveStatus = updateSaveStatus(saveStatus, {
+      studentName: String(parsed.studentName || saveStatus.studentName || "").trim(),
+      className: String(parsed.className || saveStatus.className || "").trim(),
+      studentId: String(parsed.studentId || saveStatus.studentId || "").trim(),
+      lastImportedAt: new Date().toISOString(),
+      lastLocalSaveAt: new Date().toISOString(),
+    });
+
+    persistNow();
     renderCurrentRoute(router);
     return "Sauvegarde importée avec succès.";
   }
 
   async function onShareSave() {
-    const filename = await shareProgressSave(progress);
-    return `Sauvegarde partagée (${filename}).`;
+    const result = await shareProgressSave(progress, saveStatus);
+    saveStatus = updateSaveStatus(saveStatus, {
+      lastSharedAt: new Date().toISOString(),
+    });
+    return `Sauvegarde partagée (${result.filename}).`;
   }
 
   function onResetProgress({ confirmReset }) {
@@ -140,8 +250,9 @@ export function boot() {
       return "Réinitialisation annulée.";
     }
 
+    saveProgressBackup(progress);
     progress = createInitialProgress({ lessons, periods });
-    saveProgress(progress);
+    persistNow();
     renderCurrentRoute(router);
     return "Progression réinitialisée.";
   }

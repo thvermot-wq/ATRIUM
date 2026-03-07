@@ -18,17 +18,56 @@ function parseJsonSafely(text) {
   }
 }
 
-function buildSavePayload(progress) {
+function sanitizeFilenamePart(value = "") {
+  return String(value)
+    .normalize("NFD")
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+    .toLowerCase();
+}
+
+function formatDateStamp(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  return `${year}-${month}-${day}-${hours}${minutes}`;
+}
+
+function isIsoDate(value) {
+  return typeof value === "string" && !Number.isNaN(Date.parse(value));
+}
+
+function isPlainObject(value) {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
+}
+
+function normalizeMeta(meta = {}) {
+  return {
+    studentName: String(meta.studentName || "").trim(),
+    className: String(meta.className || "").trim(),
+    studentId: String(meta.studentId || "").trim(),
+  };
+}
+
+export function buildSavePayload(progress, meta = {}) {
+  const profile = normalizeMeta(meta);
   return {
     app: SAVE_APP,
     version: SAVE_VERSION,
     savedAt: new Date().toISOString(),
+    studentName: profile.studentName,
+    className: profile.className,
+    studentId: profile.studentId,
     progress,
   };
 }
 
-function createBlobFromProgress(progress) {
-  const payload = buildSavePayload(progress);
+function createBlobFromProgress(progress, meta = {}) {
+  const payload = buildSavePayload(progress, meta);
   const text = JSON.stringify(payload, null, 2);
   return {
     payload,
@@ -37,19 +76,22 @@ function createBlobFromProgress(progress) {
   };
 }
 
-function formatDateStamp(date = new Date()) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
-}
+export function getSaveFilename(meta = {}) {
+  const profile = normalizeMeta(meta);
+  const datePart = formatDateStamp();
 
-export function getSaveFilename() {
-  return `atrium-progression-${formatDateStamp()}.json`;
+  const studentPart = sanitizeFilenamePart(profile.studentName);
+  const classPart = sanitizeFilenamePart(profile.className);
+
+  if (!studentPart && !classPart) {
+    return `atrium-progression-${datePart}.json`;
+  }
+
+  return `atrium-${[studentPart, classPart].filter(Boolean).join("-")}-${datePart}.json`;
 }
 
 export function validateSaveFile(data) {
-  if (!data || typeof data !== "object") {
+  if (!isPlainObject(data)) {
     return { ok: false, message: "Fichier invalide: format JSON attendu." };
   }
 
@@ -57,20 +99,42 @@ export function validateSaveFile(data) {
     return { ok: false, message: "Fichier invalide: application non reconnue." };
   }
 
+  if (!Object.prototype.hasOwnProperty.call(data, "version")) {
+    return { ok: false, message: "Fichier invalide: version manquante." };
+  }
+
   if (data.version !== SAVE_VERSION) {
     return { ok: false, message: `Version non supportée (attendue: ${SAVE_VERSION}).` };
   }
 
-  if (!data.progress || typeof data.progress !== "object") {
+  if (!isIsoDate(data.savedAt)) {
+    return { ok: false, message: "Fichier invalide: date de sauvegarde manquante ou incorrecte." };
+  }
+
+  if (!isPlainObject(data.progress)) {
     return { ok: false, message: "Fichier invalide: progression absente." };
+  }
+
+  if (!isPlainObject(data.progress.lessons) || !isPlainObject(data.progress.periods)) {
+    return { ok: false, message: "Fichier invalide: structure de progression incohérente." };
   }
 
   return { ok: true };
 }
 
-export function exportProgressToJson(progress) {
-  const { text } = createBlobFromProgress(progress);
-  const filename = getSaveFilename();
+export function summarizeSavePayload(payload) {
+  const periodOnePercent = payload?.progress?.periods?.p1?.percent ?? 0;
+  return {
+    studentName: String(payload?.studentName || "").trim() || "Non renseigné",
+    className: String(payload?.className || "").trim() || "Non renseignée",
+    savedAt: payload?.savedAt || null,
+    periodOnePercent,
+  };
+}
+
+export function exportProgressToJson(progress, meta = {}) {
+  const { text } = createBlobFromProgress(progress, meta);
+  const filename = getSaveFilename(meta);
   const blob = new Blob([text], { type: "application/json" });
   const url = URL.createObjectURL(blob);
 
@@ -83,7 +147,7 @@ export function exportProgressToJson(progress) {
 
   URL.revokeObjectURL(url);
 
-  return filename;
+  return { filename };
 }
 
 export async function importProgressFromFile(file) {
@@ -110,13 +174,13 @@ export function canUseNativeShare() {
   return Boolean(navigator.share && window.File);
 }
 
-export async function shareProgressSave(progress) {
+export async function shareProgressSave(progress, meta = {}) {
   if (!canUseNativeShare()) {
     throw new Error("Partage natif indisponible sur cet appareil.");
   }
 
-  const filename = getSaveFilename();
-  const { blob } = createBlobFromProgress(progress);
+  const filename = getSaveFilename(meta);
+  const { blob } = createBlobFromProgress(progress, meta);
   const file = new File([blob], filename, { type: "application/json" });
 
   if (navigator.canShare && !navigator.canShare({ files: [file] })) {
@@ -129,5 +193,5 @@ export async function shareProgressSave(progress) {
     files: [file],
   });
 
-  return filename;
+  return { filename };
 }
