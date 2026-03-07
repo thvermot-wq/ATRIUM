@@ -54,6 +54,14 @@ body {
 }
 
 
+
+.boot-error {
+  margin-top: 1rem;
+}
+
+.boot-error p + p {
+  margin-top: 0.35rem;
+}
 .app-footer {
   margin-top: 1.25rem;
   padding: 0.75rem 0 1rem;

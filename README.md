@@ -111,6 +111,8 @@ Puis ouvrir `http://127.0.0.1:4173`.
 
 Le projet est volontairement sans build lourd pour rester compatible GitHub Pages.
 
+Le chargement front passe par `assets/js/bootstrap.js` qui démarre `app.js` et affiche un message lisible si le montage échoue (évite l'écran blanc silencieux).
+
 ## Ajouter une nouvelle leçon (principe)
 1. Déclarer la leçon dans `assets/js/lessons.js` (format data-driven).
 2. Renseigner au minimum : `id`, `period`, `title`, `objective`, `maxScore`, `training`, `production`.
