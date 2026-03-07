@@ -6,11 +6,11 @@ function createSingleChoiceFields(item) {
   const wrapper = document.createElement("div");
   wrapper.className = "field-stack";
 
-  (item.options || []).forEach((option, index) => {
+  (item.options || []).forEach((option) => {
     const label = document.createElement("label");
-    label.className = "choice-line";
+    label.className = "choice-line touch-choice";
     label.innerHTML = `
-      <input type="radio" name="${item.id}" value="${option}" ${index === 0 ? "" : ""} />
+      <input type="radio" name="${item.id}" value="${option}" />
       <span>${option}</span>
     `;
     wrapper.appendChild(label);
@@ -31,7 +31,7 @@ function createMultipleChoiceFields(item) {
 
   (item.options || []).forEach((option) => {
     const label = document.createElement("label");
-    label.className = "choice-line";
+    label.className = "choice-line touch-choice";
     label.innerHTML = `
       <input type="checkbox" value="${option}" />
       <span>${option}</span>
@@ -134,7 +134,7 @@ function createOrderingFields(item) {
   };
 }
 
-export function createTrainingItemCard({ item, onValidate }) {
+export function createTrainingItemCard({ item, index, onValidate }) {
   const type = normalizeType(item.type || "single-choice");
   const card = document.createElement("article");
   card.className = "card training-item-card";
@@ -144,7 +144,7 @@ export function createTrainingItemCard({ item, onValidate }) {
 
   const badge = document.createElement("p");
   badge.className = "muted";
-  badge.textContent = `Type: ${type} · ${item.points || 1} point`;
+  badge.textContent = `Item ${index || "?"}/7 · type: ${type} · ${item.points || 1} point`;
 
   let renderer;
   if (type === "single-choice") {
@@ -166,7 +166,7 @@ export function createTrainingItemCard({ item, onValidate }) {
   const button = document.createElement("button");
   button.type = "button";
   button.className = "btn btn-primary";
-  button.textContent = "Valider l'item";
+  button.textContent = "Valider";
 
   button.addEventListener("click", () => {
     const result = onValidate(renderer.getResponse());
