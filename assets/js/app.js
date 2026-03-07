@@ -1,4 +1,4 @@
-import { LESSONS_SPEC, periods, lessons } from "./lessons.js";
+import { LESSONS_SPEC, periods, lessons, getLessonsByPeriod } from "./lessons.js";
 import { getScoringContract } from "./scoring.js";
 import { initRouter } from "./router.js";
 import { renderApp } from "./ui.js";
@@ -17,6 +17,28 @@ function assertInvariants() {
 
   if (periods.length !== LESSONS_SPEC.periods) errors.push("Incohérence entre spec et périodes déclarées.");
   if (lessons.length !== LESSONS_SPEC.lessonsTotal) errors.push("Incohérence entre spec et leçons déclarées.");
+
+  periods.forEach((period) => {
+    const periodLessons = getLessonsByPeriod(period.id);
+    if (periodLessons.length !== LESSONS_SPEC.lessonsPerPeriod) {
+      errors.push(`La ${period.title} doit contenir ${LESSONS_SPEC.lessonsPerPeriod} leçons.`);
+    }
+    if (period.maxScore !== LESSONS_SPEC.periodMax) {
+      errors.push(`Le score max de ${period.title} doit être ${LESSONS_SPEC.periodMax}.`);
+    }
+
+    periodLessons.forEach((lesson) => {
+      if (lesson.maxScore !== LESSONS_SPEC.lessonMax) {
+        errors.push(`${lesson.id}: maxScore doit être ${LESSONS_SPEC.lessonMax}.`);
+      }
+      if (!Array.isArray(lesson.training) || lesson.training.length === 0) {
+        errors.push(`${lesson.id}: training doit être renseigné.`);
+      }
+      if (!Array.isArray(lesson.production) || lesson.production.length === 0) {
+        errors.push(`${lesson.id}: production doit être renseignée.`);
+      }
+    });
+  });
 
   return errors;
 }

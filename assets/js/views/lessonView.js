@@ -23,8 +23,9 @@ export function renderLessonView({ lessonId, onBackDashboard, onOpenResults }) {
   hero.className = "card";
   hero.innerHTML = `
     <h2>${lesson.title}</h2>
-    <p class="muted">${lesson.id} · Période ${lesson.periodIndex}</p>
-    <p>Placeholder de leçon prêt à accueillir entraînement (/7) et production guidée (/3).</p>
+    <p class="muted">${lesson.id} · Période ${lesson.period}</p>
+    <p><strong>Objectif :</strong> ${lesson.objective}</p>
+    <p class="muted">Structure: entraînement (${lesson.training.length} items) · production (${lesson.production.length} items) · max ${lesson.maxScore}</p>
     <div class="actions-row">
       <button type="button" class="btn btn-secondary" data-action="back">Retour dashboard</button>
       <button type="button" class="btn btn-primary" data-action="results">Voir résultats</button>
@@ -35,8 +36,8 @@ export function renderLessonView({ lessonId, onBackDashboard, onOpenResults }) {
   hero.querySelector('[data-action="results"]').addEventListener("click", onOpenResults);
 
   const feedback = createFeedbackBox({
-    title: "Prochaine étape",
-    text: "Cette vue est intentionnellement partielle : le moteur de correction et la persistance détaillée seront branchés dans une PR suivante.",
+    title: "Contenu pédagogique",
+    text: "La donnée de leçon est branchée (titre, objectif, training, production). Le moteur de correction complet sera ajouté dans une prochaine PR.",
   });
 
   wrapper.append(hero, feedback);

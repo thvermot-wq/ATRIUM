@@ -7,13 +7,19 @@ export function createPeriodCard({ period, lessons, onOpenLesson }) {
   const title = document.createElement("h3");
   title.textContent = `${period.title} · ${period.level}`;
 
+  const objective = document.createElement("p");
+  objective.className = "muted";
+  objective.textContent = period.objective;
+
+  const lessonsTotalMax = lessons.reduce((sum, lesson) => sum + lesson.maxScore, 0);
+
   const stats = document.createElement("p");
   stats.className = "muted";
-  stats.textContent = `${lessons.length} leçons · max ${lessons.length * 10} points`;
+  stats.textContent = `${lessons.length} leçons · max ${lessonsTotalMax} points`;
 
   const progress = createProgressBar({
     value: 0,
-    max: 50,
+    max: period.maxScore,
     label: "Période",
   });
 
@@ -31,6 +37,6 @@ export function createPeriodCard({ period, lessons, onOpenLesson }) {
     lessonList.appendChild(item);
   });
 
-  card.append(title, stats, progress, lessonList);
+  card.append(title, objective, stats, progress, lessonList);
   return card;
 }
