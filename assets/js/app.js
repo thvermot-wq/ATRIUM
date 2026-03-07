@@ -96,6 +96,8 @@ export function boot() {
     },
   });
 
+  router.start();
+
   window.ATRIUM_BOOT = {
     scoring,
     contract: LESSONS_SPEC,
