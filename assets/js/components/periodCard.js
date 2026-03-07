@@ -39,10 +39,11 @@ export function createPeriodCard({ period, lessons, periodProgress, lessonProgre
     const lessonProgress = lessonProgressMap?.[lesson.id];
     const best = lessonProgress?.best?.totalScore ?? 0;
     const current = lessonProgress?.current?.totalScore ?? 0;
+    const playableTag = lesson?.meta?.status === "ready" ? "jouable" : "bientôt";
 
     button.type = "button";
     button.className = "btn btn-link";
-    button.textContent = `${lesson.title} (${lesson.id}) · courant ${current}/10 · meilleur ${best}/10`;
+    button.textContent = `${lesson.title} (${lesson.id}) · ${playableTag} · courant ${current}/10 · meilleur ${best}/10`;
     button.addEventListener("click", () => onOpenLesson(lesson.id));
     item.appendChild(button);
     lessonList.appendChild(item);

@@ -76,9 +76,11 @@ function boot() {
 
     saveProgress(progress);
 
-    if (window.location.hash.startsWith("#/lesson/")) {
-      router.navigate(window.location.hash);
-    }
+    const lessonData = lessons.find((lesson) => lesson.id === lessonId);
+    return {
+      lessonProgress: progress.lessons?.[lessonId],
+      periodProgress: lessonData ? progress.periods?.[lessonData.periodId] : null,
+    };
   }
 
   const router = initRouter({

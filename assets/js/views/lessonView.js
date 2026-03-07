@@ -5,6 +5,16 @@ import { createProductionItemCard } from "../components/productionItemCard.js";
 import { evaluateTrainingItem, computeTrainingProgress } from "../trainingEngine.js";
 import { evaluateProductionItem, computeProductionProgress } from "../productionEngine.js";
 
+function isLessonPlayable(lesson) {
+  return (
+    lesson?.meta?.status === "ready" &&
+    Array.isArray(lesson.training) &&
+    lesson.training.length === LESSONS_SPEC.trainingMax &&
+    Array.isArray(lesson.production) &&
+    lesson.production.length === LESSONS_SPEC.productionMax
+  );
+}
+
 export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults }) {
   const lesson = getLessonById(lessonId);
   const wrapper = document.createElement("section");
@@ -26,6 +36,27 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
   const progressEntry = progress?.lessons?.[lesson.id];
   const savedCurrent = progressEntry?.current?.totalScore ?? 0;
   const savedBest = progressEntry?.best?.totalScore ?? 0;
+
+  if (!isLessonPlayable(lesson)) {
+    const pending = document.createElement("article");
+    pending.className = "card";
+    pending.innerHTML = `
+      <h2>${lesson.title}</h2>
+      <p class="muted">${lesson.id} · Période ${lesson.period}</p>
+      <p><strong>Objectif :</strong> ${lesson.objective}</p>
+      <p class="muted">Cette leçon n'est pas encore jouable de bout en bout dans cette version.</p>
+      <p class="muted">Score enregistré: courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
+      <div class="actions-row">
+        <button type="button" class="btn btn-secondary" data-action="back">Retour dashboard</button>
+        <button type="button" class="btn btn-secondary" data-action="results">Voir résultats</button>
+      </div>
+    `;
+
+    pending.querySelector('[data-action="back"]').addEventListener("click", onBackDashboard);
+    pending.querySelector('[data-action="results"]').addEventListener("click", onOpenResults);
+    wrapper.appendChild(pending);
+    return wrapper;
+  }
 
   const trainingResults = {};
   const productionResults = {};
@@ -98,6 +129,10 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
     totalPreview.textContent = `Total leçon (prévisualisation) : ${total}/${LESSONS_SPEC.lessonMax} (entraînement ${training.score}/7 + production ${production.score}/3)`;
   };
 
+  const finalSummary = document.createElement("article");
+  finalSummary.className = "card";
+  finalSummary.hidden = true;
+
   syncTrainingState();
   syncProductionState();
   syncTotalPreview();
@@ -116,7 +151,7 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
   form.id = "lesson-score-form";
   form.innerHTML = `
     <div class="actions-row">
-      <button type="submit" class="btn btn-primary">Enregistrer la leçon</button>
+      <button type="submit" class="btn btn-primary">Valider et enregistrer la leçon</button>
       <button type="button" class="btn btn-secondary" data-action="back">Retour dashboard</button>
       <button type="button" class="btn btn-secondary" data-action="results">Voir résultats</button>
     </div>
@@ -128,13 +163,23 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
     const latestTraining = computeTrainingProgress(lesson.training, trainingResults);
     const latestProduction = computeProductionProgress(lesson.production, productionResults);
 
-    onSaveLessonScore({
+    const saved = onSaveLessonScore({
       lessonId: lesson.id,
       trainingScore: latestTraining.score,
       productionScore: latestProduction.score,
     });
 
-    onOpenResults();
+    const currentScore = saved?.lessonProgress?.current?.totalScore ?? latestTraining.score + latestProduction.score;
+    const bestScore = saved?.lessonProgress?.best?.totalScore ?? currentScore;
+
+    finalSummary.hidden = false;
+    finalSummary.innerHTML = `
+      <h3>Synthèse finale de la leçon</h3>
+      <p>Entraînement : ${latestTraining.score}/7</p>
+      <p>Production : ${latestProduction.score}/3</p>
+      <p><strong>Total : ${currentScore}/10</strong></p>
+      <p class="muted">Meilleur score conservé : ${bestScore}/10</p>
+    `;
   });
 
   form.querySelector('[data-action="back"]').addEventListener("click", onBackDashboard);
@@ -153,6 +198,7 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
     productionBoard,
     totalPreview,
     form,
+    finalSummary,
     feedback,
   );
   return wrapper;
