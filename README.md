@@ -28,7 +28,7 @@ Cette étape implémente l’**app shell navigable** et un **modèle pédagogiqu
 - vue leçon (`#/lesson/:lessonId`)
 - vue résultats placeholder (`#/results`)
 - 15 leçons déclarées dans les données (3 périodes × 5)
-- 11 leçons entièrement remplies : `p1-l1` à `p2-l10`, et `p3-l11`
+- 15 leçons entièrement remplies : `p1-l1` à `p3-l15`
 
 
 ## Leçons jouables actuellement (end-to-end)
@@ -44,14 +44,18 @@ Les leçons entièrement jouables dans cette version sont :
 - `p2-l9` — Correspondances simples phrase à phrase
 - `p2-l10` — Micro-thème guidé latin vers français et retour
 - `p3-l11` — Trouver le verbe
+- `p3-l12` — Identifier la structure S-V-C
+- `p3-l13` — Choisir la bonne forme verbale
+- `p3-l14` — Comprendre une micro-scène
+- `p3-l15` — Synthèse guidée période 3
 
-Pour ces 11 leçons :
+Pour ces 15 leçons :
 - entraînement 7 items jouables avec feedback immédiat
 - production guidée 3 champs texte corrigés automatiquement
 - synthèse finale de leçon affichée (`/7`, `/3`, `/10`)
 - persistance score courant + meilleur score via `localStorage`
 
-Les 4 autres leçons restent structurées mais non finalisées en mode jouable.
+Toutes les leçons sont désormais structurées et jouables dans cette version.
 
 ## Structure du repository
 
