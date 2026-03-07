@@ -46,6 +46,7 @@ ATRIUM/
       storage.js
       scoring.js
       normalize.js
+      answerChecker.js
       lessons.js
       ui.js
       components/
@@ -87,6 +88,31 @@ Le projet est volontairement sans build lourd pour rester compatible GitHub Page
 3. Vérifier qu’elle respecte le contrat `/7 + /3 = /10`.
 4. Associer la leçon à une période existante (1 à 3).
 5. Vérifier les rendus UI (dashboard + vue leçon) sans casser l’agrégation de période.
+
+
+## API de normalisation et correction
+- `normalizeInput(value, options?)` dans `assets/js/normalize.js`
+- `isCorrect(userAnswer, answerConfig)` dans `assets/js/answerChecker.js`
+- `isCorrectAny(userAnswer, answerConfigs)` pour gérer plusieurs configurations acceptées
+
+Types de correction supportés :
+- `exact`
+- `one-of` (liste fermée)
+- `translation-segment`
+- `latin-expression`
+
+Règles de normalisation implémentées :
+- casse ignorée
+- trim + réduction des espaces
+- ponctuation finale ignorée
+- apostrophes harmonisées (`'` et `’`)
+- accents tolérés côté français (`language: "fr"`)
+- latin traité avec orthographe attendue fixée dans les données (`language: "latin"`)
+
+Exécuter les assertions minimales :
+```bash
+node tests/answer-checker.assertions.mjs
+```
 
 ## Principe général de correction
 - **Entraînement (/7)** : auto-correction déterministe (réponses attendues définies dans les données).
