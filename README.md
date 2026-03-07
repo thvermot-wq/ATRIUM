@@ -158,6 +158,30 @@ Comportements :
 - affichage de la bonne réponse en cas d’erreur
 - score production `/3` et prévisualisation du total leçon `/10`
 
+
+## Sauvegarde hybride de progression
+ATRIUM conserve la progression localement et propose un transfert manuel entre appareils (sans backend).
+
+Fonctionnement :
+- **Autosave local** : la progression est sauvegardée automatiquement dans `localStorage` (`atrium-progress-v1`) et rechargée au démarrage.
+- **Export JSON** : depuis le dashboard, bouton *Télécharger ma sauvegarde* pour générer un fichier versionné (`atrium-progression-YYYY-MM-DD.json`).
+- **Import JSON** : bouton *Importer une sauvegarde* avec validation de format (`app`, `version`, `progress`) et confirmation avant écrasement.
+- **Partage mobile natif** : bouton *Partager ma sauvegarde* affiché activement quand `navigator.share` est disponible.
+- **Réinitialisation** : bouton *Réinitialiser ma progression* avec confirmation explicite.
+
+Format de sauvegarde :
+```json
+{
+  "app": "ATRIUM",
+  "version": 1,
+  "savedAt": "2026-03-07T10:42:00.000Z",
+  "progress": { ... }
+}
+```
+
+Limite importante :
+- sans backend, la continuité entre plusieurs appareils repose sur l'export/import manuel du fichier JSON.
+
 ## API scoring, progression et persistance
 Fonctions principales :
 - `computeLessonScore(...)`

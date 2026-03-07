@@ -1,6 +1,14 @@
 import { LESSONS_SPEC, periods, lessons, getLessonsByPeriod } from "./lessons.js";
 import { getScoringContract } from "./scoring.js";
-import { loadProgress, saveLessonProgress, saveProgress } from "./storage.js";
+import {
+  createInitialProgress,
+  hasMeaningfulProgress,
+  importProgressData,
+  loadProgress,
+  saveLessonProgress,
+  saveProgress,
+} from "./storage.js";
+import { exportProgressToJson, importProgressFromFile, shareProgressSave, canUseNativeShare } from "./saveManager.js";
 import { initRouter } from "./router.js";
 import { renderApp } from "./ui.js";
 
@@ -66,6 +74,24 @@ export function boot() {
   let progress = loadProgress({ lessons, periods });
   saveProgress(progress);
 
+  let currentRoute = null;
+
+  function renderCurrentRoute(router) {
+    if (!currentRoute) return;
+
+    renderApp(root, {
+      router,
+      route: currentRoute,
+      progress,
+      onSaveLessonScore,
+      onExportSave,
+      onImportSave,
+      onShareSave,
+      onResetProgress,
+      canShareSave: canUseNativeShare(),
+    });
+  }
+
   function onSaveLessonScore({ lessonId, trainingScore, productionScore }) {
     progress = saveLessonProgress({
       progress,
@@ -85,14 +111,45 @@ export function boot() {
     };
   }
 
+  function onExportSave() {
+    const filename = exportProgressToJson(progress);
+    return `Sauvegarde téléchargée (${filename}).`;
+  }
+
+  async function onImportSave(file, { confirmOverwrite }) {
+    const parsed = await importProgressFromFile(file);
+
+    if (hasMeaningfulProgress(progress) && typeof confirmOverwrite === "function") {
+      const shouldReplace = confirmOverwrite();
+      if (!shouldReplace) return "Import annulé.";
+    }
+
+    progress = importProgressData({ data: parsed.progress, lessons, periods });
+    saveProgress(progress);
+    renderCurrentRoute(router);
+    return "Sauvegarde importée avec succès.";
+  }
+
+  async function onShareSave() {
+    const filename = await shareProgressSave(progress);
+    return `Sauvegarde partagée (${filename}).`;
+  }
+
+  function onResetProgress({ confirmReset }) {
+    if (!confirmReset || !confirmReset()) {
+      return "Réinitialisation annulée.";
+    }
+
+    progress = createInitialProgress({ lessons, periods });
+    saveProgress(progress);
+    renderCurrentRoute(router);
+    return "Progression réinitialisée.";
+  }
+
   const router = initRouter({
     onRouteChange(route) {
-      renderApp(root, {
-        router,
-        route,
-        progress,
-        onSaveLessonScore,
-      });
+      currentRoute = route;
+      renderCurrentRoute(router);
     },
   });
 
