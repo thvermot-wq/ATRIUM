@@ -17,6 +17,7 @@ function defaultLessonProgress() {
       totalScore: 0,
       maxScore: LESSONS_SPEC.lessonMax,
     },
+    playedAt: null,
   };
 }
 
@@ -105,6 +106,7 @@ export function loadProgress({ lessons, periods }) {
         ...defaultLessonProgress().best,
         ...(entry.best || {}),
       },
+      playedAt: typeof entry.playedAt === "string" ? entry.playedAt : null,
     };
   });
 
@@ -134,6 +136,7 @@ export function saveLessonProgress({ progress, lessonId, trainingScore, producti
       [lessonId]: {
         current: lessonResult,
         best: nextBest,
+        playedAt: new Date().toISOString(),
       },
     },
     updatedAt: new Date().toISOString(),

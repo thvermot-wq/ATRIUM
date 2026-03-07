@@ -54,6 +54,7 @@ function run() {
   });
   assert.equal(progress.lessons["p1-l1"].current.totalScore, 10);
   assert.equal(progress.lessons["p1-l1"].best.totalScore, 10);
+  assert.equal(typeof progress.lessons["p1-l1"].playedAt, "string");
 
   progress = saveLessonProgress({
     progress,
@@ -75,6 +76,7 @@ function run() {
   assert.equal(typeof raw, "string");
   const loaded = loadProgress({ lessons, periods });
   assert.equal(loaded.lessons["p1-l1"].best.totalScore, 10);
+  assert.equal(typeof loaded.lessons["p1-l1"].playedAt, "string");
 
   console.log("scoring-storage assertions passed");
 }

@@ -174,6 +174,14 @@ Comportement de rejeu :
 - le meilleur score de la leçon est conservé ;
 - les scores de période sont recalculés automatiquement à partir des meilleurs scores de leçon.
 
+
+## Dashboard et lecture de progression
+Le dashboard affiche désormais, à partir des données réelles de progression :
+- pour chaque période : score total `/50`, pourcentage, statut (`validée`, `consolidation nécessaire`, `à reprendre`) ;
+- pour chaque leçon : score courant `/10`, meilleur score `/10`, état `jouée/non jouée`.
+
+La vue résultats reprend la même logique avec un détail par période et par leçon.
+
 ## API de normalisation et correction
 - `normalizeInput(value, options?)` dans `assets/js/normalize.js`
 - `isCorrect(userAnswer, answerConfig)` dans `assets/js/answerChecker.js`
