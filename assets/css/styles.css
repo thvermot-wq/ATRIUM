@@ -169,3 +169,48 @@ input[type="number"] {
   border-radius: 8px;
   font: inherit;
 }
+
+.training-board {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.training-item-card {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.field-stack {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.choice-line {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.matching-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(160px, 1fr);
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.feedback-inline.ok {
+  color: #146b3a;
+  font-weight: 600;
+}
+
+.feedback-inline.ko {
+  color: #8b2323;
+  font-weight: 600;
+}
+
+select {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #cfd5ea;
+  border-radius: 8px;
+  font: inherit;
+}

@@ -91,6 +91,26 @@ Le projet est volontairement sans build lourd pour rester compatible GitHub Page
 
 
 
+
+## Moteur d’entraînement générique
+Le moteur d’entraînement est data-driven et supporte les micro-items suivants :
+- `single-choice` (ou alias `mcq`)
+- `multiple-choice`
+- `matching`
+- `ordering`
+
+Architecture :
+- `assets/js/trainingEngine.js` : logique métier (évaluation + progression)
+- `assets/js/components/trainingItemCard.js` : rendu UI par type d’item
+- `assets/js/views/lessonView.js` : orchestration de la phase d’entraînement dans la leçon
+
+Comportements :
+- feedback immédiat item par item (juste/faux)
+- progression affichée (`x/7`)
+- score d’entraînement calculé automatiquement (sur 7)
+- score production saisi séparément (sur 3)
+- enregistrement final via moteur scoring/storage existant
+
 ## API scoring, progression et persistance
 Fonctions principales :
 - `computeLessonScore(...)`
