@@ -1,7 +1,7 @@
 import { periods, getLessonsByPeriod } from "../lessons.js";
 import { createPeriodCard } from "../components/periodCard.js";
 
-export function renderDashboardView({ onOpenLesson }) {
+export function renderDashboardView({ onOpenLesson, progress }) {
   const wrapper = document.createElement("section");
   wrapper.className = "stack";
 
@@ -9,7 +9,7 @@ export function renderDashboardView({ onOpenLesson }) {
   headerCard.className = "card";
   headerCard.innerHTML = `
     <h2>Tableau de bord</h2>
-    <p class="muted">Vue structurée des 3 périodes et accès direct aux leçons.</p>
+    <p class="muted">3 périodes · 15 leçons · progression calculée automatiquement</p>
   `;
 
   const grid = document.createElement("div");
@@ -17,7 +17,16 @@ export function renderDashboardView({ onOpenLesson }) {
 
   periods.forEach((period) => {
     const periodLessons = getLessonsByPeriod(period.id);
-    grid.appendChild(createPeriodCard({ period, lessons: periodLessons, onOpenLesson }));
+    const periodProgress = progress?.periods?.[period.id];
+    grid.appendChild(
+      createPeriodCard({
+        period,
+        lessons: periodLessons,
+        periodProgress,
+        lessonProgressMap: progress?.lessons || {},
+        onOpenLesson,
+      }),
+    );
   });
 
   wrapper.append(headerCard, grid);

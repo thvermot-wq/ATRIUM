@@ -58,7 +58,7 @@ function renderNotFoundView({ onOpenHome }) {
   return section;
 }
 
-export function renderApp(rootElement, { router, route }) {
+export function renderApp(rootElement, { router, route, progress, onSaveLessonScore }) {
   rootElement.innerHTML = "";
 
   const { fragment, main } = createAppLayout({ navigate: router.navigate, currentRouteName: route.name });
@@ -70,6 +70,7 @@ export function renderApp(rootElement, { router, route }) {
     onOpenLesson: (lessonId) => router.navigate(`#/lesson/${lessonId}`),
     onBackDashboard: () => router.navigate("#/dashboard"),
     onOpenHome: () => router.navigate("#/"),
+    onSaveLessonScore,
   };
 
   let viewNode;
@@ -77,11 +78,11 @@ export function renderApp(rootElement, { router, route }) {
   if (route.name === "home") {
     viewNode = renderHomeView(callbacks);
   } else if (route.name === "dashboard") {
-    viewNode = renderDashboardView(callbacks);
+    viewNode = renderDashboardView({ ...callbacks, progress });
   } else if (route.name === "lesson") {
-    viewNode = renderLessonView({ ...callbacks, lessonId: route.params.lessonId });
+    viewNode = renderLessonView({ ...callbacks, lessonId: route.params.lessonId, progress });
   } else if (route.name === "results") {
-    viewNode = renderResultsView(callbacks);
+    viewNode = renderResultsView({ ...callbacks, progress });
   } else {
     viewNode = renderNotFoundView(callbacks);
   }

@@ -1,6 +1,6 @@
 import { createProgressBar } from "./progressBar.js";
 
-export function createPeriodCard({ period, lessons, onOpenLesson }) {
+export function createPeriodCard({ period, lessons, periodProgress, lessonProgressMap, onOpenLesson }) {
   const card = document.createElement("article");
   card.className = "card period-card";
 
@@ -11,14 +11,21 @@ export function createPeriodCard({ period, lessons, onOpenLesson }) {
   objective.className = "muted";
   objective.textContent = period.objective;
 
-  const lessonsTotalMax = lessons.reduce((sum, lesson) => sum + lesson.maxScore, 0);
+  const safePeriod =
+    periodProgress ||
+    ({
+      totalScore: 0,
+      maxScore: period.maxScore,
+      percent: 0,
+      status: "période à reprendre",
+    });
 
   const stats = document.createElement("p");
   stats.className = "muted";
-  stats.textContent = `${lessons.length} leçons · max ${lessonsTotalMax} points`;
+  stats.textContent = `Période: ${safePeriod.totalScore}/${period.maxScore} · ${safePeriod.percent}% · ${safePeriod.status}`;
 
   const progress = createProgressBar({
-    value: 0,
+    value: safePeriod.totalScore,
     max: period.maxScore,
     label: "Période",
   });
@@ -29,9 +36,13 @@ export function createPeriodCard({ period, lessons, onOpenLesson }) {
   lessons.forEach((lesson) => {
     const item = document.createElement("li");
     const button = document.createElement("button");
+    const lessonProgress = lessonProgressMap?.[lesson.id];
+    const best = lessonProgress?.best?.totalScore ?? 0;
+    const current = lessonProgress?.current?.totalScore ?? 0;
+
     button.type = "button";
     button.className = "btn btn-link";
-    button.textContent = `${lesson.title} (${lesson.id})`;
+    button.textContent = `${lesson.title} (${lesson.id}) · courant ${current}/10 · meilleur ${best}/10`;
     button.addEventListener("click", () => onOpenLesson(lesson.id));
     item.appendChild(button);
     lessonList.appendChild(item);

@@ -1,5 +1,6 @@
 import { LESSONS_SPEC, periods, lessons, getLessonsByPeriod } from "./lessons.js";
 import { getScoringContract } from "./scoring.js";
+import { loadProgress, saveLessonProgress, saveProgress } from "./storage.js";
 import { initRouter } from "./router.js";
 import { renderApp } from "./ui.js";
 
@@ -60,9 +61,34 @@ function boot() {
     return;
   }
 
+  let progress = loadProgress({ lessons, periods });
+  saveProgress(progress);
+
+  function onSaveLessonScore({ lessonId, trainingScore, productionScore }) {
+    progress = saveLessonProgress({
+      progress,
+      lessonId,
+      trainingScore,
+      productionScore,
+      lessons,
+      periods,
+    });
+
+    saveProgress(progress);
+
+    if (window.location.hash.startsWith("#/lesson/")) {
+      router.navigate(window.location.hash);
+    }
+  }
+
   const router = initRouter({
     onRouteChange(route) {
-      renderApp(root, { router, route });
+      renderApp(root, {
+        router,
+        route,
+        progress,
+        onSaveLessonScore,
+      });
     },
   });
 
@@ -70,6 +96,7 @@ function boot() {
     scoring,
     contract: LESSONS_SPEC,
     counts: { periods: periods.length, lessons: lessons.length },
+    getProgress: () => progress,
   };
 }
 

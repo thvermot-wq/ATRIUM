@@ -1,7 +1,7 @@
-import { getLessonById } from "../lessons.js";
+import { LESSONS_SPEC, getLessonById } from "../lessons.js";
 import { createFeedbackBox } from "../components/feedbackBox.js";
 
-export function renderLessonView({ lessonId, onBackDashboard, onOpenResults }) {
+export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults }) {
   const lesson = getLessonById(lessonId);
   const wrapper = document.createElement("section");
   wrapper.className = "stack";
@@ -19,6 +19,10 @@ export function renderLessonView({ lessonId, onBackDashboard, onOpenResults }) {
     return wrapper;
   }
 
+  const progressEntry = progress?.lessons?.[lesson.id];
+  const current = progressEntry?.current?.totalScore ?? 0;
+  const best = progressEntry?.best?.totalScore ?? 0;
+
   const hero = document.createElement("article");
   hero.className = "card";
   hero.innerHTML = `
@@ -26,18 +30,45 @@ export function renderLessonView({ lessonId, onBackDashboard, onOpenResults }) {
     <p class="muted">${lesson.id} · Période ${lesson.period}</p>
     <p><strong>Objectif :</strong> ${lesson.objective}</p>
     <p class="muted">Structure: entraînement (${lesson.training.length} items) · production (${lesson.production.length} items) · max ${lesson.maxScore}</p>
-    <div class="actions-row">
-      <button type="button" class="btn btn-secondary" data-action="back">Retour dashboard</button>
-      <button type="button" class="btn btn-primary" data-action="results">Voir résultats</button>
-    </div>
+    <p class="muted">Score courant: ${current}/10 · Meilleur score: ${best}/10</p>
+
+    <form id="lesson-score-form" class="stack compact-form">
+      <label>
+        Entraînement (/7)
+        <input type="number" name="trainingScore" min="0" max="${LESSONS_SPEC.trainingMax}" step="1" value="${progressEntry?.current?.trainingScore ?? 0}" required />
+      </label>
+      <label>
+        Production (/3)
+        <input type="number" name="productionScore" min="0" max="${LESSONS_SPEC.productionMax}" step="1" value="${progressEntry?.current?.productionScore ?? 0}" required />
+      </label>
+      <div class="actions-row">
+        <button type="submit" class="btn btn-primary">Enregistrer ce score</button>
+        <button type="button" class="btn btn-secondary" data-action="back">Retour dashboard</button>
+        <button type="button" class="btn btn-secondary" data-action="results">Voir résultats</button>
+      </div>
+    </form>
   `;
+
+  const form = hero.querySelector("#lesson-score-form");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+
+    onSaveLessonScore({
+      lessonId: lesson.id,
+      trainingScore: Number(formData.get("trainingScore") || 0),
+      productionScore: Number(formData.get("productionScore") || 0),
+    });
+
+    onOpenResults();
+  });
 
   hero.querySelector('[data-action="back"]').addEventListener("click", onBackDashboard);
   hero.querySelector('[data-action="results"]').addEventListener("click", onOpenResults);
 
   const feedback = createFeedbackBox({
-    title: "Contenu pédagogique",
-    text: "La donnée de leçon est branchée (titre, objectif, training, production). Le moteur de correction complet sera ajouté dans une prochaine PR.",
+    title: "Règle de rejeu",
+    text: "Le score courant peut changer à chaque tentative, mais le meilleur score de la leçon est conservé automatiquement.",
   });
 
   wrapper.append(hero, feedback);

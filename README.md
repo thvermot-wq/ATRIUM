@@ -90,6 +90,37 @@ Le projet est volontairement sans build lourd pour rester compatible GitHub Page
 5. Vérifier les rendus UI (dashboard + vue leçon) sans casser l’agrégation de période.
 
 
+
+## API scoring, progression et persistance
+Fonctions principales :
+- `computeLessonScore(...)`
+- `computePeriodScore(...)`
+- `getPeriodStatus(...)`
+- `loadProgress(...)`
+- `saveProgress(...)`
+- `saveLessonProgress(...)`
+
+Structure stockée dans `localStorage` (`atrium-progress-v1`) :
+```json
+{
+  "lessons": {
+    "p1-l1": {
+      "current": {"trainingScore": 0, "productionScore": 0, "totalScore": 0, "maxScore": 10},
+      "best": {"trainingScore": 0, "productionScore": 0, "totalScore": 0, "maxScore": 10}
+    }
+  },
+  "periods": {
+    "p1": {"totalScore": 0, "maxScore": 50, "percent": 0, "status": "période à reprendre"}
+  },
+  "updatedAt": "..."
+}
+```
+
+Comportement de rejeu :
+- le score courant de la leçon est remplacé par la tentative la plus récente ;
+- le meilleur score de la leçon est conservé ;
+- les scores de période sont recalculés automatiquement à partir des meilleurs scores de leçon.
+
 ## API de normalisation et correction
 - `normalizeInput(value, options?)` dans `assets/js/normalize.js`
 - `isCorrect(userAnswer, answerConfig)` dans `assets/js/answerChecker.js`

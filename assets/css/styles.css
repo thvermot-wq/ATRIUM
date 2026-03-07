@@ -155,3 +155,17 @@ ul {
     grid-template-columns: 1fr;
   }
 }
+
+.compact-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+input[type="number"] {
+  width: min(220px, 100%);
+  padding: 0.45rem 0.55rem;
+  border: 1px solid #cfd5ea;
+  border-radius: 8px;
+  font: inherit;
+}
