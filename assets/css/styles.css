@@ -5,7 +5,7 @@
   --line: #d7dbea;
   --primary: #24326f;
   --primary-soft: #e8ecfb;
-  --muted: #566089;
+  --muted: #3f4a74;
 }
 
 * {
@@ -17,6 +17,29 @@ body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: var(--ink);
   background: var(--bg);
+  line-height: 1.45;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.8rem;
+  top: -3rem;
+  z-index: 1000;
+  background: #ffffff;
+  color: var(--ink);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 0.45rem 0.65rem;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0.8rem;
+}
+
+:focus-visible {
+  outline: 3px solid #0f62fe;
+  outline-offset: 2px;
 }
 
 #app {
@@ -92,6 +115,10 @@ ul {
   background: #1d2857;
 }
 
+.btn:focus-visible {
+  border-color: #0f62fe;
+}
+
 .btn-secondary {
   background: #fff;
   color: var(--primary);
@@ -107,6 +134,7 @@ ul {
 .btn-link.active {
   background: var(--primary-soft);
   border-color: #b7c2e9;
+  font-weight: 700;
 }
 
 .muted {

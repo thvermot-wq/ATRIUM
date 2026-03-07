@@ -6,6 +6,7 @@ import { renderResultsView } from "./views/resultsView.js";
 function createTopNav({ navigate, currentRouteName }) {
   const nav = document.createElement("nav");
   nav.className = "top-nav";
+  nav.setAttribute("aria-label", "Navigation principale");
 
   const links = [
     { label: "Accueil", path: "#/", name: "home" },
@@ -16,6 +17,7 @@ function createTopNav({ navigate, currentRouteName }) {
   links.forEach((link) => {
     const button = document.createElement("button");
     button.type = "button";
+    button.setAttribute("aria-current", currentRouteName === link.name ? "page" : "false");
     button.className = `btn btn-link ${currentRouteName === link.name ? "active" : ""}`;
     button.textContent = link.label;
     button.addEventListener("click", () => navigate(link.path));
@@ -40,6 +42,7 @@ function createAppLayout({ navigate, currentRouteName }) {
   const main = document.createElement("main");
   main.id = "view-root";
   main.className = "shell";
+  main.tabIndex = -1;
   main.setAttribute("aria-live", "polite");
 
   fragment.append(header, nav, main);
@@ -88,4 +91,5 @@ export function renderApp(rootElement, { router, route, progress, onSaveLessonSc
   }
 
   main.appendChild(viewNode);
+  main.focus();
 }

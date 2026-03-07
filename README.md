@@ -182,6 +182,20 @@ Le dashboard affiche désormais, à partir des données réelles de progression 
 
 La vue résultats reprend la même logique avec un détail par période et par leçon.
 
+
+## Accessibilité et préparation GitHub Pages (V1)
+Ajustements de stabilisation appliqués :
+- lien d’évitement clavier vers le contenu principal (`skip link`) ;
+- focus visible renforcé (`:focus-visible`) sur la navigation et les actions ;
+- navigation principale annotée (`aria-label`) et page active (`aria-current`) ;
+- structure HTML sémantique conservée (header/nav/main injectés par l’app-shell) ;
+- contrastes et lisibilité améliorés (texte secondaire, hiérarchie visuelle).
+
+Déploiement GitHub Pages :
+- chemins relatifs conservés (`assets/...`) ;
+- aucune dépendance de build ;
+- application statique prête à publier en l’état.
+
 ## API de normalisation et correction
 - `normalizeInput(value, options?)` dans `assets/js/normalize.js`
 - `isCorrect(userAnswer, answerConfig)` dans `assets/js/answerChecker.js`
