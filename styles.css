@@ -5,6 +5,7 @@
   --ink: #1f2640;
   --ok: #1d7a40;
   --warn: #8c6a00;
+  --primary: #24326f;
 }
 
 * {
@@ -20,12 +21,14 @@ body {
 
 header,
 main {
-  width: min(1100px, 94vw);
+  width: min(1160px, 94vw);
   margin: 0 auto;
 }
 
 header {
   padding: 1.5rem 0 0.75rem;
+  display: grid;
+  gap: 0.5rem;
 }
 
 h1,
@@ -33,6 +36,16 @@ h2,
 h3,
 p {
   margin: 0;
+}
+
+.tagline {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.intro {
+  max-width: 75ch;
+  color: #3f4870;
 }
 
 main {
@@ -54,13 +67,15 @@ main {
 #period-summary {
   display: grid;
   gap: 0.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .period-box {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0.75rem;
+  display: grid;
+  gap: 0.25rem;
 }
 
 .period-status {
@@ -77,7 +92,7 @@ main {
 
 #lesson-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 0.8rem;
 }
 
@@ -90,7 +105,7 @@ main {
 }
 
 button {
-  background: #24326f;
+  background: var(--primary);
   color: white;
   border: 0;
   border-radius: 8px;
@@ -129,4 +144,12 @@ form {
 .helper {
   font-size: 0.92rem;
   color: #4f587f;
+}
+
+input[type="text"] {
+  width: 100%;
+  max-width: 420px;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #b9c0da;
+  border-radius: 8px;
 }
