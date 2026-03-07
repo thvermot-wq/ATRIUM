@@ -201,6 +201,73 @@ ul {
   font-weight: 600;
 }
 
+
+.lesson-view {
+  gap: 0.85rem;
+  padding-bottom: 5.5rem;
+}
+
+.lesson-hero,
+.lesson-metrics {
+  scroll-margin-top: 0.8rem;
+}
+
+.lesson-metrics {
+  position: sticky;
+  top: 0.35rem;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+}
+
+.lesson-preview-score {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.touch-choice {
+  width: 100%;
+  border: 1px solid #d8dff3;
+  border-radius: 10px;
+  padding: 0.52rem 0.6rem;
+  min-height: 44px;
+}
+
+.feedback-inline {
+  min-height: 1.3rem;
+}
+
+.feedback-inline,
+.answer-reveal {
+  overflow-wrap: anywhere;
+}
+
+.lesson-actions-form {
+  position: sticky;
+  bottom: 0.4rem;
+  z-index: 8;
+}
+
+.lesson-actions-row {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.55rem;
+}
+
+.lesson-final-summary {
+  scroll-margin-bottom: 6rem;
+}
+
+.lesson-completion-actions {
+  margin-top: 0.4rem;
+}
+
+input[type="text"],
+textarea,
+select {
+  scroll-margin-block: 6rem;
+}
 input[type="number"] {
   width: min(220px, 100%);
   padding: 0.62rem 0.7rem;
@@ -268,13 +335,20 @@ select {
   gap: 0.65rem;
 }
 
-input[type="text"] {
+input[type="text"],
+textarea {
   width: min(460px, 100%);
   padding: 0.62rem 0.7rem;
   border: 1px solid #cfd5ea;
   border-radius: 8px;
   font: inherit;
   min-height: 44px;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  line-height: 1.45;
 }
 
 .answer-reveal {
@@ -384,6 +458,18 @@ input[type="text"] {
     width: 100%;
     text-align: center;
   }
+
+  .lesson-metrics {
+    top: 0.2rem;
+  }
+
+  .touch-choice {
+    align-items: flex-start;
+  }
+
+  .lesson-actions-form {
+    bottom: 0.2rem;
+  }
 }
 
 @media (max-width: 560px) {
@@ -412,5 +498,13 @@ input[type="text"] {
   .progress-label,
   .muted {
     font-size: 0.92rem;
+  }
+
+  .lesson-view {
+    padding-bottom: 6.4rem;
+  }
+
+  .lesson-actions-row {
+    padding: 0.45rem;
   }
 }
