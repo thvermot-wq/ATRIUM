@@ -145,6 +145,24 @@ export function boot() {
     });
   }
 
+  let currentRoute = null;
+
+  function renderCurrentRoute(router) {
+    if (!currentRoute) return;
+
+    renderApp(root, {
+      router,
+      route: currentRoute,
+      progress,
+      onSaveLessonScore,
+      onExportSave,
+      onImportSave,
+      onShareSave,
+      onResetProgress,
+      canShareSave: canUseNativeShare(),
+    });
+  }
+
   function onSaveLessonScore({ lessonId, trainingScore, productionScore }) {
     progress = saveLessonProgress({
       progress,
