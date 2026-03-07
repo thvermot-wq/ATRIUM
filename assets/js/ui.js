@@ -45,7 +45,13 @@ function createAppLayout({ navigate, currentRouteName }) {
   main.tabIndex = -1;
   main.setAttribute("aria-live", "polite");
 
-  fragment.append(header, nav, main);
+  const footer = document.createElement("footer");
+  footer.className = "shell app-footer";
+  footer.innerHTML = `
+    <p class="footer-copy">© 2026 Thibault Vermot. Tous droits réservés.</p>
+  `;
+
+  fragment.append(header, nav, main, footer);
   return { fragment, main };
 }
 

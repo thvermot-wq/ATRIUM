@@ -44,9 +44,11 @@ function assertInvariants() {
   return errors;
 }
 
-function boot() {
+export function boot() {
   const root = document.getElementById("app");
-  if (!root) return;
+  if (!root) {
+    throw new Error("Point de montage introuvable: #app");
+  }
 
   const scoring = getScoringContract();
   const invariantErrors = assertInvariants();
@@ -94,6 +96,8 @@ function boot() {
     },
   });
 
+  router.start();
+
   window.ATRIUM_BOOT = {
     scoring,
     contract: LESSONS_SPEC,
@@ -101,5 +105,3 @@ function boot() {
     getProgress: () => progress,
   };
 }
-
-boot();

@@ -111,6 +111,8 @@ Puis ouvrir `http://127.0.0.1:4173`.
 
 Le projet est volontairement sans build lourd pour rester compatible GitHub Pages.
 
+Le chargement front passe par `assets/js/bootstrap.js` qui démarre `app.js` et affiche un message lisible si le montage échoue (évite l'écran blanc silencieux).
+
 ## Ajouter une nouvelle leçon (principe)
 1. Déclarer la leçon dans `assets/js/lessons.js` (format data-driven).
 2. Renseigner au minimum : `id`, `period`, `title`, `objective`, `maxScore`, `training`, `production`.
@@ -199,6 +201,7 @@ La vue résultats reprend la même logique avec un détail par période et par l
 Ajustements de stabilisation appliqués :
 - lien d’évitement clavier vers le contenu principal (`skip link`) ;
 - focus visible renforcé (`:focus-visible`) sur la navigation et les actions ;
+- footer global discret avec mention de copyright ;
 - navigation principale annotée (`aria-label`) et page active (`aria-current`) ;
 - structure HTML sémantique conservée (header/nav/main injectés par l’app-shell) ;
 - contrastes et lisibilité améliorés (texte secondaire, hiérarchie visuelle).
