@@ -4,7 +4,7 @@ import { lessons, LESSONS_SPEC } from "../assets/js/lessons.js";
 function run() {
   const playable = lessons.filter((lesson) => lesson?.meta?.status === "ready");
   const playableIds = playable.map((lesson) => lesson.id).sort();
-  const expectedPlayableIds = ["p1-l1", "p1-l2", "p1-l3", "p1-l4", "p1-l5", "p3-l11"];
+  const expectedPlayableIds = ["p1-l1", "p1-l2", "p1-l3", "p1-l4", "p1-l5", "p2-l10", "p2-l6", "p2-l7", "p2-l8", "p2-l9", "p3-l11"];
 
   assert.deepEqual(playableIds, expectedPlayableIds);
 

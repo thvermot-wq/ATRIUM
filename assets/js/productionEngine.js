@@ -11,11 +11,19 @@ function inferAnswerConfig(item) {
     };
   }
 
-  if (type === "short-text") {
+  if (type === "short-text" || type === "translation-segment") {
     return {
       type: "translation-segment",
-      language: "fr",
-      accepted: [item.expected],
+      language: item.language || "fr",
+      accepted: Array.isArray(item.accepted) && item.accepted.length ? item.accepted : [item.expected],
+    };
+  }
+
+  if (type === "one-of") {
+    return {
+      type: "one-of",
+      language: item.language || "fr",
+      accepted: Array.isArray(item.accepted) && item.accepted.length ? item.accepted : [item.expected],
     };
   }
 

@@ -21,6 +21,28 @@ function run() {
   const frResult = evaluateProductionItem(frItem, "l’esclave salue");
   assert.equal(frResult.isCorrect, true);
 
+  const oneOfItem = {
+    id: "p4",
+    type: "one-of",
+    expected: "aquatique",
+    accepted: ["aquatique", "aquarium", "aqueux"],
+    language: "fr",
+    points: 1,
+  };
+  const oneOfResult = evaluateProductionItem(oneOfItem, "Aquarium");
+  assert.equal(oneOfResult.isCorrect, true);
+
+  const segmentItem = {
+    id: "p5",
+    type: "translation-segment",
+    expected: "la fille marche",
+    accepted: ["la fille marche", "une fille marche"],
+    language: "fr",
+    points: 1,
+  };
+  const segmentResult = evaluateProductionItem(segmentItem, "Une fille marche.");
+  assert.equal(segmentResult.isCorrect, true);
+
   const wrongItem = {
     id: "p3",
     type: "find-verb",

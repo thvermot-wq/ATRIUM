@@ -28,7 +28,7 @@ Cette étape implémente l’**app shell navigable** et un **modèle pédagogiqu
 - vue leçon (`#/lesson/:lessonId`)
 - vue résultats placeholder (`#/results`)
 - 15 leçons déclarées dans les données (3 périodes × 5)
-- 6 leçons entièrement remplies : `p1-l1` à `p1-l5`, et `p3-l11`
+- 11 leçons entièrement remplies : `p1-l1` à `p2-l10`, et `p3-l11`
 
 
 ## Leçons jouables actuellement (end-to-end)
@@ -38,15 +38,20 @@ Les leçons entièrement jouables dans cette version sont :
 - `p1-l3` — Écouter et reconnaître des mots du rituel
 - `p1-l4` — Dire et distinguer singulier et pluriel
 - `p1-l5` — Reconnaître sujet, verbe et complément
+- `p2-l6` — Relier latin et français (mots transparents)
+- `p2-l7` — Familles de mots autour du latin
+- `p2-l8` — Mémoriser le lexique utile
+- `p2-l9` — Correspondances simples phrase à phrase
+- `p2-l10` — Micro-thème guidé latin vers français et retour
 - `p3-l11` — Trouver le verbe
 
-Pour ces 6 leçons :
+Pour ces 11 leçons :
 - entraînement 7 items jouables avec feedback immédiat
 - production guidée 3 champs texte corrigés automatiquement
 - synthèse finale de leçon affichée (`/7`, `/3`, `/10`)
 - persistance score courant + meilleur score via `localStorage`
 
-Les 9 autres leçons restent structurées mais non finalisées en mode jouable.
+Les 4 autres leçons restent structurées mais non finalisées en mode jouable.
 
 ## Structure du repository
 
