@@ -21,6 +21,59 @@ function findNextLessonId(currentLessonId) {
   return lessons[currentIndex + 1].id;
 }
 
+
+function createLessonCourseHeader(lesson) {
+  const hasPoint = Boolean(lesson?.coursePoint);
+  const hasExample = Boolean(lesson?.courseExample);
+  const hasCanDo = Boolean(lesson?.canDo);
+  const hasLexicon = Array.isArray(lesson?.lexiconFocus) && lesson.lexiconFocus.length > 0;
+
+  if (!hasPoint && !hasExample && !hasCanDo && !hasLexicon) {
+    return null;
+  }
+
+  const card = document.createElement("article");
+  card.className = "card lesson-course-header";
+
+  const title = document.createElement("h3");
+  title.textContent = "Repères de leçon";
+  card.appendChild(title);
+
+  const grid = document.createElement("div");
+  grid.className = "lesson-course-grid";
+
+  if (hasPoint) {
+    const block = document.createElement("section");
+    block.className = "lesson-course-block";
+    block.innerHTML = `<h4>Point cours</h4><p>${lesson.coursePoint}</p>`;
+    grid.appendChild(block);
+  }
+
+  if (hasExample) {
+    const block = document.createElement("section");
+    block.className = "lesson-course-block";
+    block.innerHTML = `<h4>Exemple</h4><p>${lesson.courseExample}</p>`;
+    grid.appendChild(block);
+  }
+
+  if (hasCanDo) {
+    const block = document.createElement("section");
+    block.className = "lesson-course-block";
+    block.innerHTML = `<h4>Je peux...</h4><p>${lesson.canDo}</p>`;
+    grid.appendChild(block);
+  }
+
+  if (hasLexicon) {
+    const block = document.createElement("section");
+    block.className = "lesson-course-block";
+    block.innerHTML = `<h4>Lexique cible</h4><p>${lesson.lexiconFocus.join(" · ")}</p>`;
+    grid.appendChild(block);
+  }
+
+  card.appendChild(grid);
+  return card;
+}
+
 function attachMobileFocusHandling(rootNode) {
   rootNode.querySelectorAll('input[type="text"], textarea, select').forEach((field) => {
     field.addEventListener("focus", () => {
@@ -82,6 +135,8 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
 
   const lessonMetrics = document.createElement("article");
   lessonMetrics.className = "card lesson-metrics";
+
+  const lessonCourseHeader = createLessonCourseHeader(lesson);
 
   const trainingState = document.createElement("p");
   trainingState.className = "muted";
@@ -235,7 +290,11 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
     text: "La leçon reste data-driven. Entraînement (/7) et production guidée (/3) sont évalués séparément puis combinés en total /10.",
   });
 
-  wrapper.append(hero, lessonMetrics, trainingBoard, productionBoard, form, finalSummary, feedback);
+  if (lessonCourseHeader) {
+    wrapper.append(hero, lessonCourseHeader, lessonMetrics, trainingBoard, productionBoard, form, finalSummary, feedback);
+  } else {
+    wrapper.append(hero, lessonMetrics, trainingBoard, productionBoard, form, finalSummary, feedback);
+  }
 
   attachMobileFocusHandling(wrapper);
   return wrapper;

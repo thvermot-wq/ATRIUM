@@ -324,6 +324,28 @@ ul {
   color: var(--primary);
 }
 
+.lesson-course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.6rem;
+}
+
+.lesson-course-block {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fbfcff;
+  padding: 0.55rem 0.65rem;
+}
+
+.lesson-course-block h4 {
+  margin: 0 0 0.25rem;
+  font-size: 0.96rem;
+}
+
+.lesson-course-block p {
+  margin: 0;
+}
+
 .touch-choice {
   width: 100%;
   border: 1px solid #d8dff3;
