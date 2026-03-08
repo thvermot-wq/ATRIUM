@@ -43,6 +43,21 @@ function run() {
   const segmentResult = evaluateProductionItem(segmentItem, "Une fille marche.");
   assert.equal(segmentResult.isCorrect, true);
 
+
+  const textInputItem = {
+    id: "p6",
+    type: "textInput",
+    expected: "rosa floret",
+    answerConfig: {
+      type: "latin-expression",
+      language: "latin",
+      expected: "rosa floret",
+    },
+    points: 1,
+  };
+  const textInputResult = evaluateProductionItem(textInputItem, "Rosa floret.");
+  assert.equal(textInputResult.isCorrect, true);
+
   const wrongItem = {
     id: "p3",
     type: "find-verb",

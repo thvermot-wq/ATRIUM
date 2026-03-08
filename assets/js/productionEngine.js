@@ -1,6 +1,10 @@
 import { isCorrect } from "./answerChecker.js";
 
 function inferAnswerConfig(item) {
+  if (item && item.answerConfig && typeof item.answerConfig === "object") {
+    return item.answerConfig;
+  }
+
   const type = item.type || "exact";
 
   const acceptedAnswers =
@@ -36,6 +40,22 @@ function inferAnswerConfig(item) {
     return {
       type: "latin-expression",
       language: "latin",
+      expected: item.expected,
+    };
+  }
+
+  if (type === "textInput") {
+    if (Array.isArray(item.accepted) && item.accepted.length) {
+      return {
+        type: "translation-segment",
+        language: item.language || "fr",
+        accepted: item.accepted,
+      };
+    }
+
+    return {
+      type: "exact",
+      language: item.language || "latin",
       expected: item.expected,
     };
   }
