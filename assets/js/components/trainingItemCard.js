@@ -1,16 +1,23 @@
 function normalizeType(type = "") {
-  return type === "mcq" ? "single-choice" : type;
+  if (type === "mcq") return "single-choice";
+  if (type === "singleChoice") return "single-choice";
+  if (type === "multipleChoice") return "multiple-choice";
+  return type;
+}
+
+function getChoices(item) {
+  return item.options || item.choices || [];
 }
 
 function createSingleChoiceFields(item) {
   const wrapper = document.createElement("div");
   wrapper.className = "field-stack";
 
-  (item.options || []).forEach((option, index) => {
+  getChoices(item).forEach((option) => {
     const label = document.createElement("label");
-    label.className = "choice-line";
+    label.className = "choice-line touch-choice";
     label.innerHTML = `
-      <input type="radio" name="${item.id}" value="${option}" ${index === 0 ? "" : ""} />
+      <input type="radio" name="${item.id}" value="${option}" />
       <span>${option}</span>
     `;
     wrapper.appendChild(label);
@@ -29,9 +36,9 @@ function createMultipleChoiceFields(item) {
   const wrapper = document.createElement("div");
   wrapper.className = "field-stack";
 
-  (item.options || []).forEach((option) => {
+  getChoices(item).forEach((option) => {
     const label = document.createElement("label");
-    label.className = "choice-line";
+    label.className = "choice-line touch-choice";
     label.innerHTML = `
       <input type="checkbox" value="${option}" />
       <span>${option}</span>
@@ -51,8 +58,8 @@ function createMatchingFields(item) {
   const wrapper = document.createElement("div");
   wrapper.className = "field-stack";
 
-  const pairs = item.pairs || [];
-  const rightOptions = item.rightOptions || pairs.map((pair) => pair.right);
+  const pairs = item.pairs || (item.leftItems || []).map((left) => ({ left }));
+  const rightOptions = item.rightOptions || item.rightItems || pairs.map((pair) => pair.right);
 
   pairs.forEach((pair) => {
     const row = document.createElement("div");
@@ -96,7 +103,7 @@ function createOrderingFields(item) {
   const wrapper = document.createElement("div");
   wrapper.className = "field-stack";
 
-  const options = item.options || item.expected || [];
+  const options = item.options || item.tokens || item.expected || item.answer || [];
 
   options.forEach((_, index) => {
     const row = document.createElement("div");
@@ -134,7 +141,7 @@ function createOrderingFields(item) {
   };
 }
 
-export function createTrainingItemCard({ item, onValidate }) {
+export function createTrainingItemCard({ item, index, onValidate }) {
   const type = normalizeType(item.type || "single-choice");
   const card = document.createElement("article");
   card.className = "card training-item-card";
@@ -144,7 +151,7 @@ export function createTrainingItemCard({ item, onValidate }) {
 
   const badge = document.createElement("p");
   badge.className = "muted";
-  badge.textContent = `Type: ${type} · ${item.points || 1} point`;
+  badge.textContent = `Item ${index || "?"}/7 · type: ${type} · ${item.points || 1} point`;
 
   let renderer;
   if (type === "single-choice") {
@@ -166,7 +173,7 @@ export function createTrainingItemCard({ item, onValidate }) {
   const button = document.createElement("button");
   button.type = "button";
   button.className = "btn btn-primary";
-  button.textContent = "Valider l'item";
+  button.textContent = "Valider";
 
   button.addEventListener("click", () => {
     const result = onValidate(renderer.getResponse());
