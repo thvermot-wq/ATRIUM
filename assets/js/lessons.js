@@ -7,6 +7,7 @@ export const LESSONS_SPEC = {
   productionMax: 3,
   periodMax: 120,
   validationPercent: 80,
+  validationMinScore: 96,
 };
 
 export const periods = [

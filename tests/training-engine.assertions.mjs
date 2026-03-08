@@ -51,6 +51,25 @@ function run() {
   assert.equal(evaluateTrainingItem(orderingItem, ["puella", "aquam", "portat"]).isCorrect, true);
   assert.equal(evaluateTrainingItem(orderingItem, ["aquam", "puella", "portat"]).isCorrect, false);
 
+
+  const aliasSingleItem = {
+    id: "i5",
+    type: "singleChoice",
+    prompt: "...",
+    expected: "salve",
+    points: 1,
+  };
+  assert.equal(evaluateTrainingItem(aliasSingleItem, "salve").isCorrect, true);
+
+  const textInputItem = {
+    id: "i6",
+    type: "textInput",
+    prompt: "...",
+    expected: "domus",
+    points: 1,
+  };
+  assert.equal(evaluateTrainingItem(textInputItem, " Domus.").isCorrect, true);
+
   const progress = computeTrainingProgress(
     [singleItem, multipleItem, matchingItem, orderingItem],
     {
