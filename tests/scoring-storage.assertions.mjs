@@ -31,9 +31,9 @@ function run() {
   assert.deepEqual(computeLessonScore({ trainingScore: 7, productionScore: 3 }).totalScore, 10);
   assert.deepEqual(computeLessonScore({ trainingScore: 9, productionScore: 5 }).totalScore, 10);
 
-  // /50 period scoring + percentage
-  const periodData = computePeriodScore({ lessonScores: [10, 10, 10, 10, 10], periodMax: 50 });
-  assert.equal(periodData.totalScore, 50);
+  // /120 period scoring + percentage
+  const periodData = computePeriodScore({ lessonScores: Array(12).fill(10), periodMax: 120 });
+  assert.equal(periodData.totalScore, 120);
   assert.equal(periodData.percent, 100);
 
   // status thresholds 80/60

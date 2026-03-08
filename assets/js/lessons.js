@@ -1,12 +1,13 @@
 export const LESSONS_SPEC = {
   periods: 3,
-  lessonsPerPeriod: 5,
-  lessonsTotal: 15,
+  lessonsPerPeriod: 12,
+  lessonsTotal: 36,
   lessonMax: 10,
   trainingMax: 7,
   productionMax: 3,
-  periodMax: 50,
+  periodMax: 120,
   validationPercent: 80,
+  validationMinScore: 96,
 };
 
 export const periods = [
@@ -538,6 +539,48 @@ export const lessons = [
       tags: ["reconnaître", "fonctions", "phrase-simple"],
     },
   },
+  createPlaceholderLesson({
+    id: "p1-l16",
+    period: 1,
+    title: "P1 — Leçon 6 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 1.",
+  }),
+  createPlaceholderLesson({
+    id: "p1-l17",
+    period: 1,
+    title: "P1 — Leçon 7 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 1.",
+  }),
+  createPlaceholderLesson({
+    id: "p1-l18",
+    period: 1,
+    title: "P1 — Leçon 8 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 1.",
+  }),
+  createPlaceholderLesson({
+    id: "p1-l19",
+    period: 1,
+    title: "P1 — Leçon 9 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 1.",
+  }),
+  createPlaceholderLesson({
+    id: "p1-l20",
+    period: 1,
+    title: "P1 — Leçon 10 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 1.",
+  }),
+  createPlaceholderLesson({
+    id: "p1-l21",
+    period: 1,
+    title: "P1 — Leçon 11 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 1.",
+  }),
+  createPlaceholderLesson({
+    id: "p1-l22",
+    period: 1,
+    title: "P1 — Leçon 12 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 1.",
+  }),
   {
     id: "p2-l6",
     period: 2,
@@ -653,6 +696,48 @@ export const lessons = [
     ],
     meta: { status: "ready", tags: ["micro-thème", "synthèse", "latin-français"] },
   },
+  createPlaceholderLesson({
+    id: "p2-l23",
+    period: 2,
+    title: "P2 — Leçon 6 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 2.",
+  }),
+  createPlaceholderLesson({
+    id: "p2-l24",
+    period: 2,
+    title: "P2 — Leçon 7 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 2.",
+  }),
+  createPlaceholderLesson({
+    id: "p2-l25",
+    period: 2,
+    title: "P2 — Leçon 8 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 2.",
+  }),
+  createPlaceholderLesson({
+    id: "p2-l26",
+    period: 2,
+    title: "P2 — Leçon 9 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 2.",
+  }),
+  createPlaceholderLesson({
+    id: "p2-l27",
+    period: 2,
+    title: "P2 — Leçon 10 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 2.",
+  }),
+  createPlaceholderLesson({
+    id: "p2-l28",
+    period: 2,
+    title: "P2 — Leçon 11 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 2.",
+  }),
+  createPlaceholderLesson({
+    id: "p2-l29",
+    period: 2,
+    title: "P2 — Leçon 12 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 2.",
+  }),
   {
     id: "p3-l11",
     period: 3,
@@ -838,6 +923,48 @@ export const lessons = [
     ],
     meta: { status: "ready", tags: ["synthèse", "structure", "période-3"] },
   },
+  createPlaceholderLesson({
+    id: "p3-l30",
+    period: 3,
+    title: "P3 — Leçon 6 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
+  }),
+  createPlaceholderLesson({
+    id: "p3-l31",
+    period: 3,
+    title: "P3 — Leçon 7 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
+  }),
+  createPlaceholderLesson({
+    id: "p3-l32",
+    period: 3,
+    title: "P3 — Leçon 8 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
+  }),
+  createPlaceholderLesson({
+    id: "p3-l33",
+    period: 3,
+    title: "P3 — Leçon 9 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
+  }),
+  createPlaceholderLesson({
+    id: "p3-l34",
+    period: 3,
+    title: "P3 — Leçon 10 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
+  }),
+  createPlaceholderLesson({
+    id: "p3-l35",
+    period: 3,
+    title: "P3 — Leçon 11 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
+  }),
+  createPlaceholderLesson({
+    id: "p3-l36",
+    period: 3,
+    title: "P3 — Leçon 12 (placeholder)",
+    objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
+  }),
 ];
 
 export function getLessonsByPeriod(periodId) {

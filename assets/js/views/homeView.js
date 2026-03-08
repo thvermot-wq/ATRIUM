@@ -4,7 +4,7 @@ export function renderHomeView({ onOpenDashboard, onOpenResults }) {
   section.innerHTML = `
     <h2>Bienvenue dans ATRIUM</h2>
     <p>
-      Plateforme progressive de latin : 3 périodes, 15 leçons, entraînement (/7) + production guidée (/3),
+      Plateforme progressive de latin : 3 périodes, 36 leçons, entraînement (/7) + production guidée (/3),
       validation de période à 80%.
     </p>
     <div class="actions-row">

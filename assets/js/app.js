@@ -6,13 +6,14 @@ import { renderApp } from "./ui.js";
 
 const CANONICAL_SPEC = {
   periods: 3,
-  lessonsPerPeriod: 5,
-  lessonsTotal: 15,
+  lessonsPerPeriod: 12,
+  lessonsTotal: 36,
   lessonMax: 10,
   trainingMax: 7,
   productionMax: 3,
-  periodMax: 50,
+  periodMax: 120,
   validationPercent: 80,
+  validationMinScore: 96,
 };
 
 function assertInvariants() {
@@ -26,6 +27,7 @@ function assertInvariants() {
   if (LESSONS_SPEC.productionMax !== CANONICAL_SPEC.productionMax) errors.push(`Le score de production doit rester à ${CANONICAL_SPEC.productionMax}.`);
   if (LESSONS_SPEC.periodMax !== CANONICAL_SPEC.periodMax) errors.push(`Le score max d'une période doit rester à ${CANONICAL_SPEC.periodMax}.`);
   if (LESSONS_SPEC.validationPercent !== CANONICAL_SPEC.validationPercent) errors.push(`Le seuil de validation doit rester à ${CANONICAL_SPEC.validationPercent}%.`);
+  if (LESSONS_SPEC.validationMinScore !== CANONICAL_SPEC.validationMinScore) errors.push(`Le score minimal de validation doit rester à ${CANONICAL_SPEC.validationMinScore}/${CANONICAL_SPEC.periodMax}.`);
 
   if (periods.length !== LESSONS_SPEC.periods) errors.push("Incohérence entre spec et périodes déclarées.");
   if (lessons.length !== LESSONS_SPEC.lessonsTotal) errors.push("Incohérence entre spec et leçons déclarées.");

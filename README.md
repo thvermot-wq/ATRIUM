@@ -7,17 +7,18 @@ ATRIUM est conçu comme un parcours structuré et data-driven : l’élève prog
 
 ## Architecture pédagogique canonique (non négociable)
 - 3 périodes
-- 5 leçons par période
-- 15 leçons au total
+- 12 leçons par période
+- 36 leçons au total
 - 10 points par leçon
 - 7 points d’entraînement auto-corrigé
 - 3 points de production écrite guidée
-- 50 points par période
-- Validation d’une période à partir de 80 %
+- 120 points par période
+- Validation d’une période à partir de 80 % (seuil minimal : 96 / 120)
 
 ## Logique de scoring (contrat)
+- score minimal de validation : `96 / 120`
 - **Leçon** = `training (/7) + production (/3) = total (/10)`
-- **Période** = somme des 5 leçons = `/50`
+- **Période** = somme des 12 leçons = `/120`
 - **Statut période** : validée si pourcentage `>= 80%`
 - Le scoring est contractuel et ne doit pas être modifié hors décision produit explicite.
 
@@ -27,8 +28,8 @@ Cette étape implémente l’**app shell navigable** et un **modèle pédagogiqu
 - dashboard (`#/dashboard`)
 - vue leçon (`#/lesson/:lessonId`)
 - vue résultats placeholder (`#/results`)
-- 15 leçons déclarées dans les données (3 périodes × 5)
-- 15 leçons entièrement remplies : `p1-l1` à `p3-l15`
+- 36 leçons déclarées dans les données (3 périodes × 12)
+- 15 leçons historiques entièrement remplies + placeholders structurels jusqu'à 36 leçons
 
 
 ## Leçons jouables actuellement (end-to-end)
@@ -49,13 +50,13 @@ Les leçons entièrement jouables dans cette version sont :
 - `p3-l14` — Comprendre une micro-scène
 - `p3-l15` — Synthèse guidée période 3
 
-Pour ces 15 leçons :
+Pour les leçons actuellement finalisées :
 - entraînement 7 items jouables avec feedback immédiat
 - production guidée 3 champs texte corrigés automatiquement
 - synthèse finale de leçon affichée (`/7`, `/3`, `/10`)
 - persistance score courant + meilleur score via `localStorage`
 
-Toutes les leçons sont désormais structurées et jouables dans cette version.
+Les nouvelles leçons structurelles (passage à 12 leçons/période) sont ajoutées en placeholders explicites pour maintenir une app cohérente avant injection du nouveau contenu détaillé.
 
 ## Structure du repository
 
@@ -175,7 +176,7 @@ Structure stockée dans `localStorage` (`atrium-progress-v1`) :
     }
   },
   "periods": {
-    "p1": {"totalScore": 0, "maxScore": 50, "percent": 0, "status": "période à reprendre"}
+    "p1": {"totalScore": 0, "maxScore": 120, "percent": 0, "status": "période à reprendre"}
   },
   "updatedAt": "..."
 }
@@ -189,7 +190,7 @@ Comportement de rejeu :
 
 ## Dashboard et lecture de progression
 Le dashboard affiche désormais, à partir des données réelles de progression :
-- pour chaque période : score total `/50`, pourcentage, statut (`validée`, `consolidation nécessaire`, `à reprendre`) ;
+- pour chaque période : score total `/120`, pourcentage, statut (`validée`, `consolidation nécessaire`, `à reprendre`) ;
 - pour chaque leçon : score courant `/10`, meilleur score `/10`, état `jouée/non jouée`.
 
 La vue résultats reprend la même logique avec un détail par période et par leçon.
