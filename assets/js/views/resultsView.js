@@ -12,18 +12,21 @@ function getPlayedState(lessonProgress) {
 
 export function renderResultsView({ onOpenDashboard, progress }) {
   const section = document.createElement("section");
-  section.className = "stack";
+  section.className = "stack results-view";
 
   const summary = document.createElement("article");
-  summary.className = "card";
+  summary.className = "card results-summary";
   summary.innerHTML = `
     <h2>Résultats</h2>
     <p class="muted">Barème leçon : ${LESSONS_SPEC.trainingMax} + ${LESSONS_SPEC.productionMax} = ${LESSONS_SPEC.lessonMax}</p>
     <p class="muted">Barème période : ${LESSONS_SPEC.periodMax}</p>
+    <div class="actions-row results-actions-top">
+      <button type="button" class="btn btn-primary" data-action="back-top">Retour au dashboard</button>
+    </div>
   `;
 
   const periodList = document.createElement("div");
-  periodList.className = "stack";
+  periodList.className = "stack results-period-list";
 
   periods.forEach((period) => {
     const data = progress?.periods?.[period.id] || {
@@ -34,7 +37,7 @@ export function renderResultsView({ onOpenDashboard, progress }) {
     };
 
     const card = document.createElement("article");
-    card.className = "card stack";
+    card.className = "card stack results-period-card";
 
     const lessons = getLessonsByPeriod(period.id);
     const lessonLines = lessons
@@ -43,15 +46,23 @@ export function renderResultsView({ onOpenDashboard, progress }) {
         const current = lessonProgress?.current?.totalScore ?? 0;
         const best = lessonProgress?.best?.totalScore ?? 0;
         const playedState = getPlayedState(lessonProgress);
-        return `<li>${lesson.title} (${lesson.id}) · ${playedState} · courant ${current}/10 · meilleur ${best}/10</li>`;
+
+        return `
+          <li class="results-lesson-item">
+            <span class="results-lesson-title">${lesson.title} (${lesson.id})</span>
+            <span class="results-lesson-meta">${playedState} · actuel ${current}/10 · meilleur ${best}/10</span>
+          </li>
+        `;
       })
       .join("");
 
     card.innerHTML = `
       <h3>${period.title}</h3>
-      <p><strong>Total :</strong> ${data.totalScore}/${data.maxScore}</p>
-      <p><strong>Pourcentage :</strong> ${data.percent}%</p>
-      <p class="period-status-chip ${getStatusClass(data.status)}">${data.status}</p>
+      <div class="period-stats period-stats-grid">
+        <p class="period-stat"><span class="period-stat-label">Score</span><strong>${data.totalScore}/${data.maxScore}</strong></p>
+        <p class="period-stat"><span class="period-stat-label">Pourcentage</span><strong>${data.percent}%</strong></p>
+        <p class="period-status-chip ${getStatusClass(data.status)}">${data.status}</p>
+      </div>
       <ul class="results-lesson-list">${lessonLines}</ul>
     `;
 
@@ -60,9 +71,11 @@ export function renderResultsView({ onOpenDashboard, progress }) {
 
   const back = document.createElement("button");
   back.type = "button";
-  back.className = "btn btn-primary";
+  back.className = "btn btn-primary results-back-btn";
   back.textContent = "Retour au dashboard";
   back.addEventListener("click", onOpenDashboard);
+
+  summary.querySelector('[data-action="back-top"]').addEventListener("click", onOpenDashboard);
 
   section.append(summary, periodList, back);
   return section;
