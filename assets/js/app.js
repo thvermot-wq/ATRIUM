@@ -94,16 +94,32 @@ function boot() {
     };
   }
 
-  const router = initRouter({
+  let router = null;
+  let pendingInitialRoute = null;
+
+  function renderRoute(route) {
+    renderApp(root, {
+      router,
+      route,
+      progress,
+      onSaveLessonScore,
+    });
+  }
+
+  router = initRouter({
     onRouteChange(route) {
-      renderApp(root, {
-        router,
-        route,
-        progress,
-        onSaveLessonScore,
-      });
+      if (!router) {
+        pendingInitialRoute = route;
+        return;
+      }
+      renderRoute(route);
     },
   });
+
+  if (pendingInitialRoute) {
+    renderRoute(pendingInitialRoute);
+    pendingInitialRoute = null;
+  }
 
   window.ATRIUM_BOOT = {
     scoring,
