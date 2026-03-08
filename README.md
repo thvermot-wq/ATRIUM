@@ -30,6 +30,7 @@ Cette étape implémente l’**app shell navigable** et un **modèle pédagogiqu
 - dashboard (`#/dashboard`)
 - vue leçon (`#/lesson/:lessonId`)
 - vue résultats placeholder (`#/results`)
+- vue diplôme imprimable (`#/diploma/:periodId`)
 - 36 leçons déclarées dans les données (3 périodes × 12)
 - Période 1 entièrement implémentée : `p1-l1` à `p1-l12`
 
@@ -173,6 +174,30 @@ Format de sauvegarde :
 
 Limite importante :
 - sans backend, la continuité entre plusieurs appareils repose sur l'export/import manuel du fichier JSON.
+
+
+## Diplôme de progression par période
+Le dashboard affiche désormais un bouton **Générer diplôme** dans l'en-tête de chaque période.
+
+Règles d'éligibilité :
+- toutes les leçons de la période doivent être terminées au moins une fois ;
+- le **meilleur score** de la période doit être `>= 96/120` (80 %).
+
+Le diplôme contient :
+- nom élève (fallback : `Élève ATRIUM`) et classe si renseignée ;
+- période validée ;
+- score `/120` ;
+- certification scolaire de période ;
+- référencement CECRL adapté – profil LCA ;
+- date ;
+- mention responsable et copyright.
+
+Mapping CECRL adapté – profil LCA :
+- Période 1 : `96–107` → `Pré-A1 validé – profil LCA`, `108–120` → `Pré-A1+ validé – profil LCA`
+- Période 2 : `96–107` → `Pré-A1+ validé – profil LCA`, `108–120` → `A1 émergent – profil LCA`
+- Période 3 : `96–107` → `A1 émergent validé – profil LCA`, `108–120` → `A1 réception écrite guidée validé – profil LCA`
+
+Le document est conçu pour l'impression navigateur (ou export PDF via *Imprimer / Enregistrer en PDF*) avec un style écran + print dédié.
 
 ## API scoring, progression et persistance
 Fonctions principales :

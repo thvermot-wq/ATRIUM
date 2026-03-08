@@ -2,6 +2,7 @@ import { renderHomeView } from "./views/homeView.js";
 import { renderDashboardView } from "./views/dashboardView.js";
 import { renderLessonView } from "./views/lessonView.js";
 import { renderResultsView } from "./views/resultsView.js";
+import { renderDiplomaView } from "./views/diplomaView.js";
 
 function createTopNav({ navigate, currentRouteName }) {
   const nav = document.createElement("nav");
@@ -77,6 +78,7 @@ export function renderApp(rootElement, { router, route, progress, saveStatus, on
     onOpenDashboard: () => router.navigate("#/dashboard"),
     onOpenResults: () => router.navigate("#/results"),
     onOpenLesson: (lessonId) => router.navigate(`#/lesson/${lessonId}`),
+    onOpenDiploma: (periodId) => router.navigate(`#/diploma/${periodId}`),
     onBackDashboard: () => router.navigate("#/dashboard"),
     onOpenHome: () => router.navigate("#/"),
     onSaveLessonScore,
@@ -92,6 +94,13 @@ export function renderApp(rootElement, { router, route, progress, saveStatus, on
     viewNode = renderLessonView({ ...callbacks, lessonId: route.params.lessonId, progress });
   } else if (route.name === "results") {
     viewNode = renderResultsView({ ...callbacks, progress });
+  } else if (route.name === "diploma") {
+    viewNode = renderDiplomaView({
+      periodId: route.params.periodId,
+      progress,
+      saveStatus,
+      onBackDashboard: callbacks.onOpenDashboard,
+    });
   } else {
     viewNode = renderNotFoundView(callbacks);
   }

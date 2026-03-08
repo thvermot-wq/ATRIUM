@@ -1,5 +1,6 @@
 import { periods, getLessonsByPeriod } from "../lessons.js";
 import { createPeriodCard } from "../components/periodCard.js";
+import { isPeriodDiplomaEligible } from "../diploma.js";
 
 function formatDateTime(value) {
   if (!value) return "—";
@@ -177,6 +178,7 @@ export function renderDashboardView({
   onResetProgress,
   onUpdateStudentMeta,
   canShareSave,
+  onOpenDiploma,
 }) {
   const wrapper = document.createElement("section");
   wrapper.className = "stack dashboard-view";
@@ -209,6 +211,8 @@ export function renderDashboardView({
   periods.forEach((period) => {
     const periodLessons = getLessonsByPeriod(period.id);
     const periodProgress = progress?.periods?.[period.id];
+    const isDiplomaEligible = isPeriodDiplomaEligible(period.id, progress);
+
     grid.appendChild(
       createPeriodCard({
         period,
@@ -216,6 +220,10 @@ export function renderDashboardView({
         periodProgress,
         lessonProgressMap: progress?.lessons || {},
         onOpenLesson,
+        isDiplomaEligible,
+        diplomaDisabledReason:
+          "Diplôme disponible après validation complète de la période (toutes les leçons terminées et score ≥ 80 %).",
+        onOpenDiploma,
       }),
     );
   });

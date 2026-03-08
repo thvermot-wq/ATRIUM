@@ -22,6 +22,11 @@ function parseHashRoute() {
     return { name: "lesson", path, params: { lessonId } };
   }
 
+  if (path.startsWith("/diploma/")) {
+    const periodId = path.replace("/diploma/", "");
+    return { name: "diploma", path, params: { periodId } };
+  }
+
   return { name: "notFound", path, params: {} };
 }
 
