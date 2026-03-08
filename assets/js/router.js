@@ -25,9 +25,31 @@ function parseHashRoute() {
   return { name: "notFound", path, params: {} };
 }
 
+function resetScrollTop() {
+  const appRoot = document.getElementById("app");
+  const targets = [window, document.documentElement, document.body, appRoot, appRoot?.querySelector?.(".app-main")].filter(Boolean);
+
+  targets.forEach((target) => {
+    if (target === window) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      return;
+    }
+
+    if (typeof target.scrollTo === "function") {
+      target.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    } else if ("scrollTop" in target) {
+      target.scrollTop = 0;
+      target.scrollLeft = 0;
+    }
+  });
+}
+
 export function initRouter({ onRouteChange }) {
   function handleRouteChange() {
+    resetScrollTop();
     onRouteChange(parseHashRoute());
+    requestAnimationFrame(resetScrollTop);
+    window.setTimeout(resetScrollTop, 0);
   }
 
   function start() {

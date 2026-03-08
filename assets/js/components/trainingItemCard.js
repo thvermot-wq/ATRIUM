@@ -1,3 +1,5 @@
+import { applyFrenchTypography } from "../typography.js";
+
 function normalizeType(type = "") {
   if (type === "mcq") return "single-choice";
   if (type === "singleChoice") return "single-choice";
@@ -147,7 +149,7 @@ export function createTrainingItemCard({ item, index, onValidate }) {
   card.className = "card training-item-card";
 
   const title = document.createElement("h4");
-  title.textContent = item.prompt;
+  title.textContent = applyFrenchTypography(item.prompt);
 
   const badge = document.createElement("p");
   badge.className = "muted";
@@ -179,7 +181,9 @@ export function createTrainingItemCard({ item, index, onValidate }) {
 
   button.addEventListener("click", () => {
     const result = onValidate(renderer.getResponse());
-    feedback.textContent = result.isCorrect ? "✅ Correct" : "❌ Incorrect";
+    const success = applyFrenchTypography(item?.feedback?.correct || "✅ Correct");
+    const failure = applyFrenchTypography(item?.feedback?.incorrect || "❌ Incorrect");
+    feedback.textContent = result.isCorrect ? success : failure;
     feedback.className = `feedback-inline ${result.isCorrect ? "ok" : "ko"}`;
   });
 

@@ -1,9 +1,11 @@
+import { applyFrenchTypography } from "../typography.js";
+
 export function createProductionItemCard({ item, index, onEvaluate }) {
   const card = document.createElement("article");
   card.className = "card production-item-card";
 
   const title = document.createElement("h4");
-  title.textContent = item.prompt || "Production guidée";
+  title.textContent = applyFrenchTypography(item.prompt || "Production guidée");
 
   const hint = document.createElement("p");
   hint.className = "muted";
@@ -31,7 +33,9 @@ export function createProductionItemCard({ item, index, onEvaluate }) {
   button.addEventListener("click", () => {
     const result = onEvaluate(input.value);
 
-    feedback.textContent = result.isCorrect ? "✅ Correct" : "❌ Incorrect";
+    const success = applyFrenchTypography(item?.feedback?.correct || "✅ Correct");
+    const failure = applyFrenchTypography(item?.feedback?.incorrect || "❌ Incorrect");
+    feedback.textContent = result.isCorrect ? success : failure;
     feedback.className = `feedback-inline ${result.isCorrect ? "ok" : "ko"}`;
 
     if (!result.isCorrect) {

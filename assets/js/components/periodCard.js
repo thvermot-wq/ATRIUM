@@ -1,4 +1,5 @@
 import { createProgressBar } from "./progressBar.js";
+import { applyFrenchTypography } from "../typography.js";
 
 function getStatusClass(status) {
   if (status === "période validée") return "status-ok";
@@ -15,11 +16,11 @@ export function createPeriodCard({ period, lessons, periodProgress, lessonProgre
   card.className = "card period-card";
 
   const title = document.createElement("h3");
-  title.textContent = `${period.title} · ${period.level}`;
+  title.textContent = applyFrenchTypography(`${period.title} · ${period.level}`);
 
   const objective = document.createElement("p");
   objective.className = "muted";
-  objective.textContent = period.objective;
+  objective.textContent = applyFrenchTypography(period.objective);
 
   const safePeriod =
     periodProgress ||
@@ -60,7 +61,7 @@ export function createPeriodCard({ period, lessons, periodProgress, lessonProgre
     button.type = "button";
     button.className = "btn btn-link lesson-line";
     button.innerHTML = `
-      <span class="lesson-title">${lesson.title} (${lesson.id})</span>
+      <span class="lesson-title">${applyFrenchTypography(lesson.title)} (${lesson.id})</span>
       <span class="lesson-meta">${playedState} · ${current}/10 (actuel) · ${best}/10 (meilleur)</span>
     `;
     button.addEventListener("click", () => onOpenLesson(lesson.id));

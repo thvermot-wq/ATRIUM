@@ -1,4 +1,5 @@
 import { LESSONS_SPEC, periods, getLessonsByPeriod } from "../lessons.js";
+import { applyFrenchTypography } from "../typography.js";
 
 function getStatusClass(status) {
   if (status === "période validée") return "status-ok";
@@ -49,7 +50,7 @@ export function renderResultsView({ onOpenDashboard, progress }) {
 
         return `
           <li class="results-lesson-item">
-            <span class="results-lesson-title">${lesson.title} (${lesson.id})</span>
+            <span class="results-lesson-title">${applyFrenchTypography(lesson.title)} (${lesson.id})</span>
             <span class="results-lesson-meta">${playedState} · actuel ${current}/10 · meilleur ${best}/10</span>
           </li>
         `;
@@ -57,7 +58,7 @@ export function renderResultsView({ onOpenDashboard, progress }) {
       .join("");
 
     card.innerHTML = `
-      <h3>${period.title}</h3>
+      <h3>${applyFrenchTypography(period.title)}</h3>
       <div class="period-stats period-stats-grid">
         <p class="period-stat"><span class="period-stat-label">Score</span><strong>${data.totalScore}/${data.maxScore}</strong></p>
         <p class="period-stat"><span class="period-stat-label">Pourcentage</span><strong>${data.percent}%</strong></p>

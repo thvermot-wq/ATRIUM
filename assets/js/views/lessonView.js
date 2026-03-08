@@ -4,6 +4,7 @@ import { createTrainingItemCard } from "../components/trainingItemCard.js";
 import { createProductionItemCard } from "../components/productionItemCard.js";
 import { evaluateTrainingItem, computeTrainingProgress } from "../trainingEngine.js";
 import { evaluateProductionItem, computeProductionProgress } from "../productionEngine.js";
+import { applyFrenchTypography } from "../typography.js";
 
 function isLessonPlayable(lesson) {
   return (
@@ -45,28 +46,28 @@ function createLessonCourseHeader(lesson) {
   if (hasPoint) {
     const block = document.createElement("section");
     block.className = "lesson-course-block";
-    block.innerHTML = `<h4>Point cours</h4><p>${lesson.coursePoint}</p>`;
+    block.innerHTML = `<h4>Point cours</h4><p>${applyFrenchTypography(lesson.coursePoint)}</p>`;
     grid.appendChild(block);
   }
 
   if (hasExample) {
     const block = document.createElement("section");
     block.className = "lesson-course-block";
-    block.innerHTML = `<h4>Exemple</h4><p>${lesson.courseExample}</p>`;
+    block.innerHTML = `<h4>Exemple</h4><p>${applyFrenchTypography(lesson.courseExample)}</p>`;
     grid.appendChild(block);
   }
 
   if (hasCanDo) {
     const block = document.createElement("section");
     block.className = "lesson-course-block";
-    block.innerHTML = `<h4>Je peux...</h4><p>${lesson.canDo}</p>`;
+    block.innerHTML = `<h4>Je peux...</h4><p>${applyFrenchTypography(lesson.canDo)}</p>`;
     grid.appendChild(block);
   }
 
   if (hasLexicon) {
     const block = document.createElement("section");
     block.className = "lesson-course-block";
-    block.innerHTML = `<h4>Lexique cible</h4><p>${lesson.lexiconFocus.join(" · ")}</p>`;
+    block.innerHTML = `<h4>Lexique cible</h4><p>${applyFrenchTypography(lesson.lexiconFocus.join(" · "))}</p>`;
     grid.appendChild(block);
   }
 
@@ -110,9 +111,9 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
     const pending = document.createElement("article");
     pending.className = "card";
     pending.innerHTML = `
-      <h2>${lesson.title}</h2>
+      <h2>${applyFrenchTypography(lesson.title)}</h2>
       <p class="muted">${lesson.id} · Période ${lesson.period}</p>
-      <p><strong>Objectif :</strong> ${lesson.objective}</p>
+      <p><strong>Objectif :</strong> ${applyFrenchTypography(lesson.objective)}</p>
       <p class="muted">Cette leçon n'est pas encore jouable de bout en bout dans cette version.</p>
       <p class="muted">Score enregistré: courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
       <div class="actions-row">
@@ -226,9 +227,9 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
   lessonMetrics.append(trainingState, productionState, totalPreview);
 
   hero.innerHTML = `
-    <h2>${lesson.title}</h2>
+    <h2>${applyFrenchTypography(lesson.title)}</h2>
     <p class="muted">${lesson.id} · Période ${lesson.period}</p>
-    <p><strong>Objectif :</strong> ${lesson.objective}</p>
+    <p><strong>Objectif :</strong> ${applyFrenchTypography(lesson.objective)}</p>
     <p class="muted">Score enregistré: courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
     <p class="muted">Phase entraînement: 7 micro-items (1 point/item), correction immédiate.</p>
     <p class="muted">Phase production: 3 productions écrites guidées (1 point/item), correction automatique.</p>
@@ -286,8 +287,8 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
   form.querySelector('[data-action="results"]').addEventListener("click", onOpenResults);
 
   const feedback = createFeedbackBox({
-    title: "Moteur générique entraînement + production",
-    text: "La leçon reste data-driven. Entraînement (/7) et production guidée (/3) sont évalués séparément puis combinés en total /10.",
+    title: applyFrenchTypography("Moteur générique entraînement + production"),
+    text: applyFrenchTypography("La leçon reste data-driven. Entraînement (/7) et production guidée (/3) sont évalués séparément puis combinés en total /10."),
   });
 
   if (lessonCourseHeader) {
