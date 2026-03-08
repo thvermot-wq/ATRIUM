@@ -162,6 +162,8 @@ export function createTrainingItemCard({ item, index, onValidate }) {
     renderer = createMatchingFields(item);
   } else if (type === "ordering") {
     renderer = createOrderingFields(item);
+  } else if (type === "text-input") {
+    renderer = createTextInputFields(item);
   } else {
     throw new Error(`Unsupported training item type in renderer: ${item.type}`);
   }

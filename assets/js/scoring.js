@@ -7,6 +7,7 @@ export function getScoringContract() {
     productionMax: LESSONS_SPEC.productionMax,
     periodMax: LESSONS_SPEC.periodMax,
     validationPercent: LESSONS_SPEC.validationPercent,
+    validationMinScore: LESSONS_SPEC.validationMinScore,
   };
 }
 

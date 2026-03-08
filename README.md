@@ -18,6 +18,7 @@ ATRIUM est conçu comme un parcours structuré et data-driven : l’élève prog
 - Validation d’une période à partir de 80 % (96 / 120)
 
 ## Logique de scoring (contrat)
+- score minimal de validation : `96 / 120`
 - **Leçon** = `training (/7) + production (/3) = total (/10)`
 - **Période** = somme des 12 leçons = `/120`
 - **Statut période** : validée si pourcentage `>= 80%`
@@ -192,7 +193,7 @@ Structure stockée dans `localStorage` (`atrium-progress-v1`) :
     }
   },
   "periods": {
-    "p1": {"totalScore": 0, "maxScore": 50, "percent": 0, "status": "période à reprendre"}
+    "p1": {"totalScore": 0, "maxScore": 120, "percent": 0, "status": "période à reprendre"}
   },
   "updatedAt": "..."
 }
