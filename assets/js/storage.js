@@ -2,8 +2,6 @@ import { LESSONS_SPEC } from "./lessons.js";
 import { computeLessonScore, computePeriodScore } from "./scoring.js";
 
 export const STORAGE_KEY = "atrium-progress-v1";
-export const SAVE_STATUS_KEY = "atrium-save-status-v1";
-export const PROGRESS_BACKUP_KEY = "atrium-progress-backup-v1";
 
 function defaultLessonProgress() {
   return {
@@ -29,18 +27,6 @@ function defaultPeriodProgress() {
     maxScore: LESSONS_SPEC.periodMax,
     percent: 0,
     status: "période à reprendre",
-  };
-}
-
-function defaultSaveStatus() {
-  return {
-    studentName: "",
-    className: "",
-    studentId: "",
-    lastLocalSaveAt: null,
-    lastExportedAt: null,
-    lastImportedAt: null,
-    lastSharedAt: null,
   };
 }
 
@@ -70,34 +56,6 @@ function safelyParse(raw) {
   }
 }
 
-function normalizeProgressShape({ sourceProgress, lessons, periods }) {
-  const fallback = createInitialProgress({ lessons, periods });
-
-  const merged = {
-    ...fallback,
-    ...(sourceProgress || {}),
-    lessons: { ...fallback.lessons, ...(sourceProgress?.lessons || {}) },
-    periods: { ...fallback.periods, ...(sourceProgress?.periods || {}) },
-  };
-
-  Object.keys(merged.lessons).forEach((lessonId) => {
-    const entry = merged.lessons[lessonId] || {};
-    merged.lessons[lessonId] = {
-      current: {
-        ...defaultLessonProgress().current,
-        ...(entry.current || {}),
-      },
-      best: {
-        ...defaultLessonProgress().best,
-        ...(entry.best || {}),
-      },
-      playedAt: typeof entry.playedAt === "string" ? entry.playedAt : null,
-    };
-  });
-
-  return merged;
-}
-
 export function recomputePeriodProgress({ progress, lessons, periods }) {
   const next = {
     ...progress,
@@ -121,73 +79,42 @@ export function recomputePeriodProgress({ progress, lessons, periods }) {
   return next;
 }
 
-export function importProgressData({ data, lessons, periods }) {
-  const normalized = normalizeProgressShape({ sourceProgress: data, lessons, periods });
-  return recomputePeriodProgress({ progress: normalized, lessons, periods });
-}
-
 export function loadProgress({ lessons, periods }) {
+  const fallback = createInitialProgress({ lessons, periods });
+
   const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) return createInitialProgress({ lessons, periods });
+  if (!raw) return fallback;
 
   const parsed = safelyParse(raw);
-  if (!parsed || typeof parsed !== "object") return createInitialProgress({ lessons, periods });
+  if (!parsed || typeof parsed !== "object") return fallback;
 
-  return importProgressData({ data: parsed, lessons, periods });
-}
+  const merged = {
+    ...fallback,
+    ...parsed,
+    lessons: { ...fallback.lessons, ...(parsed.lessons || {}) },
+    periods: { ...fallback.periods, ...(parsed.periods || {}) },
+  };
 
-export function hasMeaningfulProgress(progress) {
-  if (!progress || typeof progress !== "object") return false;
-
-  return Object.values(progress.lessons || {}).some((entry) => {
-    const current = entry?.current?.totalScore ?? 0;
-    const best = entry?.best?.totalScore ?? 0;
-    return current > 0 || best > 0 || Boolean(entry?.playedAt);
+  Object.keys(merged.lessons).forEach((lessonId) => {
+    const entry = merged.lessons[lessonId] || {};
+    merged.lessons[lessonId] = {
+      current: {
+        ...defaultLessonProgress().current,
+        ...(entry.current || {}),
+      },
+      best: {
+        ...defaultLessonProgress().best,
+        ...(entry.best || {}),
+      },
+      playedAt: typeof entry.playedAt === "string" ? entry.playedAt : null,
+    };
   });
+
+  return recomputePeriodProgress({ progress: merged, lessons, periods });
 }
 
 export function saveProgress(progress) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
-}
-
-export function loadSaveStatus() {
-  const raw = localStorage.getItem(SAVE_STATUS_KEY);
-  if (!raw) return defaultSaveStatus();
-
-  const parsed = safelyParse(raw);
-  if (!parsed || typeof parsed !== "object") return defaultSaveStatus();
-
-  return {
-    ...defaultSaveStatus(),
-    ...parsed,
-  };
-}
-
-export function saveSaveStatus(saveStatus) {
-  localStorage.setItem(SAVE_STATUS_KEY, JSON.stringify(saveStatus));
-}
-
-export function updateSaveStatus(currentSaveStatus, patch) {
-  const next = {
-    ...defaultSaveStatus(),
-    ...(currentSaveStatus || {}),
-    ...(patch || {}),
-  };
-  saveSaveStatus(next);
-  return next;
-}
-
-export function saveProgressBackup(progress) {
-  const backup = {
-    backedUpAt: new Date().toISOString(),
-    progress,
-  };
-  localStorage.setItem(PROGRESS_BACKUP_KEY, JSON.stringify(backup));
-  return backup;
-}
-
-export function clearProgressStorage() {
-  localStorage.removeItem(STORAGE_KEY);
 }
 
 export function saveLessonProgress({ progress, lessonId, trainingScore, productionScore, lessons, periods }) {

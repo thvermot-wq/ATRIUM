@@ -30,27 +30,20 @@ export function initRouter({ onRouteChange }) {
     onRouteChange(parseHashRoute());
   }
 
-  function start() {
-    window.addEventListener("hashchange", handleRouteChange);
+  window.addEventListener("hashchange", handleRouteChange);
 
-    if (!window.location.hash) {
-      window.location.hash = DEFAULT_ROUTE;
-    }
-
-    handleRouteChange();
+  if (!window.location.hash) {
+    window.location.hash = DEFAULT_ROUTE;
   }
 
-  function navigate(to) {
-    window.location.hash = to;
-  }
-
-  function destroy() {
-    window.removeEventListener("hashchange", handleRouteChange);
-  }
+  handleRouteChange();
 
   return {
-    start,
-    navigate,
-    destroy,
+    navigate(to) {
+      window.location.hash = to;
+    },
+    destroy() {
+      window.removeEventListener("hashchange", handleRouteChange);
+    },
   };
 }

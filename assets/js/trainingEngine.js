@@ -13,28 +13,7 @@ function normalizeScalar(value) {
 
 function normalizeType(type = "") {
   if (type === "mcq") return "single-choice";
-  if (type === "singleChoice") return "single-choice";
-  if (type === "multipleChoice") return "multiple-choice";
   return type;
-}
-
-function getExpected(item) {
-  return item.expected ?? item.answer;
-}
-
-function getExpectedArray(item) {
-  return item.expected ?? item.answers ?? [];
-}
-
-function getExpectedMap(item) {
-  if (item.expected) return item.expected;
-  if (item.answers && !Array.isArray(item.answers)) return item.answers;
-  const left = item.leftItems || [];
-  const right = item.rightItems || [];
-  return left.reduce((acc, key, index) => {
-    acc[key] = right[index] || "";
-    return acc;
-  }, {});
 }
 
 function compareStringArrays(left, right) {
@@ -68,13 +47,13 @@ export function evaluateTrainingItem(item, userResponse) {
   let isCorrect = false;
 
   if (itemType === "single-choice") {
-    isCorrect = normalizeScalar(userResponse) === normalizeScalar(getExpected(item));
+    isCorrect = normalizeScalar(userResponse) === normalizeScalar(item.expected);
   } else if (itemType === "multiple-choice") {
-    isCorrect = compareStringArrays(userResponse, getExpectedArray(item));
+    isCorrect = compareStringArrays(userResponse, item.expected);
   } else if (itemType === "matching") {
-    isCorrect = compareMapping(userResponse, getExpectedMap(item));
+    isCorrect = compareMapping(userResponse, item.expected);
   } else if (itemType === "ordering") {
-    isCorrect = compareOrder(userResponse, getExpected(item));
+    isCorrect = compareOrder(userResponse, item.expected);
   } else {
     throw new Error(`Unsupported training item type: ${item.type}`);
   }
