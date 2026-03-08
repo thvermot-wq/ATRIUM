@@ -5,17 +5,18 @@ Ce fichier définit les contraintes de contribution pour ATRIUM.
 ## Invariants
 Les éléments suivants sont **non modifiables** sans instruction explicite du produit :
 - 3 périodes
-- 5 leçons par période
-- 15 leçons au total
+- 12 leçons par période
+- 36 leçons au total
 - 10 points par leçon
 - 7 entraînements
 - 3 productions
-- 50 points par période
+- 120 points par période
 - validation à 80 %
+- score minimal de validation : 96 / 120
 
 ## Contraintes obligatoires
 - Rester **data-driven** : les leçons, critères et barèmes doivent être portés par les données.
-- Ne **pas casser le scoring** contractuel (`/7 + /3 = /10`, `/50` par période, validation `>=80%`).
+- Ne **pas casser le scoring** contractuel (`/7 + /3 = /10`, `/120` par période, validation `>=80%`).
 - Rester compatible **GitHub Pages** (site statique).
 - Préserver la stratégie de persistance via **localStorage**.
 - Éviter React / Vite / build lourd sans instruction expresse.
