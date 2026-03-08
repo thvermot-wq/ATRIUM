@@ -27,12 +27,12 @@ function assertInvariants() {
   const errors = [];
 
   if (LESSONS_SPEC.periods !== 3) errors.push("Le nombre de périodes doit rester à 3.");
-  if (LESSONS_SPEC.lessonsPerPeriod !== 5) errors.push("Le nombre de leçons par période doit rester à 5.");
-  if (LESSONS_SPEC.lessonsTotal !== 15) errors.push("Le nombre total de leçons doit rester à 15.");
+  if (LESSONS_SPEC.lessonsPerPeriod !== 12) errors.push("Le nombre de leçons par période doit rester à 12.");
+  if (LESSONS_SPEC.lessonsTotal !== 36) errors.push("Le nombre total de leçons doit rester à 36.");
   if (LESSONS_SPEC.lessonMax !== 10) errors.push("Le score max d'une leçon doit rester à 10.");
   if (LESSONS_SPEC.trainingMax !== 7) errors.push("Le score d'entraînement doit rester à 7.");
   if (LESSONS_SPEC.productionMax !== 3) errors.push("Le score de production doit rester à 3.");
-  if (LESSONS_SPEC.periodMax !== 50) errors.push("Le score max d'une période doit rester à 50.");
+  if (LESSONS_SPEC.periodMax !== 120) errors.push("Le score max d'une période doit rester à 120.");
   if (LESSONS_SPEC.validationPercent !== 80) errors.push("Le seuil de validation doit rester à 80%.");
 
   if (periods.length !== LESSONS_SPEC.periods) errors.push("Incohérence entre spec et périodes déclarées.");

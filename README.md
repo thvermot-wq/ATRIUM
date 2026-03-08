@@ -6,18 +6,20 @@ Application web statique d’apprentissage progressif du latin pour élèves de 
 ATRIUM est conçu comme un parcours structuré et data-driven : l’élève progresse leçon par leçon, période par période, avec une part d’entraînement auto-corrigé et une part de production écrite guidée.
 
 ## Architecture pédagogique canonique (non négociable)
+
 - 3 périodes
-- 5 leçons par période
-- 15 leçons au total
+- 12 leçons par période
+- 36 leçons au total
 - 10 points par leçon
 - 7 points d’entraînement auto-corrigé
 - 3 points de production écrite guidée
-- 50 points par période
-- Validation d’une période à partir de 80 %
+- 120 points par période
+
+- Validation d’une période à partir de 80 % (96 / 120)
 
 ## Logique de scoring (contrat)
 - **Leçon** = `training (/7) + production (/3) = total (/10)`
-- **Période** = somme des 5 leçons = `/50`
+- **Période** = somme des 12 leçons = `/120`
 - **Statut période** : validée si pourcentage `>= 80%`
 - Le scoring est contractuel et ne doit pas être modifié hors décision produit explicite.
 
@@ -27,35 +29,18 @@ Cette étape implémente l’**app shell navigable** et un **modèle pédagogiqu
 - dashboard (`#/dashboard`)
 - vue leçon (`#/lesson/:lessonId`)
 - vue résultats placeholder (`#/results`)
-- 15 leçons déclarées dans les données (3 périodes × 5)
-- 15 leçons entièrement remplies : `p1-l1` à `p3-l15`
+- 36 leçons déclarées dans les données (3 périodes × 12)
+- Période 1 entièrement implémentée : `p1-l1` à `p1-l12`
 
 
 ## Leçons jouables actuellement (end-to-end)
-Les leçons entièrement jouables dans cette version sont :
-- `p1-l1` — Reconnaître des mots latins
-- `p1-l2` — Comprendre les formules rituelles
-- `p1-l3` — Écouter et reconnaître des mots du rituel
-- `p1-l4` — Dire et distinguer singulier et pluriel
-- `p1-l5` — Reconnaître sujet, verbe et complément
-- `p2-l6` — Relier latin et français (mots transparents)
-- `p2-l7` — Familles de mots autour du latin
-- `p2-l8` — Mémoriser le lexique utile
-- `p2-l9` — Correspondances simples phrase à phrase
-- `p2-l10` — Micro-thème guidé latin vers français et retour
-- `p3-l11` — Trouver le verbe
-- `p3-l12` — Identifier la structure S-V-C
-- `p3-l13` — Choisir la bonne forme verbale
-- `p3-l14` — Comprendre une micro-scène
-- `p3-l15` — Synthèse guidée période 3
+Les 12 leçons de la période 1 (`p1-l1` à `p1-l12`) sont jouables de bout en bout avec :
+- 7 items d'entraînement auto-corrigés (/7)
+- 3 productions écrites guidées (/3)
+- synthèse finale de leçon (/10)
+- persistance locale score courant + meilleur score
 
-Pour ces 15 leçons :
-- entraînement 7 items jouables avec feedback immédiat
-- production guidée 3 champs texte corrigés automatiquement
-- synthèse finale de leçon affichée (`/7`, `/3`, `/10`)
-- persistance score courant + meilleur score via `localStorage`
-
-Toutes les leçons sont désormais structurées et jouables dans cette version.
+Les périodes 2 et 3 sont structurées en 12 leçons chacune (36 leçons au total) et restent extensibles.
 
 ## Structure du repository
 
@@ -221,7 +206,7 @@ Comportement de rejeu :
 
 ## Dashboard et lecture de progression
 Le dashboard affiche désormais, à partir des données réelles de progression :
-- pour chaque période : score total `/50`, pourcentage, statut (`validée`, `consolidation nécessaire`, `à reprendre`) ;
+- pour chaque période : score total `/120`, pourcentage, statut (`validée`, `consolidation nécessaire`, `à reprendre`) ;
 - pour chaque leçon : score courant `/10`, meilleur score `/10`, état `jouée/non jouée`.
 
 La vue résultats reprend la même logique avec un détail par période et par leçon.
@@ -269,3 +254,9 @@ node tests/answer-checker.assertions.mjs
 - **Entraînement (/7)** : auto-correction déterministe (réponses attendues définies dans les données).
 - **Production (/3)** : correction guidée sur réponse courte avec normalisation (`normalize.js`) pour éviter les faux négatifs dus aux accents, casse, espaces, ponctuation.
 - Le mécanisme exact sera implémenté dans une PR dédiée au moteur métier.
+
+
+## Progression pédagogique période 1 (nouvelle architecture)
+- Période 1 — Acclimatation progressive au latin (12 leçons)
+- progression: lexique transparent, sujet/verbe, phrase minimale, complément, opposition de formes simples, premières phrases complètes, premiers pluriels, synthèse
+- types d'items utilisés : `singleChoice`, `multipleChoice`, `matching`, `ordering`, `textInput`

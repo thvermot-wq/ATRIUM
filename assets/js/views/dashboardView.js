@@ -188,7 +188,7 @@ export function renderDashboardView({
   headerCard.className = "card dashboard-header-card";
   headerCard.innerHTML = `
     <h2>Tableau de bord</h2>
-    <p class="muted">3 périodes · 15 leçons · progression calculée automatiquement</p>
+    <p class="muted">3 périodes · 36 leçons · progression calculée automatiquement</p>
     <p class="dashboard-kpi">Leçons jouées : ${playedLessonsCount}/${allLessons.length}</p>
   `;
 
