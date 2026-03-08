@@ -34,10 +34,10 @@ Cette étape implémente l’**app shell navigable** et un **modèle pédagogiqu
 
 ## Leçons jouables actuellement (end-to-end)
 Les leçons entièrement jouables dans cette version sont :
-- `p1-l1` — Reconnaître des mots latins
-- `p1-l2` — Comprendre les formules rituelles
-- `p1-l3` — Écouter et reconnaître des mots du rituel
-- `p1-l4` — Dire et distinguer singulier et pluriel
+- `p1-l1` — Les mots cousins du français
+- `p1-l2` — Saluer, répondre, comprendre
+- `p1-l3` — Les noms latins du monde simple
+- `p1-l4` — Le verbe au présent : qui fait l’action ?
 - `p1-l5` — Reconnaître sujet, verbe et complément
 - `p2-l6` — Relier latin et français (mots transparents)
 - `p2-l7` — Familles de mots autour du latin

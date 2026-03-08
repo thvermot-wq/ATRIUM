@@ -1,5 +1,12 @@
 function normalizeType(type = "") {
-  return type === "mcq" ? "single-choice" : type;
+  const map = {
+    mcq: "single-choice",
+    singleChoice: "single-choice",
+    multipleChoice: "multiple-choice",
+    textInput: "text-input",
+  };
+
+  return map[type] || type;
 }
 
 function createSingleChoiceFields(item) {
@@ -134,6 +141,23 @@ function createOrderingFields(item) {
   };
 }
 
+
+function createTextInputFields(item) {
+  const wrapper = document.createElement("div");
+  wrapper.className = "field-stack";
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.maxLength = 120;
+  input.placeholder = item.placeholder || "Saisir une réponse";
+
+  wrapper.appendChild(input);
+
+  return {
+    node: wrapper,
+    getResponse: () => input.value,
+  };
+}
 export function createTrainingItemCard({ item, onValidate }) {
   const type = normalizeType(item.type || "single-choice");
   const card = document.createElement("article");
@@ -155,6 +179,8 @@ export function createTrainingItemCard({ item, onValidate }) {
     renderer = createMatchingFields(item);
   } else if (type === "ordering") {
     renderer = createOrderingFields(item);
+  } else if (type === "text-input") {
+    renderer = createTextInputFields(item);
   } else {
     throw new Error(`Unsupported training item type in renderer: ${item.type}`);
   }

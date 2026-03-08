@@ -12,8 +12,14 @@ function normalizeScalar(value) {
 }
 
 function normalizeType(type = "") {
-  if (type === "mcq") return "single-choice";
-  return type;
+  const map = {
+    mcq: "single-choice",
+    singleChoice: "single-choice",
+    multipleChoice: "multiple-choice",
+    textInput: "text-input",
+  };
+
+  return map[type] || type;
 }
 
 function compareStringArrays(left, right) {
@@ -54,6 +60,9 @@ export function evaluateTrainingItem(item, userResponse) {
     isCorrect = compareMapping(userResponse, item.expected);
   } else if (itemType === "ordering") {
     isCorrect = compareOrder(userResponse, item.expected);
+  } else if (itemType === "text-input") {
+    const expected = Array.isArray(item.expected) ? item.expected : [item.expected];
+    isCorrect = expected.some((candidate) => normalizeScalar(userResponse) === normalizeScalar(candidate));
   } else {
     throw new Error(`Unsupported training item type: ${item.type}`);
   }
