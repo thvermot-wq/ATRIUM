@@ -16,7 +16,7 @@ Les éléments suivants sont **non modifiables** sans instruction explicite du p
 
 ## Contraintes obligatoires
 - Rester **data-driven** : les leçons, critères et barèmes doivent être portés par les données.
-- Ne **pas casser le scoring** contractuel (`/7 + /3 = /10`, `/120` par période, validation `>=80%`, seuil minimal `96/120`).
+- Ne **pas casser le scoring** contractuel (`/7 + /3 = /10`, `/120` par période, validation `>=80%`).
 - Rester compatible **GitHub Pages** (site statique).
 - Préserver la stratégie de persistance via **localStorage**.
 - Éviter React / Vite / build lourd sans instruction expresse.
