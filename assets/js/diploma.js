@@ -1,0 +1,83 @@
+import { LESSONS_SPEC, periods, getLessonsByPeriod } from "./lessons.js";
+
+const LCA_CEFR_LABELS = {
+  p1: {
+    lower: "Pré-A1 validé – profil LCA",
+    upper: "Pré-A1+ validé – profil LCA",
+  },
+  p2: {
+    lower: "Pré-A1+ validé – profil LCA",
+    upper: "A1 émergent – profil LCA",
+  },
+  p3: {
+    lower: "A1 émergent validé – profil LCA",
+    upper: "A1 réception écrite guidée validé – profil LCA",
+  },
+};
+
+const SCHOOL_CERTIFICATION = {
+  p1: "Certification scolaire : Acclimatation progressive validée",
+  p2: "Certification scolaire : Consolidation validée",
+  p3: "Certification scolaire : Structuration validée",
+};
+
+const DIPLOMA_THRESHOLD = Math.round((LESSONS_SPEC.periodMax * LESSONS_SPEC.validationPercent) / 100);
+
+function safeScore(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return 0;
+  return Math.max(0, Math.min(LESSONS_SPEC.periodMax, Math.round(n)));
+}
+
+export function getBestPeriodScore(periodId, progressState) {
+  return safeScore(progressState?.periods?.[periodId]?.totalScore);
+}
+
+export function areAllLessonsCompleted(periodId, progressState) {
+  const periodLessons = getLessonsByPeriod(periodId);
+  if (periodLessons.length === 0) return false;
+  return periodLessons.every((lesson) => Boolean(progressState?.lessons?.[lesson.id]?.playedAt));
+}
+
+export function isPeriodDiplomaEligible(periodId, progressState) {
+  const allLessonsCompleted = areAllLessonsCompleted(periodId, progressState);
+  const bestPeriodScore = getBestPeriodScore(periodId, progressState);
+  return allLessonsCompleted && bestPeriodScore >= DIPLOMA_THRESHOLD;
+}
+
+export function getSchoolCertificationLabel(periodId) {
+  return SCHOOL_CERTIFICATION[periodId] || "Certification scolaire : Validation ATRIUM";
+}
+
+export function getLcaCefrProfile(periodId, bestPeriodScore) {
+  const labels = LCA_CEFR_LABELS[periodId];
+  if (!labels) return "Profil LCA non disponible";
+
+  const score = safeScore(bestPeriodScore);
+  if (score < DIPLOMA_THRESHOLD) return "Profil LCA en cours d'acquisition";
+  return score <= 107 ? labels.lower : labels.upper;
+}
+
+export function buildDiplomaData(periodId, progressState, studentProfile = {}) {
+  const period = periods.find((entry) => entry.id === periodId);
+  if (!period) return null;
+
+  const bestPeriodScore = getBestPeriodScore(periodId, progressState);
+  const allLessonsCompleted = areAllLessonsCompleted(periodId, progressState);
+  const eligible = allLessonsCompleted && bestPeriodScore >= DIPLOMA_THRESHOLD;
+
+  return {
+    periodId,
+    period,
+    studentName: studentProfile.studentName?.trim() || "Élève ATRIUM",
+    className: studentProfile.className?.trim() || "",
+    bestPeriodScore,
+    maxPeriodScore: LESSONS_SPEC.periodMax,
+    allLessonsCompleted,
+    eligible,
+    diplomaThreshold: DIPLOMA_THRESHOLD,
+    schoolCertification: getSchoolCertificationLabel(periodId),
+    lcaCefrProfile: getLcaCefrProfile(periodId, bestPeriodScore),
+    issuedAt: new Date().toISOString(),
+  };
+}
