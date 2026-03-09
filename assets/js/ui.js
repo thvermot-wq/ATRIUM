@@ -2,6 +2,7 @@ import { renderHomeView } from "./views/homeView.js";
 import { renderDashboardView } from "./views/dashboardView.js";
 import { renderLessonView } from "./views/lessonView.js";
 import { renderResultsView } from "./views/resultsView.js";
+import { getThemeState, toggleTheme } from "./theme.js";
 
 function createTopNav({ navigate, currentRouteName }) {
   const nav = document.createElement("nav");
@@ -32,10 +33,29 @@ function createAppLayout({ navigate, currentRouteName }) {
 
   const header = document.createElement("header");
   header.className = "shell app-header";
+
+  const { theme } = getThemeState();
+  const isDark = theme === "dark";
+
   header.innerHTML = `
-    <h1>ATRIUM</h1>
-    <p class="muted">Application statique LCA · architecture progressive</p>
+    <div class="header-row">
+      <div>
+        <h1>ATRIUM</h1>
+        <p class="muted">Application statique LCA · architecture progressive</p>
+      </div>
+      <button type="button" class="btn btn-theme-toggle" aria-pressed="${isDark}" aria-label="Basculer le thème">
+        ${isDark ? "🌙 Mode sombre" : "☀️ Mode clair"}
+      </button>
+    </div>
   `;
+
+  const themeButton = header.querySelector('.btn-theme-toggle');
+  themeButton.addEventListener('click', () => {
+    const nextTheme = toggleTheme();
+    const dark = nextTheme === 'dark';
+    themeButton.setAttribute('aria-pressed', String(dark));
+    themeButton.textContent = dark ? '🌙 Mode sombre' : '☀️ Mode clair';
+  });
 
   const nav = createTopNav({ navigate, currentRouteName });
 

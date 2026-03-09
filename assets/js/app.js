@@ -3,6 +3,7 @@ import { getScoringContract } from "./scoring.js";
 import { loadProgress, saveLessonProgress, saveProgress } from "./storage.js";
 import { initRouter } from "./router.js";
 import { renderApp } from "./ui.js";
+import { initTheme } from "./theme.js";
 
 const CANONICAL_SPEC = {
   periods: 3,
@@ -60,6 +61,8 @@ function assertInvariants() {
 function boot() {
   const root = document.getElementById("app");
   if (!root) return;
+
+  initTheme();
 
   const scoring = getScoringContract();
   const invariantErrors = assertInvariants();
