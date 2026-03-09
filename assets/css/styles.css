@@ -317,9 +317,44 @@ input[type="text"] {
   font-weight: 600;
 }
 
+
 .lesson-meta {
   font-size: 0.84rem;
   color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.lesson-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.16rem 0.52rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.lesson-status-neutral {
+  background: #eef1f7;
+  color: #53607f;
+}
+
+.lesson-status-ok {
+  background: #dff4e7;
+  color: #18693a;
+}
+
+.lesson-status-warn {
+  background: #fff1d8;
+  color: #8a6200;
+}
+
+.lesson-status-ko {
+  background: #fce3e3;
+  color: #9a2d2d;
 }
 
 .results-lesson-list {

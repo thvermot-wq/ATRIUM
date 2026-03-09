@@ -17,6 +17,76 @@ const ATTEMPT_STATE = {
   RESET_REQUIRED: "reset_required",
 };
 
+
+function safeSessionStorage() {
+  try {
+    if (typeof window !== "undefined" && window.sessionStorage) {
+      return window.sessionStorage;
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+}
+
+function shuffleArray(values = []) {
+  const copy = [...values];
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function getAttemptStorageKey(itemId) {
+  return `atrium-attempt-order:${itemId}`;
+}
+
+function getStableShuffledOptions(item) {
+  const baseOptions = Array.isArray(item.options) ? [...item.options] : [];
+  if (baseOptions.length <= 1) {
+    return baseOptions;
+  }
+
+  const shouldShuffle = item.shuffle !== false;
+  if (!shouldShuffle) {
+    return baseOptions;
+  }
+
+  const storage = safeSessionStorage();
+  const key = getAttemptStorageKey(item.id);
+  if (storage) {
+    const raw = storage.getItem(key);
+    if (raw) {
+      try {
+        const parsed = JSON.parse(raw);
+        if (
+          Array.isArray(parsed) &&
+          parsed.length === baseOptions.length &&
+          parsed.every((opt) => baseOptions.includes(opt))
+        ) {
+          return parsed;
+        }
+      } catch {
+        // no-op
+      }
+    }
+  }
+
+  const shuffled = shuffleArray(baseOptions);
+  if (storage) {
+    storage.setItem(key, JSON.stringify(shuffled));
+  }
+
+  return shuffled;
+}
+
+function resetShuffledOptions(item) {
+  const storage = safeSessionStorage();
+  if (!storage) return;
+  storage.removeItem(getAttemptStorageKey(item.id));
+}
 function formatExpected(expected) {
   if (Array.isArray(expected)) {
     return expected.join(" | ");
@@ -33,7 +103,7 @@ function createSingleChoiceFields(item) {
   const wrapper = document.createElement("div");
   wrapper.className = "field-stack";
 
-  (item.options || []).forEach((option) => {
+  getStableShuffledOptions(item).forEach((option) => {
     const label = document.createElement("label");
     label.className = "choice-line";
     label.innerHTML = `
@@ -66,7 +136,7 @@ function createMultipleChoiceFields(item) {
   const wrapper = document.createElement("div");
   wrapper.className = "field-stack";
 
-  (item.options || []).forEach((option) => {
+  getStableShuffledOptions(item).forEach((option) => {
     const label = document.createElement("label");
     label.className = "choice-line";
     label.innerHTML = `
@@ -339,6 +409,7 @@ export function createTrainingItemCard({ item, onValidate, onReset }) {
 
   resetButton.addEventListener("click", () => {
     renderer.resetResponse();
+    resetShuffledOptions(item);
     answer.hidden = true;
     answer.textContent = "";
     feedback.className = "feedback-inline muted";

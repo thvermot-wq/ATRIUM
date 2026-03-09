@@ -1,13 +1,10 @@
 import { createProgressBar } from "./progressBar.js";
+import { getLessonStatus } from "../lessonStatus.js";
 
 function getStatusClass(status) {
   if (status === "période validée") return "status-ok";
   if (status === "consolidation nécessaire") return "status-warn";
   return "status-ko";
-}
-
-function getPlayedState(lessonProgress) {
-  return lessonProgress?.playedAt ? "jouée" : "non jouée";
 }
 
 export function createPeriodCard({ period, lessons, periodProgress, lessonProgressMap, onOpenLesson }) {
@@ -55,13 +52,16 @@ export function createPeriodCard({ period, lessons, periodProgress, lessonProgre
     const lessonProgress = lessonProgressMap?.[lesson.id];
     const best = lessonProgress?.best?.totalScore ?? 0;
     const current = lessonProgress?.current?.totalScore ?? 0;
-    const playedState = getPlayedState(lessonProgress);
+    const status = getLessonStatus(lessonProgress, { lessonMax: 10 });
 
     button.type = "button";
     button.className = "btn btn-link lesson-line";
     button.innerHTML = `
       <span class="lesson-title">${lesson.title} (${lesson.id})</span>
-      <span class="lesson-meta">état: ${playedState} · courant ${current}/10 · meilleur ${best}/10</span>
+      <span class="lesson-meta">
+        <span class="lesson-status-chip ${status.className}">${status.icon} ${status.label}</span>
+        <span>courant ${current}/10 · meilleur ${best}/10</span>
+      </span>
     `;
     button.addEventListener("click", () => onOpenLesson(lesson.id));
     item.appendChild(button);
