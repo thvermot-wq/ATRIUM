@@ -2,7 +2,6 @@ import { renderHomeView } from "./views/homeView.js";
 import { renderDashboardView } from "./views/dashboardView.js";
 import { renderLessonView } from "./views/lessonView.js";
 import { renderResultsView } from "./views/resultsView.js";
-import { renderDiplomaView } from "./views/diplomaView.js";
 
 function createTopNav({ navigate, currentRouteName }) {
   const nav = document.createElement("nav");
@@ -46,13 +45,7 @@ function createAppLayout({ navigate, currentRouteName }) {
   main.tabIndex = -1;
   main.setAttribute("aria-live", "polite");
 
-  const footer = document.createElement("footer");
-  footer.className = "shell app-footer";
-  footer.innerHTML = `
-    <p class="footer-copy">© 2026 Thibault Vermot. Tous droits réservés.</p>
-  `;
-
-  fragment.append(header, nav, main, footer);
+  fragment.append(header, nav, main);
   return { fragment, main };
 }
 
@@ -68,7 +61,7 @@ function renderNotFoundView({ onOpenHome }) {
   return section;
 }
 
-export function renderApp(rootElement, { router, route, progress, saveStatus, onSaveLessonScore, onExportSave, onImportSave, onShareSave, onResetProgress, onUpdateStudentMeta, canShareSave }) {
+export function renderApp(rootElement, { router, route, progress, onSaveLessonScore }) {
   rootElement.innerHTML = "";
 
   const { fragment, main } = createAppLayout({ navigate: router.navigate, currentRouteName: route.name });
@@ -78,7 +71,6 @@ export function renderApp(rootElement, { router, route, progress, saveStatus, on
     onOpenDashboard: () => router.navigate("#/dashboard"),
     onOpenResults: () => router.navigate("#/results"),
     onOpenLesson: (lessonId) => router.navigate(`#/lesson/${lessonId}`),
-    onOpenDiploma: (periodId) => router.navigate(`#/diploma/${periodId}`),
     onBackDashboard: () => router.navigate("#/dashboard"),
     onOpenHome: () => router.navigate("#/"),
     onSaveLessonScore,
@@ -89,18 +81,11 @@ export function renderApp(rootElement, { router, route, progress, saveStatus, on
   if (route.name === "home") {
     viewNode = renderHomeView(callbacks);
   } else if (route.name === "dashboard") {
-    viewNode = renderDashboardView({ ...callbacks, progress, saveStatus, onExportSave, onImportSave, onShareSave, onResetProgress, onUpdateStudentMeta, canShareSave });
+    viewNode = renderDashboardView({ ...callbacks, progress });
   } else if (route.name === "lesson") {
     viewNode = renderLessonView({ ...callbacks, lessonId: route.params.lessonId, progress });
   } else if (route.name === "results") {
     viewNode = renderResultsView({ ...callbacks, progress });
-  } else if (route.name === "diploma") {
-    viewNode = renderDiplomaView({
-      periodId: route.params.periodId,
-      progress,
-      saveStatus,
-      onBackDashboard: callbacks.onOpenDashboard,
-    });
   } else {
     viewNode = renderNotFoundView(callbacks);
   }

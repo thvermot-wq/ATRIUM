@@ -1,10 +1,9 @@
-import { LESSONS_SPEC, lessons, getLessonById } from "../lessons.js";
+import { LESSONS_SPEC, getLessonById } from "../lessons.js";
 import { createFeedbackBox } from "../components/feedbackBox.js";
 import { createTrainingItemCard } from "../components/trainingItemCard.js";
 import { createProductionItemCard } from "../components/productionItemCard.js";
 import { evaluateTrainingItem, computeTrainingProgress } from "../trainingEngine.js";
 import { evaluateProductionItem, computeProductionProgress } from "../productionEngine.js";
-import { applyFrenchTypography } from "../typography.js";
 
 function isLessonPlayable(lesson) {
   return (
@@ -16,79 +15,10 @@ function isLessonPlayable(lesson) {
   );
 }
 
-function findNextLessonId(currentLessonId) {
-  const currentIndex = lessons.findIndex((lesson) => lesson.id === currentLessonId);
-  if (currentIndex === -1 || currentIndex >= lessons.length - 1) return null;
-  return lessons[currentIndex + 1].id;
-}
-
-
-function createLessonCourseHeader(lesson) {
-  const hasPoint = Boolean(lesson?.coursePoint);
-  const hasExample = Boolean(lesson?.courseExample);
-  const hasCanDo = Boolean(lesson?.canDo);
-  const hasLexicon = Array.isArray(lesson?.lexiconFocus) && lesson.lexiconFocus.length > 0;
-
-  if (!hasPoint && !hasExample && !hasCanDo && !hasLexicon) {
-    return null;
-  }
-
-  const card = document.createElement("article");
-  card.className = "card lesson-course-header";
-
-  const title = document.createElement("h3");
-  title.textContent = "Repères de leçon";
-  card.appendChild(title);
-
-  const grid = document.createElement("div");
-  grid.className = "lesson-course-grid";
-
-  if (hasPoint) {
-    const block = document.createElement("section");
-    block.className = "lesson-course-block";
-    block.innerHTML = `<h4>Point cours</h4><p>${applyFrenchTypography(lesson.coursePoint)}</p>`;
-    grid.appendChild(block);
-  }
-
-  if (hasExample) {
-    const block = document.createElement("section");
-    block.className = "lesson-course-block";
-    block.innerHTML = `<h4>Exemple</h4><p>${applyFrenchTypography(lesson.courseExample)}</p>`;
-    grid.appendChild(block);
-  }
-
-  if (hasCanDo) {
-    const block = document.createElement("section");
-    block.className = "lesson-course-block";
-    block.innerHTML = `<h4>Je peux...</h4><p>${applyFrenchTypography(lesson.canDo)}</p>`;
-    grid.appendChild(block);
-  }
-
-  if (hasLexicon) {
-    const block = document.createElement("section");
-    block.className = "lesson-course-block";
-    block.innerHTML = `<h4>Lexique cible</h4><p>${applyFrenchTypography(lesson.lexiconFocus.join(" · "))}</p>`;
-    grid.appendChild(block);
-  }
-
-  card.appendChild(grid);
-  return card;
-}
-
-function attachMobileFocusHandling(rootNode) {
-  rootNode.querySelectorAll('input[type="text"], textarea, select').forEach((field) => {
-    field.addEventListener("focus", () => {
-      requestAnimationFrame(() => {
-        field.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-      });
-    });
-  });
-}
-
-export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults, onOpenLesson }) {
+export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults }) {
   const lesson = getLessonById(lessonId);
   const wrapper = document.createElement("section");
-  wrapper.className = "stack lesson-view";
+  wrapper.className = "stack";
 
   if (!lesson) {
     const missing = document.createElement("article");
@@ -111,9 +41,9 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
     const pending = document.createElement("article");
     pending.className = "card";
     pending.innerHTML = `
-      <h2>${applyFrenchTypography(lesson.title)}</h2>
+      <h2>${lesson.title}</h2>
       <p class="muted">${lesson.id} · Période ${lesson.period}</p>
-      <p><strong>Objectif :</strong> ${applyFrenchTypography(lesson.objective)}</p>
+      <p><strong>Objectif :</strong> ${lesson.objective}</p>
       <p class="muted">Cette leçon n'est pas encore jouable de bout en bout dans cette version.</p>
       <p class="muted">Score enregistré: courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
       <div class="actions-row">
@@ -132,21 +62,13 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
   const productionResults = {};
 
   const hero = document.createElement("article");
-  hero.className = "card lesson-hero";
+  hero.className = "card";
 
-  const lessonMetrics = document.createElement("article");
-  lessonMetrics.className = "card lesson-metrics";
-
-  const lessonCourseHeader = createLessonCourseHeader(lesson);
+  const trainingBoard = document.createElement("div");
+  trainingBoard.className = "training-board";
 
   const trainingState = document.createElement("p");
   trainingState.className = "muted";
-
-  const productionState = document.createElement("p");
-  productionState.className = "muted";
-
-  const totalPreview = document.createElement("p");
-  totalPreview.className = "lesson-preview-score";
 
   const syncTrainingState = () => {
     const current = computeTrainingProgress(lesson.training, trainingResults);
@@ -154,36 +76,20 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
     return current;
   };
 
-  const syncProductionState = () => {
-    const current = computeProductionProgress(lesson.production, productionResults);
-    productionState.textContent = `Production guidée: score ${current.score}/${LESSONS_SPEC.productionMax} · progression ${current.answeredCount}/${current.totalItems}`;
-    return current;
-  };
-
-  const syncTotalPreview = () => {
-    const training = computeTrainingProgress(lesson.training, trainingResults);
-    const production = computeProductionProgress(lesson.production, productionResults);
-    const total = training.score + production.score;
-    totalPreview.textContent = `Total leçon (prévisualisation) : ${total}/${LESSONS_SPEC.lessonMax} (entraînement ${training.score}/7 + production ${production.score}/3)`;
-  };
-
-  const trainingBoard = document.createElement("div");
-  trainingBoard.className = "training-board";
-
-  const trainingHeading = document.createElement("h3");
-  trainingHeading.textContent = "Phase entraînement";
-  trainingBoard.appendChild(trainingHeading);
-
-  lesson.training.forEach((item, index) => {
+  lesson.training.forEach((item) => {
     const card = createTrainingItemCard({
       item,
-      index: index + 1,
       onValidate: (userResponse) => {
         const result = evaluateTrainingItem(item, userResponse);
         trainingResults[item.id] = result;
         syncTrainingState();
         syncTotalPreview();
         return result;
+      },
+      onReset: () => {
+        delete trainingResults[item.id];
+        syncTrainingState();
+        syncTotalPreview();
       },
     });
     trainingBoard.appendChild(card);
@@ -192,14 +98,18 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
   const productionBoard = document.createElement("div");
   productionBoard.className = "production-board";
 
-  const productionHeading = document.createElement("h3");
-  productionHeading.textContent = "Phase production guidée";
-  productionBoard.appendChild(productionHeading);
+  const productionState = document.createElement("p");
+  productionState.className = "muted";
 
-  lesson.production.forEach((item, index) => {
+  const syncProductionState = () => {
+    const current = computeProductionProgress(lesson.production, productionResults);
+    productionState.textContent = `Production guidée: score ${current.score}/${LESSONS_SPEC.productionMax} · progression ${current.answeredCount}/${current.totalItems}`;
+    return current;
+  };
+
+  lesson.production.forEach((item) => {
     const card = createProductionItemCard({
       item,
-      index: index + 1,
       onEvaluate: (userAnswer) => {
         const result = evaluateProductionItem(item, userAnswer);
         productionResults[item.id] = {
@@ -210,36 +120,47 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
         syncTotalPreview();
         return result;
       },
+      onReset: () => {
+        delete productionResults[item.id];
+        syncProductionState();
+        syncTotalPreview();
+      },
     });
     productionBoard.appendChild(card);
   });
 
-  const finalSummary = document.createElement("article");
-  finalSummary.className = "card lesson-final-summary";
-  finalSummary.hidden = true;
+  const totalPreview = document.createElement("p");
+  totalPreview.className = "muted";
 
-  const nextLessonId = findNextLessonId(lesson.id);
+  const syncTotalPreview = () => {
+    const training = computeTrainingProgress(lesson.training, trainingResults);
+    const production = computeProductionProgress(lesson.production, productionResults);
+    const total = training.score + production.score;
+    totalPreview.textContent = `Total leçon (prévisualisation) : ${total}/${LESSONS_SPEC.lessonMax} (entraînement ${training.score}/7 + production ${production.score}/3)`;
+  };
+
+  const finalSummary = document.createElement("article");
+  finalSummary.className = "card";
+  finalSummary.hidden = true;
 
   syncTrainingState();
   syncProductionState();
   syncTotalPreview();
 
-  lessonMetrics.append(trainingState, productionState, totalPreview);
-
   hero.innerHTML = `
-    <h2>${applyFrenchTypography(lesson.title)}</h2>
+    <h2>${lesson.title}</h2>
     <p class="muted">${lesson.id} · Période ${lesson.period}</p>
-    <p><strong>Objectif :</strong> ${applyFrenchTypography(lesson.objective)}</p>
+    <p><strong>Objectif :</strong> ${lesson.objective}</p>
     <p class="muted">Score enregistré: courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
     <p class="muted">Phase entraînement: 7 micro-items (1 point/item), correction immédiate.</p>
     <p class="muted">Phase production: 3 productions écrites guidées (1 point/item), correction automatique.</p>
   `;
 
   const form = document.createElement("form");
-  form.className = "stack compact-form lesson-actions-form";
+  form.className = "stack compact-form";
   form.id = "lesson-score-form";
   form.innerHTML = `
-    <div class="actions-row lesson-actions-row">
+    <div class="actions-row">
       <button type="submit" class="btn btn-primary">Valider et enregistrer la leçon</button>
       <button type="button" class="btn btn-secondary" data-action="back">Retour dashboard</button>
       <button type="button" class="btn btn-secondary" data-action="results">Voir résultats</button>
@@ -268,35 +189,27 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
       <p>Production : ${latestProduction.score}/3</p>
       <p><strong>Total : ${currentScore}/10</strong></p>
       <p class="muted">Meilleur score conservé : ${bestScore}/10</p>
-      <div class="actions-row lesson-completion-actions">
-        <button type="button" class="btn btn-primary" data-action="replay">Rejouer la leçon</button>
-        ${nextLessonId ? '<button type="button" class="btn btn-secondary" data-action="next">Suivant</button>' : ""}
-      </div>
     `;
-
-    finalSummary.querySelector('[data-action="replay"]').addEventListener("click", () => onOpenLesson(lesson.id));
-
-    if (nextLessonId) {
-      finalSummary.querySelector('[data-action="next"]').addEventListener("click", () => onOpenLesson(nextLessonId));
-    }
-
-    finalSummary.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   form.querySelector('[data-action="back"]').addEventListener("click", onBackDashboard);
   form.querySelector('[data-action="results"]').addEventListener("click", onOpenResults);
 
   const feedback = createFeedbackBox({
-    title: applyFrenchTypography("Moteur générique entraînement + production"),
-    text: applyFrenchTypography("La leçon reste data-driven. Entraînement (/7) et production guidée (/3) sont évalués séparément puis combinés en total /10."),
+    title: "Moteur générique entraînement + production",
+    text: "La leçon reste data-driven. Entraînement (/7) et production guidée (/3) sont évalués séparément puis combinés en total /10.",
   });
 
-  if (lessonCourseHeader) {
-    wrapper.append(hero, lessonCourseHeader, lessonMetrics, trainingBoard, productionBoard, form, finalSummary, feedback);
-  } else {
-    wrapper.append(hero, lessonMetrics, trainingBoard, productionBoard, form, finalSummary, feedback);
-  }
-
-  attachMobileFocusHandling(wrapper);
+  wrapper.append(
+    hero,
+    trainingState,
+    trainingBoard,
+    productionState,
+    productionBoard,
+    totalPreview,
+    form,
+    finalSummary,
+    feedback,
+  );
   return wrapper;
 }

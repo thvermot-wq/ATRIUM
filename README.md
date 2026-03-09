@@ -6,7 +6,6 @@ Application web statique d’apprentissage progressif du latin pour élèves de 
 ATRIUM est conçu comme un parcours structuré et data-driven : l’élève progresse leçon par leçon, période par période, avec une part d’entraînement auto-corrigé et une part de production écrite guidée.
 
 ## Architecture pédagogique canonique (non négociable)
-
 - 3 périodes
 - 12 leçons par période
 - 36 leçons au total
@@ -14,8 +13,7 @@ ATRIUM est conçu comme un parcours structuré et data-driven : l’élève prog
 - 7 points d’entraînement auto-corrigé
 - 3 points de production écrite guidée
 - 120 points par période
-
-- Validation d’une période à partir de 80 % (96 / 120)
+- Validation d’une période à partir de 80 % (seuil minimal : 96 / 120)
 
 ## Logique de scoring (contrat)
 - score minimal de validation : `96 / 120`
@@ -30,19 +28,35 @@ Cette étape implémente l’**app shell navigable** et un **modèle pédagogiqu
 - dashboard (`#/dashboard`)
 - vue leçon (`#/lesson/:lessonId`)
 - vue résultats placeholder (`#/results`)
-- vue diplôme imprimable (`#/diploma/:periodId`)
 - 36 leçons déclarées dans les données (3 périodes × 12)
-- Période 1 entièrement implémentée : `p1-l1` à `p1-l12`
+- 15 leçons historiques entièrement remplies + placeholders structurels jusqu'à 36 leçons
 
 
 ## Leçons jouables actuellement (end-to-end)
-Les 12 leçons de la période 1 (`p1-l1` à `p1-l12`) sont jouables de bout en bout avec :
-- 7 items d'entraînement auto-corrigés (/7)
-- 3 productions écrites guidées (/3)
-- synthèse finale de leçon (/10)
-- persistance locale score courant + meilleur score
+Les leçons entièrement jouables dans cette version sont :
+- `p1-l1` — Les mots cousins du français
+- `p1-l2` — Saluer, répondre, comprendre
+- `p1-l3` — Les noms latins du monde simple
+- `p1-l4` — Le verbe au présent : qui fait l’action ?
+- `p1-l5` — Reconnaître sujet, verbe et complément
+- `p2-l6` — Relier latin et français (mots transparents)
+- `p2-l7` — Familles de mots autour du latin
+- `p2-l8` — Mémoriser le lexique utile
+- `p2-l9` — Correspondances simples phrase à phrase
+- `p2-l10` — Micro-thème guidé latin vers français et retour
+- `p3-l11` — Trouver le verbe
+- `p3-l12` — Identifier la structure S-V-C
+- `p3-l13` — Choisir la bonne forme verbale
+- `p3-l14` — Comprendre une micro-scène
+- `p3-l15` — Synthèse guidée période 3
 
-Les périodes 2 et 3 sont structurées en 12 leçons chacune (36 leçons au total) et restent extensibles.
+Pour les leçons actuellement finalisées :
+- entraînement 7 items jouables avec feedback immédiat
+- production guidée 3 champs texte corrigés automatiquement
+- synthèse finale de leçon affichée (`/7`, `/3`, `/10`)
+- persistance score courant + meilleur score via `localStorage`
+
+Les nouvelles leçons structurelles (passage à 12 leçons/période) sont ajoutées en placeholders explicites pour maintenir une app cohérente avant injection du nouveau contenu détaillé.
 
 ## Structure du repository
 
@@ -98,8 +112,6 @@ Puis ouvrir `http://127.0.0.1:4173`.
 
 Le projet est volontairement sans build lourd pour rester compatible GitHub Pages.
 
-Le chargement front passe par `assets/js/bootstrap.js` qui démarre `app.js` et affiche un message lisible si le montage échoue (évite l'écran blanc silencieux).
-
 ## Ajouter une nouvelle leçon (principe)
 1. Déclarer la leçon dans `assets/js/lessons.js` (format data-driven).
 2. Renseigner au minimum : `id`, `period`, `title`, `objective`, `maxScore`, `training`, `production`.
@@ -145,60 +157,6 @@ Comportements :
 - affichage de la bonne réponse en cas d’erreur
 - score production `/3` et prévisualisation du total leçon `/10`
 
-
-## Sauvegarde hybride de progression
-ATRIUM conserve la progression localement et propose un transfert manuel entre appareils (sans backend).
-
-Fonctionnement :
-- **Autosave local contrôlé** : la progression est sauvegardée automatiquement dans `localStorage` (`atrium-progress-v1`) avec une écriture debounced et un horodatage de dernière sauvegarde locale.
-- **Profil élève local** : nom élève / classe (et identifiant optionnel) stockés localement pour enrichir les exports.
-- **Export JSON** : bouton *Télécharger ma sauvegarde* depuis le dashboard, avec nom de fichier utile (`atrium-<eleve>-<classe>-YYYY-MM-DD-HHmm.json`, fallback propre si métadonnées absentes).
-- **Import JSON strict** : validation de `app`, `version`, `savedAt`, `progress` et structure minimale (`progress.lessons`, `progress.periods`).
-- **Prévisualisation avant import** : élève, classe, date de sauvegarde et état global (période 1) affichés avant confirmation.
-- **Confirmation intelligente** : comparaison locale vs fichier importé avant écrasement.
-- **Backup local avant import/reset** : copie locale préalable stockée (`atrium-progress-backup-v1`) pour faciliter un futur “annuler le dernier import”.
-- **Partage mobile natif** : bouton *Partager ma sauvegarde* activé si `navigator.share` + fichiers est disponible.
-
-Format de sauvegarde :
-```json
-{
-  "app": "ATRIUM",
-  "version": 1,
-  "savedAt": "2026-03-07T10:42:00.000Z",
-  "studentName": "Lucas Dupont",
-  "className": "5eB",
-  "studentId": "",
-  "progress": { ... }
-}
-```
-
-Limite importante :
-- sans backend, la continuité entre plusieurs appareils repose sur l'export/import manuel du fichier JSON.
-
-
-## Diplôme de progression par période
-Le dashboard affiche désormais un bouton **Générer diplôme** dans l'en-tête de chaque période.
-
-Règles d'éligibilité :
-- toutes les leçons de la période doivent être terminées au moins une fois ;
-- le **meilleur score** de la période doit être `>= 96/120` (80 %).
-
-Le diplôme contient :
-- nom élève (fallback : `Élève ATRIUM`) et classe si renseignée ;
-- période validée ;
-- score `/120` ;
-- certification scolaire de période ;
-- référencement CECRL adapté – profil LCA ;
-- date ;
-- mention responsable et copyright.
-
-Mapping CECRL adapté – profil LCA :
-- Période 1 : `96–107` → `Pré-A1 validé – profil LCA`, `108–120` → `Pré-A1+ validé – profil LCA`
-- Période 2 : `96–107` → `Pré-A1+ validé – profil LCA`, `108–120` → `A1 émergent – profil LCA`
-- Période 3 : `96–107` → `A1 émergent validé – profil LCA`, `108–120` → `A1 réception écrite guidée validé – profil LCA`
-
-Le document est conçu pour l'impression navigateur (ou export PDF via *Imprimer / Enregistrer en PDF*) avec un style écran + print dédié.
-
 ## API scoring, progression et persistance
 Fonctions principales :
 - `computeLessonScore(...)`
@@ -242,7 +200,6 @@ La vue résultats reprend la même logique avec un détail par période et par l
 Ajustements de stabilisation appliqués :
 - lien d’évitement clavier vers le contenu principal (`skip link`) ;
 - focus visible renforcé (`:focus-visible`) sur la navigation et les actions ;
-- footer global discret avec mention de copyright ;
 - navigation principale annotée (`aria-label`) et page active (`aria-current`) ;
 - structure HTML sémantique conservée (header/nav/main injectés par l’app-shell) ;
 - contrastes et lisibilité améliorés (texte secondaire, hiérarchie visuelle).
@@ -280,9 +237,3 @@ node tests/answer-checker.assertions.mjs
 - **Entraînement (/7)** : auto-correction déterministe (réponses attendues définies dans les données).
 - **Production (/3)** : correction guidée sur réponse courte avec normalisation (`normalize.js`) pour éviter les faux négatifs dus aux accents, casse, espaces, ponctuation.
 - Le mécanisme exact sera implémenté dans une PR dédiée au moteur métier.
-
-
-## Progression pédagogique période 1 (nouvelle architecture)
-- Période 1 — Acclimatation progressive au latin (12 leçons)
-- progression: lexique transparent, sujet/verbe, phrase minimale, complément, opposition de formes simples, premières phrases complètes, premiers pluriels, synthèse
-- types d'items utilisés : `singleChoice`, `multipleChoice`, `matching`, `ordering`, `textInput`
