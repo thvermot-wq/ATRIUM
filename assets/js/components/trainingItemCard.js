@@ -9,27 +9,6 @@ function normalizeType(type = "") {
   return map[type] || type;
 }
 
-const ATTEMPT_STATE = {
-  PRISTINE: "pristine",
-  SUBMITTED_CORRECT: "submitted_correct",
-  SUBMITTED_INCORRECT: "submitted_incorrect",
-  CORRECTION_VIEWED: "correction_viewed",
-  RESET_REQUIRED: "reset_required",
-};
-
-
-function safeSessionStorage() {
-  try {
-    if (typeof window !== "undefined" && window.sessionStorage) {
-      return window.sessionStorage;
-    }
-  } catch {
-    return null;
-  }
-
-  return null;
-}
-
 function shuffleArray(values = []) {
   const copy = [...values];
   for (let i = copy.length - 1; i > 0; i -= 1) {
@@ -39,58 +18,8 @@ function shuffleArray(values = []) {
   return copy;
 }
 
-function getAttemptStorageKey(itemId) {
-  return `atrium-attempt-order:${itemId}`;
-}
-
-function getStableShuffledOptions(item) {
-  const baseOptions = Array.isArray(item.options) ? [...item.options] : [];
-  if (baseOptions.length <= 1) {
-    return baseOptions;
-  }
-
-  const shouldShuffle = item.shuffle !== false;
-  if (!shouldShuffle) {
-    return baseOptions;
-  }
-
-  const storage = safeSessionStorage();
-  const key = getAttemptStorageKey(item.id);
-  if (storage) {
-    const raw = storage.getItem(key);
-    if (raw) {
-      try {
-        const parsed = JSON.parse(raw);
-        if (
-          Array.isArray(parsed) &&
-          parsed.length === baseOptions.length &&
-          parsed.every((opt) => baseOptions.includes(opt))
-        ) {
-          return parsed;
-        }
-      } catch {
-        // no-op
-      }
-    }
-  }
-
-  const shuffled = shuffleArray(baseOptions);
-  if (storage) {
-    storage.setItem(key, JSON.stringify(shuffled));
-  }
-
-  return shuffled;
-}
-
-function resetShuffledOptions(item) {
-  const storage = safeSessionStorage();
-  if (!storage) return;
-  storage.removeItem(getAttemptStorageKey(item.id));
-}
 function formatExpected(expected) {
-  if (Array.isArray(expected)) {
-    return expected.join(" | ");
-  }
+  if (Array.isArray(expected)) return expected.join(" | ");
   if (expected && typeof expected === "object") {
     return Object.entries(expected)
       .map(([left, right]) => `${left} → ${right}`)
@@ -99,11 +28,19 @@ function formatExpected(expected) {
   return String(expected ?? "");
 }
 
+function getRenderedOptions(item) {
+  const baseOptions = Array.isArray(item.options) ? [...item.options] : [];
+  if (item.shuffle === false || baseOptions.length <= 1) {
+    return baseOptions;
+  }
+  return shuffleArray(baseOptions);
+}
+
 function createSingleChoiceFields(item) {
   const wrapper = document.createElement("div");
   wrapper.className = "field-stack";
 
-  getStableShuffledOptions(item).forEach((option) => {
+  getRenderedOptions(item).forEach((option) => {
     const label = document.createElement("label");
     label.className = "choice-line";
     label.innerHTML = `
@@ -136,7 +73,7 @@ function createMultipleChoiceFields(item) {
   const wrapper = document.createElement("div");
   wrapper.className = "field-stack";
 
-  getStableShuffledOptions(item).forEach((option) => {
+  getRenderedOptions(item).forEach((option) => {
     const label = document.createElement("label");
     label.className = "choice-line";
     label.innerHTML = `
@@ -148,9 +85,7 @@ function createMultipleChoiceFields(item) {
 
   return {
     node: wrapper,
-    getResponse: () => {
-      return Array.from(wrapper.querySelectorAll('input[type="checkbox"]:checked')).map((input) => input.value);
-    },
+    getResponse: () => Array.from(wrapper.querySelectorAll('input[type="checkbox"]:checked')).map((input) => input.value),
     setDisabled: (disabled) => {
       wrapper.querySelectorAll("input").forEach((input) => {
         input.disabled = disabled;
@@ -253,11 +188,9 @@ function createOrderingFields(item) {
 
   return {
     node: wrapper,
-    getResponse: () => {
-      return Array.from(wrapper.querySelectorAll("select[data-order-index]"))
-        .sort((a, b) => Number(a.getAttribute("data-order-index")) - Number(b.getAttribute("data-order-index")))
-        .map((select) => select.value);
-    },
+    getResponse: () => Array.from(wrapper.querySelectorAll("select[data-order-index]"))
+      .sort((a, b) => Number(a.getAttribute("data-order-index")) - Number(b.getAttribute("data-order-index")))
+      .map((select) => select.value),
     setDisabled: (disabled) => {
       wrapper.querySelectorAll("select").forEach((select) => {
         select.disabled = disabled;
@@ -294,7 +227,7 @@ function createTextInputFields(item) {
   };
 }
 
-export function createTrainingItemCard({ item, onValidate, onReset }) {
+export function createTrainingItemCard({ item, onValidate, onReset, deferCorrection = false }) {
   const type = normalizeType(item.type || "single-choice");
   const card = document.createElement("article");
   card.className = "card training-item-card";
@@ -307,23 +240,16 @@ export function createTrainingItemCard({ item, onValidate, onReset }) {
   badge.textContent = `Type: ${type} · ${item.points || 1} point`;
 
   let renderer;
-  if (type === "single-choice") {
-    renderer = createSingleChoiceFields(item);
-  } else if (type === "multiple-choice") {
-    renderer = createMultipleChoiceFields(item);
-  } else if (type === "matching") {
-    renderer = createMatchingFields(item);
-  } else if (type === "ordering") {
-    renderer = createOrderingFields(item);
-  } else if (type === "text-input") {
-    renderer = createTextInputFields(item);
-  } else {
-    throw new Error(`Unsupported training item type in renderer: ${item.type}`);
-  }
+  if (type === "single-choice") renderer = createSingleChoiceFields(item);
+  else if (type === "multiple-choice") renderer = createMultipleChoiceFields(item);
+  else if (type === "matching") renderer = createMatchingFields(item);
+  else if (type === "ordering") renderer = createOrderingFields(item);
+  else if (type === "text-input") renderer = createTextInputFields(item);
+  else throw new Error(`Unsupported training item type in renderer: ${item.type}`);
 
   const feedback = document.createElement("p");
   feedback.className = "feedback-inline muted";
-  feedback.textContent = "En attente de validation.";
+  feedback.textContent = "En attente d'enregistrement.";
 
   const answer = document.createElement("p");
   answer.className = "muted answer-reveal";
@@ -335,89 +261,56 @@ export function createTrainingItemCard({ item, onValidate, onReset }) {
   const validateButton = document.createElement("button");
   validateButton.type = "button";
   validateButton.className = "btn btn-primary";
-  validateButton.textContent = "Valider l'item";
-
-  const correctionButton = document.createElement("button");
-  correctionButton.type = "button";
-  correctionButton.className = "btn btn-secondary";
-  correctionButton.textContent = "Voir la correction";
-  correctionButton.hidden = true;
+  validateButton.textContent = deferCorrection ? "Enregistrer la réponse" : "Valider l'item";
 
   const resetButton = document.createElement("button");
   resetButton.type = "button";
   resetButton.className = "btn btn-secondary";
   resetButton.textContent = "Réinitialiser l'exercice";
 
-  actions.append(validateButton, correctionButton, resetButton);
+  actions.append(validateButton, resetButton);
 
-  // Machine d'état de tentative pour empêcher la validation après consultation du corrigé.
-  let attemptState = ATTEMPT_STATE.PRISTINE;
+  let isSubmitted = false;
 
   function applyState() {
-    const isLocked = attemptState !== ATTEMPT_STATE.PRISTINE;
-    renderer.setDisabled(isLocked);
-
-    validateButton.disabled = attemptState !== ATTEMPT_STATE.PRISTINE;
-    correctionButton.hidden = ![
-      ATTEMPT_STATE.SUBMITTED_INCORRECT,
-      ATTEMPT_STATE.CORRECTION_VIEWED,
-      ATTEMPT_STATE.RESET_REQUIRED,
-    ].includes(attemptState);
-    correctionButton.disabled = attemptState !== ATTEMPT_STATE.SUBMITTED_INCORRECT;
-
-    if (attemptState === ATTEMPT_STATE.CORRECTION_VIEWED || attemptState === ATTEMPT_STATE.RESET_REQUIRED) {
-      feedback.textContent = "Correction consultée. Pour valider cet exercice, réinitialisez-le puis recommencez.";
-      feedback.className = "feedback-inline ko";
-      answer.hidden = false;
-      answer.textContent = `Correction : ${formatExpected(item.expected)}`;
-    }
+    renderer.setDisabled(isSubmitted);
+    validateButton.disabled = isSubmitted;
   }
 
   validateButton.addEventListener("click", () => {
-    if (attemptState !== ATTEMPT_STATE.PRISTINE) {
-      return;
-    }
+    if (isSubmitted) return;
 
     const result = onValidate(renderer.getResponse());
-    if (result.isCorrect) {
-      attemptState = ATTEMPT_STATE.SUBMITTED_CORRECT;
+    isSubmitted = true;
+
+    if (deferCorrection) {
+      feedback.className = "feedback-inline muted";
+      feedback.textContent = "Réponse enregistrée. Le corrigé complet apparaît en fin de leçon.";
+      answer.hidden = true;
+      answer.textContent = "";
+    } else if (result.isCorrect) {
       feedback.textContent = "✅ Correct";
       feedback.className = "feedback-inline ok";
       answer.hidden = true;
       answer.textContent = "";
     } else {
-      attemptState = ATTEMPT_STATE.SUBMITTED_INCORRECT;
       feedback.textContent = "❌ Incorrect";
       feedback.className = "feedback-inline ko";
-      answer.hidden = true;
-      answer.textContent = "";
+      answer.hidden = false;
+      answer.textContent = `Correction : ${formatExpected(item.expected)}`;
     }
 
-    applyState();
-  });
-
-  correctionButton.addEventListener("click", () => {
-    if (attemptState !== ATTEMPT_STATE.SUBMITTED_INCORRECT) {
-      return;
-    }
-
-    attemptState = ATTEMPT_STATE.CORRECTION_VIEWED;
-    applyState();
-    attemptState = ATTEMPT_STATE.RESET_REQUIRED;
     applyState();
   });
 
   resetButton.addEventListener("click", () => {
     renderer.resetResponse();
-    resetShuffledOptions(item);
     answer.hidden = true;
     answer.textContent = "";
     feedback.className = "feedback-inline muted";
     feedback.textContent = "Exercice réinitialisé. Nouvelle tentative prête.";
-    attemptState = ATTEMPT_STATE.PRISTINE;
-    if (typeof onReset === "function") {
-      onReset();
-    }
+    isSubmitted = false;
+    if (typeof onReset === "function") onReset();
     applyState();
   });
 

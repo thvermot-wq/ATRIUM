@@ -6,15 +6,23 @@ function run() {
   const playableIds = playable.map((lesson) => lesson.id).sort();
   const expectedPlayableIds = [
     "p1-l1",
+    "p1-l10",
+    "p1-l11",
+    "p1-l12",
     "p1-l2",
     "p1-l3",
     "p1-l4",
     "p1-l5",
-    "p2-l10",
+    "p1-l6",
+    "p1-l7",
+    "p1-l8",
+    "p1-l9",
+    "p2-l1",
+    "p2-l2",
+    "p2-l3",
+    "p2-l4",
+    "p2-l5",
     "p2-l6",
-    "p2-l7",
-    "p2-l8",
-    "p2-l9",
     "p3-l11",
     "p3-l12",
     "p3-l13",
@@ -30,7 +38,7 @@ function run() {
   });
 
   const nonPlayable = lessons.filter((lesson) => lesson?.meta?.status !== "ready");
-  assert.equal(nonPlayable.length, 21);
+  assert.equal(nonPlayable.length, 13);
 
   console.log("playable-lessons assertions passed");
 }
