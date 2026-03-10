@@ -35,6 +35,12 @@ function run() {
     "5e-p3-l14",
     "5e-p3-l15",
     "5e-p3-l16",
+    "5e-p3-l17",
+    "5e-p3-l18",
+    "5e-p3-l19",
+    "5e-p3-l20",
+    "5e-p3-l21",
+    "5e-p3-l22",
   ];
 
   assert.deepEqual(playableIds, expectedPlayableIds);
@@ -45,7 +51,7 @@ function run() {
   });
 
   const nonPlayable = lessons.filter((lesson) => lesson?.meta?.status !== "ready");
-  assert.equal(nonPlayable.length, 6);
+  assert.equal(nonPlayable.length, 0);
 
   console.log("playable-lessons assertions passed");
 }
