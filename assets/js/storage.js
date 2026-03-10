@@ -3,6 +3,10 @@ import { computeLessonScore, computePeriodScore } from "./scoring.js";
 
 export const STORAGE_KEY = "atrium-progress-v1";
 
+function getStorageKey(levelId = "5e") {
+  return `atrium:progress:${levelId}`;
+}
+
 function defaultLessonProgress() {
   return {
     current: {
@@ -79,10 +83,11 @@ export function recomputePeriodProgress({ progress, lessons, periods }) {
   return next;
 }
 
-export function loadProgress({ lessons, periods }) {
+export function loadProgress({ lessons, periods, levelId = "5e" }) {
   const fallback = createInitialProgress({ lessons, periods });
 
-  const raw = localStorage.getItem(STORAGE_KEY);
+  const namespacedRaw = localStorage.getItem(getStorageKey(levelId));
+  const raw = namespacedRaw || localStorage.getItem(STORAGE_KEY);
   if (!raw) return fallback;
 
   const parsed = safelyParse(raw);
@@ -113,8 +118,12 @@ export function loadProgress({ lessons, periods }) {
   return recomputePeriodProgress({ progress: merged, lessons, periods });
 }
 
-export function saveProgress(progress) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+export function saveProgress(progress, { levelId = "5e" } = {}) {
+  const payload = JSON.stringify(progress);
+  localStorage.setItem(getStorageKey(levelId), payload);
+  if (levelId === "5e") {
+    localStorage.setItem(STORAGE_KEY, payload);
+  }
 }
 
 export function saveLessonProgress({ progress, lessonId, trainingScore, productionScore, lessons, periods }) {

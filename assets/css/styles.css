@@ -130,6 +130,18 @@ ul {
   gap: 1rem;
 }
 
+
+.level-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.level-card {
+  display: grid;
+  gap: 0.55rem;
+}
+
 .period-grid {
   display: grid;
   gap: 0.9rem;
@@ -224,7 +236,8 @@ ul {
 }
 
 @media (max-width: 980px) {
-  .period-grid {
+  .period-grid,
+  .level-grid {
     grid-template-columns: 1fr;
   }
 }
