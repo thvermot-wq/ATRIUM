@@ -29,12 +29,24 @@ function safeScore(value) {
   return Math.max(0, Math.min(LESSONS_SPEC.periodMax, Math.round(n)));
 }
 
+function parsePeriodRef(periodId = "p1") {
+  const raw = String(periodId || "p1");
+  const namespaced = raw.match(/^([^-]+)-(p[1-3])$/);
+  if (namespaced) {
+    return { levelId: namespaced[1], basePeriodId: namespaced[2], periodId: raw };
+  }
+
+  return { levelId: "5e", basePeriodId: raw, periodId: `5e-${raw}` };
+}
+
 export function getBestPeriodScore(periodId, progressState) {
-  return safeScore(progressState?.periods?.[periodId]?.totalScore);
+  const ref = parsePeriodRef(periodId);
+  return safeScore(progressState?.periods?.[ref.periodId]?.totalScore);
 }
 
 export function areAllLessonsCompleted(periodId, progressState) {
-  const periodLessons = getLessonsByPeriod(periodId);
+  const ref = parsePeriodRef(periodId);
+  const periodLessons = getLessonsByPeriod(ref.periodId, ref.levelId);
   if (periodLessons.length === 0) return false;
   return periodLessons.every((lesson) => Boolean(progressState?.lessons?.[lesson.id]?.playedAt));
 }
@@ -46,11 +58,13 @@ export function isPeriodDiplomaEligible(periodId, progressState) {
 }
 
 export function getSchoolCertificationLabel(periodId) {
-  return SCHOOL_CERTIFICATION[periodId] || "Certification scolaire : Validation ATRIUM";
+  const ref = parsePeriodRef(periodId);
+  return SCHOOL_CERTIFICATION[ref.basePeriodId] || "Certification scolaire : Validation ATRIUM";
 }
 
 export function getLcaCefrProfile(periodId, bestPeriodScore) {
-  const labels = LCA_CEFR_LABELS[periodId];
+  const ref = parsePeriodRef(periodId);
+  const labels = LCA_CEFR_LABELS[ref.basePeriodId];
   if (!labels) return "Profil LCA non disponible";
 
   const score = safeScore(bestPeriodScore);
@@ -59,15 +73,16 @@ export function getLcaCefrProfile(periodId, bestPeriodScore) {
 }
 
 export function buildDiplomaData(periodId, progressState, studentProfile = {}) {
-  const period = periods.find((entry) => entry.id === periodId);
+  const ref = parsePeriodRef(periodId);
+  const period = periods.find((entry) => entry.id === ref.periodId);
   if (!period) return null;
 
-  const bestPeriodScore = getBestPeriodScore(periodId, progressState);
-  const allLessonsCompleted = areAllLessonsCompleted(periodId, progressState);
+  const bestPeriodScore = getBestPeriodScore(ref.periodId, progressState);
+  const allLessonsCompleted = areAllLessonsCompleted(ref.periodId, progressState);
   const eligible = allLessonsCompleted && bestPeriodScore >= DIPLOMA_THRESHOLD;
 
   return {
-    periodId,
+    periodId: ref.periodId,
     period,
     studentName: studentProfile.studentName?.trim() || "Élève ATRIUM",
     className: studentProfile.className?.trim() || "",
@@ -76,8 +91,8 @@ export function buildDiplomaData(periodId, progressState, studentProfile = {}) {
     allLessonsCompleted,
     eligible,
     diplomaThreshold: DIPLOMA_THRESHOLD,
-    schoolCertification: getSchoolCertificationLabel(periodId),
-    lcaCefrProfile: getLcaCefrProfile(periodId, bestPeriodScore),
+    schoolCertification: getSchoolCertificationLabel(ref.periodId),
+    lcaCefrProfile: getLcaCefrProfile(ref.periodId, bestPeriodScore),
     issuedAt: new Date().toISOString(),
   };
 }

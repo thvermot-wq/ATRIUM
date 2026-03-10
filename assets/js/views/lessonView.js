@@ -15,8 +15,33 @@ function isLessonPlayable(lesson) {
   );
 }
 
-export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults }) {
-  const lesson = getLessonById(lessonId);
+function getLessonSummary(lesson) {
+  if (lesson?.summary && typeof lesson.summary === "object") {
+    return {
+      retains: Array.isArray(lesson.summary.retains) ? lesson.summary.retains : [lesson.objective],
+      cahier: Array.isArray(lesson.summary.cahier) ? lesson.summary.cahier : [lesson.objective],
+      keywords: Array.isArray(lesson.summary.keywords) ? lesson.summary.keywords : (lesson.meta?.tags || []),
+    };
+  }
+
+  return {
+    retains: [lesson.objective],
+    cahier: [`Je reformule l'objectif : ${lesson.objective}`],
+    keywords: Array.isArray(lesson.meta?.tags) ? lesson.meta.tags : [lesson.periodId, "latin"],
+  };
+}
+
+function formatReviewLine(item, userAnswer, isCorrect) {
+  const user = Array.isArray(userAnswer)
+    ? userAnswer.join(", ")
+    : userAnswer && typeof userAnswer === "object"
+      ? JSON.stringify(userAnswer)
+      : String(userAnswer || "(vide)");
+  return `<li>${isCorrect ? "✅" : "❌"} ${item.prompt}<br/><span class="muted">Votre réponse : ${user}</span></li>`;
+}
+
+export function renderLessonView({ level, lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults, onRestartLesson }) {
+  const lesson = getLessonById(lessonId, level?.id);
   const wrapper = document.createElement("section");
   wrapper.className = "stack";
 
@@ -63,117 +88,130 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
 
   const hero = document.createElement("article");
   hero.className = "card";
+  hero.innerHTML = `
+    <h2>${lesson.title}</h2>
+    <p class="muted">${lesson.id} · Période ${lesson.period}</p>
+    <p><strong>Objectif :</strong> ${lesson.objective}</p>
+    <p class="muted">Flow complet : répondez d'abord aux 10 exercices, puis consultez le corrigé global en fin de leçon.</p>
+    <p class="muted">Score enregistré: courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
+  `;
 
   const trainingBoard = document.createElement("div");
   trainingBoard.className = "training-board";
 
+  const productionBoard = document.createElement("div");
+  productionBoard.className = "production-board";
+
   const trainingState = document.createElement("p");
   trainingState.className = "muted";
 
-  const syncTrainingState = () => {
-    const current = computeTrainingProgress(lesson.training, trainingResults);
-    trainingState.textContent = `Entraînement: score ${current.score}/${LESSONS_SPEC.trainingMax} · progression ${current.answeredCount}/${current.totalItems}`;
-    return current;
+  const productionState = document.createElement("p");
+  productionState.className = "muted";
+
+  const flowState = document.createElement("p");
+  flowState.className = "muted";
+
+  const form = document.createElement("form");
+  form.className = "stack compact-form";
+  form.id = "lesson-score-form";
+
+  const finishButton = document.createElement("button");
+  finishButton.type = "submit";
+  finishButton.className = "btn btn-primary";
+  finishButton.textContent = "Terminer la leçon (corrigé final)";
+
+  const resetLessonButton = document.createElement("button");
+  resetLessonButton.type = "button";
+  resetLessonButton.className = "btn btn-secondary";
+  resetLessonButton.textContent = "Réinitialiser toute la leçon";
+
+  const backButton = document.createElement("button");
+  backButton.type = "button";
+  backButton.className = "btn btn-secondary";
+  backButton.textContent = "Retour dashboard";
+
+  const resultsButton = document.createElement("button");
+  resultsButton.type = "button";
+  resultsButton.className = "btn btn-secondary";
+  resultsButton.textContent = "Voir résultats";
+
+  const actions = document.createElement("div");
+  actions.className = "actions-row";
+  actions.append(finishButton, resetLessonButton, backButton, resultsButton);
+
+  form.appendChild(actions);
+
+  const finalSummary = document.createElement("article");
+  finalSummary.className = "card";
+  finalSummary.hidden = true;
+
+  const syncStates = () => {
+    const training = computeTrainingProgress(lesson.training, trainingResults);
+    const production = computeProductionProgress(lesson.production, productionResults);
+    const answeredCount = training.answeredCount + production.answeredCount;
+    const totalItems = training.totalItems + production.totalItems;
+
+    trainingState.textContent = `Entraînement : ${training.answeredCount}/${training.totalItems} réponses enregistrées.`;
+    productionState.textContent = `Production guidée : ${production.answeredCount}/${production.totalItems} réponses enregistrées.`;
+    flowState.textContent = `Progression leçon : ${answeredCount}/${totalItems} exercices. Le score détaillé sera affiché en fin de leçon.`;
+
+    finishButton.disabled = answeredCount !== totalItems;
+    return { training, production, answeredCount, totalItems };
   };
 
   lesson.training.forEach((item) => {
     const card = createTrainingItemCard({
       item,
+      deferCorrection: true,
       onValidate: (userResponse) => {
         const result = evaluateTrainingItem(item, userResponse);
-        trainingResults[item.id] = result;
-        syncTrainingState();
-        syncTotalPreview();
+        trainingResults[item.id] = {
+          ...result,
+          userAnswer: userResponse,
+        };
+        syncStates();
         return result;
       },
       onReset: () => {
         delete trainingResults[item.id];
-        syncTrainingState();
-        syncTotalPreview();
+        syncStates();
       },
     });
     trainingBoard.appendChild(card);
   });
 
-  const productionBoard = document.createElement("div");
-  productionBoard.className = "production-board";
-
-  const productionState = document.createElement("p");
-  productionState.className = "muted";
-
-  const syncProductionState = () => {
-    const current = computeProductionProgress(lesson.production, productionResults);
-    productionState.textContent = `Production guidée: score ${current.score}/${LESSONS_SPEC.productionMax} · progression ${current.answeredCount}/${current.totalItems}`;
-    return current;
-  };
-
   lesson.production.forEach((item) => {
     const card = createProductionItemCard({
       item,
+      deferCorrection: true,
       onEvaluate: (userAnswer) => {
         const result = evaluateProductionItem(item, userAnswer);
         productionResults[item.id] = {
           ...result,
           userAnswer: String(userAnswer ?? ""),
         };
-        syncProductionState();
-        syncTotalPreview();
+        syncStates();
         return result;
       },
       onReset: () => {
         delete productionResults[item.id];
-        syncProductionState();
-        syncTotalPreview();
+        syncStates();
       },
     });
     productionBoard.appendChild(card);
   });
 
-  const totalPreview = document.createElement("p");
-  totalPreview.className = "muted";
-
-  const syncTotalPreview = () => {
-    const training = computeTrainingProgress(lesson.training, trainingResults);
-    const production = computeProductionProgress(lesson.production, productionResults);
-    const total = training.score + production.score;
-    totalPreview.textContent = `Total leçon (prévisualisation) : ${total}/${LESSONS_SPEC.lessonMax} (entraînement ${training.score}/7 + production ${production.score}/3)`;
-  };
-
-  const finalSummary = document.createElement("article");
-  finalSummary.className = "card";
-  finalSummary.hidden = true;
-
-  syncTrainingState();
-  syncProductionState();
-  syncTotalPreview();
-
-  hero.innerHTML = `
-    <h2>${lesson.title}</h2>
-    <p class="muted">${lesson.id} · Période ${lesson.period}</p>
-    <p><strong>Objectif :</strong> ${lesson.objective}</p>
-    <p class="muted">Score enregistré: courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
-    <p class="muted">Phase entraînement: 7 micro-items (1 point/item), correction immédiate.</p>
-    <p class="muted">Phase production: 3 productions écrites guidées (1 point/item), correction automatique.</p>
-  `;
-
-  const form = document.createElement("form");
-  form.className = "stack compact-form";
-  form.id = "lesson-score-form";
-  form.innerHTML = `
-    <div class="actions-row">
-      <button type="submit" class="btn btn-primary">Valider et enregistrer la leçon</button>
-      <button type="button" class="btn btn-secondary" data-action="back">Retour dashboard</button>
-      <button type="button" class="btn btn-secondary" data-action="results">Voir résultats</button>
-    </div>
-  `;
-
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-
     const latestTraining = computeTrainingProgress(lesson.training, trainingResults);
     const latestProduction = computeProductionProgress(lesson.production, productionResults);
 
+    if (latestTraining.answeredCount + latestProduction.answeredCount !== latestTraining.totalItems + latestProduction.totalItems) {
+      return;
+    }
+
     const saved = onSaveLessonScore({
+      levelId: level?.id,
       lessonId: lesson.id,
       trainingScore: latestTraining.score,
       productionScore: latestProduction.score,
@@ -181,24 +219,53 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
 
     const currentScore = saved?.lessonProgress?.current?.totalScore ?? latestTraining.score + latestProduction.score;
     const bestScore = saved?.lessonProgress?.best?.totalScore ?? currentScore;
+    const summary = getLessonSummary(lesson);
+
+    const trainingReview = lesson.training
+      .map((item) => formatReviewLine(item, trainingResults[item.id]?.userAnswer, trainingResults[item.id]?.isCorrect))
+      .join("");
+    const productionReview = lesson.production
+      .map((item) => formatReviewLine(item, productionResults[item.id]?.userAnswer, productionResults[item.id]?.isCorrect))
+      .join("");
 
     finalSummary.hidden = false;
     finalSummary.innerHTML = `
-      <h3>Synthèse finale de la leçon</h3>
-      <p>Entraînement : ${latestTraining.score}/7</p>
-      <p>Production : ${latestProduction.score}/3</p>
-      <p><strong>Total : ${currentScore}/10</strong></p>
+      <h3>Résultats finaux de la leçon</h3>
+      <p><strong>Score :</strong> ${currentScore}/10 (entraînement ${latestTraining.score}/7 + production ${latestProduction.score}/3)</p>
       <p class="muted">Meilleur score conservé : ${bestScore}/10</p>
+
+      <h4>Correction / Revue globale</h4>
+      <ul>${trainingReview}${productionReview}</ul>
+
+      <h4>Je retiens</h4>
+      <ul>${summary.retains.map((line) => `<li>${line}</li>`).join("")}</ul>
+
+      <h4>Je recopie dans mon cahier</h4>
+      <ul>${summary.cahier.map((line) => `<li>${line}</li>`).join("")}</ul>
+
+      <h4>Mots-clés</h4>
+      <p>${summary.keywords.join(" · ")}</p>
     `;
   });
 
-  form.querySelector('[data-action="back"]').addEventListener("click", onBackDashboard);
-  form.querySelector('[data-action="results"]').addEventListener("click", onOpenResults);
+  resetLessonButton.addEventListener("click", () => {
+    if (typeof onRestartLesson === "function") {
+      onRestartLesson();
+      return;
+    }
+
+    window.location.reload();
+  });
+
+  backButton.addEventListener("click", onBackDashboard);
+  resultsButton.addEventListener("click", onOpenResults);
 
   const feedback = createFeedbackBox({
-    title: "Moteur générique entraînement + production",
-    text: "La leçon reste data-driven. Entraînement (/7) et production guidée (/3) sont évalués séparément puis combinés en total /10.",
+    title: "Moteur de leçon complet",
+    text: "ATRIUM conserve le contrat /7 + /3 = /10. Les corrections détaillées apparaissent uniquement sur l'écran final.",
   });
+
+  syncStates();
 
   wrapper.append(
     hero,
@@ -206,7 +273,7 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
     trainingBoard,
     productionState,
     productionBoard,
-    totalPreview,
+    flowState,
     form,
     finalSummary,
     feedback,
