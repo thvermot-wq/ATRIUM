@@ -70,6 +70,11 @@ function createPlaceholderLesson({ id, period, title, objective }) {
       status: "draft",
       tags: ["placeholder"],
     },
+    summary: {
+      retains: [objective],
+      cahier: ["Je recopie le vocabulaire clé de la leçon."],
+      keywords: ["placeholder", `p${period}`],
+    },
   };
 }
 
@@ -1012,10 +1017,81 @@ export const lessons = [
   }),
 ];
 
-export function getLessonsByPeriod(periodId) {
-  return lessons.filter((lesson) => lesson.periodId === periodId);
+export const LEVELS_SPEC = [
+  {
+    id: "5e",
+    label: "5e",
+    masteryTitle: "Maîtrise 1 : Fondations du latin",
+    masteryShort: "Fondations",
+    subtitle: "Maîtrise 1 : Fondations du latin",
+    ambition: "Entrer dans la langue, reconnaître, manipuler, mémoriser",
+    description: "Vocabulaire de base, cas essentiels, premières phrases.",
+    dashboardTitle: "Atrium I : Fondations",
+    dashboardSubtitle:
+      "Euroclassica : pré-Vestibulum / Vestibulum en cours d’acquisition · CECRL adapté – profil LCA : Pre-A1+ / A1 émergent en réception écrite guidée",
+  },
+  {
+    id: "4e",
+    label: "4e",
+    masteryTitle: "Maîtrise 2 : Morphologie et syntaxe",
+    masteryShort: "Morphologie et syntaxe",
+    subtitle: "Maîtrise 2 : Morphologie et syntaxe",
+    ambition: "Consolider les formes, comprendre les fonctions, automatiser",
+    description: "Déclinaisons, conjugaisons, fonctions, automatisation.",
+    dashboardTitle: "Atrium II : Consolidation",
+    dashboardSubtitle:
+      "Euroclassica : Vestibulum consolidé · CECRL adapté – profil LCA : A1 émergent / A1 consolidé en réception écrite guidée",
+  },
+  {
+    id: "3e",
+    label: "3e",
+    masteryTitle: "Maîtrise 3 : Lecture et traduction guidées",
+    masteryShort: "Lecture et traduction",
+    subtitle: "Maîtrise 3 : Lecture et traduction guidées",
+    ambition: "Lire, traduire, relier langue et civilisation",
+    description: "Consolidation, lecture accompagnée, version/thème simples.",
+    dashboardTitle: "Atrium III : Maîtrise",
+    dashboardSubtitle:
+      "Euroclassica : Vestibulum + / pré-Ianua · CECRL adapté – profil LCA : A1+ / début A2 en réception écrite guidée",
+  },
+];
+
+export const DEFAULT_LEVEL_ID = "5e";
+
+function clonePeriodsForLevel(levelId) {
+  return periods.map((period) => ({ ...period, levelId }));
 }
 
-export function getLessonById(lessonId) {
-  return lessons.find((lesson) => lesson.id === lessonId) || null;
+function cloneLessonsForLevel(levelId) {
+  return lessons.map((lesson) => ({ ...lesson, levelId }));
+}
+
+export const levels = LEVELS_SPEC.map((level) => ({
+  ...level,
+  periods: clonePeriodsForLevel(level.id),
+  lessons: cloneLessonsForLevel(level.id),
+}));
+
+function findLevel(levelId = DEFAULT_LEVEL_ID) {
+  return levels.find((level) => level.id === levelId) || levels[0];
+}
+
+export function getLevelById(levelId = DEFAULT_LEVEL_ID) {
+  return findLevel(levelId) || null;
+}
+
+export function getPeriodsByLevel(levelId = DEFAULT_LEVEL_ID) {
+  return findLevel(levelId)?.periods || [];
+}
+
+export function getLessonsByLevel(levelId = DEFAULT_LEVEL_ID) {
+  return findLevel(levelId)?.lessons || [];
+}
+
+export function getLessonsByPeriod(periodId, levelId = DEFAULT_LEVEL_ID) {
+  return getLessonsByLevel(levelId).filter((lesson) => lesson.periodId === periodId);
+}
+
+export function getLessonById(lessonId, levelId = DEFAULT_LEVEL_ID) {
+  return getLessonsByLevel(levelId).find((lesson) => lesson.id === lessonId) || null;
 }
