@@ -1,11 +1,19 @@
 import { isCorrect } from "./answerChecker.js";
 
+function asNonEmptyArray(value) {
+  if (!Array.isArray(value)) return [];
+  return value.map((item) => String(item ?? "").trim()).filter(Boolean);
+}
+
 function inferAnswerConfig(item) {
   if (item && item.answerConfig && typeof item.answerConfig === "object") {
     return item.answerConfig;
   }
 
   const type = item.type || "exact";
+  const acceptedAnswers = asNonEmptyArray(item.acceptedAnswers);
+  const accepted = asNonEmptyArray(item.accepted);
+  const mergedAccepted = acceptedAnswers.length > 0 ? acceptedAnswers : accepted;
 
   if (type === "image-to-word" || type === "situation-to-formula" || type === "find-verb") {
     return {
@@ -19,7 +27,9 @@ function inferAnswerConfig(item) {
     return {
       type: "translation-segment",
       language: item.language || "fr",
-      accepted: Array.isArray(item.accepted) && item.accepted.length ? item.accepted : [item.expected],
+      accepted: mergedAccepted.length ? mergedAccepted : [item.expected],
+      tolerateArticles: item.tolerateArticles,
+      synonyms: item.synonyms,
     };
   }
 
@@ -27,7 +37,9 @@ function inferAnswerConfig(item) {
     return {
       type: "one-of",
       language: item.language || "fr",
-      accepted: Array.isArray(item.accepted) && item.accepted.length ? item.accepted : [item.expected],
+      accepted: mergedAccepted.length ? mergedAccepted : [item.expected],
+      tolerateArticles: item.tolerateArticles,
+      synonyms: item.synonyms,
     };
   }
 
@@ -40,11 +52,13 @@ function inferAnswerConfig(item) {
   }
 
   if (type === "textInput") {
-    if (Array.isArray(item.accepted) && item.accepted.length) {
+    if (mergedAccepted.length) {
       return {
         type: "translation-segment",
         language: item.language || "fr",
-        accepted: item.accepted,
+        accepted: mergedAccepted,
+        tolerateArticles: item.tolerateArticles,
+        synonyms: item.synonyms,
       };
     }
 

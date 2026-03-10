@@ -5,21 +5,42 @@ function run() {
   const playable = lessons.filter((lesson) => lesson?.meta?.status === "ready");
   const playableIds = playable.map((lesson) => lesson.id).sort();
   const expectedPlayableIds = [
-    "p1-l1",
-    "p1-l2",
-    "p1-l3",
-    "p1-l4",
-    "p1-l5",
-    "p2-l10",
-    "p2-l6",
-    "p2-l7",
-    "p2-l8",
-    "p2-l9",
-    "p3-l11",
-    "p3-l12",
-    "p3-l13",
-    "p3-l14",
-    "p3-l15",
+    "5e-p1-l1",
+    "5e-p1-l10",
+    "5e-p1-l11",
+    "5e-p1-l12",
+    "5e-p1-l2",
+    "5e-p1-l3",
+    "5e-p1-l4",
+    "5e-p1-l5",
+    "5e-p1-l6",
+    "5e-p1-l7",
+    "5e-p1-l8",
+    "5e-p1-l9",
+    "5e-p2-l1",
+    "5e-p2-l10",
+    "5e-p2-l11",
+    "5e-p2-l12",
+    "5e-p2-l2",
+    "5e-p2-l3",
+    "5e-p2-l4",
+    "5e-p2-l5",
+    "5e-p2-l6",
+    "5e-p2-l7",
+    "5e-p2-l8",
+    "5e-p2-l9",
+    "5e-p3-l11",
+    "5e-p3-l12",
+    "5e-p3-l13",
+    "5e-p3-l14",
+    "5e-p3-l15",
+    "5e-p3-l16",
+    "5e-p3-l17",
+    "5e-p3-l18",
+    "5e-p3-l19",
+    "5e-p3-l20",
+    "5e-p3-l21",
+    "5e-p3-l22",
   ];
 
   assert.deepEqual(playableIds, expectedPlayableIds);
@@ -30,7 +51,7 @@ function run() {
   });
 
   const nonPlayable = lessons.filter((lesson) => lesson?.meta?.status !== "ready");
-  assert.equal(nonPlayable.length, 21);
+  assert.equal(nonPlayable.length, 0);
 
   console.log("playable-lessons assertions passed");
 }

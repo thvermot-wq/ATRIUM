@@ -58,6 +58,19 @@ function run() {
   const textInputResult = evaluateProductionItem(textInputItem, "Rosa floret.");
   assert.equal(textInputResult.isCorrect, true);
 
+
+  const acceptedAnswersItem = {
+    id: "p7",
+    type: "textInput",
+    expected: "la lettre est dans la caisse",
+    acceptedAnswers: ["la lettre est dans la caisse", "la lettre est dans la boite"],
+    language: "fr",
+    tolerateArticles: true,
+    points: 1,
+  };
+  const acceptedAnswersResult = evaluateProductionItem(acceptedAnswersItem, "lettre est dans la boîte");
+  assert.equal(acceptedAnswersResult.isCorrect, true);
+
   const wrongItem = {
     id: "p3",
     type: "find-verb",
