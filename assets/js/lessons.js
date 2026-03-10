@@ -1004,7 +1004,7 @@ export const lessons = [
     meta: { status: "ready", tags: ["âne", "hortus", "p2-l5"] },
   },
   {
-    id: "p2-l6",
+    id: "p2-l2",
     period: 2,
     periodId: "p2",
     title: "La lettre perdue",
@@ -1051,7 +1051,7 @@ export const lessons = [
     meta: { status: "ready", tags: ["lettre", "scène", "p2-l6"] },
   },
   {
-    id: "p2-l7",
+    id: "p2-l3",
     period: 2,
     periodId: "p2",
     title: "Forum, temple, jardin",
@@ -1098,7 +1098,7 @@ export const lessons = [
     meta: { status: "ready", tags: ["lieux", "prépositions", "p2-l7"] },
   },
   {
-    id: "p2-l8",
+    id: "p2-l4",
     period: 2,
     periodId: "p2",
     title: "La statue, le cadeau et l’ami",
@@ -1145,7 +1145,7 @@ export const lessons = [
     meta: { status: "ready", tags: ["scène", "fonctions", "p2-l8"] },
   },
   {
-    id: "p2-l9",
+    id: "p2-l5",
     period: 2,
     periodId: "p2",
     title: "D’autres noms existent",
@@ -1192,7 +1192,7 @@ export const lessons = [
     meta: { status: "ready", tags: ["lexique", "noms", "p2-l9"] },
   },
   {
-    id: "p2-l10",
+    id: "p2-l6",
     period: 2,
     periodId: "p2",
     title: "Qui fait quoi, vraiment ?",
