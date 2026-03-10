@@ -1,18 +1,20 @@
+import { levels } from "./lessons.js";
 import { renderHomeView } from "./views/homeView.js";
 import { renderDashboardView } from "./views/dashboardView.js";
 import { renderLessonView } from "./views/lessonView.js";
 import { renderResultsView } from "./views/resultsView.js";
 import { getThemeState, toggleTheme } from "./theme.js";
 
-function createTopNav({ navigate, currentRouteName }) {
+function createTopNav({ navigate, currentRouteName, levelId }) {
   const nav = document.createElement("nav");
   nav.className = "top-nav";
   nav.setAttribute("aria-label", "Navigation principale");
 
+  const levelPath = `#/${levelId || "5e"}`;
   const links = [
     { label: "Accueil", path: "#/", name: "home" },
-    { label: "Dashboard", path: "#/dashboard", name: "dashboard" },
-    { label: "Résultats", path: "#/results", name: "results" },
+    { label: "Dashboard", path: levelPath, name: "dashboard" },
+    { label: "Résultats", path: `${levelPath}/results`, name: "results" },
   ];
 
   links.forEach((link) => {
@@ -28,7 +30,7 @@ function createTopNav({ navigate, currentRouteName }) {
   return nav;
 }
 
-function createAppLayout({ navigate, currentRouteName }) {
+function createAppLayout({ navigate, currentRouteName, levelId }) {
   const fragment = document.createDocumentFragment();
 
   const header = document.createElement("header");
@@ -57,7 +59,7 @@ function createAppLayout({ navigate, currentRouteName }) {
     themeButton.textContent = dark ? '🌙 Mode sombre' : '☀️ Mode clair';
   });
 
-  const nav = createTopNav({ navigate, currentRouteName });
+  const nav = createTopNav({ navigate, currentRouteName, levelId });
 
   const main = document.createElement("main");
   main.id = "view-root";
@@ -81,31 +83,42 @@ function renderNotFoundView({ onOpenHome }) {
   return section;
 }
 
-export function renderApp(rootElement, { router, route, progress, onSaveLessonScore }) {
+export function renderApp(rootElement, { router, route, level, progress, onSaveLessonScore }) {
   rootElement.innerHTML = "";
 
-  const { fragment, main } = createAppLayout({ navigate: router.navigate, currentRouteName: route.name });
+  const { fragment, main } = createAppLayout({ navigate: router.navigate, currentRouteName: route.name, levelId: level?.id });
   rootElement.appendChild(fragment);
 
+  const levelId = level?.id || "5e";
+
   const callbacks = {
-    onOpenDashboard: () => router.navigate("#/dashboard"),
-    onOpenResults: () => router.navigate("#/results"),
-    onOpenLesson: (lessonId) => router.navigate(`#/lesson/${lessonId}`),
-    onBackDashboard: () => router.navigate("#/dashboard"),
+    onOpenLevel: (nextLevelId) => router.navigate(`#/${nextLevelId}`),
+    onOpenDashboard: () => router.navigate(`#/${levelId}`),
+    onOpenResults: () => router.navigate(`#/${levelId}/results`),
+    onOpenLesson: (lessonId) => router.navigate(`#/${levelId}/lesson/${lessonId}`),
+    onBackDashboard: () => router.navigate(`#/${levelId}`),
     onOpenHome: () => router.navigate("#/"),
     onSaveLessonScore,
+    onRestartLesson: () => {
+      const lessonId = route?.params?.lessonId;
+      if (!lessonId) return;
+      router.navigate("#/");
+      setTimeout(() => {
+        router.navigate(`#/${levelId}/lesson/${lessonId}`);
+      }, 0);
+    },
   };
 
   let viewNode;
 
   if (route.name === "home") {
-    viewNode = renderHomeView(callbacks);
+    viewNode = renderHomeView({ ...callbacks, levels });
   } else if (route.name === "dashboard") {
-    viewNode = renderDashboardView({ ...callbacks, progress });
+    viewNode = renderDashboardView({ ...callbacks, level, progress });
   } else if (route.name === "lesson") {
-    viewNode = renderLessonView({ ...callbacks, lessonId: route.params.lessonId, progress });
+    viewNode = renderLessonView({ ...callbacks, level, lessonId: route.params.lessonId, progress });
   } else if (route.name === "results") {
-    viewNode = renderResultsView({ ...callbacks, progress });
+    viewNode = renderResultsView({ ...callbacks, level, progress });
   } else {
     viewNode = renderNotFoundView(callbacks);
   }
