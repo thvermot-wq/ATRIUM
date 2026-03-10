@@ -130,6 +130,18 @@ ul {
   gap: 1rem;
 }
 
+
+.level-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.level-card {
+  display: grid;
+  gap: 0.55rem;
+}
+
 .period-grid {
   display: grid;
   gap: 0.9rem;
@@ -223,8 +235,34 @@ ul {
   background: var(--primary);
 }
 
+
+.back-to-top-btn {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 1200;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.back-to-top-btn.is-visible {
+  opacity: 0.95;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  .back-to-top-btn {
+    right: 0.8rem;
+    bottom: calc(0.8rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 @media (max-width: 980px) {
-  .period-grid {
+  .period-grid,
+  .level-grid {
     grid-template-columns: 1fr;
   }
 }
