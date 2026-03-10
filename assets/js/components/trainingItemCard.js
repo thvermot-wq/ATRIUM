@@ -227,10 +227,11 @@ function createTextInputFields(item) {
   };
 }
 
-export function createTrainingItemCard({ item, onValidate, onReset, deferCorrection = false }) {
+export function createTrainingItemCard({ item, onValidate, onReset, deferCorrection = false, canReset = () => true }) {
   const type = normalizeType(item.type || "single-choice");
   const card = document.createElement("article");
   card.className = "card training-item-card";
+  card.dataset.itemState = "pristine";
 
   const title = document.createElement("h4");
   title.textContent = item.prompt;
@@ -271,21 +272,47 @@ export function createTrainingItemCard({ item, onValidate, onReset, deferCorrect
   actions.append(validateButton, resetButton);
 
   let isSubmitted = false;
+  let attemptClosed = false;
 
   function applyState() {
-    renderer.setDisabled(isSubmitted);
-    validateButton.disabled = isSubmitted;
+    renderer.setDisabled(isSubmitted || attemptClosed);
+    validateButton.disabled = isSubmitted || attemptClosed;
+    resetButton.disabled = attemptClosed || !canReset();
   }
 
+  card.setFinalReveal = (result) => {
+    card.dataset.itemState = "revealed_in_final_summary";
+    isSubmitted = true;
+    attemptClosed = true;
+    if (result?.isCorrect) {
+      feedback.className = "feedback-inline ok";
+      feedback.textContent = "Réponse correcte (corrigé final).";
+      answer.hidden = true;
+      answer.textContent = "";
+    } else {
+      feedback.className = "feedback-inline ko";
+      feedback.textContent = "Réponse à corriger (corrigé final).";
+      answer.hidden = false;
+      answer.textContent = `Réponse attendue : ${formatExpected(item.expected)}`;
+    }
+    applyState();
+  };
+
+  card.closeAttempt = () => {
+    attemptClosed = true;
+    applyState();
+  };
+
   validateButton.addEventListener("click", () => {
-    if (isSubmitted) return;
+    if (isSubmitted || attemptClosed) return;
 
     const result = onValidate(renderer.getResponse());
     isSubmitted = true;
+    card.dataset.itemState = "answered_locked";
 
     if (deferCorrection) {
       feedback.className = "feedback-inline muted";
-      feedback.textContent = "Réponse enregistrée. Le corrigé complet apparaît en fin de leçon.";
+      feedback.textContent = "Réponse enregistrée. Le corrigé complet apparaîtra en fin de leçon.";
       answer.hidden = true;
       answer.textContent = "";
     } else if (result.isCorrect) {
@@ -304,12 +331,15 @@ export function createTrainingItemCard({ item, onValidate, onReset, deferCorrect
   });
 
   resetButton.addEventListener("click", () => {
+    if (attemptClosed || !canReset()) return;
+
     renderer.resetResponse();
     answer.hidden = true;
     answer.textContent = "";
     feedback.className = "feedback-inline muted";
     feedback.textContent = "Exercice réinitialisé. Nouvelle tentative prête.";
     isSubmitted = false;
+    card.dataset.itemState = "pristine";
     if (typeof onReset === "function") onReset();
     applyState();
   });

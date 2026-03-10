@@ -31,13 +31,36 @@ function getLessonSummary(lesson) {
   };
 }
 
-function formatReviewLine(item, userAnswer, isCorrect) {
-  const user = Array.isArray(userAnswer)
-    ? userAnswer.join(", ")
-    : userAnswer && typeof userAnswer === "object"
-      ? JSON.stringify(userAnswer)
-      : String(userAnswer || "(vide)");
-  return `<li>${isCorrect ? "✅" : "❌"} ${item.prompt}<br/><span class="muted">Votre réponse : ${user}</span></li>`;
+function formatUserAnswer(value) {
+  if (Array.isArray(value)) return value.join(", ");
+  if (value && typeof value === "object") {
+    return Object.entries(value)
+      .map(([left, right]) => `${left} → ${right}`)
+      .join(" ; ");
+  }
+  return String(value || "(vide)");
+}
+
+function formatExpected(expected) {
+  if (Array.isArray(expected)) return expected.join(" | ");
+  if (expected && typeof expected === "object") {
+    return Object.entries(expected)
+      .map(([left, right]) => `${left} → ${right}`)
+      .join(" ; ");
+  }
+  return String(expected ?? "");
+}
+
+function formatReviewLine(item, entry) {
+  const isCorrect = Boolean(entry?.isCorrect);
+  const user = formatUserAnswer(entry?.userAnswer);
+  const expected = formatExpected(item.expected);
+
+  if (isCorrect) {
+    return `<li><strong>✅ ${item.prompt}</strong><br/><span class="muted">Votre réponse : ${user}</span></li>`;
+  }
+
+  return `<li><strong>❌ ${item.prompt}</strong><br/><span class="muted">Votre réponse : ${user}</span><br/><span>Réponse attendue : ${expected}</span></li>`;
 }
 
 export function renderLessonView({ level, lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults, onRestartLesson }) {
@@ -85,6 +108,10 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
 
   const trainingResults = {};
   const productionResults = {};
+  const trainingCards = {};
+  const productionCards = {};
+
+  let lessonPhase = "in_progress";
 
   const hero = document.createElement("article");
   hero.className = "card";
@@ -151,11 +178,22 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     const answeredCount = training.answeredCount + production.answeredCount;
     const totalItems = training.totalItems + production.totalItems;
 
+    if (lessonPhase !== "finished_with_summary") {
+      lessonPhase = answeredCount === totalItems ? "ready_to_finish" : "in_progress";
+    }
+
     trainingState.textContent = `Entraînement : ${training.answeredCount}/${training.totalItems} réponses enregistrées.`;
     productionState.textContent = `Production guidée : ${production.answeredCount}/${production.totalItems} réponses enregistrées.`;
-    flowState.textContent = `Progression leçon : ${answeredCount}/${totalItems} exercices. Le score détaillé sera affiché en fin de leçon.`;
 
-    finishButton.disabled = answeredCount !== totalItems;
+    if (lessonPhase === "finished_with_summary") {
+      flowState.textContent = "Tentative terminée : corrigé final affiché. Pour rejouer, utilisez « Réinitialiser toute la leçon ».";
+    } else {
+      flowState.textContent = `Progression leçon : ${answeredCount}/${totalItems} exercices. Le score et le corrigé détaillé seront affichés uniquement en fin de leçon.`;
+    }
+
+    finishButton.disabled = lessonPhase !== "ready_to_finish";
+    resultsButton.disabled = lessonPhase !== "finished_with_summary";
+
     return { training, production, answeredCount, totalItems };
   };
 
@@ -163,6 +201,7 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     const card = createTrainingItemCard({
       item,
       deferCorrection: true,
+      canReset: () => lessonPhase !== "finished_with_summary",
       onValidate: (userResponse) => {
         const result = evaluateTrainingItem(item, userResponse);
         trainingResults[item.id] = {
@@ -177,6 +216,8 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
         syncStates();
       },
     });
+
+    trainingCards[item.id] = card;
     trainingBoard.appendChild(card);
   });
 
@@ -184,6 +225,7 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     const card = createProductionItemCard({
       item,
       deferCorrection: true,
+      canReset: () => lessonPhase !== "finished_with_summary",
       onEvaluate: (userAnswer) => {
         const result = evaluateProductionItem(item, userAnswer);
         productionResults[item.id] = {
@@ -198,6 +240,8 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
         syncStates();
       },
     });
+
+    productionCards[item.id] = card;
     productionBoard.appendChild(card);
   });
 
@@ -217,15 +261,27 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
       productionScore: latestProduction.score,
     });
 
+    lessonPhase = "finished_with_summary";
+
+    lesson.training.forEach((item) => {
+      trainingCards[item.id]?.setFinalReveal?.(trainingResults[item.id]);
+      trainingCards[item.id]?.closeAttempt?.();
+    });
+
+    lesson.production.forEach((item) => {
+      productionCards[item.id]?.setFinalReveal?.(productionResults[item.id]);
+      productionCards[item.id]?.closeAttempt?.();
+    });
+
     const currentScore = saved?.lessonProgress?.current?.totalScore ?? latestTraining.score + latestProduction.score;
     const bestScore = saved?.lessonProgress?.best?.totalScore ?? currentScore;
     const summary = getLessonSummary(lesson);
 
     const trainingReview = lesson.training
-      .map((item) => formatReviewLine(item, trainingResults[item.id]?.userAnswer, trainingResults[item.id]?.isCorrect))
+      .map((item) => formatReviewLine(item, trainingResults[item.id]))
       .join("");
     const productionReview = lesson.production
-      .map((item) => formatReviewLine(item, productionResults[item.id]?.userAnswer, productionResults[item.id]?.isCorrect))
+      .map((item) => formatReviewLine(item, productionResults[item.id]))
       .join("");
 
     finalSummary.hidden = false;
@@ -246,6 +302,8 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
       <h4>Mots-clés</h4>
       <p>${summary.keywords.join(" · ")}</p>
     `;
+
+    syncStates();
   });
 
   resetLessonButton.addEventListener("click", () => {
@@ -258,7 +316,10 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
   });
 
   backButton.addEventListener("click", onBackDashboard);
-  resultsButton.addEventListener("click", onOpenResults);
+  resultsButton.addEventListener("click", () => {
+    if (lessonPhase !== "finished_with_summary") return;
+    onOpenResults();
+  });
 
   const feedback = createFeedbackBox({
     title: "Moteur de leçon complet",
