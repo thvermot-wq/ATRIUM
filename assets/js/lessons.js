@@ -368,9 +368,10 @@ const LESSONS_5E_BASE = [
       status: "ready",
       tags: ["verbe", "présent", "action", "p1-l4"],
     },
+    meta: { status: "ready", tags: ["marché", "scène", "ad-forum", "p1-l9"] },
   },
   {
-    id: "p1-l5",
+    id: "p1-l10",
     period: 1,
     periodId: "p1",
     title: "Le sujet : qui fait l’action ?",
@@ -424,6 +425,7 @@ const LESSONS_5E_BASE = [
       status: "ready",
       tags: ["sujet", "fonctions", "ordre", "p1-l5"],
     },
+    meta: { status: "ready", tags: ["lieux", "prépositions", "p2-l7"] },
   },
   {
     id: "p1-l6",
