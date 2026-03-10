@@ -1,4 +1,4 @@
-import { LESSONS_SPEC, periods, getLessonsByPeriod } from "../lessons.js";
+import { LESSONS_SPEC, getPeriodsByLevel, getLessonsByPeriod } from "../lessons.js";
 
 function getStatusClass(status) {
   if (status === "période validée") return "status-ok";
@@ -10,14 +10,16 @@ function getPlayedState(lessonProgress) {
   return lessonProgress?.playedAt ? "jouée" : "non jouée";
 }
 
-export function renderResultsView({ onOpenDashboard, progress }) {
+export function renderResultsView({ level, onOpenDashboard, progress }) {
   const section = document.createElement("section");
   section.className = "stack";
+
+  const periods = getPeriodsByLevel(level?.id);
 
   const summary = document.createElement("article");
   summary.className = "card";
   summary.innerHTML = `
-    <h2>Résultats</h2>
+    <h2>Résultats · ${level?.label || "5e"}</h2>
     <p class="muted">Barème leçon : ${LESSONS_SPEC.trainingMax} + ${LESSONS_SPEC.productionMax} = ${LESSONS_SPEC.lessonMax}</p>
     <p class="muted">Barème période : ${LESSONS_SPEC.periodMax}</p>
   `;
@@ -36,7 +38,7 @@ export function renderResultsView({ onOpenDashboard, progress }) {
     const card = document.createElement("article");
     card.className = "card stack";
 
-    const lessons = getLessonsByPeriod(period.id);
+    const lessons = getLessonsByPeriod(period.id, level?.id);
     const lessonLines = lessons
       .map((lesson) => {
         const lessonProgress = progress?.lessons?.[lesson.id];
@@ -61,7 +63,7 @@ export function renderResultsView({ onOpenDashboard, progress }) {
   const back = document.createElement("button");
   back.type = "button";
   back.className = "btn btn-primary";
-  back.textContent = "Retour au dashboard";
+  back.textContent = `Retour au dashboard ${level?.label || "5e"}`;
   back.addEventListener("click", onOpenDashboard);
 
   section.append(summary, periodList, back);
