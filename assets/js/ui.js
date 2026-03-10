@@ -99,6 +99,14 @@ export function renderApp(rootElement, { router, route, level, progress, onSaveL
     onBackDashboard: () => router.navigate(`#/${levelId}`),
     onOpenHome: () => router.navigate("#/"),
     onSaveLessonScore,
+    onRestartLesson: () => {
+      const lessonId = route?.params?.lessonId;
+      if (!lessonId) return;
+      router.navigate("#/");
+      setTimeout(() => {
+        router.navigate(`#/${levelId}/lesson/${lessonId}`);
+      }, 0);
+    },
   };
 
   let viewNode;

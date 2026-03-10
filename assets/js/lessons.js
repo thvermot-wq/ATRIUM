@@ -70,6 +70,11 @@ function createPlaceholderLesson({ id, period, title, objective }) {
       status: "draft",
       tags: ["placeholder"],
     },
+    summary: {
+      retains: [objective],
+      cahier: ["Je recopie le vocabulaire clé de la leçon."],
+      keywords: ["placeholder", `p${period}`],
+    },
   };
 }
 
