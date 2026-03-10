@@ -1804,8 +1804,8 @@ function resolveAcceptedAnswers(item) {
   return [];
 }
 
-function enrichPeriod1ProductionAcceptedAnswers(lesson) {
-  if (lesson?.period !== 1 || !Array.isArray(lesson.production)) return lesson;
+function enrichPeriod1And2ProductionAcceptedAnswers(lesson) {
+  if (![1, 2].includes(lesson?.period) || !Array.isArray(lesson.production)) return lesson;
 
   return {
     ...lesson,
@@ -1825,7 +1825,7 @@ export const periodsByLevel = {
 
 export const lessonsByLevel = {
   "5e": LESSONS_5E_BASE
-    .map((lesson) => enrichPeriod1ProductionAcceptedAnswers(lesson))
+    .map((lesson) => enrichPeriod1And2ProductionAcceptedAnswers(lesson))
     .map((lesson) => namespaceLessonForLevel("5e", lesson)),
   "4e": buildLevelPlaceholders("4e"),
   "3e": buildLevelPlaceholders("3e"),
