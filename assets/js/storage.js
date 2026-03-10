@@ -3,6 +3,10 @@ import { computeLessonScore, computePeriodScore } from "./scoring.js";
 
 export const STORAGE_KEY = "atrium-progress-v1";
 
+function getStorageKey(levelId = "5e") {
+  return `atrium:progress:${levelId}`;
+}
+
 function defaultLessonProgress() {
   return {
     current: {
@@ -56,6 +60,32 @@ function safelyParse(raw) {
   }
 }
 
+function migrateLegacyIdsFor5e(parsed, { lessons, periods }) {
+  if (!parsed || typeof parsed !== "object") return null;
+
+  const next = {
+    ...parsed,
+    lessons: { ...(parsed.lessons || {}) },
+    periods: { ...(parsed.periods || {}) },
+  };
+
+  lessons.forEach((lesson) => {
+    const legacyId = lesson.id.replace(/^5e-/, "");
+    if (!next.lessons[lesson.id] && next.lessons[legacyId]) {
+      next.lessons[lesson.id] = next.lessons[legacyId];
+    }
+  });
+
+  periods.forEach((period) => {
+    const legacyId = period.id.replace(/^5e-/, "");
+    if (!next.periods[period.id] && next.periods[legacyId]) {
+      next.periods[period.id] = next.periods[legacyId];
+    }
+  });
+
+  return next;
+}
+
 export function recomputePeriodProgress({ progress, lessons, periods }) {
   const next = {
     ...progress,
@@ -79,13 +109,19 @@ export function recomputePeriodProgress({ progress, lessons, periods }) {
   return next;
 }
 
-export function loadProgress({ lessons, periods }) {
+export function loadProgress({ lessons, periods, levelId = "5e" }) {
   const fallback = createInitialProgress({ lessons, periods });
 
-  const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) return fallback;
+  const namespacedRaw = localStorage.getItem(getStorageKey(levelId));
+  let parsed = safelyParse(namespacedRaw);
 
-  const parsed = safelyParse(raw);
+  // Migration douce : l'ancienne clé globale n'alimente que la 5e.
+  if (!parsed && levelId === "5e") {
+    const legacyRaw = localStorage.getItem(STORAGE_KEY);
+    const legacyParsed = safelyParse(legacyRaw);
+    parsed = migrateLegacyIdsFor5e(legacyParsed, { lessons, periods });
+  }
+
   if (!parsed || typeof parsed !== "object") return fallback;
 
   const merged = {
@@ -113,8 +149,9 @@ export function loadProgress({ lessons, periods }) {
   return recomputePeriodProgress({ progress: merged, lessons, periods });
 }
 
-export function saveProgress(progress) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+export function saveProgress(progress, { levelId = "5e" } = {}) {
+  const payload = JSON.stringify(progress);
+  localStorage.setItem(getStorageKey(levelId), payload);
 }
 
 export function saveLessonProgress({ progress, lessonId, trainingScore, productionScore, lessons, periods }) {
