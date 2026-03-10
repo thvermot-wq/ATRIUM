@@ -1793,6 +1793,30 @@ function buildLevelPlaceholders(levelId) {
   return lessons;
 }
 
+function resolveAcceptedAnswers(item) {
+  if (Array.isArray(item.acceptedAnswers) && item.acceptedAnswers.length > 0) return item.acceptedAnswers;
+
+  const config = item.answerConfig || {};
+  if (Array.isArray(config.accepted) && config.accepted.length > 0) return config.accepted;
+  if (typeof config.expected === "string" && config.expected.trim()) return [config.expected.trim()];
+  if (typeof item.expected === "string" && item.expected.trim()) return [item.expected.trim()];
+
+  return [];
+}
+
+function enrichPeriod1ProductionAcceptedAnswers(lesson) {
+  if (lesson?.period !== 1 || !Array.isArray(lesson.production)) return lesson;
+
+  return {
+    ...lesson,
+    production: lesson.production.map((item) => {
+      if (item?.type !== "textInput") return item;
+      const acceptedAnswers = resolveAcceptedAnswers(item);
+      return acceptedAnswers.length > 0 ? { ...item, acceptedAnswers } : item;
+    }),
+  };
+}
+
 export const periodsByLevel = {
   "5e": namespacePeriodsForLevel("5e", PERIODS_5E_BASE),
   "4e": namespacePeriodsForLevel("4e", PERIODS_5E_BASE),
@@ -1800,7 +1824,9 @@ export const periodsByLevel = {
 };
 
 export const lessonsByLevel = {
-  "5e": LESSONS_5E_BASE.map((lesson) => namespaceLessonForLevel("5e", lesson)),
+  "5e": LESSONS_5E_BASE
+    .map((lesson) => enrichPeriod1ProductionAcceptedAnswers(lesson))
+    .map((lesson) => namespaceLessonForLevel("5e", lesson)),
   "4e": buildLevelPlaceholders("4e"),
   "3e": buildLevelPlaceholders("3e"),
 };
