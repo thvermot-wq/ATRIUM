@@ -5,6 +5,18 @@ function isLevelId(value) {
   return LEVEL_IDS.has(value);
 }
 
+function scrollToTopImmediate() {
+  if (typeof window === "undefined") return;
+
+  const scrollingElement = document.scrollingElement || document.documentElement;
+  if (scrollingElement && typeof scrollingElement.scrollTo === "function") {
+    scrollingElement.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    return;
+  }
+
+  window.scrollTo(0, 0);
+}
+
 function parseHashRoute() {
   const rawHash = window.location.hash || DEFAULT_ROUTE;
   const normalized = rawHash.startsWith("#/") ? rawHash : DEFAULT_ROUTE;
@@ -54,6 +66,7 @@ function parseHashRoute() {
 
 export function initRouter({ onRouteChange }) {
   function handleRouteChange() {
+    scrollToTopImmediate();
     onRouteChange(parseHashRoute());
   }
 
@@ -67,6 +80,7 @@ export function initRouter({ onRouteChange }) {
 
   return {
     navigate(to) {
+      scrollToTopImmediate();
       window.location.hash = to;
     },
     destroy() {

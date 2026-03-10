@@ -5,6 +5,86 @@ import { renderLessonView } from "./views/lessonView.js";
 import { renderResultsView } from "./views/resultsView.js";
 import { getThemeState, toggleTheme } from "./theme.js";
 
+let backToTopInstalled = false;
+let backToTopButton = null;
+let backToTopScrollListener = null;
+
+function getScrollContainer() {
+  const candidates = [
+    document.getElementById("app"),
+    document.getElementById("view-root"),
+    document.scrollingElement,
+    document.documentElement,
+    document.body,
+  ].filter(Boolean);
+
+  for (const candidate of candidates) {
+    if (!(candidate instanceof HTMLElement)) continue;
+
+    const style = window.getComputedStyle(candidate);
+    const overflowY = style.overflowY;
+    const isScrollableY = ["auto", "scroll", "overlay"].includes(overflowY);
+    if (isScrollableY && candidate.scrollHeight > candidate.clientHeight + 8) {
+      return candidate;
+    }
+  }
+
+  return document.scrollingElement || document.documentElement;
+}
+
+function getCurrentScrollTop() {
+  const container = getScrollContainer();
+  if (container instanceof HTMLElement) return container.scrollTop;
+  return window.scrollY || 0;
+}
+
+function scrollToTopImmediate() {
+  const container = getScrollContainer();
+  if (container instanceof HTMLElement && typeof container.scrollTo === "function") {
+    container.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    return;
+  }
+
+  window.scrollTo(0, 0);
+}
+
+function installBackToTopControl() {
+  if (backToTopInstalled) return;
+
+  backToTopButton = document.createElement("button");
+  backToTopButton.type = "button";
+  backToTopButton.className = "btn btn-primary back-to-top-btn";
+  backToTopButton.setAttribute("aria-label", "Revenir en haut de la page");
+  backToTopButton.textContent = "↑ Haut";
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  backToTopButton.addEventListener("click", () => {
+    const container = getScrollContainer();
+    const behavior = prefersReducedMotion ? "auto" : "smooth";
+
+    if (container instanceof HTMLElement && typeof container.scrollTo === "function") {
+      container.scrollTo({ top: 0, left: 0, behavior });
+      return;
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior });
+  });
+
+  backToTopScrollListener = () => {
+    const show = getCurrentScrollTop() > 280;
+    backToTopButton.classList.toggle("is-visible", show);
+    backToTopButton.setAttribute("aria-hidden", show ? "false" : "true");
+    backToTopButton.tabIndex = show ? 0 : -1;
+  };
+
+  window.addEventListener("scroll", backToTopScrollListener, { passive: true });
+  document.body.appendChild(backToTopButton);
+  backToTopScrollListener();
+
+  backToTopInstalled = true;
+}
+
 function createTopNav({ navigate, currentRouteName, levelId }) {
   const nav = document.createElement("nav");
   nav.className = "top-nav";
@@ -51,12 +131,12 @@ function createAppLayout({ navigate, currentRouteName, levelId }) {
     </div>
   `;
 
-  const themeButton = header.querySelector('.btn-theme-toggle');
-  themeButton.addEventListener('click', () => {
+  const themeButton = header.querySelector(".btn-theme-toggle");
+  themeButton.addEventListener("click", () => {
     const nextTheme = toggleTheme();
-    const dark = nextTheme === 'dark';
-    themeButton.setAttribute('aria-pressed', String(dark));
-    themeButton.textContent = dark ? '🌙 Mode sombre' : '☀️ Mode clair';
+    const dark = nextTheme === "dark";
+    themeButton.setAttribute("aria-pressed", String(dark));
+    themeButton.textContent = dark ? "🌙 Mode sombre" : "☀️ Mode clair";
   });
 
   const nav = createTopNav({ navigate, currentRouteName, levelId });
@@ -84,6 +164,9 @@ function renderNotFoundView({ onOpenHome }) {
 }
 
 export function renderApp(rootElement, { router, route, level, progress, onSaveLessonScore }) {
+  installBackToTopControl();
+  scrollToTopImmediate();
+
   rootElement.innerHTML = "";
 
   const { fragment, main } = createAppLayout({ navigate: router.navigate, currentRouteName: route.name, levelId: level?.id });
