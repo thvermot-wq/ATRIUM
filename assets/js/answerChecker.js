@@ -1,4 +1,5 @@
 import { normalizeInput } from "./normalize.js";
+import { buildAcceptedFrenchAnswers, normalizeFrenchAnswer } from "./acceptedAnswers.js";
 
 function buildNormalizationOptions(answerConfig) {
   const base = {
@@ -27,21 +28,34 @@ function asArray(value) {
   return [value];
 }
 
-/**
- * Generic answer checker.
- *
- * Supported config shapes:
- * - { type: 'exact', expected: 'salve', language?: 'latin'|'fr' }
- * - { type: 'one-of', accepted: ['aquatique', 'aquarium'] }
- * - { type: 'translation-segment', accepted: ['l\'esclave salue'] }
- * - { type: 'latin-expression', expected: 'servus aquam portat' }
- */
+function normalizeCandidateForType(value, answerConfig) {
+  if (answerConfig.language === "fr" && (answerConfig.type === "one-of" || answerConfig.type === "translation-segment")) {
+    return normalizeFrenchAnswer(value, {
+      tolerateArticles: answerConfig.tolerateArticles !== false,
+    });
+  }
+
+  return normalizeWithConfig(value, answerConfig);
+}
+
+function getAcceptedList(answerConfig) {
+  const accepted = asArray(answerConfig.accepted);
+  if (answerConfig.language !== "fr") {
+    return accepted.map((item) => normalizeWithConfig(item, answerConfig)).filter(Boolean);
+  }
+
+  return buildAcceptedFrenchAnswers(accepted, {
+    tolerateArticles: answerConfig.tolerateArticles !== false,
+    synonyms: asArray(answerConfig.synonyms),
+  });
+}
+
 export function isCorrect(userAnswer, answerConfig) {
   if (!answerConfig || typeof answerConfig !== "object") {
     throw new Error("answerConfig must be an object");
   }
 
-  const normalizedUserAnswer = normalizeWithConfig(userAnswer, answerConfig);
+  const normalizedUserAnswer = normalizeCandidateForType(userAnswer, answerConfig);
   const type = answerConfig.type || "exact";
 
   if (type === "exact" || type === "latin-expression") {
@@ -50,18 +64,13 @@ export function isCorrect(userAnswer, answerConfig) {
   }
 
   if (type === "one-of" || type === "translation-segment") {
-    const accepted = asArray(answerConfig.accepted)
-      .map((item) => normalizeWithConfig(item, answerConfig))
-      .filter(Boolean);
+    const accepted = getAcceptedList(answerConfig);
     return accepted.includes(normalizedUserAnswer);
   }
 
   throw new Error(`Unsupported answer type: ${type}`);
 }
 
-/**
- * Helper for multiple accepted configurations (OR logic).
- */
 export function isCorrectAny(userAnswer, answerConfigs = []) {
   return answerConfigs.some((config) => isCorrect(userAnswer, config));
 }
