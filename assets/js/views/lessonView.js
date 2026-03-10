@@ -15,8 +15,8 @@ function isLessonPlayable(lesson) {
   );
 }
 
-export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults }) {
-  const lesson = getLessonById(lessonId);
+export function renderLessonView({ level, lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults }) {
+  const lesson = getLessonById(lessonId, level?.id);
   const wrapper = document.createElement("section");
   wrapper.className = "stack";
 
@@ -174,6 +174,7 @@ export function renderLessonView({ lessonId, progress, onSaveLessonScore, onBack
     const latestProduction = computeProductionProgress(lesson.production, productionResults);
 
     const saved = onSaveLessonScore({
+      levelId: level?.id,
       lessonId: lesson.id,
       trainingScore: latestTraining.score,
       productionScore: latestProduction.score,
