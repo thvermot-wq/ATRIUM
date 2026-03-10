@@ -10,7 +10,7 @@ export const LESSONS_SPEC = {
   validationMinScore: 96,
 };
 
-export const periods = [
+const PERIODS_5E_BASE = [
   {
     id: "p1",
     period: 1,
@@ -78,7 +78,7 @@ function createPlaceholderLesson({ id, period, title, objective }) {
   };
 }
 
-export const lessons = [
+const LESSONS_5E_BASE = [
   {
     id: "p1-l1",
     period: 1,
@@ -368,9 +368,10 @@ export const lessons = [
       status: "ready",
       tags: ["verbe", "présent", "action", "p1-l4"],
     },
+    meta: { status: "ready", tags: ["marché", "scène", "ad-forum", "p1-l9"] },
   },
   {
-    id: "p1-l5",
+    id: "p1-l10",
     period: 1,
     periodId: "p1",
     title: "Le sujet : qui fait l’action ?",
@@ -424,6 +425,7 @@ export const lessons = [
       status: "ready",
       tags: ["sujet", "fonctions", "ordre", "p1-l5"],
     },
+    meta: { status: "ready", tags: ["lieux", "prépositions", "p2-l7"] },
   },
   {
     id: "p1-l6",
@@ -1004,7 +1006,7 @@ export const lessons = [
     meta: { status: "ready", tags: ["âne", "hortus", "p2-l5"] },
   },
   {
-    id: "p2-l2",
+    id: "p2-l6",
     period: 2,
     periodId: "p2",
     title: "La lettre perdue",
@@ -1051,7 +1053,7 @@ export const lessons = [
     meta: { status: "ready", tags: ["lettre", "scène", "p2-l6"] },
   },
   {
-    id: "p2-l3",
+    id: "p2-l7",
     period: 2,
     periodId: "p2",
     title: "Forum, temple, jardin",
@@ -1098,7 +1100,7 @@ export const lessons = [
     meta: { status: "ready", tags: ["lieux", "prépositions", "p2-l7"] },
   },
   {
-    id: "p2-l4",
+    id: "p2-l8",
     period: 2,
     periodId: "p2",
     title: "La statue, le cadeau et l’ami",
@@ -1145,7 +1147,7 @@ export const lessons = [
     meta: { status: "ready", tags: ["scène", "fonctions", "p2-l8"] },
   },
   {
-    id: "p2-l5",
+    id: "p2-l9",
     period: 2,
     periodId: "p2",
     title: "D’autres noms existent",
@@ -1192,7 +1194,7 @@ export const lessons = [
     meta: { status: "ready", tags: ["lexique", "noms", "p2-l9"] },
   },
   {
-    id: "p2-l6",
+    id: "p2-l10",
     period: 2,
     periodId: "p2",
     title: "Qui fait quoi, vraiment ?",
@@ -1337,225 +1339,316 @@ export const lessons = [
     id: "p3-l11",
     period: 3,
     periodId: "p3",
-    title: "Trouver le verbe",
-    objective: "Repérer le verbe dans une phrase latine simple",
+    title: "Les dieux arrivent",
+    objective: "Reconnaître quelques dieux et déesses dans des phrases courtes accessibles.",
+    lessonPoint: "Je repère qui est qui dans une scène divine simple.",
+    canDo: [
+      "Je reconnais Venus, Minerva, Iuno et Iuppiter.",
+      "Je comprends une phrase attributive simple.",
+      "Je traduis des mini-phrases mythologiques.",
+    ],
+    lexicon: ["Venus", "Minerva", "Iuno", "Iuppiter", "pulchra", "irata", "templum"],
     maxScore: LESSONS_SPEC.lessonMax,
     training: [
-      {
-        id: "p3-l11-t1",
-        type: "mcq",
-        prompt: "Dans ‘Puella ambulat.’, quel est le verbe ?",
-        options: ["Puella", "ambulat", "aucun"],
-        expected: "ambulat",
-        points: 1,
-      },
-      {
-        id: "p3-l11-t2",
-        type: "mcq",
-        prompt: "Dans ‘Rosa floret.’, quel est le verbe ?",
-        options: ["Rosa", "floret", "aucun"],
-        expected: "floret",
-        points: 1,
-      },
-      {
-        id: "p3-l11-t3",
-        type: "mcq",
-        prompt: "Dans ‘Servus aquam portat.’, quel est le verbe ?",
-        options: ["Servus", "aquam", "portat"],
-        expected: "portat",
-        points: 1,
-      },
+      { id: "p3-l11-t1", type: "singleChoice", prompt: "Dans la scène, qui est une déesse ?", options: ["Venus", "Iuppiter", "Paris"], expected: "Venus", points: 1 },
+      { id: "p3-l11-t2", type: "singleChoice", prompt: "Dans « Venus pulchra est », que signifie pulchra ?", options: ["belle", "en colère", "forte"], expected: "belle", points: 1 },
+      { id: "p3-l11-t3", type: "multipleChoice", prompt: "Sélectionne les noms de dieux/déesses de la leçon.", options: ["Minerva", "Iuno", "Iuppiter", "Davus"], expected: ["Minerva", "Iuno", "Iuppiter"], points: 1 },
       {
         id: "p3-l11-t4",
-        type: "mcq",
-        prompt: "Le verbe exprime principalement :",
-        options: ["l'action ou l'état", "la ponctuation", "la couleur"],
-        expected: "l'action ou l'état",
+        type: "matching",
+        prompt: "Associe nom divin et information.",
+        pairs: [
+          { left: "Venus", right: "dea" },
+          { left: "Iuppiter", right: "deus" },
+          { left: "Minerva", right: "dea" },
+        ],
+        rightOptions: ["deus", "dea"],
+        expected: { Venus: "dea", Iuppiter: "deus", Minerva: "dea" },
         points: 1,
       },
-      {
-        id: "p3-l11-t5",
-        type: "mcq",
-        prompt: "Dans une phrase simple, le verbe est :",
-        options: ["obligatoire", "interdit", "décoratif"],
-        expected: "obligatoire",
-        points: 1,
-      },
-      {
-        id: "p3-l11-t6",
-        type: "mcq",
-        prompt: "Mot verbal attendu :",
-        options: ["portat", "servus", "rosa"],
-        expected: "portat",
-        points: 1,
-      },
-      {
-        id: "p3-l11-t7",
-        type: "mcq",
-        prompt: "Mot non verbal :",
-        options: ["ambulat", "floret", "puella"],
-        expected: "puella",
-        points: 1,
-      },
+      { id: "p3-l11-t5", type: "singleChoice", prompt: "Dans « Iuno irata est », Iuno est :", options: ["en colère", "heureuse", "fatiguée"], expected: "en colère", points: 1 },
+      { id: "p3-l11-t6", type: "ordering", prompt: "Remets la phrase :", options: ["Venus", "pulchra", "est"], expected: ["Venus", "pulchra", "est"], points: 1 },
+      { id: "p3-l11-t7", type: "textInput", prompt: "Écris en latin : « Junon ».", expected: "iuno", points: 1 },
     ],
     production: [
-      {
-        id: "p3-l11-p1",
-        type: "find-verb",
-        prompt: "Puella ambulat.",
-        expected: "ambulat",
-        points: 1,
-      },
-      {
-        id: "p3-l11-p2",
-        type: "find-verb",
-        prompt: "Rosa floret.",
-        expected: "floret",
-        points: 1,
-      },
-      {
-        id: "p3-l11-p3",
-        type: "find-verb",
-        prompt: "Servus aquam portat.",
-        expected: "portat",
-        points: 1,
-      },
+      { id: "p3-l11-p1", type: "textInput", prompt: "Traduis en français : Venus pulchra est", expected: "vénus est belle", answerConfig: { type: "translation-segment", language: "fr", accepted: ["vénus est belle", "venus est belle"] }, points: 1 },
+      { id: "p3-l11-p2", type: "textInput", prompt: "Traduis en français : Minerva templum videt", expected: "minerve voit le temple", answerConfig: { type: "translation-segment", language: "fr", accepted: ["minerve voit le temple", "minerva voit le temple"] }, points: 1 },
+      { id: "p3-l11-p3", type: "textInput", prompt: "Traduis en latin : Junon est en colère", expected: "iuno irata est", answerConfig: { type: "latin-expression", language: "latin", expected: "iuno irata est" }, points: 1 },
     ],
-    meta: {
-      status: "ready",
-      tags: ["verbe", "repérage"],
+    summary: {
+      retains: ["Quelques noms divins reviennent souvent dans les récits.", "Une phrase attributive simple reste facile à lire."],
+      cahier: ["Venus pulchra est", "Iuno irata est"],
+      keywords: ["dieux", "déesses", "venus", "iuno"],
     },
+    meta: { status: "ready", tags: ["mythologie", "dieux", "p3-l11"] },
   },
   {
     id: "p3-l12",
     period: 3,
     periodId: "p3",
-    title: "Identifier la structure S-V-C",
-    objective: "Reconnaître le schéma sujet-verbe-complément dans des phrases simples",
+    title: "Le mariage de Pélée et Thétis",
+    objective: "Comprendre un mini-passage mythologique très court autour d’un mariage divin.",
+    lessonPoint: "Je lis une mini-scène mythologique sans entrer dans des détails compliqués.",
+    canDo: [
+      "Je repère qui vient à la fête.",
+      "Je comprends qui n’est pas invité.",
+      "Je résume une scène en une phrase.",
+    ],
+    lexicon: ["nuptiae", "dei", "Discordia", "venit", "non invitata", "cena"],
     maxScore: LESSONS_SPEC.lessonMax,
     training: [
-      { id: "p3-l12-t1", type: "mcq", prompt: "Dans « Puella rosam portat. », le sujet est :", options: ["Puella", "rosam", "portat"], expected: "Puella", points: 1 },
-      { id: "p3-l12-t2", type: "mcq", prompt: "Dans « Puella rosam portat. », le verbe est :", options: ["Puella", "portat", "rosam"], expected: "portat", points: 1 },
-      { id: "p3-l12-t3", type: "mcq", prompt: "Dans « Puella rosam portat. », le complément est :", options: ["rosam", "Puella", "portat"], expected: "rosam", points: 1 },
-      { id: "p3-l12-t4", type: "mcq", prompt: "Dans « Servus aquam portat. », la structure est :", options: ["Sujet + Verbe + Complément", "Complément + Sujet + Verbe", "Verbe + Verbe + Sujet"], expected: "Sujet + Verbe + Complément", points: 1 },
-      { id: "p3-l12-t5", type: "mcq", prompt: "Dans « Magistra puerum laudat. », le sujet logique est :", options: ["Magistra", "puerum", "laudat"], expected: "Magistra", points: 1 },
-      { id: "p3-l12-t6", type: "mcq", prompt: "Dans une phrase S-V-C, l’action est portée par :", options: ["le verbe", "le sujet", "le complément"], expected: "le verbe", points: 1 },
-      { id: "p3-l12-t7", type: "mcq", prompt: "Le rôle du complément dans S-V-C est :", options: ["compléter le sens du verbe", "remplacer le verbe", "marquer la ponctuation"], expected: "compléter le sens du verbe", points: 1 },
+      { id: "p3-l12-t1", type: "singleChoice", prompt: "Dans la scène, à quoi viennent les dieux ?", options: ["aux noces", "au combat", "au forum"], expected: "aux noces", points: 1 },
+      { id: "p3-l12-t2", type: "singleChoice", prompt: "Qui n’est pas invitée ?", options: ["Discordia", "Venus", "Minerva"], expected: "Discordia", points: 1 },
+      { id: "p3-l12-t3", type: "multipleChoice", prompt: "Sélectionne les informations du passage.", options: ["Les dieux viennent", "Discordia n’est pas invitée", "Paris dort", "Un banquet a lieu"], expected: ["Les dieux viennent", "Discordia n’est pas invitée", "Un banquet a lieu"], points: 1 },
+      {
+        id: "p3-l12-t4",
+        type: "matching",
+        prompt: "Associe élément et rôle.",
+        pairs: [
+          { left: "dei", right: "invités" },
+          { left: "Discordia", right: "non invitée" },
+          { left: "cena", right: "banquet" },
+        ],
+        rightOptions: ["banquet", "invités", "non invitée"],
+        expected: { dei: "invités", Discordia: "non invitée", cena: "banquet" },
+        points: 1,
+      },
+      { id: "p3-l12-t5", type: "singleChoice", prompt: "« Dei cenam habent » signifie :", options: ["Les dieux ont un banquet", "Les dieux fuient", "Les dieux perdent un cadeau"], expected: "Les dieux ont un banquet", points: 1 },
+      { id: "p3-l12-t6", type: "ordering", prompt: "Ordonne la mini-scène : invitation → venue → tension.", options: ["dei veniunt", "cena est", "Discordia venit"], expected: ["cena est", "dei veniunt", "Discordia venit"], points: 1 },
+      { id: "p3-l12-t7", type: "textInput", prompt: "Écris en latin : « dieux ».", expected: "dei", points: 1 },
     ],
     production: [
-      { id: "p3-l12-p1", type: "find-verb", prompt: "Puella rosam portat.", expected: "portat", points: 1 },
-      { id: "p3-l12-p2", type: "latin-expression", prompt: "Écris le sujet de « Magistra puerum laudat. »", expected: "magistra", points: 1 },
-      { id: "p3-l12-p3", type: "latin-expression", prompt: "Écris le complément de « Servus aquam portat. »", expected: "aquam", points: 1 },
+      { id: "p3-l12-p1", type: "textInput", prompt: "Traduis en français : Discordia ad nuptias venit", expected: "discorde vient aux noces", answerConfig: { type: "translation-segment", language: "fr", accepted: ["discorde vient aux noces", "discordia vient aux noces"] }, points: 1 },
+      { id: "p3-l12-p2", type: "textInput", prompt: "Traduis en français : Dei cenam habent", expected: "les dieux ont un banquet", answerConfig: { type: "translation-segment", language: "fr", accepted: ["les dieux ont un banquet", "les dieux ont le repas", "les dieux font un banquet"] }, points: 1 },
+      { id: "p3-l12-p3", type: "textInput", prompt: "Traduis en latin : les dieux voient le cadeau", expected: "dei donum vident", answerConfig: { type: "latin-expression", language: "latin", expected: "dei donum vident" }, points: 1 },
     ],
-    meta: { status: "ready", tags: ["structure", "svc", "rôles"] },
+    summary: {
+      retains: ["Je peux suivre une mini-scène mythologique de 2-3 idées.", "Discordia n’est pas invitée : c’est la tension de départ."],
+      cahier: ["Discordia ad nuptias venit", "Dei cenam habent"],
+      keywords: ["nuptiae", "discordia", "dei", "banquet"],
+    },
+    meta: { status: "ready", tags: ["mythe", "mariage", "p3-l12"] },
   },
   {
     id: "p3-l13",
     period: 3,
     periodId: "p3",
-    title: "Choisir la bonne forme verbale",
-    objective: "Sélectionner la forme verbale correcte pour préserver le sens de la phrase",
+    title: "La pomme de Discorde",
+    objective: "Comprendre une scène centrée sur un objet mythologique.",
+    lessonPoint: "L’objet central de la scène aide à relier les actions.",
+    canDo: [
+      "Je repère qui lance l’objet.",
+      "Je repère qui regarde l’objet.",
+      "Je comprends à qui l’objet est destiné.",
+    ],
+    lexicon: ["malum aureum", "dea", "deae", "pulcherrima", "iacit", "spectant"],
     maxScore: LESSONS_SPEC.lessonMax,
     training: [
-      { id: "p3-l13-t1", type: "mcq", prompt: "Puella ___ .", options: ["ambulat", "puella", "rosa"], expected: "ambulat", points: 1 },
-      { id: "p3-l13-t2", type: "mcq", prompt: "Rosa ___ .", options: ["floret", "rosa", "luna"], expected: "floret", points: 1 },
-      { id: "p3-l13-t3", type: "mcq", prompt: "Servus aquam ___ .", options: ["portat", "aquam", "servus"], expected: "portat", points: 1 },
-      { id: "p3-l13-t4", type: "mcq", prompt: "Magistra puerum ___ .", options: ["laudat", "puerum", "magistra"], expected: "laudat", points: 1 },
-      { id: "p3-l13-t5", type: "mcq", prompt: "Dans « Puella cantat. », la forme verbale est :", options: ["cantat", "puella", "canticum"], expected: "cantat", points: 1 },
-      { id: "p3-l13-t6", type: "mcq", prompt: "Pour exprimer l’action de porter :", options: ["portat", "porta", "portum"], expected: "portat", points: 1 },
-      { id: "p3-l13-t7", type: "mcq", prompt: "Choisir la forme verbale correcte : « Rosa ___ . »", options: ["floret", "flos", "rosa"], expected: "floret", points: 1 },
+      { id: "p3-l13-t1", type: "singleChoice", prompt: "Quel objet est au centre de la scène ?", options: ["malum aureum", "liber novus", "corona magna"], expected: "malum aureum", points: 1 },
+      { id: "p3-l13-t2", type: "singleChoice", prompt: "Qui lance la pomme ?", options: ["Discordia", "Venus", "Paris"], expected: "Discordia", points: 1 },
+      { id: "p3-l13-t3", type: "singleChoice", prompt: "Dans « Deae malum spectant », qui regarde la pomme ?", options: ["Deae", "malum", "Discordia"], expected: "Deae", points: 1 },
+      { id: "p3-l13-t4", type: "multipleChoice", prompt: "Sélectionne les mots de la scène.", options: ["malum", "aureum", "pulcherrima", "porta"], expected: ["malum", "aureum", "pulcherrima"], points: 1 },
+      {
+        id: "p3-l13-t5",
+        type: "matching",
+        prompt: "Associe phrase et sens.",
+        pairs: [
+          { left: "Discordia malum iacit", right: "Discorde lance la pomme" },
+          { left: "Deae malum spectant", right: "Les déesses regardent la pomme" },
+          { left: "Malum pulcherrimae est", right: "La pomme est pour la plus belle" },
+        ],
+        rightOptions: ["La pomme est pour la plus belle", "Les déesses regardent la pomme", "Discorde lance la pomme"],
+        expected: { "Discordia malum iacit": "Discorde lance la pomme", "Deae malum spectant": "Les déesses regardent la pomme", "Malum pulcherrimae est": "La pomme est pour la plus belle" },
+        points: 1,
+      },
+      { id: "p3-l13-t6", type: "ordering", prompt: "Ordonne la logique : lancer → regarder → discuter.", options: ["iacit", "spectant", "disputant"], expected: ["iacit", "spectant", "disputant"], points: 1 },
+      { id: "p3-l13-t7", type: "textInput", prompt: "Écris le groupe latin : « pomme d’or ».", expected: "malum aureum", points: 1 },
     ],
     production: [
-      { id: "p3-l13-p1", type: "latin-expression", prompt: "Complète : Puella ___ .", expected: "ambulat", points: 1 },
-      { id: "p3-l13-p2", type: "latin-expression", prompt: "Complète : Servus aquam ___ .", expected: "portat", points: 1 },
-      { id: "p3-l13-p3", type: "latin-expression", prompt: "Complète : Magistra puerum ___ .", expected: "laudat", points: 1 },
+      { id: "p3-l13-p1", type: "textInput", prompt: "Traduis en français : Discordia malum aureum iacit", expected: "discorde lance la pomme d'or", answerConfig: { type: "translation-segment", language: "fr", accepted: ["discorde lance la pomme d'or", "discordia lance la pomme d'or", "discorde jette la pomme d'or"] }, points: 1 },
+      { id: "p3-l13-p2", type: "textInput", prompt: "Traduis en français : Deae malum spectant", expected: "les déesses regardent la pomme", answerConfig: { type: "translation-segment", language: "fr", accepted: ["les déesses regardent la pomme", "les deesses regardent la pomme"] }, points: 1 },
+      { id: "p3-l13-p3", type: "textInput", prompt: "Traduis en latin : Vénus voit la pomme", expected: "venus malum videt", answerConfig: { type: "latin-expression", language: "latin", expected: "venus malum videt" }, points: 1 },
     ],
-    meta: { status: "ready", tags: ["verbe", "forme", "sélection"] },
+    summary: {
+      retains: ["La scène tourne autour du malum aureum.", "Je repère facilement qui agit sur l’objet."],
+      cahier: ["Discordia malum aureum iacit", "Deae malum spectant"],
+      keywords: ["malum aureum", "deae", "pulcherrima", "discordia"],
+    },
+    meta: { status: "ready", tags: ["mythe", "pomme", "p3-l13"] },
   },
   {
     id: "p3-l14",
     period: 3,
     periodId: "p3",
-    title: "Comprendre une micro-scène",
-    objective: "Repérer qui fait quoi dans des micro-scènes latines très courtes",
+    title: "Paris juge",
+    objective: "Suivre une scène simple de jugement mythologique.",
+    lessonPoint: "Je comprends qui juge et qui intervient dans la scène.",
+    canDo: [
+      "Je reconnais la phrase clé Paris arbiter est.",
+      "Je repère qui parle et qui regarde.",
+      "Je relie la déesse au bon rôle dans la scène.",
+    ],
+    lexicon: ["Paris", "arbiter", "est", "Venus", "Iuno", "dicit", "videt", "donum"],
     maxScore: LESSONS_SPEC.lessonMax,
     training: [
-      { id: "p3-l14-t1", type: "mcq", prompt: "« Puella librum portat. » Qui agit ?", options: ["Puella", "librum", "portat"], expected: "Puella", points: 1 },
-      { id: "p3-l14-t2", type: "mcq", prompt: "« Servus aquam portat. » Que porte-t-il ?", options: ["aquam", "servus", "rosa"], expected: "aquam", points: 1 },
-      { id: "p3-l14-t3", type: "mcq", prompt: "« Rosa floret. » Que se passe-t-il ?", options: ["La rose fleurit.", "La rose tombe.", "La rose dort."], expected: "La rose fleurit.", points: 1 },
-      { id: "p3-l14-t4", type: "mcq", prompt: "« Magistra puerum laudat. » Qui est félicité ?", options: ["puerum", "magistra", "laudat"], expected: "puerum", points: 1 },
-      { id: "p3-l14-t5", type: "mcq", prompt: "Dans « Puella cantat. », l’action est :", options: ["chanter", "porter", "fleurir"], expected: "chanter", points: 1 },
-      { id: "p3-l14-t6", type: "mcq", prompt: "Micro-scène avec action de porter :", options: ["Servus aquam portat.", "Rosa floret.", "Puella cantat."], expected: "Servus aquam portat.", points: 1 },
-      { id: "p3-l14-t7", type: "mcq", prompt: "Micro-scène où le complément est « librum » :", options: ["Puella librum portat.", "Rosa librum floret.", "Librum puella."], expected: "Puella librum portat.", points: 1 },
+      { id: "p3-l14-t1", type: "singleChoice", prompt: "Dans la scène, qui est juge ?", options: ["Paris", "Iuppiter", "Davus"], expected: "Paris", points: 1 },
+      { id: "p3-l14-t2", type: "singleChoice", prompt: "« Paris arbiter est » signifie :", options: ["Paris est juge", "Paris est roi", "Paris est poète"], expected: "Paris est juge", points: 1 },
+      { id: "p3-l14-t3", type: "multipleChoice", prompt: "Sélectionne les personnages présents dans cette scène.", options: ["Paris", "Venus", "Iuno", "Romulus"], expected: ["Paris", "Venus", "Iuno"], points: 1 },
+      {
+        id: "p3-l14-t4",
+        type: "matching",
+        prompt: "Associe phrase et sens.",
+        pairs: [
+          { left: "Paris arbiter est", right: "Paris est juge" },
+          { left: "Venus donum habet", right: "Vénus a un cadeau" },
+          { left: "Iuno dicit", right: "Junon parle" },
+        ],
+        rightOptions: ["Junon parle", "Paris est juge", "Vénus a un cadeau"],
+        expected: { "Paris arbiter est": "Paris est juge", "Venus donum habet": "Vénus a un cadeau", "Iuno dicit": "Junon parle" },
+        points: 1,
+      },
+      { id: "p3-l14-t5", type: "singleChoice", prompt: "Qui est impliquée comme déesse dans la scène de jugement ?", options: ["Iuno", "Paula", "Lupa"], expected: "Iuno", points: 1 },
+      { id: "p3-l14-t6", type: "ordering", prompt: "Ordonne la scène : juge → parole → décision.", options: ["Paris arbiter est", "Iuno dicit", "Paris videt"], expected: ["Paris arbiter est", "Iuno dicit", "Paris videt"], points: 1 },
+      { id: "p3-l14-t7", type: "textInput", prompt: "Écris en latin : « juge » (mot de la leçon).", expected: "arbiter", points: 1 },
     ],
     production: [
-      { id: "p3-l14-p1", type: "translation-segment", prompt: "Traduis en français : Puella librum portat.", expected: "la fille porte le livre", accepted: ["la fille porte le livre", "une fille porte le livre"], language: "fr", points: 1 },
-      { id: "p3-l14-p2", type: "translation-segment", prompt: "Traduis en français : Rosa floret.", expected: "la rose fleurit", accepted: ["la rose fleurit", "une rose fleurit"], language: "fr", points: 1 },
-      { id: "p3-l14-p3", type: "translation-segment", prompt: "Traduis en français : Magistra puerum laudat.", expected: "la maîtresse félicite le garçon", accepted: ["la maîtresse félicite le garçon", "une maîtresse félicite le garçon"], language: "fr", points: 1 },
+      { id: "p3-l14-p1", type: "textInput", prompt: "Traduis en français : Paris arbiter est", expected: "paris est juge", answerConfig: { type: "translation-segment", language: "fr", accepted: ["paris est juge"] }, points: 1 },
+      { id: "p3-l14-p2", type: "textInput", prompt: "Traduis en français : Venus donum habet", expected: "vénus a un cadeau", answerConfig: { type: "translation-segment", language: "fr", accepted: ["vénus a un cadeau", "venus a un cadeau"] }, points: 1 },
+      { id: "p3-l14-p3", type: "textInput", prompt: "Traduis en latin : Paris voit Junon", expected: "paris iunonem videt", answerConfig: { type: "latin-expression", language: "latin", expected: "paris iunonem videt" }, points: 1 },
     ],
-    meta: { status: "ready", tags: ["micro-scène", "rôles", "traduction-guidée"] },
+    summary: {
+      retains: ["Paris arbiter est est la phrase clé de la scène.", "Je relie les personnages à leurs actions."],
+      cahier: ["Paris arbiter est", "Venus donum habet"],
+      keywords: ["paris", "arbiter", "iuno", "jugement"],
+    },
+    meta: { status: "ready", tags: ["jugement", "paris", "p3-l14"] },
   },
   {
     id: "p3-l15",
     period: 3,
     periodId: "p3",
-    title: "Synthèse guidée période 3",
-    objective: "Réinvestir repérage S-V-C, rôle du verbe et traduction courte sur un mini-parcours",
+    title: "Romulus et Remus",
+    objective: "Comprendre une scène simple de la fondation de Rome.",
+    lessonPoint: "Je lis une mini-scène culturelle sans surcharge grammaticale.",
+    canDo: [
+      "Je reconnais Romulus, Remus, lupa, flumen.",
+      "Je repère qui protège les enfants.",
+      "Je réponds à une question culturelle simple.",
+    ],
+    lexicon: ["Romulus", "Remus", "lupa", "flumen", "pueri", "servat", "urbem"],
     maxScore: LESSONS_SPEC.lessonMax,
     training: [
-      { id: "p3-l15-t1", type: "mcq", prompt: "Dans « Puella cantat. », le sujet est :", options: ["Puella", "cantat", "aucun"], expected: "Puella", points: 1 },
-      { id: "p3-l15-t2", type: "mcq", prompt: "Dans « Servus aquam portat. », le verbe est :", options: ["servus", "portat", "aquam"], expected: "portat", points: 1 },
-      { id: "p3-l15-t3", type: "mcq", prompt: "Dans « Magistra puerum laudat. », le complément est :", options: ["magistra", "puerum", "laudat"], expected: "puerum", points: 1 },
-      { id: "p3-l15-t4", type: "mcq", prompt: "Quelle traduction est correcte pour « Rosa floret. » ?", options: ["La rose fleurit.", "La rose lit.", "La rose marche."], expected: "La rose fleurit.", points: 1 },
-      { id: "p3-l15-t5", type: "mcq", prompt: "Choisis la phrase bien structurée S-V-C :", options: ["Puella librum portat.", "Portat puella.", "Librum puella."], expected: "Puella librum portat.", points: 1 },
-      { id: "p3-l15-t6", type: "mcq", prompt: "Le mot qui exprime l’action est :", options: ["le verbe", "le sujet", "le complément"], expected: "le verbe", points: 1 },
-      { id: "p3-l15-t7", type: "mcq", prompt: "Pour « La fille marche. », la phrase latine attendue est :", options: ["Puella ambulat.", "Puella aqua.", "Rosa ambulat."], expected: "Puella ambulat.", points: 1 },
+      { id: "p3-l15-t1", type: "singleChoice", prompt: "Dans la scène, qui protège les enfants ?", options: ["lupa", "rex", "poeta"], expected: "lupa", points: 1 },
+      { id: "p3-l15-t2", type: "singleChoice", prompt: "Quel mot signifie « fleuve » ?", options: ["flumen", "forum", "templum"], expected: "flumen", points: 1 },
+      { id: "p3-l15-t3", type: "multipleChoice", prompt: "Sélectionne les personnages de la fondation de Rome.", options: ["Romulus", "Remus", "lupa", "Paris"], expected: ["Romulus", "Remus", "lupa"], points: 1 },
+      {
+        id: "p3-l15-t4",
+        type: "matching",
+        prompt: "Associe phrase et information.",
+        pairs: [
+          { left: "Lupa pueros servat", right: "protection" },
+          { left: "Romulus urbem amat", right: "amour de la ville" },
+          { left: "Remus flumen videt", right: "regard sur le fleuve" },
+        ],
+        rightOptions: ["amour de la ville", "protection", "regard sur le fleuve"],
+        expected: { "Lupa pueros servat": "protection", "Romulus urbem amat": "amour de la ville", "Remus flumen videt": "regard sur le fleuve" },
+        points: 1,
+      },
+      { id: "p3-l15-t5", type: "singleChoice", prompt: "Question culture : ces personnages sont liés à :", options: ["la fondation de Rome", "la guerre de Troie", "le banquet de Pélée"], expected: "la fondation de Rome", points: 1 },
+      { id: "p3-l15-t6", type: "ordering", prompt: "Ordonne la mini-scène : protéger → grandir → fonder.", options: ["lupa servat", "pueri crescunt", "Roma est"], expected: ["lupa servat", "pueri crescunt", "Roma est"], points: 1 },
+      { id: "p3-l15-t7", type: "textInput", prompt: "Écris en latin : « louve ».", expected: "lupa", points: 1 },
     ],
     production: [
-      { id: "p3-l15-p1", type: "find-verb", prompt: "Magistra puerum laudat.", expected: "laudat", points: 1 },
-      { id: "p3-l15-p2", type: "latin-expression", prompt: "Écris le sujet de « Puella librum portat. »", expected: "puella", points: 1 },
-      { id: "p3-l15-p3", type: "translation-segment", prompt: "Traduis en français : Servus aquam portat.", expected: "l'esclave porte de l'eau", accepted: ["l'esclave porte de l'eau", "l’esclave porte de l’eau"], language: "fr", points: 1 },
+      { id: "p3-l15-p1", type: "textInput", prompt: "Traduis en français : Lupa pueros servat", expected: "la louve protège les enfants", answerConfig: { type: "translation-segment", language: "fr", accepted: ["la louve protège les enfants", "la louve sauve les enfants"] }, points: 1 },
+      { id: "p3-l15-p2", type: "textInput", prompt: "Traduis en français : Romulus urbem amat", expected: "romulus aime la ville", answerConfig: { type: "translation-segment", language: "fr", accepted: ["romulus aime la ville", "romulus aime rome"] }, points: 1 },
+      { id: "p3-l15-p3", type: "textInput", prompt: "Traduis en latin : Remus voit le fleuve", expected: "remus flumen videt", answerConfig: { type: "latin-expression", language: "latin", expected: "remus flumen videt" }, points: 1 },
     ],
-    meta: { status: "ready", tags: ["synthèse", "structure", "période-3"] },
+    summary: {
+      retains: ["Romulus et Remus appartiennent à la mémoire de Rome.", "Une mini-scène culturelle reste lisible avec peu de mots."],
+      cahier: ["Lupa pueros servat", "Remus flumen videt"],
+      keywords: ["romulus", "remus", "lupa", "flumen", "rome"],
+    },
+    meta: { status: "ready", tags: ["rome", "fondation", "p3-l15"] },
+  },
+  {
+    id: "p3-l16",
+    period: 3,
+    periodId: "p3",
+    title: "Rome, forum, mur et porte",
+    objective: "Comprendre de courtes scènes urbaines avec déplacement et localisation.",
+    lessonPoint: "Je distingue in et ad dans des scènes de ville.",
+    canDo: [
+      "Je repère mouvement et position en ville.",
+      "Je localise forum, murus, porta, via, templum.",
+      "Je traduis une phrase urbaine simple.",
+    ],
+    lexicon: ["forum", "murus", "porta", "via", "templum", "cives", "ad", "in"],
+    maxScore: LESSONS_SPEC.lessonMax,
+    training: [
+      { id: "p3-l16-t1", type: "singleChoice", prompt: "Dans « Cives ad forum ambulant », ad indique :", options: ["vers", "dans", "avec"], expected: "vers", points: 1 },
+      { id: "p3-l16-t2", type: "singleChoice", prompt: "Dans « Servus sub muro est », la phrase décrit :", options: ["une position", "un déplacement", "une comparaison"], expected: "une position", points: 1 },
+      { id: "p3-l16-t3", type: "multipleChoice", prompt: "Sélectionne les lieux urbains de la leçon.", options: ["forum", "murus", "porta", "malum"], expected: ["forum", "murus", "porta"], points: 1 },
+      {
+        id: "p3-l16-t4",
+        type: "matching",
+        prompt: "Associe phrase et lecture correcte.",
+        pairs: [
+          { left: "Cives ad forum ambulant", right: "mouvement" },
+          { left: "Servus sub muro est", right: "position" },
+          { left: "Amici templum vident", right: "observation" },
+        ],
+        rightOptions: ["observation", "position", "mouvement"],
+        expected: { "Cives ad forum ambulant": "mouvement", "Servus sub muro est": "position", "Amici templum vident": "observation" },
+        points: 1,
+      },
+      { id: "p3-l16-t5", type: "singleChoice", prompt: "Quelle phrase contient in (position) ?", options: ["Servus in via est", "Cives ad forum ambulant", "Amici templum vident"], expected: "Servus in via est", points: 1 },
+      { id: "p3-l16-t6", type: "ordering", prompt: "Remets la phrase urbaine :", options: ["amici", "templum", "vident"], expected: ["amici", "templum", "vident"], points: 1 },
+      { id: "p3-l16-t7", type: "textInput", prompt: "Écris en latin : « porte (de ville) ».", expected: "porta", points: 1 },
+    ],
+    production: [
+      { id: "p3-l16-p1", type: "textInput", prompt: "Traduis en français : Cives ad forum ambulant", expected: "les citoyens marchent vers le forum", answerConfig: { type: "translation-segment", language: "fr", accepted: ["les citoyens marchent vers le forum", "les citoyens vont au forum"] }, points: 1 },
+      { id: "p3-l16-p2", type: "textInput", prompt: "Traduis en français : Servus sub muro est", expected: "le serviteur est sous le mur", answerConfig: { type: "translation-segment", language: "fr", accepted: ["le serviteur est sous le mur", "l'esclave est sous le mur"] }, points: 1 },
+      { id: "p3-l16-p3", type: "textInput", prompt: "Traduis en latin : les amis voient le temple", expected: "amici templum vident", answerConfig: { type: "latin-expression", language: "latin", expected: "amici templum vident" }, points: 1 },
+    ],
+    summary: {
+      retains: ["En ville, ad et in ne donnent pas la même information.", "Je relie facilement lieu, mouvement et action."],
+      cahier: ["Cives ad forum ambulant", "Servus sub muro est", "Amici templum vident"],
+      keywords: ["rome", "forum", "murus", "porta", "ad/in"],
+    },
+    meta: { status: "ready", tags: ["ville", "rome", "p3-l16"] },
   },
   createPlaceholderLesson({
-    id: "p3-l30",
-    period: 3,
-    title: "P3 — Leçon 6 (placeholder)",
-    objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
-  }),
-  createPlaceholderLesson({
-    id: "p3-l31",
+    id: "p3-l17",
     period: 3,
     title: "P3 — Leçon 7 (placeholder)",
     objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
   }),
   createPlaceholderLesson({
-    id: "p3-l32",
+    id: "p3-l18",
     period: 3,
     title: "P3 — Leçon 8 (placeholder)",
     objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
   }),
   createPlaceholderLesson({
-    id: "p3-l33",
+    id: "p3-l19",
     period: 3,
     title: "P3 — Leçon 9 (placeholder)",
     objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
   }),
   createPlaceholderLesson({
-    id: "p3-l34",
+    id: "p3-l20",
     period: 3,
     title: "P3 — Leçon 10 (placeholder)",
     objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
   }),
   createPlaceholderLesson({
-    id: "p3-l35",
+    id: "p3-l21",
     period: 3,
     title: "P3 — Leçon 11 (placeholder)",
     objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
   }),
   createPlaceholderLesson({
-    id: "p3-l36",
+    id: "p3-l22",
     period: 3,
     title: "P3 — Leçon 12 (placeholder)",
     objective: "Placeholder structurel pour extension à 12 leçons en période 3.",
@@ -1603,18 +1696,122 @@ export const LEVELS_SPEC = [
 
 export const DEFAULT_LEVEL_ID = "5e";
 
-function clonePeriodsForLevel(levelId) {
-  return periods.map((period) => ({ ...period, levelId }));
+function toLevelPeriodId(levelId, basePeriodId) {
+  return `${levelId}-${basePeriodId}`;
 }
 
-function cloneLessonsForLevel(levelId) {
-  return lessons.map((lesson) => ({ ...lesson, levelId }));
+function toLevelLessonId(levelId, baseLessonId) {
+  return `${levelId}-${baseLessonId}`;
 }
+
+function namespaceLessonForLevel(levelId, lesson) {
+  const baseLessonId = lesson.id;
+  const nextLessonId = toLevelLessonId(levelId, baseLessonId);
+
+  const mapItem = (item) => ({
+    ...item,
+    id: `${nextLessonId}-${String(item.id || '').split('-').slice(-1)[0] || 'item'}`,
+  });
+
+  return {
+    ...lesson,
+    id: nextLessonId,
+    periodId: toLevelPeriodId(levelId, lesson.periodId),
+    levelId,
+    training: Array.isArray(lesson.training) ? lesson.training.map(mapItem) : [],
+    production: Array.isArray(lesson.production) ? lesson.production.map(mapItem) : [],
+  };
+}
+
+function namespacePeriodsForLevel(levelId, basePeriods) {
+  return basePeriods.map((period) => ({
+    ...period,
+    id: toLevelPeriodId(levelId, period.id),
+    levelId,
+  }));
+}
+
+function buildPlaceholderLessonForLevel(levelId, periodIndex, lessonIndex) {
+  const periodId = `p${periodIndex}`;
+  const lessonId = `${levelId}-${periodId}-l${lessonIndex}`;
+  const lessonTitle = `${levelId} · P${periodIndex} · Leçon ${lessonIndex} (placeholder)`;
+
+  return {
+    id: lessonId,
+    period: periodIndex,
+    periodId: toLevelPeriodId(levelId, periodId),
+    levelId,
+    title: lessonTitle,
+    objective: `Contenu ${levelId} à venir pour la période ${periodIndex}.`,
+    lessonPoint: "Leçon placeholder : structure prête, contenu à venir.",
+    canDo: [
+      "Je visualise la structure de la leçon.",
+      "Je peux ouvrir la leçon sans erreur.",
+      "Je prépare le travail futur de niveau.",
+    ],
+    lexicon: ["placeholder", levelId, periodId],
+    maxScore: LESSONS_SPEC.lessonMax,
+    training: [
+      {
+        id: `${lessonId}-t1`,
+        type: "singleChoice",
+        prompt: "Contenu 4e/3e à venir : item de structure.",
+        options: ["A", "B", "C"],
+        expected: "A",
+        points: 1,
+      },
+    ],
+    production: [
+      {
+        id: `${lessonId}-p1`,
+        type: "textInput",
+        prompt: "Contenu 4e/3e à venir : production de structure.",
+        expected: "placeholder",
+        answerConfig: { type: "one-of", language: "fr", accepted: ["placeholder"] },
+        points: 1,
+      },
+    ],
+    summary: {
+      retains: ["Leçon placeholder de niveau."],
+      cahier: ["Contenu à venir."],
+      keywords: ["placeholder", levelId, `p${periodIndex}`],
+    },
+    meta: {
+      status: "draft",
+      tags: ["placeholder", levelId],
+    },
+  };
+}
+
+function buildLevelPlaceholders(levelId) {
+  const lessons = [];
+  for (let period = 1; period <= LESSONS_SPEC.periods; period += 1) {
+    for (let lesson = 1; lesson <= LESSONS_SPEC.lessonsPerPeriod; lesson += 1) {
+      lessons.push(buildPlaceholderLessonForLevel(levelId, period, lesson));
+    }
+  }
+  return lessons;
+}
+
+export const periodsByLevel = {
+  "5e": namespacePeriodsForLevel("5e", PERIODS_5E_BASE),
+  "4e": namespacePeriodsForLevel("4e", PERIODS_5E_BASE),
+  "3e": namespacePeriodsForLevel("3e", PERIODS_5E_BASE),
+};
+
+export const lessonsByLevel = {
+  "5e": LESSONS_5E_BASE.map((lesson) => namespaceLessonForLevel("5e", lesson)),
+  "4e": buildLevelPlaceholders("4e"),
+  "3e": buildLevelPlaceholders("3e"),
+};
+
+export const periods = periodsByLevel[DEFAULT_LEVEL_ID];
+export const lessons = lessonsByLevel[DEFAULT_LEVEL_ID];
 
 export const levels = LEVELS_SPEC.map((level) => ({
   ...level,
-  periods: clonePeriodsForLevel(level.id),
-  lessons: cloneLessonsForLevel(level.id),
+  periods: periodsByLevel[level.id] || [],
+  lessons: lessonsByLevel[level.id] || [],
 }));
 
 function findLevel(levelId = DEFAULT_LEVEL_ID) {
@@ -1626,17 +1823,19 @@ export function getLevelById(levelId = DEFAULT_LEVEL_ID) {
 }
 
 export function getPeriodsByLevel(levelId = DEFAULT_LEVEL_ID) {
-  return findLevel(levelId)?.periods || [];
+  return periodsByLevel[levelId] || [];
 }
 
 export function getLessonsByLevel(levelId = DEFAULT_LEVEL_ID) {
-  return findLevel(levelId)?.lessons || [];
+  return lessonsByLevel[levelId] || [];
 }
 
 export function getLessonsByPeriod(periodId, levelId = DEFAULT_LEVEL_ID) {
-  return getLessonsByLevel(levelId).filter((lesson) => lesson.periodId === periodId);
+  const normalizedPeriodId = periodId?.startsWith(`${levelId}-`) ? periodId : toLevelPeriodId(levelId, periodId);
+  return getLessonsByLevel(levelId).filter((lesson) => lesson.periodId === normalizedPeriodId);
 }
 
 export function getLessonById(lessonId, levelId = DEFAULT_LEVEL_ID) {
-  return getLessonsByLevel(levelId).find((lesson) => lesson.id === lessonId) || null;
+  const normalizedLessonId = lessonId?.startsWith(`${levelId}-`) ? lessonId : toLevelLessonId(levelId, lessonId);
+  return getLessonsByLevel(levelId).find((lesson) => lesson.id === normalizedLessonId) || null;
 }

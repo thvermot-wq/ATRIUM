@@ -60,6 +60,32 @@ function safelyParse(raw) {
   }
 }
 
+function migrateLegacyIdsFor5e(parsed, { lessons, periods }) {
+  if (!parsed || typeof parsed !== "object") return null;
+
+  const next = {
+    ...parsed,
+    lessons: { ...(parsed.lessons || {}) },
+    periods: { ...(parsed.periods || {}) },
+  };
+
+  lessons.forEach((lesson) => {
+    const legacyId = lesson.id.replace(/^5e-/, "");
+    if (!next.lessons[lesson.id] && next.lessons[legacyId]) {
+      next.lessons[lesson.id] = next.lessons[legacyId];
+    }
+  });
+
+  periods.forEach((period) => {
+    const legacyId = period.id.replace(/^5e-/, "");
+    if (!next.periods[period.id] && next.periods[legacyId]) {
+      next.periods[period.id] = next.periods[legacyId];
+    }
+  });
+
+  return next;
+}
+
 export function recomputePeriodProgress({ progress, lessons, periods }) {
   const next = {
     ...progress,
@@ -87,10 +113,15 @@ export function loadProgress({ lessons, periods, levelId = "5e" }) {
   const fallback = createInitialProgress({ lessons, periods });
 
   const namespacedRaw = localStorage.getItem(getStorageKey(levelId));
-  const raw = namespacedRaw || localStorage.getItem(STORAGE_KEY);
-  if (!raw) return fallback;
+  let parsed = safelyParse(namespacedRaw);
 
-  const parsed = safelyParse(raw);
+  // Migration douce : l'ancienne clé globale n'alimente que la 5e.
+  if (!parsed && levelId === "5e") {
+    const legacyRaw = localStorage.getItem(STORAGE_KEY);
+    const legacyParsed = safelyParse(legacyRaw);
+    parsed = migrateLegacyIdsFor5e(legacyParsed, { lessons, periods });
+  }
+
   if (!parsed || typeof parsed !== "object") return fallback;
 
   const merged = {
@@ -121,9 +152,6 @@ export function loadProgress({ lessons, periods, levelId = "5e" }) {
 export function saveProgress(progress, { levelId = "5e" } = {}) {
   const payload = JSON.stringify(progress);
   localStorage.setItem(getStorageKey(levelId), payload);
-  if (levelId === "5e") {
-    localStorage.setItem(STORAGE_KEY, payload);
-  }
 }
 
 export function saveLessonProgress({ progress, lessonId, trainingScore, productionScore, lessons, periods }) {
