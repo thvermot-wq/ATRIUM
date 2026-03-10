@@ -18,6 +18,9 @@ function run() {
     "p1-l8",
     "p1-l9",
     "p2-l1",
+    "p2-l10",
+    "p2-l11",
+    "p2-l12",
     "p2-l2",
     "p2-l3",
     "p2-l4",
@@ -38,7 +41,7 @@ function run() {
   });
 
   const nonPlayable = lessons.filter((lesson) => lesson?.meta?.status !== "ready");
-  assert.equal(nonPlayable.length, 13);
+  assert.equal(nonPlayable.length, 7);
 
   console.log("playable-lessons assertions passed");
 }
