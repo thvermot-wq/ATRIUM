@@ -6,6 +6,8 @@ const HOME_LEVEL_META = {
     cecrl: "pré-A1 → A1",
     summary:
       "Acclimatation à la langue, premiers automatismes, premières lectures guidées.",
+    vademecumLabel: "Télécharger le vademecum 5e",
+    vademecumUrl: "assets/docs/vademecum-5e.pdf",
   },
   "4e": {
     dashboardLabel: "🏛️ LCA 4e",
@@ -14,6 +16,8 @@ const HOME_LEVEL_META = {
     cecrl: "A1 consolidé",
     summary:
       "Consolidation morphologique et syntaxique, lecture suivie plus sûre, thème guidé.",
+    vademecumLabel: "Télécharger le vademecum 4e",
+    vademecumUrl: "assets/docs/vademecum-4e.pdf",
   },
   "3e": {
     dashboardLabel: "🏛️ LCA 3e",
@@ -22,6 +26,8 @@ const HOME_LEVEL_META = {
     cecrl: "A1+ → début A2",
     summary:
       "Lecture, version guidée, thème simple, liens plus autonomes entre langue et civilisation.",
+    vademecumLabel: "Télécharger le vademecum 3e",
+    vademecumUrl: "assets/docs/vademecum-3e.pdf",
   },
 };
 
@@ -41,6 +47,10 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
       <strong>Repère affiché :</strong> les niveaux CECRL ci-dessous sont des équivalences
       pédagogiques adaptées aux LCA.
     </p>
+    <p>
+      Chaque niveau propose aussi un <strong>vademecum synthétique téléchargeable</strong>
+      pour réviser, imprimer ou consulter hors ligne.
+    </p>
   `;
 
   const cards = document.createElement("div");
@@ -53,6 +63,8 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
       euroclassica: "Repère à définir",
       cecrl: "Repère à définir",
       summary: level.description || "",
+      vademecumLabel: `Télécharger le vademecum ${level.classLabel || level.id || ""}`.trim(),
+      vademecumUrl: `assets/docs/vademecum-${level.id}.pdf`,
     };
 
     const card = document.createElement("article");
@@ -60,21 +72,38 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
 
     const description = level.description || meta.summary || "";
     const ambition = level.ambition || "";
-    const buttonLabel = `Ouvrir le dashboard ${meta.dashboardLabel}`;
+    const dashboardButtonLabel = `Ouvrir le dashboard ${meta.dashboardLabel}`;
 
     card.innerHTML = `
       <p><strong>${meta.dashboardLabel}</strong></p>
       <h3>${meta.latinGrade}</h3>
-      <p>${description}</p>
+      <p>${meta.summary || description}</p>
       <p><strong>Ambition :</strong> ${ambition}</p>
       <p><strong>Euroclassica :</strong> ${meta.euroclassica}</p>
       <p><strong>CECRL adapté :</strong> ${meta.cecrl}</p>
-      <button type="button" class="btn btn-primary">${buttonLabel}</button>
+
+      <div class="actions-row">
+        <button type="button" class="btn btn-primary" data-action="open-dashboard">
+          ${dashboardButtonLabel}
+        </button>
+        <a
+          class="btn"
+          href="${meta.vademecumUrl}"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          data-action="open-vademecum"
+        >
+          📘 ${meta.vademecumLabel}
+        </a>
+      </div>
     `;
 
-    card.querySelector("button").addEventListener("click", () => {
-      onOpenLevel(level.id);
-    });
+    card
+      .querySelector('[data-action="open-dashboard"]')
+      .addEventListener("click", () => {
+        onOpenLevel(level.id);
+      });
 
     cards.appendChild(card);
   });
