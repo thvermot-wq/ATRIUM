@@ -200,11 +200,13 @@ function normalizeAnswer(value) {
 
 function parseLexiconEntry(entry) {
   const raw = String(entry || "").trim();
-  const m = raw.match(/^(.*?)\s*\((.*?)\)\s*$/);
-  if (m) return { latin: m[1].trim(), fr: m[2].trim() };
+  const match = raw.match(/^(.*?)\s*\((.*?)\)\s*$/);
+  if (match) {
+    return { latin: match[1].trim(), fr: match[2].trim() };
+  }
   if (raw.includes("=")) {
-    const [latin, fr] = raw.split(/=(.*)/s).slice(0, 2);
-    return { latin: latin.trim(), fr: String(fr || "").trim() };
+    const parts = raw.split(/=(.*)/s).slice(0, 2);
+    return { latin: parts[0].trim(), fr: String(parts[1] || "").trim() };
   }
   return { latin: raw, fr: "" };
 }
@@ -214,16 +216,33 @@ function expandAccepted(answers) {
     answers
       .map(normalizeAnswer)
       .filter(Boolean)
-      .flatMap((a) => uniq([a, a.toLowerCase(), stripAccents(a), stripAccents(a.toLowerCase())]))
+      .flatMap((answer) => uniq([answer, answer.toLowerCase(), stripAccents(answer), stripAccents(answer.toLowerCase())]))
   );
 }
 
 function sc(id, prompt, options, expected, feedback) {
-  return { id, type: "singleChoice", prompt, options, expected, shuffle: true, points: 1, ...(feedback ? { feedback } : {}) };
+  return {
+    id,
+    type: "singleChoice",
+    prompt,
+    options,
+    expected,
+    shuffle: true,
+    points: 1,
+    ...(feedback ? { feedback } : {})
+  };
 }
 
 function mc(id, prompt, options, expected) {
-  return { id, type: "multipleChoice", prompt, options, expected, shuffle: true, points: 1 };
+  return {
+    id,
+    type: "multipleChoice",
+    prompt,
+    options,
+    expected,
+    shuffle: true,
+    points: 1
+  };
 }
 
 function mt(id, prompt, pairs) {
@@ -232,8 +251,8 @@ function mt(id, prompt, pairs) {
     type: "matching",
     prompt,
     pairs,
-    rightOptions: pairs.map((p) => p.right),
-    expected: Object.fromEntries(pairs.map((p) => [p.left, p.right])),
+    rightOptions: pairs.map((pair) => pair.right),
+    expected: Object.fromEntries(pairs.map((pair) => [pair.left, pair.right])),
     points: 1,
     shuffle: true,
     shuffleRightOptions: true
@@ -288,36 +307,36 @@ function tiLa(id, prompt, accepted) {
 }
 
 function buildCourseReminder(lesson) {
-  const r = REMINDERS[lesson.id];
+  const reminder = REMINDERS[lesson.id];
   return {
     title: "Rappel de cours",
-    focus: r.focus,
+    focus: reminder.focus,
     lexicon: lesson.lexicon.map(parseLexiconEntry),
     method: SHARED_REFERENCE.method,
-    grammar: r.grammar,
-    conjugation: r.conjugation,
+    grammar: reminder.grammar,
+    conjugation: reminder.conjugation,
     referenceTables: SHARED_REFERENCE,
-    civilisation: r.civilisation,
+    civilisation: reminder.civilisation,
     teacherNote: "Niveau 5e LCA : bain de langue léger, lecture-compréhension, repérage du verbe, du sujet et du complément, puis traduction simple et progressive.",
-    copyBook: r.copy
+    copyBook: reminder.copy
   };
 }
 
 function buildSummary(lesson) {
-  const r = REMINDERS[lesson.id];
+  const reminder = REMINDERS[lesson.id];
   return {
     title: "Je retiens + je note dans mon cahier",
     retains: uniq([
       ...(lesson.summary?.retains || []),
-      r.focus,
+      reminder.focus,
       "Le latin ne suit pas forcément l'ordre sujet / verbe / complément du français.",
       "En production, on privilégie la bonne forme latine et la terminaison juste."
     ]),
-    cahier: uniq(r.copy),
+    cahier: uniq(reminder.copy),
     keywords: uniq([...(lesson.summary?.keywords || []), "1re déclinaison", "2e déclinaison", "présent"]),
-    grammar: r.grammar,
-    conjugation: r.conjugation,
-    civilisation: r.civilisation
+    grammar: reminder.grammar,
+    conjugation: reminder.conjugation,
+    civilisation: reminder.civilisation
   };
 }
 
@@ -418,7 +437,7 @@ const RAW_LESSONS_5E_P1 = [
         { left: "salve", right: "bonjour (à une personne)" },
         { left: "vale", right: "au revoir (à une personne)" }
       ]),
-      sc("p1-l1-t5", "Dans « Flavia in via est », que signifie via ?", ["rue", "maison", "fontaine", "mur", "temple"], "rue", "Le groupe in via donne un lieu."),
+      sc("p1-l1-t5", "Dans « Flavia in via est », que signifie via ?", ["rue", "maison", "fontaine", "mur", "temple"], "rue"),
       sc("p1-l1-t6", "« Niger canis est » signifie :", ["Niger est un chien", "Le chien est drôle", "Niger est un mur", "Niger crie", "Le chien salue"], "Niger est un chien"),
       tiLa("p1-l1-t7", "Écris en latin : « je suis présent ».", ["adsum"])
     ],
@@ -464,7 +483,7 @@ const RAW_LESSONS_5E_P1 = [
         { left: "insula", right: "immeuble" },
         { left: "ianua", right: "porte" }
       ]),
-      sc("p1-l2-t5", "« Niger ante ianuam stat » : Niger est…", ["devant la porte", "dans le forum", "sur le mur", "à la fontaine", "dans l'école"], "devant la porte", "Cherche le verbe stat puis le lieu ante ianuam."),
+      sc("p1-l2-t5", "« Niger ante ianuam stat » : Niger est…", ["devant la porte", "dans le forum", "sur le mur", "à la fontaine", "dans l'école"], "devant la porte"),
       sc("p1-l2-t6", "Dans « Flavia in domo manet », manet signifie :", ["reste", "court", "crie", "porte", "écrit"], "reste"),
       tiLa("p1-l2-t7", "Écris en latin : « porte » (nom).", ["ianua"])
     ],
@@ -497,7 +516,7 @@ const RAW_LESSONS_5E_P1 = [
         { left: "panis", right: "pain" },
         { left: "vinum", right: "vin" }
       ]),
-      sc("p1-l3-t5", "« Mercator panem portat » : qui porte le pain ?", ["mercator", "panem", "forum", "Flavia", "Niger"], "mercator", "Cherche d'abord le verbe puis son sujet."),
+      sc("p1-l3-t5", "« Mercator panem portat » : qui porte le pain ?", ["mercator", "panem", "forum", "Flavia", "Niger"], "mercator"),
       sc("p1-l3-t6", "« Panem mercator portat » signifie :", ["Le marchand porte le pain", "Le pain porte le marchand", "Le marchand vend le pain", "Le pain est dans la maison", "Le forum court"], "Le marchand porte le pain"),
       tiLa("p1-l3-t7", "Écris en latin : « marchand ».", ["mercator"])
     ],
@@ -563,7 +582,7 @@ const RAW_LESSONS_5E_P1 = [
         { left: "latrat", right: "aboie" },
         { left: "spectat", right: "regarde" }
       ]),
-      sc("p1-l5-t5", "Piège : « Canem Livia videt » signifie :", ["Livia voit le chien", "Le chien voit Livia", "Livia court avec le chien", "Le chien aboie", "Livia regarde la rue"], "Livia voit le chien", "Le complément peut venir avant le sujet en latin."),
+      sc("p1-l5-t5", "Piège : « Canem Livia videt » signifie :", ["Livia voit le chien", "Le chien voit Livia", "Livia court avec le chien", "Le chien aboie", "Livia regarde la rue"], "Livia voit le chien"),
       sc("p1-l5-t6", "« In via canis currit » signifie :", ["Le chien court dans la rue", "La rue court avec le chien", "Le chien lit dans la rue", "La fille voit le chien", "Le chien reste"], "Le chien court dans la rue"),
       tiLa("p1-l5-t7", "Écris en latin : « il voit ».", ["videt"])
     ],
