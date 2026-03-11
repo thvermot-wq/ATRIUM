@@ -10,7 +10,8 @@ import {
 } from "../assets/js/diploma.js";
 
 function completePeriod(periodId, progress) {
-  const periodLessons = lessons.filter((lesson) => lesson.periodId === periodId);
+  const fullPeriodId = periodId.startsWith("5e-") ? periodId : `5e-${periodId}`;
+  const periodLessons = lessons.filter((lesson) => lesson.periodId === fullPeriodId);
   let next = progress;
   periodLessons.forEach((lesson) => {
     next = saveLessonProgress({
@@ -33,7 +34,7 @@ function run() {
 
   progress = completePeriod("p1", progress);
   assert.equal(areAllLessonsCompleted("p1", progress), true);
-  assert.equal(progress.periods.p1.totalScore, 96);
+  assert.equal(progress.periods["5e-p1"].totalScore, 96);
   assert.equal(isPeriodDiplomaEligible("p1", progress), true);
 
   assert.equal(getSchoolCertificationLabel("p1"), "Certification scolaire : Acclimatation progressive validée");
