@@ -748,7 +748,7 @@ const LESSONS_5E_BASE = [
     meta: { status: "ready", tags: ["p2-l12", "synthese", "enquete"] },
   },
   {
-    id: "p3-l11",
+    id: "p3-l17",
     period: 3,
     periodId: "p3",
     title: "Les dieux arrivent",
