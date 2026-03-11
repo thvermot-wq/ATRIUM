@@ -6,7 +6,7 @@ const HOME_LEVEL_META = {
     cecrl: "pré-A1 → A1",
     summary:
       "Acclimatation à la langue, premiers automatismes, premières lectures guidées.",
-    vademecumLabel: "Télécharger le vademecum 5e",
+    vademecumLabel: "Vademecum 5e",
     vademecumUrl: "assets/docs/vademecum-5e.pdf",
   },
   "4e": {
@@ -16,7 +16,7 @@ const HOME_LEVEL_META = {
     cecrl: "A1 consolidé",
     summary:
       "Consolidation morphologique et syntaxique, lecture suivie plus sûre, thème guidé.",
-    vademecumLabel: "Télécharger le vademecum 4e",
+    vademecumLabel: "Vademecum 4e",
     vademecumUrl: "assets/docs/vademecum-4e.pdf",
   },
   "3e": {
@@ -26,7 +26,7 @@ const HOME_LEVEL_META = {
     cecrl: "A1+ → début A2",
     summary:
       "Lecture, version guidée, thème simple, liens plus autonomes entre langue et civilisation.",
-    vademecumLabel: "Télécharger le vademecum 3e",
+    vademecumLabel: "Vademecum 3e",
     vademecumUrl: "assets/docs/vademecum-3e.pdf",
   },
 };
@@ -86,16 +86,33 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
         <button type="button" class="btn btn-primary" data-action="open-dashboard">
           ${dashboardButtonLabel}
         </button>
-        <a
-          class="btn"
-          href="${meta.vademecumUrl}"
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-          data-action="open-vademecum"
-        >
-          📘 ${meta.vademecumLabel}
-        </a>
+       <a
+  href="${meta.vademecumUrl}"
+  download
+  target="_blank"
+  rel="noopener noreferrer"
+  data-action="open-vademecum"
+  aria-label="${meta.vademecumLabel}"
+  style="
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:0.5rem;
+    padding:0.85rem 1rem;
+    border-radius:12px;
+    border:1px solid rgba(0,0,0,0.12);
+    background:#f7f3e8;
+    color:#2f2a1f;
+    font-weight:600;
+    text-decoration:none;
+    line-height:1.2;
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+    cursor:pointer;
+  "
+>
+  <span aria-hidden="true">📘</span>
+  <span>${meta.vademecumLabel}</span>
+</a>
       </div>
     `;
 
