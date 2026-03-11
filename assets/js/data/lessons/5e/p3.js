@@ -1,7 +1,7 @@
 // Données de leçons 5E · Période 3.
 export const lessons5eP3 = [
   {
-    "id": "p3-l17",
+    "id": "p3-l11",
     "period": 3,
     "periodId": "p3",
     "title": "Les dieux arrivent",

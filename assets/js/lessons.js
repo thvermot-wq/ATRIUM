@@ -7,6 +7,7 @@ import { lessons4eP3 } from "./data/lessons/4e/p3.js";
 import { lessons3eP1 } from "./data/lessons/3e/p1.js";
 import { lessons3eP2 } from "./data/lessons/3e/p2.js";
 import { lessons3eP3 } from "./data/lessons/3e/p3.js";
+import { validateLessons } from "./data/lessonValidation.js";
 
 export const LESSONS_SPEC = {
   periods: 3,
@@ -64,6 +65,50 @@ const LESSONS_3E_BASE = [
   ...lessons3eP2,
   ...lessons3eP3,
 ];
+
+
+function extractLessonNumber(lessonId) {
+  const match = String(lessonId || "").match(/-l(\d+)$/i);
+  return match ? Number(match[1]) : null;
+}
+
+function normalizeLessonShape(lesson, levelId, lessonNumber) {
+  const lessonPoint = lesson.lessonPoint || lesson.lessonNote || lesson.courseReminder || lesson.objective || "";
+  const training = Array.isArray(lesson.training) ? lesson.training : [];
+  const production = Array.isArray(lesson.production) ? lesson.production : [];
+
+  return {
+    ...lesson,
+    level: levelId,
+    levelId,
+    lessonNumber,
+    lessonNote: lessonPoint,
+    lessonPoint,
+    narrative: lesson.narrative || lesson.story || lesson.intrigue || "",
+    exercises: [
+      ...training.map((item) => ({ ...item, section: "training" })),
+      ...production.map((item) => ({ ...item, section: "production" })),
+    ],
+    training,
+    production,
+  };
+}
+
+function buildNormalizedLevelLessons(levelId, sourceLessons) {
+  const periodCounters = new Map();
+
+  return sourceLessons.map((lesson) => {
+    const period = Number(lesson.period);
+    const periodIndex = (periodCounters.get(period) || 0) + 1;
+    periodCounters.set(period, periodIndex);
+
+    const extracted = extractLessonNumber(lesson.id);
+    const lessonNumber = Number.isInteger(extracted) ? extracted : periodIndex;
+
+    return normalizeLessonShape(lesson, levelId, lessonNumber);
+  });
+}
+
 
 export const LEVELS_SPEC = [
   {
@@ -169,13 +214,22 @@ export const periodsByLevel = {
 };
 
 export const lessonsByLevel = {
-  "5e": LESSONS_5E_BASE
-    .map((lesson) => enrichPeriod1To3ProductionAcceptedAnswers(lesson))
-    .map((lesson) => namespaceLessonForLevel("5e", lesson)),
-  // 4e/3e sont déjà portées sous forme finale et namespacée dans leurs fichiers data.
-  "4e": LESSONS_4E_BASE,
-  "3e": LESSONS_3E_BASE,
+  "5e": buildNormalizedLevelLessons(
+    "5e",
+    LESSONS_5E_BASE
+      .map((lesson) => enrichPeriod1To3ProductionAcceptedAnswers(lesson))
+      .map((lesson) => namespaceLessonForLevel("5e", lesson)),
+  ),
+  "4e": buildNormalizedLevelLessons("4e", LESSONS_4E_BASE),
+  "3e": buildNormalizedLevelLessons("3e", LESSONS_3E_BASE),
 };
+
+const shouldValidateLessons =
+  typeof window === "undefined" || ["localhost", "127.0.0.1"].includes(window?.location?.hostname);
+
+if (shouldValidateLessons) {
+  validateLessons(lessonsByLevel, LESSONS_SPEC);
+}
 
 export const periods = periodsByLevel[DEFAULT_LEVEL_ID];
 export const lessons = lessonsByLevel[DEFAULT_LEVEL_ID];
