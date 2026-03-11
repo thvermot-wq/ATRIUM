@@ -1,2560 +1,295 @@
-// Données de leçons 5E · Période 3.
+// Données de leçons 5E · Période 3 — Discordia in Subura.
+
+function latinOrders(...orders) {
+  const normalized = orders
+    .flat()
+    .map((entry) => (Array.isArray(entry) ? entry.join(" ") : String(entry || "")))
+    .map((entry) => entry.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+
+  return [...new Set(normalized)];
+}
+
 export const lessons5eP3 = [
   {
-    "id": "p3-l11",
-    "period": 3,
-    "periodId": "p3",
-    "title": "Les dieux arrivent",
-    "objective": "Reconnaître quelques dieux et déesses dans des phrases courtes accessibles.",
-    "lessonPoint": "Je repère qui est qui dans une scène divine simple.",
-    "canDo": [
-      "Je reconnais Venus, Minerva, Iuno et Iuppiter.",
-      "Je comprends une phrase attributive simple.",
-      "Je traduis des mini-phrases mythologiques."
+    id: "p3-l11", period: 3, periodId: "p3", title: "Rumor nocturnus", objective: "Relancer l’enquête nocturne dans Subure.",
+    lessonPoint: "Je trouve le verbe d’abord, puis qui/quoi/où/pourquoi ; l’ordre latin peut varier.",
+    narrative: "Une rumeur dit qu’un homme sort la nuit : les voisins veulent vérifier les faits.",
+    canDo: ["Je reconnais quis/quid/ubi/cur.", "Je distingue vu et entendu.", "Je traduis une question simple."],
+    lexicon: ["quis = qui ?", "quid = quoi ?", "ubi = où ?", "cur = pourquoi ?", "rumor = rumeur", "vir = homme", "noctu = de nuit", "exit = il/elle sort", "videt = il/elle voit", "dicit = il/elle dit"],
+    maxScore: 10,
+    training: [
+      { id: "p3-l11-t1", type: "singleChoice", prompt: "Quel mot signifie « qui ? »", options: ["quis", "quid", "cur", "ubi"], expected: "quis", shuffle: true, points: 1 },
+      { id: "p3-l11-t2", type: "matching", prompt: "Associe l’interrogatif et son sens.", pairs: [{ left: "quis", right: "qui ?" }, { left: "quid", right: "quoi ?" }, { left: "ubi", right: "où ?" }, { left: "cur", right: "pourquoi ?" }], rightOptions: ["pourquoi ?", "où ?", "qui ?", "quoi ?"], expected: { quis: "qui ?", quid: "quoi ?", ubi: "où ?", cur: "pourquoi ?" }, points: 1 },
+      { id: "p3-l11-t3", type: "singleChoice", prompt: "« vicina virum noctu videt » : qui voit l’homme ?", options: ["la voisine", "l’homme", "la rumeur", "le chien"], expected: "la voisine", shuffle: true, points: 1 },
+      { id: "p3-l11-t4", type: "multipleChoice", prompt: "Traductions recevables de « vir noctu exit ».", options: ["L’homme sort de nuit", "Un homme sort la nuit", "La nuit sort l’homme", "L’homme entre la nuit"], expected: ["L’homme sort de nuit", "Un homme sort la nuit"], shuffle: true, points: 1 },
+      { id: "p3-l11-t5", type: "ordering", prompt: "Remets en ordre : vir / noctu / exit", options: ["vir", "noctu", "exit"], expected: ["vir", "noctu", "exit"], points: 1 },
+      { id: "p3-l11-t6", type: "singleChoice", prompt: "Dans « rumor vicum turbat », le verbe est…", options: ["rumor", "vicum", "turbat", "noctu"], expected: "turbat", shuffle: true, points: 1 },
+      { id: "p3-l11-t7", type: "multipleChoice", prompt: "Mini-texte : « Vicina virum videt. Servus dicit multum. » Qu’est-ce qui est vu, qu’est-ce qui est dit ?", options: ["L’homme est vu", "Le serviteur parle", "La tablette est vue", "Le marché parle"], expected: ["L’homme est vu", "Le serviteur parle"], shuffle: true, points: 1 },
     ],
-    "lexicon": [
-      "Venus",
-      "Minerva",
-      "Iuno",
-      "Iuppiter",
-      "pulchra",
-      "irata",
-      "templum"
+    production: [
+      { id: "p3-l11-p1", type: "textInput", prompt: "Traduis : quis virum videt ?", expected: "qui voit l'homme ?", acceptedAnswers: ["qui voit l'homme", "qui voit cet homme", "qui aperçoit l'homme"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["qui voit l'homme", "qui voit cet homme", "qui aperçoit l'homme"] }, points: 1 },
+      { id: "p3-l11-p2", type: "textInput", prompt: "Traduis en latin : La voisine voit l’homme.", expected: "vicina virum videt", acceptedAnswers: latinOrders(["vicina", "virum", "videt"], ["vicina", "videt", "virum"], ["virum", "vicina", "videt"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vicina", "virum", "videt"], ["vicina", "videt", "virum"], ["virum", "vicina", "videt"]) }, points: 1 },
+      { id: "p3-l11-p3", type: "textInput", prompt: "Explique en français court : qu’est-ce qu’une rumeur ?", expected: "une information non vérifiée", acceptedAnswers: ["une information non vérifiée", "une parole qu'on répète sans preuve", "quelque chose qu'on dit sans vérifier"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["une information non vérifiée", "une parole qu'on répète sans preuve", "quelque chose qu'on dit sans vérifier"] }, points: 1 },
     ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l17-t1",
-        "type": "singleChoice",
-        "prompt": "Dans la scène, qui est une déesse ?",
-        "options": [
-          "Venus",
-          "Iuppiter",
-          "Paris"
-        ],
-        "expected": "Venus",
-        "points": 1
-      },
-      {
-        "id": "p3-l17-t2",
-        "type": "singleChoice",
-        "prompt": "Dans « Venus pulchra est », que signifie pulchra ?",
-        "options": [
-          "belle",
-          "en colère",
-          "forte"
-        ],
-        "expected": "belle",
-        "points": 1
-      },
-      {
-        "id": "p3-l17-t3",
-        "type": "multipleChoice",
-        "prompt": "Sélectionne les noms de dieux/déesses de la leçon.",
-        "options": [
-          "Minerva",
-          "Iuno",
-          "Iuppiter",
-          "Davus"
-        ],
-        "expected": [
-          "Minerva",
-          "Iuno",
-          "Iuppiter"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l17-t4",
-        "type": "matching",
-        "prompt": "Associe nom divin et information.",
-        "pairs": [
-          {
-            "left": "Venus",
-            "right": "dea"
-          },
-          {
-            "left": "Iuppiter",
-            "right": "deus"
-          },
-          {
-            "left": "Minerva",
-            "right": "dea"
-          }
-        ],
-        "rightOptions": [
-          "deus",
-          "dea"
-        ],
-        "expected": {
-          "Venus": "dea",
-          "Iuppiter": "deus",
-          "Minerva": "dea"
-        },
-        "points": 1
-      },
-      {
-        "id": "p3-l17-t5",
-        "type": "singleChoice",
-        "prompt": "Dans « Iuno irata est », Iuno est :",
-        "options": [
-          "en colère",
-          "heureuse",
-          "fatiguée"
-        ],
-        "expected": "en colère",
-        "points": 1
-      },
-      {
-        "id": "p3-l17-t6",
-        "type": "ordering",
-        "prompt": "Remets la phrase :",
-        "options": [
-          "Venus",
-          "pulchra",
-          "est"
-        ],
-        "expected": [
-          "Venus",
-          "pulchra",
-          "est"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l17-t7",
-        "type": "textInput",
-        "prompt": "Écris en latin : « Junon ».",
-        "expected": "iuno",
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l17-p1",
-        "type": "textInput",
-        "prompt": "Traduis en français : Venus pulchra est",
-        "expected": "vénus est belle",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "vénus est belle",
-            "venus est belle"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "vénus est belle",
-          "venus est belle"
-        ]
-      },
-      {
-        "id": "p3-l17-p2",
-        "type": "textInput",
-        "prompt": "Traduis en français : Minerva templum videt",
-        "expected": "minerve voit le temple",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "minerve voit le temple",
-            "minerva voit le temple"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "minerve voit le temple",
-          "minerva voit le temple"
-        ]
-      },
-      {
-        "id": "p3-l17-p3",
-        "type": "textInput",
-        "prompt": "Traduis en latin : Junon est en colère",
-        "expected": "iuno irata est",
-        "answerConfig": {
-          "type": "latin-expression",
-          "language": "latin",
-          "expected": "iuno irata est"
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "iuno irata est"
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "Quelques noms divins reviennent souvent dans les récits.",
-        "Une phrase attributive simple reste facile à lire."
-      ],
-      "cahier": [
-        "Venus pulchra est",
-        "Iuno irata est"
-      ],
-      "keywords": [
-        "dieux",
-        "déesses",
-        "venus",
-        "iuno"
-      ]
-    },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "mythologie",
-        "dieux",
-        "p3-l11"
-      ]
-    }
+    summary: { retains: ["Je commence par le verbe.", "Je distingue fait observé et parole rapportée."], cahier: ["Je retiens : quis/quid/ubi/cur", "Je recopie sur mon cahier : l’ordre latin peut varier"], keywords: ["nuit", "rumeur", "enquête"] },
+    meta: { status: "ready", tags: ["p3", "rumor", "noctu"] },
   },
   {
-    "id": "p3-l12",
-    "period": 3,
-    "periodId": "p3",
-    "title": "Le mariage de Pélée et Thétis",
-    "objective": "Comprendre un mini-passage mythologique très court autour d’un mariage divin.",
-    "lessonPoint": "Je lis une mini-scène mythologique sans entrer dans des détails compliqués.",
-    "canDo": [
-      "Je repère qui vient à la fête.",
-      "Je comprends qui n’est pas invité.",
-      "Je résume une scène en une phrase."
+    id: "p3-l12", period: 3, periodId: "p3", title: "Inter insulas", objective: "Suivre un trajet nocturne dans le quartier.",
+    lessonPoint: "Les prépositions m’aident à suivre le chemin exact d’un personnage.",
+    narrative: "L’homme passe entre les insulae, puis disparaît dans une ruelle.",
+    canDo: ["Je lis ad/in/ex/ante.", "Je repère des lieux traversés.", "Je traduis un trajet."],
+    lexicon: ["insula = immeuble", "via = rue", "ad = vers", "in = dans", "ex = hors de, depuis", "ante = devant", "currit = il/elle court", "stat = il/elle se tient", "manet = il/elle reste", "intrat = il/elle entre"],
+    maxScore: 10,
+    training: [
+      { id: "p3-l12-t1", type: "singleChoice", prompt: "ex signifie…", options: ["hors de", "vers", "dans", "devant"], expected: "hors de", shuffle: true, points: 1 },
+      { id: "p3-l12-t2", type: "matching", prompt: "Associe ad/in/ex/ante et leur sens.", pairs: [{ left: "ad", right: "vers" }, { left: "in", right: "dans" }, { left: "ex", right: "hors de" }, { left: "ante", right: "devant" }], rightOptions: ["devant", "dans", "vers", "hors de"], expected: { ad: "vers", in: "dans", ex: "hors de", ante: "devant" }, points: 1 },
+      { id: "p3-l12-t3", type: "singleChoice", prompt: "« vir ex insula exit » : d’où sort l’homme ?", options: ["de l’immeuble", "de la fontaine", "du forum", "de la porte"], expected: "de l’immeuble", shuffle: true, points: 1 },
+      { id: "p3-l12-t4", type: "singleChoice", prompt: "« ante ianuam vir stat » : que fait-il ?", options: ["il se tient devant la porte", "il entre dans la porte", "il quitte la rue", "il crie"], expected: "il se tient devant la porte", shuffle: true, points: 1 },
+      { id: "p3-l12-t5", type: "ordering", prompt: "Remets : vir / in via / currit", options: ["vir", "in", "via", "currit"], expected: ["vir", "in", "via", "currit"], points: 1 },
+      { id: "p3-l12-t6", type: "multipleChoice", prompt: "Traductions recevables de « vir ad forum ambulat ».", options: ["L’homme va vers le forum", "L’homme marche au forum", "Le forum va vers l’homme", "L’homme se dirige vers la place publique"], expected: ["L’homme va vers le forum", "L’homme marche au forum", "L’homme se dirige vers la place publique"], shuffle: true, points: 1 },
+      { id: "p3-l12-t7", type: "multipleChoice", prompt: "Mini-texte : « Vir ex insula exit et ad forum currit. » Quels lieux sont traversés ?", options: ["insula", "forum", "balneum", "macellum"], expected: ["insula", "forum"], shuffle: true, points: 1 },
     ],
-    "lexicon": [
-      "nuptiae",
-      "dei",
-      "Discordia",
-      "venit",
-      "non invitata",
-      "cena"
+    production: [
+      { id: "p3-l12-p1", type: "textInput", prompt: "Traduis : vir ante insulam manet", expected: "l'homme reste devant l'immeuble", acceptedAnswers: ["l'homme reste devant l'immeuble", "l'homme demeure devant le bâtiment", "l'individu reste devant l'insula"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["l'homme reste devant l'immeuble", "l'homme demeure devant le bâtiment", "l'individu reste devant l'insula"] }, points: 1 },
+      { id: "p3-l12-p2", type: "textInput", prompt: "Traduis en latin : L’homme entre dans l’immeuble.", expected: "vir in insulam intrat", acceptedAnswers: latinOrders(["vir", "in", "insulam", "intrat"], ["in", "insulam", "vir", "intrat"], ["intrat", "vir", "in", "insulam"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vir", "in", "insulam", "intrat"], ["in", "insulam", "vir", "intrat"], ["intrat", "vir", "in", "insulam"]) }, points: 1 },
+      { id: "p3-l12-p3", type: "textInput", prompt: "Complète : ad = ... ; ex = ...", expected: "vers ; hors de", acceptedAnswers: ["vers ; hors de", "vers ; depuis", "ad vers ; ex hors de"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["vers ; hors de", "vers ; depuis", "ad vers ; ex hors de"] }, points: 1 },
     ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l12-t1",
-        "type": "singleChoice",
-        "prompt": "Dans la scène, à quoi viennent les dieux ?",
-        "options": [
-          "aux noces",
-          "au combat",
-          "au forum"
-        ],
-        "expected": "aux noces",
-        "points": 1
-      },
-      {
-        "id": "p3-l12-t2",
-        "type": "singleChoice",
-        "prompt": "Qui n’est pas invitée ?",
-        "options": [
-          "Discordia",
-          "Venus",
-          "Minerva"
-        ],
-        "expected": "Discordia",
-        "points": 1
-      },
-      {
-        "id": "p3-l12-t3",
-        "type": "multipleChoice",
-        "prompt": "Sélectionne les informations du passage.",
-        "options": [
-          "Les dieux viennent",
-          "Discordia n’est pas invitée",
-          "Paris dort",
-          "Un banquet a lieu"
-        ],
-        "expected": [
-          "Les dieux viennent",
-          "Discordia n’est pas invitée",
-          "Un banquet a lieu"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l12-t4",
-        "type": "matching",
-        "prompt": "Associe élément et rôle.",
-        "pairs": [
-          {
-            "left": "dei",
-            "right": "invités"
-          },
-          {
-            "left": "Discordia",
-            "right": "non invitée"
-          },
-          {
-            "left": "cena",
-            "right": "banquet"
-          }
-        ],
-        "rightOptions": [
-          "banquet",
-          "invités",
-          "non invitée"
-        ],
-        "expected": {
-          "dei": "invités",
-          "Discordia": "non invitée",
-          "cena": "banquet"
-        },
-        "points": 1
-      },
-      {
-        "id": "p3-l12-t5",
-        "type": "singleChoice",
-        "prompt": "« Dei cenam habent » signifie :",
-        "options": [
-          "Les dieux ont un banquet",
-          "Les dieux fuient",
-          "Les dieux perdent un cadeau"
-        ],
-        "expected": "Les dieux ont un banquet",
-        "points": 1
-      },
-      {
-        "id": "p3-l12-t6",
-        "type": "ordering",
-        "prompt": "Ordonne la mini-scène : invitation → venue → tension.",
-        "options": [
-          "dei veniunt",
-          "cena est",
-          "Discordia venit"
-        ],
-        "expected": [
-          "cena est",
-          "dei veniunt",
-          "Discordia venit"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l12-t7",
-        "type": "textInput",
-        "prompt": "Écris en latin : « dieux ».",
-        "expected": "dei",
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l12-p1",
-        "type": "textInput",
-        "prompt": "Traduis en français : Discordia ad nuptias venit",
-        "expected": "discorde vient aux noces",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "discorde vient aux noces",
-            "discordia vient aux noces"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "discorde vient aux noces",
-          "discordia vient aux noces"
-        ]
-      },
-      {
-        "id": "p3-l12-p2",
-        "type": "textInput",
-        "prompt": "Traduis en français : Dei cenam habent",
-        "expected": "les dieux ont un banquet",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "les dieux ont un banquet",
-            "les dieux ont le repas",
-            "les dieux font un banquet"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "les dieux ont un banquet",
-          "les dieux ont le repas",
-          "les dieux font un banquet"
-        ]
-      },
-      {
-        "id": "p3-l12-p3",
-        "type": "textInput",
-        "prompt": "Traduis en latin : les dieux voient le cadeau",
-        "expected": "dei donum vident",
-        "answerConfig": {
-          "type": "latin-expression",
-          "language": "latin",
-          "expected": "dei donum vident"
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "dei donum vident"
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "Je peux suivre une mini-scène mythologique de 2-3 idées.",
-        "Discordia n’est pas invitée : c’est la tension de départ."
-      ],
-      "cahier": [
-        "Discordia ad nuptias venit",
-        "Dei cenam habent"
-      ],
-      "keywords": [
-        "nuptiae",
-        "discordia",
-        "dei",
-        "banquet"
-      ]
-    },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "mythe",
-        "mariage",
-        "p3-l12"
-      ]
-    }
+    summary: { retains: ["Je suis un trajet grâce aux prépositions.", "Je relis les lieux du quartier."], cahier: ["Je retiens : ad/in/ex/ante", "Je recopie sur mon cahier : insula, via, forum"], keywords: ["trajet", "quartier", "déplacements"] },
+    meta: { status: "ready", tags: ["p3", "lieux", "insula"] },
   },
   {
-    "id": "p3-l13",
-    "period": 3,
-    "periodId": "p3",
-    "title": "La pomme de Discorde",
-    "objective": "Comprendre une scène centrée sur un objet mythologique.",
-    "lessonPoint": "L’objet central de la scène aide à relier les actions.",
-    "canDo": [
-      "Je repère qui lance l’objet.",
-      "Je repère qui regarde l’objet.",
-      "Je comprends à qui l’objet est destiné."
+    id: "p3-l13", period: 3, periodId: "p3", title: "Feminae ad ianuam", objective: "Réactiver la 1re déclinaison dans une scène d’observation.",
+    lessonPoint: "Je repère -a et -am pour distinguer souvent sujet et complément objet.",
+    narrative: "Des voisines observent depuis ianuae et fenestrae pendant le passage nocturne.",
+    canDo: ["Je reconnais des noms de 1re déclinaison.", "Je lis une scène depuis la porte.", "Je traduis une phrase simple."],
+    lexicon: ["femina = femme", "vicina = voisine", "amica = amie", "ianua = porte", "fenestra = fenêtre", "lucernam = la lampe", "viam = la rue", "spectat = il/elle regarde", "narrat = il/elle raconte", "portat = il/elle porte"],
+    maxScore: 10,
+    training: [
+      { id: "p3-l13-t1", type: "singleChoice", prompt: "Quel mot appartient à la 1re déclinaison ?", options: ["vicina", "dominus", "donum", "forum"], expected: "vicina", shuffle: true, points: 1 },
+      { id: "p3-l13-t2", type: "matching", prompt: "Associe mot et sens.", pairs: [{ left: "femina", right: "femme" }, { left: "vicina", right: "voisine" }, { left: "ianua", right: "porte" }, { left: "fenestra", right: "fenêtre" }], rightOptions: ["porte", "femme", "fenêtre", "voisine"], expected: { femina: "femme", vicina: "voisine", ianua: "porte", fenestra: "fenêtre" }, points: 1 },
+      { id: "p3-l13-t3", type: "singleChoice", prompt: "Dans « vicina viam spectat », l’objet est…", options: ["vicina", "viam", "spectat", "ianua"], expected: "viam", shuffle: true, points: 1 },
+      { id: "p3-l13-t4", type: "singleChoice", prompt: "La terminaison accusative la plus fréquente ici est…", options: ["-am", "-us", "-um", "-nt"], expected: "-am", shuffle: true, points: 1 },
+      { id: "p3-l13-t5", type: "ordering", prompt: "Remets : femina / virum / spectat", options: ["femina", "virum", "spectat"], expected: ["femina", "virum", "spectat"], points: 1 },
+      { id: "p3-l13-t6", type: "multipleChoice", prompt: "Traductions recevables de « amica lucernam portat ».", options: ["L’amie porte la lampe", "L’amie transporte la lampe", "La lampe porte l’amie", "L’amie cache la lampe"], expected: ["L’amie porte la lampe", "L’amie transporte la lampe"], shuffle: true, points: 1 },
+      { id: "p3-l13-t7", type: "multipleChoice", prompt: "Mini-texte : « Vicina ad ianuam stat et viam spectat. » Que voit-elle ?", options: ["la rue", "la porte", "le forum", "le marché"], expected: ["la rue", "la porte"], shuffle: true, points: 1 },
     ],
-    "lexicon": [
-      "malum aureum",
-      "dea",
-      "deae",
-      "pulcherrima",
-      "iacit",
-      "spectant"
+    production: [
+      { id: "p3-l13-p1", type: "textInput", prompt: "Traduis : vicina ianuam aperit", expected: "la voisine ouvre la porte", acceptedAnswers: ["la voisine ouvre la porte", "une voisine ouvre la porte", "la personne du voisinage ouvre la porte"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["la voisine ouvre la porte", "une voisine ouvre la porte", "la personne du voisinage ouvre la porte"] }, points: 1 },
+      { id: "p3-l13-p2", type: "textInput", prompt: "Traduis en latin : La femme regarde la rue.", expected: "femina viam spectat", acceptedAnswers: latinOrders(["femina", "viam", "spectat"], ["femina", "spectat", "viam"], ["viam", "femina", "spectat"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["femina", "viam", "spectat"], ["femina", "spectat", "viam"], ["viam", "femina", "spectat"]) }, points: 1 },
+      { id: "p3-l13-p3", type: "textInput", prompt: "Complète : -a = ... ; -am = ...", expected: "souvent sujet ; souvent objet", acceptedAnswers: ["souvent sujet ; souvent objet", "forme de base ; forme objet", "sujet ; complément objet"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["souvent sujet ; souvent objet", "forme de base ; forme objet", "sujet ; complément objet"] }, points: 1 },
     ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l13-t1",
-        "type": "singleChoice",
-        "prompt": "Quel objet est au centre de la scène ?",
-        "options": [
-          "malum aureum",
-          "liber novus",
-          "corona magna"
-        ],
-        "expected": "malum aureum",
-        "points": 1
-      },
-      {
-        "id": "p3-l13-t2",
-        "type": "singleChoice",
-        "prompt": "Qui lance la pomme ?",
-        "options": [
-          "Discordia",
-          "Venus",
-          "Paris"
-        ],
-        "expected": "Discordia",
-        "points": 1
-      },
-      {
-        "id": "p3-l13-t3",
-        "type": "singleChoice",
-        "prompt": "Dans « Deae malum spectant », qui regarde la pomme ?",
-        "options": [
-          "Deae",
-          "malum",
-          "Discordia"
-        ],
-        "expected": "Deae",
-        "points": 1
-      },
-      {
-        "id": "p3-l13-t4",
-        "type": "multipleChoice",
-        "prompt": "Sélectionne les mots de la scène.",
-        "options": [
-          "malum",
-          "aureum",
-          "pulcherrima",
-          "porta"
-        ],
-        "expected": [
-          "malum",
-          "aureum",
-          "pulcherrima"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l13-t5",
-        "type": "matching",
-        "prompt": "Associe phrase et sens.",
-        "pairs": [
-          {
-            "left": "Discordia malum iacit",
-            "right": "Discorde lance la pomme"
-          },
-          {
-            "left": "Deae malum spectant",
-            "right": "Les déesses regardent la pomme"
-          },
-          {
-            "left": "Malum pulcherrimae est",
-            "right": "La pomme est pour la plus belle"
-          }
-        ],
-        "rightOptions": [
-          "La pomme est pour la plus belle",
-          "Les déesses regardent la pomme",
-          "Discorde lance la pomme"
-        ],
-        "expected": {
-          "Discordia malum iacit": "Discorde lance la pomme",
-          "Deae malum spectant": "Les déesses regardent la pomme",
-          "Malum pulcherrimae est": "La pomme est pour la plus belle"
-        },
-        "points": 1
-      },
-      {
-        "id": "p3-l13-t6",
-        "type": "ordering",
-        "prompt": "Ordonne la logique : lancer → regarder → discuter.",
-        "options": [
-          "iacit",
-          "spectant",
-          "disputant"
-        ],
-        "expected": [
-          "iacit",
-          "spectant",
-          "disputant"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l13-t7",
-        "type": "textInput",
-        "prompt": "Écris le groupe latin : « pomme d’or ».",
-        "expected": "malum aureum",
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l13-p1",
-        "type": "textInput",
-        "prompt": "Traduis en français : Discordia malum aureum iacit",
-        "expected": "discorde lance la pomme d'or",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "discorde lance la pomme d'or",
-            "discordia lance la pomme d'or",
-            "discorde jette la pomme d'or"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "discorde lance la pomme d'or",
-          "discordia lance la pomme d'or",
-          "discorde jette la pomme d'or"
-        ]
-      },
-      {
-        "id": "p3-l13-p2",
-        "type": "textInput",
-        "prompt": "Traduis en français : Deae malum spectant",
-        "expected": "les déesses regardent la pomme",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "les déesses regardent la pomme",
-            "les deesses regardent la pomme"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "les déesses regardent la pomme",
-          "les deesses regardent la pomme"
-        ]
-      },
-      {
-        "id": "p3-l13-p3",
-        "type": "textInput",
-        "prompt": "Traduis en latin : Vénus voit la pomme",
-        "expected": "venus malum videt",
-        "answerConfig": {
-          "type": "latin-expression",
-          "language": "latin",
-          "expected": "venus malum videt"
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "venus malum videt"
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "La scène tourne autour du malum aureum.",
-        "Je repère facilement qui agit sur l’objet."
-      ],
-      "cahier": [
-        "Discordia malum aureum iacit",
-        "Deae malum spectant"
-      ],
-      "keywords": [
-        "malum aureum",
-        "deae",
-        "pulcherrima",
-        "discordia"
-      ]
-    },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "mythe",
-        "pomme",
-        "p3-l13"
-      ]
-    }
+    summary: { retains: ["Je reconnais -a/-am dans une scène réelle.", "J’utilise la porte et la fenêtre comme repères de lieu."], cahier: ["Je retiens : 1re déclinaison (femina/viam)", "Je recopie sur mon cahier : les voisines observent depuis la ianua"], keywords: ["observation", "1re déclinaison", "porte"] },
+    meta: { status: "ready", tags: ["p3", "feminae", "declinaison1"] },
   },
   {
-    "id": "p3-l14",
-    "period": 3,
-    "periodId": "p3",
-    "title": "Paris juge",
-    "objective": "Suivre une scène simple de jugement mythologique.",
-    "lessonPoint": "Je comprends qui juge et qui intervient dans la scène.",
-    "canDo": [
-      "Je reconnais la phrase clé Paris arbiter est.",
-      "Je repère qui parle et qui regarde.",
-      "Je relie la déesse au bon rôle dans la scène."
+    id: "p3-l14", period: 3, periodId: "p3", title: "In macello", objective: "Lire la scène du marché et le nouvel indice d’huile.",
+    lessonPoint: "Je relie vocabulaire concret et formes neutres pour comprendre un indice.",
+    narrative: "Au macellum, un marchand affirme que l’homme a acheté de l’oleum.",
+    canDo: ["Je reconnais des neutres fréquents.", "Je repère l’action principale.", "Je traduis un indice concret."],
+    lexicon: ["macellum = marché", "oleum = huile", "donum = offrande, cadeau", "signum = signe, marque, indice", "templum = temple", "emit = il/elle achète", "portat = il/elle porte", "celat = il/elle cache", "videt = il/elle voit", "invenit = il/elle trouve"],
+    maxScore: 10,
+    training: [
+      { id: "p3-l14-t1", type: "singleChoice", prompt: "macellum signifie…", options: ["marché", "forum", "thermes", "porte"], expected: "marché", shuffle: true, points: 1 },
+      { id: "p3-l14-t2", type: "matching", prompt: "Associe mot et sens.", pairs: [{ left: "macellum", right: "marché" }, { left: "oleum", right: "huile" }, { left: "donum", right: "offrande" }, { left: "signum", right: "indice" }], rightOptions: ["indice", "offrande", "marché", "huile"], expected: { macellum: "marché", oleum: "huile", donum: "offrande", signum: "indice" }, points: 1 },
+      { id: "p3-l14-t3", type: "singleChoice", prompt: "« vir oleum emit » : que fait l’homme ?", options: ["il achète de l’huile", "il cache l’huile", "il trouve l’huile", "il appelle"], expected: "il achète de l’huile", shuffle: true, points: 1 },
+      { id: "p3-l14-t4", type: "singleChoice", prompt: "Quel mot est neutre ?", options: ["oleum", "vicina", "servus", "ianua"], expected: "oleum", shuffle: true, points: 1 },
+      { id: "p3-l14-t5", type: "multipleChoice", prompt: "Traductions recevables de « oleum vir portat ».", options: ["L’homme porte l’huile", "L’homme transporte l’huile", "L’huile porte l’homme", "L’homme achète l’huile"], expected: ["L’homme porte l’huile", "L’homme transporte l’huile"], shuffle: true, points: 1 },
+      { id: "p3-l14-t6", type: "ordering", prompt: "Remets : vir / oleum / emit", options: ["vir", "oleum", "emit"], expected: ["vir", "oleum", "emit"], points: 1 },
+      { id: "p3-l14-t7", type: "multipleChoice", prompt: "Mini-texte : « In macello rumor crescit : vir oleum emit noctu. » Quel indice nouveau apparaît ?", options: ["l’huile", "la lampe", "la paix", "le temple"], expected: ["l’huile"], shuffle: true, points: 1 },
     ],
-    "lexicon": [
-      "Paris",
-      "arbiter",
-      "est",
-      "Venus",
-      "Iuno",
-      "dicit",
-      "videt",
-      "donum"
+    production: [
+      { id: "p3-l14-p1", type: "textInput", prompt: "Traduis : vir oleum celat", expected: "l'homme cache l'huile", acceptedAnswers: ["l'homme cache l'huile", "l'individu cache l'huile", "l'homme dissimule l'huile"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["l'homme cache l'huile", "l'individu cache l'huile", "l'homme dissimule l'huile"] }, points: 1 },
+      { id: "p3-l14-p2", type: "textInput", prompt: "Traduis en latin : Le marchand voit l’homme.", expected: "mercator virum videt", acceptedAnswers: latinOrders(["mercator", "virum", "videt"], ["mercator", "videt", "virum"], ["virum", "mercator", "videt"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["mercator", "virum", "videt"], ["mercator", "videt", "virum"], ["virum", "mercator", "videt"]) }, points: 1 },
+      { id: "p3-l14-p3", type: "textInput", prompt: "Règle simple : au neutre singulier, sujet et objet sont souvent…", expected: "semblables", acceptedAnswers: ["semblables", "identiques", "la même forme"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["semblables", "identiques", "la même forme"] }, points: 1 },
     ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l14-t1",
-        "type": "singleChoice",
-        "prompt": "Dans la scène, qui est juge ?",
-        "options": [
-          "Paris",
-          "Iuppiter",
-          "Davus"
-        ],
-        "expected": "Paris",
-        "points": 1
-      },
-      {
-        "id": "p3-l14-t2",
-        "type": "singleChoice",
-        "prompt": "« Paris arbiter est » signifie :",
-        "options": [
-          "Paris est juge",
-          "Paris est roi",
-          "Paris est poète"
-        ],
-        "expected": "Paris est juge",
-        "points": 1
-      },
-      {
-        "id": "p3-l14-t3",
-        "type": "multipleChoice",
-        "prompt": "Sélectionne les personnages présents dans cette scène.",
-        "options": [
-          "Paris",
-          "Venus",
-          "Iuno",
-          "Romulus"
-        ],
-        "expected": [
-          "Paris",
-          "Venus",
-          "Iuno"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l14-t4",
-        "type": "matching",
-        "prompt": "Associe phrase et sens.",
-        "pairs": [
-          {
-            "left": "Paris arbiter est",
-            "right": "Paris est juge"
-          },
-          {
-            "left": "Venus donum habet",
-            "right": "Vénus a un cadeau"
-          },
-          {
-            "left": "Iuno dicit",
-            "right": "Junon parle"
-          }
-        ],
-        "rightOptions": [
-          "Junon parle",
-          "Paris est juge",
-          "Vénus a un cadeau"
-        ],
-        "expected": {
-          "Paris arbiter est": "Paris est juge",
-          "Venus donum habet": "Vénus a un cadeau",
-          "Iuno dicit": "Junon parle"
-        },
-        "points": 1
-      },
-      {
-        "id": "p3-l14-t5",
-        "type": "singleChoice",
-        "prompt": "Qui est impliquée comme déesse dans la scène de jugement ?",
-        "options": [
-          "Iuno",
-          "Paula",
-          "Lupa"
-        ],
-        "expected": "Iuno",
-        "points": 1
-      },
-      {
-        "id": "p3-l14-t6",
-        "type": "ordering",
-        "prompt": "Ordonne la scène : juge → parole → décision.",
-        "options": [
-          "Paris arbiter est",
-          "Iuno dicit",
-          "Paris videt"
-        ],
-        "expected": [
-          "Paris arbiter est",
-          "Iuno dicit",
-          "Paris videt"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l14-t7",
-        "type": "textInput",
-        "prompt": "Écris en latin : « juge » (mot de la leçon).",
-        "expected": "arbiter",
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l14-p1",
-        "type": "textInput",
-        "prompt": "Traduis en français : Paris arbiter est",
-        "expected": "paris est juge",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "paris est juge"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "paris est juge"
-        ]
-      },
-      {
-        "id": "p3-l14-p2",
-        "type": "textInput",
-        "prompt": "Traduis en français : Venus donum habet",
-        "expected": "vénus a un cadeau",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "vénus a un cadeau",
-            "venus a un cadeau"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "vénus a un cadeau",
-          "venus a un cadeau"
-        ]
-      },
-      {
-        "id": "p3-l14-p3",
-        "type": "textInput",
-        "prompt": "Traduis en latin : Paris voit Junon",
-        "expected": "paris iunonem videt",
-        "answerConfig": {
-          "type": "latin-expression",
-          "language": "latin",
-          "expected": "paris iunonem videt"
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "paris iunonem videt"
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "Paris arbiter est est la phrase clé de la scène.",
-        "Je relie les personnages à leurs actions."
-      ],
-      "cahier": [
-        "Paris arbiter est",
-        "Venus donum habet"
-      ],
-      "keywords": [
-        "paris",
-        "arbiter",
-        "iuno",
-        "jugement"
-      ]
-    },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "jugement",
-        "paris",
-        "p3-l14"
-      ]
-    }
+    summary: { retains: ["Je comprends un indice concret (huile).", "Je reconnais des neutres utiles à l’enquête."], cahier: ["Je retiens : macellum, oleum, signum", "Je recopie sur mon cahier : neutre = forme souvent semblable sujet/objet"], keywords: ["marché", "indice", "huile"] },
+    meta: { status: "ready", tags: ["p3", "macellum", "neutre"] },
   },
   {
-    "id": "p3-l15",
-    "period": 3,
-    "periodId": "p3",
-    "title": "Romulus et Remus",
-    "objective": "Comprendre une scène simple de la fondation de Rome.",
-    "lessonPoint": "Je lis une mini-scène culturelle sans surcharge grammaticale.",
-    "canDo": [
-      "Je reconnais Romulus, Remus, lupa, flumen.",
-      "Je repère qui protège les enfants.",
-      "Je réponds à une question culturelle simple."
+    id: "p3-l15", period: 3, periodId: "p3", title: "In tabernis", objective: "Comparer les versions au milieu des boutiques.",
+    lessonPoint: "Je vérifie les formes en -us/-um pour savoir qui agit et qui est accusé.",
+    narrative: "Dans les tabernae, les paroles se mélangent : certains accusent trop vite.",
+    canDo: ["Je relis la 2e déclinaison masculine.", "Je compare deux versions contradictoires.", "Je traduis une phrase d’accusation."],
+    lexicon: ["servus = esclave, serviteur", "dominus = maître, maître de maison", "vicinus = voisin", "amicus = ami", "tabernarius = boutiquier", "murus = mur", "audit = il/elle entend", "vocat = il/elle appelle", "accusat = il/elle accuse", "timet = il/elle craint"],
+    maxScore: 10,
+    training: [
+      { id: "p3-l15-t1", type: "singleChoice", prompt: "Quel mot est de 2e déclinaison masculine ?", options: ["dominus", "ianua", "tabella", "pax"], expected: "dominus", shuffle: true, points: 1 },
+      { id: "p3-l15-t2", type: "matching", prompt: "Associe mot et sens.", pairs: [{ left: "servus", right: "serviteur" }, { left: "dominus", right: "maître" }, { left: "vicinus", right: "voisin" }, { left: "amicus", right: "ami" }], rightOptions: ["voisin", "ami", "serviteur", "maître"], expected: { servus: "serviteur", dominus: "maître", vicinus: "voisin", amicus: "ami" }, points: 1 },
+      { id: "p3-l15-t3", type: "singleChoice", prompt: "« tabernarius virum audit » : qui entend l’homme ?", options: ["le boutiquier", "l’homme", "le voisin", "le chien"], expected: "le boutiquier", shuffle: true, points: 1 },
+      { id: "p3-l15-t4", type: "singleChoice", prompt: "« virum vicinus accusat » : qui est accusé ?", options: ["l’homme", "le voisin", "le maître", "l’ami"], expected: "l’homme", shuffle: true, points: 1 },
+      { id: "p3-l15-t5", type: "multipleChoice", prompt: "Traductions recevables de « dominus servum vocat ».", options: ["Le maître appelle le serviteur", "Le maître fait venir le serviteur", "Le serviteur appelle le maître", "Le maître craint le serviteur"], expected: ["Le maître appelle le serviteur", "Le maître fait venir le serviteur"], shuffle: true, points: 1 },
+      { id: "p3-l15-t6", type: "ordering", prompt: "Remets : vicinus / servum / accusat", options: ["vicinus", "servum", "accusat"], expected: ["vicinus", "servum", "accusat"], points: 1 },
+      { id: "p3-l15-t7", type: "multipleChoice", prompt: "Mini-texte : « Tabernarius sero virum videt. Amicus dubitat. » Qui a vu l’homme tard ?", options: ["le boutiquier", "l’ami", "la voisine", "le maître"], expected: ["le boutiquier"], shuffle: true, points: 1 },
     ],
-    "lexicon": [
-      "Romulus",
-      "Remus",
-      "lupa",
-      "flumen",
-      "pueri",
-      "servat",
-      "urbem"
+    production: [
+      { id: "p3-l15-p1", type: "textInput", prompt: "Traduis : amicus vicinum timet", expected: "l'ami craint le voisin", acceptedAnswers: ["l'ami craint le voisin", "l'ami a peur du voisin", "l'ami craint la voisine"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["l'ami craint le voisin", "l'ami a peur du voisin", "l'ami craint la voisine"] }, points: 1 },
+      { id: "p3-l15-p2", type: "textInput", prompt: "Traduis en latin : Le voisin appelle le serviteur.", expected: "vicinus servum vocat", acceptedAnswers: latinOrders(["vicinus", "servum", "vocat"], ["vicinus", "vocat", "servum"], ["servum", "vicinus", "vocat"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vicinus", "servum", "vocat"], ["vicinus", "vocat", "servum"], ["servum", "vicinus", "vocat"]) }, points: 1 },
+      { id: "p3-l15-p3", type: "textInput", prompt: "Lexique : dominus peut vouloir dire...", expected: "maître", acceptedAnswers: ["maître", "maître de maison", "patron"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["maître", "maître de maison", "patron"] }, points: 1 },
     ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l15-t1",
-        "type": "singleChoice",
-        "prompt": "Dans la scène, qui protège les enfants ?",
-        "options": [
-          "lupa",
-          "rex",
-          "poeta"
-        ],
-        "expected": "lupa",
-        "points": 1
-      },
-      {
-        "id": "p3-l15-t2",
-        "type": "singleChoice",
-        "prompt": "Quel mot signifie « fleuve » ?",
-        "options": [
-          "flumen",
-          "forum",
-          "templum"
-        ],
-        "expected": "flumen",
-        "points": 1
-      },
-      {
-        "id": "p3-l15-t3",
-        "type": "multipleChoice",
-        "prompt": "Sélectionne les personnages de la fondation de Rome.",
-        "options": [
-          "Romulus",
-          "Remus",
-          "lupa",
-          "Paris"
-        ],
-        "expected": [
-          "Romulus",
-          "Remus",
-          "lupa"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l15-t4",
-        "type": "matching",
-        "prompt": "Associe phrase et information.",
-        "pairs": [
-          {
-            "left": "Lupa pueros servat",
-            "right": "protection"
-          },
-          {
-            "left": "Romulus urbem amat",
-            "right": "amour de la ville"
-          },
-          {
-            "left": "Remus flumen videt",
-            "right": "regard sur le fleuve"
-          }
-        ],
-        "rightOptions": [
-          "amour de la ville",
-          "protection",
-          "regard sur le fleuve"
-        ],
-        "expected": {
-          "Lupa pueros servat": "protection",
-          "Romulus urbem amat": "amour de la ville",
-          "Remus flumen videt": "regard sur le fleuve"
-        },
-        "points": 1
-      },
-      {
-        "id": "p3-l15-t5",
-        "type": "singleChoice",
-        "prompt": "Question culture : ces personnages sont liés à :",
-        "options": [
-          "la fondation de Rome",
-          "la guerre de Troie",
-          "le banquet de Pélée"
-        ],
-        "expected": "la fondation de Rome",
-        "points": 1
-      },
-      {
-        "id": "p3-l15-t6",
-        "type": "ordering",
-        "prompt": "Ordonne la mini-scène : protéger → grandir → fonder.",
-        "options": [
-          "lupa servat",
-          "pueri crescunt",
-          "Roma est"
-        ],
-        "expected": [
-          "lupa servat",
-          "pueri crescunt",
-          "Roma est"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l15-t7",
-        "type": "textInput",
-        "prompt": "Écris en latin : « louve ».",
-        "expected": "lupa",
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l15-p1",
-        "type": "textInput",
-        "prompt": "Traduis en français : Lupa pueros servat",
-        "expected": "la louve protège les enfants",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "la louve protège les enfants",
-            "la louve sauve les enfants"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "la louve protège les enfants",
-          "la louve sauve les enfants"
-        ]
-      },
-      {
-        "id": "p3-l15-p2",
-        "type": "textInput",
-        "prompt": "Traduis en français : Romulus urbem amat",
-        "expected": "romulus aime la ville",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "romulus aime la ville",
-            "romulus aime rome"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "romulus aime la ville",
-          "romulus aime rome"
-        ]
-      },
-      {
-        "id": "p3-l15-p3",
-        "type": "textInput",
-        "prompt": "Traduis en latin : Remus voit le fleuve",
-        "expected": "remus flumen videt",
-        "answerConfig": {
-          "type": "latin-expression",
-          "language": "latin",
-          "expected": "remus flumen videt"
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "remus flumen videt"
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "Romulus et Remus appartiennent à la mémoire de Rome.",
-        "Une mini-scène culturelle reste lisible avec peu de mots."
-      ],
-      "cahier": [
-        "Lupa pueros servat",
-        "Remus flumen videt"
-      ],
-      "keywords": [
-        "romulus",
-        "remus",
-        "lupa",
-        "flumen",
-        "rome"
-      ]
-    },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "rome",
-        "fondation",
-        "p3-l15"
-      ]
-    }
+    summary: { retains: ["Je vérifie qui agit avant d’accuser.", "Je relis -us/-um en contexte."], cahier: ["Je retiens : servus/servum, dominus/dominum", "Je recopie sur mon cahier : dans les boutiques, les récits peuvent se déformer"], keywords: ["taberna", "accusation", "2e déclinaison"] },
+    meta: { status: "ready", tags: ["p3", "tabernis", "declinaison2-m"] },
   },
   {
-    "id": "p3-l16",
-    "period": 3,
-    "periodId": "p3",
-    "title": "Rome, forum, mur et porte",
-    "objective": "Comprendre de courtes scènes urbaines avec déplacement et localisation.",
-    "lessonPoint": "Je distingue in et ad dans des scènes de ville.",
-    "canDo": [
-      "Je repère mouvement et position en ville.",
-      "Je localise forum, murus, porta, via, templum.",
-      "Je traduis une phrase urbaine simple."
+    id: "p3-l16", period: 3, periodId: "p3", title: "In balneo", objective: "Réactiver le présent singulier avec des témoignages matinaux.",
+    lessonPoint: "Au présent singulier : -o (je), -s (tu), -t (il/elle).", narrative: "Aux bains, des témoins disent avoir vu l’homme avant l’aube.",
+    canDo: ["Je repère les personnes du singulier.", "Je comprends qui parle dans une déposition.", "Je traduis une phrase simple."],
+    lexicon: ["balneum = thermes, bains", "video = je vois", "audis = tu entends", "narrat = il/elle raconte", "nego = je nie", "times = tu crains", "intrat = il/elle entre", "exit = il/elle sort", "rogas = tu demandes", "habito = j’habite"],
+    maxScore: 10,
+    training: [
+      { id: "p3-l16-t1", type: "singleChoice", prompt: "Quelle terminaison marque souvent « je » ?", options: ["-o", "-s", "-t", "-nt"], expected: "-o", shuffle: true, points: 1 },
+      { id: "p3-l16-t2", type: "matching", prompt: "Associe -o / -s / -t et la personne.", pairs: [{ left: "-o", right: "je" }, { left: "-s", right: "tu" }, { left: "-t", right: "il/elle" }], rightOptions: ["tu", "il/elle", "je"], expected: { "-o": "je", "-s": "tu", "-t": "il/elle" }, points: 1 },
+      { id: "p3-l16-t3", type: "singleChoice", prompt: "« nego » signifie…", options: ["je nie", "tu nies", "il/elle nie", "nous nions"], expected: "je nie", shuffle: true, points: 1 },
+      { id: "p3-l16-t4", type: "singleChoice", prompt: "« tu entends » =", options: ["audis", "audio", "audit", "audimus"], expected: "audis", shuffle: true, points: 1 },
+      { id: "p3-l16-t5", type: "multipleChoice", prompt: "Choisis les formes de 1re personne.", options: ["video", "nego", "habito", "rogas"], expected: ["video", "nego", "habito"], shuffle: true, points: 1 },
+      { id: "p3-l16-t6", type: "singleChoice", prompt: "Mini-témoignage : « Video virum. Nego rumor. » Qui parle ?", options: ["je", "tu", "il/elle", "ils/elles"], expected: "je", shuffle: true, points: 1 },
+      { id: "p3-l16-t7", type: "ordering", prompt: "Mets le verbe en fin : ego / virum / audio", options: ["ego", "virum", "audio"], expected: ["ego", "virum", "audio"], points: 1 },
     ],
-    "lexicon": [
-      "forum",
-      "murus",
-      "porta",
-      "via",
-      "templum",
-      "cives",
-      "ad",
-      "in"
+    production: [
+      { id: "p3-l16-p1", type: "textInput", prompt: "Traduis : audio virum", expected: "j'entends l'homme", acceptedAnswers: ["j'entends l'homme", "j'écoute l'homme", "je perçois l'homme"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["j'entends l'homme", "j'écoute l'homme", "je perçois l'homme"] }, points: 1 },
+      { id: "p3-l16-p2", type: "textInput", prompt: "Traduis en latin : Je nie la rumeur.", expected: "nego rumorem", acceptedAnswers: latinOrders(["nego", "rumorem"], ["rumorem", "nego"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["nego", "rumorem"], ["rumorem", "nego"]) }, points: 1 },
+      { id: "p3-l16-p3", type: "textInput", prompt: "Complète : -o / -s / -t", expected: "je / tu / il-elle", acceptedAnswers: ["je / tu / il-elle", "1s/2s/3s", "je tu il/elle"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["je / tu / il-elle", "1s/2s/3s", "je tu il/elle"] }, points: 1 },
     ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l16-t1",
-        "type": "singleChoice",
-        "prompt": "Dans « Cives ad forum ambulant », ad indique :",
-        "options": [
-          "vers",
-          "dans",
-          "avec"
-        ],
-        "expected": "vers",
-        "points": 1
-      },
-      {
-        "id": "p3-l16-t2",
-        "type": "singleChoice",
-        "prompt": "Dans « Servus sub muro est », la phrase décrit :",
-        "options": [
-          "une position",
-          "un déplacement",
-          "une comparaison"
-        ],
-        "expected": "une position",
-        "points": 1
-      },
-      {
-        "id": "p3-l16-t3",
-        "type": "multipleChoice",
-        "prompt": "Sélectionne les lieux urbains de la leçon.",
-        "options": [
-          "forum",
-          "murus",
-          "porta",
-          "malum"
-        ],
-        "expected": [
-          "forum",
-          "murus",
-          "porta"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l16-t4",
-        "type": "matching",
-        "prompt": "Associe phrase et lecture correcte.",
-        "pairs": [
-          {
-            "left": "Cives ad forum ambulant",
-            "right": "mouvement"
-          },
-          {
-            "left": "Servus sub muro est",
-            "right": "position"
-          },
-          {
-            "left": "Amici templum vident",
-            "right": "observation"
-          }
-        ],
-        "rightOptions": [
-          "observation",
-          "position",
-          "mouvement"
-        ],
-        "expected": {
-          "Cives ad forum ambulant": "mouvement",
-          "Servus sub muro est": "position",
-          "Amici templum vident": "observation"
-        },
-        "points": 1
-      },
-      {
-        "id": "p3-l16-t5",
-        "type": "singleChoice",
-        "prompt": "Quelle phrase contient in (position) ?",
-        "options": [
-          "Servus in via est",
-          "Cives ad forum ambulant",
-          "Amici templum vident"
-        ],
-        "expected": "Servus in via est",
-        "points": 1
-      },
-      {
-        "id": "p3-l16-t6",
-        "type": "ordering",
-        "prompt": "Remets la phrase urbaine :",
-        "options": [
-          "amici",
-          "templum",
-          "vident"
-        ],
-        "expected": [
-          "amici",
-          "templum",
-          "vident"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l16-t7",
-        "type": "textInput",
-        "prompt": "Écris en latin : « porte (de ville) ».",
-        "expected": "porta",
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l16-p1",
-        "type": "textInput",
-        "prompt": "Traduis en français : Cives ad forum ambulant",
-        "expected": "les citoyens marchent vers le forum",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "les citoyens marchent vers le forum",
-            "les citoyens vont au forum"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "les citoyens marchent vers le forum",
-          "les citoyens vont au forum"
-        ]
-      },
-      {
-        "id": "p3-l16-p2",
-        "type": "textInput",
-        "prompt": "Traduis en français : Servus sub muro est",
-        "expected": "le serviteur est sous le mur",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "le serviteur est sous le mur",
-            "l'esclave est sous le mur"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "le serviteur est sous le mur",
-          "l'esclave est sous le mur"
-        ]
-      },
-      {
-        "id": "p3-l16-p3",
-        "type": "textInput",
-        "prompt": "Traduis en latin : les amis voient le temple",
-        "expected": "amici templum vident",
-        "answerConfig": {
-          "type": "latin-expression",
-          "language": "latin",
-          "expected": "amici templum vident"
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "amici templum vident"
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "En ville, ad et in ne donnent pas la même information.",
-        "Je relie facilement lieu, mouvement et action."
-      ],
-      "cahier": [
-        "Cives ad forum ambulant",
-        "Servus sub muro est",
-        "Amici templum vident"
-      ],
-      "keywords": [
-        "rome",
-        "forum",
-        "murus",
-        "porta",
-        "ad/in"
-      ]
-    },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "ville",
-        "rome",
-        "p3-l16"
-      ]
-    }
+    summary: { retains: ["Je lis qui parle grâce aux terminaisons.", "Je distingue je/tu/il-elle dans les dépositions."], cahier: ["Je retiens : -o = je ; -s = tu ; -t = il/elle", "Je recopie sur mon cahier : présent singulier dans les témoignages"], keywords: ["balneum", "présent singulier", "témoignages"] },
+    meta: { status: "ready", tags: ["p3", "balneum", "present-singulier"] },
   },
   {
-    "id": "p3-l17",
-    "period": 3,
-    "periodId": "p3",
-    "title": "Hannibal ! Hannibal !",
-    "objective": "Comprendre une micro-scène historique simple autour d’Hannibal et de Rome.",
-    "lessonPoint": "Je relie des mots-clés historiques à des phrases courtes en latin.",
-    "canDo": [
-      "Je repère qui menace Rome dans la scène.",
-      "Je comprends un cri d’alerte et ses acteurs.",
-      "Je traduis des phrases courtes de contexte historique."
+    id: "p3-l17", period: 3, periodId: "p3", title: "In foro", objective: "Réactiver le présent pluriel dans un débat public.",
+    lessonPoint: "Au pluriel : -mus (nous), -tis (vous), -nt (ils/elles).", narrative: "Au forum, le district confronte ses versions de façon publique.",
+    canDo: ["Je reconnais les personnes du pluriel.", "Je lis un échange collectif.", "Je traduis une phrase au présent pluriel."],
+    lexicon: ["forum = forum, place publique", "videmus = nous voyons", "auditis = vous entendez", "clamant = ils/elles crient", "respondent = ils/elles répondent", "quaerimus = nous cherchons", "vicini = voisins", "mercatores = marchands", "puellae = jeunes filles", "rumores = rumeurs"],
+    maxScore: 10,
+    training: [
+      { id: "p3-l17-t1", type: "singleChoice", prompt: "Quelle forme correspond à « nous » ?", options: ["quaerimus", "quaeris", "quaerit", "quaerunt"], expected: "quaerimus", shuffle: true, points: 1 },
+      { id: "p3-l17-t2", type: "matching", prompt: "Associe la terminaison et la personne.", pairs: [{ left: "-mus", right: "nous" }, { left: "-tis", right: "vous" }, { left: "-nt", right: "ils/elles" }], rightOptions: ["ils/elles", "vous", "nous"], expected: { "-mus": "nous", "-tis": "vous", "-nt": "ils/elles" }, points: 1 },
+      { id: "p3-l17-t3", type: "singleChoice", prompt: "« vicini clamant » : qui crie ?", options: ["les voisins", "le voisin", "la voisine", "le marchand"], expected: "les voisins", shuffle: true, points: 1 },
+      { id: "p3-l17-t4", type: "singleChoice", prompt: "Quelle forme est bien au pluriel ?", options: ["respondent", "respondet", "respondes", "respondeo"], expected: "respondent", shuffle: true, points: 1 },
+      { id: "p3-l17-t5", type: "multipleChoice", prompt: "Repère les verbes au pluriel.", options: ["videmus", "auditis", "clamant", "narrat"], expected: ["videmus", "auditis", "clamant"], shuffle: true, points: 1 },
+      { id: "p3-l17-t6", type: "multipleChoice", prompt: "Mini-texte : « Vicini clamant, mercatores respondent, puellae audiunt. » Qui parle pour le quartier ?", options: ["les voisins", "les marchands", "les jeunes filles", "un seul homme"], expected: ["les voisins", "les marchands", "les jeunes filles"], shuffle: true, points: 1 },
+      { id: "p3-l17-t7", type: "ordering", prompt: "Remets : in foro / clamant / vicini", options: ["in", "foro", "vicini", "clamant"], expected: ["in", "foro", "vicini", "clamant"], points: 1 },
     ],
-    "lexicon": [
-      "Hannibal",
-      "Roma",
-      "milites",
-      "murus",
-      "porta",
-      "clamat",
-      "vident"
+    production: [
+      { id: "p3-l17-p1", type: "textInput", prompt: "Traduis : quaerimus verum", expected: "nous cherchons la vérité", acceptedAnswers: ["nous cherchons la vérité", "nous cherchons le vrai", "nous cherchons ce qui est vrai"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["nous cherchons la vérité", "nous cherchons le vrai", "nous cherchons ce qui est vrai"] }, points: 1 },
+      { id: "p3-l17-p2", type: "textInput", prompt: "Traduis en latin : Les voisins répondent au forum.", expected: "vicini in foro respondent", acceptedAnswers: latinOrders(["vicini", "in", "foro", "respondent"], ["in", "foro", "vicini", "respondent"], ["respondent", "vicini", "in", "foro"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vicini", "in", "foro", "respondent"], ["in", "foro", "vicini", "respondent"], ["respondent", "vicini", "in", "foro"]) }, points: 1 },
+      { id: "p3-l17-p3", type: "textInput", prompt: "Tableau présent : -o / -s / -t / -mus / -tis / -nt", expected: "je tu il/elle nous vous ils/elles", acceptedAnswers: ["je tu il/elle nous vous ils/elles", "1s 2s 3s 1p 2p 3p", "je/tu/il ; nous/vous/ils"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["je tu il/elle nous vous ils/elles", "1s 2s 3s 1p 2p 3p", "je/tu/il ; nous/vous/ils"] }, points: 1 },
     ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l17-t1",
-        "type": "singleChoice",
-        "prompt": "Dans la scène, qui approche de Rome ?",
-        "options": [
-          "Hannibal",
-          "Crispus",
-          "Davus"
-        ],
-        "expected": "Hannibal",
-        "points": 1
-      },
-      {
-        "id": "p3-l17-t2",
-        "type": "singleChoice",
-        "prompt": "« Roma murum habet » signifie que Rome a :",
-        "options": [
-          "un mur",
-          "un marché",
-          "un banquet"
-        ],
-        "expected": "un mur",
-        "points": 1
-      },
-      {
-        "id": "p3-l17-t3",
-        "type": "multipleChoice",
-        "prompt": "Choisis les mots liés à la défense de la ville.",
-        "options": [
-          "milites",
-          "murus",
-          "porta",
-          "corona"
-        ],
-        "expected": [
-          "milites",
-          "murus",
-          "porta"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l17-t4",
-        "type": "matching",
-        "prompt": "Associe chaque phrase à son idée.",
-        "pairs": [
-          {
-            "left": "Milites murum servant",
-            "right": "défendre"
-          },
-          {
-            "left": "Populus clamat",
-            "right": "alerter"
-          },
-          {
-            "left": "Hannibal ad portam venit",
-            "right": "approcher"
-          }
-        ],
-        "rightOptions": [
-          "approcher",
-          "défendre",
-          "alerter"
-        ],
-        "expected": {
-          "Milites murum servant": "défendre",
-          "Populus clamat": "alerter",
-          "Hannibal ad portam venit": "approcher"
-        },
-        "points": 1
-      },
-      {
-        "id": "p3-l17-t5",
-        "type": "ordering",
-        "prompt": "Remets la phrase d’alerte en ordre :",
-        "options": [
-          "milites",
-          "Hannibal",
-          "vident"
-        ],
-        "expected": [
-          "milites",
-          "Hannibal",
-          "vident"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l17-t6",
-        "type": "singleChoice",
-        "prompt": "Piège d’ordre : « Portam milites servant » veut dire :",
-        "options": [
-          "Les soldats gardent la porte",
-          "La porte garde les soldats",
-          "Les soldats voient la porte"
-        ],
-        "expected": "Les soldats gardent la porte",
-        "points": 1
-      },
-      {
-        "id": "p3-l17-t7",
-        "type": "textInput",
-        "prompt": "Écris en latin : « Rome ».",
-        "expected": "Roma",
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l17-p1",
-        "type": "textInput",
-        "prompt": "Traduis en français : Milites murum servant",
-        "expected": "les soldats gardent le mur",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "les soldats gardent le mur",
-            "les soldats défendent le mur",
-            "des soldats gardent le mur"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "les soldats gardent le mur",
-          "les soldats défendent le mur",
-          "des soldats gardent le mur"
-        ]
-      },
-      {
-        "id": "p3-l17-p2",
-        "type": "textInput",
-        "prompt": "Traduis en français : Hannibal ad portam venit",
-        "expected": "hannibal vient vers la porte",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "hannibal vient vers la porte",
-            "hannibal arrive à la porte",
-            "hannibal vient à la porte"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "hannibal vient vers la porte",
-          "hannibal arrive à la porte",
-          "hannibal vient à la porte"
-        ]
-      },
-      {
-        "id": "p3-l17-p3",
-        "type": "textInput",
-        "prompt": "Traduis en latin : les soldats voient Hannibal",
-        "expected": "milites Hannibalem vident",
-        "answerConfig": {
-          "type": "latin-expression",
-          "language": "latin",
-          "expected": "milites Hannibalem vident"
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "milites Hannibalem vident"
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "Un mini-récit historique reste lisible avec un lexique ciblé.",
-        "Je garde mes repères sujet/verbe/complément même sous l’effet de l’alerte."
-      ],
-      "cahier": [
-        "Milites murum servant",
-        "Hannibal ad portam venit",
-        "Milites Hannibalem vident"
-      ],
-      "keywords": [
-        "hannibal",
-        "rome",
-        "alerte",
-        "milites",
-        "porta"
-      ]
-    },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "histoire",
-        "rome",
-        "p3-l17"
-      ]
-    }
+    summary: { retains: ["Je reconnais les personnes du pluriel.", "Le forum sert à comparer publiquement les versions."], cahier: ["Je retiens : -mus/-tis/-nt", "Je recopie sur mon cahier : au forum, on cherche le verum ensemble"], keywords: ["forum", "présent pluriel", "débat"] },
+    meta: { status: "ready", tags: ["p3", "forum", "present-pluriel"] },
   },
   {
-    "id": "p3-l18",
-    "period": 3,
-    "periodId": "p3",
-    "title": "César écrit",
-    "objective": "Comprendre des phrases simples autour de César auteur et chef militaire.",
-    "lessonPoint": "Je lis des phrases courtes de type historique sans perdre le sens global.",
-    "canDo": [
-      "Je repère qui écrit et qui lit.",
-      "Je comprends le mot Gallia dans un contexte simple.",
-      "Je traduis une phrase historique courte."
+    id: "p3-l18", period: 3, periodId: "p3", title: "Canis et porta obscura", objective: "Travailler explicitement l’ordre des mots avec la scène de la porte sombre.",
+    lessonPoint: "Le sens dépend des formes et du verbe, pas seulement de la position des mots.", narrative: "Le chien refuse toujours la même porte sombre ; ce détail devient central.",
+    canDo: ["Je lis des ordres variés.", "Je garde le même sens malgré l’ordre.", "Je produis une phrase latine correcte."],
+    lexicon: ["canis = chien", "porta = porte", "obscura = sombre", "ante = devant", "latrat = il/elle aboie", "manet = il/elle reste", "timet = il/elle craint", "recusat = il/elle refuse", "intrat = il/elle entre", "audit = il/elle entend"],
+    maxScore: 10,
+    training: [
+      { id: "p3-l18-t1", type: "singleChoice", prompt: "latrat signifie…", options: ["il/elle aboie", "il/elle dort", "il/elle entre", "il/elle cache"], expected: "il/elle aboie", shuffle: true, points: 1 },
+      { id: "p3-l18-t2", type: "matching", prompt: "Associe les mots-clés de la scène.", pairs: [{ left: "canis", right: "chien" }, { left: "porta", right: "porte" }, { left: "ante", right: "devant" }, { left: "obscura", right: "sombre" }], rightOptions: ["sombre", "chien", "devant", "porte"], expected: { canis: "chien", porta: "porte", ante: "devant", obscura: "sombre" }, points: 1 },
+      { id: "p3-l18-t3", type: "singleChoice", prompt: "« ante portam obscuram canis latrat » : sens correct ?", options: ["Le chien aboie devant la porte sombre", "La porte aboie devant le chien", "Le chien entre dans la porte", "Le chien dort"], expected: "Le chien aboie devant la porte sombre", shuffle: true, points: 1 },
+      { id: "p3-l18-t4", type: "singleChoice", prompt: "« latrat ante portam canis » garde le même sens ?", options: ["oui", "non", "impossible", "on ne sait pas"], expected: "oui", shuffle: true, points: 1 },
+      { id: "p3-l18-t5", type: "multipleChoice", prompt: "Quels ordres peuvent signifier « Le chien reste devant la porte » ?", options: ["canis ante portam manet", "ante portam canis manet", "manet canis ante portam", "porta canem manet"], expected: ["canis ante portam manet", "ante portam canis manet", "manet canis ante portam"], shuffle: true, points: 1 },
+      { id: "p3-l18-t6", type: "ordering", prompt: "Produis un ordre valide.", options: ["canis", "ante", "portam", "manet"], expected: ["canis", "ante", "portam", "manet"], points: 1 },
+      { id: "p3-l18-t7", type: "multipleChoice", prompt: "Mini-texte : « Canis portam obscuram timet et recusat. » Quelle porte l’effraie ?", options: ["la porte sombre", "la porte claire", "la fontaine", "le marché"], expected: ["la porte sombre"], shuffle: true, points: 1 },
     ],
-    "lexicon": [
-      "Caesar",
-      "scribit",
-      "liber",
-      "Gallia",
-      "milites",
-      "legunt",
-      "epistula"
+    production: [
+      { id: "p3-l18-p1", type: "textInput", prompt: "Traduis : canis portam timet", expected: "le chien craint la porte", acceptedAnswers: ["le chien craint la porte", "le chien a peur de la porte", "le chien craint cette porte"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["le chien craint la porte", "le chien a peur de la porte", "le chien craint cette porte"] }, points: 1 },
+      { id: "p3-l18-p2", type: "textInput", prompt: "Traduis en latin : Le chien reste devant la porte sombre.", expected: "canis ante portam obscuram manet", acceptedAnswers: latinOrders(["canis", "ante", "portam", "obscuram", "manet"], ["ante", "portam", "obscuram", "canis", "manet"], ["manet", "canis", "ante", "portam", "obscuram"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["canis", "ante", "portam", "obscuram", "manet"], ["ante", "portam", "obscuram", "canis", "manet"], ["manet", "canis", "ante", "portam", "obscuram"]) }, points: 1 },
+      { id: "p3-l18-p3", type: "textInput", prompt: "Pourquoi l’ordre seul ne suffit-il pas ?", expected: "il faut lire les formes", acceptedAnswers: ["il faut lire les formes", "il faut repérer le verbe et les terminaisons", "les formes donnent le sens"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["il faut lire les formes", "il faut repérer le verbe et les terminaisons", "les formes donnent le sens"] }, points: 1 },
     ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l18-t1",
-        "type": "singleChoice",
-        "prompt": "Dans « Caesar librum scribit », qui écrit ?",
-        "options": [
-          "Caesar",
-          "librum",
-          "Gallia"
-        ],
-        "expected": "Caesar",
-        "points": 1
-      },
-      {
-        "id": "p3-l18-t2",
-        "type": "singleChoice",
-        "prompt": "Que signifie scribit ?",
-        "options": [
-          "écrit",
-          "lit",
-          "voit"
-        ],
-        "expected": "écrit",
-        "points": 1
-      },
-      {
-        "id": "p3-l18-t3",
-        "type": "multipleChoice",
-        "prompt": "Choisis les mots liés à l’écriture et à la lecture.",
-        "options": [
-          "scribit",
-          "legunt",
-          "liber",
-          "murus"
-        ],
-        "expected": [
-          "scribit",
-          "legunt",
-          "liber"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l18-t4",
-        "type": "matching",
-        "prompt": "Associe la phrase à son action principale.",
-        "pairs": [
-          {
-            "left": "Caesar epistulam scribit",
-            "right": "écrire"
-          },
-          {
-            "left": "Milites librum legunt",
-            "right": "lire"
-          },
-          {
-            "left": "Gallia magna est",
-            "right": "décrire"
-          }
-        ],
-        "rightOptions": [
-          "décrire",
-          "lire",
-          "écrire"
-        ],
-        "expected": {
-          "Caesar epistulam scribit": "écrire",
-          "Milites librum legunt": "lire",
-          "Gallia magna est": "décrire"
-        },
-        "points": 1
-      },
-      {
-        "id": "p3-l18-t5",
-        "type": "ordering",
-        "prompt": "Remets la phrase : Caesar / de Gallia / scribit.",
-        "options": [
-          "Caesar",
-          "de Gallia",
-          "scribit"
-        ],
-        "expected": [
-          "Caesar",
-          "scribit",
-          "de Gallia"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l18-t6",
-        "type": "singleChoice",
-        "prompt": "Piège d’ordre : « Librum milites legunt » signifie :",
-        "options": [
-          "Les soldats lisent le livre",
-          "Le livre lit les soldats",
-          "Les soldats écrivent le livre"
-        ],
-        "expected": "Les soldats lisent le livre",
-        "points": 1
-      },
-      {
-        "id": "p3-l18-t7",
-        "type": "textInput",
-        "prompt": "Écris en latin : « César ».",
-        "expected": "Caesar",
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l18-p1",
-        "type": "textInput",
-        "prompt": "Traduis en français : Caesar epistulam scribit",
-        "expected": "césar écrit une lettre",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "césar écrit une lettre",
-            "caesar écrit une lettre",
-            "césar écrit la lettre"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "césar écrit une lettre",
-          "caesar écrit une lettre",
-          "césar écrit la lettre"
-        ]
-      },
-      {
-        "id": "p3-l18-p2",
-        "type": "textInput",
-        "prompt": "Traduis en français : Milites librum legunt",
-        "expected": "les soldats lisent le livre",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "les soldats lisent le livre",
-            "des soldats lisent le livre",
-            "les soldats lisent un livre"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "les soldats lisent le livre",
-          "des soldats lisent le livre",
-          "les soldats lisent un livre"
-        ]
-      },
-      {
-        "id": "p3-l18-p3",
-        "type": "textInput",
-        "prompt": "Traduis en latin : César voit la Gaule",
-        "expected": "Caesar Galliam videt",
-        "answerConfig": {
-          "type": "latin-expression",
-          "language": "latin",
-          "expected": "Caesar Galliam videt"
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "Caesar Galliam videt"
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "Le latin sert aussi à raconter l’histoire et à écrire.",
-        "Je peux suivre une phrase historique courte sans me noyer."
-      ],
-      "cahier": [
-        "Caesar epistulam scribit",
-        "Milites librum legunt",
-        "Caesar Galliam videt"
-      ],
-      "keywords": [
-        "caesar",
-        "scribit",
-        "legunt",
-        "gallia",
-        "histoire"
-      ]
-    },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "histoire",
-        "caesar",
-        "p3-l18"
-      ]
-    }
+    summary: { retains: ["Je ne me fais pas piéger par l’ordre.", "La porte sombre reste un indice stable."], cahier: ["Je retiens : S/C/V, V/S/C, C/V/S possibles", "Je recopie sur mon cahier : canis ante portam manet"], keywords: ["ordre latin", "canis", "porta"] },
+    meta: { status: "ready", tags: ["p3", "word-order", "porta-obscura"] },
   },
   {
-    "id": "p3-l19",
-    "period": 3,
-    "periodId": "p3",
-    "title": "Le latin vit encore",
-    "objective": "Identifier des héritages latins simples dans le français d’aujourd’hui.",
-    "lessonPoint": "Je relie des mots latins connus à des mots français actuels.",
-    "canDo": [
-      "Je reconnais des racines latines dans des mots français.",
-      "Je distingue un mot hérité d’un faux ami.",
-      "Je formule une phrase courte sur l’héritage du latin."
+    id: "p3-l19", period: 3, periodId: "p3", title: "Apud aram et fontem", objective: "Relier autel, fontaine et tablette falsifiée dans une lecture continue.",
+    lessonPoint: "Je rassemble plusieurs indices pour comprendre une scène complète.", narrative: "Près de l’ara et du fons, on relit la tabella falsa et les traces d’huile.",
+    canDo: ["Je lis un texte court continu.", "Je repère vrai/faux.", "Je fais le lien entre plusieurs indices."],
+    lexicon: ["ara = autel", "fons = fontaine", "tabella = tablette", "falsa = fausse, falsifiée", "verum = vrai", "falsum = faux", "ostendit = il/elle montre", "legit = il/elle lit", "mutat = il/elle change", "separat = il/elle sépare"],
+    maxScore: 10,
+    training: [
+      { id: "p3-l19-t1", type: "singleChoice", prompt: "« tabella falsa » signifie…", options: ["tablette falsifiée", "tablette neuve", "fontaine claire", "autel vide"], expected: "tablette falsifiée", shuffle: true, points: 1 },
+      { id: "p3-l19-t2", type: "matching", prompt: "Associe les mots de la scène.", pairs: [{ left: "ara", right: "autel" }, { left: "fons", right: "fontaine" }, { left: "verum", right: "vrai" }, { left: "falsum", right: "faux" }], rightOptions: ["vrai", "autel", "faux", "fontaine"], expected: { ara: "autel", fons: "fontaine", verum: "vrai", falsum: "faux" }, points: 1 },
+      { id: "p3-l19-t3", type: "singleChoice", prompt: "« vicina tabellam legit » : qui lit ?", options: ["la voisine", "le maître", "le chien", "la rumeur"], expected: "la voisine", shuffle: true, points: 1 },
+      { id: "p3-l19-t4", type: "multipleChoice", prompt: "Texte bref : « Tabella mutat nomen. Verum non est. » Qu’est-ce qui est juste ?", options: ["Un nom est changé", "Le texte n'est pas vrai", "Tout est clair", "La paix revient"], expected: ["Un nom est changé", "Le texte n'est pas vrai"], shuffle: true, points: 1 },
+      { id: "p3-l19-t5", type: "ordering", prompt: "Remets : tabellam / servus / ostendit", options: ["servus", "tabellam", "ostendit"], expected: ["servus", "tabellam", "ostendit"], points: 1 },
+      { id: "p3-l19-t6", type: "singleChoice", prompt: "Quel indice relie tablette, huile et nuit ?", options: ["des traces d’huile sur la tablette", "la pluie", "un cri de jour", "un jeu"], expected: "des traces d’huile sur la tablette", shuffle: true, points: 1 },
+      { id: "p3-l19-t7", type: "multipleChoice", prompt: "Lecture à ordre variable : « legit tabellam vicina » signifie…", options: ["la voisine lit la tablette", "la tablette lit la voisine", "la voisine change la tablette", "le voisin lit la tablette"], expected: ["la voisine lit la tablette"], shuffle: true, points: 1 },
     ],
-    "lexicon": [
-      "via",
-      "porta",
-      "forum",
-      "aqua",
-      "liber",
-      "civis",
-      "nomen"
+    production: [
+      { id: "p3-l19-p1", type: "textInput", prompt: "Traduis : servus verum ostendit", expected: "le serviteur montre la vérité", acceptedAnswers: ["le serviteur montre la vérité", "le serviteur montre le vrai", "le serviteur présente la vérité"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["le serviteur montre la vérité", "le serviteur montre le vrai", "le serviteur présente la vérité"] }, points: 1 },
+      { id: "p3-l19-p2", type: "textInput", prompt: "Traduis en latin : La voisine lit la tablette.", expected: "vicina tabellam legit", acceptedAnswers: latinOrders(["vicina", "tabellam", "legit"], ["vicina", "legit", "tabellam"], ["tabellam", "vicina", "legit"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vicina", "tabellam", "legit"], ["vicina", "legit", "tabellam"], ["tabellam", "vicina", "legit"]) }, points: 1 },
+      { id: "p3-l19-p3", type: "textInput", prompt: "Pourquoi la lumière est-elle importante dans l’enquête ?", expected: "elle permet de voir les indices", acceptedAnswers: ["elle permet de voir les indices", "elle limite les faux récits", "on distingue mieux le vrai du faux"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["elle permet de voir les indices", "elle limite les faux récits", "on distingue mieux le vrai du faux"] }, points: 1 },
     ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l19-t1",
-        "type": "singleChoice",
-        "prompt": "Quel mot français vient le plus clairement de via ?",
-        "options": [
-          "voie",
-          "voix",
-          "voir"
-        ],
-        "expected": "voie",
-        "points": 1
-      },
-      {
-        "id": "p3-l19-t2",
-        "type": "singleChoice",
-        "prompt": "De porta, on retrouve en français :",
-        "options": [
-          "porte",
-          "porteur",
-          "port"
-        ],
-        "expected": "porte",
-        "points": 1
-      },
-      {
-        "id": "p3-l19-t3",
-        "type": "multipleChoice",
-        "prompt": "Sélectionne des héritages latins plausibles.",
-        "options": [
-          "aquatique",
-          "forum",
-          "librairie",
-          "météore"
-        ],
-        "expected": [
-          "aquatique",
-          "forum",
-          "librairie"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l19-t4",
-        "type": "matching",
-        "prompt": "Associe mot latin et mot français proche.",
-        "pairs": [
-          {
-            "left": "aqua",
-            "right": "eau / aquatique"
-          },
-          {
-            "left": "liber",
-            "right": "livre"
-          },
-          {
-            "left": "nomen",
-            "right": "nom"
-          }
-        ],
-        "rightOptions": [
-          "nom",
-          "livre",
-          "eau / aquatique"
-        ],
-        "expected": {
-          "aqua": "eau / aquatique",
-          "liber": "livre",
-          "nomen": "nom"
-        },
-        "points": 1
-      },
-      {
-        "id": "p3-l19-t5",
-        "type": "ordering",
-        "prompt": "Ordonne : latin → français → usage moderne",
-        "options": [
-          "forum",
-          "forum",
-          "forum de discussion"
-        ],
-        "expected": [
-          "forum",
-          "forum",
-          "forum de discussion"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l19-t6",
-        "type": "singleChoice",
-        "prompt": "Dans la famille de civis, quel mot est le plus proche ?",
-        "options": [
-          "civil",
-          "cible",
-          "civière"
-        ],
-        "expected": "civil",
-        "points": 1
-      },
-      {
-        "id": "p3-l19-t7",
-        "type": "textInput",
-        "prompt": "Écris un dérivé français de aqua.",
-        "expected": "aquatique",
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l19-p1",
-        "type": "textInput",
-        "prompt": "Traduis en français : nomen",
-        "expected": "nom",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "nom",
-            "le nom",
-            "un nom"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "nom",
-          "le nom",
-          "un nom"
-        ]
-      },
-      {
-        "id": "p3-l19-p2",
-        "type": "textInput",
-        "prompt": "Traduis en français : civis",
-        "expected": "citoyen",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "citoyen",
-            "le citoyen",
-            "un citoyen"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "citoyen",
-          "le citoyen",
-          "un citoyen"
-        ]
-      },
-      {
-        "id": "p3-l19-p3",
-        "type": "textInput",
-        "prompt": "Traduis en latin : la porte",
-        "expected": "porta",
-        "answerConfig": {
-          "type": "latin-expression",
-          "language": "latin",
-          "expected": "porta"
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "porta"
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "Le latin reste présent dans beaucoup de mots français.",
-        "Repérer une racine aide à comprendre un mot nouveau."
-      ],
-      "cahier": [
-        "aqua → aquatique",
-        "nomen → nom",
-        "civis → citoyen"
-      ],
-      "keywords": [
-        "héritage",
-        "étymologie",
-        "latin",
-        "français",
-        "racines"
-      ]
-    },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "culture",
-        "héritage",
-        "p3-l19"
-      ]
-    }
+    summary: { retains: ["Je relie plusieurs indices entre eux.", "Je relis vrai/faux avec la tabella."], cahier: ["Je retiens : ara, fons, tabella", "Je recopie sur mon cahier : la lumière aide à séparer verum et falsum"], keywords: ["indices", "fontaine", "tablette"] },
+    meta: { status: "ready", tags: ["p3", "aram-fontem", "tabella"] },
   },
   {
-    "id": "p3-l20",
-    "period": 3,
-    "periodId": "p3",
-    "title": "Lire un mini-récit",
-    "objective": "Lire un mini-récit latin de 3 à 4 phrases et en extraire les informations explicites.",
-    "lessonPoint": "Je lis phrase par phrase pour reconstruire une petite histoire cohérente.",
-    "canDo": [
-      "Je repère personnages, lieux et actions principales.",
-      "Je réponds à des questions de compréhension explicite.",
-      "Je traduis des phrases clés d’un mini-récit."
+    id: "p3-l20", period: 3, periodId: "p3", title: "Lucernae in vico", objective: "Passer de l’enquête à une solution collective concrète.",
+    lessonPoint: "Je comprends un plan d’action collectif simple en latin.", narrative: "Les habitants décident de poser des lucernae aux portes et carrefours.",
+    canDo: ["Je lis qui apporte quoi.", "Je comprends l’action collective.", "Je traduis une phrase utile."],
+    lexicon: ["lucerna = lampe à huile", "oleum = huile", "vicus = quartier", "ianua = porte", "via = rue", "ponit = il/elle place", "portat = il/elle porte", "manet = il/elle reste", "adiuvat = il/elle aide", "laborat = il/elle travaille"],
+    maxScore: 10,
+    training: [
+      { id: "p3-l20-t1", type: "singleChoice", prompt: "lucerna signifie…", options: ["lampe", "fontaine", "marché", "porte"], expected: "lampe", shuffle: true, points: 1 },
+      { id: "p3-l20-t2", type: "matching", prompt: "Associe mot et traduction.", pairs: [{ left: "lucerna", right: "lampe" }, { left: "oleum", right: "huile" }, { left: "ianua", right: "porte" }, { left: "via", right: "rue" }], rightOptions: ["rue", "lampe", "porte", "huile"], expected: { lucerna: "lampe", oleum: "huile", ianua: "porte", via: "rue" }, points: 1 },
+      { id: "p3-l20-t3", type: "singleChoice", prompt: "« vicina lucernam ante ianuam ponit » : que fait la voisine ?", options: ["elle place la lampe devant la porte", "elle porte la porte", "elle cache l’huile", "elle quitte la rue"], expected: "elle place la lampe devant la porte", shuffle: true, points: 1 },
+      { id: "p3-l20-t4", type: "multipleChoice", prompt: "Traductions recevables de « vicini oleum portant ».", options: ["Les voisins portent l’huile", "Les voisins transportent l’huile", "L’huile porte les voisins", "Les voisins achètent la porte"], expected: ["Les voisins portent l’huile", "Les voisins transportent l’huile"], shuffle: true, points: 1 },
+      { id: "p3-l20-t5", type: "ordering", prompt: "Remets : lucernam / ante ianuam / ponit / vicina", options: ["vicina", "lucernam", "ante", "ianuam", "ponit"], expected: ["vicina", "lucernam", "ante", "ianuam", "ponit"], points: 1 },
+      { id: "p3-l20-t6", type: "multipleChoice", prompt: "Mini-texte : « Vicini oleum portant. Puellae lucernas tenent. Servus adiuvat. » Qui apporte quoi ?", options: ["les voisins portent l’huile", "les jeunes filles tiennent les lampes", "le serviteur aide", "le chien commande"], expected: ["les voisins portent l’huile", "les jeunes filles tiennent les lampes", "le serviteur aide"], shuffle: true, points: 1 },
+      { id: "p3-l20-t7", type: "singleChoice", prompt: "Dans « in vico vicinus lucernam ante ianuam ponit », le verbe est…", options: ["ponit", "vicinus", "lucernam", "ianuam"], expected: "ponit", shuffle: true, points: 1 },
     ],
-    "lexicon": [
-      "in foro",
-      "templum",
-      "epistula",
-      "portat",
-      "videt",
-      "ridet",
-      "currit"
+    production: [
+      { id: "p3-l20-p1", type: "textInput", prompt: "Traduis : lucerna in via est", expected: "la lampe est dans la rue", acceptedAnswers: ["la lampe est dans la rue", "une lampe est dans la rue", "la lampe est sur la voie"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["la lampe est dans la rue", "une lampe est dans la rue", "la lampe est sur la voie"] }, points: 1 },
+      { id: "p3-l20-p2", type: "textInput", prompt: "Traduis en latin : Le voisin place la lampe devant la porte.", expected: "vicinus lucernam ante ianuam ponit", acceptedAnswers: latinOrders(["vicinus", "lucernam", "ante", "ianuam", "ponit"], ["ante", "ianuam", "vicinus", "lucernam", "ponit"], ["ponit", "vicinus", "lucernam", "ante", "ianuam"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vicinus", "lucernam", "ante", "ianuam", "ponit"], ["ante", "ianuam", "vicinus", "lucernam", "ponit"], ["ponit", "vicinus", "lucernam", "ante", "ianuam"]) }, points: 1 },
+      { id: "p3-l20-p3", type: "textInput", prompt: "Pourquoi cette idée est-elle utile ?", expected: "elle éclaire le quartier", acceptedAnswers: ["elle éclaire le quartier", "on voit mieux la nuit", "elle réduit la peur"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["elle éclaire le quartier", "on voit mieux la nuit", "elle réduit la peur"] }, points: 1 },
     ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l20-t1",
-        "type": "singleChoice",
-        "prompt": "Mini-récit : « Servus in foro est. Poeta epistulam portat. Dominus ridet. » Qui porte la lettre ?",
-        "options": [
-          "poeta",
-          "servus",
-          "dominus"
-        ],
-        "expected": "poeta",
-        "points": 1
-      },
-      {
-        "id": "p3-l20-t2",
-        "type": "singleChoice",
-        "prompt": "Dans ce mini-récit, où est le serviteur ?",
-        "options": [
-          "in foro",
-          "in horto",
-          "ad templum"
-        ],
-        "expected": "in foro",
-        "points": 1
-      },
-      {
-        "id": "p3-l20-t3",
-        "type": "multipleChoice",
-        "prompt": "Quelles informations sont explicites ?",
-        "options": [
-          "Le poète porte une lettre",
-          "Le maître rit",
-          "Le serviteur court",
-          "La lettre est dans le jardin"
-        ],
-        "expected": [
-          "Le poète porte une lettre",
-          "Le maître rit"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l20-t4",
-        "type": "matching",
-        "prompt": "Associe phrase et information lue.",
-        "pairs": [
-          {
-            "left": "Servus in foro est",
-            "right": "lieu"
-          },
-          {
-            "left": "Poeta epistulam portat",
-            "right": "action"
-          },
-          {
-            "left": "Dominus ridet",
-            "right": "réaction"
-          }
-        ],
-        "rightOptions": [
-          "réaction",
-          "lieu",
-          "action"
-        ],
-        "expected": {
-          "Servus in foro est": "lieu",
-          "Poeta epistulam portat": "action",
-          "Dominus ridet": "réaction"
-        },
-        "points": 1
-      },
-      {
-        "id": "p3-l20-t5",
-        "type": "singleChoice",
-        "prompt": "Piège d’ordre : « Epistulam poeta portat » signifie :",
-        "options": [
-          "Le poète porte la lettre",
-          "La lettre porte le poète",
-          "Le poète lit la lettre"
-        ],
-        "expected": "Le poète porte la lettre",
-        "points": 1
-      },
-      {
-        "id": "p3-l20-t6",
-        "type": "ordering",
-        "prompt": "Remets la phrase du récit en ordre :",
-        "options": [
-          "dominus",
-          "ridet"
-        ],
-        "expected": [
-          "dominus",
-          "ridet"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l20-t7",
-        "type": "textInput",
-        "prompt": "Écris en latin : « lettre ».",
-        "expected": "epistula",
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l20-p1",
-        "type": "textInput",
-        "prompt": "Traduis en français : Servus in foro est",
-        "expected": "le serviteur est au forum",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "le serviteur est au forum",
-            "l'esclave est au forum",
-            "le serviteur est dans le forum"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "le serviteur est au forum",
-          "l'esclave est au forum",
-          "le serviteur est dans le forum"
-        ]
-      },
-      {
-        "id": "p3-l20-p2",
-        "type": "textInput",
-        "prompt": "Traduis en français : Dominus ridet",
-        "expected": "le maître rit",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "le maître rit",
-            "le maitre rit",
-            "un maître rit"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "le maître rit",
-          "le maitre rit",
-          "un maître rit"
-        ]
-      },
-      {
-        "id": "p3-l20-p3",
-        "type": "textInput",
-        "prompt": "Traduis en latin : le poète voit le temple",
-        "expected": "poeta templum videt",
-        "answerConfig": {
-          "type": "latin-expression",
-          "language": "latin",
-          "expected": "poeta templum videt"
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "poeta templum videt"
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "Je peux comprendre un mini-récit court si je collecte les infos explicites.",
-        "Même avec un ordre varié, les fonctions restent lisibles."
-      ],
-      "cahier": [
-        "Servus in foro est",
-        "Poeta epistulam portat",
-        "Dominus ridet"
-      ],
-      "keywords": [
-        "mini-récit",
-        "lecture",
-        "forum",
-        "epistula",
-        "compréhension"
-      ]
-    },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "lecture",
-        "mini-recits",
-        "p3-l20"
-      ]
-    }
+    summary: { retains: ["Une solution collective peut calmer le quartier.", "Je lis des actions concrètes au présent."], cahier: ["Je retiens : lucerna, oleum, ponit", "Je recopie sur mon cahier : les voisins organisent l’éclairage"], keywords: ["solution", "lampe", "quartier"] },
+    meta: { status: "ready", tags: ["p3", "lucernae", "solution"] },
   },
   {
-    "id": "p3-l21",
-    "period": 3,
-    "periodId": "p3",
-    "title": "Comparer deux traductions",
-    "objective": "Comparer deux traductions françaises d’une même phrase latine et choisir la plus juste.",
-    "lessonPoint": "Je justifie un choix de traduction à partir des formes latines.",
-    "canDo": [
-      "Je distingue une traduction fidèle d’une traduction approximative.",
-      "Je vérifie sujet, verbe, complément avant de choisir.",
-      "Je corrige une traduction insuffisante."
+    id: "p3-l21", period: 3, periodId: "p3", title: "Vicus noctu clarior est", objective: "Comprendre les effets de l’éclairage sans nouvelle leçon de grammaire.",
+    lessonPoint: "Je lis un avant/après du quartier avec le vocabulaire déjà connu.", narrative: "Les lampes restent allumées ; l’homme suspect ne circule plus, les troubles cessent.",
+    canDo: ["Je lis un changement de situation.", "Je comprends cause et effet.", "Je traduis une phrase de bilan."],
+    lexicon: ["noctu = de nuit", "clarior = plus clair", "quietus = calme", "lucerna = lampe", "vicus = quartier", "manet = il/elle reste", "videt = il/elle voit", "dormit = il/elle dort", "turbat = il/elle trouble", "redit = il/elle revient"],
+    maxScore: 10,
+    training: [
+      { id: "p3-l21-t1", type: "singleChoice", prompt: "quietus signifie…", options: ["calme", "bruyant", "sombre", "faux"], expected: "calme", shuffle: true, points: 1 },
+      { id: "p3-l21-t2", type: "matching", prompt: "Associe vocabulaire et sens sans nouvelle règle.", pairs: [{ left: "clarus/clarior", right: "clair / plus clair" }, { left: "quietus", right: "calme" }, { left: "lucerna", right: "lampe" }, { left: "noctu", right: "de nuit" }], rightOptions: ["de nuit", "clair / plus clair", "lampe", "calme"], expected: { "clarus/clarior": "clair / plus clair", quietus: "calme", lucerna: "lampe", noctu: "de nuit" }, points: 1 },
+      { id: "p3-l21-t3", type: "singleChoice", prompt: "Phrase sûre : « vir in domo manet » signifie…", options: ["l’homme reste dans la maison", "l’homme sort de la maison", "la maison reste", "le quartier fuit"], expected: "l’homme reste dans la maison", shuffle: true, points: 1 },
+      { id: "p3-l21-t4", type: "multipleChoice", prompt: "Traductions recevables de « lucerna vicum adiuvat ».", options: ["La lampe aide le quartier", "L’éclairage aide le quartier", "Le quartier aide la lampe", "La lampe trouble le quartier"], expected: ["La lampe aide le quartier", "L’éclairage aide le quartier"], shuffle: true, points: 1 },
+      { id: "p3-l21-t5", type: "ordering", prompt: "Remets : lucerna / vicum / adiuvat", options: ["lucerna", "vicum", "adiuvat"], expected: ["lucerna", "vicum", "adiuvat"], points: 1 },
+      { id: "p3-l21-t6", type: "multipleChoice", prompt: "Mini-texte : « Nunc vicus clarior est. Canis quietus manet. Rumor minor est. » Qu’est-ce qui change ?", options: ["le quartier est plus clair", "le chien est plus calme", "la rumeur diminue", "la fontaine disparaît"], expected: ["le quartier est plus clair", "le chien est plus calme", "la rumeur diminue"], shuffle: true, points: 1 },
+      { id: "p3-l21-t7", type: "singleChoice", prompt: "Pourquoi le chien aboie moins ?", options: ["la porte et la rue sont mieux visibles", "il oublie la porte", "le forum ferme", "le marché crie"], expected: "la porte et la rue sont mieux visibles", shuffle: true, points: 1 },
     ],
-    "lexicon": [
-      "servus",
-      "dominus",
-      "amici",
-      "templum",
-      "vident",
-      "vocat",
-      "portat"
+    production: [
+      { id: "p3-l21-p1", type: "textInput", prompt: "Traduis : vicus quietus manet", expected: "le quartier reste calme", acceptedAnswers: ["le quartier reste calme", "le quartier demeure calme", "la rue de quartier reste calme"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["le quartier reste calme", "le quartier demeure calme", "la rue de quartier reste calme"] }, points: 1 },
+      { id: "p3-l21-p2", type: "textInput", prompt: "Traduis en latin : L’homme reste dans la maison.", expected: "vir in domo manet", acceptedAnswers: latinOrders(["vir", "in", "domo", "manet"], ["in", "domo", "vir", "manet"], ["manet", "vir", "in", "domo"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vir", "in", "domo", "manet"], ["in", "domo", "vir", "manet"], ["manet", "vir", "in", "domo"]) }, points: 1 },
+      { id: "p3-l21-p3", type: "textInput", prompt: "Qu’est-ce qui fait disparaître les troubles ?", expected: "l'éclairage collectif", acceptedAnswers: ["l'éclairage collectif", "les lampes dans le quartier", "la rue plus visible"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["l'éclairage collectif", "les lampes dans le quartier", "la rue plus visible"] }, points: 1 },
     ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l21-t1",
-        "type": "singleChoice",
-        "prompt": "Phrase : « Servus dominum vocat ». Quelle traduction est juste ?",
-        "options": [
-          "Le serviteur appelle le maître",
-          "Le maître appelle le serviteur",
-          "Le serviteur voit le maître"
-        ],
-        "expected": "Le serviteur appelle le maître",
-        "points": 1
-      },
-      {
-        "id": "p3-l21-t2",
-        "type": "singleChoice",
-        "prompt": "Phrase : « Amici templum vident ». Choisis la meilleure traduction.",
-        "options": [
-          "Les amis voient le temple",
-          "Le temple voit les amis",
-          "Les amis portent le temple"
-        ],
-        "expected": "Les amis voient le temple",
-        "points": 1
-      },
-      {
-        "id": "p3-l21-t3",
-        "type": "multipleChoice",
-        "prompt": "Quels critères t’aident à comparer deux traductions ?",
-        "options": [
-          "Repérer le verbe",
-          "Identifier le sujet",
-          "Deviner au hasard",
-          "Chercher le complément"
-        ],
-        "expected": [
-          "Repérer le verbe",
-          "Identifier le sujet",
-          "Chercher le complément"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l21-t4",
-        "type": "matching",
-        "prompt": "Associe la phrase latine à la traduction correcte.",
-        "pairs": [
-          {
-            "left": "Dominus librum portat",
-            "right": "Le maître porte le livre"
-          },
-          {
-            "left": "Servi ad forum ambulant",
-            "right": "Les serviteurs vont vers le forum"
-          },
-          {
-            "left": "Puella rosam habet",
-            "right": "La jeune fille a une rose"
-          }
-        ],
-        "rightOptions": [
-          "Le maître porte le livre",
-          "La jeune fille a une rose",
-          "Les serviteurs vont vers le forum"
-        ],
-        "expected": {
-          "Dominus librum portat": "Le maître porte le livre",
-          "Servi ad forum ambulant": "Les serviteurs vont vers le forum",
-          "Puella rosam habet": "La jeune fille a une rose"
-        },
-        "points": 1
-      },
-      {
-        "id": "p3-l21-t5",
-        "type": "ordering",
-        "prompt": "Réordonne pour vérifier la traduction :",
-        "options": [
-          "servus",
-          "templum",
-          "videt"
-        ],
-        "expected": [
-          "servus",
-          "videt",
-          "templum"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l21-t6",
-        "type": "singleChoice",
-        "prompt": "Piège : « Dominum servus vocat » signifie :",
-        "options": [
-          "Le serviteur appelle le maître",
-          "Le maître appelle le serviteur",
-          "Le serviteur appelle le serviteur"
-        ],
-        "expected": "Le serviteur appelle le maître",
-        "points": 1
-      },
-      {
-        "id": "p3-l21-t7",
-        "type": "textInput",
-        "prompt": "Écris le verbe de « Amici templum vident ».",
-        "expected": "vident",
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l21-p1",
-        "type": "textInput",
-        "prompt": "Traduis en français : Servi ad forum ambulant",
-        "expected": "les serviteurs marchent vers le forum",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "les serviteurs marchent vers le forum",
-            "les serviteurs vont vers le forum",
-            "des serviteurs marchent vers le forum"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "les serviteurs marchent vers le forum",
-          "les serviteurs vont vers le forum",
-          "des serviteurs marchent vers le forum"
-        ]
-      },
-      {
-        "id": "p3-l21-p2",
-        "type": "textInput",
-        "prompt": "Traduis en français : Dominus librum portat",
-        "expected": "le maître porte le livre",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "le maître porte le livre",
-            "le maitre porte le livre",
-            "un maître porte le livre"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "le maître porte le livre",
-          "le maitre porte le livre",
-          "un maître porte le livre"
-        ]
-      },
-      {
-        "id": "p3-l21-p3",
-        "type": "textInput",
-        "prompt": "Traduis en latin : les amis voient la porte",
-        "expected": "amici portam vident",
-        "answerConfig": {
-          "type": "latin-expression",
-          "language": "latin",
-          "expected": "amici portam vident"
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "amici portam vident"
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "Comparer deux traductions oblige à revenir au latin précis.",
-        "Le bon réflexe : sujet + verbe + complément avant toute interprétation."
-      ],
-      "cahier": [
-        "Servus dominum vocat",
-        "Amici templum vident",
-        "Amici portam vident"
-      ],
-      "keywords": [
-        "traduction",
-        "comparaison",
-        "fidélité",
-        "fonctions",
-        "lecture"
-      ]
-    },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "traduction",
-        "comparaison",
-        "p3-l21"
-      ]
-    }
+    summary: { retains: ["Je lis un bilan avant/après.", "Le calme revient avec la visibilité nocturne."], cahier: ["Je retiens : vicus clarior, vicus quietus", "Je recopie sur mon cahier : les lampes stoppent les troubles"], keywords: ["bilan", "nuit", "calme"] },
+    meta: { status: "ready", tags: ["p3", "bilan", "clarior"] },
   },
   {
-    "id": "p3-l22",
-    "period": 3,
-    "periodId": "p3",
-    "title": "Synthèse Euroclassica 5e",
-    "objective": "Réviser l’essentiel de l’année 5e avec une scène de synthèse langue + culture.",
-    "lessonPoint": "Je mobilise vocabulaire, fonctions et repères culturels dans une tâche finale guidée.",
-    "canDo": [
-      "Je comprends une courte scène qui mélange langue et culture.",
-      "Je traduis des phrases de synthèse sans perdre le sens.",
-      "Je réactive les mots-clés utiles pour la suite Euroclassica."
+    id: "p3-l22", period: 3, periodId: "p3", title: "Pax redit", objective: "Finaliser la période avec une révision complète de l’enquête.",
+    lessonPoint: "Je mobilise interrogatifs, lieux, formes nominales, présent et ordre variable pour conclure.", narrative: "Après l’éclairage collectif, la Subure redevient paisible : la pax revient.",
+    canDo: ["Je relis un mini-dossier final.", "Je réponds à des questions cumulatives.", "Je formule une conclusion simple."],
+    lexicon: ["pax = paix", "redit = il/elle revient", "concordia = concorde", "discordia = discorde", "vicini = voisins", "lucerna = lampe", "forum = forum", "macellum = marché", "balneum = thermes", "tabella = tablette"],
+    maxScore: 10,
+    training: [
+      { id: "p3-l22-t1", type: "singleChoice", prompt: "Quel mot signifie « paix » ?", options: ["pax", "discordia", "lucerna", "tabella"], expected: "pax", shuffle: true, points: 1 },
+      { id: "p3-l22-t2", type: "multipleChoice", prompt: "Choisis les lieux étudiés du quartier.", options: ["forum", "macellum", "balneum", "montes", "insula"], expected: ["forum", "macellum", "balneum", "insula"], shuffle: true, points: 1 },
+      { id: "p3-l22-t3", type: "matching", prompt: "Associe latin et français.", pairs: [{ left: "lucerna", right: "lampe" }, { left: "tabella", right: "tablette" }, { left: "discordia", right: "discorde" }, { left: "concordia", right: "concorde" }], rightOptions: ["concorde", "tablette", "lampe", "discorde"], expected: { lucerna: "lampe", tabella: "tablette", discordia: "discorde", concordia: "concorde" }, points: 1 },
+      { id: "p3-l22-t4", type: "singleChoice", prompt: "Dans « vicinus donum videt », le complément objet est…", options: ["donum", "vicinus", "videt", "pax"], expected: "donum", shuffle: true, points: 1 },
+      { id: "p3-l22-t5", type: "singleChoice", prompt: "« respondent » correspond à…", options: ["ils/elles répondent", "il/elle répond", "vous répondez", "je réponds"], expected: "ils/elles répondent", shuffle: true, points: 1 },
+      { id: "p3-l22-t6", type: "multipleChoice", prompt: "Mini-enquête finale (5 phrases) : quelles infos sont présentes ?", options: ["l’homme sortait la nuit", "la tablette était falsifiée", "les voisins installent des lampes", "les troubles cessent", "le temple brûle"], expected: ["l’homme sortait la nuit", "la tablette était falsifiée", "les voisins installent des lampes", "les troubles cessent"], shuffle: true, points: 1 },
+      { id: "p3-l22-t7", type: "ordering", prompt: "Rebâtis : vicini / lucernam / vident", options: ["vicini", "lucernam", "vident"], expected: ["vicini", "lucernam", "vident"], points: 1 },
     ],
-    "lexicon": [
-      "forum",
-      "templum",
-      "Roma",
-      "dii",
-      "servus",
-      "amici",
-      "epistula",
-      "vident",
-      "portat"
+    production: [
+      { id: "p3-l22-p1", type: "textInput", prompt: "Traduis : pax in vico redit", expected: "la paix revient dans le quartier", acceptedAnswers: ["la paix revient dans le quartier", "la paix revient dans la rue de quartier", "la paix revient"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["la paix revient dans le quartier", "la paix revient dans la rue de quartier", "la paix revient"] }, points: 1 },
+      { id: "p3-l22-p2", type: "textInput", prompt: "Traduis en latin : Les voisins voient la lampe.", expected: "vicini lucernam vident", acceptedAnswers: latinOrders(["vicini", "lucernam", "vident"], ["vicini", "vident", "lucernam"], ["lucernam", "vicini", "vident"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vicini", "lucernam", "vident"], ["vicini", "vident", "lucernam"], ["lucernam", "vicini", "vident"]) }, points: 1 },
+      { id: "p3-l22-p3", type: "textInput", prompt: "Pourquoi les troubles disparaissent-ils ?", expected: "le quartier est éclairé et les habitants agissent ensemble", acceptedAnswers: ["le quartier est éclairé et les habitants agissent ensemble", "les lampes rendent la rue visible", "la concorde remplace la discorde"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["le quartier est éclairé et les habitants agissent ensemble", "les lampes rendent la rue visible", "la concorde remplace la discorde"] }, points: 1 },
     ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l22-t1",
-        "type": "singleChoice",
-        "prompt": "Dans « Amici ad forum ambulant », ad indique :",
-        "options": [
-          "vers",
-          "dans",
-          "sous"
-        ],
-        "expected": "vers",
-        "points": 1
-      },
-      {
-        "id": "p3-l22-t2",
-        "type": "singleChoice",
-        "prompt": "Dans « Servus epistulam portat », le complément est :",
-        "options": [
-          "servus",
-          "epistulam",
-          "portat"
-        ],
-        "expected": "epistulam",
-        "points": 1
-      },
-      {
-        "id": "p3-l22-t3",
-        "type": "multipleChoice",
-        "prompt": "Sélectionne les éléments culturels romains.",
-        "options": [
-          "forum",
-          "templum",
-          "Iuppiter",
-          "ordinateur"
-        ],
-        "expected": [
-          "forum",
-          "templum",
-          "Iuppiter"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l22-t4",
-        "type": "matching",
-        "prompt": "Associe phrase et idée de synthèse.",
-        "pairs": [
-          {
-            "left": "Dii templum vident",
-            "right": "mythe"
-          },
-          {
-            "left": "Servus epistulam portat",
-            "right": "vie quotidienne"
-          },
-          {
-            "left": "Amici ad forum ambulant",
-            "right": "ville"
-          }
-        ],
-        "rightOptions": [
-          "ville",
-          "mythe",
-          "vie quotidienne"
-        ],
-        "expected": {
-          "Dii templum vident": "mythe",
-          "Servus epistulam portat": "vie quotidienne",
-          "Amici ad forum ambulant": "ville"
-        },
-        "points": 1
-      },
-      {
-        "id": "p3-l22-t5",
-        "type": "ordering",
-        "prompt": "Remets en ordre la phrase finale :",
-        "options": [
-          "amici",
-          "templum",
-          "vident"
-        ],
-        "expected": [
-          "amici",
-          "templum",
-          "vident"
-        ],
-        "points": 1
-      },
-      {
-        "id": "p3-l22-t6",
-        "type": "singleChoice",
-        "prompt": "Piège : « Epistulam servus portat » signifie :",
-        "options": [
-          "Le serviteur porte la lettre",
-          "La lettre porte le serviteur",
-          "Le serviteur lit la lettre"
-        ],
-        "expected": "Le serviteur porte la lettre",
-        "points": 1
-      },
-      {
-        "id": "p3-l22-t7",
-        "type": "textInput",
-        "prompt": "Écris en latin : « les dieux ».",
-        "expected": "dii",
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l22-p1",
-        "type": "textInput",
-        "prompt": "Traduis en français : Dii templum vident",
-        "expected": "les dieux voient le temple",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "les dieux voient le temple",
-            "les dieux regardent le temple"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "les dieux voient le temple",
-          "les dieux regardent le temple"
-        ]
-      },
-      {
-        "id": "p3-l22-p2",
-        "type": "textInput",
-        "prompt": "Traduis en français : Servus epistulam portat",
-        "expected": "le serviteur porte la lettre",
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "le serviteur porte la lettre",
-            "l'esclave porte la lettre",
-            "le serviteur apporte la lettre"
-          ]
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "le serviteur porte la lettre",
-          "l'esclave porte la lettre",
-          "le serviteur apporte la lettre"
-        ]
-      },
-      {
-        "id": "p3-l22-p3",
-        "type": "textInput",
-        "prompt": "Traduis en latin : les amis voient Rome",
-        "expected": "amici Romam vident",
-        "answerConfig": {
-          "type": "latin-expression",
-          "language": "latin",
-          "expected": "amici Romam vident"
-        },
-        "points": 1,
-        "acceptedAnswers": [
-          "amici Romam vident"
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "Je peux mobiliser les acquis de 5e dans une scène courte et mixte.",
-        "Langue et culture avancent ensemble : vocabulaire, formes et contexte."
-      ],
-      "cahier": [
-        "Dii templum vident",
-        "Servus epistulam portat",
-        "Amici Romam vident"
-      ],
-      "keywords": [
-        "synthèse",
-        "euroclassica",
-        "lecture",
-        "culture",
-        "latin 5e"
-      ]
-    },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "synthese",
-        "euroclassica",
-        "p3-l22"
-      ]
-    }
-  }
+    summary: { retains: ["Je sais relire toute l’enquête de Subure.", "Je relie langue, lecture et vie de quartier romain."], cahier: ["Je retiens : interrogatifs + lieux + présent + ordre variable", "Je recopie sur mon cahier : rosa/rosam ; dominus/dominum ; donum/donum", "Je recopie sur mon cahier : -o je ; -s tu ; -t il/elle ; -mus nous ; -tis vous ; -nt ils/elles", "Je recopie sur mon cahier : sujet souvent forme de base, objet souvent forme modifiée, neutre souvent semblable"], keywords: ["révision finale", "pax", "concordia", "Subura"] },
+    meta: { status: "ready", tags: ["p3", "final", "pax"] },
+  },
 ];
