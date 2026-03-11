@@ -1,24 +1,14 @@
-// ATRIUM · 5e · Période 2
-// Thème : DISCORDIA IN SUBURA
-// Remaniement pédagogique : progression guidée, lexique traduit, réponses élargies,
-// prise en compte de l'ordre mobile des mots latins dans les productions.
+// Données de leçons 5E · Période 2 — Discordia in Subura.
 
-const latinOrders = (...chunks) => {
-  const items = chunks.filter(Boolean).map((item) => String(item).trim()).filter(Boolean);
-  const out = [];
-  const walk = (prefix, rest) => {
-    if (rest.length === 0) {
-      out.push(prefix.join(" ").replace(/\s+/g, " ").trim());
-      return;
-    }
-    rest.forEach((item, index) => {
-      const next = rest.slice(0, index).concat(rest.slice(index + 1));
-      walk(prefix.concat(item), next);
-    });
-  };
-  walk([], items);
-  return [...new Set(out)];
-};
+function latinOrders(...orders) {
+  const normalized = orders
+    .flat()
+    .map((entry) => (Array.isArray(entry) ? entry.join(" ") : String(entry || "")))
+    .map((entry) => entry.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+
+  return [...new Set(normalized)];
+}
 
 export const lessons5eP2 = [
   {
@@ -26,361 +16,236 @@ export const lessons5eP2 = [
     period: 2,
     periodId: "p2",
     title: "Quis donum sustulit ?",
-    objective: "Entrer dans l'enquête en utilisant les interrogatifs et en lisant qui accuse qui.",
-    lessonPoint:
-      "Rappel de cours : pour comprendre une phrase latine, je repère d'abord le verbe, puis je demande quis ? quid ? cur ? ubi ? L'ordre des mots peut changer. Je m'appuie sur les formes et sur le sens global de la scène.",
-    narrative:
-      "Au petit matin, une offrande a disparu devant le temple de Minerve. Dans la Subure, chacun parle, mais personne ne raconte exactement la même chose.",
-    canDo: [
-      "Je reconnais les interrogatifs les plus utiles.",
-      "Je repère le témoin, l'objet et le lieu.",
-      "Je traduis une question courte d'enquête."
-    ],
-    lexicon: [
-      "quis = qui ?",
-      "quid = quoi ?",
-      "cur = pourquoi ?",
-      "ubi = où ?",
-      "donum = offrande, cadeau",
-      "ara = autel",
-      "vicinus = voisin",
-      "videt = voit",
-      "negat = nie",
-      "accusat = accuse"
-    ],
+    objective: "Entrer dans l’enquête de Subure et comprendre les questions de base.",
+    lessonPoint: "Je commence par le verbe, puis je demande qui / quoi / où / pourquoi ; l’ordre latin peut changer.",
+    narrative: "Près de l’ara, un donum a disparu. Les voisins se regardent avec méfiance.",
+    canDo: ["Je reconnais quis / quid / cur / ubi.", "Je repère sujet, verbe et complément.", "Je traduis une question courte d’enquête."],
+    lexicon: ["quis = qui ?", "quid = quoi ?", "cur = pourquoi ?", "ubi = où ?", "donum = offrande, cadeau", "ara = autel", "vicinus = voisin", "videt = il/elle voit", "negat = il/elle nie", "accusat = il/elle accuse"],
     maxScore: 10,
     training: [
-      {
-        id: "p2-l1-t1",
-        type: "singleChoice",
-        prompt: "Quel mot latin sert à demander « qui ? » ?",
-        options: ["quis", "quid", "cur", "ubi", "ara"],
-        expected: "quis",
-        shuffle: true,
-        points: 1
-      },
-      {
-        id: "p2-l1-t2",
-        type: "matching",
-        prompt: "Associe l'interrogatif latin à la bonne idée française.",
-        pairs: [
-          { left: "quis", right: "qui ?" },
-          { left: "quid", right: "quoi ?" },
-          { left: "cur", right: "pourquoi ?" },
-          { left: "ubi", right: "où ?" }
-        ],
-        rightOptions: ["où ?", "quoi ?", "qui ?", "pourquoi ?"],
-        expected: {
-          quis: "qui ?",
-          quid: "quoi ?",
-          cur: "pourquoi ?",
-          ubi: "où ?"
-        },
-        points: 1
-      },
-      {
-        id: "p2-l1-t3",
-        type: "singleChoice",
-        prompt: "Mini-texte : « Vicinus Sextum accusat. » Qui accuse Sextus ?",
-        options: ["le voisin", "Sextus", "l'offrande", "le temple", "Minerve"],
-        expected: "le voisin",
-        shuffle: true,
-        points: 1
-      },
-      {
-        id: "p2-l1-t4",
-        type: "multipleChoice",
-        prompt: "Quelles traductions sont recevables pour « vicinus Sextum accusat » ?",
-        options: [
-          "Le voisin accuse Sextus",
-          "Le voisin met Sextus en cause",
-          "Sextus accuse le voisin",
-          "Sextus est accusé par le voisin",
-          "Le voisin salue Sextus"
-        ],
-        expected: [
-          "Le voisin accuse Sextus",
-          "Le voisin met Sextus en cause",
-          "Sextus est accusé par le voisin"
-        ],
-        shuffle: true,
-        points: 1
-      },
-      {
-        id: "p2-l1-t5",
-        type: "ordering",
-        prompt: "Remets les groupes dans un ordre latin possible pour dire : « Le voisin voit l'autel. »",
-        options: ["videt", "vicinus", "aram"],
-        expected: ["vicinus", "aram", "videt"],
-        points: 1
-      },
-      {
-        id: "p2-l1-t6",
-        type: "singleChoice",
-        prompt: "Dans « donum vicinus videt », quel mot est le verbe ?",
-        options: ["donum", "vicinus", "videt", "quis", "ara"],
-        expected: "videt",
-        shuffle: true,
-        points: 1,
-        feedback: "Commence par chercher le mot qui dit l'action."
-      },
-      {
-        id: "p2-l1-t7",
-        type: "multipleChoice",
-        prompt: "Quels mots servent à poser une question dans une enquête ?",
-        options: ["quis", "quid", "cur", "ubi", "accusat"],
-        expected: ["quis", "quid", "cur", "ubi"],
-        shuffle: true,
-        points: 1
-      }
+      { id: "p2-l1-t1", type: "singleChoice", prompt: "Quel mot latin signifie « qui ? »", options: ["quis", "quid", "cur", "ubi"], expected: "quis", shuffle: true, points: 1 },
+      { id: "p2-l1-t2", type: "matching", prompt: "Associe chaque interrogatif à son sens.", pairs: [{ left: "quis", right: "qui ?" }, { left: "quid", right: "quoi ?" }, { left: "cur", right: "pourquoi ?" }, { left: "ubi", right: "où ?" }], rightOptions: ["pourquoi ?", "où ?", "qui ?", "quoi ?"], expected: { quis: "qui ?", quid: "quoi ?", cur: "pourquoi ?", ubi: "où ?" }, points: 1 },
+      { id: "p2-l1-t3", type: "singleChoice", prompt: "« Vicinus Sextum accusat » : qui accuse ?", options: ["le voisin", "Sextus", "l’autel", "le chien"], expected: "le voisin", shuffle: true, points: 1 },
+      { id: "p2-l1-t4", type: "multipleChoice", prompt: "Choisis les traductions recevables de « vicinus Sextum accusat ».", options: ["Le voisin accuse Sextus", "Le voisin met Sextus en cause", "Sextus accuse le voisin", "Sextus est accusé par le voisin"], expected: ["Le voisin accuse Sextus", "Le voisin met Sextus en cause", "Sextus est accusé par le voisin"], shuffle: true, points: 1 },
+      { id: "p2-l1-t5", type: "ordering", prompt: "Remets dans l’ordre une phrase correcte.", options: ["vicinus", "aram", "videt"], expected: ["vicinus", "aram", "videt"], points: 1 },
+      { id: "p2-l1-t6", type: "singleChoice", prompt: "Repère le verbe dans « donum vicinus videt ».", options: ["donum", "vicinus", "videt", "nullum"], expected: "videt", shuffle: true, points: 1 },
+      { id: "p2-l1-t7", type: "multipleChoice", prompt: "Quels mots servent à poser des questions ?", options: ["quis", "quid", "cur", "donum"], expected: ["quis", "quid", "cur"], shuffle: true, points: 1 },
     ],
     production: [
-      {
-        id: "p2-l1-p1",
-        type: "textInput",
-        prompt: "Micro-version : quis donum videt ?",
-        expected: "qui voit l'offrande ?",
-        acceptedAnswers: [
-          "qui voit l'offrande",
-          "qui voit l'offrande ?",
-          "qui voit le don",
-          "qui voit le cadeau",
-          "qui voit l'offrande sacrée"
-        ],
-        answerConfig: {
-          type: "translation-segment",
-          language: "fr",
-          accepted: [
-            "qui voit l'offrande",
-            "qui voit le don",
-            "qui voit le cadeau",
-            "qui voit l'offrande sacrée"
-          ]
-        },
-        points: 1
-      },
-      {
-        id: "p2-l1-p2",
-        type: "textInput",
-        prompt: "Micro-thème : Le voisin accuse Sextus. L'ordre latin peut varier.",
-        expected: "Vicinus Sextum accusat",
-        acceptedAnswers: latinOrders("Vicinus", "Sextum", "accusat"),
-        answerConfig: {
-          type: "one-of",
-          language: "latin",
-          accepted: latinOrders("Vicinus", "Sextum", "accusat")
-        },
-        points: 1
-      },
-      {
-        id: "p2-l1-p3",
-        type: "textInput",
-        prompt: "Réponse courte : un vicinus, c'est...",
-        expected: "un voisin",
-        acceptedAnswers: ["un voisin", "le voisin", "une voisine", "quelqu'un du voisinage"],
-        answerConfig: {
-          type: "translation-segment",
-          language: "fr",
-          accepted: ["un voisin", "une voisine", "quelqu'un du voisinage"]
-        },
-        points: 1
-      }
+      { id: "p2-l1-p1", type: "textInput", prompt: "Traduis en français : quis donum videt ?", expected: "qui voit l'offrande ?", acceptedAnswers: ["qui voit l'offrande", "qui voit le cadeau", "qui voit le don", "qui aperçoit l'offrande"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["qui voit l'offrande", "qui voit le cadeau", "qui voit le don", "qui aperçoit l'offrande"] }, points: 1 },
+      { id: "p2-l1-p2", type: "textInput", prompt: "Traduis en latin : Le voisin accuse Sextus.", expected: "vicinus Sextum accusat", acceptedAnswers: latinOrders(["vicinus", "Sextum", "accusat"], ["vicinus", "accusat", "Sextum"], ["Sextum", "vicinus", "accusat"], ["accusat", "vicinus", "Sextum"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vicinus", "Sextum", "accusat"], ["vicinus", "accusat", "Sextum"], ["Sextum", "vicinus", "accusat"], ["accusat", "vicinus", "Sextum"]) }, points: 1 },
+      { id: "p2-l1-p3", type: "textInput", prompt: "Lexique : vicinus = ?", expected: "voisin", acceptedAnswers: ["voisin", "voisine", "personne du voisinage"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["voisin", "voisine", "personne du voisinage"] }, points: 1 },
     ],
-    summary: {
-      retains: [
-        "Je peux entrer dans une phrase latine en posant les bonnes questions : quis ? quid ? cur ? ubi ?",
-        "L'ordre latin peut bouger : je repère d'abord le verbe, puis le sujet et le complément."
-      ],
-      cahier: [
-        "quis = qui ? ; quid = quoi ? ; cur = pourquoi ? ; ubi = où ?",
-        "vicinus Sextum accusat = le voisin accuse Sextus",
-        "Méthode : verbe d'abord, puis qui agit, puis sur quoi l'action porte."
-      ],
-      keywords: ["interrogatifs", "enquête", "vicinus", "donum", "ordre des mots"]
-    },
-    meta: {
-      status: "ready",
-      tags: ["discordia", "interrogatifs", "temple", "enquête"]
-    }
+    summary: { retains: ["Je lis d’abord le verbe.", "Je me pose les 4 questions de base pour comprendre la scène."], cahier: ["quis/quid/cur/ubi", "L’ordre latin peut changer sans changer le sens."], keywords: ["enquête", "interrogatifs", "Subura"] },
+    meta: { status: "ready", tags: ["p2", "discordia", "interrogatifs"] },
   },
   {
-    id: "p2-l2",
-    period: 2,
-    periodId: "p2",
-    title: "Ad templum, ex taberna",
-    objective: "Lire les déplacements suspects dans la Subure grâce aux prépositions les plus utiles.",
-    lessonPoint:
-      "Rappel de cours : ad indique le mouvement vers, in peut dire dans, ex indique l'origine ou la sortie. Une petite préposition change tout le sens d'un témoignage.",
-    narrative:
-      "On cherche maintenant qui s'est approché du temple, qui sort de la boutique et qui traverse la rue au mauvais moment.",
-    canDo: [
-      "Je distingue ad, in et ex.",
-      "Je lis un déplacement simple dans un micro-récit.",
-      "Je traduis une phrase de mouvement."
-    ],
-    lexicon: [
-      "ad = vers",
-      "in = dans",
-      "ex = hors de, depuis",
-      "templum = temple",
-      "taberna = boutique",
-      "via = rue",
-      "forum = forum",
-      "currit = court",
-      "venit = vient",
-      "exit = sort"
-    ],
-    maxScore: 10,
+    id: "p2-l2", period: 2, periodId: "p2", title: "Ubi est donum ? Ad templum, ex taberna", objective: "Suivre les déplacements suspects dans le quartier.", lessonPoint: "Les prépositions donnent le mouvement : ad vers, in dans, ex hors de, ante devant.", narrative: "Un témoin dit avoir vu quelqu’un courir ad templum puis ex taberna.", canDo: ["Je lis ad/in/ex/ante.", "Je localise une action.", "Je traduis un petit trajet."], lexicon: ["ad = vers", "in = dans", "ex = hors de, depuis", "ante = devant", "templum = temple", "taberna = boutique", "via = rue", "fons = fontaine", "venit = il/elle vient", "exit = il/elle sort"], maxScore: 10,
     training: [
-      {
-        id: "p2-l2-t1",
-        type: "singleChoice",
-        prompt: "Quel mot latin signifie ici « vers » dans « ad templum » ?",
-        options: ["ad", "in", "ex", "cum", "ubi"],
-        expected: "ad",
-        shuffle: true,
-        points: 1
-      },
-      {
-        id: "p2-l2-t2",
-        type: "matching",
-        prompt: "Associe chaque préposition à son idée principale.",
-        pairs: [
-          { left: "ad", right: "aller vers" },
-          { left: "in", right: "être dans" },
-          { left: "ex", right: "sortir de" }
-        ],
-        rightOptions: ["être dans", "sortir de", "aller vers"],
-        expected: {
-          ad: "aller vers",
-          in: "être dans",
-          ex: "sortir de"
-        },
-        points: 1
-      },
-      {
-        id: "p2-l2-t3",
-        type: "singleChoice",
-        prompt: "Mini-texte : « Flavia ad templum currit, Sextus ex taberna exit. » Qui va vers le temple ?",
-        options: ["Flavia", "Sextus", "la boutique", "la rue", "Discordia"],
-        expected: "Flavia",
-        shuffle: true,
-        points: 1
-      },
-      {
-        id: "p2-l2-t4",
-        type: "multipleChoice",
-        prompt: "Quelles traductions conviennent pour « Sextus ex taberna exit » ?",
-        options: [
-          "Sextus sort de la boutique",
-          "Sextus vient de la boutique",
-          "Sextus entre dans la boutique",
-          "Sextus quitte la boutique",
-          "Sextus reste dans la boutique"
-        ],
-        expected: [
-          "Sextus sort de la boutique",
-          "Sextus vient de la boutique",
-          "Sextus quitte la boutique"
-        ],
-        shuffle: true,
-        points: 1
-      },
-      {
-        id: "p2-l2-t5",
-        type: "ordering",
-        prompt: "Range ces groupes pour former une phrase latine possible : « Le garçon court vers le forum. »",
-        options: ["puer", "ad forum", "currit"],
-        expected: ["puer", "ad forum", "currit"],
-        points: 1
-      },
-      {
-        id: "p2-l2-t6",
-        type: "singleChoice",
-        prompt: "Dans « ad templum Flavia venit », où va Flavia ?",
-        options: ["vers le temple", "hors du temple", "dans la boutique", "au forum puis à la maison", "on ne sait pas"],
-        expected: "vers le temple",
-        shuffle: true,
-        points: 1,
-        feedback: "La préposition donne ici le sens du déplacement."
-      },
-      {
-        id: "p2-l2-t7",
-        type: "multipleChoice",
-        prompt: "Quels groupes expriment un déplacement ou une provenance ?",
-        options: ["ad templum", "ex taberna", "in via", "forum", "currit"],
-        expected: ["ad templum", "ex taberna", "in via"],
-        shuffle: true,
-        points: 1
-      }
+      { id: "p2-l2-t1", type: "singleChoice", prompt: "ad signifie…", options: ["vers", "dans", "hors de", "devant"], expected: "vers", shuffle: true, points: 1 },
+      { id: "p2-l2-t2", type: "matching", prompt: "Associe la préposition et le sens.", pairs: [{ left: "ad", right: "vers" }, { left: "in", right: "dans" }, { left: "ex", right: "depuis" }, { left: "ante", right: "devant" }], rightOptions: ["dans", "depuis", "vers", "devant"], expected: { ad: "vers", in: "dans", ex: "depuis", ante: "devant" }, points: 1 },
+      { id: "p2-l2-t3", type: "singleChoice", prompt: "« servus ad templum venit » : où va le serviteur ?", options: ["vers le temple", "dans la boutique", "hors de la rue", "devant la fontaine"], expected: "vers le temple", shuffle: true, points: 1 },
+      { id: "p2-l2-t4", type: "singleChoice", prompt: "« ex taberna serva currit » : la servante…", options: ["sort de la boutique", "entre dans la boutique", "reste devant la boutique", "va au temple"], expected: "sort de la boutique", shuffle: true, points: 1 },
+      { id: "p2-l2-t5", type: "ordering", prompt: "Produis : Le voisin est devant la porte.", options: ["vicinus", "ante", "ianuam", "stat"], expected: ["vicinus", "ante", "ianuam", "stat"], points: 1 },
+      { id: "p2-l2-t6", type: "multipleChoice", prompt: "Traductions possibles de « ante ianuam canis stat ».", options: ["Le chien est devant la porte", "Le chien se tient devant la porte", "La porte est devant le chien", "Le chien entre par la porte"], expected: ["Le chien est devant la porte", "Le chien se tient devant la porte"], shuffle: true, points: 1 },
+      { id: "p2-l2-t7", type: "multipleChoice", prompt: "Mini-texte : « Femina in via est. Servus ad fontem venit. » Quels sont les lieux ?", options: ["via", "fons", "tabella", "donum"], expected: ["via", "fons"], shuffle: true, points: 1 },
     ],
     production: [
-      {
-        id: "p2-l2-p1",
-        type: "textInput",
-        prompt: "Micro-version : puella ad forum currit",
-        expected: "la jeune fille court vers le forum",
-        acceptedAnswers: [
-          "la jeune fille court vers le forum",
-          "la fille court vers le forum",
-          "la jeune fille se précipite vers le forum",
-          "la puella court vers le forum"
-        ],
-        answerConfig: {
-          type: "translation-segment",
-          language: "fr",
-          accepted: [
-            "la jeune fille court vers le forum",
-            "la fille court vers le forum",
-            "la jeune fille se précipite vers le forum",
-            "la puella court vers le forum"
-          ]
-        },
-        points: 1
-      },
-      {
-        id: "p2-l2-p2",
-        type: "textInput",
-        prompt: "Micro-thème : Sextus sort de la boutique. Plusieurs ordres latins sont admis.",
-        expected: "Sextus ex taberna exit",
-        acceptedAnswers: latinOrders("Sextus", "ex taberna", "exit"),
-        answerConfig: {
-          type: "one-of",
-          language: "latin",
-          accepted: latinOrders("Sextus", "ex taberna", "exit")
-        },
-        points: 1
-      },
-      {
-        id: "p2-l2-p3",
-        type: "textInput",
-        prompt: "Réponse courte : ex signifie...",
-        expected: "hors de",
-        acceptedAnswers: ["hors de", "depuis", "en sortant de", "à partir de"],
-        answerConfig: {
-          type: "translation-segment",
-          language: "fr",
-          accepted: ["hors de", "depuis", "en sortant de", "à partir de"]
-        },
-        points: 1
-      }
+      { id: "p2-l2-p1", type: "textInput", prompt: "Traduis : femina in via ambulat", expected: "la femme marche dans la rue", acceptedAnswers: ["la femme marche dans la rue", "une femme marche dans la rue", "la dame marche dans la rue"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["la femme marche dans la rue", "une femme marche dans la rue", "la dame marche dans la rue"] }, points: 1 },
+      { id: "p2-l2-p2", type: "textInput", prompt: "Traduis en latin : Le serviteur sort de la boutique.", expected: "servus ex taberna exit", acceptedAnswers: latinOrders(["servus", "ex", "taberna", "exit"], ["ex", "taberna", "servus", "exit"], ["exit", "servus", "ex", "taberna"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["servus", "ex", "taberna", "exit"], ["ex", "taberna", "servus", "exit"], ["exit", "servus", "ex", "taberna"]) }, points: 1 },
+      { id: "p2-l2-p3", type: "textInput", prompt: "Complète : ad = … ; ex = …", expected: "vers ; hors de", acceptedAnswers: ["vers ; hors de", "vers ; depuis", "vers et hors de"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["vers ; hors de", "vers ; depuis", "vers et hors de"] }, points: 1 },
     ],
-    summary: {
-      retains: [
-        "Une petite préposition peut transformer tout le sens d'une scène.",
-        "ad = vers ; in = dans ; ex = hors de, depuis."
-      ],
-      cahier: [
-        "ad templum = vers le temple",
-        "ex taberna = hors de la boutique, depuis la boutique",
-        "Je lis le mouvement avant de traduire le reste."
-      ],
-      keywords: ["prépositions", "déplacement", "ad", "ex", "Subure"]
-    },
-    meta: {
-      status: "ready",
-      tags: ["discordia", "prépositions", "déplacement", "subura"]
-    }
-  }
-  // [...] Le document de code contient le reste du fichier à l’identique.
+    summary: { retains: ["Je suis un trajet avec les prépositions.", "Je vérifie le verbe de mouvement."], cahier: ["ad/in/ex/ante", "Dans l’enquête, les déplacements comptent."], keywords: ["lieu", "mouvement", "témoins"] },
+    meta: { status: "ready", tags: ["p2", "prepositions", "discordia"] },
+  },
+  {
+    id: "p2-l3", period: 2, periodId: "p2", title: "Testis prima ad fontem", objective: "Lire la première déposition d’une témoin.", lessonPoint: "En 1re déclinaison, -a est souvent le sujet, -am souvent le complément objet.", narrative: "Près du fons, une femina raconte ce qu’elle a vu avant le tumulte.", canDo: ["Je reconnais -a / -am.", "Je repère l’objet d’une action.", "Je traduis un court témoignage."], lexicon: ["femina = femme", "amica = amie", "taberna = boutique", "via = rue", "porta = porte", "aquam = l’eau", "fontem = la fontaine", "portat = il/elle porte", "spectat = il/elle regarde", "narrat = il/elle raconte"], maxScore: 10,
+    training: [
+      { id: "p2-l3-t1", type: "singleChoice", prompt: "Quel mot appartient à la 1re déclinaison ?", options: ["femina", "dominus", "donum", "servus"], expected: "femina", shuffle: true, points: 1 },
+      { id: "p2-l3-t2", type: "matching", prompt: "Associe mot et traduction.", pairs: [{ left: "femina", right: "femme" }, { left: "amica", right: "amie" }, { left: "taberna", right: "boutique" }, { left: "via", right: "rue" }], rightOptions: ["rue", "femme", "boutique", "amie"], expected: { femina: "femme", amica: "amie", taberna: "boutique", via: "rue" }, points: 1 },
+      { id: "p2-l3-t3", type: "singleChoice", prompt: "Dans « femina aquam portat », quel est l’objet ?", options: ["femina", "aquam", "portat", "nullus"], expected: "aquam", shuffle: true, points: 1 },
+      { id: "p2-l3-t4", type: "singleChoice", prompt: "Quelle terminaison montre souvent le complément objet en 1re déclinaison ?", options: ["-am", "-a", "-um", "-us"], expected: "-am", shuffle: true, points: 1 },
+      { id: "p2-l3-t5", type: "ordering", prompt: "Remets : femina / aquam / portat", options: ["femina", "aquam", "portat"], expected: ["femina", "aquam", "portat"], points: 1 },
+      { id: "p2-l3-t6", type: "multipleChoice", prompt: "Traductions recevables de « amica ad tabernam ambulat ».", options: ["L’amie marche vers la boutique", "L’amie va à la boutique", "La boutique marche vers l’amie", "L’amie entre dans l’autel"], expected: ["L’amie marche vers la boutique", "L’amie va à la boutique"], shuffle: true, points: 1 },
+      { id: "p2-l3-t7", type: "multipleChoice", prompt: "Mini-texte : « Femina ad fontem stat. Amica portam spectat. » Qui est témoin et que voit-elle ?", options: ["La femme est témoin", "L’amie regarde la porte", "Le maître crie", "Le chien sort"], expected: ["La femme est témoin", "L’amie regarde la porte"], shuffle: true, points: 1 },
+    ],
+    production: [
+      { id: "p2-l3-p1", type: "textInput", prompt: "Traduis : femina portam spectat", expected: "la femme regarde la porte", acceptedAnswers: ["la femme regarde la porte", "une femme regarde la porte", "la dame observe la porte"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["la femme regarde la porte", "une femme regarde la porte", "la dame observe la porte"] }, points: 1 },
+      { id: "p2-l3-p2", type: "textInput", prompt: "Traduis en latin : L’amie regarde la rue.", expected: "amica viam spectat", acceptedAnswers: latinOrders(["amica", "viam", "spectat"], ["amica", "spectat", "viam"], ["viam", "amica", "spectat"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["amica", "viam", "spectat"], ["amica", "spectat", "viam"], ["viam", "amica", "spectat"]) }, points: 1 },
+      { id: "p2-l3-p3", type: "textInput", prompt: "Rappel grammaire : -a = … ; -am = …", expected: "sujet ; complément objet", acceptedAnswers: ["sujet ; complément objet", "sujet ; objet", "forme de base ; objet"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["sujet ; complément objet", "sujet ; objet", "forme de base ; objet"] }, points: 1 },
+    ],
+    summary: { retains: ["Je reconnais -a et -am dans une scène simple.", "Je relie forme et fonction."], cahier: ["femina/amicam", "-a sujet fréquent, -am objet fréquent"], keywords: ["1re déclinaison", "témoignage", "fontaine"] },
+    meta: { status: "ready", tags: ["p2", "declinaison1", "discordia"] },
+  },
+  {
+    id: "p2-l4", period: 2, periodId: "p2", title: "Servus, dominus, vicinus", objective: "Distinguer sujet et objet avec les masculins en -us/-um.", lessonPoint: "Je regarde les formes : -us (souvent sujet), -um (souvent complément objet).", narrative: "Les voisins se disputent : dominus accuse servum, puis le contraire est affirmé.", canDo: ["Je reconnais des masculins de 2e déclinaison.", "Je distingue qui agit et qui subit.", "Je traduis une phrase d’accusation."], lexicon: ["servus = esclave, serviteur", "dominus = maître, maître de maison", "vicinus = voisin", "amicus = ami", "murus = mur", "canis = chien", "audit = il/elle entend", "accusat = il/elle accuse", "vocat = il/elle appelle", "timet = il/elle craint"], maxScore: 10,
+    training: [
+      { id: "p2-l4-t1", type: "singleChoice", prompt: "Quel nom est de 2e déclinaison masculine ?", options: ["servus", "taberna", "aqua", "porta"], expected: "servus", shuffle: true, points: 1 },
+      { id: "p2-l4-t2", type: "matching", prompt: "Associe mot et sens.", pairs: [{ left: "servus", right: "serviteur" }, { left: "dominus", right: "maître" }, { left: "vicinus", right: "voisin" }, { left: "amicus", right: "ami" }], rightOptions: ["ami", "voisin", "serviteur", "maître"], expected: { servus: "serviteur", dominus: "maître", vicinus: "voisin", amicus: "ami" }, points: 1 },
+      { id: "p2-l4-t3", type: "singleChoice", prompt: "« dominus servum vocat » : qui appelle ?", options: ["le maître", "le serviteur", "le voisin", "le chien"], expected: "le maître", shuffle: true, points: 1 },
+      { id: "p2-l4-t4", type: "singleChoice", prompt: "« servum dominus accusat » : qui est accusé ?", options: ["le serviteur", "le maître", "le voisin", "l’ami"], expected: "le serviteur", shuffle: true, points: 1 },
+      { id: "p2-l4-t5", type: "multipleChoice", prompt: "Traductions recevables : « amicus vicinum audit ».", options: ["L’ami entend le voisin", "L’ami écoute le voisin", "Le voisin entend l’ami", "L’ami appelle le voisin"], expected: ["L’ami entend le voisin", "L’ami écoute le voisin"], shuffle: true, points: 1 },
+      { id: "p2-l4-t6", type: "ordering", prompt: "Compose une phrase : le maître accuse le voisin.", options: ["dominus", "vicinum", "accusat"], expected: ["dominus", "vicinum", "accusat"], points: 1 },
+      { id: "p2-l4-t7", type: "multipleChoice", prompt: "Mini-texte : « Servus canem timet. Dominus servum vocat. » Que comprend-on ?", options: ["Le serviteur craint le chien", "Le maître appelle le serviteur", "Le chien appelle le maître", "Le voisin rit"], expected: ["Le serviteur craint le chien", "Le maître appelle le serviteur"], shuffle: true, points: 1 },
+    ],
+    production: [
+      { id: "p2-l4-p1", type: "textInput", prompt: "Traduis : vicinus servum accusat", expected: "le voisin accuse le serviteur", acceptedAnswers: ["le voisin accuse le serviteur", "le voisin met en cause le serviteur", "la voisine accuse le serviteur"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["le voisin accuse le serviteur", "le voisin met en cause le serviteur", "la voisine accuse le serviteur"] }, points: 1 },
+      { id: "p2-l4-p2", type: "textInput", prompt: "Traduis en latin : Le maître appelle le voisin.", expected: "dominus vicinum vocat", acceptedAnswers: latinOrders(["dominus", "vicinum", "vocat"], ["dominus", "vocat", "vicinum"], ["vicinum", "dominus", "vocat"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["dominus", "vicinum", "vocat"], ["dominus", "vocat", "vicinum"], ["vicinum", "dominus", "vocat"]) }, points: 1 },
+      { id: "p2-l4-p3", type: "textInput", prompt: "Lexique : dominus peut vouloir dire…", expected: "maître", acceptedAnswers: ["maître", "maître de maison", "patron"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["maître", "maître de maison", "patron"] }, points: 1 },
+    ],
+    summary: { retains: ["Je lis -us / -um pour éviter les inversions.", "Je vérifie qui fait l’action."], cahier: ["servus/servum", "dominus/dominum"], keywords: ["2e déclinaison", "accusation", "voisins"] },
+    meta: { status: "ready", tags: ["p2", "declinaison2-m", "discordia"] },
+  },
+  {
+    id: "p2-l5", period: 2, periodId: "p2", title: "Donum, signum, periculum", objective: "Comprendre le neutre singulier dans les indices de l’enquête.", lessonPoint: "Au neutre singulier, nominatif et accusatif ont la même forme.", narrative: "On découvre un signum étrange près du templum : periculum ou simple hasard ?", canDo: ["Je reconnais des neutres en -um.", "Je comprends la règle nominatif = accusatif.", "Je traduis des phrases d’indices."], lexicon: ["donum = offrande, cadeau", "signum = signe, marque, indice", "templum = temple", "periculum = danger", "verbum = mot", "malum = mal, mauvaise chose", "videt = il/elle voit", "habet = il/elle a", "celat = il/elle cache", "invenit = il/elle trouve"], maxScore: 10,
+    training: [
+      { id: "p2-l5-t1", type: "singleChoice", prompt: "Quel mot est neutre ?", options: ["donum", "dominus", "femina", "servus"], expected: "donum", shuffle: true, points: 1 },
+      { id: "p2-l5-t2", type: "matching", prompt: "Associe chaque neutre à son sens.", pairs: [{ left: "donum", right: "offrande" }, { left: "signum", right: "indice" }, { left: "templum", right: "temple" }, { left: "periculum", right: "danger" }], rightOptions: ["danger", "temple", "offrande", "indice"], expected: { donum: "offrande", signum: "indice", templum: "temple", periculum: "danger" }, points: 1 },
+      { id: "p2-l5-t3", type: "singleChoice", prompt: "« signum dominus videt » : que voit le maître ?", options: ["le signe", "le maître", "la boutique", "le voisin"], expected: "le signe", shuffle: true, points: 1 },
+      { id: "p2-l5-t4", type: "singleChoice", prompt: "Au neutre singulier, que remarques-tu ?", options: ["nominatif = accusatif", "le mot finit toujours en -a", "le verbe disparaît", "ordre fixe"], expected: "nominatif = accusatif", shuffle: true, points: 1 },
+      { id: "p2-l5-t5", type: "multipleChoice", prompt: "Traductions recevables : « templum malum celat ».", options: ["Le temple cache un mal", "Le temple cache une mauvaise chose", "Le mal cache le temple", "Le temple porte un cadeau"], expected: ["Le temple cache un mal", "Le temple cache une mauvaise chose"], shuffle: true, points: 1 },
+      { id: "p2-l5-t6", type: "ordering", prompt: "Ordonne : donum / vicinus / invenit", options: ["vicinus", "donum", "invenit"], expected: ["vicinus", "donum", "invenit"], points: 1 },
+      { id: "p2-l5-t7", type: "multipleChoice", prompt: "Mini-texte : « Donum in templo est. Signum in muro est. » Quels neutres lis-tu ?", options: ["donum", "signum", "murus", "femina"], expected: ["donum", "signum"], shuffle: true, points: 1 },
+    ],
+    production: [
+      { id: "p2-l5-p1", type: "textInput", prompt: "Traduis : donum in templo est", expected: "l'offrande est dans le temple", acceptedAnswers: ["l'offrande est dans le temple", "le cadeau est dans le temple", "le don est dans le temple"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["l'offrande est dans le temple", "le cadeau est dans le temple", "le don est dans le temple"] }, points: 1 },
+      { id: "p2-l5-p2", type: "textInput", prompt: "Traduis en latin : Le voisin trouve le signe.", expected: "vicinus signum invenit", acceptedAnswers: latinOrders(["vicinus", "signum", "invenit"], ["vicinus", "invenit", "signum"], ["signum", "vicinus", "invenit"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vicinus", "signum", "invenit"], ["vicinus", "invenit", "signum"], ["signum", "vicinus", "invenit"]) }, points: 1 },
+      { id: "p2-l5-p3", type: "textInput", prompt: "Règle courte : au neutre singulier, nominatif et accusatif sont…", expected: "identiques", acceptedAnswers: ["identiques", "pareils", "semblables"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["identiques", "pareils", "semblables"] }, points: 1 },
+    ],
+    summary: { retains: ["Je reconnais les neutres utiles dans l’enquête.", "Je retiens la règle nominatif = accusatif au neutre."], cahier: ["donum/signum/templum", "Neutre : même forme sujet/objet"], keywords: ["neutre", "indices", "templum"] },
+    meta: { status: "ready", tags: ["p2", "declinaison2-n", "discordia"] },
+  },
+  {
+    id: "p2-l6", period: 2, periodId: "p2", title: "Video, audio, accuso", objective: "Comprendre le présent singulier dans les témoignages.", lessonPoint: "Au présent : -o (je), -s (tu), -t (il/elle).", narrative: "Chacun parle : « video », « nego », « audis ». Les versions s’opposent.", canDo: ["Je reconnais je/tu/il-elle au présent.", "Je repère qui parle dans un témoignage.", "Je traduis une phrase de déposition."], lexicon: ["video = je vois", "audis = tu entends", "accusat = il/elle accuse", "nego = je nie", "times = tu crains", "portat = il/elle porte", "clamo = je crie", "rogas = tu demandes", "narrat = il/elle raconte", "habito = j’habite"], maxScore: 10,
+    training: [
+      { id: "p2-l6-t1", type: "singleChoice", prompt: "Quelle forme est à la 1re personne ?", options: ["video", "audis", "accusat", "rogas"], expected: "video", shuffle: true, points: 1 },
+      { id: "p2-l6-t2", type: "matching", prompt: "Associe la terminaison et la personne.", pairs: [{ left: "-o", right: "je" }, { left: "-s", right: "tu" }, { left: "-t", right: "il/elle" }], rightOptions: ["il/elle", "je", "tu"], expected: { "-o": "je", "-s": "tu", "-t": "il/elle" }, points: 1 },
+      { id: "p2-l6-t3", type: "singleChoice", prompt: "« nego » signifie…", options: ["je nie", "tu nies", "il nie", "nous nions"], expected: "je nie", shuffle: true, points: 1 },
+      { id: "p2-l6-t4", type: "singleChoice", prompt: "« tu entends » =", options: ["audis", "audio", "audit", "audimus"], expected: "audis", shuffle: true, points: 1 },
+      { id: "p2-l6-t5", type: "multipleChoice", prompt: "Sélectionne les formes de 1re personne.", options: ["video", "nego", "clamo", "audis"], expected: ["video", "nego", "clamo"], shuffle: true, points: 1 },
+      { id: "p2-l6-t6", type: "singleChoice", prompt: "Mini-témoignage : « Habito in via. Nego periculum. » Qui parle ?", options: ["je", "tu", "il/elle", "ils"], expected: "je", shuffle: true, points: 1 },
+      { id: "p2-l6-t7", type: "ordering", prompt: "Place le verbe en fin : je crie dans la rue.", options: ["ego", "in", "via", "clamo"], expected: ["ego", "in", "via", "clamo"], points: 1 },
+    ],
+    production: [
+      { id: "p2-l6-p1", type: "textInput", prompt: "Traduis : audio canem", expected: "j'entends le chien", acceptedAnswers: ["j'entends le chien", "je comprends le chien", "j'écoute le chien"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["j'entends le chien", "je comprends le chien", "j'écoute le chien"] }, points: 1 },
+      { id: "p2-l6-p2", type: "textInput", prompt: "Traduis en latin : Je nie le danger.", expected: "nego periculum", acceptedAnswers: latinOrders(["nego", "periculum"], ["periculum", "nego"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["nego", "periculum"], ["periculum", "nego"]) }, points: 1 },
+      { id: "p2-l6-p3", type: "textInput", prompt: "Complète : -o / -s / -t = …", expected: "je / tu / il-elle", acceptedAnswers: ["je / tu / il-elle", "je-tu-il", "1re 2e 3e personne singulier"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["je / tu / il-elle", "je-tu-il", "1re 2e 3e personne singulier"] }, points: 1 },
+    ],
+    summary: { retains: ["Je lis la personne grâce à la terminaison.", "Les témoignages changent selon qui parle."], cahier: ["Présent singulier : -o / -s / -t", "1re conjugaison (repère) : -o / -as / -at / -amus / -atis / -ant"], keywords: ["présent", "témoignage", "personnes"] },
+    meta: { status: "ready", tags: ["p2", "present-singulier", "discordia"] },
+  },
+  {
+    id: "p2-l7", period: 2, periodId: "p2", title: "Videmus, auditis, clamant", objective: "Lire les formes du présent pluriel dans une rumeur collective.", lessonPoint: "Au pluriel : -mus (nous), -tis (vous), -nt (ils/elles).", narrative: "Le quartier entier parle : certains crient, d’autres répondent, la rumeur enfle.", canDo: ["Je reconnais les personnes du pluriel.", "Je comprends qui parle au nom du groupe.", "Je traduis des phrases collectives."], lexicon: ["videmus = nous voyons", "auditis = vous entendez", "clamant = ils/elles crient", "habitant = ils/elles habitent", "portant = ils/elles portent", "intrant = ils/elles entrent", "currunt = ils/elles courent", "quaerimus = nous cherchons", "rogatis = vous demandez", "respondent = ils/elles répondent"], maxScore: 10,
+    training: [
+      { id: "p2-l7-t1", type: "singleChoice", prompt: "Quel mot signifie « nous voyons » ?", options: ["videmus", "videt", "vides", "video"], expected: "videmus", shuffle: true, points: 1 },
+      { id: "p2-l7-t2", type: "matching", prompt: "Associe la terminaison et la personne plurielle.", pairs: [{ left: "-mus", right: "nous" }, { left: "-tis", right: "vous" }, { left: "-nt", right: "ils/elles" }], rightOptions: ["vous", "ils/elles", "nous"], expected: { "-mus": "nous", "-tis": "vous", "-nt": "ils/elles" }, points: 1 },
+      { id: "p2-l7-t3", type: "singleChoice", prompt: "« vicini clamant » : qui crie ?", options: ["les voisins", "le voisin", "la voisine", "le chien"], expected: "les voisins", shuffle: true, points: 1 },
+      { id: "p2-l7-t4", type: "singleChoice", prompt: "« rogatis » correspond à…", options: ["vous demandez", "nous demandons", "ils demandent", "tu demandes"], expected: "vous demandez", shuffle: true, points: 1 },
+      { id: "p2-l7-t5", type: "multipleChoice", prompt: "Choisis les formes au pluriel.", options: ["videmus", "auditis", "clamant", "accusat"], expected: ["videmus", "auditis", "clamant"], shuffle: true, points: 1 },
+      { id: "p2-l7-t6", type: "multipleChoice", prompt: "Mini-texte : « Quaerimus donum. Rogatis testem. Vicini respondent. » Qui parle collectivement ?", options: ["nous", "vous", "les voisins", "un seul témoin"], expected: ["nous", "vous", "les voisins"], shuffle: true, points: 1 },
+      { id: "p2-l7-t7", type: "ordering", prompt: "Remets : in via / clamant / vicini", options: ["in", "via", "vicini", "clamant"], expected: ["in", "via", "vicini", "clamant"], points: 1 },
+    ],
+    production: [
+      { id: "p2-l7-p1", type: "textInput", prompt: "Traduis : donum quaerimus", expected: "nous cherchons l'offrande", acceptedAnswers: ["nous cherchons l'offrande", "nous cherchons le cadeau", "nous cherchons le don"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["nous cherchons l'offrande", "nous cherchons le cadeau", "nous cherchons le don"] }, points: 1 },
+      { id: "p2-l7-p2", type: "textInput", prompt: "Traduis en latin : Les voisins crient devant la porte.", expected: "vicini ante ianuam clamant", acceptedAnswers: latinOrders(["vicini", "ante", "ianuam", "clamant"], ["ante", "ianuam", "vicini", "clamant"], ["clamant", "vicini", "ante", "ianuam"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vicini", "ante", "ianuam", "clamant"], ["ante", "ianuam", "vicini", "clamant"], ["clamant", "vicini", "ante", "ianuam"]) }, points: 1 },
+      { id: "p2-l7-p3", type: "textInput", prompt: "Tableau : -o / -s / -t / -mus / -tis / -nt = ?", expected: "je tu il/elle nous vous ils/elles", acceptedAnswers: ["je tu il/elle nous vous ils/elles", "je/tu/il-nous/vous/ils", "1s 2s 3s 1p 2p 3p"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["je tu il/elle nous vous ils/elles", "je/tu/il-nous/vous/ils", "1s 2s 3s 1p 2p 3p"] }, points: 1 },
+    ],
+    summary: { retains: ["Je reconnais les personnes du pluriel.", "La rumeur collective se lit dans les terminaisons."], cahier: ["-mus / -tis / -nt", "Videmus/auditis/clamant"], keywords: ["présent pluriel", "rumeur", "quartier"] },
+    meta: { status: "ready", tags: ["p2", "present-pluriel", "discordia"] },
+  },
+  {
+    id: "p2-l8", period: 2, periodId: "p2", title: "Tabella falsa", objective: "Lire un court texte suspect autour d’une tablette falsifiée.", lessonPoint: "Je lis un petit texte en vérifiant les mots-clés verum/falsum et les verbes d’action.", narrative: "Une tabella circule : un nom a été changé. Qui a mutat le message ?", canDo: ["Je lis un micro-texte continu.", "Je repère vrai/faux.", "Je formule une hypothèse simple."], lexicon: ["tabella = tablette", "falsa = fausse, falsifiée", "scribit = il/elle écrit", "mutat = il/elle change", "verum = vrai", "falsum = faux", "nomen = nom", "signum = signe", "legit = il/elle lit", "ostendit = il/elle montre"], maxScore: 10,
+    training: [
+      { id: "p2-l8-t1", type: "singleChoice", prompt: "« tabella falsa » signifie…", options: ["tablette falsifiée", "tablette neuve", "autel cassé", "chien calme"], expected: "tablette falsifiée", shuffle: true, points: 1 },
+      { id: "p2-l8-t2", type: "matching", prompt: "Associe mot et sens.", pairs: [{ left: "verum", right: "vrai" }, { left: "falsum", right: "faux" }, { left: "nomen", right: "nom" }, { left: "signum", right: "signe" }], rightOptions: ["nom", "vrai", "signe", "faux"], expected: { verum: "vrai", falsum: "faux", nomen: "nom", signum: "signe" }, points: 1 },
+      { id: "p2-l8-t3", type: "singleChoice", prompt: "Texte : « Vicina tabellam legit et ostendit. » Qui lit la tablette ?", options: ["la voisine", "le voisin", "le chien", "le maître"], expected: "la voisine", shuffle: true, points: 1 },
+      { id: "p2-l8-t4", type: "multipleChoice", prompt: "Texte court : « Nomen mutat. Verum non est. » Quelles phrases sont vraies ?", options: ["Le nom est changé", "Le texte n'est pas vrai", "Le texte est sûr", "Personne ne lit"], expected: ["Le nom est changé", "Le texte n'est pas vrai"], shuffle: true, points: 1 },
+      { id: "p2-l8-t5", type: "ordering", prompt: "Reconstitue : vicinus / tabellam / legit", options: ["vicinus", "tabellam", "legit"], expected: ["vicinus", "tabellam", "legit"], points: 1 },
+      { id: "p2-l8-t6", type: "singleChoice", prompt: "Dans « legit tabellam vicina », quel est le verbe ?", options: ["legit", "tabellam", "vicina", "nullus"], expected: "legit", shuffle: true, points: 1 },
+      { id: "p2-l8-t7", type: "multipleChoice", prompt: "Pourquoi la tablette paraît-elle suspecte ?", options: ["Un nom a été changé", "Le texte dit verum", "Le mot falsa apparaît", "La fontaine est propre"], expected: ["Un nom a été changé", "Le mot falsa apparaît"], shuffle: true, points: 1 },
+    ],
+    production: [
+      { id: "p2-l8-p1", type: "textInput", prompt: "Traduis : tabella falsa est", expected: "la tablette est falsifiée", acceptedAnswers: ["la tablette est falsifiée", "la tablette est fausse", "l'écriteau est falsifié"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["la tablette est falsifiée", "la tablette est fausse", "l'écriteau est falsifié"] }, points: 1 },
+      { id: "p2-l8-p2", type: "textInput", prompt: "Traduis en latin : La voisine montre la tablette.", expected: "vicina tabellam ostendit", acceptedAnswers: latinOrders(["vicina", "tabellam", "ostendit"], ["vicina", "ostendit", "tabellam"], ["tabellam", "vicina", "ostendit"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vicina", "tabellam", "ostendit"], ["vicina", "ostendit", "tabellam"], ["tabellam", "vicina", "ostendit"]) }, points: 1 },
+      { id: "p2-l8-p3", type: "textInput", prompt: "Pourquoi la tablette semble-t-elle suspecte ? (français court)", expected: "le nom a été changé", acceptedAnswers: ["le nom a été changé", "un nom est modifié", "elle est falsifiée"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["le nom a été changé", "un nom est modifié", "elle est falsifiée"] }, points: 1 },
+    ],
+    summary: { retains: ["Je peux lire un texte court continu.", "Je justifie une suspicion avec des indices précis."], cahier: ["verum/falsum", "tabella falsa : nomen mutat"], keywords: ["tablette", "faux", "indices"] },
+    meta: { status: "ready", tags: ["p2", "lecture", "discordia"] },
+  },
+  {
+    id: "p2-l9", period: 2, periodId: "p2", title: "Canis ante ianuam latrat", objective: "Comprendre explicitement la souplesse de l’ordre latin.", lessonPoint: "Je ne traduis pas mot à mot dans l’ordre ; je repère formes et verbe.", narrative: "Le canis refuse une porte précise. Les voisins y voient un signe inquiétant.", canDo: ["Je lis S/C/V, V/S/C, C/V/S.", "Je garde le même sens malgré l’ordre variable.", "Je justifie ma traduction."], lexicon: ["canis = chien", "ianua = porte", "ante = devant", "latrat = il/elle aboie", "stat = il/elle se tient", "recusat = il/elle refuse", "intrat = il/elle entre", "timet = il/elle craint", "audit = il/elle entend", "manet = il/elle reste"], maxScore: 10,
+    training: [
+      { id: "p2-l9-t1", type: "singleChoice", prompt: "latrat signifie…", options: ["aboie", "entre", "écoute", "fuit"], expected: "aboie", shuffle: true, points: 1 },
+      { id: "p2-l9-t2", type: "matching", prompt: "Associe mot et sens.", pairs: [{ left: "canis", right: "chien" }, { left: "ianua", right: "porte" }, { left: "ante", right: "devant" }, { left: "latrat", right: "aboie" }], rightOptions: ["porte", "aboie", "devant", "chien"], expected: { canis: "chien", ianua: "porte", ante: "devant", latrat: "aboie" }, points: 1 },
+      { id: "p2-l9-t3", type: "singleChoice", prompt: "« ante ianuam canis latrat » signifie…", options: ["Le chien aboie devant la porte", "La porte aboie devant le chien", "Le chien entre dans la porte", "Le voisin reste"], expected: "Le chien aboie devant la porte", shuffle: true, points: 1 },
+      { id: "p2-l9-t4", type: "singleChoice", prompt: "« latrat ante ianuam canis » : même sens ?", options: ["oui", "non", "impossible", "on ne sait pas"], expected: "oui", shuffle: true, points: 1 },
+      { id: "p2-l9-t5", type: "multipleChoice", prompt: "Quels ordres peuvent signifier « Le chien aboie devant la porte » ?", options: ["canis ante ianuam latrat", "latrat ante ianuam canis", "ante ianuam latrat canis", "canis ianuam ante latrat"], expected: ["canis ante ianuam latrat", "latrat ante ianuam canis", "ante ianuam latrat canis"], shuffle: true, points: 1 },
+      { id: "p2-l9-t6", type: "ordering", prompt: "Compose un ordre latin valide.", options: ["canis", "ante", "ianuam", "manet"], expected: ["canis", "ante", "ianuam", "manet"], points: 1 },
+      { id: "p2-l9-t7", type: "multipleChoice", prompt: "Mini-texte : « Canis ante ianuam A manet, ante ianuam B recusat. » Que refuse le chien ?", options: ["la porte B", "la porte A", "la fontaine", "la tablette"], expected: ["la porte B"], shuffle: true, points: 1 },
+    ],
+    production: [
+      { id: "p2-l9-p1", type: "textInput", prompt: "Traduis : canis ianuam timet", expected: "le chien craint la porte", acceptedAnswers: ["le chien craint la porte", "le chien a peur de la porte"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["le chien craint la porte", "le chien a peur de la porte"] }, points: 1 },
+      { id: "p2-l9-p2", type: "textInput", prompt: "Traduis en latin : Le chien reste devant la porte.", expected: "canis ante ianuam manet", acceptedAnswers: latinOrders(["canis", "ante", "ianuam", "manet"], ["ante", "ianuam", "canis", "manet"], ["manet", "canis", "ante", "ianuam"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["canis", "ante", "ianuam", "manet"], ["ante", "ianuam", "canis", "manet"], ["manet", "canis", "ante", "ianuam"]) }, points: 1 },
+      { id: "p2-l9-p3", type: "textInput", prompt: "Explique brièvement : pourquoi l’ordre seul ne suffit-il pas ?", expected: "il faut regarder les formes", acceptedAnswers: ["il faut regarder les formes", "il faut repérer le verbe et les terminaisons", "l'ordre change mais les formes donnent le sens"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["il faut regarder les formes", "il faut repérer le verbe et les terminaisons", "l'ordre change mais les formes donnent le sens"] }, points: 1 },
+    ],
+    summary: { retains: ["Je ne piège plus sur l’ordre des mots.", "Je confirme le sens avec les formes."], cahier: ["S/C/V possible", "Repérer verbe + terminaisons"], keywords: ["ordre des mots", "chien", "porte"] },
+    meta: { status: "ready", tags: ["p2", "ordre-latin", "discordia"] },
+  },
+  {
+    id: "p2-l10", period: 2, periodId: "p2", title: "Aqua turpis in fonte", objective: "Réviser les noms (1re, 2e masc., 2e neutre) dans la scène de la fontaine salie.", lessonPoint: "Je compare les familles de noms pour lire sujet et complément objet.", narrative: "Au matin, aqua turpis in fonte : la tension monte, chacun accuse l’autre.", canDo: ["Je reconnais les trois familles de noms vues.", "Je distingue nominatif/accusatif.", "Je traduis une phrase de constat."], lexicon: ["aqua = eau", "turpis = sale, souillée", "fons = fontaine", "puella = jeune fille", "servus = serviteur", "donum = offrande", "taberna = boutique", "murus = mur", "manat = il/elle coule", "polluit = il/elle salit"], maxScore: 10,
+    training: [
+      { id: "p2-l10-t1", type: "singleChoice", prompt: "Quel mot relève de la 1re déclinaison ?", options: ["puella", "servus", "donum", "murus"], expected: "puella", shuffle: true, points: 1 },
+      { id: "p2-l10-t2", type: "singleChoice", prompt: "Quel mot est masculin 2e déclinaison ?", options: ["servus", "aqua", "donum", "taberna"], expected: "servus", shuffle: true, points: 1 },
+      { id: "p2-l10-t3", type: "singleChoice", prompt: "Quel mot est neutre ?", options: ["donum", "murus", "puella", "via"], expected: "donum", shuffle: true, points: 1 },
+      { id: "p2-l10-t4", type: "matching", prompt: "Associe mot et famille.", pairs: [{ left: "rosa", right: "1re déclinaison" }, { left: "dominus", right: "2e masc." }, { left: "donum", right: "2e neutre" }], rightOptions: ["2e neutre", "1re déclinaison", "2e masc."], expected: { rosa: "1re déclinaison", dominus: "2e masc.", donum: "2e neutre" }, points: 1 },
+      { id: "p2-l10-t5", type: "multipleChoice", prompt: "Sélectionne les formes accusatives.", options: ["rosam", "dominum", "donum", "rosa"], expected: ["rosam", "dominum", "donum"], shuffle: true, points: 1 },
+      { id: "p2-l10-t6", type: "ordering", prompt: "Table de base : rosa / dominus / donum (nominatif puis accusatif)", options: ["rosa", "rosam", "dominus", "dominum", "donum", "donum"], expected: ["rosa", "rosam", "dominus", "dominum", "donum", "donum"], points: 1 },
+      { id: "p2-l10-t7", type: "singleChoice", prompt: "« aqua in fonte turpis est » : que se passe-t-il ?", options: ["L’eau de la fontaine est sale", "La fontaine porte l’eau propre", "La boutique fuit", "Le mur crie"], expected: "L’eau de la fontaine est sale", shuffle: true, points: 1 },
+    ],
+    production: [
+      { id: "p2-l10-p1", type: "textInput", prompt: "Traduis : aqua in fonte turpis est", expected: "l'eau dans la fontaine est sale", acceptedAnswers: ["l'eau dans la fontaine est sale", "l'eau de la fontaine est sale", "l'eau est souillée dans la fontaine"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["l'eau dans la fontaine est sale", "l'eau de la fontaine est sale", "l'eau est souillée dans la fontaine"] }, points: 1 },
+      { id: "p2-l10-p2", type: "textInput", prompt: "Traduis en latin : La jeune fille voit l’eau.", expected: "puella aquam videt", acceptedAnswers: latinOrders(["puella", "aquam", "videt"], ["puella", "videt", "aquam"], ["aquam", "puella", "videt"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["puella", "aquam", "videt"], ["puella", "videt", "aquam"], ["aquam", "puella", "videt"]) }, points: 1 },
+      { id: "p2-l10-p3", type: "textInput", prompt: "Mini-récap nominatif/accusatif (rosa, dominus, donum)", expected: "rosa/rosam dominus/dominum donum/donum", acceptedAnswers: ["rosa/rosam dominus/dominum donum/donum", "rosa rosam ; dominus dominum ; donum donum"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["rosa/rosam dominus/dominum donum/donum", "rosa rosam ; dominus dominum ; donum donum"] }, points: 1 },
+    ],
+    summary: { retains: ["Je reconnais les trois familles nominales utiles.", "Je lis mieux sujet et complément objet."], cahier: ["rosa / rosam", "dominus / dominum", "donum / donum", "Sujet souvent en forme de base ; complément objet souvent en forme modifiée ; au neutre les deux se ressemblent"], keywords: ["révision noms", "fontaine", "morphologie"] },
+    meta: { status: "ready", tags: ["p2", "revision-noms", "discordia"] },
+  },
+  {
+    id: "p2-l11", period: 2, periodId: "p2", title: "Discordia intrat", objective: "Nommer l’hypothèse de la Discorde et réviser le présent en contexte narratif.", lessonPoint: "Je relie les verbes au présent aux effets dans le quartier.", narrative: "Les habitants parlent d’une force : Discordia. Elle sépare les voisins et trouble la pax.", canDo: ["Je lis un mini-récit connecté.", "Je repère les verbes du présent.", "Je explique une hypothèse de récit."], lexicon: ["Discordia = Discorde", "pax = paix", "vicus = quartier, rue de quartier", "intrat = il/elle entre", "turbat = il/elle trouble", "separat = il/elle sépare", "terret = il/elle effraie", "manet = il/elle demeure", "fugit = il/elle fuit", "vocat = il/elle appelle"], maxScore: 10,
+    training: [
+      { id: "p2-l11-t1", type: "singleChoice", prompt: "Dans l’histoire, Discordia est…", options: ["une force qui divise", "une voisine", "un chien", "une boutique"], expected: "une force qui divise", shuffle: true, points: 1 },
+      { id: "p2-l11-t2", type: "matching", prompt: "Associe mot et sens.", pairs: [{ left: "pax", right: "paix" }, { left: "turbat", right: "trouble" }, { left: "separat", right: "sépare" }, { left: "terret", right: "effraie" }], rightOptions: ["sépare", "paix", "effraie", "trouble"], expected: { pax: "paix", turbat: "trouble", separat: "sépare", terret: "effraie" }, points: 1 },
+      { id: "p2-l11-t3", type: "singleChoice", prompt: "« Discordia vicum turbat » : qui trouble le quartier ?", options: ["Discordia", "la paix", "le chien", "le peuple"], expected: "Discordia", shuffle: true, points: 1 },
+      { id: "p2-l11-t4", type: "multipleChoice", prompt: "Quels mots sont des verbes au présent ?", options: ["intrat", "turbat", "pax", "fugit"], expected: ["intrat", "turbat", "fugit"], shuffle: true, points: 1 },
+      { id: "p2-l11-t5", type: "multipleChoice", prompt: "Quels effets de Discordia sont donnés ?", options: ["les voisins se séparent", "la paix reste", "les habitants ont peur", "les disputes augmentent"], expected: ["les voisins se séparent", "les habitants ont peur", "les disputes augmentent"], shuffle: true, points: 1 },
+      { id: "p2-l11-t6", type: "ordering", prompt: "Mets le verbe en fin : Discordia / vicum / turbat", options: ["Discordia", "vicum", "turbat"], expected: ["Discordia", "vicum", "turbat"], points: 1 },
+      { id: "p2-l11-t7", type: "multipleChoice", prompt: "Texte (4 phrases) : « Discordia intrat. Pax fugit. Vicini clamant. Canis manet. » Qu’est-ce qui est vrai ?", options: ["La paix fuit", "Les voisins crient", "Le chien reste", "Discordia protège la paix"], expected: ["La paix fuit", "Les voisins crient", "Le chien reste"], shuffle: true, points: 1 },
+    ],
+    production: [
+      { id: "p2-l11-p1", type: "textInput", prompt: "Traduis : Discordia vicum turbat", expected: "Discordia trouble le quartier", acceptedAnswers: ["Discordia trouble le quartier", "la Discorde trouble le quartier", "Discordia met le quartier en désordre"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["Discordia trouble le quartier", "la Discorde trouble le quartier", "Discordia met le quartier en désordre"] }, points: 1 },
+      { id: "p2-l11-p2", type: "textInput", prompt: "Traduis en latin : La paix ne reste pas dans la rue.", expected: "pax in via non manet", acceptedAnswers: latinOrders(["pax", "in", "via", "non", "manet"], ["in", "via", "pax", "non", "manet"], ["non", "manet", "pax", "in", "via"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["pax", "in", "via", "non", "manet"], ["in", "via", "pax", "non", "manet"], ["non", "manet", "pax", "in", "via"]) }, points: 1 },
+      { id: "p2-l11-p3", type: "textInput", prompt: "Pourquoi les habitants parlent-ils de Discordia ?", expected: "parce que les troubles se multiplient", acceptedAnswers: ["parce que les troubles se multiplient", "parce que le quartier se divise", "parce que la paix disparaît"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["parce que les troubles se multiplient", "parce que le quartier se divise", "parce que la paix disparaît"] }, points: 1 },
+    ],
+    summary: { retains: ["Je lis un récit connecté sur plusieurs phrases.", "Je repère les effets de Discordia avec les verbes au présent."], cahier: ["Discordia intrat, pax fugit", "présent : relier forme et sens dans le récit"], keywords: ["Discordia", "pax", "récit"] },
+    meta: { status: "ready", tags: ["p2", "discordia", "recit"] },
+  },
+  {
+    id: "p2-l12", period: 2, periodId: "p2", title: "Paxne redit ?", objective: "Clore l’enquête avec une révision cumulative et une mini-interprétation.", lessonPoint: "Je mobilise toutes les clés du trimestre : questions, lieux, formes, présent, ordre souple.", narrative: "Dernière mise au point : donum, tabella, canis et fons sont relus pour décider si la pax peut revenir.", canDo: ["Je relis un mini-dossier en latin débutant.", "Je réponds à des questions cumulatives.", "Je formule une conclusion simple."], lexicon: ["pax = paix", "redit = il/elle revient", "populus = peuple, habitants", "vicini = voisins", "donum = offrande", "tabella = tablette", "canis = chien", "fons = fontaine", "verum = vrai", "falsum = faux"], maxScore: 10,
+    training: [
+      { id: "p2-l12-t1", type: "singleChoice", prompt: "Quel mot signifie « paix » ?", options: ["pax", "populus", "fons", "tabella"], expected: "pax", shuffle: true, points: 1 },
+      { id: "p2-l12-t2", type: "multipleChoice", prompt: "Sélectionne les interrogatifs appris.", options: ["quis", "quid", "cur", "ubi", "donum"], expected: ["quis", "quid", "cur", "ubi"], shuffle: true, points: 1 },
+      { id: "p2-l12-t3", type: "matching", prompt: "Associe mot et traduction.", pairs: [{ left: "tabella", right: "tablette" }, { left: "canis", right: "chien" }, { left: "fons", right: "fontaine" }, { left: "verum", right: "vrai" }], rightOptions: ["vrai", "fontaine", "tablette", "chien"], expected: { tabella: "tablette", canis: "chien", fons: "fontaine", verum: "vrai" }, points: 1 },
+      { id: "p2-l12-t4", type: "singleChoice", prompt: "Dans « vicinus donum videt », quel est le complément objet ?", options: ["donum", "vicinus", "videt", "nullus"], expected: "donum", shuffle: true, points: 1 },
+      { id: "p2-l12-t5", type: "singleChoice", prompt: "« quaerimus » indique…", options: ["nous", "vous", "il", "je"], expected: "nous", shuffle: true, points: 1 },
+      { id: "p2-l12-t6", type: "multipleChoice", prompt: "Mini-enquête (5 phrases) : quelles infos sont présentes ?", options: ["Le donum a disparu", "La tablette est suspecte", "Le chien refuse une porte", "La fontaine est souillée", "Un consul arrive"], expected: ["Le donum a disparu", "La tablette est suspecte", "Le chien refuse une porte", "La fontaine est souillée"], shuffle: true, points: 1 },
+      { id: "p2-l12-t7", type: "ordering", prompt: "Rebâtis une phrase finale : vicini / signum / vident", options: ["vicini", "signum", "vident"], expected: ["vicini", "signum", "vident"], points: 1 },
+    ],
+    production: [
+      { id: "p2-l12-p1", type: "textInput", prompt: "Traduis : pax in vico redit", expected: "la paix revient dans le quartier", acceptedAnswers: ["la paix revient dans le quartier", "la paix revient dans la rue", "la paix revient"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["la paix revient dans le quartier", "la paix revient dans la rue", "la paix revient"] }, points: 1 },
+      { id: "p2-l12-p2", type: "textInput", prompt: "Traduis en latin : Les voisins voient le signe.", expected: "vicini signum vident", acceptedAnswers: latinOrders(["vicini", "signum", "vident"], ["vicini", "vident", "signum"], ["signum", "vicini", "vident"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vicini", "signum", "vident"], ["vicini", "vident", "signum"], ["signum", "vicini", "vident"]) }, points: 1 },
+      { id: "p2-l12-p3", type: "textInput", prompt: "Qu’est-ce qui a troublé la Subure ? (réponse courte)", expected: "la Discorde", acceptedAnswers: ["la Discorde", "Discordia", "les conflits entre voisins"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["la Discorde", "Discordia", "les conflits entre voisins"] }, points: 1 },
+    ],
+    summary: { retains: ["Je mobilise toutes les notions de la période.", "Je peux lire et expliquer un mini-dossier narratif."], cahier: ["Interrogatifs : quis/quid/cur/ubi", "Prépositions : ad/in/ex/ante", "Déclinaisons : 1re + 2e masc. + 2e neutre", "Présent : -o/-s/-t/-mus/-tis/-nt", "Ordre latin flexible", "Civilisation : la Subure est un quartier populaire vivant et bruyant de Rome"], keywords: ["révision", "enquête finale", "Subura", "pax"] },
+    meta: { status: "ready", tags: ["p2", "final", "discordia"] },
+  },
 ];
