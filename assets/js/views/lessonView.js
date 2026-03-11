@@ -115,12 +115,18 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
 
   const hero = document.createElement("article");
   hero.className = "card";
+  const lexiconLine = Array.isArray(lesson.lexicon) && lesson.lexicon.length > 0
+    ? lesson.lexicon.join(" · ")
+    : "";
+
   hero.innerHTML = `
     <h2>${lesson.title}</h2>
     <p class="muted">${lesson.id} · Période ${lesson.period}</p>
     <p><strong>Objectif :</strong> ${lesson.objective}</p>
+    <p><strong>Point de leçon :</strong> ${lesson.lessonPoint || lesson.objective}</p>
+    ${lexiconLine ? `<p class="muted"><strong>Lexique-clé :</strong> ${lexiconLine}</p>` : ""}
     <p class="muted">Flow complet : répondez d'abord aux 10 exercices, puis consultez le corrigé global en fin de leçon.</p>
-    <p class="muted">Score enregistré: courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
+    <p class="muted">Validation visée : 8/10 (80 %) · Score enregistré : courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
   `;
 
   const trainingBoard = document.createElement("div");
@@ -288,6 +294,7 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     finalSummary.innerHTML = `
       <h3>Résultats finaux de la leçon</h3>
       <p><strong>Score :</strong> ${currentScore}/10 (entraînement ${latestTraining.score}/7 + production ${latestProduction.score}/3)</p>
+      <p><strong>Statut :</strong> ${currentScore >= 8 ? "Leçon validée (≥ 8/10, soit 80 %)" : "Leçon à consolider (< 8/10)"}</p>
       <p class="muted">Meilleur score conservé : ${bestScore}/10</p>
 
       <h4>Correction / Revue globale</h4>
