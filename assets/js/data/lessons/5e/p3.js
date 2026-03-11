@@ -269,27 +269,245 @@ export const lessons5eP3 = [
     summary: { retains: ["Je lis un bilan avant/après.", "Le calme revient avec la visibilité nocturne."], cahier: ["Je retiens : vicus clarior, vicus quietus", "Je recopie sur mon cahier : les lampes stoppent les troubles"], keywords: ["bilan", "nuit", "calme"] },
     meta: { status: "ready", tags: ["p3", "bilan", "clarior"] },
   },
-  {
-    id: "p3-l22", period: 3, periodId: "p3", title: "Pax redit", objective: "Finaliser la période avec une révision complète de l’enquête.",
-    lessonPoint: "Je mobilise interrogatifs, lieux, formes nominales, présent et ordre variable pour conclure.", narrative: "Après l’éclairage collectif, la Subure redevient paisible : la pax revient.",
-    canDo: ["Je relis un mini-dossier final.", "Je réponds à des questions cumulatives.", "Je formule une conclusion simple."],
-    lexicon: ["pax = paix", "redit = il/elle revient", "concordia = concorde", "discordia = discorde", "vicini = voisins", "lucerna = lampe", "forum = forum", "macellum = marché", "balneum = thermes", "tabella = tablette"],
-    maxScore: 10,
-    training: [
-      { id: "p3-l22-t1", type: "singleChoice", prompt: "Quel mot signifie « paix » ?", options: ["pax", "discordia", "lucerna", "tabella"], expected: "pax", shuffle: true, points: 1 },
-      { id: "p3-l22-t2", type: "multipleChoice", prompt: "Choisis les lieux étudiés du quartier.", options: ["forum", "macellum", "balneum", "montes", "insula"], expected: ["forum", "macellum", "balneum", "insula"], shuffle: true, points: 1 },
-      { id: "p3-l22-t3", type: "matching", prompt: "Associe latin et français.", pairs: [{ left: "lucerna", right: "lampe" }, { left: "tabella", right: "tablette" }, { left: "discordia", right: "discorde" }, { left: "concordia", right: "concorde" }], rightOptions: ["concorde", "tablette", "lampe", "discorde"], expected: { lucerna: "lampe", tabella: "tablette", discordia: "discorde", concordia: "concorde" }, points: 1 },
-      { id: "p3-l22-t4", type: "singleChoice", prompt: "Dans « vicinus donum videt », le complément objet est…", options: ["donum", "vicinus", "videt", "pax"], expected: "donum", shuffle: true, points: 1 },
-      { id: "p3-l22-t5", type: "singleChoice", prompt: "« respondent » correspond à…", options: ["ils/elles répondent", "il/elle répond", "vous répondez", "je réponds"], expected: "ils/elles répondent", shuffle: true, points: 1 },
-      { id: "p3-l22-t6", type: "multipleChoice", prompt: "Mini-enquête finale (5 phrases) : quelles infos sont présentes ?", options: ["l’homme sortait la nuit", "la tablette était falsifiée", "les voisins installent des lampes", "les troubles cessent", "le temple brûle"], expected: ["l’homme sortait la nuit", "la tablette était falsifiée", "les voisins installent des lampes", "les troubles cessent"], shuffle: true, points: 1 },
-      { id: "p3-l22-t7", type: "ordering", prompt: "Rebâtis : vicini / lucernam / vident", options: ["vicini", "lucernam", "vident"], expected: ["vicini", "lucernam", "vident"], points: 1 },
+ {
+  id: "p3-l22",
+  period: 3,
+  periodId: "p3",
+  title: "Bilan Euroclassica (Vestibulum) : Enquête dans la Subure",
+  objective: "Relire toute l'enquête sous forme de synthèse progressive : lexique, lieux du quartier, 1re et 2e déclinaisons, présent, ordre variable des mots, compréhension d'un court texte.",
+  lessonPoint: "Pour comprendre une petite phrase latine, je cherche d'abord le verbe. Ensuite, je regarde qui agit, quoi est vu ou transporté, et où se passe la scène. Je repère aussi les désinences des noms et les terminaisons des verbes. En latin, l'ordre des mots peut changer : il ne faut pas traduire seulement de gauche à droite.",
+  narrative: "Les habitants de la Subure reprennent ensemble tous les indices de l'enquête : l'homme aperçu de nuit, les témoignages des voisines, les passages au marché, aux thermes et au forum, la porte obscure, la tablette falsifiée, puis la décision d'éclairer le quartier avec des lampes. Cette relecture permet de vérifier ce que l'on sait lire, comprendre et traduire.",
+  canDo: [
+    "Je reconnais des mots fréquents d'un quartier romain.",
+    "Je repère le verbe, le sujet et le complément dans une phrase simple.",
+    "Je reconnais quelques formes de 1re et 2e déclinaison.",
+    "J'identifie les personnes du présent.",
+    "Je comprends qu'en latin l'ordre des mots peut varier.",
+    "Je lis un court texte simple lié à une enquête."
+  ],
+  lexicon: [
+    "pax = paix",
+    "discordia = discorde",
+    "vicus = quartier, rue de quartier",
+    "forum = forum, place publique",
+    "macellum = marché",
+    "balneum = thermes, bains",
+    "lucerna = lampe, lampe à huile",
+    "tabella = tablette, tablette écrite",
+    "canis = chien",
+    "redit = il/elle revient",
+    "vident = ils/elles voient",
+    "ponunt = ils/elles placent",
+    "manet = il/elle reste",
+    "turbat = il/elle trouble"
+  ],
+  maxScore: 10,
+  training: [
+    {
+      id: "p3-l22-t1",
+      type: "singleChoice",
+      prompt: "Quel mot latin signifie « quartier » ?",
+      options: ["vicus", "forum", "canis", "lucerna"],
+      expected: "vicus",
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "p3-l22-t2",
+      type: "matching",
+      prompt: "Associe chaque mot latin à sa traduction française.",
+      pairs: [
+        { left: "forum", right: "forum, place publique" },
+        { left: "macellum", right: "marché" },
+        { left: "balneum", right: "thermes, bains" },
+        { left: "lucerna", right: "lampe, lampe à huile" }
+      ],
+      rightOptions: ["marché", "lampe, lampe à huile", "forum, place publique", "thermes, bains"],
+      expected: {
+        forum: "forum, place publique",
+        macellum: "marché",
+        balneum: "thermes, bains",
+        lucerna: "lampe, lampe à huile"
+      },
+      points: 1
+    },
+    {
+      id: "p3-l22-t3",
+      type: "singleChoice",
+      prompt: "Dans la phrase « vicina lucernam portat », quel mot désigne ce qui est porté ?",
+      options: ["vicina", "lucernam", "portat", "-am"],
+      expected: "lucernam",
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "p3-l22-t4",
+      type: "multipleChoice",
+      prompt: "Quelles traductions peuvent convenir à « vicini lucernam ante ianuam ponunt » ?",
+      options: [
+        "Les voisins placent la lampe devant la porte.",
+        "Les voisins posent une lampe devant la porte.",
+        "Les voisins voient la porte dans la lampe.",
+        "Devant la porte, les voisins placent la lampe."
+      ],
+      expected: [
+        "Les voisins placent la lampe devant la porte.",
+        "Les voisins posent une lampe devant la porte.",
+        "Devant la porte, les voisins placent la lampe."
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "p3-l22-t5",
+      type: "ordering",
+      prompt: "Remets ces mots dans un ordre latin possible pour dire : « Le chien reste devant la porte. »",
+      options: ["canis", "ante", "ianuam", "manet"],
+      expected: ["canis", "ante", "ianuam", "manet"],
+      points: 1
+    },
+    {
+      id: "p3-l22-t6",
+      type: "singleChoice",
+      prompt: "Dans « vicini oleum portant », quelle terminaison verbale montre que le sujet est au pluriel ?",
+      options: ["-o", "-t", "-nt", "-am"],
+      expected: "-nt",
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "p3-l22-t7",
+      type: "multipleChoice",
+      prompt: "Lis ce petit texte : « Vir noctu ex insula exit. In macello oleum emit. Canis ante portam obscuram latrat. Tandem vicini lucernas ante ianuas ponunt. Pax in vico redit. » Quelles informations sont bien présentes ?",
+      options: [
+        "L'homme sort de nuit.",
+        "Il achète de l'huile au marché.",
+        "Le chien aboie devant une porte sombre.",
+        "Les voisins placent des lampes.",
+        "Le temple brûle."
+      ],
+      expected: [
+        "L'homme sort de nuit.",
+        "Il achète de l'huile au marché.",
+        "Le chien aboie devant une porte sombre.",
+        "Les voisins placent des lampes."
+      ],
+      shuffle: true,
+      points: 1
+    }
+  ],
+  production: [
+    {
+      id: "p3-l22-p1",
+      type: "textInput",
+      prompt: "Traduis : pax in vico redit",
+      expected: "la paix revient dans le quartier",
+      acceptedAnswers: [
+        "la paix revient dans le quartier",
+        "la paix revient dans la rue de quartier",
+        "dans le quartier la paix revient",
+        "dans le quartier, la paix revient",
+        "la paix revient"
+      ],
+      answerConfig: {
+        type: "translation-segment",
+        language: "fr",
+        accepted: [
+          "la paix revient dans le quartier",
+          "la paix revient dans la rue de quartier",
+          "dans le quartier la paix revient",
+          "dans le quartier, la paix revient",
+          "la paix revient"
+        ]
+      },
+      points: 1
+    },
+    {
+      id: "p3-l22-p2",
+      type: "textInput",
+      prompt: "Traduis en latin : Les voisins voient la lampe dans la rue.",
+      expected: "vicini lucernam in via vident",
+      acceptedAnswers: latinOrders(
+        ["vicini", "lucernam", "in", "via", "vident"],
+        ["vicini", "in", "via", "lucernam", "vident"],
+        ["in", "via", "vicini", "lucernam", "vident"],
+        ["lucernam", "vicini", "in", "via", "vident"],
+        ["vident", "vicini", "lucernam", "in", "via"]
+      ),
+      answerConfig: {
+        type: "one-of",
+        language: "latin",
+        accepted: latinOrders(
+          ["vicini", "lucernam", "in", "via", "vident"],
+          ["vicini", "in", "via", "lucernam", "vident"],
+          ["in", "via", "vicini", "lucernam", "vident"],
+          ["lucernam", "vicini", "in", "via", "vident"],
+          ["vident", "vicini", "lucernam", "in", "via"]
+        )
+      },
+      points: 1
+    },
+    {
+      id: "p3-l22-p3",
+      type: "textInput",
+      prompt: "Réponds en français : pourquoi les ennuis disparaissent-ils dans la Subure ?",
+      expected: "le quartier est éclairé et les habitants agissent ensemble",
+      acceptedAnswers: [
+        "le quartier est éclairé et les habitants agissent ensemble",
+        "les habitants éclairent le quartier",
+        "des lampes sont placées devant les portes et dans la rue",
+        "le quartier est éclairé la nuit",
+        "la lumière empêche les troubles",
+        "les lampes rendent la rue visible",
+        "les habitants mettent des lampes",
+        "la concorde remplace la discorde"
+      ],
+      answerConfig: {
+        type: "translation-segment",
+        language: "fr",
+        accepted: [
+          "le quartier est éclairé et les habitants agissent ensemble",
+          "les habitants éclairent le quartier",
+          "des lampes sont placées devant les portes et dans la rue",
+          "le quartier est éclairé la nuit",
+          "la lumière empêche les troubles",
+          "les lampes rendent la rue visible",
+          "les habitants mettent des lampes",
+          "la concorde remplace la discorde"
+        ]
+      },
+      points: 1
+    }
+  ],
+  summary: {
+    retains: [
+      "Je sais relire l'enquête de la Subure sous forme de bilan.",
+      "Je repère le verbe, quelques désinences nominales et les terminaisons du présent.",
+      "Je comprends qu'en latin l'ordre des mots peut varier."
     ],
-    production: [
-      { id: "p3-l22-p1", type: "textInput", prompt: "Traduis : pax in vico redit", expected: "la paix revient dans le quartier", acceptedAnswers: ["la paix revient dans le quartier", "la paix revient dans la rue de quartier", "la paix revient"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["la paix revient dans le quartier", "la paix revient dans la rue de quartier", "la paix revient"] }, points: 1 },
-      { id: "p3-l22-p2", type: "textInput", prompt: "Traduis en latin : Les voisins voient la lampe.", expected: "vicini lucernam vident", acceptedAnswers: latinOrders(["vicini", "lucernam", "vident"], ["vicini", "vident", "lucernam"], ["lucernam", "vicini", "vident"]), answerConfig: { type: "one-of", language: "latin", accepted: latinOrders(["vicini", "lucernam", "vident"], ["vicini", "vident", "lucernam"], ["lucernam", "vicini", "vident"]) }, points: 1 },
-      { id: "p3-l22-p3", type: "textInput", prompt: "Pourquoi les troubles disparaissent-ils ?", expected: "le quartier est éclairé et les habitants agissent ensemble", acceptedAnswers: ["le quartier est éclairé et les habitants agissent ensemble", "les lampes rendent la rue visible", "la concorde remplace la discorde"], answerConfig: { type: "translation-segment", language: "fr", accepted: ["le quartier est éclairé et les habitants agissent ensemble", "les lampes rendent la rue visible", "la concorde remplace la discorde"] }, points: 1 },
+    cahier: [
+      "Je retiens : vicus = quartier ; forum = forum ; macellum = marché ; balneum = thermes ; lucerna = lampe ; tabella = tablette ; pax = paix.",
+      "Je recopie sur mon cahier : rosa / rosam ; dominus / dominum ; donum / donum.",
+      "Je recopie sur mon cahier : le sujet prend souvent la forme de base ; le complément objet prend souvent une forme modifiée ; au neutre, nominatif et accusatif se ressemblent.",
+      "Je recopie sur mon cahier : -o = je ; -s = tu ; -t = il/elle ; -mus = nous ; -tis = vous ; -nt = ils/elles.",
+      "Je recopie sur mon cahier : la Subure est un quartier populaire de Rome ; on y trouve maisons, boutiques, marché, thermes, forum, voisins et vie collective."
     ],
-    summary: { retains: ["Je sais relire toute l’enquête de Subure.", "Je relie langue, lecture et vie de quartier romain."], cahier: ["Je retiens : interrogatifs + lieux + présent + ordre variable", "Je recopie sur mon cahier : rosa/rosam ; dominus/dominum ; donum/donum", "Je recopie sur mon cahier : -o je ; -s tu ; -t il/elle ; -mus nous ; -tis vous ; -nt ils/elles", "Je recopie sur mon cahier : sujet souvent forme de base, objet souvent forme modifiée, neutre souvent semblable"], keywords: ["révision finale", "pax", "concordia", "Subura"] },
-    meta: { status: "ready", tags: ["p3", "final", "pax"] },
+    keywords: [
+      "Euroclassica",
+      "Vestibulum",
+      "Subure",
+      "vicus",
+      "présent",
+      "1re déclinaison",
+      "2e déclinaison",
+      "ordre des mots",
+      "lecture",
+      "synthèse"
+    ]
   },
+  meta: {
+    status: "ready",
+    tags: ["p3", "bilan", "euroclassica", "vestibulum", "subure", "lecture"]
+  }
+},
 ];
