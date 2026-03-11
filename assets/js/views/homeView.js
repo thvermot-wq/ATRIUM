@@ -1,3 +1,30 @@
+const HOME_LEVEL_META = {
+  "5e": {
+    dashboardLabel: "LCA 5e",
+    latinGrade: "Initiatus",
+    euroclassica: "Vestibulum (niveau 1)",
+    cecrl: "pré-A1 → A1",
+    summary:
+      "Acclimatation à la langue, premiers automatismes, premières lectures guidées.",
+  },
+  "4e": {
+    dashboardLabel: "LCA 4e",
+    latinGrade: "Explorator",
+    euroclassica: "Vestibulum acquis / pré-Ianua",
+    cecrl: "A1 consolidé",
+    summary:
+      "Consolidation morphologique et syntaxique, lecture suivie plus sûre, thème guidé.",
+  },
+  "3e": {
+    dashboardLabel: "LCA 3e",
+    latinGrade: "Eruditus",
+    euroclassica: "Ianua amorcé (niveau 2)",
+    cecrl: "A1+ → début A2",
+    summary:
+      "Lecture, version guidée, thème simple, liens plus autonomes entre langue et civilisation.",
+  },
+};
+
 export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
   const section = document.createElement("section");
   section.className = "stack";
@@ -7,8 +34,12 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
   intro.innerHTML = `
     <h2>Bienvenue dans ATRIUM</h2>
     <p>
-      Choisissez votre niveau pour accéder au dashboard dédié. Chaque niveau conserve ses 3 périodes,
+      Choisissez votre dashboard LCA. Chaque niveau conserve ses 3 périodes,
       ses 36 leçons et sa progression indépendante.
+    </p>
+    <p>
+      <strong>Repère affiché :</strong> les niveaux CECRL ci-dessous sont des équivalences
+      pédagogiques adaptées aux LCA.
     </p>
   `;
 
@@ -16,25 +47,50 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
   cards.className = "level-grid";
 
   levels.forEach((level) => {
+    const meta = HOME_LEVEL_META[level.id] || {
+      dashboardLabel: `LCA ${level.classLabel || level.id || ""}`.trim(),
+      latinGrade: level.title || "Niveau",
+      euroclassica: "Repère à définir",
+      cecrl: "Repère à définir",
+      summary: level.description || "",
+    };
+
     const card = document.createElement("article");
     card.className = "card level-card";
+
+    const description = level.description || meta.summary || "";
+    const ambition = level.ambition || "";
+    const buttonLabel = `Ouvrir le dashboard ${meta.dashboardLabel}`;
+
     card.innerHTML = `
-      <h3>${level.label}</h3>
-      <p><strong>${level.masteryTitle}</strong></p>
-      <p class="muted">${level.description}</p>
-      <p class="muted">Ambition : ${level.ambition}</p>
-      <button type="button" class="btn btn-primary">Ouvrir le dashboard ${level.label}</button>
+      <p><strong>${meta.dashboardLabel}</strong></p>
+      <h3>${meta.latinGrade}</h3>
+      <p>${description}</p>
+      <p><strong>Ambition :</strong> ${ambition}</p>
+      <p><strong>Euroclassica :</strong> ${meta.euroclassica}</p>
+      <p><strong>CECRL adapté :</strong> ${meta.cecrl}</p>
+      <button type="button" class="btn btn-primary">${buttonLabel}</button>
     `;
 
-    card.querySelector("button").addEventListener("click", () => onOpenLevel(level.id));
+    card.querySelector("button").addEventListener("click", () => {
+      onOpenLevel(level.id);
+    });
+
     cards.appendChild(card);
   });
 
   const actions = document.createElement("div");
   actions.className = "actions-row";
-  actions.innerHTML = `<button type="button" class="btn btn-secondary" data-action="results">Voir les résultats (niveau 5e)</button>`;
-  actions.querySelector('[data-action="results"]').addEventListener("click", onOpenResults);
 
+  const resultsButton = document.createElement("button");
+  resultsButton.type = "button";
+  resultsButton.className = "btn";
+  resultsButton.dataset.action = "results";
+  resultsButton.textContent = "Voir les résultats (niveau 5e)";
+  resultsButton.addEventListener("click", onOpenResults);
+
+  actions.appendChild(resultsButton);
   section.append(intro, cards, actions);
+
   return section;
 }
