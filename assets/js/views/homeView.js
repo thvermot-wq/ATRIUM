@@ -1,23 +1,23 @@
 const HOME_LEVEL_META = {
   "5e": {
-    dashboardLabel: "LCA 5e",
-    latinGrade: "Initiatus",
+    dashboardLabel: "🏛️ LCA 5e",
+    latinGrade: "🌿 Initiatus",
     euroclassica: "Vestibulum (niveau 1)",
     cecrl: "pré-A1 → A1",
     summary:
       "Acclimatation à la langue, premiers automatismes, premières lectures guidées.",
   },
   "4e": {
-    dashboardLabel: "LCA 4e",
-    latinGrade: "Explorator",
+    dashboardLabel: "🏛️ LCA 4e",
+    latinGrade: "🧭 Explorator",
     euroclassica: "Vestibulum acquis / pré-Ianua",
     cecrl: "A1 consolidé",
     summary:
       "Consolidation morphologique et syntaxique, lecture suivie plus sûre, thème guidé.",
   },
   "3e": {
-    dashboardLabel: "LCA 3e",
-    latinGrade: "Eruditus",
+    dashboardLabel: "🏛️ LCA 3e",
+    latinGrade: "🦉 Eruditus",
     euroclassica: "Ianua amorcé (niveau 2)",
     cecrl: "A1+ → début A2",
     summary:
