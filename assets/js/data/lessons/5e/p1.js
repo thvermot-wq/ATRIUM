@@ -536,7 +536,7 @@ const RAW_LESSONS_5E_P1 = [
     ],
     production: [
       tiFr("p1-l4-p1", "Traduis en français : Sacerdos coronam movet", "Le prêtre déplace la couronne", ["Le prêtre bouge la couronne"]),
-      tiFr("p1-l4-p2", "Traduis en français : Flavia sacellum spectat", "Flavia regarde le sanctuaire", ["Flavia observe le sanctuaire"]),
+      tiFr("p1-l4-p2", "Traduis en français : Flavia sacellum spectat", "Flavia regarde le petit sanctuaire", ["Flavia observe le petit sanctuaire"]),
       tiLa("p1-l4-p3", "Traduis en latin : La déesse voit l'offrande", ["Dea donum videt", "Donum dea videt", "Dea videt donum"])
     ],
     summary: {
