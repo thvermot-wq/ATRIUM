@@ -1,14 +1,7 @@
-const ATTEMPT_STATE = {
-  PRISTINE: "pristine",
-  SUBMITTED_CORRECT: "submitted_correct",
-  SUBMITTED_INCORRECT: "submitted_incorrect",
-  CORRECTION_VIEWED: "correction_viewed",
-  RESET_REQUIRED: "reset_required",
-};
-
-export function createProductionItemCard({ item, onEvaluate, onReset }) {
+export function createProductionItemCard({ item, onEvaluate, onReset, deferCorrection = false, canReset = () => true }) {
   const card = document.createElement("article");
   card.className = "card production-item-card";
+  card.dataset.itemState = "pristine";
 
   const title = document.createElement("h4");
   title.textContent = item.prompt || "Production guidée";
@@ -25,7 +18,7 @@ export function createProductionItemCard({ item, onEvaluate, onReset }) {
 
   const feedback = document.createElement("p");
   feedback.className = "feedback-inline muted";
-  feedback.textContent = "En attente de correction.";
+  feedback.textContent = "En attente d'enregistrement.";
 
   const answer = document.createElement("p");
   answer.className = "muted answer-reveal";
@@ -37,89 +30,87 @@ export function createProductionItemCard({ item, onEvaluate, onReset }) {
   const validateButton = document.createElement("button");
   validateButton.type = "button";
   validateButton.className = "btn btn-primary";
-  validateButton.textContent = "Corriger cette production";
-
-  const correctionButton = document.createElement("button");
-  correctionButton.type = "button";
-  correctionButton.className = "btn btn-secondary";
-  correctionButton.textContent = "Voir la correction";
-  correctionButton.hidden = true;
+  validateButton.textContent = deferCorrection ? "Enregistrer la réponse" : "Corriger cette production";
 
   const resetButton = document.createElement("button");
   resetButton.type = "button";
   resetButton.className = "btn btn-secondary";
   resetButton.textContent = "Réinitialiser l'exercice";
 
-  actions.append(validateButton, correctionButton, resetButton);
+  actions.append(validateButton, resetButton);
 
-  // Verrouille la tentative après soumission pour empêcher la copie du corrigé puis validation immédiate.
-  let attemptState = ATTEMPT_STATE.PRISTINE;
+  let isSubmitted = false;
+  let attemptClosed = false;
 
   function applyState() {
-    const isLocked = attemptState !== ATTEMPT_STATE.PRISTINE;
-    input.disabled = isLocked;
+    input.disabled = isSubmitted || attemptClosed;
+    validateButton.disabled = isSubmitted || attemptClosed;
+    resetButton.disabled = attemptClosed || !canReset();
+  }
 
-    validateButton.disabled = attemptState !== ATTEMPT_STATE.PRISTINE;
-    correctionButton.hidden = ![
-      ATTEMPT_STATE.SUBMITTED_INCORRECT,
-      ATTEMPT_STATE.CORRECTION_VIEWED,
-      ATTEMPT_STATE.RESET_REQUIRED,
-    ].includes(attemptState);
-    correctionButton.disabled = attemptState !== ATTEMPT_STATE.SUBMITTED_INCORRECT;
+  card.setFinalReveal = (result) => {
+    card.dataset.itemState = "revealed_in_final_summary";
+    isSubmitted = true;
+    attemptClosed = true;
 
-    if (attemptState === ATTEMPT_STATE.CORRECTION_VIEWED || attemptState === ATTEMPT_STATE.RESET_REQUIRED) {
-      feedback.textContent = "Correction consultée. Pour valider cet exercice, réinitialisez-le puis recommencez.";
+    if (result?.isCorrect) {
+      feedback.textContent = "Réponse correcte (corrigé final).";
+      feedback.className = "feedback-inline ok";
+      answer.hidden = true;
+      answer.textContent = "";
+    } else {
+      feedback.textContent = "Réponse à corriger (corrigé final).";
       feedback.className = "feedback-inline ko";
       answer.hidden = false;
       answer.textContent = `Réponse attendue : ${item.expected}`;
     }
-  }
+
+    applyState();
+  };
+
+  card.closeAttempt = () => {
+    attemptClosed = true;
+    applyState();
+  };
 
   validateButton.addEventListener("click", () => {
-    if (attemptState !== ATTEMPT_STATE.PRISTINE) {
-      return;
-    }
+    if (isSubmitted || attemptClosed) return;
 
     const result = onEvaluate(input.value);
+    isSubmitted = true;
+    card.dataset.itemState = "answered_locked";
 
-    if (result.isCorrect) {
-      attemptState = ATTEMPT_STATE.SUBMITTED_CORRECT;
+    if (deferCorrection) {
+      feedback.textContent = "Réponse enregistrée. Le corrigé complet apparaîtra en fin de leçon.";
+      feedback.className = "feedback-inline muted";
+      answer.hidden = true;
+      answer.textContent = "";
+    } else if (result.isCorrect) {
       feedback.textContent = "✅ Correct";
       feedback.className = "feedback-inline ok";
       answer.hidden = true;
       answer.textContent = "";
     } else {
-      attemptState = ATTEMPT_STATE.SUBMITTED_INCORRECT;
       feedback.textContent = "❌ Incorrect";
       feedback.className = "feedback-inline ko";
-      answer.hidden = true;
-      answer.textContent = "";
+      answer.hidden = false;
+      answer.textContent = `Réponse attendue : ${item.expected}`;
     }
 
-    applyState();
-  });
-
-  correctionButton.addEventListener("click", () => {
-    if (attemptState !== ATTEMPT_STATE.SUBMITTED_INCORRECT) {
-      return;
-    }
-
-    attemptState = ATTEMPT_STATE.CORRECTION_VIEWED;
-    applyState();
-    attemptState = ATTEMPT_STATE.RESET_REQUIRED;
     applyState();
   });
 
   resetButton.addEventListener("click", () => {
+    if (attemptClosed || !canReset()) return;
+
     input.value = "";
     answer.hidden = true;
     answer.textContent = "";
     feedback.className = "feedback-inline muted";
     feedback.textContent = "Exercice réinitialisé. Nouvelle tentative prête.";
-    attemptState = ATTEMPT_STATE.PRISTINE;
-    if (typeof onReset === "function") {
-      onReset();
-    }
+    isSubmitted = false;
+    card.dataset.itemState = "pristine";
+    if (typeof onReset === "function") onReset();
     applyState();
   });
 

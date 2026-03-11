@@ -1,4 +1,14 @@
-import { LESSONS_SPEC, periods, lessons, getLessonsByPeriod } from "./lessons.js";
+import {
+  LESSONS_SPEC,
+  periods,
+  lessons,
+  levels,
+  DEFAULT_LEVEL_ID,
+  getLevelById,
+  getPeriodsByLevel,
+  getLessonsByLevel,
+  getLessonsByPeriod,
+} from "./lessons.js";
 import { getScoringContract } from "./scoring.js";
 import { loadProgress, saveLessonProgress, saveProgress } from "./storage.js";
 import { initRouter } from "./router.js";
@@ -33,25 +43,32 @@ function assertInvariants() {
   if (periods.length !== LESSONS_SPEC.periods) errors.push("Incohérence entre spec et périodes déclarées.");
   if (lessons.length !== LESSONS_SPEC.lessonsTotal) errors.push("Incohérence entre spec et leçons déclarées.");
 
-  periods.forEach((period) => {
-    const periodLessons = getLessonsByPeriod(period.id);
-    if (periodLessons.length !== LESSONS_SPEC.lessonsPerPeriod) {
-      errors.push(`La ${period.title} doit contenir ${LESSONS_SPEC.lessonsPerPeriod} leçons.`);
-    }
-    if (period.maxScore !== LESSONS_SPEC.periodMax) {
-      errors.push(`Le score max de ${period.title} doit être ${LESSONS_SPEC.periodMax}.`);
+  levels.forEach((level) => {
+    const levelPeriods = getPeriodsByLevel(level.id);
+    const levelLessons = getLessonsByLevel(level.id);
+
+    if (levelPeriods.length !== LESSONS_SPEC.periods) {
+      errors.push(`${level.label}: incohérence du nombre de périodes.`);
     }
 
-    periodLessons.forEach((lesson) => {
-      if (lesson.maxScore !== LESSONS_SPEC.lessonMax) {
-        errors.push(`${lesson.id}: maxScore doit être ${LESSONS_SPEC.lessonMax}.`);
+    if (levelLessons.length !== LESSONS_SPEC.lessonsTotal) {
+      errors.push(`${level.label}: incohérence du nombre de leçons.`);
+    }
+
+    levelPeriods.forEach((period) => {
+      const periodLessons = getLessonsByPeriod(period.id, level.id);
+      if (periodLessons.length !== LESSONS_SPEC.lessonsPerPeriod) {
+        errors.push(`${level.label} · ${period.title} doit contenir ${LESSONS_SPEC.lessonsPerPeriod} leçons.`);
       }
-      if (!Array.isArray(lesson.training) || lesson.training.length === 0) {
-        errors.push(`${lesson.id}: training doit être renseigné.`);
+      if (period.maxScore !== LESSONS_SPEC.periodMax) {
+        errors.push(`${level.label} · ${period.title} doit être notée sur ${LESSONS_SPEC.periodMax}.`);
       }
-      if (!Array.isArray(lesson.production) || lesson.production.length === 0) {
-        errors.push(`${lesson.id}: production doit être renseignée.`);
-      }
+
+      periodLessons.forEach((lesson) => {
+        if (lesson.maxScore !== LESSONS_SPEC.lessonMax) errors.push(`${level.label} · ${lesson.id}: maxScore doit être ${LESSONS_SPEC.lessonMax}.`);
+        if (!Array.isArray(lesson.training) || lesson.training.length === 0) errors.push(`${level.label} · ${lesson.id}: training manquant.`);
+        if (!Array.isArray(lesson.production) || lesson.production.length === 0) errors.push(`${level.label} · ${lesson.id}: production manquante.`);
+      });
     });
   });
 
@@ -77,25 +94,36 @@ function boot() {
     return;
   }
 
-  let progress = loadProgress({ lessons, periods });
-  saveProgress(progress);
+  const progressByLevel = levels.reduce((acc, level) => {
+    const levelLessons = getLessonsByLevel(level.id);
+    const levelPeriods = getPeriodsByLevel(level.id);
+    const levelProgress = loadProgress({ lessons: levelLessons, periods: levelPeriods, levelId: level.id });
+    saveProgress(levelProgress, { levelId: level.id });
+    acc[level.id] = levelProgress;
+    return acc;
+  }, {});
 
-  function onSaveLessonScore({ lessonId, trainingScore, productionScore }) {
-    progress = saveLessonProgress({
-      progress,
+  function onSaveLessonScore({ levelId = DEFAULT_LEVEL_ID, lessonId, trainingScore, productionScore }) {
+    const levelLessons = getLessonsByLevel(levelId);
+    const levelPeriods = getPeriodsByLevel(levelId);
+    const currentProgress = progressByLevel[levelId];
+
+    const nextProgress = saveLessonProgress({
+      progress: currentProgress,
       lessonId,
       trainingScore,
       productionScore,
-      lessons,
-      periods,
+      lessons: levelLessons,
+      periods: levelPeriods,
     });
 
-    saveProgress(progress);
+    progressByLevel[levelId] = nextProgress;
+    saveProgress(nextProgress, { levelId });
 
-    const lessonData = lessons.find((lesson) => lesson.id === lessonId);
+    const lessonData = levelLessons.find((lesson) => lesson.id === lessonId);
     return {
-      lessonProgress: progress.lessons?.[lessonId],
-      periodProgress: lessonData ? progress.periods?.[lessonData.periodId] : null,
+      lessonProgress: nextProgress.lessons?.[lessonId],
+      periodProgress: lessonData ? nextProgress.periods?.[lessonData.periodId] : null,
     };
   }
 
@@ -103,10 +131,21 @@ function boot() {
   let pendingInitialRoute = null;
 
   function renderRoute(route) {
+    const activeLevelId = route.params?.levelId || DEFAULT_LEVEL_ID;
+    const level = getLevelById(activeLevelId);
+    const levelId = level?.id || DEFAULT_LEVEL_ID;
+
     renderApp(root, {
       router,
-      route,
-      progress,
+      route: {
+        ...route,
+        params: {
+          ...route.params,
+          levelId,
+        },
+      },
+      level,
+      progress: progressByLevel[levelId],
       onSaveLessonScore,
     });
   }
@@ -129,8 +168,9 @@ function boot() {
   window.ATRIUM_BOOT = {
     scoring,
     contract: LESSONS_SPEC,
+    levels: levels.map((level) => ({ id: level.id, label: level.label })),
     counts: { periods: periods.length, lessons: lessons.length },
-    getProgress: () => progress,
+    getProgress: (levelId = DEFAULT_LEVEL_ID) => progressByLevel[levelId],
   };
 }
 
