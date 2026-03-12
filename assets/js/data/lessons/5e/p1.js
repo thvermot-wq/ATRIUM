@@ -5,6 +5,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "Salve, Subura !",
+    "subtitle": "Le jour se lève sur la Subure, déjà pleine de cris, de pas pressés et de voix qui se répondent d’une porte à l’autre.",
     "objective": "Découvrir le quartier de Subure (Subura) et lire des salutations simples dans une micro-scène.",
     "lessonPoint": "Je cherche d’abord le verbe et le personnage qui agit.",
     "canDo": [
