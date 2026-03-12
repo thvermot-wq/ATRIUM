@@ -466,7 +466,7 @@ export const lessons5eP1 = [
         "acceptedAnswers": [
           "aurélia reste dans la maison",
           "aurelia reste dans la maison",
-          "aurélia demeure dans la maison"
+          "aurélia demeure dans la maison",
           "aurélia reste à la maison",
           "aurélia demeure à la maison",
         ],
@@ -476,7 +476,7 @@ export const lessons5eP1 = [
           "accepted": [
             "aurélia reste dans la maison",
             "aurelia reste dans la maison",
-            "aurélia demeure dans la maison"
+            "aurélia demeure dans la maison",
             "aurélia reste à la maison",
             "aurélia demeure à la maison",
           ]
@@ -1792,7 +1792,7 @@ export const lessons5eP1 = [
         "acceptedAnswers": [
           "lucius trouve la lettre",
           "lucius retrouve la lettre",
-          "lucius découvre la lettre"
+          "lucius découvre la lettre",
           "lucius trouve une lettre",
           "lucius retrouve une lettre",
           "lucius découvre une lettre"
@@ -1803,7 +1803,7 @@ export const lessons5eP1 = [
           "accepted": [
             "lucius trouve la lettre",
             "lucius retrouve la lettre",
-            "lucius découvre la lettre"
+            "lucius découvre la lettre",
             "lucius trouve une lettre",
             "lucius retrouve une lettre",
             "lucius découvre une lettre"
