@@ -13,14 +13,14 @@ export const lessons5eP1 = [
       "Je traduis une phrase courte de présentation."
     ],
     "lexicon": [
-      "salve (bonjour)",
-      "salvete (bonjour à tous)",
-      "vale (au revoir)",
-      "adsum (je suis là, je suis présent)",
-      "Subura (Subure)",
-      "in via (sur la route)",
-      "amicus (ami)",
-      "canis (chien)"
+      "salve = bonjour",
+      "salvete = bonjour à tous",
+      "vale = au revoir",
+      "adsum = je suis là, je suis présent",
+      "Subura = Subure",
+      "in via = sur la route",
+      "amicus = ami",
+      "canis = chien"
     ],
     "maxScore": 10,
     "training": [
