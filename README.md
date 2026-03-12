@@ -1,62 +1,99 @@
 # ATRIUM
 
-Application web statique d’apprentissage progressif du latin pour élèves de 5e (LCA).
+Application web statique d’apprentissage progressif du latin et des langues anciennes au collège.
+
+ATRIUM propose un parcours structuré, cumulatif et lisible, pensé pour accompagner les élèves de la 5e à la 3e dans une progression régulière : acquisition du lexique, repérage des formes, compréhension syntaxique, micro-traduction guidée, puis montée vers une production plus assurée.
 
 ## Vision produit
-ATRIUM est conçu comme un parcours structuré et data-driven : l’élève progresse leçon par leçon, période par période, avec une part d’entraînement auto-corrigé et une part de production écrite guidée.
+
+ATRIUM est conçu comme un parcours pédagogique data-driven : l’élève progresse leçon par leçon, période par période, avec une part d’entraînement auto-corrigé et une part de production écrite guidée.
+
+L’objectif n’est pas seulement de “faire des exercices”, mais d’installer des automatismes de lecture, de compréhension et de manipulation de la langue latine, dans une logique de progression continue, proche des usages des apps de langue, tout en restant compatible avec les attendus LCA du collège.
 
 ## Architecture pédagogique canonique (non négociable)
-- 3 périodes
+
+- 3 périodes par niveau
 - 12 leçons par période
-- 36 leçons au total
+- 36 leçons par niveau
 - 10 points par leçon
 - 7 points d’entraînement auto-corrigé
 - 3 points de production écrite guidée
 - 120 points par période
-- Validation d’une période à partir de 80 % (seuil minimal : 96 / 120)
+- Validation d’une période à partir de 80 % (`96 / 120`)
 
-## Logique de scoring (contrat)
-- score minimal de validation : `96 / 120`
-- **Leçon** = `training (/7) + production (/3) = total (/10)`
-- **Période** = somme des 12 leçons = `/120`
-- **Statut période** : validée si pourcentage `>= 80%`
-- Le scoring est contractuel et ne doit pas être modifié hors décision produit explicite.
+## Logique de scoring
 
-## État actuel de l’application
-Cette étape implémente l’**app shell navigable** et un **modèle pédagogique data-driven** :
-- accueil (`#/`)
-- dashboard (`#/dashboard`)
-- vue leçon (`#/lesson/:lessonId`)
-- vue résultats placeholder (`#/results`)
-- 36 leçons déclarées dans les données (3 périodes × 12)
-- 15 leçons historiques entièrement remplies + placeholders structurels jusqu'à 36 leçons
+- Leçon = `training (/7) + production (/3) = total (/10)`
+- Période = somme des 12 leçons = `/120`
+- Une période est validée si le pourcentage obtenu est `>= 80%`
+- Le scoring est contractuel et ne doit pas être modifié hors décision produit explicite
 
+## Logique pédagogique générale
 
-## Leçons jouables actuellement (end-to-end)
-Les leçons entièrement jouables dans cette version sont :
-- `p1-l1` — Les mots cousins du français
-- `p1-l2` — Saluer, répondre, comprendre
-- `p1-l3` — Les noms latins du monde simple
-- `p1-l4` — Le verbe au présent : qui fait l’action ?
-- `p1-l5` — Reconnaître sujet, verbe et complément
-- `p2-l6` — Relier latin et français (mots transparents)
-- `p2-l7` — Familles de mots autour du latin
-- `p2-l8` — Mémoriser le lexique utile
-- `p2-l9` — Correspondances simples phrase à phrase
-- `p2-l10` — Micro-thème guidé latin vers français et retour
-- `p3-l11` — Trouver le verbe
-- `p3-l12` — Identifier la structure S-V-C
-- `p3-l13` — Choisir la bonne forme verbale
-- `p3-l14` — Comprendre une micro-scène
-- `p3-l15` — Synthèse guidée période 3
+ATRIUM repose sur quelques principes simples :
 
-Pour les leçons actuellement finalisées :
-- entraînement 7 items jouables avec feedback immédiat
-- production guidée 3 champs texte corrigés automatiquement
-- synthèse finale de leçon affichée (`/7`, `/3`, `/10`)
-- persistance score courant + meilleur score via `localStorage`
+- progression par micro-pas ;
+- réactivation fréquente du lexique et des structures ;
+- alternance entre reconnaissance, manipulation et production ;
+- correction suffisamment souple pour accepter plusieurs réponses recevables ;
+- montée progressive vers une autonomie réelle en thème guidé et en lecture.
 
-Les nouvelles leçons structurelles (passage à 12 leçons/période) sont ajoutées en placeholders explicites pour maintenir une app cohérente avant injection du nouveau contenu détaillé.
+L’application vise un apprentissage concret, progressif et cumulatif, avec une attention particulière à la robustesse pédagogique des corrections.
+
+## Organisation par niveaux
+
+### 5e — Acculturation et premiers automatismes
+
+Le niveau 5e constitue l’entrée dans le parcours.
+
+Objectifs généraux :
+
+- découvrir le fonctionnement global du latin ;
+- installer un premier bain lexical et syntaxique ;
+- repérer sujet, verbe, complément, groupes nominaux simples ;
+- comprendre et manipuler les premières déclinaisons et des formes verbales usuelles ;
+- développer des réflexes de lecture et de micro-traduction ;
+- construire une première familiarité avec la civilisation romaine à travers de petites scènes narratives.
+
+La 5e pose le socle : vocabulaire de base, structures simples, repérages fondamentaux, premières productions guidées.
+
+### 4e — Consolidation morphologique et extension des usages
+
+Le niveau 4e prolonge la logique de 5e dans une version plus ambitieuse.
+
+Objectifs généraux :
+
+- consolider les acquis lexicaux et syntaxiques de 5e ;
+- étendre le travail sur les déclinaisons et les fonctions ;
+- renforcer la reconnaissance des formes verbales ;
+- développer des phrases plus variées et plus rigoureuses ;
+- travailler la lecture suivie de micro-textes davantage structurés ;
+- inscrire l’apprentissage dans des contextes historiques, politiques et culturels plus riches.
+
+La 4e doit permettre de passer d’une acclimatation solide à une maîtrise de plus en plus consciente des mécanismes de la langue.
+
+### 3e — Maîtrise contrôlée et préparation à un niveau de sortie crédible
+
+Le niveau 3e constitue l’aboutissement du parcours collège.
+
+Objectifs généraux :
+
+- stabiliser les connaissances morphologiques et syntaxiques ;
+- manipuler un lexique plus étendu ;
+- lire et comprendre des phrases plus longues ou plus denses ;
+- produire du thème guidé de façon plus sûre ;
+- renforcer l’autonomie de repérage, de traduction et de justification ;
+- préparer une sortie de cycle cohérente avec les ambitions de l’application en matière de standardisation et de certification.
+
+La 3e vise une compétence de production contrôlée et de compréhension structurée, suffisamment robuste pour servir de base à une reconnaissance plus explicite du niveau atteint.
+
+## Progression d’ensemble
+
+À l’échelle du collège, ATRIUM suit une montée lisible :
+
+- **5e** : découverte, repérage, acclimatation, premiers réflexes ;
+- **4e** : consolidation, extension, rigueur morphologique et syntaxique ;
+- **3e** : stabilisation, autonomie contrôlée, préparation à une sortie de cycle ambitieuse.
 
 ## Structure du repository
 
@@ -89,151 +126,17 @@ ATRIUM/
         dashboardView.js
         lessonView.js
         resultsView.js
-```
-
-## Lancement local
-Option 1 (simple) : ouvrir `index.html` dans le navigateur.
-
-Option 2 (recommandé) : serveur statique local.
-
-```bash
-python3 -m http.server 4173
-```
-
-Puis ouvrir `http://127.0.0.1:4173`.
-
-## Publication GitHub Pages
-1. Pousser sur le dépôt GitHub.
-2. Dans **Settings > Pages** :
-   - Source: `Deploy from a branch`
-   - Branch: `main` (ou branche de publication)
-   - Folder: `/ (root)`
-3. Sauvegarder et attendre le déploiement.
-
-Le projet est volontairement sans build lourd pour rester compatible GitHub Pages.
-
-## Ajouter une nouvelle leçon (principe)
-1. Déclarer la leçon dans `assets/js/lessons.js` (format data-driven).
-2. Renseigner au minimum : `id`, `period`, `title`, `objective`, `maxScore`, `training`, `production`.
-3. Vérifier qu’elle respecte le contrat `/7 + /3 = /10`.
-4. Associer la leçon à une période existante (1 à 3).
-5. Vérifier les rendus UI (dashboard + vue leçon) sans casser l’agrégation de période.
-
-
-
-
-## Moteur d’entraînement générique
-Le moteur d’entraînement est data-driven et supporte les micro-items suivants :
-- `single-choice` (ou alias `mcq`)
-- `multiple-choice`
-- `matching`
-- `ordering`
-
-Architecture :
-- `assets/js/trainingEngine.js` : logique métier (évaluation + progression)
-- `assets/js/components/trainingItemCard.js` : rendu UI par type d’item
-- `assets/js/views/lessonView.js` : orchestration de la phase d’entraînement dans la leçon
-
-Comportements :
-- feedback immédiat item par item (juste/faux)
-- progression affichée (`x/7`)
-- score d’entraînement calculé automatiquement (sur 7)
-- score production saisi séparément (sur 3)
-- enregistrement final via moteur scoring/storage existant
-
-
-## Moteur de production guidée
-La phase de production écrite guidée est conservée en 3 micro-productions (1 point chacune, total /3).
-
-Architecture :
-- `assets/js/productionEngine.js` : logique d’évaluation des productions
-- `assets/js/components/productionItemCard.js` : rendu d’un champ texte + correction
-- `assets/js/views/lessonView.js` : orchestration de la phase production dans la leçon
-
-Comportements :
-- 3 champs courts de saisie (pour les leçons modèles)
-- correction automatique avec le moteur central (`answerChecker.js` + normalisation)
-- feedback juste/faux par item
-- affichage de la bonne réponse en cas d’erreur
-- score production `/3` et prévisualisation du total leçon `/10`
-
-## API scoring, progression et persistance
-Fonctions principales :
-- `computeLessonScore(...)`
-- `computePeriodScore(...)`
-- `getPeriodStatus(...)`
-- `loadProgress(...)`
-- `saveProgress(...)`
-- `saveLessonProgress(...)`
-
-Structure stockée dans `localStorage` (`atrium-progress-v1`) :
-```json
-{
-  "lessons": {
-    "p1-l1": {
-      "current": {"trainingScore": 0, "productionScore": 0, "totalScore": 0, "maxScore": 10},
-      "best": {"trainingScore": 0, "productionScore": 0, "totalScore": 0, "maxScore": 10}
-    }
-  },
-  "periods": {
-    "p1": {"totalScore": 0, "maxScore": 120, "percent": 0, "status": "période à reprendre"}
-  },
-  "updatedAt": "..."
-}
-```
-
-Comportement de rejeu :
-- le score courant de la leçon est remplacé par la tentative la plus récente ;
-- le meilleur score de la leçon est conservé ;
-- les scores de période sont recalculés automatiquement à partir des meilleurs scores de leçon.
-
-
-## Dashboard et lecture de progression
-Le dashboard affiche désormais, à partir des données réelles de progression :
-- pour chaque période : score total `/120`, pourcentage, statut (`validée`, `consolidation nécessaire`, `à reprendre`) ;
-- pour chaque leçon : score courant `/10`, meilleur score `/10`, état `jouée/non jouée`.
-
-La vue résultats reprend la même logique avec un détail par période et par leçon.
-
-
-## Accessibilité et préparation GitHub Pages (V1)
-Ajustements de stabilisation appliqués :
-- lien d’évitement clavier vers le contenu principal (`skip link`) ;
-- focus visible renforcé (`:focus-visible`) sur la navigation et les actions ;
-- navigation principale annotée (`aria-label`) et page active (`aria-current`) ;
-- structure HTML sémantique conservée (header/nav/main injectés par l’app-shell) ;
-- contrastes et lisibilité améliorés (texte secondaire, hiérarchie visuelle).
-
-Déploiement GitHub Pages :
-- chemins relatifs conservés (`assets/...`) ;
-- aucune dépendance de build ;
-- application statique prête à publier en l’état.
-
-## API de normalisation et correction
-- `normalizeInput(value, options?)` dans `assets/js/normalize.js`
-- `isCorrect(userAnswer, answerConfig)` dans `assets/js/answerChecker.js`
-- `isCorrectAny(userAnswer, answerConfigs)` pour gérer plusieurs configurations acceptées
-
-Types de correction supportés :
-- `exact`
-- `one-of` (liste fermée)
-- `translation-segment`
-- `latin-expression`
-
-Règles de normalisation implémentées :
-- casse ignorée
-- trim + réduction des espaces
-- ponctuation finale ignorée
-- apostrophes harmonisées (`'` et `’`)
-- accents tolérés côté français (`language: "fr"`)
-- latin traité avec orthographe attendue fixée dans les données (`language: "latin"`)
-
-Exécuter les assertions minimales :
-```bash
-node tests/answer-checker.assertions.mjs
-```
-
-## Principe général de correction
-- **Entraînement (/7)** : auto-correction déterministe (réponses attendues définies dans les données).
-- **Production (/3)** : correction guidée sur réponse courte avec normalisation (`normalize.js`) pour éviter les faux négatifs dus aux accents, casse, espaces, ponctuation.
-- Le mécanisme exact sera implémenté dans une PR dédiée au moteur métier.
+      data/
+        lessons/
+          5e/
+            p1.js
+            p2.js
+            p3.js
+          4e/
+            p1.js
+            p2.js
+            p3.js
+          3e/
+            p1.js
+            p2.js
+            p3.js
