@@ -1,6 +1,6 @@
 // Données de leçons 5E · Période 1.
 const headerContexts5eP1 = {
-  "p1-l1": "Le jour monte sur la Subure dans une odeur de fumée, d’huile et de pain chaud ; sur les pavés où se presse déjà la foule, les voix se croisent d’une porte à l’autre.",
+  "p1-l1": "Le jour monte sur le quartier de Subure dans une odeur de fumée, d’huile et de pain chaud ; sur les pavés où se presse déjà la foule, les voix se croisent d’une porte à l’autre.",
   "p1-l2": "Entre les insulae hautes, les escaliers raides, les seuils de brique usée et les fenêtres entrouvertes, le quartier est un dédale où chacun connaît pourtant son chemin.",
   "p1-l3": "Au bord du forum, parmi les paniers, les étoffes, les appels des vendeurs et le bruit sec des sandales sur la pierre, chacun observe sans encore savoir ce qui va dérailler.",
   "p1-l4": "Près du petit sanctuaire, l’odeur de cire et de cendre flotte encore. Mais une offrande a disparu...! Et le trouble passe aussitôt de visage en visage...",
