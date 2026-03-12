@@ -1,0 +1,123 @@
+// Validation légère des données de leçons (sans dépendance externe).
+
+function assert(condition, message) {
+  if (!condition) throw new Error(message);
+}
+
+function isNonEmptyString(value) {
+  return typeof value === "string" && value.trim().length > 0;
+}
+
+function normalizeForCheck(value, normalization = {}) {
+  let text = String(value ?? "");
+  if (normalization.normalizeApostrophes) text = text.replace(/[’`´]/g, "'");
+  if (normalization.ignoreDiacritics) text = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  if (normalization.ignorePunctuation) text = text.replace(/[!?.,;:]/g, "");
+  if (normalization.collapseSpaces) text = text.replace(/\s+/g, " ");
+  if (normalization.trim) text = text.trim();
+  if (normalization.ignoreCase) text = text.toLowerCase();
+  return text;
+}
+
+function isAcceptedByMetadata(input, exercise) {
+  const normalizedInput = normalizeForCheck(input, exercise.normalization);
+  const accepted = Array.isArray(exercise.acceptedAnswers) ? exercise.acceptedAnswers : [];
+  return accepted.some((candidate) => normalizeForCheck(candidate, exercise.normalization) === normalizedInput);
+}
+
+function validateProductionTextInput(exercise, lesson, base) {
+  assert(isNonEmptyString(exercise.canonicalAnswer), `${base}: missing required field "canonicalAnswer".`);
+  assert(Array.isArray(exercise.acceptedAnswers) && exercise.acceptedAnswers.length > 0, `${base}: missing non-empty "acceptedAnswers".`);
+  assert(exercise.normalization && typeof exercise.normalization === "object", `${base}: missing required field "normalization".`);
+  assert(isNonEmptyString(exercise.gradingFocus), `${base}: missing required field "gradingFocus".`);
+  assert(Array.isArray(exercise.rejectIf) && exercise.rejectIf.length > 0, `${base}: missing non-empty "rejectIf".`);
+  assert(Array.isArray(exercise.tests) && exercise.tests.length >= 2, `${base}: missing non-empty "tests" (need at least 2).`);
+
+  assert(isAcceptedByMetadata(exercise.canonicalAnswer, exercise), `${base}: canonicalAnswer is not accepted by acceptedAnswers+normalization.`);
+
+  const hasValid = exercise.tests.some((test) => test?.isCorrect === true);
+  const hasInvalid = exercise.tests.some((test) => test?.isCorrect === false);
+  assert(hasValid && hasInvalid, `${base}: tests must contain at least one valid and one invalid case.`);
+
+  exercise.tests.forEach((test, testIndex) => {
+    const testBase = `${base} · test#${testIndex + 1}`;
+    assert(typeof test === "object" && test !== null, `${testBase}: test must be an object.`);
+    assert(typeof test.isCorrect === "boolean", `${testBase}: missing boolean "isCorrect".`);
+    const actual = isAcceptedByMetadata(test.input, exercise);
+    assert(actual === test.isCorrect, `${testBase}: expected isCorrect=${test.isCorrect}, got ${actual}.`);
+  });
+}
+
+function validateExercise(exercise, lesson, index, levelId) {
+  const base = `[lessons] ${lesson.id} · exercise#${index + 1}`;
+  assert(exercise && typeof exercise === "object", `${base}: exercise must be an object.`);
+  assert(isNonEmptyString(exercise.type), `${base}: missing required field "type".`);
+  assert(isNonEmptyString(exercise.id), `${base}: missing required field "id".`);
+  assert(isNonEmptyString(exercise.prompt), `${base}: missing required field "prompt".`);
+
+  if (exercise.section === "training") {
+    assert(typeof exercise.points === "number", `${base}: training exercise must define numeric "points".`);
+  }
+
+  switch (exercise.type) {
+    case "singleChoice":
+    case "mcq":
+      assert(Array.isArray(exercise.options) && exercise.options.length > 1, `${base}: singleChoice/mcq requires "options" with at least 2 entries.`);
+      assert(isNonEmptyString(exercise.expected), `${base}: singleChoice/mcq requires string "expected".`);
+      break;
+    case "multipleChoice":
+      assert(Array.isArray(exercise.options) && exercise.options.length > 1, `${base}: multipleChoice requires "options".`);
+      assert(Array.isArray(exercise.expected), `${base}: multipleChoice requires array "expected".`);
+      break;
+    case "matching":
+      assert(Array.isArray(exercise.pairs) && exercise.pairs.length > 0, `${base}: matching requires "pairs".`);
+      assert(exercise.expected && typeof exercise.expected === "object", `${base}: matching requires object "expected".`);
+      break;
+    case "ordering":
+      assert(Array.isArray(exercise.options) && exercise.options.length > 0, `${base}: ordering requires "options".`);
+      assert(Array.isArray(exercise.expected) && exercise.expected.length > 0, `${base}: ordering requires array "expected".`);
+      break;
+    case "textInput":
+    case "short-text":
+      assert(
+        isNonEmptyString(exercise.expected) || (Array.isArray(exercise.acceptedAnswers) && exercise.acceptedAnswers.length > 0),
+        `${base}: textInput/short-text requires "expected" or non-empty "acceptedAnswers".`,
+      );
+
+      if (levelId === "5e" && exercise.section === "production") {
+        validateProductionTextInput(exercise, lesson, base);
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+export function validateLessons(lessonsByLevel, spec) {
+  const seenIds = new Set();
+
+  Object.entries(lessonsByLevel).forEach(([levelId, lessons]) => {
+    assert(Array.isArray(lessons), `[lessons] level ${levelId}: lessons must be an array.`);
+
+    lessons.forEach((lesson, index) => {
+      const base = `[lessons] ${levelId} · lesson#${index + 1}`;
+      assert(isNonEmptyString(lesson.id), `${base}: missing required field "id".`);
+      assert(!seenIds.has(lesson.id), `${base}: duplicate lesson id "${lesson.id}".`);
+      seenIds.add(lesson.id);
+
+      assert(isNonEmptyString(lesson.level), `${base}: missing required field "level".`);
+      assert(typeof lesson.period === "number", `${base}: missing required numeric field "period".`);
+      assert(typeof lesson.lessonNumber === "number", `${base}: missing required numeric field "lessonNumber".`);
+      assert(Array.isArray(lesson.exercises), `${base}: missing required array field "exercises".`);
+
+      assert(Array.isArray(lesson.training), `${base}: missing required array field "training".`);
+      assert(Array.isArray(lesson.production), `${base}: missing required array field "production".`);
+      if (lesson?.meta?.status === "ready") {
+        assert(lesson.training.length === spec.trainingMax, `${base}: expected ${spec.trainingMax} training items, got ${lesson.training.length}.`);
+        assert(lesson.production.length === spec.productionMax, `${base}: expected ${spec.productionMax} production items, got ${lesson.production.length}.`);
+      }
+
+      lesson.exercises.forEach((exercise, exerciseIndex) => validateExercise(exercise, lesson, exerciseIndex, levelId));
+    });
+  });
+}
