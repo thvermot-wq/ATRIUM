@@ -149,17 +149,44 @@ export const lessons5eP1 = [
         "expected": "Flavia habite dans Subure",
         "acceptedAnswers": [
           "flavia habite à subure",
-          "flavia habite à subura"
+          "flavia habite à subura",
+          "Flavia habite dans Subure"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
+            "flavia habite à subure",
             "flavia habite à subura",
-            "flavia habite à subura"
+            "Flavia habite dans Subure"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "Flavia habite dans Subure",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Flavia habite dans Subure",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l1-p2",
@@ -178,7 +205,32 @@ export const lessons5eP1 = [
             "niger est le chien"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "niger est un chien",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "niger est un chien",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l1-p3",
@@ -188,7 +240,10 @@ export const lessons5eP1 = [
         "acceptedAnswers": [
           "Marcus Flaviam salutat",
           "Marcus salutat Flaviam",
-          "Salutat Marcus Flaviam"
+          "Flaviam Marcus salutat",
+          "Flaviam salutat Marcus",
+          "salutat Marcus Flaviam",
+          "salutat Flaviam Marcus"
         ],
         "answerConfig": {
           "type": "one-of",
@@ -196,10 +251,38 @@ export const lessons5eP1 = [
           "accepted": [
             "Marcus Flaviam salutat",
             "Marcus salutat Flaviam",
-            "Salutat Marcus Flaviam"
+            "Flaviam Marcus salutat",
+            "Flaviam salutat Marcus",
+            "salutat Marcus Flaviam",
+            "salutat Flaviam Marcus"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "Marcus Flaviam salutat",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Marcus Flaviam salutat",
+            "isCorrect": true
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
     ],
     "summary": {
@@ -392,7 +475,32 @@ export const lessons5eP1 = [
             "aurélia demeure dans la maison"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "aurélia reste dans la maison",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "aurélia reste dans la maison",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l2-p2",
@@ -419,7 +527,32 @@ export const lessons5eP1 = [
             "marcus habite en immeuble"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "marcus habite dans l'insula",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "marcus habite dans l'insula",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l2-p3",
@@ -429,12 +562,16 @@ export const lessons5eP1 = [
         "acceptedAnswers": [
           "Niger ante ianuam stat",
           "Niger stat ante ianuam",
+          "ante ianuam Niger stat",
+          "ante ianuam stat Niger",
+          "stat Niger ante ianuam",
+          "stat ante ianuam Niger",
           "Niger ante ianuam est",
           "Niger est ante ianuam",
-          "Ante ianuam Niger stat",
-          "Ante ianuam est Niger",
-          "Ante ianuam stat Niger",
-          "Ante ianuam Niger est"
+          "ante ianuam Niger est",
+          "ante ianuam est Niger",
+          "est Niger ante ianuam",
+          "est ante ianuam Niger"
         ],
         "answerConfig": {
           "type": "one-of",
@@ -442,15 +579,44 @@ export const lessons5eP1 = [
           "accepted": [
             "Niger ante ianuam stat",
             "Niger stat ante ianuam",
+            "ante ianuam Niger stat",
+            "ante ianuam stat Niger",
+            "stat Niger ante ianuam",
+            "stat ante ianuam Niger",
             "Niger ante ianuam est",
             "Niger est ante ianuam",
-            "Ante ianuam Niger stat",
-            "Ante ianuam est Niger",
-            "Ante ianuam stat Niger",
-            "Ante ianuam Niger est"
+            "ante ianuam Niger est",
+            "ante ianuam est Niger",
+            "est Niger ante ianuam",
+            "est ante ianuam Niger"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "Niger ante ianuam stat",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Niger ante ianuam stat",
+            "isCorrect": true
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
     ],
     "summary": {
@@ -640,7 +806,32 @@ export const lessons5eP1 = [
             "le marchand transporte du pain"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "le marchand porte du pain",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "le marchand porte du pain",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l3-p2",
@@ -661,7 +852,32 @@ export const lessons5eP1 = [
             "flavia regarde l'échoppe"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "flavia regarde la boutique",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "flavia regarde la boutique",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l3-p3",
@@ -670,17 +886,50 @@ export const lessons5eP1 = [
         "expected": "Marcus ad forum currit",
         "acceptedAnswers": [
           "Marcus ad forum currit",
-          "Ad forum Marcus currit"
+          "Marcus currit ad forum",
+          "ad forum Marcus currit",
+          "ad forum currit Marcus",
+          "currit Marcus ad forum",
+          "currit ad forum Marcus"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
             "Marcus ad forum currit",
-            "Ad forum Marcus currit"
+            "Marcus currit ad forum",
+            "ad forum Marcus currit",
+            "ad forum currit Marcus",
+            "currit Marcus ad forum",
+            "currit ad forum Marcus"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "Marcus ad forum currit",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Marcus ad forum currit",
+            "isCorrect": true
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
     ],
     "summary": {
@@ -870,7 +1119,32 @@ export const lessons5eP1 = [
             "la prêtresse âgée pose l'offrande"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "la vieille prêtresse pose l'offrande",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "la vieille prêtresse pose l'offrande",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l4-p2",
@@ -891,7 +1165,32 @@ export const lessons5eP1 = [
             "sextus dérange la couronne"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "sextus déplace la couronne",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "sextus déplace la couronne",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l4-p3",
@@ -900,17 +1199,50 @@ export const lessons5eP1 = [
         "expected": "Livia aram spectat",
         "acceptedAnswers": [
           "Livia aram spectat",
-          "Aram Livia spectat"
+          "Livia spectat aram",
+          "aram Livia spectat",
+          "aram spectat Livia",
+          "spectat Livia aram",
+          "spectat aram Livia"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
             "Livia aram spectat",
-            "Aram Livia spectat"
+            "Livia spectat aram",
+            "aram Livia spectat",
+            "aram spectat Livia",
+            "spectat Livia aram",
+            "spectat aram Livia"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "Livia aram spectat",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Livia aram spectat",
+            "isCorrect": true
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
     ],
     "summary": {
@@ -1101,7 +1433,32 @@ export const lessons5eP1 = [
             "le chien niger est devant la porte"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "niger est devant la porte",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "niger est devant la porte",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l5-p2",
@@ -1122,7 +1479,32 @@ export const lessons5eP1 = [
             "livia aperçoit le chien"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "livia voit le chien",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "livia voit le chien",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l5-p3",
@@ -1131,17 +1513,50 @@ export const lessons5eP1 = [
         "expected": "Marcus canem spectat",
         "acceptedAnswers": [
           "Marcus canem spectat",
-          "Canem Marcus spectat"
+          "Marcus spectat canem",
+          "canem Marcus spectat",
+          "canem spectat Marcus",
+          "spectat Marcus canem",
+          "spectat canem Marcus"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
             "Marcus canem spectat",
-            "Canem Marcus spectat"
+            "Marcus spectat canem",
+            "canem Marcus spectat",
+            "canem spectat Marcus",
+            "spectat Marcus canem",
+            "spectat canem Marcus"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "Marcus canem spectat",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Marcus canem spectat",
+            "isCorrect": true
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
     ],
     "summary": {
@@ -1331,7 +1746,32 @@ export const lessons5eP1 = [
             "marcus transporte la tablette"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "marcus porte la tablette",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "marcus porte la tablette",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l6-p2",
@@ -1352,7 +1792,32 @@ export const lessons5eP1 = [
             "lucius découvre la lettre"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "lucius trouve la lettre",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "lucius trouve la lettre",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l6-p3",
@@ -1361,17 +1826,50 @@ export const lessons5eP1 = [
         "expected": "Livia tabellam quaerit",
         "acceptedAnswers": [
           "Livia tabellam quaerit",
-          "Tabellam Livia quaerit"
+          "Livia quaerit tabellam",
+          "tabellam Livia quaerit",
+          "tabellam quaerit Livia",
+          "quaerit Livia tabellam",
+          "quaerit tabellam Livia"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
             "Livia tabellam quaerit",
-            "Tabellam Livia quaerit"
+            "Livia quaerit tabellam",
+            "tabellam Livia quaerit",
+            "tabellam quaerit Livia",
+            "quaerit Livia tabellam",
+            "quaerit tabellam Livia"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "Livia tabellam quaerit",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Livia tabellam quaerit",
+            "isCorrect": true
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
     ],
     "summary": {
@@ -1562,7 +2060,32 @@ export const lessons5eP1 = [
             "aurélia va à la fontaine"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "aurélia vient vers la fontaine",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "aurélia vient vers la fontaine",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l7-p2",
@@ -1583,7 +2106,32 @@ export const lessons5eP1 = [
             "lucius transporte de l'eau"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "lucius porte de l'eau",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "lucius porte de l'eau",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l7-p3",
@@ -1592,17 +2140,50 @@ export const lessons5eP1 = [
         "expected": "Niger fontem turbat",
         "acceptedAnswers": [
           "Niger fontem turbat",
-          "Fontem Niger turbat"
+          "Niger turbat fontem",
+          "fontem Niger turbat",
+          "fontem turbat Niger",
+          "turbat Niger fontem",
+          "turbat fontem Niger"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
             "Niger fontem turbat",
-            "Fontem Niger turbat"
+            "Niger turbat fontem",
+            "fontem Niger turbat",
+            "fontem turbat Niger",
+            "turbat Niger fontem",
+            "turbat fontem Niger"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "Niger fontem turbat",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Niger fontem turbat",
+            "isCorrect": true
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
     ],
     "summary": {
@@ -1791,7 +2372,32 @@ export const lessons5eP1 = [
             "le boulanger transporte le pain"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "le boulanger porte le pain",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "le boulanger porte le pain",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l8-p2",
@@ -1812,7 +2418,32 @@ export const lessons5eP1 = [
             "flavia prend du pain"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "flavia achète du pain",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "flavia achète du pain",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l8-p3",
@@ -1821,17 +2452,50 @@ export const lessons5eP1 = [
         "expected": "Marcus pistrum videt",
         "acceptedAnswers": [
           "Marcus pistrum videt",
-          "Pistrum Marcus videt"
+          "Marcus videt pistrum",
+          "pistrum Marcus videt",
+          "pistrum videt Marcus",
+          "videt Marcus pistrum",
+          "videt pistrum Marcus"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
             "Marcus pistrum videt",
-            "Pistrum Marcus videt"
+            "Marcus videt pistrum",
+            "pistrum Marcus videt",
+            "pistrum videt Marcus",
+            "videt Marcus pistrum",
+            "videt pistrum Marcus"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "Marcus pistrum videt",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Marcus pistrum videt",
+            "isCorrect": true
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
     ],
     "summary": {
@@ -2019,7 +2683,32 @@ export const lessons5eP1 = [
             "un maître lit"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "le maître lit",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "le maître lit",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l9-p2",
@@ -2038,7 +2727,32 @@ export const lessons5eP1 = [
             "marcus donne une réponse"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "marcus répond",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "marcus répond",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l9-p3",
@@ -2047,17 +2761,50 @@ export const lessons5eP1 = [
         "expected": "Discipulus magistrum audit",
         "acceptedAnswers": [
           "Discipulus magistrum audit",
-          "Magistrum discipulus audit"
+          "Discipulus audit magistrum",
+          "magistrum Discipulus audit",
+          "magistrum audit Discipulus",
+          "audit Discipulus magistrum",
+          "audit magistrum Discipulus"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
             "Discipulus magistrum audit",
-            "Magistrum discipulus audit"
+            "Discipulus audit magistrum",
+            "magistrum Discipulus audit",
+            "magistrum audit Discipulus",
+            "audit Discipulus magistrum",
+            "audit magistrum Discipulus"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "Discipulus magistrum audit",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Discipulus magistrum audit",
+            "isCorrect": true
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
     ],
     "summary": {
@@ -2246,7 +2993,32 @@ export const lessons5eP1 = [
             "marcus va vite vers les thermes"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "marcus court vers les thermes",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "marcus court vers les thermes",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l10-p2",
@@ -2265,7 +3037,32 @@ export const lessons5eP1 = [
             "livia demeure dans les thermes"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "livia reste dans les thermes",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "livia reste dans les thermes",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l10-p3",
@@ -2274,17 +3071,50 @@ export const lessons5eP1 = [
         "expected": "Titus thermas intrat",
         "acceptedAnswers": [
           "Titus thermas intrat",
-          "Thermas Titus intrat"
+          "Titus intrat thermas",
+          "thermas Titus intrat",
+          "thermas intrat Titus",
+          "intrat Titus thermas",
+          "intrat thermas Titus"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
             "Titus thermas intrat",
-            "Thermas Titus intrat"
+            "Titus intrat thermas",
+            "thermas Titus intrat",
+            "thermas intrat Titus",
+            "intrat Titus thermas",
+            "intrat thermas Titus"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "Titus thermas intrat",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Titus thermas intrat",
+            "isCorrect": true
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
     ],
     "summary": {
@@ -2474,7 +3304,32 @@ export const lessons5eP1 = [
             "un nom est écrit sur le mur"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "un nom est sur le mur",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "un nom est sur le mur",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l11-p2",
@@ -2493,7 +3348,32 @@ export const lessons5eP1 = [
             "livia a peur de discordia"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "livia craint discordia",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "livia craint discordia",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l11-p3",
@@ -2502,17 +3382,50 @@ export const lessons5eP1 = [
         "expected": "Marcus scriptum legit",
         "acceptedAnswers": [
           "Marcus scriptum legit",
-          "Scriptum Marcus legit"
+          "Marcus legit scriptum",
+          "scriptum Marcus legit",
+          "scriptum legit Marcus",
+          "legit Marcus scriptum",
+          "legit scriptum Marcus"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
             "Marcus scriptum legit",
-            "Scriptum Marcus legit"
+            "Marcus legit scriptum",
+            "scriptum Marcus legit",
+            "scriptum legit Marcus",
+            "legit Marcus scriptum",
+            "legit scriptum Marcus"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "Marcus scriptum legit",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Marcus scriptum legit",
+            "isCorrect": true
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
     ],
     "summary": {
@@ -2701,7 +3614,32 @@ export const lessons5eP1 = [
             "marcus voit le nom discordia"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "marcus voit le nom de discordia",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "marcus voit le nom de discordia",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l12-p2",
@@ -2720,7 +3658,32 @@ export const lessons5eP1 = [
             "livia a peur de discordia"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "livia craint discordia",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "livia craint discordia",
+            "isCorrect": true
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
       },
       {
         "id": "p1-l12-p3",
@@ -2729,19 +3692,86 @@ export const lessons5eP1 = [
         "expected": "Titus tabellam ad forum portat",
         "acceptedAnswers": [
           "Titus tabellam ad forum portat",
-          "Tabellam Titus ad forum portat",
-          "Titus ad forum tabellam portat"
+          "Titus tabellam portat ad forum",
+          "Titus ad forum tabellam portat",
+          "Titus ad forum portat tabellam",
+          "Titus portat tabellam ad forum",
+          "Titus portat ad forum tabellam",
+          "tabellam Titus ad forum portat",
+          "tabellam Titus portat ad forum",
+          "tabellam ad forum Titus portat",
+          "tabellam ad forum portat Titus",
+          "tabellam portat Titus ad forum",
+          "tabellam portat ad forum Titus",
+          "ad forum Titus tabellam portat",
+          "ad forum Titus portat tabellam",
+          "ad forum tabellam Titus portat",
+          "ad forum tabellam portat Titus",
+          "ad forum portat Titus tabellam",
+          "ad forum portat tabellam Titus",
+          "portat Titus tabellam ad forum",
+          "portat Titus ad forum tabellam",
+          "portat tabellam Titus ad forum",
+          "portat tabellam ad forum Titus",
+          "portat ad forum Titus tabellam",
+          "portat ad forum tabellam Titus"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
             "Titus tabellam ad forum portat",
-            "Tabellam Titus ad forum portat",
-            "Titus ad forum tabellam portat"
+            "Titus tabellam portat ad forum",
+            "Titus ad forum tabellam portat",
+            "Titus ad forum portat tabellam",
+            "Titus portat tabellam ad forum",
+            "Titus portat ad forum tabellam",
+            "tabellam Titus ad forum portat",
+            "tabellam Titus portat ad forum",
+            "tabellam ad forum Titus portat",
+            "tabellam ad forum portat Titus",
+            "tabellam portat Titus ad forum",
+            "tabellam portat ad forum Titus",
+            "ad forum Titus tabellam portat",
+            "ad forum Titus portat tabellam",
+            "ad forum tabellam Titus portat",
+            "ad forum tabellam portat Titus",
+            "ad forum portat Titus tabellam",
+            "ad forum portat tabellam Titus",
+            "portat Titus tabellam ad forum",
+            "portat Titus ad forum tabellam",
+            "portat tabellam Titus ad forum",
+            "portat tabellam ad forum Titus",
+            "portat ad forum Titus tabellam",
+            "portat ad forum tabellam Titus"
           ]
         },
-        "points": 1
+        "points": 1,
+        "canonicalAnswer": "Titus tabellam ad forum portat",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Titus tabellam ad forum portat",
+            "isCorrect": true
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
     ],
     "summary": {
