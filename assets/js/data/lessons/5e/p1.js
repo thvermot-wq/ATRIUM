@@ -11,7 +11,7 @@ const headerContexts5eP1 = {
   "p1-l9": "D’une maison à l’autre, la rumeur passe par les seuils, grimpe les escaliers, glisse derrière les rideaux, et finit par s’installer jusque dans les repas du soir.",
   "p1-l10": "Au marché, entre les corbeilles d’olives, les tissus rêches, les poissons sur les tables humides et les mains qui pèsent, comptent ou emportent, chaque objet paraît soudain digne d’être examiné.",
   "p1-l11": "À force de reprendre les paroles, de comparer les gestes, d'en revenir aux lieux et aux heures, les habitants commencent à distinguer, dans le désordre du jour, une trame plus précise.",
-  "p1-l12": "Le soir venu, quand les pas se font plus rares et que les dernières lampes luisent encore dans l’odeur d’huile chaude, le quartier de Subure rassemble enfin ses indices et refait sa propre journée."
+  "p1-l12": "Le soir venu, quand les pas se font plus rares et que les dernières lampes luisent encore dans l’odeur d’huile chaude, tout le quartier de Subure rassemble enfin dans les popinae (tavernes), compte ses indices et refait sa propre journée."
 };
 
 export const lessons5eP1 = [
