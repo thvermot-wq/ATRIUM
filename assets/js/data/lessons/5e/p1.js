@@ -467,6 +467,8 @@ export const lessons5eP1 = [
           "aurélia reste dans la maison",
           "aurelia reste dans la maison",
           "aurélia demeure dans la maison"
+          "aurélia reste à la maison",
+          "aurélia demeure à la maison",
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -475,6 +477,8 @@ export const lessons5eP1 = [
             "aurélia reste dans la maison",
             "aurelia reste dans la maison",
             "aurélia demeure dans la maison"
+            "aurélia reste à la maison",
+            "aurélia demeure à la maison",
           ]
         },
         "points": 1,
@@ -970,14 +974,14 @@ export const lessons5eP1 = [
       "Je traduis une action autour du sanctuaire."
     ],
     "lexicon": [
-      "sacellum",
-      "ara",
-      "donum",
-      "corona",
-      "dea",
-      "sacerdos",
-      "ponit",
-      "movet"
+      "sacellum = petit sanctuaire",
+      "ara = autel",
+      "donum = offrande",
+      "corona = couronne",
+      "dea = déesse",
+      "sacerdos = prêtre, prêtresse",
+      "ponit = il/elle pose",
+      "movet = il/elle bouge, déplace"
     ],
     "maxScore": 10,
     "training": [
@@ -1014,7 +1018,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l4-t3",
         "type": "multipleChoice",
-        "prompt": "Choisis les mots du sanctuaire.",
+        "prompt": "Choisis les mots liés au sanctuaire.",
         "options": [
           "ara",
           "corona",
@@ -1248,8 +1252,7 @@ export const lessons5eP1 = [
     ],
     "summary": {
       "retains": [
-        "Le groupe nominal aide à comprendre l’objet sacré.",
-        "L’action du verbe clarifie la scène de discorde."
+        "Les noms de cette leçon tournent autour du champ lexical du sacré, du religieux."
       ],
       "cahier": [
         "donum",
@@ -1284,14 +1287,14 @@ export const lessons5eP1 = [
       "Je traduis des phrases simples avec canis."
     ],
     "lexicon": [
-      "Niger",
-      "canis",
-      "latrat",
-      "ianua",
-      "domus",
-      "spectat",
-      "videt",
-      "currit"
+      "Niger = le nom du petit chien",
+      "canis = chien",
+      "latrat = il/elle aboie",
+      "ianua = porte",
+      "domus = maison",
+      "spectat = il/elle regarde",
+      "videt = il/elle voit",
+      "currit = il/elle court"
     ],
     "maxScore": 10,
     "training": [
@@ -1328,12 +1331,14 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-t3",
         "type": "multipleChoice",
-        "prompt": "Choisis les phrases possibles de la scène.",
+        "prompt": "Choisis les phrases possibles liées à cette scène : Niger aboie devant une porte fermée, et attire l'attention de Marcus et Livia.",
         "options": [
           "Niger ante ianuam stat",
           "Niger latrat",
+          "Niger panem edet",
           "Livia Nigrum videt",
           "Canis forum scribit",
+          "Niger Marcum mordet",
           "Marcus canem spectat"
         ],
         "expected": [
@@ -1394,7 +1399,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-t6",
         "type": "singleChoice",
-        "prompt": "Dans « Niger currit », le sujet est :",
+        "prompt": "Dans « Niger currit cum Livia », le sujet est :",
         "options": [
           "Niger",
           "currit",
@@ -1563,7 +1568,7 @@ export const lessons5eP1 = [
     "summary": {
       "retains": [
         "Le latin ne suit pas toujours l’ordre français.",
-        "Je vérifie la forme du complément pour éviter le piège."
+        "Je vérifie la forme du complément pour éviter le piège. La marque du COD, au singulier, est très souvent le -m !"
       ],
       "cahier": [
         "Niger latrat",
@@ -1597,12 +1602,12 @@ export const lessons5eP1 = [
       "Je traduis une phrase liée à l’enquête."
     ],
     "lexicon": [
-      "tabella",
-      "epistula",
-      "portat",
-      "habet",
-      "quaerit",
-      "invenit",
+      "tabella = tablette",
+      "epistula = lettre",
+      "portat = il/elle porte",
+      "habet = il/elle a",
+      "quaerit = il/elle cherche",
+      "invenit = il/elle trouve",
       "Marcus",
       "Lucius"
     ],
@@ -1641,7 +1646,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l6-t3",
         "type": "multipleChoice",
-        "prompt": "Choisis les actions plausibles de l’enquête.",
+        "prompt": "Choisis les actions plausibles dans le cadre d'une enquête.",
         "options": [
           "quaerit",
           "invenit",
@@ -1652,7 +1657,6 @@ export const lessons5eP1 = [
         "expected": [
           "quaerit",
           "invenit",
-          "portat",
           "scribit"
         ],
         "shuffle": true,
@@ -1735,16 +1739,22 @@ export const lessons5eP1 = [
         "expected": "marcus porte la tablette",
         "acceptedAnswers": [
           "marcus porte la tablette",
+          "marcus porte une tablette",
+          "marcus apporte une tablette",
           "marcus apporte la tablette",
-          "marcus transporte la tablette"
+          "marcus transporte la tablette",
+          "marcus transporte une tablette"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "marcus porte la tablette",
+            "marcus porte une tablette",
+            "marcus apporte une tablette",
             "marcus apporte la tablette",
-            "marcus transporte la tablette"
+            "marcus transporte la tablette",
+            "marcus transporte une tablette"
           ]
         },
         "points": 1,
@@ -1783,6 +1793,9 @@ export const lessons5eP1 = [
           "lucius trouve la lettre",
           "lucius retrouve la lettre",
           "lucius découvre la lettre"
+          "lucius trouve une lettre",
+          "lucius retrouve une lettre",
+          "lucius découvre une lettre"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -1791,6 +1804,9 @@ export const lessons5eP1 = [
             "lucius trouve la lettre",
             "lucius retrouve la lettre",
             "lucius découvre la lettre"
+            "lucius trouve une lettre",
+            "lucius retrouve une lettre",
+            "lucius découvre une lettre"
           ]
         },
         "points": 1,
@@ -1876,7 +1892,7 @@ export const lessons5eP1 = [
     "summary": {
       "retains": [
         "Je suis une enquête simple en reliant action et objet.",
-        "Chercher, trouver, porter : les verbes structurent la lecture."
+        "Chercher, trouver, porter : les verbes structurent la lecture et la progression de l'histoire."
       ],
       "cahier": [
         "tabella",
