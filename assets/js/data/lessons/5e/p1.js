@@ -328,6 +328,7 @@ export const lessons5eP1 = [
       "insula = immeuble",
       "ianua = porte",
       "fenestra = fenêtre",
+      "cella = cellier",
       "in domo = à la maison",
       "prope = près",
       "ante = devant",
@@ -439,7 +440,7 @@ export const lessons5eP1 = [
         "options": [
           "reste",
           "court",
-          "crie",
+          "monte",
           "porte",
           "écrit"
         ],
