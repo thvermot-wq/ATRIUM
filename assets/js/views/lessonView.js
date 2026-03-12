@@ -85,7 +85,7 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
   const savedCurrent = progressEntry?.current?.totalScore ?? 0;
   const savedBest = progressEntry?.best?.totalScore ?? 0;
   const subtitleHtml = lesson?.subtitle
-    ? `<p class="lesson-subtitle">${lesson.subtitle}</p>`
+    ? `<p class="lesson-subtitle"><em>${lesson.subtitle}</em></p>`
     : "";
   
   if (!isLessonPlayable(lesson)) {
