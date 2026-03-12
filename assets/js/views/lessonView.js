@@ -84,12 +84,16 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
   const progressEntry = progress?.lessons?.[lesson.id];
   const savedCurrent = progressEntry?.current?.totalScore ?? 0;
   const savedBest = progressEntry?.best?.totalScore ?? 0;
-
+  const subtitleHtml = lesson?.subtitle
+    ? `<p class="lesson-subtitle">${lesson.subtitle}</p>`
+    : "";
+  
   if (!isLessonPlayable(lesson)) {
     const pending = document.createElement("article");
     pending.className = "card";
     pending.innerHTML = `
       <h2>${lesson.title}</h2>
+      ${subtitleHtml}
       <p class="muted">${lesson.id} · Période ${lesson.period}</p>
       <p><strong>Objectif :</strong> ${lesson.objective}</p>
       <p class="muted">Cette leçon n'est pas encore jouable de bout en bout dans cette version.</p>
@@ -121,6 +125,7 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
 
   hero.innerHTML = `
     <h2>${lesson.title}</h2>
+    ${subtitleHtml}
     <p class="muted">${lesson.id} · Période ${lesson.period}</p>
     <p><strong>Objectif :</strong> ${lesson.objective}</p>
     <p><strong>Point de leçon :</strong> ${lesson.lessonPoint || lesson.objective}</p>
