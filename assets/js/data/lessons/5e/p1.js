@@ -665,7 +665,8 @@ export const lessons5eP1 = [
       "vinum = vin",
       "portat = il/elle porte",
       "spectat = il/elle regarde",
-      "vendit = il/elle vend"
+      "vendit = il/elle vend",
+      "ad = vers, en direction de"
     ],
     "maxScore": 10,
     "training": [
