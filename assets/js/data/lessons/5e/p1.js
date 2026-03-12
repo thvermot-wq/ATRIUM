@@ -2588,14 +2588,14 @@ export const lessons5eP1 = [
       "Je traduis des phrases scolaires courtes."
     ],
     "lexicon": [
-      "ludus",
-      "magister",
-      "discipulus",
-      "tabella",
-      "legit",
-      "scribit",
-      "audit",
-      "respondet"
+      "ludus = le jeu",
+      "magister = le maître d'école",
+      "discipulus = l'élève",
+      "tabella = tablette",
+      "legit = il/elle lit",
+      "scribit = il/elle écrit",
+      "audit = il/elle écoute",
+      "respondet = il/elle répond"
     ],
     "maxScore": 10,
     "training": [
@@ -2898,14 +2898,14 @@ export const lessons5eP1 = [
       "Je traduis des phrases brèves de scène urbaine."
     ],
     "lexicon": [
-      "thermae",
-      "aqua",
-      "calida",
-      "frigidus",
-      "in thermis",
-      "ad thermas",
-      "intrat",
-      "manet"
+      "thermae = les thermes",
+      "aqua = eau",
+      "calida = chaude",
+      "frigidus = froid",
+      "in thermis = aux thermes",
+      "ad thermas = vers les thermes",
+      "intrat = il/elle entre",
+      "manet = il/ elle reste"
     ],
     "maxScore": 10,
     "training": [
@@ -3210,14 +3210,14 @@ export const lessons5eP1 = [
       "Je traduis une phrase d’alerte."
     ],
     "lexicon": [
-      "murus",
-      "scriptum",
-      "nomen",
-      "Discordia",
-      "videt",
-      "legit",
-      "scribit",
-      "timet"
+      "murus = mur",
+      "scriptum = inscription",
+      "nomen = le nom",
+      "Discordia = Discorde (déesse)",
+      "videt = il/elle voit",
+      "legit = il/elle lit",
+      "scribit = il/elle écrit",
+      "timet = il/elle craint"
     ],
     "maxScore": 10,
     "training": [
@@ -3521,15 +3521,15 @@ export const lessons5eP1 = [
       "Je traduis des phrases de synthèse en restant précis."
     ],
     "lexicon": [
-      "Discordia",
-      "Subura",
-      "forum",
-      "domus",
-      "murus",
-      "nomen",
-      "portat",
-      "videt",
-      "timet"
+      "Discordia = Discorde (déesse)",
+      "Subura = Subure (quartier)",
+      "forum = forum, place",
+      "domus = maison",
+      "murus = mur",
+      "nomen = nom",
+      "portat = il/elle porte",
+      "videt = il/elle voit",
+      "timet = il/elle craint"
     ],
     "maxScore": 10,
     "training": [
