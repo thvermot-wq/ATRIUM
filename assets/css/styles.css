@@ -472,3 +472,10 @@ select[disabled] {
   opacity: 0.65;
   cursor: not-allowed;
 }
+
+.lesson-subtitle {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  opacity: 0.88;
+}
