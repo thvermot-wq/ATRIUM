@@ -650,7 +650,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "Forum et taberna",
-    "objective": "Comprendre une scène simple autour du forum et des boutiques de la Subura.",
+    "objective": "Comprendre une scène simple autour du forum et des boutiques du quartier de Subura.",
     "lessonPoint": "Le verbe indique l’action centrale : porter, vendre, regarder.",
     "canDo": [
       "Je reconnais les lieux du commerce.",
@@ -658,14 +658,14 @@ export const lessons5eP1 = [
       "Je traduis une phrase de marché."
     ],
     "lexicon": [
-      "forum",
-      "taberna",
-      "mercator",
-      "panis",
-      "vinum",
-      "portat",
-      "spectat",
-      "vendit"
+      "forum = forum, place",
+      "taberna = boutique",
+      "mercator = marchand",
+      "panis = pain",
+      "vinum = vin",
+      "portat = il/elle porte",
+      "spectat = il/elle regarde",
+      "vendit = il/elle vend"
     ],
     "maxScore": 10,
     "training": [
@@ -702,13 +702,13 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-t3",
         "type": "multipleChoice",
-        "prompt": "Choisis des mots de la scène du marché.",
+        "prompt": "Choisis les mots liés à une scène de marché.",
         "options": [
           "mercator",
           "panis",
           "vinum",
           "murus",
-          "canis"
+          "ianua"
         ],
         "expected": [
           "mercator",
@@ -773,7 +773,7 @@ export const lessons5eP1 = [
           "Le pain porte le marchand",
           "Le marchand vend le pain",
           "Le pain est dans la maison",
-          "Le forum court"
+          "Le marchand porte du poisson"
         ],
         "expected": "Le marchand porte le pain",
         "shuffle": true,
