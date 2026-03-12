@@ -1,11 +1,25 @@
 // Données de leçons 5E · Période 1.
+const headerContexts5eP1 = {
+  "p1-l1": "Le jour monte sur la Subure dans une odeur de fumée, d’huile et de pain chaud ; sur les pavés déjà pleins de pas, les voix se croisent d’une porte à l’autre.",
+  "p1-l2": "Entre les insulae hautes, les escaliers raides, les seuils usés et les fenêtres entrouvertes, le quartier se laisse lire comme un dédale où chacun connaît pourtant son chemin.",
+  "p1-l3": "Au bord du forum, parmi les paniers, les étoffes, les appels des vendeurs et le bruit sec des sandales sur la pierre, chacun observe sans encore savoir ce qui va dérailler.",
+  "p1-l4": "Près du petit sanctuaire, l’odeur de cire et de cendre flotte encore quand une offrande n’est plus à sa place, et le trouble passe aussitôt de visage en visage.",
+  "p1-l5": "Niger, le chien du voisinage, s’arrête net devant une porte, poil tendu, museau bas, grondement sourd dans la gorge, puis refuse d’avancer davantage.",
+  "p1-l6": "Une tablette circule de main en main ; le bois lisse, la cire marquée, les yeux qui se plissent et les voix plus basses disent déjà qu’elle dérange.",
+  "p1-l7": "Dans la rue étroite, chacun parle plus fort que l’autre, les souvenirs se heurtent, les accusations partent trop vite, et l’air lui-même semble chargé de nervosité.",
+  "p1-l8": "Autour de la fontaine, entre l’eau qui clapote contre la pierre, les amphores qu’on pose au sol et les conversations coupées net, un détail aperçu trop vite remet tout en mouvement.",
+  "p1-l9": "D’une maison à l’autre, la rumeur passe par les seuils, grimpe les escaliers, glisse derrière les rideaux, et finit par s’installer jusque dans les repas du soir.",
+  "p1-l10": "Au marché, entre les corbeilles d’olives, les tissus rêches, les poissons sur les tables humides et les mains qui pèsent, comptent ou emportent, chaque objet paraît soudain digne d’être examiné.",
+  "p1-l11": "À force de reprendre les paroles, de comparer les gestes, de revenir aux lieux et aux heures, les habitants commencent à distinguer, dans le désordre du jour, une trame plus précise.",
+  "p1-l12": "Le soir venu, quand les pas se font plus rares et que les dernières lampes tiennent encore dans l’odeur d’huile chaude, la Subure rassemble enfin ses indices et relit sa propre journée."
+};
+
 export const lessons5eP1 = [
   {
     "id": "p1-l1",
     "period": 1,
     "periodId": "p1",
     "title": "Salve, Subura !",
-    "subtitle": "Le jour se lève sur la Subure, déjà pleine de cris, de pas pressés et de voix qui se répondent d’une porte à l’autre.",
     "objective": "Découvrir le quartier de Subure (Subura) et lire des salutations simples dans une micro-scène.",
     "lessonPoint": "Je cherche d’abord le verbe et le personnage qui agit.",
     "canDo": [
