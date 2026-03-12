@@ -1927,14 +1927,14 @@ export const lessons5eP1 = [
       "Je traduis des phrases courtes de lieu."
     ],
     "lexicon": [
-      "fons",
-      "aqua",
-      "situla",
-      "in fonte",
-      "ad fontem",
-      "venit",
-      "manet",
-      "turbat"
+      "fons = fontaine",
+      "aqua = eau",
+      "situla = seau",
+      "in fonte = à la fontaine",
+      "ad fontem = vers la fontaine",
+      "venit = il/elle vient",
+      "manet = il/elle reste",
+      "turbat = il/elle trouble"
     ],
     "maxScore": 10,
     "training": [
@@ -2065,7 +2065,7 @@ export const lessons5eP1 = [
         "expected": "aurélia vient vers la fontaine",
         "acceptedAnswers": [
           "aurélia vient vers la fontaine",
-          "aurelia vient vers la fontaine",
+          "aurelia vient à la fontaine",
           "aurélia va à la fontaine"
         ],
         "answerConfig": {
@@ -2073,7 +2073,7 @@ export const lessons5eP1 = [
           "language": "fr",
           "accepted": [
             "aurélia vient vers la fontaine",
-            "aurelia vient vers la fontaine",
+            "aurelia vient à la fontaine",
             "aurélia va à la fontaine"
           ]
         },
@@ -2112,7 +2112,10 @@ export const lessons5eP1 = [
         "acceptedAnswers": [
           "lucius porte de l'eau",
           "lucius apporte de l'eau",
-          "lucius transporte de l'eau"
+          "lucius transporte de l'eau",
+          "lucius porte l'eau",
+          "lucius apporte l'eau",
+          "lucius transporte l'eau"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -2120,7 +2123,10 @@ export const lessons5eP1 = [
           "accepted": [
             "lucius porte de l'eau",
             "lucius apporte de l'eau",
-            "lucius transporte de l'eau"
+            "lucius transporte de l'eau",
+            "lucius porte l'eau",
+            "lucius apporte l'eau",
+            "lucius transporte l'eau"
           ]
         },
         "points": 1,
@@ -2205,8 +2211,8 @@ export const lessons5eP1 = [
     ],
     "summary": {
       "retains": [
-        "in et ad ne disent pas la même chose.",
-        "Je repère mouvement, lieu, action dans une même phrase."
+        "in et ad sont des prépositions : elles permettent de préciser un mouvement.",
+        "= Je repère mouvement, lieu, action dans une même phrase."
       ],
       "cahier": [
         "ad fontem",
@@ -2241,21 +2247,21 @@ export const lessons5eP1 = [
       "Je traduis des phrases courtes du quotidien."
     ],
     "lexicon": [
-      "pistor",
-      "panis",
-      "farina",
-      "taberna",
-      "emit",
-      "portat",
-      "videt",
-      "accipit"
+      "pistor = meunier / boulanger",
+      "panis = pain",
+      "farina = farine",
+      "taberna = boutique",
+      "emit = il/elle envoie / achète",
+      "portat = il/elle porte",
+      "videt = il/elle voit",
+      "accipit = il/elle reçoit"
     ],
     "maxScore": 10,
     "training": [
       {
         "id": "p1-l8-t1",
         "type": "singleChoice",
-        "prompt": "Le boulanger se dit :",
+        "prompt": "Le 'boulanger' se dit :",
         "options": [
           "pistor",
           "mercator",
@@ -2290,7 +2296,7 @@ export const lessons5eP1 = [
           "pistor",
           "panis",
           "farina",
-          "aqua",
+          "sacellus",
           "tabella"
         ],
         "expected": [
@@ -2378,7 +2384,10 @@ export const lessons5eP1 = [
         "acceptedAnswers": [
           "le boulanger porte le pain",
           "le boulanger apporte le pain",
-          "le boulanger transporte le pain"
+          "le boulanger transporte le pain",
+          "le boulanger porte du pain",
+          "le boulanger apporte du pain",
+          "le boulanger transporte du pain"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -2386,7 +2395,10 @@ export const lessons5eP1 = [
           "accepted": [
             "le boulanger porte le pain",
             "le boulanger apporte le pain",
-            "le boulanger transporte le pain"
+            "le boulanger transporte le pain",
+            "le boulanger porte du pain",
+            "le boulanger apporte du pain",
+            "le boulanger transporte du pain"
           ]
         },
         "points": 1,
@@ -2517,8 +2529,8 @@ export const lessons5eP1 = [
     ],
     "summary": {
       "retains": [
-        "La scène de métier consolide les mêmes repères grammaticaux.",
-        "Je relis verbe et complément avant de traduire."
+        "La scène de métier consolide les mêmes repères grammaticaux : sujet, verbe, complément.",
+        "Pour traduire : je pars du verbe, je trouve le sujet... et tout le reste est du complément !"
       ],
       "cahier": [
         "Pistor panem portat",
