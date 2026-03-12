@@ -3618,7 +3618,7 @@ export const lessons5eP3 = [
     "id": "p3-l22",
     "period": 3,
     "periodId": "p3",
-    "title": "Pax redit",
+    "title": "Lux concordiam restituit",
     "objective": "Finaliser la période avec une révision complète de l’enquête.",
     "lessonPoint": "Je mobilise interrogatifs, lieux, formes nominales, présent et ordre variable pour conclure.",
     "narrative": "Après l’éclairage collectif, la Subure redevient paisible : la pax revient.",
