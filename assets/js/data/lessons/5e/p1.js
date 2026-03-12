@@ -791,24 +791,22 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : Mercator panem portat",
-        "expected": "le marchand porte du pain",
+        "prompt": "Traduis en français : Mercator panem vendit",
+        "expected": "le marchand vend du pain",
         "acceptedAnswers": [
-          "le marchand porte du pain",
-          "le marchand apporte le pain",
-          "le marchand transporte du pain"
+          "le marchand vend du pain",
+          "le marchand vend le pain",
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
-            "le marchand porte du pain",
-            "le marchand apporte le pain",
-            "le marchand transporte du pain"
+            "le marchand vend du pain",
+            "le marchand vend le pain",
           ]
         },
         "points": 1,
-        "canonicalAnswer": "le marchand porte du pain",
+        "canonicalAnswer": "le marchand vend du pain",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -825,7 +823,7 @@ export const lessons5eP1 = [
         ],
         "tests": [
           {
-            "input": "le marchand porte du pain",
+            "input": "le marchand vend du pain",
             "isCorrect": true
           },
           {
