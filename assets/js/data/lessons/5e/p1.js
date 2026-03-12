@@ -20,6 +20,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "Salve, Subura !",
+    subtitle: headerContexts5eP1["p1-l1"],
     "objective": "Découvrir le quartier de Subure (Subura) et lire des salutations simples dans une micro-scène.",
     "lessonPoint": "Je cherche d’abord le verbe et le personnage qui agit.",
     "canDo": [
@@ -332,6 +333,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "Domus et insula",
+    subtitle: headerContexts5eP1["p1-l2"],
     "objective": "Identifier les lieux d’habitation et les objets proches dans le quartier.",
     "lessonPoint": "Le groupe nominal se lit ensemble : nom + adjectif ou complément.",
     "canDo": [
@@ -670,6 +672,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "Forum et taberna",
+    subtitle: headerContexts5eP1["p1-l3"],
     "objective": "Comprendre une scène simple autour du forum et des boutiques du quartier de Subura.",
     "lessonPoint": "Le verbe indique l’action centrale : porter, vendre, regarder.",
     "canDo": [
@@ -981,6 +984,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "Au petit sanctuaire",
+    subtitle: headerContexts5eP1["p1-l4"],
     "objective": "Lire de courtes phrases au sanctuaire et repérer une offrande déplacée.",
     "lessonPoint": "Je lis ensemble le groupe nominal (donum sacrum, ara parva).",
     "canDo": [
@@ -1294,6 +1298,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "Niger devant la porte",
+    subtitle: headerContexts5eP1["p1-l5"],
     "objective": "Comprendre des phrases où Niger signale un trouble devant les maisons.",
     "lessonPoint": "Je repère sujet et complément sans me laisser piéger par l’ordre.",
     "canDo": [
@@ -1609,6 +1614,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "La tablette échangée",
+    subtitle: headerContexts5eP1["p1-l6"],
     "objective": "Suivre une scène où une tablette a été échangée et identifier qui porte quoi.",
     "lessonPoint": "Je relie verbe + objet pour comprendre l’incident.",
     "canDo": [
@@ -1934,6 +1940,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "À la fontaine",
+    subtitle: headerContexts5eP1["p1-l7"],
     "objective": "Comprendre une scène de fontaine perturbée et les actions du quotidien.",
     "lessonPoint": "Je lis les lieux avec in/ad pour suivre le déplacement.",
     "canDo": [
@@ -2254,6 +2261,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "Chez le boulanger",
+    subtitle: headerContexts5eP1["p1-l8"],
     "objective": "Lire une micro-scène dans une boulangerie et consolider sujet/complément.",
     "lessonPoint": "Le verbe et la terminaison du nom guident la fonction dans la phrase.",
     "canDo": [
@@ -2571,6 +2579,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "L’école du quartier",
+    subtitle: headerContexts5eP1["p1-l9"],
     "objective": "Comprendre de petites consignes et scènes de classe dans le ludus de la Subura.",
     "lessonPoint": "Je cherche le verbe d’énoncé (legit, scribit, audit) pour comprendre la tâche.",
     "canDo": [
@@ -2880,6 +2889,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "Aux thermes",
+    subtitle: headerContexts5eP1["p1-l10"],
     "objective": "Lire une scène simple aux thermes et repérer actions et lieux.",
     "lessonPoint": "Les prépositions et le verbe suffisent souvent pour comprendre la situation.",
     "canDo": [
@@ -3191,6 +3201,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "Le mur écrit",
+    subtitle: headerContexts5eP1["p1-l11"],
     "objective": "Comprendre une inscription sur le mur et relier lecture, sens et contexte narratif.",
     "lessonPoint": "Je lis mot à mot puis je recompose le sens global.",
     "canDo": [
@@ -3501,6 +3512,7 @@ export const lessons5eP1 = [
     "period": 1,
     "periodId": "p1",
     "title": "Le nom de Discordia",
+    subtitle: headerContexts5eP1["p1-l12"],
     "objective": "Synthétiser les acquis de P1 dans une scène finale où le nom de Discordia est identifié.",
     "lessonPoint": "Je combine lexique récurrent, verbe et repères de lieu pour comprendre la scène finale.",
     "canDo": [
