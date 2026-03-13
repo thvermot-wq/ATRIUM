@@ -1133,6 +1133,11 @@ export const lessons5eP1 = [
         "acceptedAnswers": [
           "la vieille prêtresse pose l'offrande",
           "la vieille prêtresse place l'offrande",
+          "le vieux prêtre place l'offrande",
+          "le vieux prêtre pose l'offrande",
+          "le prêtre âgé place l'offrande",
+          "le prêtre âgé pose l'offrande",
+          "la prêtresse âgée place l'offrande",
           "la prêtresse âgée pose l'offrande"
         ],
         "answerConfig": {
@@ -1141,6 +1146,11 @@ export const lessons5eP1 = [
           "accepted": [
             "la vieille prêtresse pose l'offrande",
             "la vieille prêtresse place l'offrande",
+            "le vieux prêtre place l'offrande",
+            "le vieux prêtre pose l'offrande",
+            "le prêtre âgé place l'offrande",
+            "le prêtre âgé pose l'offrande",
+            "la prêtresse âgée place l'offrande",
             "la prêtresse âgée pose l'offrande"
           ]
         },
