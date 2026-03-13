@@ -2588,7 +2588,7 @@ export const lessons5eP1 = [
       "Je traduis des phrases scolaires courtes."
     ],
     "lexicon": [
-      "ludus = le jeu",
+      "ludus = l'école",
       "magister = le maître d'école",
       "discipulus = l'élève",
       "tabella = tablette",
