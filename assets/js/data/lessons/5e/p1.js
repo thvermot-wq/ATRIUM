@@ -1,17 +1,17 @@
 // Données de leçons 5E · Période 1.
 const headerContexts5eP1 = {
-  "p1-l1": "Le jour monte sur le quartier de Subure dans une odeur de fumée, d’huile et de pain chaud ; sur les pavés où se presse déjà la foule, les voix se croisent d’une porte à l’autre.",
-  "p1-l2": "Entre les insulae hautes, les escaliers raides, les seuils de brique usée et les fenêtres entrouvertes, le quartier est un dédale où chacun connaît pourtant son chemin.",
-  "p1-l3": "Au bord du forum, parmi les paniers, les étoffes, les appels des vendeurs et le bruit sec des sandales sur la pierre, chacun observe sans encore savoir ce qui va dérailler.",
-  "p1-l4": "Près du petit sanctuaire, l’odeur de cire et de cendre flotte encore. Mais une offrande a disparu...! Et le trouble passe aussitôt de visage en visage...",
-  "p1-l5": "Niger, le chien du voisinage, s’arrête soudain devant une porte, le poil tendu, le museau frétillant. Il commence à gronder et refuse d’avancer davantage...",
-  "p1-l6": "Une tablette circule de main en main ; le bois lisse, le nom d'un voleur gravé sur la cire... Les yeux se plissent et on s'inquiète à voix basse.",
-  "p1-l7": "Dans la rue étroite, chacun parle plus fort que l’autre, les vieilles querelles ressortent, les accusations partent trop vite, et l’air lui-même semble chargé de nervosité.",
-  "p1-l8": "Autour de la fontaine, entre l’eau qui clapote contre la pierre, les amphores qu’on pose au sol et les conversations coupées net, un détail cloche.",
-  "p1-l9": "D’une maison à l’autre, la rumeur passe par les seuils, grimpe les escaliers, glisse derrière les rideaux, et finit par s’installer jusque dans les repas du soir.",
-  "p1-l10": "Au marché, entre les corbeilles d’olives, les tissus rêches, les poissons sur les tables humides et les mains qui pèsent, comptent ou emportent, chaque objet paraît soudain digne d’être examiné.",
-  "p1-l11": "À force de reprendre les paroles, de comparer les gestes, d'en revenir aux lieux et aux heures, les habitants commencent à distinguer, dans le désordre du jour, une trame plus précise.",
-  "p1-l12": "Le soir venu, quand les pas se font plus rares et que les dernières lampes luisent encore dans l’odeur d’huile chaude, tout le quartier de Subure se rassemble enfin dans les popinae (tavernes), compte ses indices et refait sa propre journée."
+  "p1-l1": "Au matin, Flavia salue Marcus sur les pavés de Subure pendant que Niger, le petit chien, trotte entre les jambes des passants.",
+  "p1-l2": "Aurelia reste dans sa domus, Marcus observe l’insula d’en face, et Lucius garde la porte d’un air de comploteur.",
+  "p1-l3": "Marcus file au forum, Flavia ralentit devant une taberna, et le marchand suit du regard ceux qui s'intéressent de trop près à son étal.",
+  "p1-l4": "Près du petit sanctuaire, Livia voit tout de suite qu’une offrande a disparu de l'autel. Qui a fait le coup ?",
+  "p1-l5": "Niger s'arrête devant une porte fermée et grogne. Marcus devine que le chien n’aboie pas pour rien.",
+  "p1-l6": "Lucius fait passer une tablette de cire de main en main, Flavia la déchiffre, et chacun cherche le nom qu’on a voulu glisser là en douce.",
+  "p1-l7": "Aurelia revient de la fontaine avec son seau, et tout le quartier de Subure bruit d'une rumeur inquiète.",
+  "p1-l8": "Chez le boulanger, l’odeur du pain chaud couvre mal les questions, et Marcus se demande qui a vu passer l’objet disparu.",
+  "p1-l9": "A l'école, la rumeur entrée par la rue court de banc en banc, d'élève en élève, et Livia entend pour la première fois le nom qu’on chuchotait dehors.",
+  "p1-l10": "Aux thermes, Marcus écoute ce que les adultes disent à mi-voix, et note chaque détail qui sort de l'ordinaire.",
+  "p1-l11": "Sur un mur de Subure, Flavia lit une inscription griffée à la hâte, qui lui rappelle le nom caché sur la tablette.",
+  "p1-l12": "Le soir, dans les popinae, Marcus, Flavia, Livia et Lucius recollent les morceaux, puis le nom de Discordia émerge enfin du brouhaha."
 };
 
 export const lessons5eP1 = [
