@@ -169,7 +169,8 @@ export const lessons5eP2 = [
           "qui voit le cadeau",
           "qui voit le don",
           "qui aperçoit l'offrande",
-          "qui voit l'offrande ?"
+          "qui aperçoit le cadeau",
+          "qui aperçoit le don"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -179,7 +180,8 @@ export const lessons5eP2 = [
             "qui voit le cadeau",
             "qui voit le don",
             "qui aperçoit l'offrande",
-            "qui voit l'offrande ?"
+            "qui aperçoit le cadeau",
+            "qui aperçoit le don"
           ]
         },
         "points": 1,
@@ -499,7 +501,10 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "la femme marche dans la rue",
           "une femme marche dans la rue",
-          "la dame marche dans la rue"
+          "la dame marche dans la rue",
+          "une dame marche dans la rue",
+          "la femme se promène dans la rue",
+          "une femme se promène dans la rue"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -507,7 +512,10 @@ export const lessons5eP2 = [
           "accepted": [
             "la femme marche dans la rue",
             "une femme marche dans la rue",
-            "la dame marche dans la rue"
+            "la dame marche dans la rue",
+            "une dame marche dans la rue",
+            "la femme se promène dans la rue",
+            "une femme se promène dans la rue"
           ]
         },
         "points": 1,
@@ -825,7 +833,12 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "la femme regarde la porte",
           "une femme regarde la porte",
-          "la dame observe la porte"
+          "la dame regarde la porte",
+          "une dame regarde la porte",
+          "la femme observe la porte",
+          "une femme observe la porte",
+          "la dame observe la porte",
+          "une dame observe la porte"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -833,7 +846,12 @@ export const lessons5eP2 = [
           "accepted": [
             "la femme regarde la porte",
             "une femme regarde la porte",
-            "la dame observe la porte"
+            "la dame regarde la porte",
+            "une dame regarde la porte",
+            "la femme observe la porte",
+            "une femme observe la porte",
+            "la dame observe la porte",
+            "une dame observe la porte"
           ]
         },
         "points": 1,
@@ -1150,16 +1168,26 @@ export const lessons5eP2 = [
         "expected": "le voisin accuse le serviteur",
         "acceptedAnswers": [
           "le voisin accuse le serviteur",
+          "le voisin accuse l'esclave",
+          "la voisine accuse le serviteur",
+          "la voisine accuse l'esclave",
           "le voisin met en cause le serviteur",
-          "la voisine accuse le serviteur"
+          "le voisin met en cause l'esclave",
+          "la voisine met en cause le serviteur",
+          "la voisine met en cause l'esclave"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "le voisin accuse le serviteur",
+            "le voisin accuse l'esclave",
+            "la voisine accuse le serviteur",
+            "la voisine accuse l'esclave",
             "le voisin met en cause le serviteur",
-            "la voisine accuse le serviteur"
+            "le voisin met en cause l'esclave",
+            "la voisine met en cause le serviteur",
+            "la voisine met en cause l'esclave"
           ]
         },
         "points": 1,
@@ -1477,7 +1505,10 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "l'offrande est dans le temple",
           "le cadeau est dans le temple",
-          "le don est dans le temple"
+          "le don est dans le temple",
+          "l'offrande se trouve dans le temple",
+          "le cadeau se trouve dans le temple",
+          "le don se trouve dans le temple"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -1485,7 +1516,10 @@ export const lessons5eP2 = [
           "accepted": [
             "l'offrande est dans le temple",
             "le cadeau est dans le temple",
-            "le don est dans le temple"
+            "le don est dans le temple",
+            "l'offrande se trouve dans le temple",
+            "le cadeau se trouve dans le temple",
+            "le don se trouve dans le temple"
           ]
         },
         "points": 1,
@@ -1796,7 +1830,6 @@ export const lessons5eP2 = [
         "expected": "j'entends le chien",
         "acceptedAnswers": [
           "j'entends le chien",
-          "je comprends le chien",
           "j'écoute le chien"
         ],
         "answerConfig": {
@@ -1804,7 +1837,6 @@ export const lessons5eP2 = [
           "language": "fr",
           "accepted": [
             "j'entends le chien",
-            "je comprends le chien",
             "j'écoute le chien"
           ]
         },
@@ -2113,7 +2145,10 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "nous cherchons l'offrande",
           "nous cherchons le cadeau",
-          "nous cherchons le don"
+          "nous cherchons le don",
+          "nous recherchons l'offrande",
+          "nous recherchons le cadeau",
+          "nous recherchons le don"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -2121,7 +2156,10 @@ export const lessons5eP2 = [
           "accepted": [
             "nous cherchons l'offrande",
             "nous cherchons le cadeau",
-            "nous cherchons le don"
+            "nous cherchons le don",
+            "nous recherchons l'offrande",
+            "nous recherchons le cadeau",
+            "nous recherchons le don"
           ]
         },
         "points": 1,
@@ -2439,7 +2477,7 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "la tablette est falsifiée",
           "la tablette est fausse",
-          "l'écriteau est falsifié"
+          "la tablette est truquée"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -2447,7 +2485,7 @@ export const lessons5eP2 = [
           "accepted": [
             "la tablette est falsifiée",
             "la tablette est fausse",
-            "l'écriteau est falsifié"
+            "la tablette est truquée"
           ]
         },
         "points": 1,
@@ -2766,14 +2804,16 @@ export const lessons5eP2 = [
         "expected": "le chien craint la porte",
         "acceptedAnswers": [
           "le chien craint la porte",
-          "le chien a peur de la porte"
+          "le chien a peur de la porte",
+          "le chien redoute la porte"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "le chien craint la porte",
-            "le chien a peur de la porte"
+            "le chien a peur de la porte",
+            "le chien redoute la porte"
           ]
         },
         "points": 1,
@@ -3089,6 +3129,9 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "l'eau dans la fontaine est sale",
           "l'eau de la fontaine est sale",
+          "l'eau est sale dans la fontaine",
+          "l'eau dans la fontaine est souillée",
+          "l'eau de la fontaine est souillée",
           "l'eau est souillée dans la fontaine"
         ],
         "answerConfig": {
@@ -3097,6 +3140,9 @@ export const lessons5eP2 = [
           "accepted": [
             "l'eau dans la fontaine est sale",
             "l'eau de la fontaine est sale",
+            "l'eau est sale dans la fontaine",
+            "l'eau dans la fontaine est souillée",
+            "l'eau de la fontaine est souillée",
             "l'eau est souillée dans la fontaine"
           ]
         },
@@ -3421,7 +3467,10 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "Discordia trouble le quartier",
           "la Discorde trouble le quartier",
-          "Discordia met le quartier en désordre"
+          "Discordia met le quartier en désordre",
+          "la Discorde met le quartier en désordre",
+          "Discordia sème le trouble dans le quartier",
+          "la Discorde sème le trouble dans le quartier"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -3429,7 +3478,10 @@ export const lessons5eP2 = [
           "accepted": [
             "Discordia trouble le quartier",
             "la Discorde trouble le quartier",
-            "Discordia met le quartier en désordre"
+            "Discordia met le quartier en désordre",
+            "la Discorde met le quartier en désordre",
+            "Discordia sème le trouble dans le quartier",
+            "la Discorde sème le trouble dans le quartier"
           ]
         },
         "points": 1,
@@ -3753,7 +3805,10 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "la paix revient dans le quartier",
           "la paix revient dans la rue",
-          "la paix revient"
+          "la paix revient",
+          "le calme revient dans le quartier",
+          "le calme revient dans la rue",
+          "le calme revient"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -3761,7 +3816,10 @@ export const lessons5eP2 = [
           "accepted": [
             "la paix revient dans le quartier",
             "la paix revient dans la rue",
-            "la paix revient"
+            "la paix revient",
+            "le calme revient dans le quartier",
+            "le calme revient dans la rue",
+            "le calme revient"
           ]
         },
         "points": 1,
