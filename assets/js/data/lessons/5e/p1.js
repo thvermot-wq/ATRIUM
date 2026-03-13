@@ -2004,7 +2004,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-t3",
         "type": "multipleChoice",
-        "prompt": "⛲ Sélectionne les mots de la scène de fontaine.",
+        "prompt": "⛲ Sélectionne les noms liés à cette scène de la fontaine.",
         "options": [
           "aqua",
           "situla",
@@ -2015,8 +2015,7 @@ export const lessons5eP1 = [
         "expected": [
           "aqua",
           "situla",
-          "fons",
-          "venit"
+          "fons"
         ],
         "shuffle": true,
         "points": 1
@@ -2140,26 +2139,32 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-p2",
         "type": "textInput",
-        "prompt": "⛲ Traduis en français : Lucius aquam portat",
+        "prompt": "⛲ Traduis en français : Lucius situlam portat",
         "expected": "lucius porte de l'eau",
         "acceptedAnswers": [
-          "lucius porte de l'eau",
-          "lucius apporte de l'eau",
-          "lucius transporte de l'eau",
-          "lucius porte l'eau",
-          "lucius apporte l'eau",
-          "lucius transporte l'eau"
+          "lucius porte le seau",
+          "lucius apporte le seau",
+          "lucius transporte le seau",
+          "lucius porte un seau",
+          "lucius apporte un seau",
+          "lucius transporte un seau",
+          "lucius porte son seau",
+          "lucius apporte son seau",
+          "lucius transporte son seau"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
-            "lucius porte de l'eau",
-            "lucius apporte de l'eau",
-            "lucius transporte de l'eau",
-            "lucius porte l'eau",
-            "lucius apporte l'eau",
-            "lucius transporte l'eau"
+            "lucius porte le seau",
+            "lucius apporte le seau",
+            "lucius transporte le seau",
+            "lucius porte un seau",
+            "lucius apporte un seau",
+            "lucius transporte un seau",
+            "lucius porte son seau",
+            "lucius apporte son seau",
+            "lucius transporte son seau"
           ]
         },
         "points": 1,
