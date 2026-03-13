@@ -687,6 +687,7 @@ export const lessons5eP1 = [
       "panis = pain",
       "vinum = vin",
       "portat = il/elle porte",
+      "currit = il/elle court",
       "spectat = il/elle regarde",
       "vendit = il/elle vend",
       "ad = vers, en direction de"
