@@ -1,3 +1,4 @@
+
 // Données de leçons 5E · Période 3 — Discordia in Subura.
 export const lessons5eP3 = [
   {
@@ -164,18 +165,26 @@ export const lessons5eP3 = [
         "expected": "qui voit l'homme ?",
         "acceptedAnswers": [
           "qui voit l'homme",
+          "qui voit l'homme ?",
           "qui voit cet homme",
+          "qui voit cet homme ?",
           "qui aperçoit l'homme",
-          "qui voit l'homme ?"
+          "qui aperçoit l'homme ?",
+          "qui aperçoit cet homme",
+          "qui aperçoit cet homme ?"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "qui voit l'homme",
+            "qui voit l'homme ?",
             "qui voit cet homme",
+            "qui voit cet homme ?",
             "qui aperçoit l'homme",
-            "qui voit l'homme ?"
+            "qui aperçoit l'homme ?",
+            "qui aperçoit cet homme",
+            "qui aperçoit cet homme ?"
           ]
         },
         "points": 1,
@@ -495,16 +504,34 @@ export const lessons5eP3 = [
         "expected": "l'homme reste devant l'immeuble",
         "acceptedAnswers": [
           "l'homme reste devant l'immeuble",
+          "l'homme demeure devant l'immeuble",
+          "l'homme reste devant le bâtiment",
           "l'homme demeure devant le bâtiment",
-          "l'individu reste devant l'insula"
+          "l'homme reste devant l'insula",
+          "l'homme demeure devant l'insula",
+          "un homme reste devant l'immeuble",
+          "un homme demeure devant l'immeuble",
+          "un homme reste devant le bâtiment",
+          "un homme demeure devant le bâtiment",
+          "un homme reste devant l'insula",
+          "un homme demeure devant l'insula"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "l'homme reste devant l'immeuble",
+            "l'homme demeure devant l'immeuble",
+            "l'homme reste devant le bâtiment",
             "l'homme demeure devant le bâtiment",
-            "l'individu reste devant l'insula"
+            "l'homme reste devant l'insula",
+            "l'homme demeure devant l'insula",
+            "un homme reste devant l'immeuble",
+            "un homme demeure devant l'immeuble",
+            "un homme reste devant le bâtiment",
+            "un homme demeure devant le bâtiment",
+            "un homme reste devant l'insula",
+            "un homme demeure devant l'insula"
           ]
         },
         "points": 1,
@@ -822,7 +849,8 @@ export const lessons5eP3 = [
         "acceptedAnswers": [
           "la voisine ouvre la porte",
           "une voisine ouvre la porte",
-          "la personne du voisinage ouvre la porte"
+          "la voisine ouvre cette porte",
+          "une voisine ouvre cette porte"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -830,7 +858,8 @@ export const lessons5eP3 = [
           "accepted": [
             "la voisine ouvre la porte",
             "une voisine ouvre la porte",
-            "la personne du voisinage ouvre la porte"
+            "la voisine ouvre cette porte",
+            "une voisine ouvre cette porte"
           ]
         },
         "points": 1,
@@ -1146,16 +1175,18 @@ export const lessons5eP3 = [
         "expected": "l'homme cache l'huile",
         "acceptedAnswers": [
           "l'homme cache l'huile",
-          "l'individu cache l'huile",
-          "l'homme dissimule l'huile"
+          "l'homme dissimule l'huile",
+          "un homme cache l'huile",
+          "un homme dissimule l'huile"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "l'homme cache l'huile",
-            "l'individu cache l'huile",
-            "l'homme dissimule l'huile"
+            "l'homme dissimule l'huile",
+            "un homme cache l'huile",
+            "un homme dissimule l'huile"
           ]
         },
         "points": 1,
@@ -1472,7 +1503,10 @@ export const lessons5eP3 = [
         "acceptedAnswers": [
           "l'ami craint le voisin",
           "l'ami a peur du voisin",
-          "l'ami craint la voisine"
+          "l'ami redoute le voisin",
+          "un ami craint le voisin",
+          "un ami a peur du voisin",
+          "un ami redoute le voisin"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -1480,7 +1514,10 @@ export const lessons5eP3 = [
           "accepted": [
             "l'ami craint le voisin",
             "l'ami a peur du voisin",
-            "l'ami craint la voisine"
+            "l'ami redoute le voisin",
+            "un ami craint le voisin",
+            "un ami a peur du voisin",
+            "un ami redoute le voisin"
           ]
         },
         "points": 1,
@@ -1789,16 +1826,18 @@ export const lessons5eP3 = [
         "expected": "j'entends l'homme",
         "acceptedAnswers": [
           "j'entends l'homme",
+          "j'entends cet homme",
           "j'écoute l'homme",
-          "je perçois l'homme"
+          "j'écoute cet homme"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "j'entends l'homme",
+            "j'entends cet homme",
             "j'écoute l'homme",
-            "je perçois l'homme"
+            "j'écoute cet homme"
           ]
         },
         "points": 1,
@@ -2434,7 +2473,7 @@ export const lessons5eP3 = [
         "acceptedAnswers": [
           "le chien craint la porte",
           "le chien a peur de la porte",
-          "le chien craint cette porte"
+          "le chien redoute la porte"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -2442,7 +2481,7 @@ export const lessons5eP3 = [
           "accepted": [
             "le chien craint la porte",
             "le chien a peur de la porte",
-            "le chien craint cette porte"
+            "le chien redoute la porte"
           ]
         },
         "points": 1,
@@ -2759,7 +2798,12 @@ export const lessons5eP3 = [
         "acceptedAnswers": [
           "le serviteur montre la vérité",
           "le serviteur montre le vrai",
-          "le serviteur présente la vérité"
+          "le serviteur présente la vérité",
+          "le serviteur présente le vrai",
+          "l'esclave montre la vérité",
+          "l'esclave montre le vrai",
+          "l'esclave présente la vérité",
+          "l'esclave présente le vrai"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -2767,7 +2811,12 @@ export const lessons5eP3 = [
           "accepted": [
             "le serviteur montre la vérité",
             "le serviteur montre le vrai",
-            "le serviteur présente la vérité"
+            "le serviteur présente la vérité",
+            "le serviteur présente le vrai",
+            "l'esclave montre la vérité",
+            "l'esclave montre le vrai",
+            "l'esclave présente la vérité",
+            "l'esclave présente le vrai"
           ]
         },
         "points": 1,
@@ -3090,7 +3139,8 @@ export const lessons5eP3 = [
         "acceptedAnswers": [
           "la lampe est dans la rue",
           "une lampe est dans la rue",
-          "la lampe est sur la voie"
+          "la lampe se trouve dans la rue",
+          "une lampe se trouve dans la rue"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -3098,7 +3148,8 @@ export const lessons5eP3 = [
           "accepted": [
             "la lampe est dans la rue",
             "une lampe est dans la rue",
-            "la lampe est sur la voie"
+            "la lampe se trouve dans la rue",
+            "une lampe se trouve dans la rue"
           ]
         },
         "points": 1,
@@ -3452,16 +3503,14 @@ export const lessons5eP3 = [
         "expected": "le quartier reste calme",
         "acceptedAnswers": [
           "le quartier reste calme",
-          "le quartier demeure calme",
-          "la rue de quartier reste calme"
+          "le quartier demeure calme"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "le quartier reste calme",
-            "le quartier demeure calme",
-            "la rue de quartier reste calme"
+            "le quartier demeure calme"
           ]
         },
         "points": 1,
@@ -3784,16 +3833,22 @@ export const lessons5eP3 = [
         "expected": "la paix revient dans le quartier",
         "acceptedAnswers": [
           "la paix revient dans le quartier",
-          "la paix revient dans la rue de quartier",
-          "la paix revient"
+          "la paix revient dans la rue",
+          "la paix revient",
+          "le calme revient dans le quartier",
+          "le calme revient dans la rue",
+          "le calme revient"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "la paix revient dans le quartier",
-            "la paix revient dans la rue de quartier",
-            "la paix revient"
+            "la paix revient dans la rue",
+            "la paix revient",
+            "le calme revient dans le quartier",
+            "le calme revient dans la rue",
+            "le calme revient"
           ]
         },
         "points": 1,
@@ -3829,61 +3884,23 @@ export const lessons5eP3 = [
         "prompt": "Traduis en latin : Les voisins voient la lampe.",
         "expected": "vicini lucernam vident",
         "acceptedAnswers": [
-          "vicini lucernam in via vident",
-          "vicini lucernam vident in via",
-          "vicini in via lucernam vident",
-          "vicini in via vident lucernam",
-          "vicini vident lucernam in via",
-          "vicini vident in via lucernam",
-          "lucernam vicini in via vident",
-          "lucernam vicini vident in via",
-          "lucernam in via vicini vident",
-          "lucernam in via vident vicini",
-          "lucernam vident vicini in via",
-          "lucernam vident in via vicini",
-          "in via vicini lucernam vident",
-          "in via vicini vident lucernam",
-          "in via lucernam vicini vident",
-          "in via lucernam vident vicini",
-          "in via vident vicini lucernam",
-          "in via vident lucernam vicini",
-          "vident vicini lucernam in via",
-          "vident vicini in via lucernam",
-          "vident lucernam vicini in via",
-          "vident lucernam in via vicini",
-          "vident in via vicini lucernam",
-          "vident in via lucernam vicini",
-          "vicini lucernam vident"
+          "vicini lucernam vident",
+          "vicini vident lucernam",
+          "lucernam vicini vident",
+          "lucernam vident vicini",
+          "vident vicini lucernam",
+          "vident lucernam vicini"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
-            "vicini lucernam in via vident",
-            "vicini lucernam vident in via",
-            "vicini in via lucernam vident",
-            "vicini in via vident lucernam",
-            "vicini vident lucernam in via",
-            "vicini vident in via lucernam",
-            "lucernam vicini in via vident",
-            "lucernam vicini vident in via",
-            "lucernam in via vicini vident",
-            "lucernam in via vident vicini",
-            "lucernam vident vicini in via",
-            "lucernam vident in via vicini",
-            "in via vicini lucernam vident",
-            "in via vicini vident lucernam",
-            "in via lucernam vicini vident",
-            "in via lucernam vident vicini",
-            "in via vident vicini lucernam",
-            "in via vident lucernam vicini",
-            "vident vicini lucernam in via",
-            "vident vicini in via lucernam",
-            "vident lucernam vicini in via",
-            "vident lucernam in via vicini",
-            "vident in via vicini lucernam",
-            "vident in via lucernam vicini",
-            "vicini lucernam vident"
+            "vicini lucernam vident",
+            "vicini vident lucernam",
+            "lucernam vicini vident",
+            "lucernam vident vicini",
+            "vident vicini lucernam",
+            "vident lucernam vicini"
           ]
         },
         "points": 1,
