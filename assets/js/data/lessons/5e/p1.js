@@ -44,7 +44,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l1-t1",
         "type": "singleChoice",
-        "prompt": "Flavia salue Marcus seul. Quelle formule choisit-elle ?",
+        "prompt": "👋 Flavia salue Marcus seul. Quelle formule choisit-elle ?",
         "options": [
           "salve",
           "salvete",
@@ -59,7 +59,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l1-t2",
         "type": "singleChoice",
-        "prompt": "Titus parle à trois voisins. Il dit :",
+        "prompt": "👋 Titus parle à trois voisins. Il dit :",
         "options": [
           "salve",
           "salvete",
@@ -74,7 +74,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l1-t3",
         "type": "multipleChoice",
-        "prompt": "Sélectionne les formules pour dire 'Au revoir'.",
+        "prompt": "👋 Sélectionne les formules pour dire 'Au revoir'.",
         "options": [
           "vale",
           "valete",
@@ -92,7 +92,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l1-t4",
         "type": "matching",
-        "prompt": "Associe formule et sens.",
+        "prompt": "👋 Associe formule et sens.",
         "pairs": [
           {
             "left": "adsum",
@@ -122,7 +122,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l1-t5",
         "type": "singleChoice",
-        "prompt": "Dans « Flavia in via est », que signifie via ?",
+        "prompt": "👋 Dans « Flavia in via est », que signifie via ?",
         "options": [
           "route",
           "maison",
@@ -138,7 +138,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l1-t6",
         "type": "singleChoice",
-        "prompt": "« Niger canis est » signifie :",
+        "prompt": "👋 « Niger canis est » signifie :",
         "options": [
           "Niger est un chien",
           "Le chien est rigolo",
@@ -153,7 +153,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l1-t7",
         "type": "textInput",
-        "prompt": "Écris en latin : « je suis présent ».",
+        "prompt": "👋 Écris en latin : « je suis présent ».",
         "expected": "adsum",
         "points": 1
       }
@@ -162,7 +162,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l1-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : Flavia Suburae habitat",
+        "prompt": "👋 Traduis en français : Flavia Suburae habitat",
         "expected": "Flavia habite dans Subure",
         "acceptedAnswers": [
           "flavia habite à subure",
@@ -208,7 +208,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l1-p2",
         "type": "textInput",
-        "prompt": "Traduis en français : Niger canis est",
+        "prompt": "👋 Traduis en français : Niger canis est",
         "expected": "niger est un chien",
         "acceptedAnswers": [
           "niger est un chien",
@@ -252,7 +252,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l1-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : Marcus salue Flavia",
+        "prompt": "👋 Traduis en latin : Marcus salue Flavia",
         "expected": "Marcus Flaviam salutat",
         "acceptedAnswers": [
           "Marcus Flaviam salutat",
@@ -359,7 +359,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l2-t1",
         "type": "singleChoice",
-        "prompt": "Aurelia vit dans une grande maison. Quel nom latin choisir pour 'maison' ?",
+        "prompt": "🏠 Aurelia vit dans une grande maison. Quel nom latin choisir pour 'maison' ?",
         "options": [
           "domus",
           "insula",
@@ -374,7 +374,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l2-t2",
         "type": "singleChoice",
-        "prompt": "Marcus vit dans un immeuble de quartier. C’est une :",
+        "prompt": "🏠 Marcus vit dans un immeuble de quartier. C’est une :",
         "options": [
           "insula",
           "domus",
@@ -389,7 +389,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l2-t3",
         "type": "multipleChoice",
-        "prompt": "Choisis des éléments de la maison.",
+        "prompt": "🏠 Choisis des éléments de la maison.",
         "options": [
           "ianua",
           "fenestra",
@@ -408,7 +408,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l2-t4",
         "type": "matching",
-        "prompt": "Associe mot et sens.",
+        "prompt": "🏠 Associe mot et sens.",
         "pairs": [
           {
             "left": "domus",
@@ -438,7 +438,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l2-t5",
         "type": "singleChoice",
-        "prompt": "« Niger ante ianuam stat » : Niger est…",
+        "prompt": "🏠 « Niger ante ianuam stat » : Niger est…",
         "options": [
           "devant la porte",
           "dans le forum",
@@ -454,7 +454,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l2-t6",
         "type": "singleChoice",
-        "prompt": "Dans « Flavia in domo manet », manet signifie :",
+        "prompt": "🏠 Dans « Flavia in domo manet », manet signifie :",
         "options": [
           "reste",
           "court",
@@ -469,7 +469,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l2-t7",
         "type": "textInput",
-        "prompt": "Écris en latin : « porte » (nom).",
+        "prompt": "🏠 Écris en latin : « porte » (nom).",
         "expected": "ianua",
         "points": 1
       }
@@ -478,7 +478,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l2-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : Aurelia in domo manet",
+        "prompt": "🏠 Traduis en français : Aurelia in domo manet",
         "expected": "aurélia reste dans la maison",
         "acceptedAnswers": [
           "aurélia reste dans la maison",
@@ -528,7 +528,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l2-p2",
         "type": "textInput",
-        "prompt": "Traduis en français : Marcus in insula habitat",
+        "prompt": "🏠 Traduis en français : Marcus in insula habitat",
         "expected": "marcus habite dans l'insula",
         "acceptedAnswers": [
           "marcus habite dans l'insula",
@@ -580,7 +580,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l2-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : Niger est devant la porte",
+        "prompt": "🏠 Traduis en latin : Niger est devant la porte",
         "expected": "Niger ante ianuam stat",
         "acceptedAnswers": [
           "Niger ante ianuam stat",
@@ -696,7 +696,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-t1",
         "type": "singleChoice",
-        "prompt": "Le lieu principal des échanges est :",
+        "prompt": "🛍️ Le lieu principal des échanges est :",
         "options": [
           "forum",
           "domus",
@@ -711,7 +711,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-t2",
         "type": "singleChoice",
-        "prompt": "Une boutique se dit :",
+        "prompt": "🛍️ Une boutique se dit :",
         "options": [
           "taberna",
           "insula",
@@ -726,7 +726,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-t3",
         "type": "multipleChoice",
-        "prompt": "Choisis les mots liés à une scène de marché.",
+        "prompt": "🛍️ Choisis les mots liés à une scène de marché.",
         "options": [
           "mercator",
           "panis",
@@ -745,7 +745,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-t4",
         "type": "matching",
-        "prompt": "Associe latin et français.",
+        "prompt": "🛍️ Associe latin et français.",
         "pairs": [
           {
             "left": "mercator",
@@ -775,7 +775,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-t5",
         "type": "singleChoice",
-        "prompt": "« Mercator panem portat » : qui porte le pain ?",
+        "prompt": "🛍️ « Mercator panem portat » : qui porte le pain ?",
         "options": [
           "mercator",
           "panem",
@@ -791,7 +791,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-t6",
         "type": "singleChoice",
-        "prompt": "« Panem mercator portat » signifie :",
+        "prompt": "🛍️ « Panem mercator portat » signifie :",
         "options": [
           "Le marchand porte le pain",
           "Le pain porte le marchand",
@@ -806,7 +806,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-t7",
         "type": "textInput",
-        "prompt": "Écris en latin : « marchand ».",
+        "prompt": "🛍️ Écris en latin : « marchand ».",
         "expected": "mercator",
         "points": 1
       }
@@ -815,7 +815,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : Mercator panem vendit",
+        "prompt": "🛍️ Traduis en français : Mercator panem vendit",
         "expected": "le marchand vend du pain",
         "acceptedAnswers": [
           "le marchand vend du pain",
@@ -859,7 +859,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-p2",
         "type": "textInput",
-        "prompt": "Traduis en français : Flavia tabernam spectat",
+        "prompt": "🛍️ Traduis en français : Flavia tabernam spectat",
         "expected": "flavia regarde la boutique",
         "acceptedAnswers": [
           "flavia regarde la boutique",
@@ -905,7 +905,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : Marcus court vers le forum",
+        "prompt": "🛍️ Traduis en latin : Marcus court vers le forum",
         "expected": "Marcus ad forum currit",
         "acceptedAnswers": [
           "Marcus ad forum currit",
@@ -1007,7 +1007,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l4-t1",
         "type": "singleChoice",
-        "prompt": "Le petit sanctuaire se dit :",
+        "prompt": "🏺 Le petit sanctuaire se dit :",
         "options": [
           "sacellum",
           "forum",
@@ -1022,7 +1022,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l4-t2",
         "type": "singleChoice",
-        "prompt": "Une offrande est :",
+        "prompt": "🏺 Une offrande est :",
         "options": [
           "donum",
           "murus",
@@ -1037,7 +1037,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l4-t3",
         "type": "multipleChoice",
-        "prompt": "Choisis les mots liés au sanctuaire.",
+        "prompt": "🏺 Choisis les mots liés au sanctuaire.",
         "options": [
           "ara",
           "corona",
@@ -1057,7 +1057,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l4-t4",
         "type": "matching",
-        "prompt": "Associe latin et sens.",
+        "prompt": "🏺 Associe latin et sens.",
         "pairs": [
           {
             "left": "ara",
@@ -1087,7 +1087,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l4-t5",
         "type": "singleChoice",
-        "prompt": "« Vetus sacerdos donum ponit » : qui pose l’offrande ?",
+        "prompt": "🏺 « Vetus sacerdos donum ponit » : qui pose l’offrande ?",
         "options": [
           "la vieille prêtresse",
           "l’offrande",
@@ -1102,7 +1102,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l4-t6",
         "type": "singleChoice",
-        "prompt": "« Donum Sextus movet » :",
+        "prompt": "🏺 « Donum Sextus movet » :",
         "options": [
           "Sextus déplace l’offrande",
           "L’offrande déplace Sextus",
@@ -1118,7 +1118,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l4-t7",
         "type": "textInput",
-        "prompt": "Écris en latin : « couronne ».",
+        "prompt": "🏺 Écris en latin : « couronne ».",
         "expected": "corona",
         "points": 1
       }
@@ -1127,7 +1127,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l4-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : Vetus sacerdos donum ponit",
+        "prompt": "🏺 Traduis en français : Vetus sacerdos donum ponit",
         "expected": "la vieille prêtresse pose l'offrande",
         "acceptedAnswers": [
           "la vieille prêtresse pose l'offrande",
@@ -1173,7 +1173,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l4-p2",
         "type": "textInput",
-        "prompt": "Traduis en français : Sextus coronam movet",
+        "prompt": "🏺 Traduis en français : Sextus coronam movet",
         "expected": "sextus déplace la couronne",
         "acceptedAnswers": [
           "sextus déplace la couronne",
@@ -1219,7 +1219,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l4-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : Livia regarde l’autel",
+        "prompt": "🏺 Traduis en latin : Livia regarde l’autel",
         "expected": "Livia aram spectat",
         "acceptedAnswers": [
           "Livia aram spectat",
@@ -1321,7 +1321,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-t1",
         "type": "singleChoice",
-        "prompt": "Niger est :",
+        "prompt": "🐕 Niger est :",
         "options": [
           "le chien",
           "le marchand",
@@ -1336,7 +1336,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-t2",
         "type": "singleChoice",
-        "prompt": "Le verbe latrat signifie :",
+        "prompt": "🐕 Le verbe latrat signifie :",
         "options": [
           "aboie",
           "court",
@@ -1351,7 +1351,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-t3",
         "type": "multipleChoice",
-        "prompt": "Choisis les phrases possibles liées à cette scène : Niger aboie devant une porte fermée, et attire l'attention de Marcus et Livia.",
+        "prompt": "🐕 Choisis les phrases possibles liées à cette scène : Niger aboie devant une porte fermée, et attire l'attention de Marcus et Livia.",
         "options": [
           "Niger ante ianuam stat",
           "Niger latrat",
@@ -1373,7 +1373,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-t4",
         "type": "matching",
-        "prompt": "Associe phrase et interprétation.",
+        "prompt": "🐕 Associe phrase et interprétation.",
         "pairs": [
           {
             "left": "Niger latrat",
@@ -1403,7 +1403,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-t5",
         "type": "singleChoice",
-        "prompt": "Piège : « Canem Livia videt » signifie :",
+        "prompt": "🐕 Piège : « Canem Livia videt » signifie :",
         "options": [
           "Livia voit le chien",
           "Le chien voit Livia",
@@ -1419,7 +1419,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-t6",
         "type": "singleChoice",
-        "prompt": "Dans « Niger currit cum Livia », le sujet est :",
+        "prompt": "🐕 Dans « Niger currit cum Livia », le sujet est :",
         "options": [
           "Niger",
           "currit",
@@ -1434,7 +1434,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-t7",
         "type": "textInput",
-        "prompt": "Écris en latin : « chien ».",
+        "prompt": "🐕 Écris en latin : « chien ».",
         "expected": "canis",
         "points": 1
       }
@@ -1443,7 +1443,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : Niger ante ianuam stat",
+        "prompt": "🐕 Traduis en français : Niger ante ianuam stat",
         "expected": "niger est devant la porte",
         "acceptedAnswers": [
           "niger est devant la porte",
@@ -1489,7 +1489,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-p2",
         "type": "textInput",
-        "prompt": "Traduis en français : Canem Livia videt",
+        "prompt": "🐕 Traduis en français : Canem Livia videt",
         "expected": "livia voit le chien",
         "acceptedAnswers": [
           "livia voit le chien",
@@ -1535,7 +1535,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : Marcus regarde le chien",
+        "prompt": "🐕 Traduis en latin : Marcus regarde le chien",
         "expected": "Marcus canem spectat",
         "acceptedAnswers": [
           "Marcus canem spectat",
@@ -1637,7 +1637,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l6-t1",
         "type": "singleChoice",
-        "prompt": "La tablette se dit :",
+        "prompt": "📜 La tablette se dit :",
         "options": [
           "tabella",
           "taberna",
@@ -1652,7 +1652,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l6-t2",
         "type": "singleChoice",
-        "prompt": "Dans « Lucius epistulam quaerit », Lucius :",
+        "prompt": "📜 Dans « Lucius epistulam quaerit », Lucius :",
         "options": [
           "cherche la lettre",
           "porte la lettre",
@@ -1667,7 +1667,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l6-t3",
         "type": "multipleChoice",
-        "prompt": "Choisis les actions plausibles dans le cadre d'une enquête.",
+        "prompt": "📜 Choisis les actions plausibles dans le cadre d'une enquête.",
         "options": [
           "quaerit",
           "invenit",
@@ -1686,7 +1686,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l6-t4",
         "type": "matching",
-        "prompt": "Associe phrase et sens.",
+        "prompt": "📜 Associe phrase et sens.",
         "pairs": [
           {
             "left": "Marcus tabellam portat",
@@ -1716,7 +1716,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l6-t5",
         "type": "singleChoice",
-        "prompt": "Piège : « Tabellam Marcus portat » signifie :",
+        "prompt": "📜 Piège : « Tabellam Marcus portat » signifie :",
         "options": [
           "Marcus porte la tablette",
           "La tablette porte Marcus",
@@ -1732,7 +1732,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l6-t6",
         "type": "singleChoice",
-        "prompt": "Dans la scène, quel verbe dit qu’on trouve l’objet ?",
+        "prompt": "📜 Dans la scène, quel verbe dit qu’on trouve l’objet ?",
         "options": [
           "invenit",
           "quaerit",
@@ -1747,7 +1747,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l6-t7",
         "type": "textInput",
-        "prompt": "Écris en latin : « lettre ».",
+        "prompt": "📜 Écris en latin : « lettre ».",
         "expected": "epistula",
         "points": 1
       }
@@ -1756,7 +1756,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l6-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : Marcus tabellam portat",
+        "prompt": "📜 Traduis en français : Marcus tabellam portat",
         "expected": "marcus porte la tablette",
         "acceptedAnswers": [
           "marcus porte la tablette",
@@ -1808,7 +1808,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l6-p2",
         "type": "textInput",
-        "prompt": "Traduis en français : Lucius epistulam invenit",
+        "prompt": "📜 Traduis en français : Lucius epistulam invenit",
         "expected": "lucius trouve la lettre",
         "acceptedAnswers": [
           "lucius trouve la lettre",
@@ -1860,7 +1860,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l6-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : Livia cherche la tablette",
+        "prompt": "📜 Traduis en latin : Livia cherche la tablette",
         "expected": "Livia tabellam quaerit",
         "acceptedAnswers": [
           "Livia tabellam quaerit",
@@ -1963,7 +1963,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-t1",
         "type": "singleChoice",
-        "prompt": "La fontaine se dit :",
+        "prompt": "⛲ La fontaine se dit :",
         "options": [
           "fons",
           "forum",
@@ -1978,7 +1978,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-t2",
         "type": "singleChoice",
-        "prompt": "« Marcus ad fontem venit » : Marcus va…",
+        "prompt": "⛲ « Marcus ad fontem venit » : Marcus va…",
         "options": [
           "vers la fontaine",
           "dans la maison",
@@ -1993,7 +1993,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-t3",
         "type": "multipleChoice",
-        "prompt": "Sélectionne les mots de la scène de fontaine.",
+        "prompt": "⛲ Sélectionne les mots de la scène de fontaine.",
         "options": [
           "aqua",
           "situla",
@@ -2013,7 +2013,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-t4",
         "type": "matching",
-        "prompt": "Associe expression et sens.",
+        "prompt": "⛲ Associe expression et sens.",
         "pairs": [
           {
             "left": "in fonte",
@@ -2043,7 +2043,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-t5",
         "type": "singleChoice",
-        "prompt": "« Aquam Lucius portat » : qui porte l’eau ?",
+        "prompt": "⛲ « Aquam Lucius portat » : qui porte l’eau ?",
         "options": [
           "Lucius",
           "aquam",
@@ -2058,7 +2058,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-t6",
         "type": "singleChoice",
-        "prompt": "Le verbe turbat veut dire :",
+        "prompt": "⛲ Le verbe turbat veut dire :",
         "options": [
           "trouble",
           "calme",
@@ -2074,7 +2074,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-t7",
         "type": "textInput",
-        "prompt": "Écris en latin : « eau ».",
+        "prompt": "⛲ Écris en latin : « eau ».",
         "expected": "aqua",
         "points": 1
       }
@@ -2083,7 +2083,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : Aurelia ad fontem venit",
+        "prompt": "⛲ Traduis en français : Aurelia ad fontem venit",
         "expected": "aurélia vient vers la fontaine",
         "acceptedAnswers": [
           "aurélia vient vers la fontaine",
@@ -2129,7 +2129,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-p2",
         "type": "textInput",
-        "prompt": "Traduis en français : Lucius aquam portat",
+        "prompt": "⛲ Traduis en français : Lucius aquam portat",
         "expected": "lucius porte de l'eau",
         "acceptedAnswers": [
           "lucius porte de l'eau",
@@ -2181,7 +2181,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : Niger trouble la fontaine",
+        "prompt": "⛲ Traduis en latin : Niger trouble la fontaine",
         "expected": "Niger fontem turbat",
         "acceptedAnswers": [
           "Niger fontem turbat",
@@ -2284,7 +2284,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l8-t1",
         "type": "singleChoice",
-        "prompt": "Le 'boulanger' se dit :",
+        "prompt": "🍞 Le 'boulanger' se dit :",
         "options": [
           "pistor",
           "mercator",
@@ -2299,7 +2299,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l8-t2",
         "type": "singleChoice",
-        "prompt": "« Flavia panem emit » : Flavia…",
+        "prompt": "🍞 « Flavia panem emit » : Flavia…",
         "options": [
           "achète du pain",
           "porte du pain",
@@ -2314,7 +2314,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l8-t3",
         "type": "multipleChoice",
-        "prompt": "Choisis les mots de la boulangerie.",
+        "prompt": "🍞 Choisis les mots de la boulangerie.",
         "options": [
           "pistor",
           "panis",
@@ -2333,7 +2333,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l8-t4",
         "type": "matching",
-        "prompt": "Associe phrase et sens.",
+        "prompt": "🍞 Associe phrase et sens.",
         "pairs": [
           {
             "left": "Pistor panem portat",
@@ -2363,7 +2363,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l8-t5",
         "type": "singleChoice",
-        "prompt": "Piège : « Panem pistor portat » signifie :",
+        "prompt": "🍞 Piège : « Panem pistor portat » signifie :",
         "options": [
           "Le boulanger porte le pain",
           "Le pain porte le boulanger",
@@ -2378,7 +2378,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l8-t6",
         "type": "singleChoice",
-        "prompt": "Dans « Titus farinam accipit », accipit signifie :",
+        "prompt": "🍞 Dans « Titus farinam accipit », accipit signifie :",
         "options": [
           "reçoit",
           "apporte",
@@ -2393,7 +2393,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l8-t7",
         "type": "textInput",
-        "prompt": "Écris en latin : « pain ».",
+        "prompt": "🍞 Écris en latin : « pain ».",
         "expected": "panis",
         "points": 1
       }
@@ -2402,7 +2402,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l8-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : Pistor panem portat",
+        "prompt": "🍞 Traduis en français : Pistor panem portat",
         "expected": "le boulanger porte le pain",
         "acceptedAnswers": [
           "le boulanger porte le pain",
@@ -2454,7 +2454,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l8-p2",
         "type": "textInput",
-        "prompt": "Traduis en français : Flavia panem emit",
+        "prompt": "🍞 Traduis en français : Flavia panem emit",
         "expected": "flavia achète du pain",
         "acceptedAnswers": [
           "flavia achète du pain",
@@ -2500,7 +2500,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l8-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : Marcus voit le boulanger",
+        "prompt": "🍞 Traduis en latin : Marcus voit le boulanger",
         "expected": "Marcus pistrum videt",
         "acceptedAnswers": [
           "Marcus pistrum videt",
@@ -2602,7 +2602,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l9-t1",
         "type": "singleChoice",
-        "prompt": "Le lieu de classe est :",
+        "prompt": "🎓 Le lieu de classe est :",
         "options": [
           "ludus",
           "forum",
@@ -2617,7 +2617,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l9-t2",
         "type": "singleChoice",
-        "prompt": "Le magister est :",
+        "prompt": "🎓 Le magister est :",
         "options": [
           "le maître",
           "l’élève",
@@ -2632,7 +2632,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l9-t3",
         "type": "multipleChoice",
-        "prompt": "Sélectionne des verbes de travail scolaire.",
+        "prompt": "🎓 Sélectionne des verbes de travail scolaire.",
         "options": [
           "legit",
           "scribit",
@@ -2651,7 +2651,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l9-t4",
         "type": "matching",
-        "prompt": "Associe phrase et sens.",
+        "prompt": "🎓 Associe phrase et sens.",
         "pairs": [
           {
             "left": "Discipulus tabellam scribit",
@@ -2681,7 +2681,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l9-t5",
         "type": "singleChoice",
-        "prompt": "Piège : « In tabella discipulus scribit » veut dire :",
+        "prompt": "🎓 Piège : « In tabella discipulus scribit » veut dire :",
         "options": [
           "L’élève écrit sur la tablette",
           "La tablette écrit sur l’élève",
@@ -2696,7 +2696,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l9-t6",
         "type": "singleChoice",
-        "prompt": "Dans « Titus audit », audit signifie :",
+        "prompt": "🎓 Dans « Titus audit », audit signifie :",
         "options": [
           "écoute",
           "écrit",
@@ -2711,7 +2711,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l9-t7",
         "type": "textInput",
-        "prompt": "Écris en latin : « élève ».",
+        "prompt": "🎓 Écris en latin : « élève ».",
         "expected": "discipulus",
         "points": 1
       }
@@ -2720,7 +2720,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l9-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : Magister legit",
+        "prompt": "🎓 Traduis en français : Magister legit",
         "expected": "le maître lit",
         "acceptedAnswers": [
           "le maître lit",
@@ -2766,7 +2766,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l9-p2",
         "type": "textInput",
-        "prompt": "Traduis en français : Marcus respondet",
+        "prompt": "🎓 Traduis en français : Marcus respondet",
         "expected": "marcus répond",
         "acceptedAnswers": [
           "marcus répond",
@@ -2810,7 +2810,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l9-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : l’élève écoute le maître",
+        "prompt": "🎓 Traduis en latin : l’élève écoute le maître",
         "expected": "Discipulus magistrum audit",
         "acceptedAnswers": [
           "Discipulus magistrum audit",
@@ -2912,7 +2912,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l10-t1",
         "type": "singleChoice",
-        "prompt": "Le lieu des bains publics est :",
+        "prompt": "🛁 Le lieu des bains publics est :",
         "options": [
           "thermae",
           "taberna",
@@ -2927,7 +2927,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l10-t2",
         "type": "singleChoice",
-        "prompt": "« Marcus ad thermas currit » : Marcus court…",
+        "prompt": "🛁 « Marcus ad thermas currit » : Marcus court…",
         "options": [
           "vers les thermes",
           "dans la maison",
@@ -2942,7 +2942,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l10-t3",
         "type": "multipleChoice",
-        "prompt": "Choisis les mots de la scène des thermes.",
+        "prompt": "🛁 Choisis les mots de la scène des thermes.",
         "options": [
           "thermae",
           "aqua",
@@ -2962,7 +2962,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l10-t4",
         "type": "matching",
-        "prompt": "Associe expression et sens.",
+        "prompt": "🛁 Associe expression et sens.",
         "pairs": [
           {
             "left": "in thermis",
@@ -2992,7 +2992,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l10-t5",
         "type": "singleChoice",
-        "prompt": "Piège : « Thermas Marcus intrat » signifie :",
+        "prompt": "🛁 Piège : « Thermas Marcus intrat » signifie :",
         "options": [
           "Marcus entre dans les thermes",
           "Les thermes entrent dans Marcus",
@@ -3007,7 +3007,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l10-t6",
         "type": "singleChoice",
-        "prompt": "Dans « Livia in thermis manet », manet signifie :",
+        "prompt": "🛁 Dans « Livia in thermis manet », manet signifie :",
         "options": [
           "reste",
           "court",
@@ -3022,7 +3022,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l10-t7",
         "type": "textInput",
-        "prompt": "Écris en latin : « eau chaude ».",
+        "prompt": "🛁 Écris en latin : « eau chaude ».",
         "expected": "aqua calida",
         "points": 1
       }
@@ -3031,7 +3031,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l10-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : Marcus ad thermas currit",
+        "prompt": "🛁 Traduis en français : Marcus ad thermas currit",
         "expected": "marcus court vers les thermes",
         "acceptedAnswers": [
           "marcus court vers les thermes",
@@ -3077,7 +3077,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l10-p2",
         "type": "textInput",
-        "prompt": "Traduis en français : Livia in thermis manet",
+        "prompt": "🛁 Traduis en français : Livia in thermis manet",
         "expected": "livia reste dans les thermes",
         "acceptedAnswers": [
           "livia reste dans les thermes",
@@ -3121,7 +3121,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l10-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : Titus entre dans les thermes",
+        "prompt": "🛁 Traduis en latin : Titus entre dans les thermes",
         "expected": "Titus thermas intrat",
         "acceptedAnswers": [
           "Titus thermas intrat",
@@ -3224,7 +3224,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l11-t1",
         "type": "singleChoice",
-        "prompt": "Le mur se dit :",
+        "prompt": "🧱 Le mur se dit :",
         "options": [
           "murus",
           "porta",
@@ -3239,7 +3239,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l11-t2",
         "type": "singleChoice",
-        "prompt": "« Marcus scriptum legit » : Marcus…",
+        "prompt": "🧱 « Marcus scriptum legit » : Marcus…",
         "options": [
           "lit une inscription",
           "écrit une inscription",
@@ -3254,7 +3254,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l11-t3",
         "type": "multipleChoice",
-        "prompt": "Choisis les mots liés à l’inscription.",
+        "prompt": "🧱 Choisis les mots liés à l’inscription.",
         "options": [
           "scriptum",
           "nomen",
@@ -3274,7 +3274,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l11-t4",
         "type": "matching",
-        "prompt": "Associe phrase et sens.",
+        "prompt": "🧱 Associe phrase et sens.",
         "pairs": [
           {
             "left": "Nomen in muro est",
@@ -3304,7 +3304,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l11-t5",
         "type": "singleChoice",
-        "prompt": "Piège : « Discordiam Marcus legit » signifie :",
+        "prompt": "🧱 Piège : « Discordiam Marcus legit » signifie :",
         "options": [
           "Marcus lit le nom Discordia",
           "Discordia lit Marcus",
@@ -3319,7 +3319,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l11-t6",
         "type": "singleChoice",
-        "prompt": "Quel verbe signifie « craint » ?",
+        "prompt": "🧱 Quel verbe signifie « craint » ?",
         "options": [
           "timet",
           "legit",
@@ -3334,7 +3334,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l11-t7",
         "type": "textInput",
-        "prompt": "Écris en latin : « nom ».",
+        "prompt": "🧱 Écris en latin : « nom ».",
         "expected": "nomen",
         "points": 1
       }
@@ -3343,7 +3343,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l11-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : Nomen in muro est",
+        "prompt": "🧱 Traduis en français : Nomen in muro est",
         "expected": "un nom est sur le mur",
         "acceptedAnswers": [
           "un nom est sur le mur",
@@ -3389,7 +3389,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l11-p2",
         "type": "textInput",
-        "prompt": "Traduis en français : Livia Discordiam timet",
+        "prompt": "🧱 Traduis en français : Livia Discordiam timet",
         "expected": "livia craint discordia",
         "acceptedAnswers": [
           "livia craint discordia",
@@ -3433,7 +3433,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l11-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : Marcus lit l’inscription",
+        "prompt": "🧱 Traduis en latin : Marcus lit l’inscription",
         "expected": "Marcus scriptum legit",
         "acceptedAnswers": [
           "Marcus scriptum legit",
@@ -3536,7 +3536,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l12-t1",
         "type": "singleChoice",
-        "prompt": "Dans la scène finale, quel nom apparaît sur le mur ?",
+        "prompt": "🧩 Dans la scène finale, quel nom apparaît sur le mur ?",
         "options": [
           "Discordia",
           "Minerva",
@@ -3551,7 +3551,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l12-t2",
         "type": "singleChoice",
-        "prompt": "« Marcus nomen videt » : Marcus…",
+        "prompt": "🧩 « Marcus nomen videt » : Marcus…",
         "options": [
           "voit le nom",
           "porte le nom",
@@ -3566,7 +3566,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l12-t3",
         "type": "multipleChoice",
-        "prompt": "Sélectionne les éléments-clés de la scène finale.",
+        "prompt": "🧩 Sélectionne les éléments-clés de la scène finale.",
         "options": [
           "murus",
           "nomen",
@@ -3587,7 +3587,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l12-t4",
         "type": "matching",
-        "prompt": "Associe phrase et rôle narratif.",
+        "prompt": "🧩 Associe phrase et rôle narratif.",
         "pairs": [
           {
             "left": "Marcus nomen videt",
@@ -3617,7 +3617,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l12-t5",
         "type": "singleChoice",
-        "prompt": "Piège : « Discordiam Livia timet » signifie :",
+        "prompt": "🧩 Piège : « Discordiam Livia timet » signifie :",
         "options": [
           "Livia craint Discordia",
           "Discordia craint Livia",
@@ -3632,7 +3632,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l12-t6",
         "type": "singleChoice",
-        "prompt": "Quel rappel méthodologique est juste ?",
+        "prompt": "🧩 Quel rappel méthodologique est juste ?",
         "options": [
           "Cherche d’abord le verbe",
           "Traduis mot à mot sans contexte",
@@ -3647,7 +3647,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l12-t7",
         "type": "textInput",
-        "prompt": "Écris en latin : « nom de Discordia » (deux mots).",
+        "prompt": "🧩 Écris en latin : « nom de Discordia » (deux mots).",
         "expected": "nomen Discordiae",
         "points": 1
       }
@@ -3656,7 +3656,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l12-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : Marcus nomen Discordiae videt",
+        "prompt": "🧩 Traduis en français : Marcus nomen Discordiae videt",
         "expected": "marcus voit le nom de discordia",
         "acceptedAnswers": [
           "marcus voit le nom de discordia",
@@ -3700,7 +3700,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l12-p2",
         "type": "textInput",
-        "prompt": "Traduis en français : Livia Discordiam timet",
+        "prompt": "🧩 Traduis en français : Livia Discordiam timet",
         "expected": "livia craint discordia",
         "acceptedAnswers": [
           "livia craint discordia",
@@ -3744,7 +3744,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l12-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : Titus porte la tablette au forum",
+        "prompt": "🧩 Traduis en latin : Titus porte la tablette au forum",
         "expected": "Titus tabellam ad forum portat",
         "acceptedAnswers": [
           "Titus tabellam ad forum portat",
