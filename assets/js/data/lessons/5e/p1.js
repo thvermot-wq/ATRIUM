@@ -2097,6 +2097,7 @@ export const lessons5eP1 = [
         "expected": "aurélia vient vers la fontaine",
         "acceptedAnswers": [
           "aurélia vient vers la fontaine",
+          "aurélia se dirige vers la fontaine",
           "aurelia vient à la fontaine",
           "aurélia va à la fontaine"
         ],
@@ -2105,6 +2106,7 @@ export const lessons5eP1 = [
           "language": "fr",
           "accepted": [
             "aurélia vient vers la fontaine",
+            "aurélia se dirige vers la fontaine",
             "aurelia vient à la fontaine",
             "aurélia va à la fontaine"
           ]
