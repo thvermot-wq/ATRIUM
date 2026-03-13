@@ -2681,15 +2681,15 @@ export const lessons5eP1 = [
       {
         "id": "p1-l9-t5",
         "type": "singleChoice",
-        "prompt": "Piège : « Tabellam discipulus scribit » veut dire :",
+        "prompt": "Piège : « In tabella discipulus scribit » veut dire :",
         "options": [
-          "L’élève écrit la tablette",
-          "La tablette écrit l’élève",
+          "L’élève écrit sur la tablette",
+          "La tablette écrit sur l’élève",
           "L’élève lit la tablette",
-          "Le maître écrit",
-          "L’élève répond"
+          "Le maître écrit sur la tablette",
+          "L’élève répond au maître"
         ],
-        "expected": "L’élève écrit la tablette",
+        "expected": "L’élève écrit sur la tablette",
         "shuffle": true,
         "points": 1
       },
