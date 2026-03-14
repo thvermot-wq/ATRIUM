@@ -6,8 +6,10 @@ const HOME_LEVEL_META = {
     cecrl: "pré-A1 → A1",
     summary:
       "Acclimatation à la langue, premiers automatismes, premières lectures guidées.",
-    vademecumLabel: "Vademecum 5e",
-    vademecumUrl: "assets/docs/vademecum-5e.pdf",
+    referentielLabel: "Référentiel",
+    referentielUrl: "assets/docs/referentiel-5e.pdf",
+    outilsLabel: "Outils",
+    outilsUrl: "assets/docs/outils-5e.pdf",
   },
   "4e": {
     dashboardLabel: "🏛️ LCA 4e",
@@ -16,8 +18,10 @@ const HOME_LEVEL_META = {
     cecrl: "A1 consolidé",
     summary:
       "Consolidation morphologique et syntaxique, lecture suivie plus sûre, thème guidé.",
-    vademecumLabel: "Vademecum 4e",
-    vademecumUrl: "assets/docs/vademecum-4e.pdf",
+    referentielLabel: "Référentiel",
+    referentielUrl: "assets/docs/referentiel-4e.pdf",
+    outilsLabel: "Outils",
+    outilsUrl: "assets/docs/outils-4e.pdf",
   },
   "3e": {
     dashboardLabel: "🏛️ LCA 3e",
@@ -26,8 +30,10 @@ const HOME_LEVEL_META = {
     cecrl: "A1+ → début A2",
     summary:
       "Lecture, version guidée, thème simple, liens plus autonomes entre langue et civilisation.",
-    vademecumLabel: "Vademecum 3e",
-    vademecumUrl: "assets/docs/vademecum-3e.pdf",
+    referentielLabel: "Référentiel",
+    referentielUrl: "assets/docs/referentiel-3e.pdf",
+    outilsLabel: "Outils",
+    outilsUrl: "assets/docs/outils-3e.pdf",
   },
 };
 
@@ -48,8 +54,8 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
       pédagogiques adaptées aux LCA.
     </p>
     <p>
-      Chaque niveau propose aussi un <strong>vademecum synthétique téléchargeable</strong>
-      pour réviser, imprimer ou consulter hors ligne.
+      Chaque niveau propose aussi deux documents téléchargeables : un <strong>référentiel</strong>
+      et des <strong>outils</strong>, à consulter en ligne ou hors ligne.
     </p>
   `;
 
@@ -63,8 +69,10 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
       euroclassica: "Repère à définir",
       cecrl: "Repère à définir",
       summary: level.description || "",
-      vademecumLabel: `Télécharger le vademecum ${level.classLabel || level.id || ""}`.trim(),
-      vademecumUrl: `assets/docs/vademecum-${level.id}.pdf`,
+      referentielLabel: "Référentiel",
+      referentielUrl: `assets/docs/referentiel-${level.id}.pdf`,
+      outilsLabel: "Outils",
+      outilsUrl: `assets/docs/outils-${level.id}.pdf`,
     };
 
     const card = document.createElement("article");
@@ -86,33 +94,62 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
         <button type="button" class="btn btn-primary" data-action="open-dashboard">
           ${dashboardButtonLabel}
         </button>
-       <a
-  href="${meta.vademecumUrl}"
-  download
-  target="_blank"
-  rel="noopener noreferrer"
-  data-action="open-vademecum"
-  aria-label="${meta.vademecumLabel}"
-  style="
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:0.5rem;
-    padding:0.85rem 1rem;
-    border-radius:12px;
-    border:1px solid rgba(0,0,0,0.12);
-    background:#f7f3e8;
-    color:#2f2a1f;
-    font-weight:600;
-    text-decoration:none;
-    line-height:1.2;
-    box-shadow:0 2px 6px rgba(0,0,0,0.08);
-    cursor:pointer;
-  "
->
-  <span aria-hidden="true">📘</span>
-  <span>${meta.vademecumLabel}</span>
-</a>
+
+        <a
+          href="${meta.referentielUrl}"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          data-action="open-referentiel"
+          aria-label="${meta.referentielLabel} ${level.classLabel || level.id || ""}"
+          style="
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:0.5rem;
+            padding:0.85rem 1rem;
+            border-radius:12px;
+            border:1px solid rgba(0,0,0,0.12);
+            background:#f7f3e8;
+            color:#2f2a1f;
+            font-weight:600;
+            text-decoration:none;
+            line-height:1.2;
+            box-shadow:0 2px 6px rgba(0,0,0,0.08);
+            cursor:pointer;
+          "
+        >
+          <span aria-hidden="true">📘</span>
+          <span>${meta.referentielLabel}</span>
+        </a>
+
+        <a
+          href="${meta.outilsUrl}"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          data-action="open-outils"
+          aria-label="${meta.outilsLabel} ${level.classLabel || level.id || ""}"
+          style="
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:0.5rem;
+            padding:0.85rem 1rem;
+            border-radius:12px;
+            border:1px solid rgba(0,0,0,0.12);
+            background:#f7f3e8;
+            color:#2f2a1f;
+            font-weight:600;
+            text-decoration:none;
+            line-height:1.2;
+            box-shadow:0 2px 6px rgba(0,0,0,0.08);
+            cursor:pointer;
+          "
+        >
+          <span aria-hidden="true">🧰</span>
+          <span>${meta.outilsLabel}</span>
+        </a>
       </div>
     `;
 
