@@ -2,16 +2,16 @@
 const headerContexts5eP1 = {
   "p1-l1": "Au matin, Flavia salue Marcus sur les pavés de Subure pendant que Niger, le petit chien, trotte entre les jambes des passants.",
   "p1-l2": "Aurelia reste dans sa domus, Marcus observe l’insula d’en face, et Lucius garde la porte d’un air de comploteur.",
-  "p1-l3": "Marcus file au forum, Flavia ralentit devant une taberna, et le marchand suit du regard ceux qui s'intéressent de trop près à son étal.",
-  "p1-l4": "Près du petit sanctuaire, Livia voit tout de suite qu’une offrande a disparu de l'autel. Qui a fait le coup ?",
-  "p1-l5": "Niger s'arrête devant une porte fermée et grogne. Marcus devine que le chien n’aboie pas pour rien.",
-  "p1-l6": "Lucius fait passer une tablette de cire de main en main, Flavia la déchiffre, et chacun cherche le nom qu’on a voulu glisser là en douce.",
+  "p1-l3": "Marcus file au forum, Flavia ralentit devant une taberna, et le marchand suit du regard les gamins qui s'intéressent de trop près à son étal.",
+  "p1-l4": "Près du petit sanctuaire, Livia voit tout de suite qu’une offrande a disparu de l'autel. On l'a volée ! C'est un acte grave. Qui a fait le coup ?",
+  "p1-l5": "Niger s'arrête devant une porte fermée et grogne. Marcus devine que le petit chien n’aboie pas pour rien.",
+  "p1-l6": "Lucius fait passer une tablette de cire de main en main, Flavia la déchiffre, et chacun essaie de déchiffrer le nom qu’on a voulu glisser là en douce.",
   "p1-l7": "Aurelia revient de la fontaine avec son seau, et tout le quartier de Subure bruit d'une rumeur inquiète.",
-  "p1-l8": "Chez le boulanger, l’odeur du pain chaud couvre mal les questions, et Marcus se demande qui a vu passer l’objet disparu.",
-  "p1-l9": "A l'école, la rumeur entrée par la rue court de banc en banc, d'élève en élève, et Livia entend pour la première fois le nom qu’on chuchotait dehors.",
+  "p1-l8": "Chez le boulanger, au milieu des clients et de l’odeur du pain chaud, Marcus se demande qui a vu passer l’objet disparu.",
+  "p1-l9": "A l'école, la rumeur entrée par la rue court de banc en banc, d'élève en élève, et Livia entend pour la première fois un nom qu’on chuchotait dehors.",
   "p1-l10": "Aux thermes, Marcus écoute ce que les adultes disent à mi-voix, et note chaque détail qui sort de l'ordinaire.",
-  "p1-l11": "Sur un mur de Subure, Flavia lit une inscription griffée à la hâte, qui lui rappelle le nom caché sur la tablette.",
-  "p1-l12": "Le soir, dans les popinae, Marcus, Flavia, Livia et Lucius recollent les morceaux, puis le nom de Discordia émerge enfin du brouhaha."
+  "p1-l11": "Sur un mur de Subure, Flavia lit une inscription griffée à la hâte, qui lui rappelle soudain le nom caché sur la tablette.",
+  "p1-l12": "Le soir, dans les popinae, Marcus, Flavia, Livia et Lucius rassemblent leurs indices. C'est bien le nom de Discordia qui émerge enfin du brouhaha..."
 };
 
 export const lessons5eP1 = [
