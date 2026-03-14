@@ -126,21 +126,17 @@ export const lessons5eP2 = [
         "points": 1
       },
       {
-        "id": "p2-l1-t5",
-        "type": "ordering",
-        "prompt": "Remets dans l’ordre de base une phrase correcte.",
-        "options": [
-          "vicinus",
-          "aram",
-          "videt"
-        ],
-        "expected": [
-          "vicinus",
-          "aram",
-          "videt"
-        ],
-        "points": 1
-      },
+  "id": "p2-l1-t5",
+  "type": "multipleChoice",
+  "prompt": "Dans « vicinus aram videt », quel mot est le complément d’objet direct ?",
+  "options": [
+    "vicinus",
+    "aram",
+    "videt"
+  ],
+  "expected": "aram",
+  "points": 1
+}
       {
         "id": "p2-l1-t6",
         "type": "singleChoice",
