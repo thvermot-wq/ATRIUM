@@ -1,17 +1,17 @@
-// Données de leçons 5E · Période 2 — Discordia in Subura.
+// Données de leçons 5E · Période 2 — Discordia in Subure.
 const headerContexts5eP2 = {
-  "p2-l1": "Au pied de l’ara, Marcus pose les premières questions, Flavia examine chaque regard, et Subure comprend que l’affaire de l'offrande disparue ne s’éteindra pas toute seule.",
-  "p2-l2": "Un témoin jure qu’il a vu quelqu’un courir vers le temple puis entrer en coup de vent dans une boutique. Lucius note le trajet avant d'oublier.",
-  "p2-l3": "Près de la fontaine, Aurelia raconte ce qu’elle a vu avant le tumulte, tandis que Flavia l’écoute attentivement.",
-  "p2-l4": "Sextus accuse un esclave, l'esclave accuse son maître en douce, et Marcus voit les accusations partir plus vite que les preuves dans tout Subure.",
-  "p2-l5": "Livia trouve un indice près du temple, et ce petit morceau de piste remet tout le monde en marche.",
-  "p2-l6": "Chacun parle pour soi, nie, accuse ou jure avoir entendu autre chose, et Flavia doit trier les voix avant qu’elles n’emportent la vérité.",
-  "p2-l7": "Devant une porte, les voisins de Subure s’agglutinent, crient tous ensemble, et Marcus comprend qu’une foule peut fabriquer sa propre version des faits.",
-  "p2-l8": "Quand la tablette passe de main en main, Lucius voit qu’un nom a été modifié dans la cire. Qui accuse qui ?",
-  "p2-l9": "Niger revient devant la même porte, aboie en refusant d'avancer, et Livia commence à croire le petit chien plutôt que le voisinage.",
-  "p2-l10": "À l’aube, Aurelia plonge son seau dans une eau trouble, puis les soupçons éclaboussent Subure d’un bout à l’autre de la rue.",
-  "p2-l11": "Le nom de Discordia enfle quand Marcus le dit à haute voix, et chacun sent que la querelle a trouvé un visage.",
-  "p2-l12": "Le soir venu, Subure se demande si la paix va vraiment revenir, ou si Discordia s'est emparée de tous les esprits."
+  "p2-l1": "Au pied de l’ara, Marcus relève la place vide du donum, Flavia scrute les visages, et Subure comprend tout de suite qu’on ne refermera pas l’affaire avec deux phrases bien tournées.",
+  "p2-l2": "Un témoin assure avoir vu quelqu’un filer vers le temple puis ressortir d’une taberna ; Lucius refait le trajet de mémoire, comme s’il pouvait rattraper la silhouette à force d’y penser.",
+  "p2-l3": "Près de la fontaine, Aurelia parle enfin. Elle montre la porte, la rue, le moment précis où quelque chose a dérapé, et Flavia ne la quitte pas des yeux.",
+  "p2-l4": "Sextus charge un servus, le servus charge presque son dominus, et Marcus voit les accusations se croiser dans Subure plus vite que les preuves.",
+  "p2-l5": "Livia repère près du temple un signum que personne n’avait voulu voir ; ce n’est pas grand-chose, juste assez pour remettre tout le quartier en mouvement.",
+  "p2-l6": "On entend tout et son contraire : un chien, une porte, un danger qu’on nie trop vite. Flavia laisse parler, puis commence à séparer la peur du mensonge.",
+  "p2-l7": "Devant la ianua, les voisins s’entassent, parlent tous plus fort que les autres, et Marcus comprend qu’à Subure une foule peut fabriquer une histoire entière avant même d’avoir compris la première phrase.",
+  "p2-l8": "La tabella passe de main en main. Lucius voit la cire reprise, le nom touché, la phrase faussée ; d’un coup, l’enquête ne porte plus seulement sur le vol, mais sur ce qu’on a voulu faire croire.",
+  "p2-l9": "Niger revient devant la même porte, s’arrête, grogne, refuse d’avancer. Livia finit par faire plus confiance au chien qu’aux habitants de Subure.",
+  "p2-l10": "À l’aube, Aurelia plonge son seau dans une eau trouble. Le fond remue, la rumeur aussi, et les soupçons salissent Subure d’une maison à l’autre.",
+  "p2-l11": "Quand Marcus prononce enfin le nom de Discordia, personne ne rit. La querelle qui courait de bouche en bouche prend soudain un visage net.",
+  "p2-l12": "Le soir retombe sur Subure. Flavia relit la tabella, Marcus repense au chien, et chacun se demande si la paix revient vraiment, ou si elle attend juste qu’on baisse la garde."
 };
 
 export const lessons5eP2 = [
@@ -128,7 +128,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l1-t5",
         "type": "ordering",
-        "prompt": "Remets dans l’ordre une phrase correcte.",
+        "prompt": "Remets dans l’ordre de base une phrase correcte.",
         "options": [
           "vicinus",
           "aram",
@@ -285,17 +285,13 @@ export const lessons5eP2 = [
         "prompt": "Lexique : vicinus = ?",
         "expected": "voisin",
         "acceptedAnswers": [
-          "voisin",
-          "voisine",
-          "personne du voisinage"
+          "voisin"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
-            "voisin",
-            "voisine",
-            "personne du voisinage"
+            "voisin"
           ]
         },
         "points": 1,
@@ -338,7 +334,7 @@ export const lessons5eP2 = [
       "keywords": [
         "enquête",
         "interrogatifs",
-        "Subura"
+        "Subure"
       ]
     },
     "meta": {
@@ -459,7 +455,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l2-t5",
         "type": "ordering",
-        "prompt": "Produis : Le voisin est devant la porte.",
+        "prompt": "Produis dans l’ordre de base : Le voisin est devant la porte.",
         "options": [
           "vicinus",
           "ante",
@@ -521,7 +517,9 @@ export const lessons5eP2 = [
           "la dame marche dans la rue",
           "une dame marche dans la rue",
           "la femme se promène dans la rue",
-          "une femme se promène dans la rue"
+          "une femme se promène dans la rue",
+          "la dame se promène dans la rue",
+          "une dame se promène dans la rue"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -532,7 +530,9 @@ export const lessons5eP2 = [
             "la dame marche dans la rue",
             "une dame marche dans la rue",
             "la femme se promène dans la rue",
-            "une femme se promène dans la rue"
+            "une femme se promène dans la rue",
+            "la dame se promène dans la rue",
+            "une dame se promène dans la rue"
           ]
         },
         "points": 1,
@@ -794,7 +794,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l3-t5",
         "type": "ordering",
-        "prompt": "Remets : femina / aquam / portat",
+        "prompt": "Remets dans l’ordre de base : femina / aquam / portat",
         "options": [
           "femina",
           "aquam",
@@ -959,7 +959,8 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "sujet ; complément objet",
           "sujet ; objet",
-          "forme de base ; objet"
+          "forme de base ; objet",
+          "nominatif ; accusatif"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -967,7 +968,8 @@ export const lessons5eP2 = [
           "accepted": [
             "sujet ; complément objet",
             "sujet ; objet",
-            "forme de base ; objet"
+            "forme de base ; objet",
+            "nominatif ; accusatif"
           ]
         },
         "points": 1,
@@ -1148,7 +1150,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l4-t6",
         "type": "ordering",
-        "prompt": "Compose une phrase : le maître accuse le voisin.",
+        "prompt": "Compose dans l’ordre de base : le maître accuse le voisin.",
         "options": [
           "dominus",
           "vicinum",
@@ -1188,12 +1190,8 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "le voisin accuse le serviteur",
           "le voisin accuse l'esclave",
-          "la voisine accuse le serviteur",
-          "la voisine accuse l'esclave",
           "le voisin met en cause le serviteur",
-          "le voisin met en cause l'esclave",
-          "la voisine met en cause le serviteur",
-          "la voisine met en cause l'esclave"
+          "le voisin met en cause l'esclave"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -1201,12 +1199,8 @@ export const lessons5eP2 = [
           "accepted": [
             "le voisin accuse le serviteur",
             "le voisin accuse l'esclave",
-            "la voisine accuse le serviteur",
-            "la voisine accuse l'esclave",
             "le voisin met en cause le serviteur",
-            "le voisin met en cause l'esclave",
-            "la voisine met en cause le serviteur",
-            "la voisine met en cause l'esclave"
+            "le voisin met en cause l'esclave"
           ]
         },
         "points": 1,
@@ -1485,7 +1479,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l5-t6",
         "type": "ordering",
-        "prompt": "Ordonne : donum / vicinus / invenit",
+        "prompt": "Ordonne dans l’ordre de base : donum / vicinus / invenit",
         "options": [
           "vicinus",
           "donum",
@@ -1629,7 +1623,8 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "identiques",
           "pareils",
-          "semblables"
+          "semblables",
+          "les mêmes"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -1637,7 +1632,8 @@ export const lessons5eP2 = [
           "accepted": [
             "identiques",
             "pareils",
-            "semblables"
+            "semblables",
+            "les mêmes"
           ]
         },
         "points": 1,
@@ -1827,7 +1823,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l6-t7",
         "type": "ordering",
-        "prompt": "Place le verbe en fin : je crie dans la rue.",
+        "prompt": "Place le verbe en fin dans l’ordre de base : je crie dans la rue.",
         "options": [
           "ego",
           "in",
@@ -1940,7 +1936,9 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "je / tu / il-elle",
           "je-tu-il",
-          "1re 2e 3e personne singulier"
+          "1re 2e 3e personne singulier",
+          "première deuxième troisième personne du singulier",
+          "1re 2e 3e personne du singulier"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -1948,7 +1946,9 @@ export const lessons5eP2 = [
           "accepted": [
             "je / tu / il-elle",
             "je-tu-il",
-            "1re 2e 3e personne singulier"
+            "1re 2e 3e personne singulier",
+            "première deuxième troisième personne du singulier",
+            "1re 2e 3e personne du singulier"
           ]
         },
         "points": 1,
@@ -2142,7 +2142,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l7-t7",
         "type": "ordering",
-        "prompt": "Remets : in via / clamant / vicini",
+        "prompt": "Remets dans l’ordre de base : in via / clamant / vicini",
         "options": [
           "in",
           "via",
@@ -2271,7 +2271,9 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "je tu il/elle nous vous ils/elles",
           "je/tu/il-nous/vous/ils",
-          "1s 2s 3s 1p 2p 3p"
+          "1s 2s 3s 1p 2p 3p",
+          "première deuxième troisième personne singulier pluriel",
+          "1re 2e 3e singulier 1re 2e 3e pluriel"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -2279,7 +2281,9 @@ export const lessons5eP2 = [
           "accepted": [
             "je tu il/elle nous vous ils/elles",
             "je/tu/il-nous/vous/ils",
-            "1s 2s 3s 1p 2p 3p"
+            "1s 2s 3s 1p 2p 3p",
+            "première deuxième troisième personne singulier pluriel",
+            "1re 2e 3e singulier 1re 2e 3e pluriel"
           ]
         },
         "points": 1,
@@ -2342,7 +2346,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l8"],
     "objective": "Lire un court texte suspect autour d’une tablette falsifiée.",
     "lessonPoint": "Je lis un petit texte en vérifiant les mots-clés verum/falsum et les verbes d’action.",
-    "narrative": "Une tabella circule : un nom a été changé. Qui a mutat le message ?",
+    "narrative": "Une tabella circule : un nom a été changé. Qui a modifié le message ?",
     "canDo": [
       "Je lis un micro-texte continu.",
       "Je repère vrai/faux.",
@@ -2446,7 +2450,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l8-t5",
         "type": "ordering",
-        "prompt": "Reconstitue : vicinus / tabellam / legit",
+        "prompt": "Reconstitue dans l’ordre de base : vicinus / tabellam / legit",
         "options": [
           "vicinus",
           "tabellam",
@@ -2500,7 +2504,8 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "la tablette est falsifiée",
           "la tablette est fausse",
-          "la tablette est truquée"
+          "la tablette est truquée",
+          "la tablette est trafiquée"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -2508,7 +2513,8 @@ export const lessons5eP2 = [
           "accepted": [
             "la tablette est falsifiée",
             "la tablette est fausse",
-            "la tablette est truquée"
+            "la tablette est truquée",
+            "la tablette est trafiquée"
           ]
         },
         "points": 1,
@@ -2598,7 +2604,10 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "le nom a été changé",
           "un nom est modifié",
-          "elle est falsifiée"
+          "elle est falsifiée",
+          "la cire a été modifiée",
+          "le texte a été modifié",
+          "le nom dans la cire a été changé"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -2606,7 +2615,10 @@ export const lessons5eP2 = [
           "accepted": [
             "le nom a été changé",
             "un nom est modifié",
-            "elle est falsifiée"
+            "elle est falsifiée",
+            "la cire a été modifiée",
+            "le texte a été modifié",
+            "le nom dans la cire a été changé"
           ]
         },
         "points": 1,
@@ -2788,7 +2800,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l9-t6",
         "type": "ordering",
-        "prompt": "Compose un ordre latin valide.",
+        "prompt": "Compose un ordre latin de base valide.",
         "options": [
           "canis",
           "ante",
@@ -2927,7 +2939,9 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "il faut regarder les formes",
           "il faut repérer le verbe et les terminaisons",
-          "l'ordre change mais les formes donnent le sens"
+          "l'ordre change mais les formes donnent le sens",
+          "ce sont les formes qui donnent le sens",
+          "ce sont les terminaisons qui donnent le sens"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -2935,7 +2949,9 @@ export const lessons5eP2 = [
           "accepted": [
             "il faut regarder les formes",
             "il faut repérer le verbe et les terminaisons",
-            "l'ordre change mais les formes donnent le sens"
+            "l'ordre change mais les formes donnent le sens",
+            "ce sont les formes qui donnent le sens",
+            "ce sont les terminaisons qui donnent le sens"
           ]
         },
         "points": 1,
@@ -3253,22 +3269,36 @@ export const lessons5eP2 = [
       {
         "id": "p2-l10-p3",
         "type": "textInput",
-        "prompt": "Mini-récap nominatif/accusatif (rosa, dominus, donum)",
-        "expected": "rosa/rosam dominus/dominum donum/donum",
+        "prompt": "Complète les accusatifs dans les cartouches : rosa / … ; dominus / … ; donum / …",
+        "placeholder": "rosam dominum donum",
+        "uiVariant": "chipsCompletion",
+        "chips": [
+          {
+            "label": "rosa /",
+            "expected": "rosam"
+          },
+          {
+            "label": "dominus /",
+            "expected": "dominum"
+          },
+          {
+            "label": "donum /",
+            "expected": "donum"
+          }
+        ],
+        "expected": "rosam dominum donum",
         "acceptedAnswers": [
-          "rosa/rosam dominus/dominum donum/donum",
-          "rosa rosam ; dominus dominum ; donum donum"
+          "rosam dominum donum"
         ],
         "answerConfig": {
           "type": "translation-segment",
-          "language": "fr",
+          "language": "latin",
           "accepted": [
-            "rosa/rosam dominus/dominum donum/donum",
-            "rosa rosam ; dominus dominum ; donum donum"
+            "rosam dominum donum"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "rosa/rosam dominus/dominum donum/donum",
+        "canonicalAnswer": "rosam dominum donum",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -3277,19 +3307,18 @@ export const lessons5eP2 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "On vérifie seulement les trois formes accusatives attendues, dans l’ordre.",
         "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "forme latine impossible au niveau de la leçon",
+          "ordre des trois formes incorrect"
         ],
         "tests": [
           {
-            "input": "rosa/rosam dominus/dominum donum/donum",
+            "input": "rosam dominum donum",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "rosa dominus donum",
             "isCorrect": false
           }
         ]
@@ -3333,12 +3362,12 @@ export const lessons5eP2 = [
     "canDo": [
       "Je lis un mini-récit connecté.",
       "Je repère les verbes du présent.",
-      "Je explique une hypothèse de récit."
+      "J’explique une hypothèse de récit."
     ],
     "lexicon": [
       "Discordia = Discorde",
       "pax = paix",
-      "vicus = quartier, rue de quartier",
+      "vicus = quartier, rue",
       "intrat = il/elle entre",
       "turbat = il/elle trouble",
       "separat = il/elle sépare",
@@ -3452,7 +3481,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l11-t6",
         "type": "ordering",
-        "prompt": "Mets le verbe en fin : Discordia / vicum / turbat",
+        "prompt": "Mets le verbe en fin dans l’ordre de base : Discordia / vicum / turbat",
         "options": [
           "Discordia",
           "vicum",
@@ -3597,7 +3626,9 @@ export const lessons5eP2 = [
         "acceptedAnswers": [
           "parce que les troubles se multiplient",
           "parce que le quartier se divise",
-          "parce que la paix disparaît"
+          "parce que la paix disparaît",
+          "parce que les voisins s'accusent",
+          "parce que tout le monde se dispute"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -3605,7 +3636,9 @@ export const lessons5eP2 = [
           "accepted": [
             "parce que les troubles se multiplient",
             "parce que le quartier se divise",
-            "parce que la paix disparaît"
+            "parce que la paix disparaît",
+            "parce que les voisins s'accusent",
+            "parce que tout le monde se dispute"
           ]
         },
         "points": 1,
@@ -3809,7 +3842,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l12-t7",
         "type": "ordering",
-        "prompt": "Rebâtis une phrase finale : vicini / signum / vident",
+        "prompt": "Rebâtis la phrase dans l’ordre de base : vicini / signum / vident",
         "options": [
           "vicini",
           "signum",
@@ -3931,12 +3964,15 @@ export const lessons5eP2 = [
       {
         "id": "p2-l12-p3",
         "type": "textInput",
-        "prompt": "Qu’est-ce qui a troublé la Subure ? (réponse courte)",
+        "prompt": "Qu’est-ce qui a troublé Subure ? (réponse courte)",
         "expected": "la Discorde",
         "acceptedAnswers": [
           "la Discorde",
           "Discordia",
-          "les conflits entre voisins"
+          "les conflits entre voisins",
+          "la querelle",
+          "les disputes entre voisins",
+          "les soupçons entre voisins"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -3944,7 +3980,10 @@ export const lessons5eP2 = [
           "accepted": [
             "la Discorde",
             "Discordia",
-            "les conflits entre voisins"
+            "les conflits entre voisins",
+            "la querelle",
+            "les disputes entre voisins",
+            "les soupçons entre voisins"
           ]
         },
         "points": 1,
@@ -3986,12 +4025,12 @@ export const lessons5eP2 = [
         "Déclinaisons : 1re + 2e masc. + 2e neutre",
         "Présent : -o/-s/-t/-mus/-tis/-nt",
         "Ordre latin flexible",
-        "Civilisation : la Subure est un quartier populaire vivant et bruyant de Rome"
+        "Civilisation : Subure est un quartier populaire vivant et bruyant de Rome"
       ],
       "keywords": [
         "révision",
         "enquête finale",
-        "Subura",
+        "Subure",
         "pax"
       ]
     },
