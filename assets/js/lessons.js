@@ -121,6 +121,8 @@ export const LEVELS_SPEC = [
     dashboardTitle: "Atrium I : Fondations",
     dashboardSubtitle:
       "Euroclassica : Vestibulum + · CECRL adapté – profil LCA : pré-A1 → A1 en réception et production guidées",
+    referentielPdf: "assets/pdf/5e-referentiel.pdf",
+    outilsPdf: "assets/pdf/5e-outils.pdf",
   },
   {
     id: "4e",
@@ -132,6 +134,8 @@ export const LEVELS_SPEC = [
     dashboardTitle: "Atrium II : Consolidation",
     dashboardSubtitle:
       "Euroclassica : Ianua + / pré-Vestibulum · CECRL adapté – profil LCA : A1 consolidé en lecture et version guidée",
+    referentielPdf: "assets/pdf/4e-referentiel.pdf",
+    outilsPdf: "assets/pdf/4e-outils.pdf",
   },
   {
     id: "3e",
@@ -143,6 +147,8 @@ export const LEVELS_SPEC = [
     dashboardTitle: "Atrium III : Maîtrise",
     dashboardSubtitle:
       "Euroclassica : Vestibulum + / pré-Ianua · CECRL adapté – profil LCA : A1+ / début A2 en réception écrite guidée",
+    referentielPdf: "assets/pdf/3e-referentiel.pdf",
+    outilsPdf: "assets/pdf/3e-outils.pdf",
   },
 ];
 
