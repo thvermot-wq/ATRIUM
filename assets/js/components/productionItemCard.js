@@ -1,4 +1,10 @@
-export function createProductionItemCard({ item, onEvaluate, onReset, deferCorrection = false, canReset = () => true }) {
+export function createProductionItemCard({
+  item,
+  onEvaluate,
+  onReset,
+  deferCorrection = false,
+  canReset = () => true,
+}) {
   const card = document.createElement("article");
   card.className = "card production-item-card";
   card.dataset.itemState = "pristine";
@@ -8,13 +14,95 @@ export function createProductionItemCard({ item, onEvaluate, onReset, deferCorre
 
   const hint = document.createElement("p");
   hint.className = "muted";
-  hint.textContent = `${item.points || 1} point · réponse courte`;
 
-  const input = document.createElement("input");
-  input.type = "text";
-  input.name = item.id;
-  input.maxLength = 120;
-  input.placeholder = "Écrire une réponse courte";
+  const isChipsCompletion = item?.uiVariant === "chipsCompletion" && Array.isArray(item?.chips) && item.chips.length > 0;
+  hint.textContent = isChipsCompletion
+    ? `${item.points || 1} point · cartouches à compléter`
+    : `${item.points || 1} point · réponse courte`;
+
+  function createShortTextInput() {
+    const input = document.createElement("input");
+    input.type = "text";
+    input.name = item.id;
+    input.maxLength = 120;
+    input.placeholder = item.placeholder || "Écrire une réponse courte";
+
+    return {
+      node: input,
+      getResponse: () => input.value,
+      setDisabled: (disabled) => {
+        input.disabled = disabled;
+      },
+      resetResponse: () => {
+        input.value = "";
+      },
+    };
+  }
+
+  function createChipsCompletion() {
+    const wrapper = document.createElement("div");
+    wrapper.className = "field-stack";
+    wrapper.style.display = "flex";
+    wrapper.style.flexWrap = "wrap";
+    wrapper.style.gap = "0.45rem";
+
+    const inputs = [];
+
+    item.chips.forEach((chip, index) => {
+      const segment = document.createElement("label");
+      segment.className = "chip-completion";
+      segment.style.display = "inline-flex";
+      segment.style.alignItems = "center";
+      segment.style.gap = "0.35rem";
+      segment.style.padding = "0.35rem 0.55rem";
+      segment.style.border = "1px solid var(--line, #d9dfea)";
+      segment.style.borderRadius = "999px";
+      segment.style.background = "#f8faff";
+      segment.style.whiteSpace = "nowrap";
+
+      const text = document.createElement("span");
+      text.textContent = String(chip?.label || `forme ${index + 1} /`);
+      text.style.fontWeight = "700";
+      text.style.color = "var(--primary, #263c7a)";
+
+      const input = document.createElement("input");
+      input.type = "text";
+      input.inputMode = "text";
+      input.autocomplete = "off";
+      input.spellcheck = false;
+      input.maxLength = Number(chip?.maxLength || 16);
+      input.placeholder = "…";
+      input.style.width = `${Math.max(4, String(chip?.expected || "").length + 1)}ch`;
+      input.style.border = "none";
+      input.style.outline = "none";
+      input.style.background = "transparent";
+      input.style.padding = "0";
+      input.style.margin = "0";
+      input.style.font = "inherit";
+      input.style.minWidth = "4ch";
+
+      inputs.push(input);
+      segment.append(text, input);
+      wrapper.appendChild(segment);
+    });
+
+    return {
+      node: wrapper,
+      getResponse: () => inputs.map((input) => input.value.trim()).join(" ").trim(),
+      setDisabled: (disabled) => {
+        inputs.forEach((input) => {
+          input.disabled = disabled;
+        });
+      },
+      resetResponse: () => {
+        inputs.forEach((input) => {
+          input.value = "";
+        });
+      },
+    };
+  }
+
+  const renderer = isChipsCompletion ? createChipsCompletion() : createShortTextInput();
 
   const feedback = document.createElement("p");
   feedback.className = "feedback-inline muted";
@@ -43,7 +131,7 @@ export function createProductionItemCard({ item, onEvaluate, onReset, deferCorre
   let attemptClosed = false;
 
   function applyState() {
-    input.disabled = isSubmitted || attemptClosed;
+    renderer.setDisabled(isSubmitted || attemptClosed);
     validateButton.disabled = isSubmitted || attemptClosed;
     resetButton.disabled = attemptClosed || !canReset();
   }
@@ -76,12 +164,12 @@ export function createProductionItemCard({ item, onEvaluate, onReset, deferCorre
   validateButton.addEventListener("click", () => {
     if (isSubmitted || attemptClosed) return;
 
-    const result = onEvaluate(input.value);
+    const result = onEvaluate(renderer.getResponse());
     isSubmitted = true;
     card.dataset.itemState = "answered_locked";
 
     if (deferCorrection) {
-      feedback.textContent = "Réponse enregistrée. Le corrigé complet apparaîtra en fin de leçon.";
+      feedback.textContent = "Réponse enregistrée.\nLe corrigé complet apparaîtra en fin de leçon.";
       feedback.className = "feedback-inline muted";
       answer.hidden = true;
       answer.textContent = "";
@@ -103,18 +191,19 @@ export function createProductionItemCard({ item, onEvaluate, onReset, deferCorre
   resetButton.addEventListener("click", () => {
     if (attemptClosed || !canReset()) return;
 
-    input.value = "";
+    renderer.resetResponse();
     answer.hidden = true;
     answer.textContent = "";
     feedback.className = "feedback-inline muted";
-    feedback.textContent = "Exercice réinitialisé. Nouvelle tentative prête.";
+    feedback.textContent = "Exercice réinitialisé.\nNouvelle tentative prête.";
     isSubmitted = false;
     card.dataset.itemState = "pristine";
+
     if (typeof onReset === "function") onReset();
     applyState();
   });
 
   applyState();
-  card.append(title, hint, input, actions, feedback, answer);
+  card.append(title, hint, renderer.node, actions, feedback, answer);
   return card;
 }
