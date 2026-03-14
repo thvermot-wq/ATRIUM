@@ -51,6 +51,49 @@ function formatExpected(expected) {
   return String(expected ?? "");
 }
 
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function renderLexiconChips(lexicon) {
+  if (!Array.isArray(lexicon) || lexicon.length === 0) return "";
+
+  return `
+    <div class="lesson-lexicon-block">
+      <div class="lesson-lexicon-title">Lexique-clé</div>
+      <div class="lesson-lexicon">
+        ${lexicon.map((entry) => {
+          const parts = String(entry ?? "").split("=");
+          const latin = escapeHtml((parts[0] || "").trim());
+          const french = escapeHtml(parts.slice(1).join("=").trim());
+
+          if (!french) {
+            return `
+              <span class="lexicon-chip">
+                <span class="lexicon-chip__latin">${latin}</span>
+              </span>
+            `;
+          }
+
+          return `
+            <span class="lexicon-chip">
+              <span class="lexicon-chip__latin">${latin}</span>
+              <span class="lexicon-chip__sep">=</span>
+              <span class="lexicon-chip__fr">${french}</span>
+            </span>
+          `;
+        }).join("")}
+      </div>
+    </div>
+  `;
+}
+
 function formatReviewLine(item, entry) {
   const isCorrect = Boolean(entry?.isCorrect);
   const user = formatUserAnswer(entry?.userAnswer);
@@ -119,8 +162,8 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
 
   const hero = document.createElement("article");
   hero.className = "card";
-  const lexiconLine = Array.isArray(lesson.lexicon) && lesson.lexicon.length > 0
-    ? lesson.lexicon.join(" · ")
+  const lexiconMarkup = Array.isArray(lesson.lexicon) && lesson.lexicon.length > 0
+    ? renderLexiconChips(lesson.lexicon)
     : "";
 
   hero.innerHTML = `
@@ -129,7 +172,7 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     <p class="muted">${lesson.id} · Période ${lesson.period}</p>
     <p><strong>Objectif :</strong> ${lesson.objective}</p>
     <p><strong>Point de leçon :</strong> ${lesson.lessonPoint || lesson.objective}</p>
-    ${lexiconLine ? `<p class="muted"><strong>Lexique-clé :</strong> ${lexiconLine}</p>` : ""}
+    ${lexiconMarkup}
     <p class="muted">Flow complet : répondez d'abord aux 10 exercices, puis consultez le corrigé global en fin de leçon.</p>
     <p class="muted">Validation visée : 8/10 (80 %) · Score enregistré : courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
   `;
