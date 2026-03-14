@@ -3016,7 +3016,7 @@ export const lessons5eP1 = [
           "Les thermes entrent dans Marcus",
           "Marcus sort des thermes",
           "Marcus regarde les thermes",
-          "Marcus crie"
+          "Dans les thermes, Marcus est un ingrat"
         ],
         "expected": "Marcus entre dans les thermes",
         "shuffle": true,
