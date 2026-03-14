@@ -357,10 +357,10 @@ export const lessons5eP2 = [
       "Je traduis un petit trajet."
     ],
     "lexicon": [
-      "ad = vers",
-      "in = dans",
-      "ex = hors de, depuis",
-      "ante = devant",
+      "ad + accusatif = vers",
+      "in + ablatif = dans",
+      "ex + ablatif = hors de, depuis",
+      "ante + accusatif = devant",
       "templum = temple",
       "taberna = boutique",
       "via = rue",
