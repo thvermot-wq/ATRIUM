@@ -96,7 +96,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l1-t3",
         "type": "singleChoice",
-        "prompt": "« Vicinus Sextum accusat » : qui accuse ?",
+        "prompt": "« <i>Vicinus Sextum accusat</i> » : qui accuse ?",
         "options": [
           "le voisin",
           "Sextus",
@@ -110,7 +110,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l1-t4",
         "type": "multipleChoice",
-        "prompt": "Choisis les traductions recevables de « Vicinus Sextum accusat ».",
+        "prompt": "Choisis les traductions recevables de « <i>Vicinus Sextum accusat</i> ».",
         "options": [
           "Le voisin accuse Sextus",
           "Le voisin met Sextus en cause",
@@ -128,7 +128,7 @@ export const lessons5eP2 = [
       {
   "id": "p2-l1-t5",
   "type": "singleChoice",
-  "prompt": "Dans « Vicinus aram videt », quel mot est le complément d’objet direct ?",
+  "prompt": "Dans « <i>Vicinus aram videt</i> », quel mot est le complément d’objet direct ?",
   "options": [
     "vicinus",
     "aram",
@@ -140,7 +140,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l1-t6",
         "type": "singleChoice",
-        "prompt": "Repère le verbe dans « Donum vicinus videt ».",
+        "prompt": "Repère le verbe dans « <i>Donum vicinus videt</i> ».",
         "options": [
           "donum",
           "vicinus",
@@ -174,7 +174,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l1-p1",
         "type": "textInput",
-        "prompt": "Traduis en français : quis donum videt ?",
+        "prompt": "Traduis en français : <i>quis donum videt ?</i>",
         "expected": "qui voit l'offrande ?",
         "acceptedAnswers": [
           "qui voit l'offrande",
@@ -278,7 +278,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l1-p3",
         "type": "textInput",
-        "prompt": "Lexique : vicinus = ?",
+        "prompt": "Lexique : <i>vicinus</i> = ?",
         "expected": "voisin",
         "acceptedAnswers": [
           "voisin"
@@ -373,7 +373,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l2-t1",
         "type": "singleChoice",
-        "prompt": "ad signifie…",
+        "prompt": "<i>ad</i> signifie…",
         "options": [
           "vers",
           "dans",
@@ -423,7 +423,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l2-t3",
         "type": "singleChoice",
-        "prompt": "« Servus ad templum venit » : où va le serviteur ?",
+        "prompt": "« <i>Servus ad templum venit</i> » : où va le serviteur ?",
         "options": [
           "vers le temple",
           "dans la boutique",
@@ -437,7 +437,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l2-t4",
         "type": "singleChoice",
-        "prompt": "« Ex taberna serva currit » : la servante…",
+        "prompt": "« <i>Ex taberna serva currit</i> » : la servante…",
         "options": [
           "sort de la boutique",
           "entre dans la boutique",
@@ -469,7 +469,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l2-t6",
         "type": "multipleChoice",
-        "prompt": "Traductions possibles de « Ante ianuam canis stat ».",
+        "prompt": "Traductions possibles de « <i>Ante ianuam canis stat</i> ».",
         "options": [
           "Le chien est devant la porte",
           "Le chien se tient devant la porte",
@@ -486,7 +486,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l2-t7",
         "type": "multipleChoice",
-        "prompt": "Mini-texte : « Femina in via est. Servus ad fontem venit. » Quels sont les lieux ?",
+        "prompt": "Mini-texte : « <i>Femina in via est. Servus ad fontem venit.</i> » Quels sont les lieux ?",
         "options": [
           "via",
           "fons",
@@ -505,7 +505,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l2-p1",
         "type": "textInput",
-        "prompt": "Traduis : femina in via ambulat",
+        "prompt": "Traduis : <i>femina in via ambulat</i>",
         "expected": "la femme marche dans la rue",
         "acceptedAnswers": [
           "la femme marche dans la rue",
@@ -613,7 +613,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l2-p3",
         "type": "textInput",
-        "prompt": "Complète : ad = … ; ex = …",
+        "prompt": "Complète : <i>ad</i> = … ; <i>ex</i> = …",
         "expected": "vers ; hors de",
         "acceptedAnswers": [
           "vers ; hors de",
@@ -762,7 +762,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l3-t3",
         "type": "singleChoice",
-        "prompt": "Dans « Femina aquam portat », quel est l’objet ?",
+        "prompt": "Dans « <i>Femina aquam portat</i> », quel est l’objet ?",
         "options": [
           "femina",
           "aquam",
@@ -790,7 +790,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l3-t5",
         "type": "ordering",
-        "prompt": "Remets dans l’ordre de base : femina / aquam / portat",
+        "prompt": "Remets dans l’ordre de base : <i>femina / aquam / portat</i>",
         "options": [
           "femina",
           "aquam",
@@ -806,7 +806,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l3-t6",
         "type": "multipleChoice",
-        "prompt": "Traductions recevables de « Amica ad tabernam ambulat ».",
+        "prompt": "Traductions recevables de « <i>Amica ad tabernam ambulat</i> ».",
         "options": [
           "L’amie marche vers la boutique",
           "L’amie va à la boutique",
@@ -823,7 +823,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l3-t7",
         "type": "multipleChoice",
-        "prompt": "Mini-texte : « Femina ad fontem stat. Amica portam spectat. » Qui est témoin et que voit-elle ?",
+        "prompt": "Mini-texte : « <i>Femina ad fontem stat. Amica portam spectat.</i> » Qui est témoin et que voit-elle ?",
         "options": [
           "La femme est témoin",
           "L’amie regarde la porte",
@@ -842,7 +842,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l3-p1",
         "type": "textInput",
-        "prompt": "Traduis : femina portam spectat",
+        "prompt": "Traduis : <i>femina portam spectat</i>",
         "expected": "la femme regarde la porte",
         "acceptedAnswers": [
           "la femme regarde la porte",
@@ -1101,7 +1101,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l4-t3",
         "type": "singleChoice",
-        "prompt": "« Dominus servum vocat » : qui appelle ?",
+        "prompt": "« <i>Dominus servum vocat</i> » : qui appelle ?",
         "options": [
           "le maître",
           "le serviteur",
@@ -1115,7 +1115,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l4-t4",
         "type": "singleChoice",
-        "prompt": "« Servum dominus accusat » : qui est accusé ?",
+        "prompt": "« <i>Servum dominus accusat</i> » : qui est accusé ?",
         "options": [
           "le serviteur",
           "le maître",
@@ -1129,7 +1129,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l4-t5",
         "type": "multipleChoice",
-        "prompt": "Traductions recevables : « Amicus vicinum audit ».",
+        "prompt": "Traductions recevables : « <i>Amicus vicinum audit</i> ».",
         "options": [
           "L’ami entend le voisin",
           "L’ami écoute le voisin",
@@ -1162,7 +1162,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l4-t7",
         "type": "multipleChoice",
-        "prompt": "Mini-texte : « Servus canem timet. Dominus servum vocat. » Que comprend-on ?",
+        "prompt": "Mini-texte : « <i>Servus canem timet. Dominus servum vocat.</i> » Que comprend-on ?",
         "options": [
           "Le serviteur craint le chien",
           "Le maître appelle le serviteur",
@@ -1181,7 +1181,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l4-p1",
         "type": "textInput",
-        "prompt": "Traduis : vicinus servum accusat",
+        "prompt": "Traduis : <i>vicinus servum accusat</i>",
         "expected": "le voisin accuse le serviteur",
         "acceptedAnswers": [
           "le voisin accuse le serviteur",
@@ -1281,7 +1281,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l4-p3",
         "type": "textInput",
-        "prompt": "Lexique : dominus peut vouloir dire…",
+        "prompt": "Lexique : <i>dominus</i> peut vouloir dire…",
         "expected": "maître",
         "acceptedAnswers": [
           "maître",
@@ -1430,7 +1430,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l5-t3",
         "type": "singleChoice",
-        "prompt": "« Signum dominus videt » : que voit le maître ?",
+        "prompt": "« <i>Signum dominus videt</i> » : que voit le maître ?",
         "options": [
           "le signe",
           "le maître",
@@ -1458,7 +1458,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l5-t5",
         "type": "multipleChoice",
-        "prompt": "Traductions recevables : « Templum malum celat ».",
+        "prompt": "Traductions recevables : « <i>Templum malum celat</i> ».",
         "options": [
           "Le temple cache un mal",
           "Le temple cache une mauvaise chose",
@@ -1475,7 +1475,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l5-t6",
         "type": "ordering",
-        "prompt": "Ordonne dans l’ordre de base : donum / vicinus / invenit",
+        "prompt": "Ordonne dans l’ordre de base : <i>donum / vicinus / invenit</i>",
         "options": [
           "vicinus",
           "donum",
@@ -1491,7 +1491,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l5-t7",
         "type": "multipleChoice",
-        "prompt": "Mini-texte : « Donum in templo est. Signum in muro est. » Quels neutres lis-tu ?",
+        "prompt": "Mini-texte : « <i>Donum in templo est. Signum in muro est.</i> » Quels neutres lis-tu ?",
         "options": [
           "donum",
           "signum",
@@ -1510,7 +1510,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l5-p1",
         "type": "textInput",
-        "prompt": "Traduis : donum in templo est",
+        "prompt": "Traduis : <i>donum in templo est</i>",
         "expected": "l'offrande est dans le temple",
         "acceptedAnswers": [
           "l'offrande est dans le temple",
@@ -1759,7 +1759,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l6-t3",
         "type": "singleChoice",
-        "prompt": "« Nego » signifie…",
+        "prompt": "« <i>Nego</i> » signifie…",
         "options": [
           "je nie",
           "tu nies",
@@ -1805,7 +1805,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l6-t6",
         "type": "singleChoice",
-        "prompt": "Mini-témoignage : « Habito in via. Nego periculum. » Qui parle ?",
+        "prompt": "Mini-témoignage : « <i>Habito in via. Nego periculum.</i> » Qui parle ?",
         "options": [
           "je",
           "tu",
@@ -1839,7 +1839,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l6-p1",
         "type": "textInput",
-        "prompt": "Traduis : audio canem",
+        "prompt": "Traduis : <i>audio canem</i>",
         "expected": "j'entends le chien",
         "acceptedAnswers": [
           "j'entends le chien",
@@ -2074,7 +2074,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l7-t3",
         "type": "singleChoice",
-        "prompt": "« Vicini clamant » : qui crie ?",
+        "prompt": "« <i>Vicini clamant</i> » : qui crie ?",
         "options": [
           "les voisins",
           "le voisin",
@@ -2088,7 +2088,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l7-t4",
         "type": "singleChoice",
-        "prompt": "« Rogatis » correspond à…",
+        "prompt": "« <i>Rogatis</i> » correspond à…",
         "options": [
           "vous demandez",
           "nous demandons",
@@ -2120,7 +2120,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l7-t6",
         "type": "multipleChoice",
-        "prompt": "Mini-texte : « Quaerimus donum. Rogatis testem. Vicini respondent. » Qui parle collectivement ?",
+        "prompt": "Mini-texte : « <i>Quaerimus donum. Rogatis testem. Vicini respondent.</i> » Qui parle collectivement ?",
         "options": [
           "nous",
           "vous",
@@ -2138,7 +2138,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l7-t7",
         "type": "ordering",
-        "prompt": "Remets dans l’ordre de base : in via / clamant / vicini",
+        "prompt": "Remets dans l’ordre de base : <i>in via / clamant / vicini</i>",
         "options": [
           "in",
           "via",
@@ -2158,7 +2158,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l7-p1",
         "type": "textInput",
-        "prompt": "Traduis : donum quaerimus",
+        "prompt": "Traduis : <i>donum quaerimus</i>",
         "expected": "nous cherchons l'offrande",
         "acceptedAnswers": [
           "nous cherchons l'offrande",
@@ -2365,7 +2365,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l8-t1",
         "type": "singleChoice",
-        "prompt": "« Tabella falsa » signifie…",
+        "prompt": "« <i>Tabella falsa</i> » signifie…",
         "options": [
           "tablette falsifiée",
           "tablette neuve",
@@ -2415,7 +2415,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l8-t3",
         "type": "singleChoice",
-        "prompt": "Texte : « Vicina tabellam legit et ostendit. » Qui lit la tablette ?",
+        "prompt": "Texte : « <i>Vicina tabellam legit et ostendit.</i> » Qui lit la tablette ?",
         "options": [
           "la voisine",
           "le voisin",
@@ -2429,7 +2429,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l8-t4",
         "type": "multipleChoice",
-        "prompt": "Texte court : « Nomen mutat. Verum non est. » Quelles phrases sont vraies ?",
+        "prompt": "Texte court : « <i>Nomen mutat. Verum non est.</i> » Quelles phrases sont vraies ?",
         "options": [
           "Le nom est changé",
           "Le texte n'est pas vrai",
@@ -2446,7 +2446,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l8-t5",
         "type": "ordering",
-        "prompt": "Reconstitue dans l’ordre de base : vicinus / tabellam / legit",
+        "prompt": "Reconstitue dans l’ordre de base : <i>vicinus / tabellam / legit</i>",
         "options": [
           "vicinus",
           "tabellam",
@@ -2462,7 +2462,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l8-t6",
         "type": "singleChoice",
-        "prompt": "Dans « Legit tabellam vicina », quel est le verbe ?",
+        "prompt": "Dans « <i>Legit tabellam vicina</i> », quel est le verbe ?",
         "options": [
           "legit",
           "tabellam",
@@ -2495,7 +2495,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l8-p1",
         "type": "textInput",
-        "prompt": "Traduis : tabella falsa est",
+        "prompt": "Traduis : <i>tabella falsa est</i>",
         "expected": "la tablette est falsifiée",
         "acceptedAnswers": [
           "la tablette est falsifiée",
@@ -2700,7 +2700,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l9-t1",
         "type": "singleChoice",
-        "prompt": "latrat signifie…",
+        "prompt": "<i>latrat</i> signifie…",
         "options": [
           "aboie",
           "entre",
@@ -2750,7 +2750,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l9-t3",
         "type": "singleChoice",
-        "prompt": "« Ante ianuam canis latrat » signifie…",
+        "prompt": "« <i>Ante ianuam canis latrat</i> » signifie…",
         "options": [
           "Le chien aboie devant la porte",
           "La porte aboie devant le chien",
@@ -2764,7 +2764,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l9-t4",
         "type": "singleChoice",
-        "prompt": "« Latrat ante ianuam canis » : même sens ?",
+        "prompt": "« <i>Latrat ante ianuam canis</i> » : même sens ?",
         "options": [
           "oui",
           "non",
@@ -2814,7 +2814,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l9-t7",
         "type": "multipleChoice",
-        "prompt": "Mini-texte : « Canis ante ianuam A manet, ante ianuam B recusat. » Que refuse le chien ?",
+        "prompt": "Mini-texte : « <i>Canis ante ianuam A manet, ante ianuam B recusat.</i> » Que refuse le chien ?",
         "options": [
           "la porte B",
           "la porte A",
@@ -2832,7 +2832,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l9-p1",
         "type": "textInput",
-        "prompt": "Traduis : canis ianuam timet",
+        "prompt": "Traduis : <i>canis ianuam timet</i>",
         "expected": "le chien craint la porte",
         "acceptedAnswers": [
           "le chien craint la porte",
@@ -3123,7 +3123,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l10-t6",
         "type": "ordering",
-        "prompt": "Table de base : rosa / dominus / donum (nominatif puis accusatif)",
+        "prompt": "Table de base : <i>rosa / dominus / donum</i> (nominatif puis accusatif)",
         "options": [
           "rosa",
           "rosam",
@@ -3145,7 +3145,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l10-t7",
         "type": "singleChoice",
-        "prompt": "« Aqua in fonte turpis est » : que se passe-t-il ?",
+        "prompt": "« <i>Aqua in fonte turpis est</i> » : que se passe-t-il ?",
         "options": [
           "L’eau de la fontaine est sale",
           "La fontaine porte l’eau propre",
@@ -3161,7 +3161,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l10-p1",
         "type": "textInput",
-        "prompt": "Traduis : aqua in fonte turpis est",
+        "prompt": "Traduis : <i>aqua in fonte turpis est</i>",
         "expected": "l'eau dans la fontaine est sale",
         "acceptedAnswers": [
           "l'eau dans la fontaine est sale",
@@ -3265,7 +3265,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l10-p3",
         "type": "textInput",
-        "prompt": "Complète les accusatifs dans les cartouches : rosa / … ; dominus / … ; donum / …",
+        "prompt": "Complète les accusatifs dans les cartouches : <i>rosa</i> / … ; <i>dominus</i> / … ; <i>donum</i> / …",
         "placeholder": "rosam dominum donum",
         "uiVariant": "chipsCompletion",
         "chips": [
@@ -3427,7 +3427,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l11-t3",
         "type": "singleChoice",
-        "prompt": "« Discordia vicum turbat » : qui trouble le quartier ?",
+        "prompt": "« <i>Discordia vicum turbat</i> » : qui trouble le quartier ?",
         "options": [
           "Discordia",
           "la paix",
@@ -3477,7 +3477,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l11-t6",
         "type": "ordering",
-        "prompt": "Mets le verbe en fin dans l’ordre de base : Discordia / vicum / turbat",
+        "prompt": "Mets le verbe en fin dans l’ordre de base : <i>Discordia / vicum / turbat</i>",
         "options": [
           "Discordia",
           "vicum",
@@ -3493,7 +3493,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l11-t7",
         "type": "multipleChoice",
-        "prompt": "Texte (4 phrases) : « Discordia intrat. Pax fugit. Vicini clamant. Canis manet. » Qu’est-ce qui est vrai ?",
+        "prompt": "Texte (4 phrases) : « <i>Discordia intrat. Pax fugit. Vicini clamant. Canis manet.</i> » Qu’est-ce qui est vrai ?",
         "options": [
           "La paix fuit",
           "Les voisins crient",
@@ -3513,7 +3513,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l11-p1",
         "type": "textInput",
-        "prompt": "Traduis : Discordia vicum turbat",
+        "prompt": "Traduis : <i>Discordia vicum turbat</i>",
         "expected": "Discordia trouble le quartier",
         "acceptedAnswers": [
           "Discordia trouble le quartier",
@@ -3790,7 +3790,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l12-t4",
         "type": "singleChoice",
-        "prompt": "Dans « Vicinus donum videt », quel est le complément objet ?",
+        "prompt": "Dans « <i>Vicinus donum videt</i> », quel est le complément objet ?",
         "options": [
           "donum",
           "vicinus",
@@ -3804,7 +3804,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l12-t5",
         "type": "singleChoice",
-        "prompt": "« Quaerimus » indique…",
+        "prompt": "« <i>Quaerimus</i> » indique…",
         "options": [
           "nous",
           "vous",
@@ -3838,7 +3838,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l12-t7",
         "type": "ordering",
-        "prompt": "Rebâtis la phrase dans l’ordre de base : vicini / signum / vident",
+        "prompt": "Rebâtis la phrase dans l’ordre de base : <i>vicini / signum / vident</i>",
         "options": [
           "vicini",
           "signum",
@@ -3856,7 +3856,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l12-p1",
         "type": "textInput",
-        "prompt": "Traduis : pax in vico redit",
+        "prompt": "Traduis : <i>pax in vico redit</i>",
         "expected": "la paix revient dans le quartier",
         "acceptedAnswers": [
           "la paix revient dans le quartier",
