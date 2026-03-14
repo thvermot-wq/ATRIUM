@@ -3041,7 +3041,7 @@ export const lessons5eP1 = [
         "id": "p1-l10-t7",
         "type": "textInput",
         "prompt": "🛁 Écris en latin : « eau chaude ».",
-        "expected": "aqua calida",
+        "expected": ["aqua calida", "calida aqua"],
         "points": 1
       }
     ],
