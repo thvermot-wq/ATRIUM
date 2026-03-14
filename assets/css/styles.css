@@ -486,3 +486,49 @@ select[disabled] {
 .lesson-subtitle em {
   font-style: italic;
 }
+
+/* =========================
+   Lexique de leçon
+   ========================= */
+
+.lesson-lexicon-block {
+  margin-top: 0.9rem;
+}
+
+.lesson-lexicon-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.lesson-lexicon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.lexicon-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  padding: 0.38rem 0.68rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #f8faff;
+  white-space: nowrap;
+  line-height: 1.15;
+  font-size: 0.95rem;
+}
+
+.lexicon-chip__latin {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.lexicon-chip__sep {
+  opacity: 0.55;
+}
+
+.lexicon-chip__fr {
+  color: #3f4870;
+}
