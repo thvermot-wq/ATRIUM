@@ -2672,8 +2672,8 @@ export const lessons5eP1 = [
         "prompt": "🎓 Associe phrase et sens.",
         "pairs": [
           {
-            "left": "Discipulus tabellam scribit",
-            "right": "L'élève écrit la tablette"
+            "left": "Discipulus in tabella scribit",
+            "right": "L'élève écrit sur la tablette"
           },
           {
             "left": "Magister legit",
@@ -2687,10 +2687,10 @@ export const lessons5eP1 = [
         "rightOptions": [
           "Marcus répond",
           "Le maître lit",
-          "L'élève écrit la tablette"
+          "L'élève écrit sur la tablette"
         ],
         "expected": {
-          "Discipulus tabellam scribit": "L'élève écrit la tablette",
+          "Discipulus in tabella scribit": "L'élève écrit sur la tablette",
           "Magister legit": "Le maître lit",
           "Marcus respondet": "Marcus répond"
         },
