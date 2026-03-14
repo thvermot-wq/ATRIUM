@@ -613,7 +613,7 @@ export const lessons5eP2 = [
      {
   "id": "p2-l2-p3",
   "type": "textInput",
-  "prompt": "Traduis en latin, dans l’ordre : vers le temple ; dans la rue ; hors de la boutique ; devant la porte.",
+  "prompt": "Écris en latin le trajet du témoin : vers le temple ; dans la rue ; hors de la boutique ; devant la porte.",
   "expected": "ad templum ; in via ; ex taberna ; ante ianuam",
   "acceptedAnswers": [
     "ad templum ; in via ; ex taberna ; ante ianuam",
