@@ -11,7 +11,7 @@ const headerContexts5eP1 = {
   "p1-l9": "A l'école, la rumeur entrée par la rue court de banc en banc, d'élève en élève, et Livia entend pour la première fois un nom qu’on chuchotait dehors.",
   "p1-l10": "Aux thermes, Marcus écoute ce que les adultes disent à mi-voix, et note chaque détail qui sort de l'ordinaire.",
   "p1-l11": "Sur un mur de Subure, Flavia lit une inscription griffée à la hâte, qui lui rappelle soudain le nom caché sur la tablette.",
-  "p1-l12": "Le soir, dans les popinae, Marcus, Flavia, Livia et Lucius rassemblent leurs indices. C'est bien le nom de Discordia qui émerge enfin du brouhaha..."
+  "p1-l12": "Le soir, dans une popina, Marcus, Flavia, Livia et Lucius rassemblent leurs indices. C'est bien le nom de Discordia qui émerge enfin du brouhaha..."
 };
 
 export const lessons5eP1 = [
@@ -3547,7 +3547,10 @@ export const lessons5eP1 = [
     ],
     "lexicon": [
       "Discordia = Discorde (déesse)",
+      "Discordiae = forme au génitif (complément du nom) = de Discordia
       "Subura = Subure (quartier)",
+      "popina = taverne",
+      "ad = au, à la (direction, lieu. Exemple : ad popinam = à la taverne)",
       "forum = forum, place",
       "domus = maison",
       "murus = mur",
@@ -3561,7 +3564,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l12-t1",
         "type": "singleChoice",
-        "prompt": "🧩 Dans la scène finale, quel nom apparaît sur le mur ?",
+        "prompt": "🧩 Dans la scène finale, quel semble être le nom du / de la coupable ?",
         "options": [
           "Discordia",
           "Minerva",
@@ -3593,17 +3596,15 @@ export const lessons5eP1 = [
         "type": "multipleChoice",
         "prompt": "🧩 Sélectionne les éléments-clés de la scène finale.",
         "options": [
-          "murus",
+          "popina",
           "nomen",
-          "forum",
-          "tabella",
+          "candela",
+          "ludus",
           "discordia"
         ],
         "expected": [
-          "murus",
+          "popina",
           "nomen",
-          "forum",
-          "tabella",
           "discordia"
         ],
         "shuffle": true,
@@ -3657,12 +3658,12 @@ export const lessons5eP1 = [
       {
         "id": "p1-l12-t6",
         "type": "singleChoice",
-        "prompt": "🧩 Quel rappel méthodologique est juste ?",
+        "prompt": "🧩 Quand on essaie de traduire, quel réflexe méthodologique est le plus juste ?",
         "options": [
           "Cherche d’abord le verbe",
-          "Traduis mot à mot sans contexte",
-          "Ignore les terminaisons",
-          "L’ordre latin est toujours français",
+          "Traduis mot à mot dans l'ordre de la phrase",
+          "Dans un premier temps, ignore les terminaisons",
+          "L’ordre latin est le même que l'ordre français",
           "Le sujet est toujours au début"
         ],
         "expected": "Cherche d’abord le verbe",
@@ -3672,7 +3673,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l12-t7",
         "type": "textInput",
-        "prompt": "🧩 Écris en latin : « nom de Discordia » (deux mots).",
+        "prompt": "🧩 Écris en latin : « Le nom de Discordia » (deux mots).",
         "expected": "nomen Discordiae",
         "points": 1
       }
@@ -3857,8 +3858,8 @@ export const lessons5eP1 = [
     ],
     "summary": {
       "retains": [
-        "Je peux lire une scène complète en latin simple avec cohérence narrative.",
-        "Validation de la période : 8/10 (80 %) et plus."
+        "Je peux lire une petite scène complète en latin simple avec cohérence narrative.",
+        "Validation de la période : 80 % et plus."
       ],
       "cahier": [
         "Marcus nomen Discordiae videt",
