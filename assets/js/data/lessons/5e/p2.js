@@ -110,7 +110,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l1-t4",
         "type": "multipleChoice",
-        "prompt": "Choisis les traductions recevables de « vicinus Sextum accusat ».",
+        "prompt": "Choisis les traductions recevables de « Vicinus Sextum accusat ».",
         "options": [
           "Le voisin accuse Sextus",
           "Le voisin met Sextus en cause",
@@ -128,7 +128,7 @@ export const lessons5eP2 = [
       {
   "id": "p2-l1-t5",
   "type": "singleChoice",
-  "prompt": "Dans « vicinus aram videt », quel mot est le complément d’objet direct ?",
+  "prompt": "Dans « Vicinus aram videt », quel mot est le complément d’objet direct ?",
   "options": [
     "vicinus",
     "aram",
@@ -140,7 +140,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l1-t6",
         "type": "singleChoice",
-        "prompt": "Repère le verbe dans « donum vicinus videt ».",
+        "prompt": "Repère le verbe dans « Donum vicinus videt ».",
         "options": [
           "donum",
           "vicinus",
@@ -423,7 +423,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l2-t3",
         "type": "singleChoice",
-        "prompt": "« servus ad templum venit » : où va le serviteur ?",
+        "prompt": "« Servus ad templum venit » : où va le serviteur ?",
         "options": [
           "vers le temple",
           "dans la boutique",
@@ -437,7 +437,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l2-t4",
         "type": "singleChoice",
-        "prompt": "« ex taberna serva currit » : la servante…",
+        "prompt": "« Ex taberna serva currit » : la servante…",
         "options": [
           "sort de la boutique",
           "entre dans la boutique",
@@ -469,7 +469,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l2-t6",
         "type": "multipleChoice",
-        "prompt": "Traductions possibles de « ante ianuam canis stat ».",
+        "prompt": "Traductions possibles de « Ante ianuam canis stat ».",
         "options": [
           "Le chien est devant la porte",
           "Le chien se tient devant la porte",
@@ -762,7 +762,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l3-t3",
         "type": "singleChoice",
-        "prompt": "Dans « femina aquam portat », quel est l’objet ?",
+        "prompt": "Dans « Femina aquam portat », quel est l’objet ?",
         "options": [
           "femina",
           "aquam",
@@ -806,7 +806,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l3-t6",
         "type": "multipleChoice",
-        "prompt": "Traductions recevables de « amica ad tabernam ambulat ».",
+        "prompt": "Traductions recevables de « Amica ad tabernam ambulat ».",
         "options": [
           "L’amie marche vers la boutique",
           "L’amie va à la boutique",
@@ -1101,7 +1101,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l4-t3",
         "type": "singleChoice",
-        "prompt": "« dominus servum vocat » : qui appelle ?",
+        "prompt": "« Dominus servum vocat » : qui appelle ?",
         "options": [
           "le maître",
           "le serviteur",
@@ -1115,7 +1115,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l4-t4",
         "type": "singleChoice",
-        "prompt": "« servum dominus accusat » : qui est accusé ?",
+        "prompt": "« Servum dominus accusat » : qui est accusé ?",
         "options": [
           "le serviteur",
           "le maître",
@@ -1129,7 +1129,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l4-t5",
         "type": "multipleChoice",
-        "prompt": "Traductions recevables : « amicus vicinum audit ».",
+        "prompt": "Traductions recevables : « Amicus vicinum audit ».",
         "options": [
           "L’ami entend le voisin",
           "L’ami écoute le voisin",
@@ -1430,7 +1430,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l5-t3",
         "type": "singleChoice",
-        "prompt": "« signum dominus videt » : que voit le maître ?",
+        "prompt": "« Signum dominus videt » : que voit le maître ?",
         "options": [
           "le signe",
           "le maître",
@@ -1458,7 +1458,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l5-t5",
         "type": "multipleChoice",
-        "prompt": "Traductions recevables : « templum malum celat ».",
+        "prompt": "Traductions recevables : « Templum malum celat ».",
         "options": [
           "Le temple cache un mal",
           "Le temple cache une mauvaise chose",
@@ -1692,7 +1692,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l6"],
     "objective": "Comprendre le présent singulier dans les témoignages.",
     "lessonPoint": "Au présent : -o (je), -s (tu), -t (il/elle).",
-    "narrative": "Chacun parle : « video », « nego », « audis ». Les versions s’opposent.",
+    "narrative": "Chacun parle : « video », « Nego », « audis ». Les versions s’opposent.",
     "canDo": [
       "Je reconnais je/tu/il-elle au présent.",
       "Je repère qui parle dans un témoignage.",
@@ -1759,7 +1759,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l6-t3",
         "type": "singleChoice",
-        "prompt": "« nego » signifie…",
+        "prompt": "« Nego » signifie…",
         "options": [
           "je nie",
           "tu nies",
@@ -2074,7 +2074,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l7-t3",
         "type": "singleChoice",
-        "prompt": "« vicini clamant » : qui crie ?",
+        "prompt": "« Vicini clamant » : qui crie ?",
         "options": [
           "les voisins",
           "le voisin",
@@ -2088,7 +2088,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l7-t4",
         "type": "singleChoice",
-        "prompt": "« rogatis » correspond à…",
+        "prompt": "« Rogatis » correspond à…",
         "options": [
           "vous demandez",
           "nous demandons",
@@ -2365,7 +2365,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l8-t1",
         "type": "singleChoice",
-        "prompt": "« tabella falsa » signifie…",
+        "prompt": "« Tabella falsa » signifie…",
         "options": [
           "tablette falsifiée",
           "tablette neuve",
@@ -2462,7 +2462,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l8-t6",
         "type": "singleChoice",
-        "prompt": "Dans « legit tabellam vicina », quel est le verbe ?",
+        "prompt": "Dans « Legit tabellam vicina », quel est le verbe ?",
         "options": [
           "legit",
           "tabellam",
@@ -2750,7 +2750,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l9-t3",
         "type": "singleChoice",
-        "prompt": "« ante ianuam canis latrat » signifie…",
+        "prompt": "« Ante ianuam canis latrat » signifie…",
         "options": [
           "Le chien aboie devant la porte",
           "La porte aboie devant le chien",
@@ -2764,7 +2764,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l9-t4",
         "type": "singleChoice",
-        "prompt": "« latrat ante ianuam canis » : même sens ?",
+        "prompt": "« Latrat ante ianuam canis » : même sens ?",
         "options": [
           "oui",
           "non",
@@ -3145,7 +3145,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l10-t7",
         "type": "singleChoice",
-        "prompt": "« aqua in fonte turpis est » : que se passe-t-il ?",
+        "prompt": "« Aqua in fonte turpis est » : que se passe-t-il ?",
         "options": [
           "L’eau de la fontaine est sale",
           "La fontaine porte l’eau propre",
@@ -3790,7 +3790,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l12-t4",
         "type": "singleChoice",
-        "prompt": "Dans « vicinus donum videt », quel est le complément objet ?",
+        "prompt": "Dans « Vicinus donum videt », quel est le complément objet ?",
         "options": [
           "donum",
           "vicinus",
@@ -3804,7 +3804,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l12-t5",
         "type": "singleChoice",
-        "prompt": "« quaerimus » indique…",
+        "prompt": "« Quaerimus » indique…",
         "options": [
           "nous",
           "vous",
