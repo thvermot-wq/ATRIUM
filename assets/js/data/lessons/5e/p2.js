@@ -136,7 +136,7 @@ export const lessons5eP2 = [
   ],
   "expected": "aram",
   "points": 1
-}
+},
       {
         "id": "p2-l1-t6",
         "type": "singleChoice",
