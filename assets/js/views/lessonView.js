@@ -121,168 +121,7 @@ function renderLexiconChips(lexicon) {
   return `<div class="lesson-lexicon">${chips}</div>`;
 }
 
-function ensureLessonToolbarStyles() {
-  if (document.getElementById("lesson-toolbar-inline-styles")) return;
-
-  const style = document.createElement("style");
-  style.id = "lesson-toolbar-inline-styles";
-  style.textContent = `
-    .lesson-toolbar-shell {
-      width: 100%;
-    }
-
-    .lesson-toolbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 120;
-      background: rgba(255, 255, 255, 0.96);
-      border-bottom: 1px solid var(--line, #d8dcef);
-      box-shadow: 0 6px 18px rgba(20, 28, 58, 0.08);
-      backdrop-filter: blur(8px);
-    }
-
-    .lesson-toolbar__inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.55rem 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .lesson-toolbar__title {
-      min-width: 0;
-      flex: 1 1 auto;
-      font-weight: 700;
-      color: var(--ink, #1f2747);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .lesson-toolbar__actions {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      flex: 0 0 auto;
-    }
-
-    .lesson-toolbar__btn {
-      border: 1px solid var(--line, #d8dcef);
-      background: #ffffff;
-      color: var(--primary, #24346e);
-      border-radius: 999px;
-      padding: 0.42rem 0.72rem;
-      font: inherit;
-      font-size: 0.92rem;
-      font-weight: 700;
-      line-height: 1.1;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .lesson-toolbar__btn:hover,
-    .lesson-toolbar__btn[aria-expanded="true"] {
-      background: #f4f7ff;
-    }
-
-    .lesson-toolbar__panel {
-      position: fixed;
-      left: 0;
-      right: 0;
-      z-index: 119;
-      background: rgba(255, 255, 255, 0.98);
-      border-bottom: 1px solid var(--line, #d8dcef);
-      box-shadow: 0 8px 22px rgba(20, 28, 58, 0.08);
-    }
-
-    .lesson-toolbar__panel[hidden] {
-      display: none;
-    }
-
-    .lesson-toolbar__panel-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.75rem 0.85rem 0.85rem;
-      display: grid;
-      gap: 0.6rem;
-    }
-
-    .lesson-toolbar__panel-title {
-      margin: 0;
-      color: var(--primary, #24346e);
-      font-size: 0.96rem;
-      font-weight: 800;
-    }
-
-    .lesson-toolbar__panel-text {
-      margin: 0;
-      color: #334066;
-      line-height: 1.4;
-    }
-
-    .lesson-toolbar__spacer {
-      width: 100%;
-      height: 4.2rem;
-      flex: 0 0 auto;
-    }
-
-    .lesson-lexicon {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-    }
-
-    .lexicon-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.28rem;
-      padding: 0.38rem 0.68rem;
-      border: 1px solid var(--line, #d8dcef);
-      border-radius: 999px;
-      background: #f8faff;
-      white-space: nowrap;
-      line-height: 1.15;
-      font-size: 0.95rem;
-      max-width: 100%;
-    }
-
-    .lexicon-chip__latin {
-      font-weight: 700;
-      color: var(--primary, #24346e);
-    }
-
-    .lexicon-chip__sep {
-      opacity: 0.55;
-    }
-
-    .lexicon-chip__fr {
-      color: #3f4870;
-    }
-
-    @media (max-width: 720px) {
-      .lesson-toolbar__inner {
-        padding: 0.5rem 0.7rem;
-      }
-
-      .lesson-toolbar__title {
-        font-size: 0.95rem;
-      }
-
-      .lesson-toolbar__btn {
-        padding: 0.38rem 0.6rem;
-        font-size: 0.86rem;
-      }
-    }
-  `;
-  document.head.appendChild(style);
-}
-
 function createLessonToolbar({ lesson, onBackDashboard }) {
-  ensureLessonToolbarStyles();
-
   const shell = document.createElement("div");
   shell.className = "lesson-toolbar-shell";
 
@@ -398,17 +237,17 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
   const subtitleHtml = lesson?.subtitle
     ? `<p class="lesson-subtitle"><em>${lesson.subtitle}</em></p>`
     : "";
-  
+
   if (!isLessonPlayable(lesson)) {
     const pending = document.createElement("article");
-    pending.className = "card";
+    pending.className = "card lesson-hero";
     pending.innerHTML = `
       <h2>${lesson.title}</h2>
       ${subtitleHtml}
       <p class="muted">${lesson.id} · Période ${lesson.period}</p>
       <p><strong>Objectif :</strong> ${lesson.objective}</p>
       <p class="muted">Cette leçon n'est pas encore jouable de bout en bout dans cette version.</p>
-      <p class="muted">Score enregistré: courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
+      <p class="muted">Score enregistré : courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
       <div class="actions-row">
         <button type="button" class="btn btn-secondary" data-action="back">Retour dashboard</button>
         <button type="button" class="btn btn-secondary" data-action="results">Voir résultats</button>
@@ -431,8 +270,7 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
   const lessonToolbar = createLessonToolbar({ lesson, onBackDashboard });
 
   const hero = document.createElement("article");
-  hero.className = "card";
-
+  hero.className = "card lesson-hero";
   hero.innerHTML = `
     <h2>${lesson.title}</h2>
     ${subtitleHtml}
