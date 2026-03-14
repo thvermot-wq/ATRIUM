@@ -1,17 +1,17 @@
 // Données de leçons 5E · Période 2 — Discordia in Subure.
 const headerContexts5eP2 = {
-  "p2-l1": "Au pied de l’ara, Marcus relève la place vide du donum, Flavia scrute les visages, et Subure comprend tout de suite qu’on ne refermera pas l’affaire avec deux phrases bien tournées.",
-  "p2-l2": "Un témoin assure avoir vu quelqu’un filer vers le temple puis ressortir d’une taberna ; Lucius refait le trajet de mémoire, comme s’il pouvait rattraper la silhouette à force d’y penser.",
-  "p2-l3": "Près de la fontaine, Aurelia parle enfin. Elle montre la porte, la rue, le moment précis où quelque chose a dérapé, et Flavia ne la quitte pas des yeux.",
-  "p2-l4": "Sextus charge un servus, le servus charge presque son dominus, et Marcus voit les accusations se croiser dans Subure plus vite que les preuves.",
-  "p2-l5": "Livia repère près du temple un signum que personne n’avait voulu voir ; ce n’est pas grand-chose, juste assez pour remettre tout le quartier en mouvement.",
-  "p2-l6": "On entend tout et son contraire : un chien, une porte, un danger qu’on nie trop vite. Flavia laisse parler, puis commence à séparer la peur du mensonge.",
-  "p2-l7": "Devant la ianua, les voisins s’entassent, parlent tous plus fort que les autres, et Marcus comprend qu’à Subure une foule peut fabriquer une histoire entière avant même d’avoir compris la première phrase.",
-  "p2-l8": "La tabella passe de main en main. Lucius voit la cire reprise, le nom touché, la phrase faussée ; d’un coup, l’enquête ne porte plus seulement sur le vol, mais sur ce qu’on a voulu faire croire.",
-  "p2-l9": "Niger revient devant la même porte, s’arrête, grogne, refuse d’avancer. Livia finit par faire plus confiance au chien qu’aux habitants de Subure.",
-  "p2-l10": "À l’aube, Aurelia plonge son seau dans une eau trouble. Le fond remue, la rumeur aussi, et les soupçons salissent Subure d’une maison à l’autre.",
+  "p2-l1": "Au pied de l’ara, Marcus examine la place vide de l'offrande, Flavia scrute les visages. L'enquête s'annonce plus compliquée que prévu !",
+  "p2-l2": "Un témoin assure avoir vu quelqu’un filer vers le temple puis ressortir d’une taberna ; Lucius décide d'aller sur place pour prendre des renseignements.",
+  "p2-l3": "Près de la fontaine, Aurelia parle enfin. Elle montre la porte par où elle a cru voir passer un gaillard plutôt louche, et Flavia ne la quitte pas des yeux.",
+  "p2-l4": "Sextus accuse un esclave, l'esclave lui renvoie la balles, et Marcus voit les accusations se croiser dans Subure plus vite que les preuves.",
+  "p2-l5": "Livia repère près du temple un gribouillis que personne n’avait voulu voir ; ce n’est pas grand-chose, juste assez pour remettre tout le quartier en mouvement.",
+  "p2-l6": "On entend tout et son contraire : un gros chien noir, une porte peinte en vert, du danger partout. Flavia laisse parler, puis commence à faire le tri entre peur et mensonge.",
+  "p2-l7": "Devant la porte, les voisins s’entassent, parlent tous plus fort que les autres, et Marcus comprend qu’à Subure une foule peut fabriquer une histoire entière avant même d’avoir compris la première phrase.",
+  "p2-l8": "La tablette passe de main en main. Lucius tressaille : quelqu'un a remplacé un nom par un autre ! D’un coup, l’enquête ne porte plus seulement sur le vol, mais sur ce qu’on a voulu faire croire.",
+  "p2-l9": "Niger, le petit chien, revient devant la même porte, s’arrête, grogne, refuse d’avancer. Livia finit par faire plus confiance au chien qu’aux habitants de Subure.",
+  "p2-l10": "À l’aube, Aurelia plonge son seau dans une eau trouble. Elle se dit que les soupçons ont fini par salir Subure d’une maison à l’autre.",
   "p2-l11": "Quand Marcus prononce enfin le nom de Discordia, personne ne rit. La querelle qui courait de bouche en bouche prend soudain un visage net.",
-  "p2-l12": "Le soir retombe sur Subure. Flavia relit la tabella, Marcus repense au chien, et chacun se demande si la paix revient vraiment, ou si elle attend juste qu’on baisse la garde."
+  "p2-l12": "Le soir retombe sur Subure. Flavia n'arrive pas à s'endormir, Marcus repense à la porte verte, et chacun se demande si la paix va revenir, ou si la maléfique déesse attend juste qu’on baisse la garde."
 };
 
 export const lessons5eP2 = [
