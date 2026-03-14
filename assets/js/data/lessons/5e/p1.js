@@ -3547,7 +3547,7 @@ export const lessons5eP1 = [
     ],
     "lexicon": [
       "Discordia = Discorde (déesse)",
-      "Discordiae = forme au génitif (complément du nom) = de Discordia
+      "Discordiae = forme au génitif (complément du nom) = de Discordia",
       "Subura = Subure (quartier)",
       "popina = taverne",
       "ad = au, à la (direction, lieu. Exemple : ad popinam = à la taverne)",
