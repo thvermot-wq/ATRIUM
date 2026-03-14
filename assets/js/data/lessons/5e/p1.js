@@ -3272,19 +3272,18 @@ export const lessons5eP1 = [
       {
         "id": "p1-l11-t3",
         "type": "multipleChoice",
-        "prompt": "🧱 Choisis les mots liés à l’inscription.",
+        "prompt": "🧱 Choisis les mots liés à cette petite scène du graffiti.",
         "options": [
           "scriptum",
           "nomen",
           "murus",
-          "discordia",
+          "mercator",
           "panis"
         ],
         "expected": [
           "scriptum",
           "nomen",
-          "murus",
-          "discordia"
+          "murus"
         ],
         "shuffle": true,
         "points": 1
@@ -3326,9 +3325,9 @@ export const lessons5eP1 = [
         "options": [
           "Marcus lit le nom Discordia",
           "Discordia lit Marcus",
-          "Marcus écrit Discordia",
-          "Marcus crie",
-          "Discordia aboie"
+          "Marcus écrit le nom Discordia",
+          "La discorde de Marcus est légitime",
+          "Discordia aboie devant le mur"
         ],
         "expected": "Marcus lit le nom Discordia",
         "shuffle": true,
@@ -3365,16 +3364,24 @@ export const lessons5eP1 = [
         "expected": "un nom est sur le mur",
         "acceptedAnswers": [
           "un nom est sur le mur",
+          "un nom est sur un mur",
           "le nom est sur le mur",
-          "un nom est écrit sur le mur"
+          "un nom est écrit sur le mur",
+          "le nom est écrit sur le mur",
+          "un nom est écrit sur un mur",
+          "le nom est écrit sur un mur"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "un nom est sur le mur",
+            "un nom est sur un mur",
             "le nom est sur le mur",
-            "un nom est écrit sur le mur"
+            "un nom est écrit sur le mur",
+            "le nom est écrit sur le mur",
+            "un nom est écrit sur un mur",
+            "le nom est écrit sur un mur"
           ]
         },
         "points": 1,
@@ -3503,7 +3510,7 @@ export const lessons5eP1 = [
     ],
     "summary": {
       "retains": [
-        "Je peux lire un message court sur un support réel (le mur).",
+        "Discordia est une déesse redoutable, qui sème.. la discorde.",
         "Le sens global se construit à partir de mots simples bien reconnus."
       ],
       "cahier": [
