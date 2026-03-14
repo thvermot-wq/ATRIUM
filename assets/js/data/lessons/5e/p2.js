@@ -127,7 +127,7 @@ export const lessons5eP2 = [
       },
       {
   "id": "p2-l1-t5",
-  "type": "multipleChoice",
+  "type": "singleChoice",
   "prompt": "Dans « vicinus aram videt », quel mot est le complément d’objet direct ?",
   "options": [
     "vicinus",
