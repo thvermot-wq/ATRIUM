@@ -532,3 +532,19 @@ select[disabled] {
 .lexicon-chip__fr {
   color: #3f4870;
 }
+
+.level-docs{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.btn-chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px 10px;
+  border-radius:999px;
+  text-decoration:none;
+}
