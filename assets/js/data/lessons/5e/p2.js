@@ -610,52 +610,58 @@ export const lessons5eP2 = [
           }
         ]
       },
-      {
-        "id": "p2-l2-p3",
-        "type": "textInput",
-        "prompt": "Complète : 𝑎𝑑 = … ; 𝑒𝑥 = …",
-        "expected": "vers ; hors de",
-        "acceptedAnswers": [
-          "vers ; hors de",
-          "vers ; depuis",
-          "vers et hors de"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "vers ; hors de",
-            "vers ; depuis",
-            "vers et hors de"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "vers ; hors de",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "vers ; hors de",
-            "isCorrect": true
-          },
-          {
-            "input": "réponse hors-sujet",
-            "isCorrect": false
-          }
-        ]
-      }
+     {
+  "id": "p2-l2-p3",
+  "type": "textInput",
+  "prompt": "Traduis en latin, dans l’ordre : vers le temple ; dans la rue ; hors de la boutique ; devant la porte.",
+  "expected": "ad templum ; in via ; ex taberna ; ante ianuam",
+  "acceptedAnswers": [
+    "ad templum ; in via ; ex taberna ; ante ianuam",
+    "ad templum, in via, ex taberna, ante ianuam",
+    "ad templum / in via / ex taberna / ante ianuam",
+    "ad templum in via ex taberna ante ianuam"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "ad templum ; in via ; ex taberna ; ante ianuam",
+      "ad templum, in via, ex taberna, ante ianuam",
+      "ad templum / in via / ex taberna / ante ianuam",
+      "ad templum in via ex taberna ante ianuam"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "ad templum ; in via ; ex taberna ; ante ianuam",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Production correcte des quatre prépositions de la leçon et association juste avec le groupe nominal.",
+  "rejectIf": [
+    "préposition incorrecte",
+    "ordre des segments non respecté",
+    "forme latine impossible au niveau de la leçon"
+  ],
+  "tests": [
+    {
+      "input": "ad templum ; in via ; ex taberna ; ante ianuam",
+      "isCorrect": true
+    },
+    {
+      "input": "ad templum, in via, ex taberna, ante ianuam",
+      "isCorrect": true
+    },
+    {
+      "input": "in templum ; ad via ; ex taberna ; ante ianuam",
+      "isCorrect": false
+    }
+  ]
+} 
     ],
     "summary": {
       "retains": [
