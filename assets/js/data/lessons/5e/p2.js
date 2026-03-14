@@ -451,18 +451,18 @@ export const lessons5eP2 = [
       {
         "id": "p2-l2-t5",
         "type": "ordering",
-        "prompt": "Produis dans l’ordre de base : Le voisin est devant la porte.",
+        "prompt": "Traduis en suivant l'ordre de la phrase française : Le voisin est devant la porte.",
         "options": [
-          "vicinus",
           "ante",
+          "vicinus",
           "ianuam",
           "stat"
         ],
         "expected": [
           "vicinus",
+          "stat",
           "ante",
-          "ianuam",
-          "stat"
+          "ianuam"
         ],
         "points": 1
       },
