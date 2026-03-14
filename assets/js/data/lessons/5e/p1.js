@@ -2598,7 +2598,7 @@ export const lessons5eP1 = [
     "periodId": "p1",
     "title": "L’école du quartier",
     subtitle: headerContexts5eP1["p1-l9"],
-    "objective": "Comprendre de petites consignes et scènes de classe dans le ludus de la Subura.",
+    "objective": "Comprendre de petites consignes et scènes de classe dans la petite école de Subure.",
     "lessonPoint": "Je cherche le verbe d’énoncé (legit, scribit, audit) pour comprendre la tâche.",
     "canDo": [
       "Je lis une mini-scène de classe.",
