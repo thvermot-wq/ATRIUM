@@ -5,8 +5,11 @@ export function createProgressBar({ value = 0, max = 100, label = "Progression" 
   const percent = max > 0 ? Math.max(0, Math.min(100, Math.round((value / max) * 100))) : 0;
 
   wrapper.innerHTML = `
-    <p class="progress-label">${label} : ${value}/${max} (${percent}%)</p>
-    <div class="progress-track" role="progressbar" aria-valuenow="${value}" aria-valuemin="0" aria-valuemax="${max}">
+    <div class="progress-header">
+      <p class="progress-label">${label}</p>
+      <p class="progress-value">${value}/${max} · ${percent}%</p>
+    </div>
+    <div class="progress-track" role="progressbar" aria-label="${label}" aria-valuenow="${value}" aria-valuemin="0" aria-valuemax="${max}">
       <span class="progress-fill" style="width:${percent}%"></span>
     </div>
   `;
