@@ -3218,7 +3218,7 @@ export const lessons5eP1 = [
     "id": "p1-l11",
     "period": 1,
     "periodId": "p1",
-    "title": "Le mur écrit",
+    "title": "Un graffiti sur le mur !",
     subtitle: headerContexts5eP1["p1-l11"],
     "objective": "Comprendre une inscription sur le mur et relier lecture, sens et contexte narratif.",
     "lessonPoint": "Je lis mot à mot puis je recompose le sens global.",
