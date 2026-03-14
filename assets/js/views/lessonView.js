@@ -51,49 +51,6 @@ function formatExpected(expected) {
   return String(expected ?? "");
 }
 
-
-function escapeHtml(value) {
-  return String(value ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-function renderLexiconChips(lexicon) {
-  if (!Array.isArray(lexicon) || lexicon.length === 0) return "";
-
-  return `
-    <div class="lesson-lexicon-block">
-      <div class="lesson-lexicon-title">Lexique-clé</div>
-      <div class="lesson-lexicon">
-        ${lexicon.map((entry) => {
-          const parts = String(entry ?? "").split("=");
-          const latin = escapeHtml((parts[0] || "").trim());
-          const french = escapeHtml(parts.slice(1).join("=").trim());
-
-          if (!french) {
-            return `
-              <span class="lexicon-chip">
-                <span class="lexicon-chip__latin">${latin}</span>
-              </span>
-            `;
-          }
-
-          return `
-            <span class="lexicon-chip">
-              <span class="lexicon-chip__latin">${latin}</span>
-              <span class="lexicon-chip__sep">=</span>
-              <span class="lexicon-chip__fr">${french}</span>
-            </span>
-          `;
-        }).join("")}
-      </div>
-    </div>
-  `;
-}
-
 function formatReviewLine(item, entry) {
   const isCorrect = Boolean(entry?.isCorrect);
   const user = formatUserAnswer(entry?.userAnswer);
@@ -104,6 +61,317 @@ function formatReviewLine(item, entry) {
   }
 
   return `<li><strong>❌ ${item.prompt}</strong><br/><span class="muted">Votre réponse : ${user}</span><br/><span>Réponse attendue : ${expected}</span></li>`;
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function parseLexiconEntry(entry) {
+  const raw = String(entry ?? "").trim();
+
+  if (!raw) return { latin: "", french: "" };
+
+  const equalMatch = raw.match(/^(.+?)\s*=\s*(.+)$/);
+  if (equalMatch) {
+    return {
+      latin: equalMatch[1].trim(),
+      french: equalMatch[2].trim(),
+    };
+  }
+
+  return {
+    latin: raw,
+    french: "",
+  };
+}
+
+function renderLexiconChips(lexicon) {
+  if (!Array.isArray(lexicon) || lexicon.length === 0) return "";
+
+  const chips = lexicon
+    .map((entry) => {
+      const { latin, french } = parseLexiconEntry(entry);
+
+      if (!latin) return "";
+
+      if (!french) {
+        return `
+          <span class="lexicon-chip">
+            <span class="lexicon-chip__latin">${escapeHtml(latin)}</span>
+          </span>
+        `;
+      }
+
+      return `
+        <span class="lexicon-chip">
+          <span class="lexicon-chip__latin">${escapeHtml(latin)}</span>
+          <span class="lexicon-chip__sep">=</span>
+          <span class="lexicon-chip__fr">${escapeHtml(french)}</span>
+        </span>
+      `;
+    })
+    .join("");
+
+  return `<div class="lesson-lexicon">${chips}</div>`;
+}
+
+function ensureLessonToolbarStyles() {
+  if (document.getElementById("lesson-toolbar-inline-styles")) return;
+
+  const style = document.createElement("style");
+  style.id = "lesson-toolbar-inline-styles";
+  style.textContent = `
+    .lesson-toolbar-shell {
+      width: 100%;
+    }
+
+    .lesson-toolbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 120;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line, #d8dcef);
+      box-shadow: 0 6px 18px rgba(20, 28, 58, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .lesson-toolbar__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.55rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .lesson-toolbar__title {
+      min-width: 0;
+      flex: 1 1 auto;
+      font-weight: 700;
+      color: var(--ink, #1f2747);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .lesson-toolbar__actions {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex: 0 0 auto;
+    }
+
+    .lesson-toolbar__btn {
+      border: 1px solid var(--line, #d8dcef);
+      background: #ffffff;
+      color: var(--primary, #24346e);
+      border-radius: 999px;
+      padding: 0.42rem 0.72rem;
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.1;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .lesson-toolbar__btn:hover,
+    .lesson-toolbar__btn[aria-expanded="true"] {
+      background: #f4f7ff;
+    }
+
+    .lesson-toolbar__panel {
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: 119;
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid var(--line, #d8dcef);
+      box-shadow: 0 8px 22px rgba(20, 28, 58, 0.08);
+    }
+
+    .lesson-toolbar__panel[hidden] {
+      display: none;
+    }
+
+    .lesson-toolbar__panel-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 0.85rem 0.85rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .lesson-toolbar__panel-title {
+      margin: 0;
+      color: var(--primary, #24346e);
+      font-size: 0.96rem;
+      font-weight: 800;
+    }
+
+    .lesson-toolbar__panel-text {
+      margin: 0;
+      color: #334066;
+      line-height: 1.4;
+    }
+
+    .lesson-toolbar__spacer {
+      width: 100%;
+      height: 4.2rem;
+      flex: 0 0 auto;
+    }
+
+    .lesson-lexicon {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .lexicon-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.28rem;
+      padding: 0.38rem 0.68rem;
+      border: 1px solid var(--line, #d8dcef);
+      border-radius: 999px;
+      background: #f8faff;
+      white-space: nowrap;
+      line-height: 1.15;
+      font-size: 0.95rem;
+      max-width: 100%;
+    }
+
+    .lexicon-chip__latin {
+      font-weight: 700;
+      color: var(--primary, #24346e);
+    }
+
+    .lexicon-chip__sep {
+      opacity: 0.55;
+    }
+
+    .lexicon-chip__fr {
+      color: #3f4870;
+    }
+
+    @media (max-width: 720px) {
+      .lesson-toolbar__inner {
+        padding: 0.5rem 0.7rem;
+      }
+
+      .lesson-toolbar__title {
+        font-size: 0.95rem;
+      }
+
+      .lesson-toolbar__btn {
+        padding: 0.38rem 0.6rem;
+        font-size: 0.86rem;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+function createLessonToolbar({ lesson, onBackDashboard }) {
+  ensureLessonToolbarStyles();
+
+  const shell = document.createElement("div");
+  shell.className = "lesson-toolbar-shell";
+
+  const title = `P${lesson.period} · ${lesson.title}`;
+  const hasLexicon = Array.isArray(lesson.lexicon) && lesson.lexicon.length > 0;
+  const reminderText = lesson.lessonPoint || lesson.objective || "";
+
+  shell.innerHTML = `
+    <div class="lesson-toolbar">
+      <div class="lesson-toolbar__inner">
+        <button type="button" class="lesson-toolbar__btn" data-action="back">← Dashboard</button>
+        <div class="lesson-toolbar__title" title="${escapeHtml(title)}">${escapeHtml(title)}</div>
+        <div class="lesson-toolbar__actions">
+          <button type="button" class="lesson-toolbar__btn" data-panel="reminder" aria-expanded="false">Rappel</button>
+          ${hasLexicon ? `<button type="button" class="lesson-toolbar__btn" data-panel="lexicon" aria-expanded="false">Lexique</button>` : ""}
+        </div>
+      </div>
+    </div>
+    <div class="lesson-toolbar__panel" hidden>
+      <div class="lesson-toolbar__panel-inner"></div>
+    </div>
+    <div class="lesson-toolbar__spacer" aria-hidden="true"></div>
+  `;
+
+  const toolbar = shell.querySelector(".lesson-toolbar");
+  const panel = shell.querySelector(".lesson-toolbar__panel");
+  const panelInner = shell.querySelector(".lesson-toolbar__panel-inner");
+  const spacer = shell.querySelector(".lesson-toolbar__spacer");
+  const backButton = shell.querySelector('[data-action="back"]');
+  const panelButtons = Array.from(shell.querySelectorAll("[data-panel]"));
+
+  let activePanel = null;
+
+  const panelMarkup = {
+    reminder: `
+      <p class="lesson-toolbar__panel-title">Rappel</p>
+      <p class="lesson-toolbar__panel-text">${escapeHtml(reminderText)}</p>
+    `,
+    lexicon: `
+      <p class="lesson-toolbar__panel-title">Lexique</p>
+      ${renderLexiconChips(lesson.lexicon)}
+    `,
+  };
+
+  const syncLayout = () => {
+    const toolbarHeight = toolbar.offsetHeight || 56;
+    panel.style.top = `${toolbarHeight}px`;
+    const panelHeight = panel.hidden ? 0 : (panel.offsetHeight || panel.scrollHeight || 0);
+    spacer.style.height = `${toolbarHeight + panelHeight + 8}px`;
+  };
+
+  const closePanel = () => {
+    activePanel = null;
+    panel.hidden = true;
+    panelInner.innerHTML = "";
+    panelButtons.forEach((button) => button.setAttribute("aria-expanded", "false"));
+    syncLayout();
+  };
+
+  const openPanel = (key) => {
+    activePanel = key;
+    panelInner.innerHTML = panelMarkup[key] || "";
+    panel.hidden = false;
+    panelButtons.forEach((button) => {
+      button.setAttribute("aria-expanded", button.dataset.panel === key ? "true" : "false");
+    });
+    requestAnimationFrame(syncLayout);
+  };
+
+  backButton.addEventListener("click", onBackDashboard);
+
+  panelButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const key = button.dataset.panel;
+      if (!key) return;
+
+      if (activePanel === key) {
+        closePanel();
+        return;
+      }
+
+      openPanel(key);
+    });
+  });
+
+  window.requestAnimationFrame(syncLayout);
+  window.addEventListener("resize", syncLayout);
+
+  return shell;
 }
 
 export function renderLessonView({ level, lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults, onRestartLesson }) {
@@ -160,11 +428,10 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
 
   let lessonPhase = "in_progress";
 
+  const lessonToolbar = createLessonToolbar({ lesson, onBackDashboard });
+
   const hero = document.createElement("article");
   hero.className = "card";
-  const lexiconMarkup = Array.isArray(lesson.lexicon) && lesson.lexicon.length > 0
-    ? renderLexiconChips(lesson.lexicon)
-    : "";
 
   hero.innerHTML = `
     <h2>${lesson.title}</h2>
@@ -172,7 +439,6 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     <p class="muted">${lesson.id} · Période ${lesson.period}</p>
     <p><strong>Objectif :</strong> ${lesson.objective}</p>
     <p><strong>Point de leçon :</strong> ${lesson.lessonPoint || lesson.objective}</p>
-    ${lexiconMarkup}
     <p class="muted">Flow complet : répondez d'abord aux 10 exercices, puis consultez le corrigé global en fin de leçon.</p>
     <p class="muted">Validation visée : 8/10 (80 %) · Score enregistré : courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
   `;
@@ -384,6 +650,7 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
   syncStates();
 
   wrapper.append(
+    lessonToolbar,
     hero,
     trainingState,
     trainingBoard,
