@@ -6,6 +6,8 @@ const HOME_LEVEL_META = {
     cecrl: "pré-A1 → A1",
     summary:
       "Acclimatation à la langue, premiers automatismes, premières lectures guidées.",
+    ambience:
+      "On entre dans Subure par les portes du quotidien : saluer, repérer, lire une piste simple, comprendre qui agit et où l’action se joue.",
     referentielLabel: "Référentiel",
     referentielUrl: "assets/docs/referentiel-5e.pdf",
     outilsLabel: "Outils",
@@ -18,6 +20,8 @@ const HOME_LEVEL_META = {
     cecrl: "A1 consolidé",
     summary:
       "Consolidation morphologique et syntaxique, lecture suivie plus sûre, thème guidé.",
+    ambience:
+      "Le décor s’élargit : le latin devient plus structuré, les textes s’allongent, et les liens entre langue, cité, politique et récit deviennent plus nets.",
     referentielLabel: "Référentiel",
     referentielUrl: "assets/docs/referentiel-4e.pdf",
     outilsLabel: "Outils",
@@ -30,6 +34,8 @@ const HOME_LEVEL_META = {
     cecrl: "A1+ → début A2",
     summary:
       "Lecture, version guidée, thème simple, liens plus autonomes entre langue et civilisation.",
+    ambience:
+      "On vise une lecture plus sûre et un regard plus vaste : texte, culture, héritage, argumentation et réemploi se répondent enfin à hauteur de fin de cycle.",
     referentielLabel: "Référentiel",
     referentielUrl: "assets/docs/referentiel-3e.pdf",
     outilsLabel: "Outils",
@@ -37,64 +43,76 @@ const HOME_LEVEL_META = {
   },
 };
 
+function getLevelMeta(level) {
+  return HOME_LEVEL_META[level.id] || {
+    dashboardLabel: `LCA ${level.classLabel || level.id || ""}`.trim(),
+    latinGrade: level.title || "Niveau",
+    euroclassica: "Repère à définir",
+    cecrl: "Repère à définir",
+    summary: level.description || "",
+    ambience: level.ambition || "",
+    referentielLabel: "Référentiel",
+    referentielUrl: `assets/docs/referentiel-${level.id}.pdf`,
+    outilsLabel: "Outils",
+    outilsUrl: `assets/docs/outils-${level.id}.pdf`,
+  };
+}
+
+function createMetric(label, value) {
+  return `
+    <div class="level-metric">
+      <span class="level-metric__label">${label}</span>
+      <span class="level-metric__value">${value}</span>
+    </div>
+  `;
+}
+
 export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
   const section = document.createElement("section");
   section.className = "stack";
 
   const intro = document.createElement("article");
-  intro.className = "card";
+  intro.className = "card home-hero";
   intro.innerHTML = `
-    <h2>Bienvenue dans ATRIUM</h2>
-    <p>
-      Choisissez votre dashboard LCA. Chaque niveau conserve ses 3 périodes,
-      ses 36 leçons et sa progression indépendante.
+    <span class="home-hero__eyebrow">ATRIUM · Langues anciennes</span>
+    <h2 class="home-hero__headline">Un parcours unique du bain de langue à la lecture guidée.</h2>
+    <p class="home-hero__lead">
+      Choisissez votre niveau puis entrez dans un dashboard pensé comme un itinéraire continu : 3 périodes,
+      36 leçons, une progression indépendante, des outils de cours et un fil narratif qui accompagne la langue.
     </p>
-    <p>
-      <strong>Repère affiché :</strong> les niveaux CECRL ci-dessous sont des équivalences
-      pédagogiques adaptées aux LCA.
-    </p>
-    <p>
-      Chaque niveau propose aussi deux documents téléchargeables : un <strong>référentiel</strong>
-      et des <strong>outils</strong>, à consulter en ligne ou hors ligne.
-    </p>
+    <div class="home-hero__meta">
+      <span class="meta-pill">3 niveaux collège</span>
+      <span class="meta-pill">3 périodes par niveau</span>
+      <span class="meta-pill">36 leçons progressives</span>
+      <span class="meta-pill">Repères CECRL et Euroclassica</span>
+    </div>
   `;
 
   const cards = document.createElement("div");
   cards.className = "level-grid";
 
   levels.forEach((level) => {
-    const meta = HOME_LEVEL_META[level.id] || {
-      dashboardLabel: `LCA ${level.classLabel || level.id || ""}`.trim(),
-      latinGrade: level.title || "Niveau",
-      euroclassica: "Repère à définir",
-      cecrl: "Repère à définir",
-      summary: level.description || "",
-      referentielLabel: "Référentiel",
-      referentielUrl: `assets/docs/referentiel-${level.id}.pdf`,
-      outilsLabel: "Outils",
-      outilsUrl: `assets/docs/outils-${level.id}.pdf`,
-    };
-
+    const meta = getLevelMeta(level);
     const card = document.createElement("article");
     card.className = "card level-card";
+    card.dataset.level = level.id;
 
     const description = level.description || meta.summary || "";
     const ambition = level.ambition || "";
-    const dashboardButtonLabel = `Ouvrir le dashboard ${meta.dashboardLabel}`;
 
     card.innerHTML = `
-      <p><strong>${meta.dashboardLabel}</strong></p>
-      <h3>${meta.latinGrade}</h3>
-      <p>${meta.summary || description}</p>
-      <p><strong>Ambition :</strong> ${ambition}</p>
-      <p><strong>Euroclassica :</strong> ${meta.euroclassica}</p>
-      <p><strong>CECRL adapté :</strong> ${meta.cecrl}</p>
+      <div class="level-card__eyebrow">${meta.dashboardLabel}</div>
+      <h3 class="level-card__title">${meta.latinGrade}</h3>
+      <p class="level-card__summary">${meta.summary || description}</p>
+      <p class="level-card__ambience">${meta.ambience || ambition || description}</p>
 
-      <div class="actions-row">
-        <button type="button" class="btn btn-primary" data-action="open-dashboard">
-          ${dashboardButtonLabel}
-        </button>
+      <div class="level-card__metrics">
+        ${createMetric("Ambition", ambition || "Progression continue, lecture et réemploi guidés.")}
+        ${createMetric("Euroclassica", meta.euroclassica)}
+        ${createMetric("CECRL adapté", meta.cecrl)}
+      </div>
 
+      <div class="level-docs">
         <a
           href="${meta.referentielUrl}"
           download
@@ -102,27 +120,11 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
           rel="noopener noreferrer"
           data-action="open-referentiel"
           aria-label="${meta.referentielLabel} ${level.classLabel || level.id || ""}"
-          style="
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            gap:0.5rem;
-            padding:0.85rem 1rem;
-            border-radius:12px;
-            border:1px solid rgba(0,0,0,0.12);
-            background:#f7f3e8;
-            color:#2f2a1f;
-            font-weight:600;
-            text-decoration:none;
-            line-height:1.2;
-            box-shadow:0 2px 6px rgba(0,0,0,0.08);
-            cursor:pointer;
-          "
+          class="btn-chip"
         >
           <span aria-hidden="true">📘</span>
           <span>${meta.referentielLabel}</span>
         </a>
-
         <a
           href="${meta.outilsUrl}"
           download
@@ -130,34 +132,23 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
           rel="noopener noreferrer"
           data-action="open-outils"
           aria-label="${meta.outilsLabel} ${level.classLabel || level.id || ""}"
-          style="
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            gap:0.5rem;
-            padding:0.85rem 1rem;
-            border-radius:12px;
-            border:1px solid rgba(0,0,0,0.12);
-            background:#f7f3e8;
-            color:#2f2a1f;
-            font-weight:600;
-            text-decoration:none;
-            line-height:1.2;
-            box-shadow:0 2px 6px rgba(0,0,0,0.08);
-            cursor:pointer;
-          "
+          class="btn-chip"
         >
           <span aria-hidden="true">🧰</span>
           <span>${meta.outilsLabel}</span>
         </a>
       </div>
+
+      <div class="level-card__footer">
+        <button type="button" class="btn btn-primary" data-action="open-dashboard">
+          Ouvrir le dashboard
+        </button>
+      </div>
     `;
 
-    card
-      .querySelector('[data-action="open-dashboard"]')
-      .addEventListener("click", () => {
-        onOpenLevel(level.id);
-      });
+    card.querySelector('[data-action="open-dashboard"]').addEventListener("click", () => {
+      onOpenLevel(level.id);
+    });
 
     cards.appendChild(card);
   });
@@ -167,7 +158,7 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
 
   const resultsButton = document.createElement("button");
   resultsButton.type = "button";
-  resultsButton.className = "btn";
+  resultsButton.className = "btn btn-secondary";
   resultsButton.dataset.action = "results";
   resultsButton.textContent = "Voir les résultats (niveau 5e)";
   resultsButton.addEventListener("click", onOpenResults);
