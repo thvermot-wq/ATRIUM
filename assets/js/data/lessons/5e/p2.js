@@ -2710,21 +2710,35 @@ export const lessons5eP2 = [
         "points": 1
       },
       {
-        "id": "p2-l8-t5",
-        "type": "ordering",
-        "prompt": "Reconstitue dans l’ordre de base : 𝑣𝑖𝑐𝑖𝑛𝑢𝑠 / 𝑡𝑎𝑏𝑒𝑙𝑙𝑎𝑚 / 𝑙𝑒𝑔𝑖𝑡",
-        "options": [
-          "vicinus",
-          "tabellam",
-          "legit"
-        ],
-        "expected": [
-          "vicinus",
-          "tabellam",
-          "legit"
-        ],
-        "points": 1
-      },
+  "id": "p2-l8-t5",
+  "type": "matching",
+  "prompt": "Associe chaque mot à sa fonction dans « 𝘝𝘪𝘤𝘪𝘯𝘶𝘴 𝘵𝘢𝘣𝘦𝘭𝘭𝘢𝘮 𝘭𝘦𝘨𝘪𝘵 ».",
+  "pairs": [
+    {
+      "left": "vicinus",
+      "right": "sujet"
+    },
+    {
+      "left": "tabellam",
+      "right": "COD"
+    },
+    {
+      "left": "legit",
+      "right": "verbe"
+    }
+  ],
+  "rightOptions": [
+    "verbe",
+    "sujet",
+    "COD"
+  ],
+  "expected": {
+    "vicinus": "sujet",
+    "tabellam": "COD",
+    "legit": "verbe"
+  },
+  "points": 1
+},
       {
         "id": "p2-l8-t6",
         "type": "singleChoice",
@@ -2739,23 +2753,23 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p2-l8-t7",
-        "type": "multipleChoice",
-        "prompt": "Pourquoi la tablette paraît-elle suspecte ?",
-        "options": [
-          "Un nom a été changé",
-          "Le texte dit verum",
-          "Le mot falsa apparaît",
-          "La fontaine est propre"
-        ],
-        "expected": [
-          "Un nom a été changé",
-          "Le mot falsa apparaît"
-        ],
-        "shuffle": true,
-        "points": 1
-      }
+    {
+  "id": "p2-l8-t7",
+  "type": "multipleChoice",
+  "prompt": "Mini-texte : « Nomen mutatum est. Verbum falsa apparet. » Quels éléments montrent que la tablette est suspecte ?",
+  "options": [
+    "Un nom a été changé",
+    "'Falsa' signifie 'fausse'",
+    "La tablette est propre",
+    "Le mutant apparaît"
+  ],
+  "expected": [
+    "Un nom a été changé",
+    "'Falsa' signifie 'fausse'"
+  ],
+  "shuffle": true,
+  "points": 1
+}
     ],
     "production": [
       {
