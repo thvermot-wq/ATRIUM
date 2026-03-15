@@ -8,11 +8,11 @@ import { evaluateProductionItem, computeProductionProgress } from "../production
 
 function isLessonPlayable(lesson) {
   return (
-    lesson?.meta?.status === "ready" &&
+    Boolean(lesson) &&
     Array.isArray(lesson.training) &&
-    lesson.training.length === LESSONS_SPEC.trainingMax &&
+    lesson.training.length > 0 &&
     Array.isArray(lesson.production) &&
-    lesson.production.length === LESSONS_SPEC.productionMax
+    lesson.production.length > 0
   );
 }
 
