@@ -1628,38 +1628,53 @@ export const lessons5eP2 = [
         "points": 1
       },
       {
-        "id": "p2-l5-t6",
-        "type": "ordering",
-        "prompt": "Ordonne dans l’ordre de base : 𝑑𝑜𝑛𝑢𝑚 / 𝑣𝑖𝑐𝑖𝑛𝑢𝑠 / 𝑖𝑛𝑣𝑒𝑛𝑖𝑡",
-        "options": [
-          "vicinus",
-          "donum",
-          "invenit"
-        ],
-        "expected": [
-          "vicinus",
-          "donum",
-          "invenit"
-        ],
-        "points": 1
-      },
+  "id": "p2-l5-t6",
+  "type": "matching",
+  "prompt": "Associe chaque mot à sa fonction dans « 𝘝𝘪𝘤𝘪𝘯𝘶𝘴 𝘥𝘰𝘯𝘶𝘮 𝘪𝘯𝘷𝘦𝘯𝘪𝘵 ».",
+  "pairs": [
+    {
+      "left": "vicinus",
+      "right": "sujet"
+    },
+    {
+      "left": "donum",
+      "right": "COD"
+    },
+    {
+      "left": "invenit",
+      "right": "verbe"
+    }
+  ],
+  "rightOptions": [
+    "verbe",
+    "sujet",
+    "COD"
+  ],
+  "expected": {
+    "vicinus": "sujet",
+    "donum": "COD",
+    "invenit": "verbe"
+  },
+  "points": 1
+},
       {
-        "id": "p2-l5-t7",
-        "type": "multipleChoice",
-        "prompt": "Mini-texte : « 𝐷𝑜𝑛𝑢𝑚 𝑖𝑛 𝑡𝑒𝑚𝑝𝑙𝑜 𝑒𝑠𝑡. 𝑆𝑖𝑔𝑛𝑢𝑚 𝑖𝑛 𝑚𝑢𝑟𝑜 𝑒𝑠𝑡. » Quels neutres lis-tu ?",
-        "options": [
-          "donum",
-          "signum",
-          "murus",
-          "femina"
-        ],
-        "expected": [
-          "donum",
-          "signum"
-        ],
-        "shuffle": true,
-        "points": 1
-      }
+  "id": "p2-l5-t7",
+  "type": "multipleChoice",
+  "prompt": "Mini-texte : « 𝘋𝘰𝘯𝘶𝘮 𝘪𝘯 𝘵𝘦𝘮𝘱𝘭𝘰 𝘦𝘴𝘵. 𝘚𝘪𝘨𝘯𝘶𝘮 𝘪𝘯 𝘮𝘶𝘳𝘰 𝘦𝘴𝘵. » Quels noms du dictionnaire sont neutres ?",
+  "options": [
+    "donum",
+    "templum",
+    "signum",
+    "murus"
+  ],
+  "expected": [
+    "donum",
+    "templum",
+    "signum"
+  ],
+  "shuffle": true,
+  "points": 1
+},
     ],
     "production": [
       {
