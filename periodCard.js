@@ -7,14 +7,6 @@ function getStatusClass(status) {
   return "status-ko";
 }
 
-function getLessonMeta(lessonProgress) {
-  const best = lessonProgress?.best?.totalScore ?? 0;
-  const current = lessonProgress?.current?.totalScore ?? 0;
-  if (best > 0) return `meilleur ${best}/10`;
-  if (current > 0) return `courant ${current}/10`;
-  return "à jouer";
-}
-
 export function createPeriodCard({
   period,
   lessons,
@@ -22,109 +14,94 @@ export function createPeriodCard({
   lessonProgressMap,
   onOpenLesson,
   isOpen = false,
-  onTogglePeriod,
+  onToggle = () => {},
 }) {
   const card = document.createElement("article");
-  card.className = `card period-card${isOpen ? " is-open" : ""}`;
+  card.className = "card period-card";
 
-  const safePeriod = periodProgress || {
-    totalScore: 0,
-    maxScore: period.maxScore,
-    percent: 0,
-    status: "période à reprendre",
-  };
+  const title = document.createElement("h3");
+  title.textContent = `${period.title} · ${period.level}`;
+
+  const objective = document.createElement("p");
+  objective.className = "muted";
+  objective.textContent = period.objective;
+
+  const safePeriod =
+    periodProgress ||
+    ({
+      totalScore: 0,
+      maxScore: period.maxScore,
+      percent: 0,
+      status: "période à reprendre",
+    });
 
   const statusClass = getStatusClass(safePeriod.status);
-  const startedLessons = lessons.filter((lesson) => Boolean(lessonProgressMap?.[lesson.id]?.playedAt)).length;
-  const validatedLessons = lessons.filter((lesson) => (lessonProgressMap?.[lesson.id]?.best?.totalScore || 0) >= 8).length;
 
-  const toggle = document.createElement("button");
-  toggle.type = "button";
-  toggle.className = "period-card__toggle";
-  toggle.setAttribute("aria-expanded", String(isOpen));
-  toggle.innerHTML = `
-    <span class="period-card__header-main">
-      <span class="period-card__eyebrow">${period.level}</span>
-      <span class="period-card__title-wrap">
-        <span class="period-card__title">${period.title}</span>
-        <span class="period-card__objective">${period.objective}</span>
-      </span>
-    </span>
-    <span class="period-card__header-side">
-      <span class="period-card__header-label">${isOpen ? "Masquer les leçons" : "Voir les leçons"}</span>
-      <span class="period-card__chevron" aria-hidden="true">⌄</span>
-    </span>
-  `;
-  toggle.addEventListener("click", () => {
-    if (typeof onTogglePeriod === "function") {
-      onTogglePeriod({ periodId: period.id });
-    }
-  });
-
-  const summary = document.createElement("div");
-  summary.className = "period-card__summary";
-  summary.innerHTML = `
-    <div class="period-card__status-row">
-      <span class="period-status-chip ${statusClass}">${safePeriod.status}</span>
-      <span class="period-card__score-inline">${safePeriod.totalScore}/${period.maxScore}</span>
-    </div>
-    <div class="period-card__summary-grid">
-      <div class="period-card__summary-item">
-        <span class="period-card__summary-label">Leçons jouées</span>
-        <span class="period-card__summary-value">${startedLessons}/${lessons.length}</span>
-      </div>
-      <div class="period-card__summary-item">
-        <span class="period-card__summary-label">Leçons validées</span>
-        <span class="period-card__summary-value">${validatedLessons}/${lessons.length}</span>
-      </div>
-      <div class="period-card__summary-item">
-        <span class="period-card__summary-label">Progression</span>
-        <span class="period-card__summary-value">${safePeriod.percent || 0}%</span>
-      </div>
-    </div>
+  const stats = document.createElement("div");
+  stats.className = "period-stats";
+  stats.innerHTML = `
+    <p><strong>Score période :</strong> ${safePeriod.totalScore}/${period.maxScore}</p>
+    <p><strong>Pourcentage :</strong> ${safePeriod.percent}%</p>
+    <p class="period-status-chip ${statusClass}">${safePeriod.status}</p>
   `;
 
   const progress = createProgressBar({
     value: safePeriod.totalScore,
     max: period.maxScore,
-    label: "Progression de période",
+    label: "Période",
   });
 
-  const detailsBody = document.createElement("div");
-  detailsBody.className = "period-card__details-body";
-  detailsBody.hidden = !isOpen;
+  const toggleWrap = document.createElement("div");
+  toggleWrap.className = "actions-row";
 
-  const hint = document.createElement("p");
-  hint.className = "period-card__details-hint";
-  hint.textContent = "Choisis une leçon à reprendre, consolider ou rejouer.";
+  const toggleButton = document.createElement("button");
+  toggleButton.type = "button";
+  toggleButton.className = "btn btn-secondary";
+  toggleButton.style.width = "100%";
+  toggleButton.style.justifyContent = "space-between";
+  toggleButton.style.display = "inline-flex";
+  toggleButton.style.alignItems = "center";
+  toggleButton.style.textAlign = "left";
+  toggleButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  toggleButton.innerHTML = `
+    <span>${isOpen ? "Masquer les leçons" : "Voir les leçons"} (${lessons.length})</span>
+    <span aria-hidden="true">${isOpen ? "▴" : "▾"}</span>
+  `;
+  toggleButton.addEventListener("click", onToggle);
+  toggleWrap.appendChild(toggleButton);
 
-  const lessonList = document.createElement("ul");
-  lessonList.className = "lesson-list";
+  card.append(title, objective, stats, progress, toggleWrap);
 
-  lessons.forEach((lesson) => {
-    const item = document.createElement("li");
-    const button = document.createElement("button");
-    const lessonProgress = lessonProgressMap?.[lesson.id];
-    const status = getLessonStatus(lessonProgress, { lessonMax: 10 });
+  if (isOpen) {
+    const lessonList = document.createElement("ul");
+    lessonList.className = "link-list lesson-list";
 
-    button.type = "button";
-    button.className = "btn btn-link lesson-line";
-    button.innerHTML = `
-      <span class="lesson-line__left">
-        <span class="lesson-id">${lesson.id}</span>
-        <span class="lesson-title">${lesson.title}</span>
-      </span>
-      <span class="lesson-line__right">
-        <span class="lesson-status-chip ${status.className}">${status.icon} ${status.label}</span>
-        <span class="lesson-score">${getLessonMeta(lessonProgress)}</span>
-      </span>
-    `;
-    button.addEventListener("click", () => onOpenLesson(lesson.id));
-    item.appendChild(button);
-    lessonList.appendChild(item);
-  });
+    lessons.forEach((lesson) => {
+      const item = document.createElement("li");
+      const button = document.createElement("button");
+      const lessonProgress = lessonProgressMap?.[lesson.id];
+      const best = lessonProgress?.best?.totalScore ?? 0;
+      const current = lessonProgress?.current?.totalScore ?? 0;
+      const status = getLessonStatus(lessonProgress, { lessonMax: 10 });
 
-  detailsBody.append(hint, lessonList);
-  card.append(toggle, summary, progress, detailsBody);
+      button.type = "button";
+      button.className = "btn btn-link lesson-line";
+      button.style.width = "100%";
+      button.style.textAlign = "left";
+      button.innerHTML = `
+        <span class="lesson-title">${lesson.title} (${lesson.id})</span>
+        <span class="lesson-meta">
+          <span class="lesson-status-chip ${status.className}">${status.icon} ${status.label}</span>
+          <span>courant ${current}/10 · meilleur ${best}/10</span>
+        </span>
+      `;
+      button.addEventListener("click", () => onOpenLesson(lesson.id));
+      item.appendChild(button);
+      lessonList.appendChild(item);
+    });
+
+    card.appendChild(lessonList);
+  }
+
   return card;
 }
