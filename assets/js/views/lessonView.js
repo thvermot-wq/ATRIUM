@@ -122,22 +122,38 @@ function renderLexiconChips(lexicon) {
   return `<div class="lesson-lexicon">${chips}</div>`;
 }
 
-function createLessonToolbar({ lesson, onBackDashboard }) {
+function createLessonToolbar({ lesson, onBackDashboard, totalSteps = LESSONS_SPEC.lessonMax }) {
   const shell = document.createElement("div");
   shell.className = "lesson-toolbar-shell";
 
   const title = `P${lesson.period} · ${lesson.title}`;
   const hasLexicon = Array.isArray(lesson.lexicon) && lesson.lexicon.length > 0;
   const reminderText = lesson.lessonPoint || lesson.objective || "";
+  const initialAnswered = 0;
+  const initialProgressPercent = totalSteps > 0 ? Math.round((initialAnswered / totalSteps) * 100) : 0;
 
   shell.innerHTML = `
     <div class="lesson-toolbar">
       <div class="lesson-toolbar__inner">
-        <button type="button" class="lesson-toolbar__btn" data-action="back">← Dashboard</button>
-        <div class="lesson-toolbar__title" title="${escapeHtml(title)}">${escapeHtml(title)}</div>
-        <div class="lesson-toolbar__actions">
-          <button type="button" class="lesson-toolbar__btn" data-panel="reminder" aria-expanded="false">Rappel</button>
-          ${hasLexicon ? `<button type="button" class="lesson-toolbar__btn" data-panel="lexicon" aria-expanded="false">Lexique</button>` : ""}
+        <div class="lesson-toolbar__left">
+          <button type="button" class="lesson-toolbar__btn lesson-toolbar__btn--back" data-action="back">← Dashboard</button>
+          <div class="lesson-toolbar__title-group">
+            <p class="lesson-toolbar__kicker">Leçon</p>
+            <div class="lesson-toolbar__title" title="${escapeHtml(title)}">${escapeHtml(title)}</div>
+          </div>
+        </div>
+        <div class="lesson-toolbar__right">
+          <div class="lesson-toolbar__progress-meta">
+            <span class="lesson-toolbar__progress-pill" data-role="step-pill">Étape 1 / ${totalSteps}</span>
+            <span class="lesson-toolbar__progress-pill" data-role="answered-pill">0 / ${totalSteps} enregistrés</span>
+          </div>
+          <div class="lesson-toolbar__progress-track" aria-hidden="true">
+            <span class="lesson-toolbar__progress-fill" data-role="progress-fill" style="width: ${initialProgressPercent}%"></span>
+          </div>
+          <div class="lesson-toolbar__actions">
+            <button type="button" class="lesson-toolbar__btn" data-panel="reminder" aria-expanded="false">Rappel</button>
+            ${hasLexicon ? `<button type="button" class="lesson-toolbar__btn" data-panel="lexicon" aria-expanded="false">Lexique</button>` : ""}
+          </div>
         </div>
       </div>
     </div>
@@ -153,6 +169,9 @@ function createLessonToolbar({ lesson, onBackDashboard }) {
   const spacer = shell.querySelector(".lesson-toolbar__spacer");
   const backButton = shell.querySelector('[data-action="back"]');
   const panelButtons = Array.from(shell.querySelectorAll("[data-panel]"));
+  const progressFill = shell.querySelector('[data-role="progress-fill"]');
+  const stepPill = shell.querySelector('[data-role="step-pill"]');
+  const answeredPill = shell.querySelector('[data-role="answered-pill"]');
 
   let activePanel = null;
 
@@ -172,6 +191,16 @@ function createLessonToolbar({ lesson, onBackDashboard }) {
     panel.style.top = `${toolbarHeight}px`;
     const panelHeight = panel.hidden ? 0 : (panel.offsetHeight || panel.scrollHeight || 0);
     spacer.style.height = `${toolbarHeight + panelHeight + 8}px`;
+  };
+
+  const updateProgress = ({ activeIndex = 0, answeredCount = 0, totalCount = totalSteps } = {}) => {
+    const safeTotal = Math.max(1, totalCount || totalSteps || 1);
+    const safeIndex = Math.max(0, Math.min(activeIndex, safeTotal - 1));
+    const percent = Math.max(0, Math.min(100, (answeredCount / safeTotal) * 100));
+
+    if (progressFill) progressFill.style.width = `${percent}%`;
+    if (stepPill) stepPill.textContent = `Étape ${safeIndex + 1} / ${safeTotal}`;
+    if (answeredPill) answeredPill.textContent = `${answeredCount} / ${safeTotal} enregistrés`;
   };
 
   const closePanel = () => {
@@ -210,6 +239,8 @@ function createLessonToolbar({ lesson, onBackDashboard }) {
 
   window.requestAnimationFrame(syncLayout);
   window.addEventListener("resize", syncLayout);
+  updateProgress({ activeIndex: 0, answeredCount: 0, totalCount: totalSteps });
+  shell.updateProgress = updateProgress;
 
   return shell;
 }
@@ -295,18 +326,45 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
 
   let activeStepIndex = 0;
   let lessonPhase = "in_progress";
+  let lastAnsweredCount = 0;
+  let lastTotalItems = LESSONS_SPEC.lessonMax;
 
-  const lessonToolbar = createLessonToolbar({ lesson, onBackDashboard });
+  const lessonToolbar = createLessonToolbar({ lesson, onBackDashboard, totalSteps: LESSONS_SPEC.lessonMax });
 
   const hero = document.createElement("article");
   hero.className = "card lesson-hero";
+  const lessonLexiconPreview = Array.isArray(lesson.lexicon) && lesson.lexicon.length
+    ? `
+      <div class="lesson-hero__lexicon">
+        <p class="lesson-hero__label">Lexique utile</p>
+        ${renderLexiconChips(lesson.lexicon)}
+      </div>
+    `
+    : "";
   hero.innerHTML = `
-    <h2>${lesson.title}</h2>
-    ${subtitleHtml}
-    <p class="muted">${lesson.id} · Période ${lesson.period}</p>
-    <p><strong>Objectif :</strong> ${lesson.objective}</p>
-    <p><strong>Point de leçon :</strong> ${lesson.lessonPoint || lesson.objective}</p>
-    <p class="muted">Validation visée : 8/10 (80 %) · Score enregistré : courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
+    <div class="lesson-hero__head">
+      <div class="lesson-hero__title-block">
+        <p class="lesson-hero__eyebrow">${escapeHtml(levelId.toUpperCase())} · Période ${lesson.period}</p>
+        <h2>${lesson.title}</h2>
+        ${subtitleHtml}
+      </div>
+      <div class="lesson-hero__scorebox">
+        <p class="lesson-hero__label">Validation visée</p>
+        <p class="lesson-hero__scoreline">8 / 10 minimum</p>
+        <p class="lesson-hero__scoremeta muted">Courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
+      </div>
+    </div>
+    <div class="lesson-hero__grid">
+      <div class="lesson-hero__panel">
+        <p class="lesson-hero__label">Objectif</p>
+        <p>${lesson.objective}</p>
+      </div>
+      <div class="lesson-hero__panel">
+        <p class="lesson-hero__label">Point de leçon</p>
+        <p>${lesson.lessonPoint || lesson.objective}</p>
+      </div>
+    </div>
+    ${lessonLexiconPreview}
   `;
 
   const flowCard = document.createElement("article");
@@ -333,13 +391,13 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
   focusBoard.className = "lesson-focus-board";
 
   const trainingState = document.createElement("p");
-  trainingState.className = "muted";
+  trainingState.className = "muted lesson-state-pill";
 
   const productionState = document.createElement("p");
-  productionState.className = "muted";
+  productionState.className = "muted lesson-state-pill";
 
   const flowState = document.createElement("p");
-  flowState.className = "muted";
+  flowState.className = "muted lesson-state-pill lesson-state-pill--wide";
 
   const form = document.createElement("form");
   form.className = "stack compact-form";
@@ -424,6 +482,11 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     flowCounter.textContent = `Exercice ${activeStepIndex + 1} / ${stepEntries.length} · ${kindLabel}`;
     prevButton.disabled = activeStepIndex === 0;
     nextButton.disabled = activeStepIndex === stepEntries.length - 1;
+    lessonToolbar.updateProgress?.({
+      activeIndex: activeStepIndex,
+      answeredCount: lastAnsweredCount,
+      totalCount: lastTotalItems || stepEntries.length,
+    });
 
     if (scroll) {
       focusStepSection(stepSections[activeStepIndex]);
@@ -439,6 +502,9 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     if (lessonPhase !== "finished_with_summary") {
       lessonPhase = answeredCount === totalItems ? "ready_to_finish" : "in_progress";
     }
+
+    lastAnsweredCount = answeredCount;
+    lastTotalItems = totalItems;
 
     trainingState.textContent = `Entraînement : ${training.answeredCount}/${training.totalItems} réponses enregistrées.`;
     productionState.textContent = `Production guidée : ${production.answeredCount}/${production.totalItems} réponses enregistrées.`;
