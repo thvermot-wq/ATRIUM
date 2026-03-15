@@ -2872,58 +2872,80 @@ export const lessons5eP2 = [
           }
         ]
       },
-      {
-        "id": "p2-l8-p3",
-        "type": "textInput",
-        "prompt": "Pourquoi la tablette semble-t-elle suspecte ? (français court)",
-        "expected": "le nom a été changé",
-        "acceptedAnswers": [
-          "le nom a été changé",
-          "un nom est modifié",
-          "elle est falsifiée",
-          "la cire a été modifiée",
-          "le texte a été modifié",
-          "le nom dans la cire a été changé"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "le nom a été changé",
-            "un nom est modifié",
-            "elle est falsifiée",
-            "la cire a été modifiée",
-            "le texte a été modifié",
-            "le nom dans la cire a été changé"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "le nom a été changé",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "le nom a été changé",
-            "isCorrect": true
-          },
-          {
-            "input": "réponse hors-sujet",
-            "isCorrect": false
-          }
-        ]
-      }
+    {
+  "id": "p2-l8-p3",
+  "type": "textInput",
+  "prompt": "Traduis en français : « 𝘕𝘰𝘮𝘦𝘯 𝘮𝘶𝘵𝘢𝘵𝘶𝘮 𝘦𝘴𝘵. »",
+  "expected": "le nom a été changé",
+  "acceptedAnswers": [
+    "le nom a été changé",
+    "un nom a été changé",
+    "le nom est changé",
+    "un nom est changé",
+    "le nom fut changé",
+    "un nom fut changé",
+
+    "le nom a été modifié",
+    "un nom a été modifié",
+    "le nom est modifié",
+    "un nom est modifié",
+    "le nom fut modifié",
+    "un nom fut modifié"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "le nom a été changé",
+      "un nom a été changé",
+      "le nom est changé",
+      "un nom est changé",
+      "le nom fut changé",
+      "un nom fut changé",
+
+      "le nom a été modifié",
+      "un nom a été modifié",
+      "le nom est modifié",
+      "un nom est modifié",
+      "le nom fut modifié",
+      "un nom fut modifié"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "le nom a été changé",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Comprendre que nomen mutatum est signale une modification du nom, avec plusieurs rendus français recevables.",
+  "rejectIf": [
+    "contre-sens",
+    "réponse hors-sujet",
+    "confusion sur mutatum"
+  ],
+  "tests": [
+    {
+      "input": "le nom a été changé",
+      "isCorrect": true
+    },
+    {
+      "input": "un nom est modifié",
+      "isCorrect": true
+    },
+    {
+      "input": "le nom fut changé",
+      "isCorrect": true
+    },
+    {
+      "input": "le nom est vrai",
+      "isCorrect": false
+    }
+  ]
+}
     ],
     "summary": {
       "retains": [
