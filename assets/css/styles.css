@@ -1343,8 +1343,6 @@ a,
 }
 
 *** a/assets/css/styles.css
---- b/assets/css/styles.css
-@@
  :root {
    --bg: #f3ece1;
    --card: #fffbf5;
@@ -1363,86 +1361,7 @@ a,
    --accent-soft: #f3e3cf;
    --shadow-1: 0 6px 18px rgba(44, 49, 64, 0.07);
    --shadow-2: 0 14px 34px rgba(44, 49, 64, 0.12);
-+
-+  --page-top: #faf4ea;
-+  --surface-1: rgba(255, 253, 249, 0.98);
-+  --surface-2: rgba(252, 246, 238, 0.98);
-+  --panel-1: rgba(249, 242, 231, 0.88);
-+  --panel-2: rgba(244, 235, 223, 0.88);
-+
-+  --toggle-top: #fffdf9;
-+  --toggle-bottom: #f6ede0;
-+  --toggle-hover-top: #fffaf4;
-+  --toggle-hover-bottom: #f1e4d3;
-+
-+  --item-bg: #fffdfa;
-+  --item-hover: #f8f1e7;
-+  --line-hover: #d4c5af;
-+
-+  --chip-border: rgba(49, 70, 124, 0.10);
-+  --chip-shadow: 0 1px 2px rgba(44, 49, 64, 0.04);
-+
-+  --status-ok-bg: #e9f5ed;
-+  --status-ok-border: #cfe6d6;
-+  --status-warn-bg: #fbf1d8;
-+  --status-warn-border: #e8d7aa;
-+  --status-ko-bg: #fae9e7;
-+  --status-ko-border: #e8c7c1;
-+
-+  --progress-track-bg: #ece3d8;
-+  --progress-fill-1: #c9a35f;
-+  --progress-fill-2: #7b90d4;
-+}
-+
-+[data-theme="dark"] {
-+  --bg: #151923;
-+  --card: #1b2130;
-+  --line: #323a4d;
-+  --ink: #edf1ff;
-+  --muted: #b5bfd8;
-+  --ok: #7ed6a1;
-+  --warn: #e5c46d;
-+  --ko: #ef9c95;
-+  --primary: #7f96ff;
-+  --primary-hover: #98acff;
-+  --primary-soft: #232c45;
-+  --soft: #202633;
-+  --soft-2: #262d3b;
-+  --accent: #d8a05b;
-+  --accent-soft: #3a2f24;
-+  --shadow-1: 0 8px 20px rgba(0, 0, 0, 0.28);
-+  --shadow-2: 0 18px 40px rgba(0, 0, 0, 0.38);
-+
-+  --page-top: #0f131b;
-+  --surface-1: rgba(29, 33, 43, 0.98);
-+  --surface-2: rgba(22, 26, 35, 0.98);
-+  --panel-1: rgba(38, 44, 58, 0.88);
-+  --panel-2: rgba(31, 36, 48, 0.88);
-+
-+  --toggle-top: #2a3342;
-+  --toggle-bottom: #202733;
-+  --toggle-hover-top: #313b4d;
-+  --toggle-hover-bottom: #273244;
-+
-+  --item-bg: #202634;
-+  --item-hover: #283143;
-+  --line-hover: #4b5671;
-+
-+  --chip-border: rgba(173, 188, 255, 0.18);
-+  --chip-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
-+
-+  --status-ok-bg: rgba(66, 122, 90, 0.24);
-+  --status-ok-border: rgba(126, 214, 161, 0.34);
-+  --status-warn-bg: rgba(139, 99, 24, 0.26);
-+  --status-warn-border: rgba(229, 196, 109, 0.34);
-+  --status-ko-bg: rgba(138, 63, 58, 0.28);
-+  --status-ko-border: rgba(239, 156, 149, 0.34);
-+
-+  --progress-track-bg: #2b3242;
-+  --progress-fill-1: #d5ab63;
-+  --progress-fill-2: #8ea4ff;
  }
-@@
  body {
    margin: 0;
    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -1450,92 +1369,52 @@ a,
    font-weight: 520;
    letter-spacing: 0.003em;
    color: var(--ink);
--  background: linear-gradient(180deg, #faf4ea 0%, var(--bg) 100%);
-+  background: linear-gradient(180deg, var(--page-top) 0%, var(--bg) 100%);
    text-rendering: optimizeLegibility;
    -webkit-font-smoothing: antialiased;
  }
-@@
  .status-ok {
--  background: #e9f5ed;
-+  background: var(--status-ok-bg);
    color: var(--ok);
--  border-color: #cfe6d6;
-+  border-color: var(--status-ok-border);
  }
  
  .status-warn {
--  background: #fbf1d8;
-+  background: var(--status-warn-bg);
    color: var(--warn);
--  border-color: #e8d7aa;
-+  border-color: var(--status-warn-border);
  }
  
  .status-ko {
--  background: #fae9e7;
-+  background: var(--status-ko-bg);
    color: var(--ko);
--  border-color: #e8c7c1;
-+  border-color: var(--status-ko-border);
  }
-@@
  .progress-track {
--  background: #ece3d8;
-+  background: var(--progress-track-bg);
  }
  
  .progress-fill {
--  background: linear-gradient(90deg, #c9a35f 0%, #7b90d4 100%);
-+  background: linear-gradient(90deg, var(--progress-fill-1) 0%, var(--progress-fill-2) 100%);
  }
-@@
  .lesson-line {
--  background: #fffdfa;
-+  background: var(--item-bg);
  }
  
  .lesson-line:hover {
--  background: #f8f1e7;
--  border-color: #d4c5af;
-+  background: var(--item-hover);
-+  border-color: var(--line-hover);
  }
-@@
  .card,
  #period-summary,
  #lesson-list,
  #lesson-detail {
--  background: linear-gradient(180deg, rgba(255, 253, 249, 0.98) 0%, rgba(252, 246, 238, 0.98) 100%);
-+  background: linear-gradient(180deg, var(--surface-1) 0%, var(--surface-2) 100%);
  }
  
  .period-card__toggle {
--  background: linear-gradient(180deg, #fffdf9 0%, #f6ede0 100%);
-+  background: linear-gradient(180deg, var(--toggle-top) 0%, var(--toggle-bottom) 100%);
  }
  
  .period-card__toggle:hover,
  .lesson-line:hover,
  .btn-secondary:hover {
--  background: linear-gradient(180deg, #fffaf4 0%, #f1e4d3 100%);
-+  background: linear-gradient(180deg, var(--toggle-hover-top) 0%, var(--toggle-hover-bottom) 100%);
  }
  
  .meta-pill,
  .period-card__summary-item,
  .period-box,
  .lesson-card {
--  background: linear-gradient(180deg, rgba(249, 242, 231, 0.88) 0%, rgba(244, 235, 223, 0.88) 100%);
-+  background: linear-gradient(180deg, var(--panel-1) 0%, var(--panel-2) 100%);
  }
  
  .period-status-chip,
  .lesson-status-chip {
--  border: 1px solid rgba(49, 70, 124, 0.10);
--  box-shadow: 0 1px 2px rgba(44, 49, 64, 0.04);
-+  border: 1px solid var(--chip-border);
-+  box-shadow: var(--chip-shadow);
  }
 
 /* ===== Matching / Ordering : rendu plus propre ===== */
@@ -1638,4 +1517,433 @@ a,
 
 [data-theme="dark"] .matching-row select:hover {
   background-color: rgba(255, 255, 255, 0.07);
+}
+
+/* ===== Lesson header / lexicon / progress refresh ===== */
+.lesson-view {
+  gap: 1rem;
+}
+
+.lesson-toolbar-shell {
+  position: sticky;
+  top: 0.45rem;
+  z-index: 30;
+}
+
+.lesson-toolbar {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--card) 96%, transparent) 0%, color-mix(in srgb, var(--soft) 96%, transparent) 100%);
+  box-shadow: var(--shadow-1);
+  backdrop-filter: blur(12px);
+}
+
+.lesson-toolbar__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 1fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 0.85rem 1rem 0.95rem;
+}
+
+.lesson-toolbar__left,
+.lesson-toolbar__right {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.lesson-toolbar__left {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.lesson-toolbar__title-group {
+  min-width: 0;
+}
+
+.lesson-toolbar__kicker {
+  margin: 0 0 0.15rem;
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.lesson-toolbar__title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 1.18rem;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.lesson-toolbar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.lesson-toolbar__btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--card) 0%, var(--soft) 100%);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  padding: 0.52rem 0.8rem;
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease, box-shadow 120ms ease;
+}
+
+.lesson-toolbar__btn:hover,
+.lesson-toolbar__btn[aria-expanded="true"] {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--primary) 45%, var(--line));
+  background: linear-gradient(180deg, var(--card) 0%, var(--primary-soft) 100%);
+  box-shadow: 0 8px 18px rgba(44, 49, 64, 0.08);
+}
+
+.lesson-toolbar__btn--back {
+  white-space: nowrap;
+}
+
+.lesson-toolbar__progress-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.45rem;
+}
+
+.lesson-toolbar__progress-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.24rem 0.58rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--card) 78%, var(--soft));
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.lesson-toolbar__progress-track {
+  position: relative;
+  height: 0.52rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--soft-2) 72%, var(--line));
+  overflow: hidden;
+}
+
+.lesson-toolbar__progress-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+  transition: width 180ms ease;
+}
+
+.lesson-toolbar__panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 29;
+}
+
+.lesson-toolbar__panel-inner {
+  margin-top: 0.45rem;
+  padding: 0.9rem 1rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--card) 98%, transparent) 0%, color-mix(in srgb, var(--soft) 98%, transparent) 100%);
+  box-shadow: var(--shadow-1);
+}
+
+.lesson-toolbar__panel-title {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.55rem;
+}
+
+.lesson-toolbar__panel-text {
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.lesson-toolbar__spacer {
+  height: 0;
+}
+
+.lesson-hero {
+  gap: 1rem;
+  padding: 1.2rem;
+}
+
+.lesson-hero__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+}
+
+.lesson-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.28rem 0.62rem;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 0.77rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.lesson-hero h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 1.4vw + 1rem, 2.2rem);
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+.lesson-subtitle {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.lesson-hero__scorebox {
+  min-width: 220px;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--card) 0%, var(--soft) 100%);
+}
+
+.lesson-hero__label {
+  margin: 0 0 0.3rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.lesson-hero__scoreline {
+  font-family: "Spectral", Georgia, serif;
+  font-size: 1.28rem;
+  font-weight: 700;
+}
+
+.lesson-hero__scoremeta {
+  margin-top: 0.3rem;
+}
+
+.lesson-hero__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.lesson-hero__panel {
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--card) 98%, transparent) 0%, color-mix(in srgb, var(--soft) 98%, transparent) 100%);
+}
+
+.lesson-hero__panel p:last-child {
+  line-height: 1.48;
+}
+
+.lesson-hero__lexicon {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.lesson-lexicon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lexicon-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.42rem 0.62rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--primary) 18%, var(--line));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--card) 99%, transparent) 0%, color-mix(in srgb, var(--soft) 94%, transparent) 100%);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.55), 0 4px 12px rgba(44, 49, 64, 0.04);
+  color: var(--ink);
+}
+
+.lexicon-chip__latin {
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.lexicon-chip__sep {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.lexicon-chip__fr {
+  color: var(--ink);
+}
+
+.lesson-flow-card {
+  gap: 0.85rem;
+}
+
+.lesson-flow-card__topline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: end;
+}
+
+.lesson-flow-card__eyebrow {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.lesson-flow-card__title {
+  margin-top: 0.2rem;
+  color: var(--ink);
+}
+
+.lesson-flow-card__counter {
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.lesson-flow-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.lesson-state-pill {
+  padding: 0.72rem 0.86rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--card) 98%, transparent) 0%, color-mix(in srgb, var(--soft) 98%, transparent) 100%);
+  line-height: 1.42;
+}
+
+.lesson-focus-board {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.lesson-step {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.lesson-step__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.lesson-step__badge,
+.lesson-step__caption {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.58rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--card) 88%, var(--soft));
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.lesson-step__badge {
+  color: var(--primary);
+}
+
+.lesson-step__caption {
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .lesson-toolbar__inner,
+  .lesson-hero__head,
+  .lesson-hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-toolbar__left {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-toolbar__actions,
+  .lesson-toolbar__progress-meta {
+    justify-content: flex-start;
+  }
+
+  .lesson-hero__scorebox {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .lesson-toolbar-shell {
+    top: 0.2rem;
+  }
+
+  .lesson-toolbar__inner,
+  .lesson-toolbar__panel-inner,
+  .lesson-hero {
+    padding-left: 0.82rem;
+    padding-right: 0.82rem;
+  }
+
+  .lesson-toolbar__title {
+    white-space: normal;
+  }
+
+  .lesson-toolbar__btn {
+    width: fit-content;
+  }
+
+  .lexicon-chip {
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 14px;
+  }
+}
+
+[data-theme="dark"] .lesson-toolbar,
+[data-theme="dark"] .lesson-toolbar__panel-inner,
+[data-theme="dark"] .lesson-hero__panel,
+[data-theme="dark"] .lesson-hero__scorebox,
+[data-theme="dark"] .lesson-state-pill,
+[data-theme="dark"] .lexicon-chip {
+  box-shadow: none;
+}
+
+[data-theme="dark"] .lesson-toolbar__btn:hover,
+[data-theme="dark"] .lesson-toolbar__btn[aria-expanded="true"] {
+  box-shadow: none;
 }
