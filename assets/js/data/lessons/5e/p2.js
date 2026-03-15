@@ -795,17 +795,26 @@ export const lessons5eP2 = [
       },
      {
   "id": "p2-l3-t5",
-  "type": "dragDrop",
+  "type": "matching",
   "prompt": "Associe chaque mot à sa fonction dans « 𝘍𝘦𝘮𝘪𝘯𝘢 𝘢𝘲𝘶𝘢𝘮 𝘱𝘰𝘳𝘵𝘢𝘵 ».",
-  "items": [
-    "femina",
-    "aquam",
-    "portat"
+  "pairs": [
+    {
+      "left": "femina",
+      "right": "sujet"
+    },
+    {
+      "left": "aquam",
+      "right": "COD"
+    },
+    {
+      "left": "portat",
+      "right": "verbe"
+    }
   ],
-  "targets": [
+  "rightOptions": [
+    "verbe",
     "sujet",
-    "COD",
-    "verbe"
+    "COD"
   ],
   "expected": {
     "femina": "sujet",
