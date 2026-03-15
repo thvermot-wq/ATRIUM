@@ -1341,3 +1341,199 @@ a,
   color: #3a4f86;
   border: 1px solid rgba(49, 70, 124, 0.10);
 }
+
+*** a/assets/css/styles.css
+--- b/assets/css/styles.css
+@@
+ :root {
+   --bg: #f3ece1;
+   --card: #fffbf5;
+   --line: #d9ccb8;
+   --ink: #2c3140;
+   --muted: #686676;
+   --ok: #2d6a47;
+   --warn: #8b6318;
+   --ko: #8a3f3a;
+   --primary: #31467c;
+   --primary-hover: #263762;
+   --primary-soft: #eceff8;
+   --soft: #f4ede2;
+   --soft-2: #efe5d7;
+   --accent: #a56d33;
+   --accent-soft: #f3e3cf;
+   --shadow-1: 0 6px 18px rgba(44, 49, 64, 0.07);
+   --shadow-2: 0 14px 34px rgba(44, 49, 64, 0.12);
++
++  --page-top: #faf4ea;
++  --surface-1: rgba(255, 253, 249, 0.98);
++  --surface-2: rgba(252, 246, 238, 0.98);
++  --panel-1: rgba(249, 242, 231, 0.88);
++  --panel-2: rgba(244, 235, 223, 0.88);
++
++  --toggle-top: #fffdf9;
++  --toggle-bottom: #f6ede0;
++  --toggle-hover-top: #fffaf4;
++  --toggle-hover-bottom: #f1e4d3;
++
++  --item-bg: #fffdfa;
++  --item-hover: #f8f1e7;
++  --line-hover: #d4c5af;
++
++  --chip-border: rgba(49, 70, 124, 0.10);
++  --chip-shadow: 0 1px 2px rgba(44, 49, 64, 0.04);
++
++  --status-ok-bg: #e9f5ed;
++  --status-ok-border: #cfe6d6;
++  --status-warn-bg: #fbf1d8;
++  --status-warn-border: #e8d7aa;
++  --status-ko-bg: #fae9e7;
++  --status-ko-border: #e8c7c1;
++
++  --progress-track-bg: #ece3d8;
++  --progress-fill-1: #c9a35f;
++  --progress-fill-2: #7b90d4;
++}
++
++[data-theme="dark"] {
++  --bg: #151923;
++  --card: #1b2130;
++  --line: #323a4d;
++  --ink: #edf1ff;
++  --muted: #b5bfd8;
++  --ok: #7ed6a1;
++  --warn: #e5c46d;
++  --ko: #ef9c95;
++  --primary: #7f96ff;
++  --primary-hover: #98acff;
++  --primary-soft: #232c45;
++  --soft: #202633;
++  --soft-2: #262d3b;
++  --accent: #d8a05b;
++  --accent-soft: #3a2f24;
++  --shadow-1: 0 8px 20px rgba(0, 0, 0, 0.28);
++  --shadow-2: 0 18px 40px rgba(0, 0, 0, 0.38);
++
++  --page-top: #0f131b;
++  --surface-1: rgba(29, 33, 43, 0.98);
++  --surface-2: rgba(22, 26, 35, 0.98);
++  --panel-1: rgba(38, 44, 58, 0.88);
++  --panel-2: rgba(31, 36, 48, 0.88);
++
++  --toggle-top: #2a3342;
++  --toggle-bottom: #202733;
++  --toggle-hover-top: #313b4d;
++  --toggle-hover-bottom: #273244;
++
++  --item-bg: #202634;
++  --item-hover: #283143;
++  --line-hover: #4b5671;
++
++  --chip-border: rgba(173, 188, 255, 0.18);
++  --chip-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
++
++  --status-ok-bg: rgba(66, 122, 90, 0.24);
++  --status-ok-border: rgba(126, 214, 161, 0.34);
++  --status-warn-bg: rgba(139, 99, 24, 0.26);
++  --status-warn-border: rgba(229, 196, 109, 0.34);
++  --status-ko-bg: rgba(138, 63, 58, 0.28);
++  --status-ko-border: rgba(239, 156, 149, 0.34);
++
++  --progress-track-bg: #2b3242;
++  --progress-fill-1: #d5ab63;
++  --progress-fill-2: #8ea4ff;
+ }
+@@
+ body {
+   margin: 0;
+   font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 520;
+   letter-spacing: 0.003em;
+   color: var(--ink);
+-  background: linear-gradient(180deg, #faf4ea 0%, var(--bg) 100%);
++  background: linear-gradient(180deg, var(--page-top) 0%, var(--bg) 100%);
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased;
+ }
+@@
+ .status-ok {
+-  background: #e9f5ed;
++  background: var(--status-ok-bg);
+   color: var(--ok);
+-  border-color: #cfe6d6;
++  border-color: var(--status-ok-border);
+ }
+ 
+ .status-warn {
+-  background: #fbf1d8;
++  background: var(--status-warn-bg);
+   color: var(--warn);
+-  border-color: #e8d7aa;
++  border-color: var(--status-warn-border);
+ }
+ 
+ .status-ko {
+-  background: #fae9e7;
++  background: var(--status-ko-bg);
+   color: var(--ko);
+-  border-color: #e8c7c1;
++  border-color: var(--status-ko-border);
+ }
+@@
+ .progress-track {
+-  background: #ece3d8;
++  background: var(--progress-track-bg);
+ }
+ 
+ .progress-fill {
+-  background: linear-gradient(90deg, #c9a35f 0%, #7b90d4 100%);
++  background: linear-gradient(90deg, var(--progress-fill-1) 0%, var(--progress-fill-2) 100%);
+ }
+@@
+ .lesson-line {
+-  background: #fffdfa;
++  background: var(--item-bg);
+ }
+ 
+ .lesson-line:hover {
+-  background: #f8f1e7;
+-  border-color: #d4c5af;
++  background: var(--item-hover);
++  border-color: var(--line-hover);
+ }
+@@
+ .card,
+ #period-summary,
+ #lesson-list,
+ #lesson-detail {
+-  background: linear-gradient(180deg, rgba(255, 253, 249, 0.98) 0%, rgba(252, 246, 238, 0.98) 100%);
++  background: linear-gradient(180deg, var(--surface-1) 0%, var(--surface-2) 100%);
+ }
+ 
+ .period-card__toggle {
+-  background: linear-gradient(180deg, #fffdf9 0%, #f6ede0 100%);
++  background: linear-gradient(180deg, var(--toggle-top) 0%, var(--toggle-bottom) 100%);
+ }
+ 
+ .period-card__toggle:hover,
+ .lesson-line:hover,
+ .btn-secondary:hover {
+-  background: linear-gradient(180deg, #fffaf4 0%, #f1e4d3 100%);
++  background: linear-gradient(180deg, var(--toggle-hover-top) 0%, var(--toggle-hover-bottom) 100%);
+ }
+ 
+ .meta-pill,
+ .period-card__summary-item,
+ .period-box,
+ .lesson-card {
+-  background: linear-gradient(180deg, rgba(249, 242, 231, 0.88) 0%, rgba(244, 235, 223, 0.88) 100%);
++  background: linear-gradient(180deg, var(--panel-1) 0%, var(--panel-2) 100%);
+ }
+ 
+ .period-status-chip,
+ .lesson-status-chip {
+-  border: 1px solid rgba(49, 70, 124, 0.10);
+-  box-shadow: 0 1px 2px rgba(44, 49, 64, 0.04);
++  border: 1px solid var(--chip-border);
++  box-shadow: var(--chip-shadow);
+ }
