@@ -80,8 +80,9 @@ export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress 
       <span class="meta-pill">${levelPeriods.length} périodes</span>
       <span class="meta-pill">${allLessons.length} leçons</span>
       <span class="meta-pill">${playedLessonsCount}/${allLessons.length} jouées</span>
-      <span class="meta-pill">${validatedPeriodsCount}/${levelPeriods.length} validées</span>
+      <span class="meta-pill">${validatedLessonsCount}/${allLessons.length} validées</span>
       <span class="meta-pill">${overallPercent}% global</span>
+      <span class="meta-pill">${validatedPeriodsCount}/${levelPeriods.length} périodes validées</span>
     </div>
     <div class="actions-row dashboard-hero__actions">
       <button type="button" class="btn btn-secondary" data-action="home">← Retour au sélecteur de niveau</button>
@@ -98,33 +99,31 @@ export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress 
 
   const grid = document.createElement("div");
   grid.className = "period-grid";
-
   const defaultOpenPeriodId = getDefaultOpenPeriod(levelPeriods, progress);
-  const cards = [];
+  let openPeriodId = defaultOpenPeriodId;
 
-  levelPeriods.forEach((period) => {
-    const periodLessons = getLessonsByPeriod(period.id, level?.id);
-    const periodProgress = progress?.periods?.[period.id];
-    const card = createPeriodCard({
-      period,
-      lessons: periodLessons,
-      periodProgress,
-      lessonProgressMap,
-      onOpenLesson,
-      defaultOpen: period.id === defaultOpenPeriodId,
-      onTogglePeriod: ({ periodId, isOpen, card: activeCard }) => {
-        if (!isOpen) return;
-        cards.forEach((otherCard) => {
-          if (otherCard !== activeCard && typeof otherCard.__setOpen === "function") {
-            otherCard.__setOpen(false);
-          }
-        });
-      },
+  function renderGrid() {
+    grid.innerHTML = "";
+    levelPeriods.forEach((period) => {
+      const periodLessons = getLessonsByPeriod(period.id, level?.id);
+      const periodProgress = progress?.periods?.[period.id];
+      const card = createPeriodCard({
+        period,
+        lessons: periodLessons,
+        periodProgress,
+        lessonProgressMap,
+        onOpenLesson,
+        isOpen: period.id === openPeriodId,
+        onTogglePeriod: ({ periodId }) => {
+          openPeriodId = openPeriodId === periodId ? null : periodId;
+          renderGrid();
+        },
+      });
+      grid.appendChild(card);
     });
-    cards.push(card);
-    grid.appendChild(card);
-  });
+  }
 
+  renderGrid();
   wrapper.append(headerCard, grid);
   return wrapper;
 }

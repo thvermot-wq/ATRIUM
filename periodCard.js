@@ -21,20 +21,18 @@ export function createPeriodCard({
   periodProgress,
   lessonProgressMap,
   onOpenLesson,
-  defaultOpen = false,
+  isOpen = false,
   onTogglePeriod,
 }) {
   const card = document.createElement("article");
-  card.className = "card period-card";
+  card.className = `card period-card${isOpen ? " is-open" : ""}`;
 
-  const safePeriod =
-    periodProgress ||
-    {
-      totalScore: 0,
-      maxScore: period.maxScore,
-      percent: 0,
-      status: "période à reprendre",
-    };
+  const safePeriod = periodProgress || {
+    totalScore: 0,
+    maxScore: period.maxScore,
+    percent: 0,
+    status: "période à reprendre",
+  };
 
   const statusClass = getStatusClass(safePeriod.status);
   const startedLessons = lessons.filter((lesson) => Boolean(lessonProgressMap?.[lesson.id]?.playedAt)).length;
@@ -43,7 +41,7 @@ export function createPeriodCard({
   const toggle = document.createElement("button");
   toggle.type = "button";
   toggle.className = "period-card__toggle";
-  toggle.setAttribute("aria-expanded", String(defaultOpen));
+  toggle.setAttribute("aria-expanded", String(isOpen));
   toggle.innerHTML = `
     <span class="period-card__header-main">
       <span class="period-card__eyebrow">${period.level}</span>
@@ -53,10 +51,15 @@ export function createPeriodCard({
       </span>
     </span>
     <span class="period-card__header-side">
-      <span class="period-card__header-label">${defaultOpen ? "Masquer les leçons" : "Voir les leçons"}</span>
+      <span class="period-card__header-label">${isOpen ? "Masquer les leçons" : "Voir les leçons"}</span>
       <span class="period-card__chevron" aria-hidden="true">⌄</span>
     </span>
   `;
+  toggle.addEventListener("click", () => {
+    if (typeof onTogglePeriod === "function") {
+      onTogglePeriod({ periodId: period.id });
+    }
+  });
 
   const summary = document.createElement("div");
   summary.className = "period-card__summary";
@@ -89,7 +92,7 @@ export function createPeriodCard({
 
   const detailsBody = document.createElement("div");
   detailsBody.className = "period-card__details-body";
-  detailsBody.hidden = !defaultOpen;
+  detailsBody.hidden = !isOpen;
 
   const hint = document.createElement("p");
   hint.className = "period-card__details-hint";
@@ -121,28 +124,6 @@ export function createPeriodCard({
     lessonList.appendChild(item);
   });
 
-  function syncOpenState(isOpen) {
-    card.classList.toggle("is-open", isOpen);
-    detailsBody.hidden = !isOpen;
-    toggle.setAttribute("aria-expanded", String(isOpen));
-    const label = toggle.querySelector(".period-card__header-label");
-    if (label) label.textContent = isOpen ? "Masquer les leçons" : "Voir les leçons";
-  }
-
-  function setOpen(isOpen, emit = true) {
-    syncOpenState(isOpen);
-    if (emit && typeof onTogglePeriod === "function") {
-      onTogglePeriod({ periodId: period.id, isOpen, card });
-    }
-  }
-
-  toggle.addEventListener("click", () => {
-    setOpen(detailsBody.hidden);
-  });
-
-  card.__setOpen = (isOpen) => setOpen(isOpen, false);
-
-  syncOpenState(defaultOpen);
   detailsBody.append(hint, lessonList);
   card.append(toggle, summary, progress, detailsBody);
   return card;
