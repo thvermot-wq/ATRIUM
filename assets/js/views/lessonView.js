@@ -383,38 +383,32 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     return productionResults[entry.item.id] ? 1 : 0;
   };
 
-  const scrollStepIntoView = () => {
-    const activeSection = stepSections[activeStepIndex];
-    if (!activeSection) return;
+  const focusStepSection = (section) => {
+    if (!section) return;
 
-    const toolbar = root.querySelector(".lesson-toolbar");
+    const toolbar = document.querySelector(".lesson-toolbar");
     const toolbarHeight = toolbar ? toolbar.getBoundingClientRect().height : 0;
-    const top = window.scrollY + activeSection.getBoundingClientRect().top - toolbarHeight - 16;
+    const extraOffset = 18;
+    const sectionTop = window.scrollY + section.getBoundingClientRect().top;
+    const targetTop = Math.max(0, sectionTop - toolbarHeight - extraOffset);
+    const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
-    window.scrollTo({
-      top: Math.max(0, top),
-      behavior: "smooth",
+    window.requestAnimationFrame(() => {
+      window.scrollTo({
+        top: targetTop,
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
+
+      window.requestAnimationFrame(() => {
+        const focusTarget = section.querySelector(
+          'input:not([type="hidden"]):not([disabled]), textarea:not([disabled]), select:not([disabled]), button:not([disabled])'
+        );
+        focusTarget?.focus?.({ preventScroll: true });
+      });
     });
   };
 
-  const focusStepInput = () => {
-    const activeSection = stepSections[activeStepIndex];
-    if (!activeSection) return;
-
-    const firstControl = activeSection.querySelector("input, textarea, select, button:not([disabled])");
-    if (!firstControl) return;
-
-    window.setTimeout(() => {
-      try {
-        firstControl.focus({ preventScroll: true });
-      } catch (_) {
-        firstControl.focus();
-      }
-    }, 120);
-  };
-
-  const setActiveStep = (index, options = {}) => {
-    const { scroll = false, focus = false } = options;
+  const setActiveStep = (index, { scroll = true } = {}) => {
     activeStepIndex = Math.max(0, Math.min(stepEntries.length - 1, index));
 
     stepSections.forEach((section, sectionIndex) => {
@@ -436,8 +430,9 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     prevButton.disabled = activeStepIndex === 0;
     nextButton.disabled = activeStepIndex === stepEntries.length - 1;
 
-    if (scroll) scrollStepIntoView();
-    if (focus) focusStepInput();
+    if (scroll) {
+      focusStepSection(stepSections[activeStepIndex]);
+    }
   };
 
   const syncStates = () => {
@@ -461,7 +456,7 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
 
     finishButton.disabled = lessonPhase !== "ready_to_finish";
     resultsButton.disabled = lessonPhase !== "finished_with_summary";
-    setActiveStep(activeStepIndex);
+    setActiveStep(activeStepIndex, { scroll: false });
 
     return { training, production, answeredCount, totalItems };
   };
@@ -543,13 +538,13 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     pill.type = "button";
     pill.className = "lesson-step-pill";
     pill.textContent = String(index + 1);
-    pill.addEventListener("click", () => setActiveStep(index, { scroll: true, focus: true }));
+    pill.addEventListener("click", () => setActiveStep(index));
     stepButtons.push(pill);
     stepPills.appendChild(pill);
   });
 
-  prevButton.addEventListener("click", () => setActiveStep(activeStepIndex - 1, { scroll: true, focus: true }));
-  nextButton.addEventListener("click", () => setActiveStep(activeStepIndex + 1, { scroll: true, focus: true }));
+  prevButton.addEventListener("click", () => setActiveStep(activeStepIndex - 1));
+  nextButton.addEventListener("click", () => setActiveStep(activeStepIndex + 1));
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
