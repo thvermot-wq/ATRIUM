@@ -1,19 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&family=Spectral:wght@500;600;700&display=swap");
+
 :root {
-  --bg: #f6f0e7;
-  --card: #fffdfa;
-  --line: #dfd4c6;
-  --ink: #22304c;
-  --muted: #5f6880;
-  --ok: #226e44;
-  --warn: #8c6508;
-  --ko: #8a3c35;
-  --primary: #2d3f77;
-  --primary-hover: #22325f;
-  --primary-soft: #eef2ff;
-  --soft: #f5efe6;
-  --soft-2: #f1e8dc;
-  --shadow-1: 0 4px 14px rgba(34, 48, 76, 0.06);
-  --shadow-2: 0 12px 28px rgba(34, 48, 76, 0.10);
+  --bg: #f3ece1;
+  --card: #fffbf5;
+  --line: #d9ccb8;
+  --ink: #2c3140;
+  --muted: #686676;
+  --ok: #2d6a47;
+  --warn: #8b6318;
+  --ko: #8a3f3a;
+  --primary: #31467c;
+  --primary-hover: #263762;
+  --primary-soft: #eceff8;
+  --soft: #f4ede2;
+  --soft-2: #efe5d7;
+  --accent: #a56d33;
+  --accent-soft: #f3e3cf;
+  --shadow-1: 0 6px 18px rgba(44, 49, 64, 0.07);
+  --shadow-2: 0 14px 34px rgba(44, 49, 64, 0.12);
 }
 
 * {
@@ -26,9 +30,14 @@ html {
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 520;
+  letter-spacing: 0.003em;
   color: var(--ink);
-  background: linear-gradient(180deg, #faf5ed 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #faf4ea 0%, var(--bg) 100%);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 header,
@@ -55,6 +64,15 @@ h3,
 p,
 ul {
   margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Spectral", Georgia, serif;
+  font-weight: 650;
+  letter-spacing: -0.012em;
+  color: #3a2f2a;
 }
 
 a {
@@ -113,7 +131,7 @@ button {
 .btn {
   appearance: none;
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 0.7rem 0.95rem;
   cursor: pointer;
   display: inline-flex;
@@ -201,7 +219,7 @@ button:hover,
 .meta-pill {
   display: inline-flex;
   align-items: center;
-  padding: 0.36rem 0.68rem;
+  padding: 0.32rem 0.62rem;
   border-radius: 999px;
   background: var(--soft);
   border: 1px solid var(--line);
@@ -561,20 +579,7 @@ input[type="text"] {
 
 
 /* ===== Dashboard rebuild ===== */
-:root {
-  --bg: #f8f3ec;
-  --card: #fffdfa;
-  --line: #e4dacd;
-  --ink: #24314a;
-  --muted: #65708a;
-  --primary: #344a83;
-  --primary-hover: #2a3b6a;
-  --primary-soft: #edf1ff;
-  --soft: #f7f1e9;
-  --soft-2: #f3eadf;
-  --shadow-1: 0 8px 24px rgba(36, 49, 74, 0.06);
-  --shadow-2: 0 16px 36px rgba(36, 49, 74, 0.10);
-}
+/* variables unifiées dans le bloc :root principal */
 
 .muted {
   color: var(--muted);
@@ -763,7 +768,7 @@ input[type="text"] {
   align-items: center;
   gap: 0.28rem;
   width: fit-content;
-  padding: 0.22rem 0.55rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 999px;
   font-size: 0.74rem;
   font-weight: 800;
@@ -905,155 +910,147 @@ input[type="text"] {
   }
 }
 
-/* =========================================
-   PATCH HOME + HEADER
-   - 3 colonnes sur desktop + tablette
-   - 1 colonne sur mobile seulement
-   - bouton mode sombre à droite
-   - suppression visuelle du skip-link
-   ========================================= */
 
-/* Lien "Aller au contenu principal" masqué */
-.skip-link {
-  display: none !important;
+/* =========================
+   ROME LETTRÉE
+   Patch cosmétique seulement
+   ========================= */
+
+.tagline,
+.dashboard-hero__headline,
+.period-card__title,
+.lesson-title {
+  font-family: "Spectral", Georgia, serif;
 }
 
-/* Header : titre à gauche, bouton thème à droite */
-.app-header .header-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 0.75rem;
+.tagline {
+  color: var(--primary);
+  font-weight: 700;
 }
 
-.app-header .brand-block {
-  min-width: 0;
+.intro,
+.dashboard-hero__lead,
+.period-card__objective,
+.period-card__summary-label,
+.helper,
+.period-card__details-hint,
+.lesson-score,
+.meta-pill,
+.lesson-id {
+  color: var(--muted);
 }
 
-.app-header .theme-toggle,
-.app-header .dark-mode-toggle,
-.app-header button[aria-label*="sombre"],
-.app-header button[aria-label*="thème"],
-.app-header button[title*="sombre"],
-.app-header button[title*="thème"] {
-  justify-self: end;
+.dashboard-hero__eyebrow,
+.period-card__eyebrow {
+  background: linear-gradient(180deg, #f5ead8 0%, #efdfc8 100%);
+  color: #7b5725;
+  border: 1px solid rgba(165, 109, 51, 0.18);
+  box-shadow: 0 1px 2px rgba(44, 49, 64, 0.05);
 }
 
-/* Sécurité : si le bouton thème est dans une zone d’actions */
-.app-header .header-actions {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.5rem;
+.card,
+#period-summary,
+#lesson-list,
+#lesson-detail,
+.period-card__toggle,
+.lesson-line,
+.period-box,
+.lesson-card {
+  box-shadow: var(--shadow-1);
 }
 
-/* Home hero */
-.home-hero {
-  display: grid;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
+.card,
+#period-summary,
+#lesson-list,
+#lesson-detail {
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.98) 0%, rgba(252, 246, 238, 0.98) 100%);
 }
 
-.home-hero .hero-pills,
-.home-hero .metric-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.period-card__toggle {
+  background: linear-gradient(180deg, #fffdf9 0%, #f6ede0 100%);
 }
 
-/* Cartes niveaux : 3 colonnes desktop + tablette */
-.level-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  align-items: start;
+.period-card__toggle:hover,
+.lesson-line:hover,
+.btn-secondary:hover {
+  background: linear-gradient(180deg, #fffaf4 0%, #f1e4d3 100%);
 }
 
-.level-card {
-  height: auto;
-  align-self: start;
-  display: grid;
-  gap: 0.9rem;
-  padding: 1rem;
-  border: 1px solid rgba(40, 55, 110, 0.10);
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(252,248,241,0.98) 100%);
-  box-shadow: 0 8px 24px rgba(28, 36, 68, 0.06);
+.meta-pill,
+.period-card__summary-item,
+.period-box,
+.lesson-card {
+  background: linear-gradient(180deg, rgba(249, 242, 231, 0.88) 0%, rgba(244, 235, 223, 0.88) 100%);
 }
 
-.level-card > * {
-  min-width: 0;
+.period-status-chip,
+.lesson-status-chip {
+  border: 1px solid rgba(49, 70, 124, 0.10);
+  box-shadow: 0 1px 2px rgba(44, 49, 64, 0.04);
 }
 
-.level-card__top,
-.level-card__header {
-  display: grid;
-  gap: 0.4rem;
+.status-ok {
+  background: #e7f0e7;
 }
 
-.level-card__meta,
-.level-card__badges,
-.level-card__chips,
-.level-card__documents,
-.level-card__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.status-warn {
+  background: #f6edd9;
 }
 
-.level-card h2,
-.level-card h3 {
-  margin: 0;
-  line-height: 1.2;
+.status-ko {
+  background: #f7e6e2;
 }
 
-.level-card p {
-  margin: 0;
+.progress-track {
+  background: #e8dcc8;
 }
 
-.level-card .btn,
-.level-card .btn-chip,
-.level-card .doc-link {
-  white-space: normal;
+.progress-fill {
+  background: linear-gradient(90deg, var(--accent) 0%, #6f85c3 100%);
 }
 
-/* Chips / badges plus fins */
-.btn-chip,
-.metric-pill,
-.level-badge,
-.doc-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.42rem 0.72rem;
-  border-radius: 999px;
-  border: 1px solid rgba(52, 67, 118, 0.10);
-  background: rgba(255, 252, 245, 0.92);
-  color: #2c365f;
-  font-size: 0.92rem;
-  line-height: 1.1;
-  box-shadow: 0 1px 3px rgba(25, 32, 60, 0.04);
+.btn {
+  font-weight: 600;
 }
 
-/* Boutons documents / actions de la home */
-.level-card .btn,
-.level-card .doc-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40px;
-  padding: 0.58rem 0.9rem;
-  border-radius: 12px;
+button,
+.btn-primary {
+  background: linear-gradient(180deg, #3b518c 0%, var(--primary) 100%);
+  border-color: rgba(49, 70, 124, 0.65);
+  box-shadow: 0 4px 10px rgba(49, 70, 124, 0.16);
 }
 
-/* Mobile seulement : retour à 1 colonne */
-@media (max-width: 760px) {
-  .level-grid {
-    grid-template-columns: 1fr;
-  }
+button:hover,
+.btn-primary:hover {
+  background: linear-gradient(180deg, #33497e 0%, var(--primary-hover) 100%);
+}
 
-  .app-header .header-row {
-    gap: 0.5rem;
-  }
+.btn-secondary {
+  background: linear-gradient(180deg, #fffdf9 0%, #f6ede0 100%);
+}
+
+input[type="text"] {
+  border-color: #cfbda5;
+  box-shadow: inset 0 1px 1px rgba(44, 49, 64, 0.03);
+}
+
+.lesson-id,
+.meta-pill,
+.period-card__summary-label,
+.period-card__header-label {
+  font-weight: 700;
+}
+
+.dashboard-hero__headline {
+  color: #3a2f2a;
+}
+
+.period-card__score-inline,
+.period-card__summary-value {
+  color: var(--primary);
+}
+
+a,
+.btn-link {
+  color: var(--primary);
 }
