@@ -2387,24 +2387,36 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p2-l7-t7",
-        "type": "ordering",
-        "prompt": "Remets dans l’ordre de base : 𝑖𝑛 𝑣𝑖𝑎 / 𝑐𝑙𝑎𝑚𝑎𝑛𝑡 / 𝑣𝑖𝑐𝑖𝑛𝑖",
-        "options": [
-          "in",
-          "via",
-          "vicini",
-          "clamant"
-        ],
-        "expected": [
-          "in",
-          "via",
-          "vicini",
-          "clamant"
-        ],
-        "points": 1
-      }
+     {
+  "id": "p2-l7-t7",
+  "type": "matching",
+  "prompt": "Associe chaque forme à ce qu’elle indique dans « 𝘝𝘪𝘤𝘪𝘯𝘪 𝘪𝘯 𝘷𝘪𝘢 𝘤𝘭𝘢𝘮𝘢𝘯𝘵 ».",
+  "pairs": [
+    {
+      "left": "vicini",
+      "right": "nom au pluriel"
+    },
+    {
+      "left": "clamant",
+      "right": "verbe au pluriel"
+    },
+    {
+      "left": "via",
+      "right": "nom au singulier"
+    }
+  ],
+  "rightOptions": [
+    "verbe au pluriel",
+    "nom au pluriel",
+    "nom au singulier"
+  ],
+  "expected": {
+    "vicini": "nom au pluriel",
+    "clamant": "verbe au pluriel",
+    "via": "nom au singulier"
+  },
+  "points": 1
+},
     ],
     "production": [
       {
