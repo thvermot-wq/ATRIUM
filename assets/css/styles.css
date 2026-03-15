@@ -1252,3 +1252,18 @@ a,
     font-size: clamp(1.3rem, 1rem + 1vw, 1.7rem);
   }
 }
+
+/* Home : liens Référentiel / Outils sans soulignement */
+.level-card__documents a,
+.level-card__actions a,
+.doc-link,
+.btn-link {
+  text-decoration: none;
+}
+
+.level-card__documents a:hover,
+.level-card__actions a:hover,
+.doc-link:hover,
+.btn-link:hover {
+  text-decoration: none;
+}
