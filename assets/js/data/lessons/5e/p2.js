@@ -4112,26 +4112,26 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p2-l12-t2",
-        "type": "multipleChoice",
-        "prompt": "Sélectionne les interrogatifs appris.",
-        "options": [
-          "quis",
-          "quid",
-          "cur",
-          "ubi",
-          "donum"
-        ],
-        "expected": [
-          "quis",
-          "quid",
-          "cur",
-          "ubi"
-        ],
-        "shuffle": true,
-        "points": 1
-      },
+    {
+  "id": "p2-l12-t2",
+  "type": "multipleChoice",
+  "prompt": "Quelles phrases sont de vraies questions utiles pour l’enquête finale ?",
+  "options": [
+    "Quis tabellam videt ?",
+    "Quid falsum est ?",
+    "Cur pax non redit ?",
+    "Ubi donum est ?",
+    "Senator timet ?"
+  ],
+  "expected": [
+    "Quis tabellam videt ?",
+    "Quid falsum est ?",
+    "Cur pax non redit ?",
+    "Ubi donum est ?"
+  ],
+  "shuffle": true,
+  "points": 1
+},
       {
         "id": "p2-l12-t3",
         "type": "matching",
@@ -4187,51 +4187,65 @@ export const lessons5eP2 = [
         "type": "singleChoice",
         "prompt": "« 𝑄𝑢𝑎𝑒𝑟𝑖𝑚𝑢𝑠 » indique…",
         "options": [
-          "nous",
-          "vous",
-          "il",
-          "je"
+          "nous cherchons",
+          "vous cherchez",
+          "il cherche",
+          "je cherche"
         ],
-        "expected": "nous",
+        "expected": "nous cherchons",
         "shuffle": true,
         "points": 1
       },
       {
-        "id": "p2-l12-t6",
-        "type": "multipleChoice",
-        "prompt": "Mini-enquête (5 phrases) : quelles infos sont présentes ?",
-        "options": [
-          "Le donum a disparu",
-          "La tablette est suspecte",
-          "Le chien refuse une porte",
-          "La fontaine est souillée",
-          "Un consul arrive"
-        ],
-        "expected": [
-          "Le donum a disparu",
-          "La tablette est suspecte",
-          "Le chien refuse une porte",
-          "La fontaine est souillée"
-        ],
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p2-l12-t7",
-        "type": "ordering",
-        "prompt": "Rebâtis la phrase dans l’ordre de base : 𝑣𝑖𝑐𝑖𝑛𝑖 / 𝑠𝑖𝑔𝑛𝑢𝑚 / 𝑣𝑖𝑑𝑒𝑛𝑡",
-        "options": [
-          "vicini",
-          "signum",
-          "vident"
-        ],
-        "expected": [
-          "vicini",
-          "signum",
-          "vident"
-        ],
-        "points": 1
-      }
+  "id": "p2-l12-t6",
+  "type": "matching",
+  "prompt": "Associe chaque indice latin à sa bonne interprétation.",
+  "pairs": [
+    {
+      "left": "Donum non est.",
+      "right": "Le donum a disparu."
+    },
+    {
+      "left": "Tabella falsa est.",
+      "right": "La tablette est fausse."
+    },
+    {
+      "left": "Canis ianuam recusat.",
+      "right": "Le chien refuse la porte."
+    },
+    {
+      "left": "Aqua in fonte turpis est.",
+      "right": "L'eau de la fontaine est souillée."
+    }
+  ],
+  "rightOptions": [
+    "La tablette est fausse.",
+    "Le chien refuse la porte.",
+    "L'eau de la fontaine est souillée.",
+    "Le donum a disparu."
+  ],
+  "expected": {
+    "Donum non est.": "Le donum a disparu.",
+    "Tabella falsa est.": "La tablette est fausse.",
+    "Canis ianuam recusat.": "Le chien refuse la porte.",
+    "Aqua in fonte turpis est.": "L'eau de la fontaine est souillée."
+  },
+  "points": 1
+},
+     {
+  "id": "p2-l12-t7",
+  "type": "singleChoice",
+  "prompt": "Dans « 𝑣𝑖𝑐𝑖𝑛𝑖 𝑠𝑖𝑔𝑛𝑢𝑚 𝑣𝑖𝑑𝑒𝑛𝑡 », quel mot est le complément d’objet ?",
+  "options": [
+    "signum",
+    "vicini",
+    "vident",
+    "pax"
+  ],
+  "expected": "signum",
+  "shuffle": true,
+  "points": 1
+}
     ],
     "production": [
       {
@@ -4341,7 +4355,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l12-p3",
         "type": "textInput",
-        "prompt": "Qu’est-ce qui a troublé Subure ? (réponse courte)",
+        "prompt": "Quelle divinité a troublé Subure ? (réponse courte)",
         "expected": "la Discorde",
         "acceptedAnswers": [
           "la Discorde",
