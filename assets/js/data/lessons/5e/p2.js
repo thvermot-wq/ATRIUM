@@ -3300,9 +3300,9 @@ export const lessons5eP2 = [
     "periodId": "p2",
     "title": "Aqua turpis in fonte",
     subtitle: headerContexts5eP2["p2-l10"],
-    "objective": "Réviser les noms (1re, 2e masc., 2e neutre) dans la scène de la fontaine salie.",
+    "objective": "Réviser les noms (1re déclinaison, 2e masc., 2e neutre) dans la scène de la fontaine salie.",
     "lessonPoint": "Je compare les familles de noms pour lire sujet et complément objet.",
-    "narrative": "Au matin, aqua turpis in fonte : la tension monte, chacun accuse l’autre.",
+    "narrative": "Au matin, on constate que l'eau de la fontaine a été souillée : la tension monte, chacun accuse l’autre.",
     "canDo": [
       "Je reconnais les trois familles de noms vues.",
       "Je distingue nominatif/accusatif.",
@@ -3367,7 +3367,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l10-t4",
         "type": "matching",
-        "prompt": "Associe mot et famille.",
+        "prompt": "Associe chaque mot à sa déclinaison.",
         "pairs": [
           {
             "left": "rosa",
@@ -3397,7 +3397,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l10-t5",
         "type": "multipleChoice",
-        "prompt": "Sélectionne les formes accusatives.",
+        "prompt": "Sélectionne les formes à l'accusatif (= COD).",
         "options": [
           "rosam",
           "dominum",
@@ -3412,28 +3412,31 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p2-l10-t6",
-        "type": "ordering",
-        "prompt": "Table de base : 𝑟𝑜𝑠𝑎 / 𝑑𝑜𝑚𝑖𝑛𝑢𝑠 / 𝑑𝑜𝑛𝑢𝑚 (nominatif puis accusatif)",
-        "options": [
-          "rosa",
-          "rosam",
-          "dominus",
-          "dominum",
-          "donum",
-          "donum"
-        ],
-        "expected": [
-          "rosa",
-          "rosam",
-          "dominus",
-          "dominum",
-          "donum",
-          "donum"
-        ],
-        "points": 1
-      },
+     {
+  "id": "p2-l10-t6",
+  "type": "matching",
+  "prompt": "Associe chaque nominatif (= sujet) à son accusatif (= COD).",
+  "pairs": [
+    {
+      "left": "rosa",
+      "right": "rosam"
+    },
+    {
+      "left": "dominus",
+      "right": "dominum"
+    },
+    {
+      "left": "donum",
+      "right": "donum"
+    }
+  ],
+  "expected": {
+    "rosa": "rosam",
+    "dominus": "dominum",
+    "donum": "donum"
+  },
+  "points": 1
+},
       {
         "id": "p2-l10-t7",
         "type": "singleChoice",
