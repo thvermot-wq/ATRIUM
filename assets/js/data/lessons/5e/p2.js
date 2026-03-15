@@ -1204,21 +1204,35 @@ export const lessons5eP2 = [
         "points": 1
       },
       {
-        "id": "p2-l4-t6",
-        "type": "ordering",
-        "prompt": "Compose dans l’ordre de base : le maître accuse le voisin.",
-        "options": [
-          "dominus",
-          "vicinum",
-          "accusat"
-        ],
-        "expected": [
-          "dominus",
-          "vicinum",
-          "accusat"
-        ],
-        "points": 1
-      },
+  "id": "p2-l4-t6",
+  "type": "matching",
+  "prompt": "Associe chaque mot à sa fonction dans « 𝘋𝘰𝘮𝘪𝘯𝘶𝘴 𝘷𝘪𝘤𝘪𝘯𝘶𝘮 𝘢𝘤𝘤𝘶𝘴𝘢𝘵 ».",
+  "pairs": [
+    {
+      "left": "dominus",
+      "right": "sujet"
+    },
+    {
+      "left": "vicinum",
+      "right": "COD"
+    },
+    {
+      "left": "accusat",
+      "right": "verbe"
+    }
+  ],
+  "rightOptions": [
+    "verbe",
+    "sujet",
+    "COD"
+  ],
+  "expected": {
+    "dominus": "sujet",
+    "vicinum": "COD",
+    "accusat": "verbe"
+  },
+  "points": 1
+},
       {
         "id": "p2-l4-t7",
         "type": "multipleChoice",
@@ -1338,52 +1352,133 @@ export const lessons5eP2 = [
           }
         ]
       },
-      {
-        "id": "p2-l4-p3",
-        "type": "textInput",
-        "prompt": "Lexique : 𝑑𝑜𝑚𝑖𝑛𝑢𝑠 peut vouloir dire…",
-        "expected": "maître",
-        "acceptedAnswers": [
-          "maître",
-          "maître de maison",
-          "patron"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "maître",
-            "maître de maison",
-            "patron"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "maître",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "maître",
-            "isCorrect": true
-          },
-          {
-            "input": "réponse hors-sujet",
-            "isCorrect": false
-          }
-        ]
-      }
+    {
+  "id": "p2-l4-p3",
+  "type": "textInput",
+  "prompt": "Choisis un sujet et un COD dans la liste, puis traduis en latin : « … accuse … ».\nListe : le maître / le voisin / le serviteur",
+  "expected": "dominus vicinum accusat",
+  "acceptedAnswers": [
+    "dominus vicinum accusat",
+    "dominus accusat vicinum",
+    "vicinum dominus accusat",
+    "vicinum accusat dominus",
+    "accusat dominus vicinum",
+    "accusat vicinum dominus",
+
+    "dominus servum accusat",
+    "dominus accusat servum",
+    "servum dominus accusat",
+    "servum accusat dominus",
+    "accusat dominus servum",
+    "accusat servum dominus",
+
+    "vicinus dominum accusat",
+    "vicinus accusat dominum",
+    "dominum vicinus accusat",
+    "dominum accusat vicinus",
+    "accusat vicinus dominum",
+    "accusat dominum vicinus",
+
+    "vicinus servum accusat",
+    "vicinus accusat servum",
+    "servum vicinus accusat",
+    "servum accusat vicinus",
+    "accusat vicinus servum",
+    "accusat servum vicinus",
+
+    "servus dominum accusat",
+    "servus accusat dominum",
+    "dominum servus accusat",
+    "dominum accusat servus",
+    "accusat servus dominum",
+    "accusat dominum servus",
+
+    "servus vicinum accusat",
+    "servus accusat vicinum",
+    "vicinum servus accusat",
+    "vicinum accusat servus",
+    "accusat servus vicinum",
+    "accusat vicinum servus"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "latin",
+    "accepted": [
+      "dominus vicinum accusat",
+      "dominus accusat vicinum",
+      "vicinum dominus accusat",
+      "vicinum accusat dominus",
+      "accusat dominus vicinum",
+      "accusat vicinum dominus",
+
+      "dominus servum accusat",
+      "dominus accusat servum",
+      "servum dominus accusat",
+      "servum accusat dominus",
+      "accusat dominus servum",
+      "accusat servum dominus",
+
+      "vicinus dominum accusat",
+      "vicinus accusat dominum",
+      "dominum vicinus accusat",
+      "dominum accusat vicinus",
+      "accusat vicinus dominum",
+      "accusat dominum vicinus",
+
+      "vicinus servum accusat",
+      "vicinus accusat servum",
+      "servum vicinus accusat",
+      "servum accusat vicinus",
+      "accusat vicinus servum",
+      "accusat servum vicinus",
+
+      "servus dominum accusat",
+      "servus accusat dominum",
+      "dominum servus accusat",
+      "dominum accusat servus",
+      "accusat servus dominum",
+      "accusat dominum servus",
+
+      "servus vicinum accusat",
+      "servus accusat vicinum",
+      "vicinum servus accusat",
+      "vicinum accusat servus",
+      "accusat servus vicinum",
+      "accusat vicinum servus"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "dominus vicinum accusat",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Produire une phrase latine correcte avec sujet au nominatif et COD à l’accusatif.",
+  "rejectIf": [
+    "sujet et COD confondus",
+    "COD laissé au nominatif",
+    "forme verbale incorrecte",
+    "réponse hors liste"
+  ],
+  "tests": [
+    {
+      "input": "dominus vicinum accusat",
+      "isCorrect": true
+    },
+    {
+      "input": "servus dominum accusat",
+      "isCorrect": true
+    },
+    {
+      "input": "vicinus servus accusat",
+      "isCorrect": false
+    }
+  ]
+}
     ],
     "summary": {
       "retains": [
