@@ -291,7 +291,6 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
   const trainingCards = {};
   const productionCards = {};
   const stepEntries = [];
-  const stepButtons = [];
   const stepSections = [];
 
   let activeStepIndex = 0;
@@ -316,7 +315,7 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     <div class="lesson-flow-card__topline">
       <div>
         <p class="lesson-flow-card__eyebrow">Mode concentration</p>
-        <h3 class="lesson-flow-card__title">Un exercice à la fois</h3>
+        <h3 class="lesson-flow-card__title">Exercice en cours</h3>
       </div>
       <p class="lesson-flow-card__counter" data-role="counter">Exercice 1 / ${LESSONS_SPEC.lessonMax}</p>
     </div>
@@ -324,11 +323,9 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
       <button type="button" class="btn btn-secondary" data-action="prev">← Précédent</button>
       <button type="button" class="btn btn-secondary" data-action="next">Suivant →</button>
     </div>
-    <div class="lesson-step-pills" data-role="pills"></div>
   `;
 
   const flowCounter = flowCard.querySelector('[data-role="counter"]');
-  const stepPills = flowCard.querySelector('[data-role="pills"]');
   const prevButton = flowCard.querySelector('[data-action="prev"]');
   const nextButton = flowCard.querySelector('[data-action="next"]');
 
@@ -386,11 +383,15 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
   const focusStepSection = (section) => {
     if (!section) return;
 
+    const toolbarShell = document.querySelector(".lesson-toolbar-shell");
     const toolbar = document.querySelector(".lesson-toolbar");
+    const flowCardBox = flowCard?.getBoundingClientRect?.();
+    const toolbarShellHeight = toolbarShell ? toolbarShell.getBoundingClientRect().height : 0;
     const toolbarHeight = toolbar ? toolbar.getBoundingClientRect().height : 0;
-    const extraOffset = 18;
+    const flowCardHeight = flowCardBox ? flowCardBox.height : 0;
+    const stickyOffset = Math.max(toolbarShellHeight, toolbarHeight) + flowCardHeight + 20;
     const sectionTop = window.scrollY + section.getBoundingClientRect().top;
-    const targetTop = Math.max(0, sectionTop - toolbarHeight - extraOffset);
+    const targetTop = Math.max(0, sectionTop - stickyOffset);
     const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
     window.requestAnimationFrame(() => {
@@ -417,12 +418,6 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
       section.classList.toggle("is-active", isActive);
     });
 
-    stepButtons.forEach((button, buttonIndex) => {
-      const isAnswered = getAnsweredCountForStep(stepEntries[buttonIndex]) === 1;
-      button.classList.toggle("is-active", buttonIndex === activeStepIndex);
-      button.classList.toggle("is-done", isAnswered);
-      button.setAttribute("aria-current", buttonIndex === activeStepIndex ? "step" : "false");
-    });
 
     const currentStep = stepEntries[activeStepIndex];
     const kindLabel = currentStep.kind === "training" ? "Entraînement" : "Production";
@@ -531,16 +526,6 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     const section = createStepSection(entry, stepEntries.length - 1, card);
     stepSections.push(section);
     focusBoard.appendChild(section);
-  });
-
-  stepEntries.forEach((entry, index) => {
-    const pill = document.createElement("button");
-    pill.type = "button";
-    pill.className = "lesson-step-pill";
-    pill.textContent = String(index + 1);
-    pill.addEventListener("click", () => setActiveStep(index));
-    stepButtons.push(pill);
-    stepPills.appendChild(pill);
   });
 
   prevButton.addEventListener("click", () => setActiveStep(activeStepIndex - 1));
