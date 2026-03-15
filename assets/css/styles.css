@@ -1267,3 +1267,77 @@ a,
 .btn-link:hover {
   text-decoration: none;
 }
+
+/* =========================================
+   PATCH HOME + HEADER — liens PDF + bleus plus doux
+   Vérifié sur la structure actuelle :
+   - Référentiel / Outils = <a> dans .level-card
+   - bouton thème = .btn-theme-toggle
+   ========================================= */
+
+/* 1) Référentiel / Outils : supprimer le soulignement seulement sur la home */
+.level-card a,
+.level-card a:visited,
+.level-card a:hover,
+.level-card a:focus,
+.level-card a:active {
+  text-decoration: none !important;
+}
+
+/* 2) Bleus plus doux pour les "chips" / boutons concernés */
+:root {
+  --primary-soft-action: #dfe9fb;
+  --primary-soft-action-hover: #e8effd;
+  --primary-soft-border: rgba(49, 70, 124, 0.18);
+  --primary-soft-text: #31467c;
+}
+
+/* Bouton thème dans le header */
+.btn-theme-toggle {
+  background: linear-gradient(180deg, var(--primary-soft-action) 0%, #d6e3fb 100%) !important;
+  color: var(--primary-soft-text) !important;
+  border: 1px solid var(--primary-soft-border) !important;
+  box-shadow: 0 1px 3px rgba(35, 48, 80, 0.06) !important;
+}
+
+.btn-theme-toggle:hover {
+  background: linear-gradient(180deg, var(--primary-soft-action-hover) 0%, #dfe9ff 100%) !important;
+  color: #2b3f72 !important;
+  border-color: rgba(49, 70, 124, 0.22) !important;
+}
+
+/* Bouton "Reprendre" et bouton "Ouvrir le dashboard" sur la home */
+.home-hero .btn-primary,
+.level-card .btn-primary,
+.actions-row .btn-secondary,
+.back-to-top-btn {
+  background: linear-gradient(180deg, var(--primary-soft-action) 0%, #d6e3fb 100%) !important;
+  color: var(--primary-soft-text) !important;
+  border: 1px solid var(--primary-soft-border) !important;
+  box-shadow: 0 1px 3px rgba(35, 48, 80, 0.06) !important;
+}
+
+.home-hero .btn-primary:hover,
+.level-card .btn-primary:hover,
+.actions-row .btn-secondary:hover,
+.back-to-top-btn:hover {
+  background: linear-gradient(180deg, var(--primary-soft-action-hover) 0%, #dfe9ff 100%) !important;
+  color: #2b3f72 !important;
+  border-color: rgba(49, 70, 124, 0.22) !important;
+}
+
+/* Onglets de navigation actifs en haut */
+.top-nav .btn-link.active {
+  background: linear-gradient(180deg, #edf3ff 0%, #e2ecff 100%) !important;
+  color: #31467c !important;
+  border: 1px solid rgba(49, 70, 124, 0.16) !important;
+  border-radius: 999px;
+}
+
+/* Petites pills bleues éventuelles : un cran plus léger */
+.dashboard-hero__eyebrow,
+.period-card__eyebrow {
+  background: #eef3ff;
+  color: #3a4f86;
+  border: 1px solid rgba(49, 70, 124, 0.10);
+}
