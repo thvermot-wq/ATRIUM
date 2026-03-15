@@ -958,54 +958,94 @@ export const lessons5eP2 = [
           }
         ]
       },
-      {
-        "id": "p2-l3-p3",
-        "type": "textInput",
-        "prompt": "Rappel grammaire : -a = … ; -am = …",
-        "expected": "sujet ; complément objet",
-        "acceptedAnswers": [
-          "sujet ; complément objet",
-          "sujet ; objet",
-          "forme de base ; objet",
-          "nominatif ; accusatif"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "sujet ; complément objet",
-            "sujet ; objet",
-            "forme de base ; objet",
-            "nominatif ; accusatif"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "sujet ; complément objet",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "sujet ; complément objet",
-            "isCorrect": true
-          },
-          {
-            "input": "réponse hors-sujet",
-            "isCorrect": false
-          }
-        ]
-      }
+  {
+  "id": "p2-l3-p3",
+  "type": "textInput",
+  "prompt": "Choisis un COD dans la liste, puis traduis en latin : « La femme porte … ».\nListe : de l'eau / une rose / le repas",
+  "expected": "femina aquam portat",
+  "acceptedAnswers": [
+    "femina aquam portat",
+    "femina portat aquam",
+    "aquam femina portat",
+    "aquam portat femina",
+    "portat femina aquam",
+    "portat aquam femina",
+
+    "femina rosam portat",
+    "femina portat rosam",
+    "rosam femina portat",
+    "rosam portat femina",
+    "portat femina rosam",
+    "portat rosam femina",
+
+    "femina cenam portat",
+    "femina portat cenam",
+    "cenam femina portat",
+    "cenam portat femina",
+    "portat femina cenam",
+    "portat cenam femina"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "latin",
+    "accepted": [
+      "femina aquam portat",
+      "femina portat aquam",
+      "aquam femina portat",
+      "aquam portat femina",
+      "portat femina aquam",
+      "portat aquam femina",
+
+      "femina rosam portat",
+      "femina portat rosam",
+      "rosam femina portat",
+      "rosam portat femina",
+      "portat femina rosam",
+      "portat rosam femina",
+
+      "femina cenam portat",
+      "femina portat cenam",
+      "cenam femina portat",
+      "cenam portat femina",
+      "portat femina cenam",
+      "portat cenam femina"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "femina aquam portat",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Produire une phrase simple avec un COD correctement mis à l’accusatif.",
+  "rejectIf": [
+    "COD laissé au nominatif",
+    "verbe incorrect",
+    "forme latine impossible au niveau de la leçon"
+  ],
+  "tests": [
+    {
+      "input": "femina aquam portat",
+      "isCorrect": true
+    },
+    {
+      "input": "portat rosam femina",
+      "isCorrect": true
+    },
+    {
+      "input": "cenam portat femina",
+      "isCorrect": true
+    },
+    {
+      "input": "femina cena portat",
+      "isCorrect": false
+    }
+  ]
+}
     ],
     "summary": {
       "retains": [
