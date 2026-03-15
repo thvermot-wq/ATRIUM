@@ -1087,7 +1087,7 @@ export const lessons5eP2 = [
     "title": "Servus, dominus, vicinus",
     subtitle: headerContexts5eP2["p2-l4"],
     "objective": "Distinguer sujet et objet avec les masculins en -us/-um.",
-    "lessonPoint": "Je regarde les formes : -us (souvent sujet), -um (souvent complément objet).",
+    "lessonPoint": "Je regarde les terminaisons (ou 'désinences') : -us (souvent sujet), -um (souvent complément objet).",
     "narrative": "Les voisins se disputent : dominus accuse servum, puis le contraire est affirmé.",
     "canDo": [
       "Je reconnais des masculins de 2e déclinaison.",
@@ -3273,7 +3273,7 @@ export const lessons5eP2 = [
     "summary": {
       "retains": [
         "Je ne piège plus sur l’ordre des mots.",
-        "Je confirme le sens avec les formes."
+        "Je confirme le sens avec les terminaisons."
       ],
       "cahier": [
         "S/C/V possible",
@@ -3301,7 +3301,7 @@ export const lessons5eP2 = [
     "title": "Aqua turpis in fonte",
     subtitle: headerContexts5eP2["p2-l10"],
     "objective": "Réviser les noms (1re déclinaison, 2e masc., 2e neutre) dans la scène de la fontaine salie.",
-    "lessonPoint": "Je compare les familles de noms pour lire sujet et complément objet.",
+    "lessonPoint": "Je compare les familles de noms pour déterminer sujet et complément objet.",
     "narrative": "Au matin, on constate que l'eau de la fontaine a été souillée : la tension monte, chacun accuse l’autre.",
     "canDo": [
       "Je reconnais les trois familles de noms vues.",
@@ -3647,7 +3647,7 @@ export const lessons5eP2 = [
     "periodId": "p2",
     "title": "Discordia intrat",
     subtitle: headerContexts5eP2["p2-l11"],
-    "objective": "Nommer l’hypothèse de la Discorde et réviser le présent en contexte narratif.",
+    "objective": "Faire émerger l’hypothèse de la Discorde... et réviser le présent en contexte narratif.",
     "lessonPoint": "Je relie les verbes au présent aux effets dans le quartier.",
     "narrative": "Les habitants parlent d’une force : Discordia. Elle sépare les voisins et trouble la pax.",
     "canDo": [
@@ -3665,7 +3665,8 @@ export const lessons5eP2 = [
       "terret = il/elle effraie",
       "manet = il/elle demeure",
       "fugit = il/elle fuit",
-      "vocat = il/elle appelle"
+      "vocat = il/elle appelle",
+      "non = ne... pas (négation devant un verbe)"
     ],
     "maxScore": 10,
     "training": [
@@ -3677,7 +3678,7 @@ export const lessons5eP2 = [
           "une force qui divise",
           "une voisine",
           "un chien",
-          "une boutique"
+          "une jumelle maléfique de Flavia"
         ],
         "expected": "une force qui divise",
         "shuffle": true,
@@ -3719,20 +3720,20 @@ export const lessons5eP2 = [
         },
         "points": 1
       },
-      {
-        "id": "p2-l11-t3",
-        "type": "singleChoice",
-        "prompt": "« 𝐷𝑖𝑠𝑐𝑜𝑟𝑑𝑖𝑎 𝑣𝑖𝑐𝑢𝑚 𝑡𝑢𝑟𝑏𝑎𝑡 » : qui trouble le quartier ?",
-        "options": [
-          "Discordia",
-          "la paix",
-          "le chien",
-          "le peuple"
-        ],
-        "expected": "Discordia",
-        "shuffle": true,
-        "points": 1
-      },
+     {
+  "id": "p2-l11-t3",
+  "type": "singleChoice",
+  "prompt": "Dans « 𝐷𝑖𝑠𝑐𝑜𝑟𝑑𝑖𝑎 𝑣𝑖𝑐𝑢𝑚 𝑡𝑢𝑟𝑏𝑎𝑡 », quel mot désigne ce qui subit le trouble ?",
+  "options": [
+    "vicum",
+    "Discordia",
+    "turbat",
+    "pax"
+  ],
+  "expected": "vicum",
+  "shuffle": true,
+  "points": 1
+}
       {
         "id": "p2-l11-t4",
         "type": "multipleChoice",
@@ -3751,40 +3752,72 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p2-l11-t5",
-        "type": "multipleChoice",
-        "prompt": "Quels effets de Discordia sont donnés ?",
-        "options": [
-          "les voisins se séparent",
-          "la paix reste",
-          "les habitants ont peur",
-          "les disputes augmentent"
-        ],
-        "expected": [
-          "les voisins se séparent",
-          "les habitants ont peur",
-          "les disputes augmentent"
-        ],
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p2-l11-t6",
-        "type": "ordering",
-        "prompt": "Mets le verbe en fin dans l’ordre de base : 𝐷𝑖𝑠𝑐𝑜𝑟𝑑𝑖𝑎 / 𝑣𝑖𝑐𝑢𝑚 / 𝑡𝑢𝑟𝑏𝑎𝑡",
-        "options": [
-          "Discordia",
-          "vicum",
-          "turbat"
-        ],
-        "expected": [
-          "Discordia",
-          "vicum",
-          "turbat"
-        ],
-        "points": 1
-      },
+     {
+  "id": "p2-l11-t5",
+  "type": "multipleChoice",
+  "prompt": "Texte : « Discordia vicum turbat. Discordia vicinos separat. Incolae timent. Pax non manet. » Quelles informations sont données par ce texte ?",
+  "options": [
+    "le quartier est troublé",
+    "les voisins se séparent",
+    "les habitants ont peur",
+    "la paix ne reste pas",
+    "la fontaine est pure"
+  ],
+  "expected": [
+    "le quartier est troublé",
+    "les voisins se séparent",
+    "les habitants ont peur",
+    "la paix ne reste pas"
+  ],
+  "shuffle": true,
+  "points": 1
+}
+     {
+  "id": "p2-l11-t6",
+  "type": "textInput",
+  "prompt": "Passe de la 3e à la 1re personne : « 𝑉𝑖𝑐𝑢𝑚 𝑡𝑢𝑟𝑏𝑎𝑡 » devient « 𝑉𝑖𝑐𝑢𝑚 ... »",
+  "expected": "turbo",
+  "acceptedAnswers": [
+    "turbo"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "la",
+    "accepted": [
+      "turbo"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "turbo",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Transformer correctement le verbe de la 3e personne à la 1re personne.",
+  "rejectIf": [
+    "personne verbale incorrecte",
+    "forme inexistante",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    {
+      "input": "turbo",
+      "isCorrect": true
+    },
+    {
+      "input": "turbat",
+      "isCorrect": false
+    },
+    {
+      "input": "turbas",
+      "isCorrect": false
+    }
+  ]
+}
       {
         "id": "p2-l11-t7",
         "type": "multipleChoice",
@@ -3909,29 +3942,82 @@ export const lessons5eP2 = [
           }
         ]
       },
-      {
-        "id": "p2-l11-p3",
-        "type": "textInput",
-        "prompt": "Pourquoi les habitants parlent-ils de Discordia ?",
-        "expected": "parce que les troubles se multiplient",
-        "acceptedAnswers": [
-          "parce que les troubles se multiplient",
-          "parce que le quartier se divise",
-          "parce que la paix disparaît",
-          "parce que les voisins s'accusent",
-          "parce que tout le monde se dispute"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "parce que les troubles se multiplient",
-            "parce que le quartier se divise",
-            "parce que la paix disparaît",
-            "parce que les voisins s'accusent",
-            "parce que tout le monde se dispute"
-          ]
-        },
+    {
+  "id": "p2-l11-p3",
+  "type": "textInput",
+  "prompt": "Traduis : 𝐷𝑖𝑠𝑐𝑜𝑟𝑑𝑖𝑎 𝑣𝑖𝑐𝑖𝑛𝑜𝑠 𝑡𝑒𝑟𝑟𝑒𝑡.",
+  "expected": "Discordia effraie les voisins",
+  "acceptedAnswers": [
+    "Discordia effraie les voisins",
+    "la Discorde effraie les voisins",
+    "Discordia effraye les voisins",
+    "la Discorde effraye les voisins",
+    "Discordia épouvante les voisins",
+    "la Discorde épouvante les voisins",
+    "Discordia terrorise les voisins",
+    "la Discorde terrorise les voisins",
+    "Discordia terrifie les voisins",
+    "la Discorde terrifie les voisins",
+    "Discordia inquiète les voisins",
+    "la Discorde inquiète les voisins",
+    "Discordia fait peur aux voisins",
+    "la Discorde fait peur aux voisins"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "Discordia effraie les voisins",
+      "la Discorde effraie les voisins",
+      "Discordia effraye les voisins",
+      "la Discorde effraye les voisins",
+      "Discordia épouvante les voisins",
+      "la Discorde épouvante les voisins",
+      "Discordia terrorise les voisins",
+      "la Discorde terrorise les voisins",
+      "Discordia terrifie les voisins",
+      "la Discorde terrifie les voisins",
+      "Discordia inquiète les voisins",
+      "la Discorde inquiète les voisins",
+      "Discordia fait peur aux voisins",
+      "la Discorde fait peur aux voisins"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "Discordia effraie les voisins",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Compréhension correcte en français ; sujet et complément bien identifiés ; verbe de crainte correctement rendu.",
+  "rejectIf": [
+    "sens inversé sujet/objet",
+    "verbe incorrect",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    {
+      "input": "Discordia effraie les voisins",
+      "isCorrect": true
+    },
+    {
+      "input": "la Discorde fait peur aux voisins",
+      "isCorrect": true
+    },
+    {
+      "input": "les voisins effraient Discordia",
+      "isCorrect": false
+    },
+    {
+      "input": "Discordia trouble les voisins",
+      "isCorrect": false
+    }
+  ]
+},
         "points": 1,
         "canonicalAnswer": "parce que les troubles se multiplient",
         "normalization": {
