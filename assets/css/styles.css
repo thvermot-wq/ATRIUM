@@ -904,3 +904,156 @@ input[type="text"] {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================
+   PATCH HOME + HEADER
+   - 3 colonnes sur desktop + tablette
+   - 1 colonne sur mobile seulement
+   - bouton mode sombre à droite
+   - suppression visuelle du skip-link
+   ========================================= */
+
+/* Lien "Aller au contenu principal" masqué */
+.skip-link {
+  display: none !important;
+}
+
+/* Header : titre à gauche, bouton thème à droite */
+.app-header .header-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-header .brand-block {
+  min-width: 0;
+}
+
+.app-header .theme-toggle,
+.app-header .dark-mode-toggle,
+.app-header button[aria-label*="sombre"],
+.app-header button[aria-label*="thème"],
+.app-header button[title*="sombre"],
+.app-header button[title*="thème"] {
+  justify-self: end;
+}
+
+/* Sécurité : si le bouton thème est dans une zone d’actions */
+.app-header .header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* Home hero */
+.home-hero {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.home-hero .hero-pills,
+.home-hero .metric-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Cartes niveaux : 3 colonnes desktop + tablette */
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.level-card {
+  height: auto;
+  align-self: start;
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+  border: 1px solid rgba(40, 55, 110, 0.10);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(252,248,241,0.98) 100%);
+  box-shadow: 0 8px 24px rgba(28, 36, 68, 0.06);
+}
+
+.level-card > * {
+  min-width: 0;
+}
+
+.level-card__top,
+.level-card__header {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.level-card__meta,
+.level-card__badges,
+.level-card__chips,
+.level-card__documents,
+.level-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.level-card h2,
+.level-card h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.level-card p {
+  margin: 0;
+}
+
+.level-card .btn,
+.level-card .btn-chip,
+.level-card .doc-link {
+  white-space: normal;
+}
+
+/* Chips / badges plus fins */
+.btn-chip,
+.metric-pill,
+.level-badge,
+.doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.42rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid rgba(52, 67, 118, 0.10);
+  background: rgba(255, 252, 245, 0.92);
+  color: #2c365f;
+  font-size: 0.92rem;
+  line-height: 1.1;
+  box-shadow: 0 1px 3px rgba(25, 32, 60, 0.04);
+}
+
+/* Boutons documents / actions de la home */
+.level-card .btn,
+.level-card .doc-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.58rem 0.9rem;
+  border-radius: 12px;
+}
+
+/* Mobile seulement : retour à 1 colonne */
+@media (max-width: 760px) {
+  .level-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header .header-row {
+    gap: 0.5rem;
+  }
+}
