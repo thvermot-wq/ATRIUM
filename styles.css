@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&family=Spectral:wght@500;600;700&display=swap");
+
 :root {
   --bg: #f3ece1;
   --card: #fffbf5;
@@ -29,7 +31,8 @@ html {
 body {
   margin: 0;
   font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-weight: 500;
+  font-optical-sizing: auto;
+  font-weight: 520;
   letter-spacing: 0.003em;
   color: var(--ink);
   background: linear-gradient(180deg, #faf4ea 0%, var(--bg) 100%);
@@ -67,8 +70,8 @@ h1,
 h2,
 h3 {
   font-family: "Spectral", Georgia, serif;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 650;
+  letter-spacing: -0.012em;
   color: #3a2f2a;
 }
 
@@ -128,7 +131,7 @@ button {
 .btn {
   appearance: none;
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 0.7rem 0.95rem;
   cursor: pointer;
   display: inline-flex;
@@ -216,7 +219,7 @@ button:hover,
 .meta-pill {
   display: inline-flex;
   align-items: center;
-  padding: 0.36rem 0.68rem;
+  padding: 0.32rem 0.62rem;
   border-radius: 999px;
   background: var(--soft);
   border: 1px solid var(--line);
@@ -576,20 +579,7 @@ input[type="text"] {
 
 
 /* ===== Dashboard rebuild ===== */
-:root {
-  --bg: #f8f3ec;
-  --card: #fffdfa;
-  --line: #e4dacd;
-  --ink: #24314a;
-  --muted: #65708a;
-  --primary: #344a83;
-  --primary-hover: #2a3b6a;
-  --primary-soft: #edf1ff;
-  --soft: #f7f1e9;
-  --soft-2: #f3eadf;
-  --shadow-1: 0 8px 24px rgba(36, 49, 74, 0.06);
-  --shadow-2: 0 16px 36px rgba(36, 49, 74, 0.10);
-}
+/* variables unifiées dans le bloc :root principal */
 
 .muted {
   color: var(--muted);
@@ -778,7 +768,7 @@ input[type="text"] {
   align-items: center;
   gap: 0.28rem;
   width: fit-content;
-  padding: 0.22rem 0.55rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 999px;
   font-size: 0.74rem;
   font-weight: 800;
