@@ -7,18 +7,25 @@ function getStatusClass(status) {
   return "status-ko";
 }
 
+function getLessonScoreLabel(current, best) {
+  if (best > 0 || current > 0) {
+    return `courant ${current}/10 · meilleur ${best}/10`;
+  }
+  return "pas encore jouée";
+}
+
 export function createPeriodCard({ period, lessons, periodProgress, lessonProgressMap, onOpenLesson }) {
   const card = document.createElement("article");
   card.className = "card period-card";
 
   const safePeriod =
     periodProgress ||
-    ({
+    {
       totalScore: 0,
       maxScore: period.maxScore,
       percent: 0,
       status: "période à reprendre",
-    });
+    };
 
   const statusClass = getStatusClass(safePeriod.status);
   const startedLessons = lessons.filter((lesson) => Boolean(lessonProgressMap?.[lesson.id]?.playedAt)).length;
@@ -32,11 +39,13 @@ export function createPeriodCard({ period, lessons, periodProgress, lessonProgre
   toggle.innerHTML = `
     <span class="period-card__header-main">
       <span class="period-card__eyebrow">${period.level}</span>
-      <span class="period-card__title">${period.title}</span>
-      <span class="period-card__objective">${period.objective}</span>
+      <span class="period-card__title-wrap">
+        <span class="period-card__title">${period.title}</span>
+        <span class="period-card__objective">${period.objective}</span>
+      </span>
     </span>
     <span class="period-card__header-side">
-      <span class="period-card__header-label">${detailsOpen ? "Masquer les leçons" : "Voir les leçons"} (${lessons.length})</span>
+      <span class="period-card__header-label">${detailsOpen ? "Masquer les leçons" : "Voir les leçons"}</span>
       <span class="period-card__chevron" aria-hidden="true">▾</span>
     </span>
   `;
@@ -44,12 +53,12 @@ export function createPeriodCard({ period, lessons, periodProgress, lessonProgre
   const summary = document.createElement("div");
   summary.className = "period-card__summary";
   summary.innerHTML = `
-    <div class="period-stats">
+    <div class="period-card__status-row">
       <p class="period-status-chip ${statusClass}">${safePeriod.status}</p>
     </div>
     <div class="period-card__summary-grid">
       <div class="period-card__summary-item">
-        <span class="period-card__summary-label">Score période</span>
+        <span class="period-card__summary-label">Score</span>
         <span class="period-card__summary-value">${safePeriod.totalScore}/${period.maxScore}</span>
       </div>
       <div class="period-card__summary-item">
@@ -75,7 +84,7 @@ export function createPeriodCard({ period, lessons, periodProgress, lessonProgre
 
   const hint = document.createElement("p");
   hint.className = "period-card__details-hint";
-  hint.textContent = "Ouvre une leçon pour poursuivre, consolider ou rejouer une étape précise.";
+  hint.textContent = "Choisis une leçon pour poursuivre, consolider ou rejouer une étape précise.";
 
   const lessonList = document.createElement("ul");
   lessonList.className = "lesson-list";
@@ -91,11 +100,13 @@ export function createPeriodCard({ period, lessons, periodProgress, lessonProgre
     button.type = "button";
     button.className = "btn btn-link lesson-line";
     button.innerHTML = `
-      <span class="lesson-id">${lesson.id}</span>
-      <span class="lesson-title">${lesson.title}</span>
+      <span class="lesson-line__top">
+        <span class="lesson-id">${lesson.id}</span>
+        <span class="lesson-title">${lesson.title}</span>
+      </span>
       <span class="lesson-meta">
         <span class="lesson-status-chip ${status.className}">${status.icon} ${status.label}</span>
-        <span>${best > 0 || current > 0 ? `courant ${current}/10 · meilleur ${best}/10` : "pas encore joué"}</span>
+        <span class="lesson-score">${getLessonScoreLabel(current, best)}</span>
       </span>
     `;
     button.addEventListener("click", () => onOpenLesson(lesson.id));
@@ -109,7 +120,7 @@ export function createPeriodCard({ period, lessons, periodProgress, lessonProgre
     toggle.setAttribute("aria-expanded", String(isOpen));
     const label = toggle.querySelector(".period-card__header-label");
     if (label) {
-      label.textContent = `${isOpen ? "Masquer les leçons" : "Voir les leçons"} (${lessons.length})`;
+      label.textContent = isOpen ? "Masquer les leçons" : "Voir les leçons";
     }
   }
 
@@ -117,15 +128,7 @@ export function createPeriodCard({ period, lessons, periodProgress, lessonProgre
     syncOpenState(detailsBody.hidden);
   });
 
-  toggle.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      syncOpenState(detailsBody.hidden);
-    }
-  });
-
   syncOpenState(detailsOpen);
-
   detailsBody.append(hint, lessonList);
   card.append(toggle, summary, progress, detailsBody);
   return card;

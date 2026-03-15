@@ -1,130 +1,506 @@
 :root {
-  --bg: #f6f7fb;
-  --card: #ffffff;
-  --line: #d7dbea;
-  --ink: #1f2640;
-  --ok: #1d7a40;
-  --warn: #8c6a00;
-  --primary: #24326f;
+  --bg: #f4efe6;
+  --card: #fffdf9;
+  --line: #ddd4c4;
+  --ink: #25304a;
+  --muted: #5d677f;
+  --primary: #2f3f78;
+  --primary-hover: #253461;
+  --primary-soft: #eef2ff;
+  --surface-soft: #f7f1e6;
+  --surface-muted: #f3ede2;
+  --input-border: #c9c0b3;
+  --input-bg: #fffdfa;
+  --button-secondary-border: #d4c7b2;
+  --status-ok-bg: #e2f3e8;
+  --status-ok-ink: #1d6b3c;
+  --status-warn-bg: #f8edcc;
+  --status-warn-ink: #855d00;
+  --status-ko-bg: #f9e1df;
+  --status-ko-ink: #8a332d;
+  --status-neutral-bg: #ece8df;
+  --status-neutral-ink: #5b647c;
+  --shadow-1: 0 2px 10px rgba(37, 48, 74, 0.06);
+  --shadow-2: 0 12px 30px rgba(37, 48, 74, 0.09);
 }
 
 * {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color: var(--ink);
-  background: var(--bg);
+html {
+  scroll-behavior: smooth;
 }
 
-header,
-main {
-  width: min(1160px, 94vw);
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, #f7f2ea 0%, var(--bg) 100%);
+}
+
+#app,
+main,
+header {
+  width: min(1180px, calc(100vw - 2rem));
   margin: 0 auto;
 }
 
-header {
-  padding: 1.5rem 0 0.75rem;
-  display: grid;
-  gap: 0.5rem;
+#app,
+main {
+  padding: 1.15rem 0 2.2rem;
 }
 
 h1,
 h2,
 h3,
-p {
+p,
+ul {
   margin: 0;
 }
 
-.tagline {
-  font-weight: 700;
-  color: var(--primary);
+a {
+  color: inherit;
 }
 
-.intro {
-  max-width: 75ch;
-  color: #3f4870;
-}
-
-main {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  padding: 1rem 0 2rem;
-}
-
-#period-summary,
-#lesson-list,
-#lesson-detail {
-  background: var(--card);
-  border: 1px solid var(--line);
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 3000;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.6rem 0.85rem;
   border-radius: 12px;
-  padding: 1rem;
+  text-decoration: none;
 }
 
-#period-summary {
+.skip-link:focus {
+  top: 1rem;
+}
+
+.stack {
   display: grid;
-  gap: 0.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
 }
 
-.period-box {
+.card {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.15rem;
+  border-radius: 20px;
   border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 0.75rem;
-  display: grid;
-  gap: 0.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 252, 247, 0.98) 100%);
+  box-shadow: var(--shadow-1);
 }
 
-.period-status {
-  font-weight: 600;
+.actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
 }
 
-.validated {
-  color: var(--ok);
+.btn,
+button {
+  font: inherit;
 }
 
-.not-validated {
-  color: var(--warn);
+.btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 0.72rem 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
 }
 
-#lesson-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 0.8rem;
+.btn:hover {
+  transform: translateY(-1px);
 }
 
-.lesson-card {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 0.75rem;
-  display: grid;
+.btn-primary,
+button:not(.period-card__toggle):not(.btn-link) {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-1);
+}
+
+.btn-primary:hover,
+button:not(.period-card__toggle):not(.btn-link):hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background: var(--card);
+  color: var(--ink);
+  border-color: var(--button-secondary-border);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-soft);
+}
+
+.btn-link {
+  background: transparent;
+  border-color: transparent;
+  color: inherit;
+  box-shadow: none;
+}
+
+.home-hero__eyebrow,
+.dashboard-hero__eyebrow,
+.period-card__eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.62rem;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 0.79rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.dashboard-hero {
+  gap: 1rem;
+}
+
+.dashboard-hero__headline {
+  font-size: clamp(1.55rem, 2vw + 1rem, 2.3rem);
+  line-height: 1.08;
+}
+
+.dashboard-hero__lead {
+  max-width: 72ch;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.dashboard-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-button {
-  background: var(--primary);
-  color: white;
-  border: 0;
-  border-radius: 8px;
-  padding: 0.55rem 0.75rem;
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.38rem 0.68rem;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  border: 1px solid color-mix(in srgb, var(--line) 82%, white);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.dashboard-kpis {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.dashboard-kpi-card {
+  display: grid;
+  gap: 0.18rem;
+  padding: 0.92rem 1rem;
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--line) 82%, white);
+  background: color-mix(in srgb, var(--card) 70%, var(--surface-soft));
+}
+
+.dashboard-kpi-card__value {
+  font-size: 1.18rem;
+  font-weight: 800;
+}
+
+.dashboard-kpi-card__label {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.dashboard-hero__actions {
+  margin-top: 0.1rem;
+}
+
+.period-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+}
+
+.period-card {
+  align-self: start;
+  height: auto;
+  gap: 0.85rem;
+}
+
+.period-card__toggle {
+  appearance: none;
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--line) 84%, white);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--card) 62%, var(--surface-soft));
+  color: inherit;
+  padding: 0.95rem 1rem;
+  display: grid;
+  gap: 0.8rem;
+  text-align: left;
   cursor: pointer;
 }
 
-button:hover {
-  background: #1d2857;
+.period-card__toggle:hover {
+  background: color-mix(in srgb, var(--card) 54%, var(--surface-soft));
+  border-color: color-mix(in srgb, var(--primary) 18%, var(--line));
+}
+
+.period-card__toggle[aria-expanded="true"] {
+  border-color: color-mix(in srgb, var(--primary) 22%, var(--line));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--primary) 12%, transparent);
+}
+
+.period-card__header-main {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.period-card__title-wrap {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.period-card__title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.period-card__objective {
+  color: var(--muted);
+  line-height: 1.42;
+  font-size: 0.94rem;
+}
+
+.period-card__header-side {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.period-card__header-label {
+  font-size: 0.9rem;
+}
+
+.period-card__chevron {
+  color: var(--primary);
+  transition: transform 140ms ease;
+}
+
+.period-card__toggle[aria-expanded="true"] .period-card__chevron {
+  transform: rotate(180deg);
+}
+
+.period-card__summary {
+  display: grid;
+  gap: 0.7rem;
+  padding: 0.88rem 0.95rem;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--card) 74%, var(--surface-soft));
+  border: 1px solid color-mix(in srgb, var(--line) 82%, white);
+}
+
+.period-card__status-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.period-card__summary-grid {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.period-card__summary-item {
+  display: grid;
+  gap: 0.14rem;
+  min-width: 0;
+}
+
+.period-card__summary-label {
+  font-size: 0.79rem;
+  color: var(--muted);
+}
+
+.period-card__summary-value {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.progress-wrapper {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.progress-label {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.progress-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--line) 84%, white);
+  overflow: hidden;
+}
+
+.progress-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, color-mix(in srgb, var(--primary) 76%, white) 100%);
+  border-radius: inherit;
+}
+
+.period-card__details-body {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.period-card__details-hint {
+  color: var(--muted);
+  font-size: 0.89rem;
+  line-height: 1.45;
+}
+
+.period-status-chip,
+.lesson-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  width: fit-content;
+  padding: 0.22rem 0.58rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.status-ok,
+.lesson-status-ok {
+  background: var(--status-ok-bg);
+  color: var(--status-ok-ink);
+}
+
+.status-warn,
+.lesson-status-warn {
+  background: var(--status-warn-bg);
+  color: var(--status-warn-ink);
+}
+
+.status-ko,
+.lesson-status-ko {
+  background: var(--status-ko-bg);
+  color: var(--status-ko-ink);
+}
+
+.lesson-status-neutral {
+  background: var(--status-neutral-bg);
+  color: var(--status-neutral-ink);
+}
+
+.lesson-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.58rem;
+}
+
+.lesson-line {
+  width: 100%;
+  text-align: left;
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.82rem 0.88rem;
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--line) 80%, white);
+  background: var(--card);
+}
+
+.lesson-line:hover {
+  background: color-mix(in srgb, var(--card) 62%, var(--surface-soft));
+  border-color: color-mix(in srgb, var(--primary) 16%, var(--line));
+}
+
+.lesson-line__top {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+}
+
+.lesson-id {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.4rem;
+  padding: 0.18rem 0.42rem;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.lesson-title {
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.lesson-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.lesson-score {
+  white-space: nowrap;
+}
+
+.helper {
+  font-size: 0.92rem;
+  color: var(--muted);
 }
 
 fieldset {
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 12px;
   margin: 0;
 }
 
 legend {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 form {
@@ -137,257 +513,69 @@ form {
   margin-bottom: 0.4rem;
 }
 
-.score-line {
-  font-weight: 600;
-}
-
-.helper {
-  font-size: 0.92rem;
-  color: #4f587f;
-}
-
-input[type="text"] {
-  width: 100%;
-  max-width: 420px;
-  padding: 0.5rem 0.65rem;
-  border: 1px solid #b9c0da;
-  border-radius: 8px;
-}
-
-
-/* =========================
-   Dashboard periods
-   ========================= */
-
-#period-summary,
-.period-grid {
-  align-items: start;
-}
-
-.period-card {
-  align-self: start;
-  height: auto;
-  display: grid;
-  gap: 0.9rem;
-}
-
-.period-card__toggle {
-  width: 100%;
-  background: linear-gradient(180deg, #fffdf9 0%, #fbf6ec 100%);
-  color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 0.95rem 1rem;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.9rem;
-  text-align: left;
-  align-items: start;
-  box-shadow: 0 2px 8px rgba(36, 50, 111, 0.05);
-}
-
-.period-card__toggle:hover {
-  background: linear-gradient(180deg, #ffffff 0%, #f6efe1 100%);
-  border-color: #c6cedf;
-}
-
-.period-card__toggle:focus-visible {
-  outline: 3px solid rgba(36, 50, 111, 0.18);
-  outline-offset: 2px;
-}
-
-.period-card__header-main {
-  display: grid;
-  gap: 0.28rem;
-}
-
-.period-card__eyebrow {
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #6a7494;
-}
-
-.period-card__title {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--primary);
-  line-height: 1.2;
-}
-
-.period-card__objective {
-  font-size: 0.95rem;
-  line-height: 1.38;
-  color: #485273;
-}
-
-.period-card__header-side {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  justify-self: end;
-  color: var(--primary);
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.period-card__header-label {
-  font-size: 0.92rem;
-}
-
-.period-card__chevron {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 999px;
-  background: rgba(36, 50, 111, 0.08);
-  transition: transform 160ms ease, background-color 160ms ease;
-}
-
-.period-card.is-open .period-card__chevron {
-  transform: rotate(180deg);
-  background: rgba(36, 50, 111, 0.14);
-}
-
-.period-card__summary {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.period-stats {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.period-status-chip,
-.lesson-status-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  border-radius: 999px;
-  padding: 0.28rem 0.62rem;
-  font-size: 0.84rem;
-  font-weight: 700;
-}
-
-.status-ok {
-  background: rgba(29, 122, 64, 0.10);
-  color: var(--ok);
-}
-
-.status-warn {
-  background: rgba(140, 106, 0, 0.12);
-  color: var(--warn);
-}
-
-.status-ko {
-  background: rgba(36, 50, 111, 0.10);
-  color: var(--primary);
-}
-
-.period-card__summary-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.65rem;
-}
-
-.period-card__summary-item {
-  display: grid;
-  gap: 0.18rem;
-  padding: 0.72rem 0.78rem;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.78);
-}
-
-.period-card__summary-label {
-  font-size: 0.8rem;
-  color: #657095;
-}
-
-.period-card__summary-value {
-  font-weight: 800;
+input[type="text"],
+input[type="number"],
+select {
+  width: min(460px, 100%);
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  background: var(--input-bg);
   color: var(--ink);
 }
 
-.period-card__details-body {
-  display: grid;
-  gap: 0.85rem;
-  padding-top: 0.15rem;
+@media (max-width: 1100px) {
+  .period-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-.period-card__details-body[hidden] {
-  display: none;
-}
+@media (max-width: 780px) {
+  #app,
+  main,
+  header {
+    width: min(100vw - 1rem, 100%);
+  }
 
-.period-card__details-hint {
-  font-size: 0.93rem;
-  color: #4f587f;
-}
+  #app,
+  main {
+    padding-top: 0.8rem;
+  }
 
-.lesson-list {
-  list-style: none;
-  display: grid;
-  gap: 0.6rem;
-  margin: 0;
-  padding: 0;
-}
+  .card {
+    padding: 0.95rem;
+    border-radius: 18px;
+  }
 
-.lesson-line {
-  width: 100%;
-  background: #fffdf9;
-  color: var(--ink);
-  border: 1px solid var(--line);
-  padding: 0.82rem 0.9rem;
-  border-radius: 12px;
-  display: grid;
-  gap: 0.38rem;
-  text-align: left;
-}
-
-.lesson-line:hover {
-  background: #ffffff;
-  border-color: #c3cce0;
-}
-
-.lesson-id {
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #6a7494;
-}
-
-.lesson-title {
-  font-weight: 800;
-  color: var(--primary);
-}
-
-.lesson-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 0.7rem;
-  align-items: center;
-  color: #505a7f;
-  font-size: 0.9rem;
-}
-
-@media (max-width: 860px) {
+  .period-grid,
+  .dashboard-kpis,
   .period-card__summary-grid {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 680px) {
   .period-card__toggle {
-    grid-template-columns: 1fr;
+    padding: 0.82rem 0.9rem;
   }
 
-  .period-card__header-side {
-    justify-self: start;
+  .period-card__header-side,
+  .lesson-line__top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .lesson-id {
+    min-width: 0;
+  }
+
+  .actions-row {
+    align-items: stretch;
+  }
+
+  .actions-row .btn {
+    width: 100%;
   }
 }

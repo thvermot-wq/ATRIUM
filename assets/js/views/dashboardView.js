@@ -56,7 +56,7 @@ function getSuggestedLessonTarget({ levelId, allLessons, progress }) {
 
 export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress }) {
   const wrapper = document.createElement("section");
-  wrapper.className = "stack";
+  wrapper.className = "stack dashboard-view";
 
   const levelPeriods = getPeriodsByLevel(level?.id);
   const allLessons = levelPeriods.flatMap((period) => getLessonsByPeriod(period.id, level?.id));
@@ -75,11 +75,11 @@ export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress 
   headerCard.innerHTML = `
     <span class="dashboard-hero__eyebrow">${level?.label || "5e"} · Dashboard</span>
     <h2 class="dashboard-hero__headline">${level?.dashboardTitle || "Atrium I : Fondations"}</h2>
-    <p class="dashboard-hero__lead">${level?.dashboardSubtitle || "Chaque période se joue comme un arc cohérent : on rebrasse, on consolide, puis on passe au suivant."}</p>
+    <p class="dashboard-hero__lead">${level?.dashboardSubtitle || "Choisis une période, ouvre une leçon, puis avance pas à pas dans la progression."}</p>
     <div class="dashboard-hero__meta">
       <span class="meta-pill">${levelPeriods.length} périodes</span>
       <span class="meta-pill">${allLessons.length} leçons</span>
-      <span class="meta-pill">Progression calculée automatiquement</span>
+      <span class="meta-pill">${startedPeriodsCount}/${levelPeriods.length} périodes entamées</span>
     </div>
     <div class="dashboard-kpis">
       <div class="dashboard-kpi-card">
@@ -102,9 +102,9 @@ export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress 
     <div class="actions-row dashboard-hero__actions">
       <button type="button" class="btn btn-secondary" data-action="home">← Retour au sélecteur de niveau</button>
       ${continueTarget ? `<button type="button" class="btn btn-primary" data-action="continue">Continuer · ${continueTarget.lessonTitle}</button>` : ""}
-      <span class="meta-pill">${startedPeriodsCount}/${levelPeriods.length} périodes entamées</span>
     </div>
   `;
+
   headerCard.querySelector('[data-action="home"]').addEventListener("click", onOpenHome);
   if (continueTarget) {
     headerCard.querySelector('[data-action="continue"]').addEventListener("click", () => {
