@@ -383,7 +383,38 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     return productionResults[entry.item.id] ? 1 : 0;
   };
 
-  const setActiveStep = (index) => {
+  const scrollStepIntoView = () => {
+    const activeSection = stepSections[activeStepIndex];
+    if (!activeSection) return;
+
+    const toolbar = root.querySelector(".lesson-toolbar");
+    const toolbarHeight = toolbar ? toolbar.getBoundingClientRect().height : 0;
+    const top = window.scrollY + activeSection.getBoundingClientRect().top - toolbarHeight - 16;
+
+    window.scrollTo({
+      top: Math.max(0, top),
+      behavior: "smooth",
+    });
+  };
+
+  const focusStepInput = () => {
+    const activeSection = stepSections[activeStepIndex];
+    if (!activeSection) return;
+
+    const firstControl = activeSection.querySelector("input, textarea, select, button:not([disabled])");
+    if (!firstControl) return;
+
+    window.setTimeout(() => {
+      try {
+        firstControl.focus({ preventScroll: true });
+      } catch (_) {
+        firstControl.focus();
+      }
+    }, 120);
+  };
+
+  const setActiveStep = (index, options = {}) => {
+    const { scroll = false, focus = false } = options;
     activeStepIndex = Math.max(0, Math.min(stepEntries.length - 1, index));
 
     stepSections.forEach((section, sectionIndex) => {
@@ -404,6 +435,9 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     flowCounter.textContent = `Exercice ${activeStepIndex + 1} / ${stepEntries.length} · ${kindLabel}`;
     prevButton.disabled = activeStepIndex === 0;
     nextButton.disabled = activeStepIndex === stepEntries.length - 1;
+
+    if (scroll) scrollStepIntoView();
+    if (focus) focusStepInput();
   };
 
   const syncStates = () => {
@@ -509,13 +543,13 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     pill.type = "button";
     pill.className = "lesson-step-pill";
     pill.textContent = String(index + 1);
-    pill.addEventListener("click", () => setActiveStep(index));
+    pill.addEventListener("click", () => setActiveStep(index, { scroll: true, focus: true }));
     stepButtons.push(pill);
     stepPills.appendChild(pill);
   });
 
-  prevButton.addEventListener("click", () => setActiveStep(activeStepIndex - 1));
-  nextButton.addEventListener("click", () => setActiveStep(activeStepIndex + 1));
+  prevButton.addEventListener("click", () => setActiveStep(activeStepIndex - 1, { scroll: true, focus: true }));
+  nextButton.addEventListener("click", () => setActiveStep(activeStepIndex + 1, { scroll: true, focus: true }));
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
