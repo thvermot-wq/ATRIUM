@@ -1,4 +1,4 @@
-const CACHE_NAME = "atrium-shell-v1";
+const CACHE_NAME = "atrium-shell-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -10,6 +10,11 @@ const APP_SHELL = [
   "./assets/icons/atrium-maskable.svg",
 ];
 
+async function putInCache(request, response) {
+  const cache = await caches.open(CACHE_NAME);
+  await cache.put(request, response);
+}
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)).then(() => self.skipWaiting()),
@@ -18,18 +23,34 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(
-        keys
-          .filter((key) => key !== CACHE_NAME)
-          .map((key) => caches.delete(key)),
-      ),
-    ).then(() => self.clients.claim()),
+    caches
+      .keys()
+      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))
+      .then(() => self.clients.claim()),
   );
+});
+
+self.addEventListener("message", (event) => {
+  if (event.data?.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
 });
 
 function isSameOrigin(requestUrl) {
   return new URL(requestUrl).origin === self.location.origin;
+}
+
+async function networkFirst(request, fallbackKey = request) {
+  try {
+    const response = await fetch(request, { cache: "no-store" });
+    if (response && response.ok) {
+      await putInCache(request, response.clone());
+    }
+    return response;
+  } catch {
+    const cached = await caches.match(fallbackKey);
+    return cached || Response.error();
+  }
 }
 
 self.addEventListener("fetch", (event) => {
@@ -37,38 +58,15 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
   if (!isSameOrigin(request.url)) return;
 
-  if (request.mode === "navigate") {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put("./index.html", copy));
-          return response;
-        })
-        .catch(async () => {
-          const cachedIndex = await caches.match("./index.html");
-          return cachedIndex || Response.error();
-        }),
-    );
-    return;
-  }
-
   const requestUrl = new URL(request.url);
   const isStaticAsset = requestUrl.pathname.includes("/assets/") || /\.(css|js|svg|png|json)$/.test(requestUrl.pathname);
 
-  if (!isStaticAsset) return;
+  if (request.mode === "navigate") {
+    event.respondWith(networkFirst(request, "./index.html"));
+    return;
+  }
 
-  event.respondWith(
-    caches.match(request).then((cached) => {
-      const networkPromise = fetch(request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
-          return response;
-        })
-        .catch(() => cached);
-
-      return cached || networkPromise;
-    }),
-  );
+  if (isStaticAsset) {
+    event.respondWith(networkFirst(request));
+  }
 });

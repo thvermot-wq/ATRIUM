@@ -1,57 +1,20 @@
 import { getPeriodsByLevel, getLessonsByPeriod } from "../lessons.js";
-import { getLastVisitedLesson, buildLessonHash } from "../storage.js";
 import { createPeriodCard } from "../components/periodCard.js";
 
-function safePercent(value, max) {
-  if (!max) return 0;
-  return Math.max(0, Math.min(100, Math.round((value / max) * 100)));
-}
+function getInitialOpenPeriodId(periods, progress) {
+  const inProgress = periods.find((period) => {
+    const periodProgress = progress?.periods?.[period.id];
+    return periodProgress && periodProgress.totalScore > 0 && periodProgress.status !== "période validée";
+  });
 
-function countValidatedPeriods(levelPeriods, progress) {
-  return levelPeriods.filter((period) => (progress?.periods?.[period.id]?.percent || 0) >= 80).length;
-}
+  if (inProgress) return inProgress.id;
 
-function countStartedPeriods(levelPeriods, progress) {
-  return levelPeriods.filter((period) => (progress?.periods?.[period.id]?.totalScore || 0) > 0).length;
-}
+  const firstUnvalidated = periods.find((period) => {
+    const periodProgress = progress?.periods?.[period.id];
+    return !periodProgress || periodProgress.status !== "période validée";
+  });
 
-function getSuggestedLessonTarget({ levelId, allLessons, progress }) {
-  const lastVisited = getLastVisitedLesson(levelId);
-  if (lastVisited && allLessons.some((lesson) => lesson.id === lastVisited.lessonId)) {
-    return {
-      ...lastVisited,
-      path: lastVisited.path || buildLessonHash(lastVisited),
-    };
-  }
-
-  const firstUnplayed = allLessons.find((lesson) => !progress?.lessons?.[lesson.id]?.playedAt);
-  if (firstUnplayed) {
-    return {
-      levelId,
-      lessonId: firstUnplayed.id,
-      lessonTitle: firstUnplayed.title,
-      path: buildLessonHash({ levelId, lessonId: firstUnplayed.id }),
-    };
-  }
-
-  const firstToConsolidate = allLessons.find((lesson) => (progress?.lessons?.[lesson.id]?.best?.totalScore || 0) < 8);
-  if (firstToConsolidate) {
-    return {
-      levelId,
-      lessonId: firstToConsolidate.id,
-      lessonTitle: firstToConsolidate.title,
-      path: buildLessonHash({ levelId, lessonId: firstToConsolidate.id }),
-    };
-  }
-
-  const fallback = allLessons[0];
-  if (!fallback) return null;
-  return {
-    levelId,
-    lessonId: fallback.id,
-    lessonTitle: fallback.title,
-    path: buildLessonHash({ levelId, lessonId: fallback.id }),
-  };
+  return firstUnvalidated?.id ?? periods[0]?.id ?? null;
 }
 
 export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress }) {
@@ -60,75 +23,57 @@ export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress 
 
   const levelPeriods = getPeriodsByLevel(level?.id);
   const allLessons = levelPeriods.flatMap((period) => getLessonsByPeriod(period.id, level?.id));
-  const lessonProgressMap = progress?.lessons || {};
-  const playedLessonsCount = allLessons.filter((lesson) => Boolean(lessonProgressMap[lesson.id]?.playedAt)).length;
-  const validatedLessonsCount = allLessons.filter((lesson) => (lessonProgressMap[lesson.id]?.best?.totalScore || 0) >= 8).length;
-  const validatedPeriodsCount = countValidatedPeriods(levelPeriods, progress);
-  const startedPeriodsCount = countStartedPeriods(levelPeriods, progress);
-  const totalCurrentScore = levelPeriods.reduce((sum, period) => sum + (progress?.periods?.[period.id]?.totalScore || 0), 0);
-  const totalMaxScore = levelPeriods.reduce((sum, period) => sum + (period.maxScore || 0), 0);
-  const overallPercent = safePercent(totalCurrentScore, totalMaxScore);
-  const continueTarget = getSuggestedLessonTarget({ levelId: level?.id, allLessons, progress });
+  const playedLessonsCount = allLessons.filter((lesson) => Boolean(progress?.lessons?.[lesson.id]?.playedAt)).length;
+  const validatedPeriodsCount = levelPeriods.filter((period) => progress?.periods?.[period.id]?.status === "période validée").length;
 
   const headerCard = document.createElement("article");
   headerCard.className = "card dashboard-hero";
   headerCard.innerHTML = `
     <span class="dashboard-hero__eyebrow">${level?.label || "5e"} · Dashboard</span>
     <h2 class="dashboard-hero__headline">${level?.dashboardTitle || "Atrium I : Fondations"}</h2>
-    <p class="dashboard-hero__lead">${level?.dashboardSubtitle || "Choisis une période, ouvre une leçon, puis avance pas à pas dans la progression."}</p>
+    <p class="dashboard-hero__lead">${level?.dashboardSubtitle || "Choisis une période et reprends le fil de ta progression, leçon après leçon."}</p>
     <div class="dashboard-hero__meta">
       <span class="meta-pill">${levelPeriods.length} périodes</span>
       <span class="meta-pill">${allLessons.length} leçons</span>
-      <span class="meta-pill">${startedPeriodsCount}/${levelPeriods.length} périodes entamées</span>
+      <span class="meta-pill">${playedLessonsCount}/${allLessons.length} jouées</span>
+      <span class="meta-pill">${validatedPeriodsCount}/${levelPeriods.length} validées</span>
     </div>
-    <div class="dashboard-kpis">
-      <div class="dashboard-kpi-card">
-        <span class="dashboard-kpi-card__value">${playedLessonsCount}/${allLessons.length}</span>
-        <span class="dashboard-kpi-card__label">Leçons jouées</span>
-      </div>
-      <div class="dashboard-kpi-card">
-        <span class="dashboard-kpi-card__value">${validatedLessonsCount}/${allLessons.length}</span>
-        <span class="dashboard-kpi-card__label">Leçons validées</span>
-      </div>
-      <div class="dashboard-kpi-card">
-        <span class="dashboard-kpi-card__value">${validatedPeriodsCount}/${levelPeriods.length}</span>
-        <span class="dashboard-kpi-card__label">Périodes validées</span>
-      </div>
-      <div class="dashboard-kpi-card">
-        <span class="dashboard-kpi-card__value">${overallPercent}%</span>
-        <span class="dashboard-kpi-card__label">Progression globale</span>
-      </div>
-    </div>
-    <div class="actions-row dashboard-hero__actions">
+    <div class="actions-row">
       <button type="button" class="btn btn-secondary" data-action="home">← Retour au sélecteur de niveau</button>
-      ${continueTarget ? `<button type="button" class="btn btn-primary" data-action="continue">Continuer · ${continueTarget.lessonTitle}</button>` : ""}
     </div>
   `;
-
   headerCard.querySelector('[data-action="home"]').addEventListener("click", onOpenHome);
-  if (continueTarget) {
-    headerCard.querySelector('[data-action="continue"]').addEventListener("click", () => {
-      window.location.hash = continueTarget.path;
-    });
-  }
 
   const grid = document.createElement("div");
   grid.className = "period-grid";
 
-  levelPeriods.forEach((period) => {
-    const periodLessons = getLessonsByPeriod(period.id, level?.id);
-    const periodProgress = progress?.periods?.[period.id];
-    grid.appendChild(
-      createPeriodCard({
-        period,
-        lessons: periodLessons,
-        periodProgress,
-        lessonProgressMap,
-        onOpenLesson,
-      }),
-    );
-  });
+  let openPeriodId = getInitialOpenPeriodId(levelPeriods, progress);
 
+  function renderPeriods() {
+    grid.innerHTML = "";
+
+    levelPeriods.forEach((period) => {
+      const periodLessons = getLessonsByPeriod(period.id, level?.id);
+      const periodProgress = progress?.periods?.[period.id];
+
+      grid.appendChild(
+        createPeriodCard({
+          period,
+          lessons: periodLessons,
+          periodProgress,
+          lessonProgressMap: progress?.lessons || {},
+          onOpenLesson,
+          isOpen: openPeriodId === period.id,
+          onToggle: () => {
+            openPeriodId = openPeriodId === period.id ? null : period.id;
+            renderPeriods();
+          },
+        }),
+      );
+    });
+  }
+
+  renderPeriods();
   wrapper.append(headerCard, grid);
   return wrapper;
 }
