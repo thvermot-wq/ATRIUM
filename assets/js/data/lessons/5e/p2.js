@@ -694,7 +694,7 @@ export const lessons5eP2 = [
     "title": "Testis prima ad fontem",
     subtitle: headerContexts5eP2["p2-l3"],
     "objective": "Lire la première déposition d’une témoin.",
-    "lessonPoint": "En 1re déclinaison, -a est souvent le sujet, -am souvent le complément objet.",
+    "lessonPoint": "La 1ère déclinaison rassemble beaucoup de noms féminins en -a. La terminaison -a est souvent le sujet (nominatif), -am souvent le complément objet (accusatif).",
     "narrative": "Près du fons, une femina raconte ce qu’elle a vu avant le tumulte.",
     "canDo": [
       "Je reconnais -a / -am.",
@@ -782,7 +782,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l3-t4",
         "type": "singleChoice",
-        "prompt": "Quelle terminaison montre souvent le complément objet en 1re déclinaison ?",
+        "prompt": "Quelle terminaison de la 1ère déclinaison indique souvent que le mot est complément objet ?",
         "options": [
           "-am",
           "-a",
@@ -793,22 +793,27 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p2-l3-t5",
-        "type": "ordering",
-        "prompt": "Remets dans l’ordre de base : 𝑓𝑒𝑚𝑖𝑛𝑎 / 𝑎𝑞𝑢𝑎𝑚 / 𝑝𝑜𝑟𝑡𝑎𝑡",
-        "options": [
-          "femina",
-          "aquam",
-          "portat"
-        ],
-        "expected": [
-          "femina",
-          "aquam",
-          "portat"
-        ],
-        "points": 1
-      },
+     {
+  "id": "p2-l3-t5",
+  "type": "dragDrop",
+  "prompt": "Associe chaque mot à sa fonction dans « 𝘍𝘦𝘮𝘪𝘯𝘢 𝘢𝘲𝘶𝘢𝘮 𝘱𝘰𝘳𝘵𝘢𝘵 ».",
+  "items": [
+    "femina",
+    "aquam",
+    "portat"
+  ],
+  "targets": [
+    "sujet",
+    "COD",
+    "verbe"
+  ],
+  "expected": {
+    "femina": "sujet",
+    "aquam": "COD",
+    "portat": "verbe"
+  },
+  "points": 1
+},
       {
         "id": "p2-l3-t6",
         "type": "multipleChoice",
@@ -829,15 +834,15 @@ export const lessons5eP2 = [
       {
         "id": "p2-l3-t7",
         "type": "multipleChoice",
-        "prompt": "Mini-texte : « 𝐹𝑒𝑚𝑖𝑛𝑎 𝑎𝑑 𝑓𝑜𝑛𝑡𝑒𝑚 𝑠𝑡𝑎𝑡. 𝐴𝑚𝑖𝑐𝑎 𝑝𝑜𝑟𝑡𝑎𝑚 𝑠𝑝𝑒𝑐𝑡𝑎𝑡. » Qui est témoin et que voit-elle ?",
+        "prompt": "Mini-texte : « 𝐹𝑒𝑚𝑖𝑛𝑎 𝑎𝑑 𝑓𝑜𝑛𝑡𝑒𝑚 𝑠𝑡𝑎𝑡. 𝐴𝑚𝑖𝑐𝑎 𝑝𝑜𝑟𝑡𝑎𝑚 𝑠𝑝𝑒𝑐𝑡𝑎𝑡. » Quelles informations sont contenues dans ces phrases ?",
         "options": [
-          "La femme est témoin",
+          "Une amie porte un grand seau",
           "L’amie regarde la porte",
-          "Le maître crie",
-          "Le chien sort"
+          "Le chien se tient devant la fontaine",
+          "Une femme attend près de la fontaine"
         ],
         "expected": [
-          "La femme est témoin",
+          "Une femme attend près de la fontaine",
           "L’amie regarde la porte"
         ],
         "shuffle": true,
