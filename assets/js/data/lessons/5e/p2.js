@@ -1986,24 +1986,56 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p2-l6-t7",
-        "type": "ordering",
-        "prompt": "Place le verbe en fin dans l’ordre de base : je crie dans la rue.",
-        "options": [
-          "ego",
-          "in",
-          "via",
-          "clamo"
-        ],
-        "expected": [
-          "ego",
-          "in",
-          "via",
-          "clamo"
-        ],
-        "points": 1
-      }
+     {
+  "id": "p2-l6-t7",
+  "type": "textInput",
+  "prompt": "Traduis en latin en plaçant le verbe à la fin : « Je crie dans la rue. »",
+  "expected": "ego in via clamo",
+  "acceptedAnswers": [
+    "ego in via clamo",
+    "in via ego clamo",
+    "in via clamo"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "latin",
+    "accepted": [
+      "ego in via clamo",
+      "in via ego clamo",
+      "in via clamo"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "ego in via clamo",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Produire une phrase latine correcte avec le verbe placé à la fin.",
+  "rejectIf": [
+    "verbe non placé en fin de phrase",
+    "préposition séparée de son groupe",
+    "forme latine impossible au niveau de la leçon"
+  ],
+  "tests": [
+    {
+      "input": "ego in via clamo",
+      "isCorrect": true
+    },
+    {
+      "input": "in via clamo",
+      "isCorrect": true
+    },
+    {
+      "input": "ego clamo in via",
+      "isCorrect": false
+    }
+  ]
+}
     ],
     "production": [
       {
@@ -2094,56 +2126,106 @@ export const lessons5eP2 = [
           }
         ]
       },
-      {
-        "id": "p2-l6-p3",
-        "type": "textInput",
-        "prompt": "Complète : -o / -s / -t = …",
-        "expected": "je / tu / il-elle",
-        "acceptedAnswers": [
-          "je / tu / il-elle",
-          "je-tu-il",
-          "1re 2e 3e personne singulier",
-          "première deuxième troisième personne du singulier",
-          "1re 2e 3e personne du singulier"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "je / tu / il-elle",
-            "je-tu-il",
-            "1re 2e 3e personne singulier",
-            "première deuxième troisième personne du singulier",
-            "1re 2e 3e personne du singulier"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "je / tu / il-elle",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "je / tu / il-elle",
-            "isCorrect": true
-          },
-          {
-            "input": "réponse hors-sujet",
-            "isCorrect": false
-          }
-        ]
-      }
+    {
+  "id": "p2-l6-p2",
+  "type": "textInput",
+  "prompt": "Écris en latin : « je crie ; tu cries ; il / elle crie ».",
+  "expected": "clamo ; clamas ; clamat",
+  "acceptedAnswers": [
+    "clamo ; clamas ; clamat",
+    "clamo, clamas, clamat",
+    "clamo / clamas / clamat",
+    "clamo clamas clamat"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "latin",
+    "accepted": [
+      "clamo ; clamas ; clamat",
+      "clamo, clamas, clamat",
+      "clamo / clamas / clamat",
+      "clamo clamas clamat"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "clamo ; clamas ; clamat",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Produire correctement les trois formes du singulier : 1re, 2e et 3e personne.",
+  "rejectIf": [
+    "personnes inversées",
+    "forme verbale incorrecte",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    {
+      "input": "clamo ; clamas ; clamat",
+      "isCorrect": true
+    },
+    {
+      "input": "clamo clamas clamat",
+      "isCorrect": true
+    },
+    {
+      "input": "clamas ; clamo ; clamat",
+      "isCorrect": false
+    }
+  ]
+},
+{
+  "id": "p2-l6-p3",
+  "type": "textInput",
+  "prompt": "Complète : en latin, la terminaison du verbe indique déjà la …",
+  "expected": "personne",
+  "acceptedAnswers": [
+    "personne",
+    "personne grammaticale"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "personne",
+      "personne grammaticale"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "personne",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Comprendre que la terminaison verbale latine porte déjà l’information de personne.",
+  "rejectIf": [
+    "réponse hors-sujet",
+    "confusion entre temps et personne",
+    "confusion entre sujet et verbe"
+  ],
+  "tests": [
+    {
+      "input": "personne",
+      "isCorrect": true
+    },
+    {
+      "input": "personne grammaticale",
+      "isCorrect": true
+    },
+    {
+      "input": "temps",
+      "isCorrect": false
+    }
+  ]
+}
     ],
     "summary": {
       "retains": [
