@@ -2524,55 +2524,57 @@ export const lessons5eP2 = [
         ]
       },
       {
-        "id": "p2-l7-p3",
-        "type": "textInput",
-        "prompt": "Tableau : -o / -s / -t / -mus / -tis / -nt = ?",
-        "expected": "je tu il/elle nous vous ils/elles",
-        "acceptedAnswers": [
-          "je tu il/elle nous vous ils/elles",
-          "je/tu/il-nous/vous/ils",
-          "1s 2s 3s 1p 2p 3p",
-          "première deuxième troisième personne singulier pluriel",
-          "1re 2e 3e singulier 1re 2e 3e pluriel"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "je tu il/elle nous vous ils/elles",
-            "je/tu/il-nous/vous/ils",
-            "1s 2s 3s 1p 2p 3p",
-            "première deuxième troisième personne singulier pluriel",
-            "1re 2e 3e singulier 1re 2e 3e pluriel"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "je tu il/elle nous vous ils/elles",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "je tu il/elle nous vous ils/elles",
-            "isCorrect": true
-          },
-          {
-            "input": "réponse hors-sujet",
-            "isCorrect": false
-          }
-        ]
-      }
+  "id": "p2-l7-p3",
+  "type": "textInput",
+  "prompt": "Écris en latin les trois formes du pluriel : « nous crions ; vous criez ; ils / elles crient ».",
+  "expected": "clamamus ; clamatis ; clamant",
+  "acceptedAnswers": [
+    "clamamus ; clamatis ; clamant",
+    "clamamus, clamatis, clamant",
+    "clamamus / clamatis / clamant",
+    "clamamus clamatis clamant"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "latin",
+    "accepted": [
+      "clamamus ; clamatis ; clamant",
+      "clamamus, clamatis, clamant",
+      "clamamus / clamatis / clamant",
+      "clamamus clamatis clamant"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "clamamus ; clamatis ; clamant",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Produire correctement les तीन formes du pluriel : 1re, 2e et 3e personne.",
+  "rejectIf": [
+    "personnes inversées",
+    "forme verbale incorrecte",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    {
+      "input": "clamamus ; clamatis ; clamant",
+      "isCorrect": true
+    },
+    {
+      "input": "clamamus clamatis clamant",
+      "isCorrect": true
+    },
+    {
+      "input": "clamatis ; clamamus ; clamant",
+      "isCorrect": false
+    }
+  ]
+}
     ],
     "summary": {
       "retains": [
