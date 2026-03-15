@@ -1,4 +1,5 @@
 import { getPeriodsByLevel, getLessonsByPeriod } from "../lessons.js";
+import { getLastVisitedLesson } from "../storage.js";
 import { createPeriodCard } from "../components/periodCard.js";
 
 export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress }) {
@@ -8,6 +9,12 @@ export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress 
   const levelPeriods = getPeriodsByLevel(level?.id);
   const allLessons = levelPeriods.flatMap((period) => getLessonsByPeriod(period.id, level?.id));
   const playedLessonsCount = allLessons.filter((lesson) => Boolean(progress?.lessons?.[lesson.id]?.playedAt)).length;
+
+  const lastVisited = getLastVisitedLesson(level?.id);
+  const initialOpenPeriodId =
+    lastVisited?.periodId && levelPeriods.some((period) => period.id === lastVisited.periodId)
+      ? lastVisited.periodId
+      : (levelPeriods[0]?.id ?? null);
 
   const headerCard = document.createElement("article");
   headerCard.className = "card";
@@ -24,7 +31,7 @@ export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress 
   const grid = document.createElement("div");
   grid.className = "period-grid";
 
-  let openPeriodId = null;
+  let openPeriodId = initialOpenPeriodId;
 
   function renderPeriods() {
     grid.innerHTML = "";
