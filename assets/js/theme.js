@@ -30,6 +30,25 @@ export function applyTheme(theme, { source = "system", persist = false } = {}) {
   if (typeof document !== "undefined") {
     document.documentElement.setAttribute("data-theme", activeTheme);
     document.documentElement.style.colorScheme = activeTheme;
+    export function applyTheme(theme, { source = "system", persist = false } = {}) {
+  activeTheme = theme === "dark" ? "dark" : "light";
+  currentSource = source;
+
+  if (typeof document !== "undefined") {
+    document.documentElement.setAttribute("data-theme", activeTheme);
+    document.documentElement.style.colorScheme = activeTheme;
+
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    if (themeColor) {
+      themeColor.setAttribute("content", activeTheme === "dark" ? "#151923" : "#24326f");
+    }
+  }
+
+  if (persist && typeof window !== "undefined") {
+    window.localStorage.setItem(THEME_STORAGE_KEY, activeTheme);
+    window.localStorage.setItem(THEME_SOURCE_STORAGE_KEY, source);
+  }
+}
   }
 
   if (persist) {
