@@ -1054,3 +1054,128 @@ a,
 .btn-link {
   color: var(--primary);
 }
+
+/* =========================
+   HOMEPAGE — 3 colonnes
+   5e / 4e / 3e sur une ligne
+   tablette incluse
+   ========================= */
+
+.home-view {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.home-hero {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.home-hero__headline {
+  font-size: clamp(1.7rem, 1rem + 2vw, 2.4rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.home-hero__lead {
+  max-width: 72ch;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.home-hero__meta,
+.home-hero__actions,
+.level-card__meta,
+.level-card__badges,
+.level-card__documents,
+.level-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.level-card {
+  align-self: start;
+  height: auto;
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.98) 0%, rgba(252, 246, 238, 0.98) 100%);
+  box-shadow: var(--shadow-1);
+}
+
+.level-card__header,
+.level-card__top {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.level-card__eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: 0.24rem 0.58rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f5ead8 0%, #efdfc8 100%);
+  color: #7b5725;
+  border: 1px solid rgba(165, 109, 51, 0.18);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.level-card__title {
+  font-size: 1.12rem;
+  line-height: 1.18;
+  font-weight: 700;
+  font-family: "Spectral", Georgia, serif;
+  color: #3a2f2a;
+}
+
+.level-card__summary,
+.level-card__lead,
+.level-card__objective {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.level-card .btn,
+.level-card .btn-link,
+.level-card a {
+  min-height: 40px;
+}
+
+.level-card .meta-pill,
+.level-card .doc-link,
+.level-card .btn-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.32rem 0.62rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fffdf9 0%, var(--soft) 100%);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .level-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .level-card {
+    padding: 0.95rem;
+  }
+}
