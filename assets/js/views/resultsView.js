@@ -1,4 +1,5 @@
 import { LESSONS_SPEC, getPeriodsByLevel, getLessonsByPeriod } from "../lessons.js";
+import { getLastVisitedLesson, buildLessonHash } from "../storage.js";
 
 function getStatusClass(status) {
   if (status === "période validée") return "status-ok";
@@ -10,19 +11,54 @@ function getPlayedState(lessonProgress) {
   return lessonProgress?.playedAt ? "jouée" : "non jouée";
 }
 
+function getSuggestedLessonTarget({ levelId, lessons, progress }) {
+  const lastVisited = getLastVisitedLesson(levelId);
+  if (lastVisited && lessons.some((lesson) => lesson.id === lastVisited.lessonId)) {
+    return {
+      ...lastVisited,
+      path: lastVisited.path || buildLessonHash(lastVisited),
+    };
+  }
+
+  const firstUnplayed = lessons.find((lesson) => !progress?.lessons?.[lesson.id]?.playedAt);
+  if (firstUnplayed) {
+    return {
+      levelId,
+      lessonId: firstUnplayed.id,
+      lessonTitle: firstUnplayed.title,
+      path: buildLessonHash({ levelId, lessonId: firstUnplayed.id }),
+    };
+  }
+
+  return null;
+}
+
 export function renderResultsView({ level, onOpenDashboard, progress }) {
   const section = document.createElement("section");
   section.className = "stack";
 
   const periods = getPeriodsByLevel(level?.id);
+  const allLessons = periods.flatMap((period) => getLessonsByPeriod(period.id, level?.id));
+  const continueTarget = getSuggestedLessonTarget({ levelId: level?.id, lessons: allLessons, progress });
 
   const summary = document.createElement("article");
-  summary.className = "card";
+  summary.className = "card results-hero";
   summary.innerHTML = `
     <h2>Résultats · ${level?.label || "5e"}</h2>
     <p class="muted">Barème leçon : ${LESSONS_SPEC.trainingMax} + ${LESSONS_SPEC.productionMax} = ${LESSONS_SPEC.lessonMax}</p>
     <p class="muted">Barème période : ${LESSONS_SPEC.periodMax}</p>
+    <div class="actions-row results-actions">
+      <button type="button" class="btn btn-primary" data-action="dashboard">Retour au dashboard ${level?.label || "5e"}</button>
+      ${continueTarget ? `<button type="button" class="btn btn-secondary" data-action="continue">Reprendre · ${continueTarget.lessonTitle}</button>` : ""}
+    </div>
   `;
+
+  summary.querySelector('[data-action="dashboard"]').addEventListener("click", onOpenDashboard);
+  if (continueTarget) {
+    summary.querySelector('[data-action="continue"]').addEventListener("click", () => {
+      window.location.hash = continueTarget.path;
+    });
+  }
 
   const periodList = document.createElement("div");
   periodList.className = "stack";
@@ -60,12 +96,6 @@ export function renderResultsView({ level, onOpenDashboard, progress }) {
     periodList.appendChild(card);
   });
 
-  const back = document.createElement("button");
-  back.type = "button";
-  back.className = "btn btn-primary";
-  back.textContent = `Retour au dashboard ${level?.label || "5e"}`;
-  back.addEventListener("click", onOpenDashboard);
-
-  section.append(summary, periodList, back);
+  section.append(summary, periodList);
   return section;
 }

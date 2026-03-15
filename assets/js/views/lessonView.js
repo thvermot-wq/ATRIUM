@@ -1,4 +1,5 @@
-import { LESSONS_SPEC, getLessonById } from "../lessons.js";
+import { LESSONS_SPEC, getLessonById, getPeriodsByLevel, getLessonsByPeriod } from "../lessons.js";
+import { markLessonVisited, buildLessonHash } from "../storage.js";
 import { createFeedbackBox } from "../components/feedbackBox.js";
 import { createTrainingItemCard } from "../components/trainingItemCard.js";
 import { createProductionItemCard } from "../components/productionItemCard.js";
@@ -213,10 +214,26 @@ function createLessonToolbar({ lesson, onBackDashboard }) {
   return shell;
 }
 
+function getOrderedLessons(levelId) {
+  return getPeriodsByLevel(levelId).flatMap((period) => getLessonsByPeriod(period.id, levelId));
+}
+
+function getAdjacentLesson(levelId, lessonId, offset = 1) {
+  const ordered = getOrderedLessons(levelId);
+  const index = ordered.findIndex((entry) => entry.id === lessonId);
+  if (index < 0) return null;
+  const next = ordered[index + offset];
+  if (!next) return null;
+  return {
+    lesson: next,
+    path: buildLessonHash({ levelId, lessonId: next.id }),
+  };
+}
+
 export function renderLessonView({ level, lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults, onRestartLesson }) {
   const lesson = getLessonById(lessonId, level?.id);
   const wrapper = document.createElement("section");
-  wrapper.className = "stack";
+  wrapper.className = "stack lesson-view";
 
   if (!lesson) {
     const missing = document.createElement("article");
@@ -230,6 +247,15 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     wrapper.appendChild(missing);
     return wrapper;
   }
+
+  const levelId = level?.id || "5e";
+  markLessonVisited({
+    levelId,
+    lessonId: lesson.id,
+    periodId: lesson.periodId,
+    lessonTitle: lesson.title,
+    path: buildLessonHash({ levelId, lessonId: lesson.id }),
+  });
 
   const progressEntry = progress?.lessons?.[lesson.id];
   const savedCurrent = progressEntry?.current?.totalScore ?? 0;
@@ -264,7 +290,11 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
   const productionResults = {};
   const trainingCards = {};
   const productionCards = {};
+  const stepEntries = [];
+  const stepButtons = [];
+  const stepSections = [];
 
+  let activeStepIndex = 0;
   let lessonPhase = "in_progress";
 
   const lessonToolbar = createLessonToolbar({ lesson, onBackDashboard });
@@ -277,15 +307,33 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     <p class="muted">${lesson.id} · Période ${lesson.period}</p>
     <p><strong>Objectif :</strong> ${lesson.objective}</p>
     <p><strong>Point de leçon :</strong> ${lesson.lessonPoint || lesson.objective}</p>
-    <p class="muted">Flow complet : répondez d'abord aux 10 exercices, puis consultez le corrigé global en fin de leçon.</p>
     <p class="muted">Validation visée : 8/10 (80 %) · Score enregistré : courant ${savedCurrent}/10 · meilleur ${savedBest}/10</p>
   `;
 
-  const trainingBoard = document.createElement("div");
-  trainingBoard.className = "training-board";
+  const flowCard = document.createElement("article");
+  flowCard.className = "card lesson-flow-card";
+  flowCard.innerHTML = `
+    <div class="lesson-flow-card__topline">
+      <div>
+        <p class="lesson-flow-card__eyebrow">Mode concentration</p>
+        <h3 class="lesson-flow-card__title">Un exercice à la fois</h3>
+      </div>
+      <p class="lesson-flow-card__counter" data-role="counter">Exercice 1 / ${LESSONS_SPEC.lessonMax}</p>
+    </div>
+    <div class="lesson-flow-card__actions">
+      <button type="button" class="btn btn-secondary" data-action="prev">← Précédent</button>
+      <button type="button" class="btn btn-secondary" data-action="next">Suivant →</button>
+    </div>
+    <div class="lesson-step-pills" data-role="pills"></div>
+  `;
 
-  const productionBoard = document.createElement("div");
-  productionBoard.className = "production-board";
+  const flowCounter = flowCard.querySelector('[data-role="counter"]');
+  const stepPills = flowCard.querySelector('[data-role="pills"]');
+  const prevButton = flowCard.querySelector('[data-action="prev"]');
+  const nextButton = flowCard.querySelector('[data-action="next"]');
+
+  const focusBoard = document.createElement("div");
+  focusBoard.className = "lesson-focus-board";
 
   const trainingState = document.createElement("p");
   trainingState.className = "muted";
@@ -327,8 +375,36 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
   form.appendChild(actions);
 
   const finalSummary = document.createElement("article");
-  finalSummary.className = "card";
+  finalSummary.className = "card lesson-summary-card";
   finalSummary.hidden = true;
+
+  const getAnsweredCountForStep = (entry) => {
+    if (entry.kind === "training") return trainingResults[entry.item.id] ? 1 : 0;
+    return productionResults[entry.item.id] ? 1 : 0;
+  };
+
+  const setActiveStep = (index) => {
+    activeStepIndex = Math.max(0, Math.min(stepEntries.length - 1, index));
+
+    stepSections.forEach((section, sectionIndex) => {
+      const isActive = sectionIndex === activeStepIndex;
+      section.hidden = !isActive;
+      section.classList.toggle("is-active", isActive);
+    });
+
+    stepButtons.forEach((button, buttonIndex) => {
+      const isAnswered = getAnsweredCountForStep(stepEntries[buttonIndex]) === 1;
+      button.classList.toggle("is-active", buttonIndex === activeStepIndex);
+      button.classList.toggle("is-done", isAnswered);
+      button.setAttribute("aria-current", buttonIndex === activeStepIndex ? "step" : "false");
+    });
+
+    const currentStep = stepEntries[activeStepIndex];
+    const kindLabel = currentStep.kind === "training" ? "Entraînement" : "Production";
+    flowCounter.textContent = `Exercice ${activeStepIndex + 1} / ${stepEntries.length} · ${kindLabel}`;
+    prevButton.disabled = activeStepIndex === 0;
+    nextButton.disabled = activeStepIndex === stepEntries.length - 1;
+  };
 
   const syncStates = () => {
     const training = computeTrainingProgress(lesson.training, trainingResults);
@@ -351,11 +427,29 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
 
     finishButton.disabled = lessonPhase !== "ready_to_finish";
     resultsButton.disabled = lessonPhase !== "finished_with_summary";
+    setActiveStep(activeStepIndex);
 
     return { training, production, answeredCount, totalItems };
   };
 
+  const createStepSection = (entry, index, cardNode) => {
+    const section = document.createElement("section");
+    section.className = "lesson-step";
+    section.hidden = index !== activeStepIndex;
+    section.innerHTML = `
+      <div class="lesson-step__meta">
+        <span class="lesson-step__badge">${entry.kind === "training" ? "Entraînement" : "Production"}</span>
+        <span class="lesson-step__caption">Étape ${index + 1} / ${LESSONS_SPEC.lessonMax}</span>
+      </div>
+    `;
+    section.appendChild(cardNode);
+    return section;
+  };
+
   lesson.training.forEach((item) => {
+    const entry = { kind: "training", item };
+    stepEntries.push(entry);
+
     const card = createTrainingItemCard({
       item,
       deferCorrection: true,
@@ -376,10 +470,15 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     });
 
     trainingCards[item.id] = card;
-    trainingBoard.appendChild(card);
+    const section = createStepSection(entry, stepEntries.length - 1, card);
+    stepSections.push(section);
+    focusBoard.appendChild(section);
   });
 
   lesson.production.forEach((item) => {
+    const entry = { kind: "production", item };
+    stepEntries.push(entry);
+
     const card = createProductionItemCard({
       item,
       deferCorrection: true,
@@ -400,8 +499,23 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     });
 
     productionCards[item.id] = card;
-    productionBoard.appendChild(card);
+    const section = createStepSection(entry, stepEntries.length - 1, card);
+    stepSections.push(section);
+    focusBoard.appendChild(section);
   });
+
+  stepEntries.forEach((entry, index) => {
+    const pill = document.createElement("button");
+    pill.type = "button";
+    pill.className = "lesson-step-pill";
+    pill.textContent = String(index + 1);
+    pill.addEventListener("click", () => setActiveStep(index));
+    stepButtons.push(pill);
+    stepPills.appendChild(pill);
+  });
+
+  prevButton.addEventListener("click", () => setActiveStep(activeStepIndex - 1));
+  nextButton.addEventListener("click", () => setActiveStep(activeStepIndex + 1));
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -413,7 +527,7 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     }
 
     const saved = onSaveLessonScore({
-      levelId: level?.id,
+      levelId,
       lessonId: lesson.id,
       trainingScore: latestTraining.score,
       productionScore: latestProduction.score,
@@ -434,6 +548,7 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     const currentScore = saved?.lessonProgress?.current?.totalScore ?? latestTraining.score + latestProduction.score;
     const bestScore = saved?.lessonProgress?.best?.totalScore ?? currentScore;
     const summary = getLessonSummary(lesson);
+    const nextLessonTarget = getAdjacentLesson(levelId, lesson.id, 1);
 
     const trainingReview = lesson.training
       .map((item) => formatReviewLine(item, trainingResults[item.id]))
@@ -460,7 +575,30 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
 
       <h4>Mots-clés</h4>
       <p>${summary.keywords.join(" · ")}</p>
+      <div class="actions-row lesson-summary-actions">
+        ${nextLessonTarget ? `<button type="button" class="btn btn-primary" data-action="next-lesson">Leçon suivante → ${nextLessonTarget.lesson.title}</button>` : `<button type="button" class="btn btn-primary" data-action="results">Clore le niveau par les résultats</button>`}
+        <button type="button" class="btn btn-secondary" data-action="restart">Rejouer la leçon</button>
+        <button type="button" class="btn btn-secondary" data-action="dashboard">Retour dashboard</button>
+      </div>
     `;
+
+    if (nextLessonTarget) {
+      finalSummary.querySelector('[data-action="next-lesson"]').addEventListener("click", () => {
+        window.location.hash = nextLessonTarget.path;
+      });
+    } else {
+      finalSummary.querySelector('[data-action="results"]').addEventListener("click", onOpenResults);
+    }
+
+    finalSummary.querySelector('[data-action="restart"]').addEventListener("click", () => {
+      if (typeof onRestartLesson === "function") {
+        onRestartLesson();
+        return;
+      }
+      window.location.reload();
+    });
+
+    finalSummary.querySelector('[data-action="dashboard"]').addEventListener("click", onBackDashboard);
 
     syncStates();
   });
@@ -490,11 +628,11 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
   wrapper.append(
     lessonToolbar,
     hero,
+    flowCard,
     trainingState,
-    trainingBoard,
     productionState,
-    productionBoard,
     flowState,
+    focusBoard,
     form,
     finalSummary,
     feedback,

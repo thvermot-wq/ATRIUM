@@ -39,7 +39,6 @@ function assertInvariants() {
   if (LESSONS_SPEC.periodMax !== CANONICAL_SPEC.periodMax) errors.push(`Le score max d'une période doit rester à ${CANONICAL_SPEC.periodMax}.`);
   if (LESSONS_SPEC.validationPercent !== CANONICAL_SPEC.validationPercent) errors.push(`Le seuil de validation doit rester à ${CANONICAL_SPEC.validationPercent}%.`);
   if (LESSONS_SPEC.validationMinScore !== CANONICAL_SPEC.validationMinScore) errors.push(`Le score minimal de validation doit rester à ${CANONICAL_SPEC.validationMinScore}/${CANONICAL_SPEC.periodMax}.`);
-
   if (periods.length !== LESSONS_SPEC.periods) errors.push("Incohérence entre spec et périodes déclarées.");
   if (lessons.length !== LESSONS_SPEC.lessonsTotal) errors.push("Incohérence entre spec et leçons déclarées.");
 
@@ -50,7 +49,6 @@ function assertInvariants() {
     if (levelPeriods.length !== LESSONS_SPEC.periods) {
       errors.push(`${level.label}: incohérence du nombre de périodes.`);
     }
-
     if (levelLessons.length !== LESSONS_SPEC.lessonsTotal) {
       errors.push(`${level.label}: incohérence du nombre de leçons.`);
     }
@@ -63,7 +61,6 @@ function assertInvariants() {
       if (period.maxScore !== LESSONS_SPEC.periodMax) {
         errors.push(`${level.label} · ${period.title} doit être notée sur ${LESSONS_SPEC.periodMax}.`);
       }
-
       periodLessons.forEach((lesson) => {
         if (lesson.maxScore !== LESSONS_SPEC.lessonMax) errors.push(`${level.label} · ${lesson.id}: maxScore doit être ${LESSONS_SPEC.lessonMax}.`);
         if (!Array.isArray(lesson.training) || lesson.training.length === 0) errors.push(`${level.label} · ${lesson.id}: training manquant.`);
@@ -75,21 +72,34 @@ function assertInvariants() {
   return errors;
 }
 
+function registerServiceWorker() {
+  if (typeof window === "undefined" || !("serviceWorker" in navigator)) return;
+
+  window.addEventListener("load", async () => {
+    try {
+      await navigator.serviceWorker.register("./service-worker.js");
+    } catch (error) {
+      console.warn("ATRIUM · service worker non enregistré", error);
+    }
+  });
+}
+
 function boot() {
   const root = document.getElementById("app");
   if (!root) return;
 
   initTheme();
+  registerServiceWorker();
 
   const scoring = getScoringContract();
   const invariantErrors = assertInvariants();
 
   if (invariantErrors.length > 0) {
     root.innerHTML = `
-      <section class="card">
+      <article class="card stack">
         <h2>Erreur de configuration ATRIUM</h2>
         <ul>${invariantErrors.map((error) => `<li>${error}</li>`).join("")}</ul>
-      </section>
+      </article>
     `;
     return;
   }
@@ -107,7 +117,6 @@ function boot() {
     const levelLessons = getLessonsByLevel(levelId);
     const levelPeriods = getPeriodsByLevel(levelId);
     const currentProgress = progressByLevel[levelId];
-
     const nextProgress = saveLessonProgress({
       progress: currentProgress,
       lessonId,
@@ -169,7 +178,10 @@ function boot() {
     scoring,
     contract: LESSONS_SPEC,
     levels: levels.map((level) => ({ id: level.id, label: level.label })),
-    counts: { periods: periods.length, lessons: lessons.length },
+    counts: {
+      periods: periods.length,
+      lessons: lessons.length,
+    },
     getProgress: (levelId = DEFAULT_LEVEL_ID) => progressByLevel[levelId],
   };
 }

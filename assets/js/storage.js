@@ -2,6 +2,7 @@ import { LESSONS_SPEC } from "./lessons.js";
 import { computeLessonScore, computePeriodScore } from "./scoring.js";
 
 export const STORAGE_KEY = "atrium-progress-v1";
+export const APP_STATE_KEY = "atrium-app-state-v1";
 
 function getStorageKey(levelId = "5e") {
   return `atrium:progress:${levelId}`;
@@ -32,6 +33,18 @@ function defaultPeriodProgress() {
     percent: 0,
     status: "période à reprendre",
   };
+}
+
+function defaultAppState() {
+  return {
+    lastVisited: null,
+    updatedAt: null,
+  };
+}
+
+export function buildLessonHash({ levelId = "5e", lessonId }) {
+  if (!lessonId) return `#/${levelId}`;
+  return `#/${levelId}/lesson/${lessonId}`;
 }
 
 export function createInitialProgress({ lessons, periods }) {
@@ -115,7 +128,6 @@ export function loadProgress({ lessons, periods, levelId = "5e" }) {
   const namespacedRaw = localStorage.getItem(getStorageKey(levelId));
   let parsed = safelyParse(namespacedRaw);
 
-  // Migration douce : l'ancienne clé globale n'alimente que la 5e.
   if (!parsed && levelId === "5e") {
     const legacyRaw = localStorage.getItem(STORAGE_KEY);
     const legacyParsed = safelyParse(legacyRaw);
@@ -180,4 +192,64 @@ export function saveLessonProgress({ progress, lessonId, trainingScore, producti
   };
 
   return recomputePeriodProgress({ progress: nextProgress, lessons, periods });
+}
+
+export function loadAppState() {
+  const raw = localStorage.getItem(APP_STATE_KEY);
+  const parsed = safelyParse(raw);
+
+  if (!parsed || typeof parsed !== "object") {
+    return defaultAppState();
+  }
+
+  return {
+    ...defaultAppState(),
+    ...parsed,
+    lastVisited:
+      parsed.lastVisited && typeof parsed.lastVisited === "object"
+        ? {
+            levelId: typeof parsed.lastVisited.levelId === "string" ? parsed.lastVisited.levelId : "5e",
+            lessonId: typeof parsed.lastVisited.lessonId === "string" ? parsed.lastVisited.lessonId : null,
+            periodId: typeof parsed.lastVisited.periodId === "string" ? parsed.lastVisited.periodId : null,
+            lessonTitle: typeof parsed.lastVisited.lessonTitle === "string" ? parsed.lastVisited.lessonTitle : "",
+            path: typeof parsed.lastVisited.path === "string" ? parsed.lastVisited.path : null,
+            visitedAt: typeof parsed.lastVisited.visitedAt === "string" ? parsed.lastVisited.visitedAt : null,
+          }
+        : null,
+  };
+}
+
+export function saveAppState(state) {
+  const payload = {
+    ...defaultAppState(),
+    ...(state || {}),
+    updatedAt: new Date().toISOString(),
+  };
+  localStorage.setItem(APP_STATE_KEY, JSON.stringify(payload));
+  return payload;
+}
+
+export function markLessonVisited({ levelId = "5e", lessonId, periodId = null, lessonTitle = "", path = null }) {
+  if (!lessonId) return loadAppState();
+
+  const state = loadAppState();
+  return saveAppState({
+    ...state,
+    lastVisited: {
+      levelId,
+      lessonId,
+      periodId,
+      lessonTitle,
+      path: path || buildLessonHash({ levelId, lessonId }),
+      visitedAt: new Date().toISOString(),
+    },
+  });
+}
+
+export function getLastVisitedLesson(levelId = null) {
+  const state = loadAppState();
+  const target = state.lastVisited;
+  if (!target?.lessonId) return null;
+  if (levelId && target.levelId !== levelId) return null;
+  return target;
 }

@@ -1,4 +1,5 @@
 import { getPeriodsByLevel, getLessonsByPeriod } from "../lessons.js";
+import { getLastVisitedLesson, buildLessonHash } from "../storage.js";
 import { createPeriodCard } from "../components/periodCard.js";
 
 function safePercent(value, max) {
@@ -12,6 +13,45 @@ function countValidatedPeriods(levelPeriods, progress) {
 
 function countStartedPeriods(levelPeriods, progress) {
   return levelPeriods.filter((period) => (progress?.periods?.[period.id]?.totalScore || 0) > 0).length;
+}
+
+function getSuggestedLessonTarget({ levelId, allLessons, progress }) {
+  const lastVisited = getLastVisitedLesson(levelId);
+  if (lastVisited && allLessons.some((lesson) => lesson.id === lastVisited.lessonId)) {
+    return {
+      ...lastVisited,
+      path: lastVisited.path || buildLessonHash(lastVisited),
+    };
+  }
+
+  const firstUnplayed = allLessons.find((lesson) => !progress?.lessons?.[lesson.id]?.playedAt);
+  if (firstUnplayed) {
+    return {
+      levelId,
+      lessonId: firstUnplayed.id,
+      lessonTitle: firstUnplayed.title,
+      path: buildLessonHash({ levelId, lessonId: firstUnplayed.id }),
+    };
+  }
+
+  const firstToConsolidate = allLessons.find((lesson) => (progress?.lessons?.[lesson.id]?.best?.totalScore || 0) < 8);
+  if (firstToConsolidate) {
+    return {
+      levelId,
+      lessonId: firstToConsolidate.id,
+      lessonTitle: firstToConsolidate.title,
+      path: buildLessonHash({ levelId, lessonId: firstToConsolidate.id }),
+    };
+  }
+
+  const fallback = allLessons[0];
+  if (!fallback) return null;
+  return {
+    levelId,
+    lessonId: fallback.id,
+    lessonTitle: fallback.title,
+    path: buildLessonHash({ levelId, lessonId: fallback.id }),
+  };
 }
 
 export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress }) {
@@ -28,6 +68,7 @@ export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress 
   const totalCurrentScore = levelPeriods.reduce((sum, period) => sum + (progress?.periods?.[period.id]?.totalScore || 0), 0);
   const totalMaxScore = levelPeriods.reduce((sum, period) => sum + (period.maxScore || 0), 0);
   const overallPercent = safePercent(totalCurrentScore, totalMaxScore);
+  const continueTarget = getSuggestedLessonTarget({ levelId: level?.id, allLessons, progress });
 
   const headerCard = document.createElement("article");
   headerCard.className = "card dashboard-hero";
@@ -58,12 +99,18 @@ export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress 
         <span class="dashboard-kpi-card__label">Progression globale</span>
       </div>
     </div>
-    <div class="actions-row">
+    <div class="actions-row dashboard-hero__actions">
       <button type="button" class="btn btn-secondary" data-action="home">← Retour au sélecteur de niveau</button>
+      ${continueTarget ? `<button type="button" class="btn btn-primary" data-action="continue">Continuer · ${continueTarget.lessonTitle}</button>` : ""}
       <span class="meta-pill">${startedPeriodsCount}/${levelPeriods.length} périodes entamées</span>
     </div>
   `;
   headerCard.querySelector('[data-action="home"]').addEventListener("click", onOpenHome);
+  if (continueTarget) {
+    headerCard.querySelector('[data-action="continue"]').addEventListener("click", () => {
+      window.location.hash = continueTarget.path;
+    });
+  }
 
   const grid = document.createElement("div");
   grid.className = "period-grid";

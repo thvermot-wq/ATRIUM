@@ -1,3 +1,5 @@
+import { getLastVisitedLesson, buildLessonHash } from "../storage.js";
+
 const HOME_LEVEL_META = {
   "5e": {
     dashboardLabel: "🏛️ LCA 5e",
@@ -67,9 +69,18 @@ function createMetric(label, value) {
   `;
 }
 
+function createResumeLabel(target, levels) {
+  const level = levels.find((entry) => entry.id === target.levelId);
+  const levelLabel = level?.label || target.levelId || "5e";
+  const lessonTitle = target.lessonTitle || target.lessonId;
+  return `${levelLabel} · ${lessonTitle}`;
+}
+
 export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
   const section = document.createElement("section");
   section.className = "stack";
+
+  const resumeTarget = getLastVisitedLesson();
 
   const intro = document.createElement("article");
   intro.className = "card home-hero";
@@ -86,7 +97,21 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
       <span class="meta-pill">36 leçons progressives</span>
       <span class="meta-pill">Repères CECRL et Euroclassica</span>
     </div>
+    <div class="home-hero__actions"></div>
   `;
+
+  const heroActions = intro.querySelector(".home-hero__actions");
+
+  if (resumeTarget?.lessonId) {
+    const resumeButton = document.createElement("button");
+    resumeButton.type = "button";
+    resumeButton.className = "btn btn-primary";
+    resumeButton.textContent = `Reprendre · ${createResumeLabel(resumeTarget, levels)}`;
+    resumeButton.addEventListener("click", () => {
+      window.location.hash = resumeTarget.path || buildLessonHash(resumeTarget);
+    });
+    heroActions.appendChild(resumeButton);
+  }
 
   const cards = document.createElement("div");
   cards.className = "level-grid";
