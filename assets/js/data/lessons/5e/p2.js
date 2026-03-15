@@ -3063,24 +3063,24 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p2-l9-t4",
-        "type": "singleChoice",
-        "prompt": "« 𝐿𝑎𝑡𝑟𝑎𝑡 𝑎𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝑐𝑎𝑛𝑖𝑠 » : même sens ?",
-        "options": [
-          "oui",
-          "non",
-          "impossible",
-          "on ne sait pas"
-        ],
-        "expected": "oui",
-        "shuffle": true,
-        "points": 1
-      },
+     {
+  "id": "p2-l9-t4",
+  "type": "singleChoice",
+  "prompt": "Dans « 𝐿𝑎𝑡𝑟𝑎𝑡 𝑎𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝑐𝑎𝑛𝑖𝑠 », le sens change-t-il par rapport à « 𝐶𝑎𝑛𝑖𝑠 𝑎𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝑙𝑎𝑡𝑟𝑎𝑡 » ?",
+  "options": [
+    "non, le sens de base reste le même",
+    "oui, le chien devient complément",
+    "oui, la porte devient sujet",
+    "impossible à savoir"
+  ],
+  "expected": "non, le sens de base reste le même",
+  "shuffle": true,
+  "points": 1
+},
       {
         "id": "p2-l9-t5",
         "type": "multipleChoice",
-        "prompt": "Quels ordres peuvent signifier « Le chien aboie devant la porte » ?",
+        "prompt": "Quelles phrases peuvent signifier « Le chien aboie devant la porte » ?",
         "options": [
           "canis ante ianuam latrat",
           "latrat ante ianuam canis",
@@ -3095,24 +3095,20 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p2-l9-t6",
-        "type": "ordering",
-        "prompt": "Compose un ordre latin de base valide.",
-        "options": [
-          "canis",
-          "ante",
-          "ianuam",
-          "manet"
-        ],
-        "expected": [
-          "canis",
-          "ante",
-          "ianuam",
-          "manet"
-        ],
-        "points": 1
-      },
+   {
+  "id": "p2-l9-t6",
+  "type": "singleChoice",
+  "prompt": "Dans « 𝐼𝑎𝑛𝑢𝑎𝑚 𝑎𝑛𝑡𝑒 𝑚𝑎𝑛𝑒𝑡 𝑐𝑎𝑛𝑖𝑠 », quel mot est le sujet ?",
+  "options": [
+    "canis",
+    "ianuam",
+    "ante",
+    "manet"
+  ],
+  "expected": "canis",
+  "shuffle": true,
+  "points": 1
+},
       {
         "id": "p2-l9-t7",
         "type": "multipleChoice",
@@ -3229,56 +3225,50 @@ export const lessons5eP2 = [
           }
         ]
       },
-      {
-        "id": "p2-l9-p3",
-        "type": "textInput",
-        "prompt": "Explique brièvement : pourquoi l’ordre seul ne suffit-il pas ?",
-        "expected": "il faut regarder les formes",
-        "acceptedAnswers": [
-          "il faut regarder les formes",
-          "il faut repérer le verbe et les terminaisons",
-          "l'ordre change mais les formes donnent le sens",
-          "ce sont les formes qui donnent le sens",
-          "ce sont les terminaisons qui donnent le sens"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "il faut regarder les formes",
-            "il faut repérer le verbe et les terminaisons",
-            "l'ordre change mais les formes donnent le sens",
-            "ce sont les formes qui donnent le sens",
-            "ce sont les terminaisons qui donnent le sens"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "il faut regarder les formes",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "il faut regarder les formes",
-            "isCorrect": true
-          },
-          {
-            "input": "réponse hors-sujet",
-            "isCorrect": false
-          }
-        ]
-      }
+     {
+  "id": "p2-l9-p3",
+  "type": "textInput",
+  "prompt": "Complète la traduction : « 𝑀𝑎𝑛𝑒𝑡 𝑎𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝑐𝑎𝑛𝑖𝑠 » = « Le chien reste ... »",
+  "expected": "devant la porte",
+  "acceptedAnswers": [
+    "devant la porte",
+    "devant une porte"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "fr",
+    "accepted": [
+      "devant la porte",
+      "devant une porte"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "devant la porte",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Identifier correctement le groupe de lieu malgré l’ordre latin.",
+  "rejectIf": [
+    "lieu faux",
+    "ianuam mal compris",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    {
+      "input": "devant la porte",
+      "isCorrect": true
+    },
+    {
+      "input": "dans la porte",
+      "isCorrect": false
+    }
+  ]
+}
     ],
     "summary": {
       "retains": [
