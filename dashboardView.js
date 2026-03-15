@@ -19,7 +19,8 @@ export function renderDashboardView({ level, onOpenLesson, onOpenHome, progress 
   const headerCard = document.createElement("article");
   headerCard.className = "card";
   headerCard.innerHTML = `
-    <h2>Dashboard ${level?.classLabel || level?.label || "5e"}</h2>    <p><strong>${level?.dashboardTitle || "Atrium I : Fondations"}</strong></p>
+    <h2>Dashboard ${level?.classLabel || level?.label || "5e"}</h2>    
+    <p><strong>${level?.dashboardTitle || "Atrium I : Fondations"}</strong></p>
     <p class="muted">${level?.dashboardSubtitle || ""}</p>
     <p class="muted">${levelPeriods.length} périodes · ${allLessons.length} leçons · progression calculée automatiquement</p>
     <p class="dashboard-kpi">Leçons jouées : ${playedLessonsCount}/${allLessons.length}</p>
