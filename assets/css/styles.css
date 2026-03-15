@@ -1179,3 +1179,76 @@ a,
     padding: 0.95rem;
   }
 }
+
+/* =========================
+   HEADER + HOME TWEAKS
+   ========================= */
+
+/* 1) masquer "Aller au contenu principal" */
+.skip-link {
+  display: none !important;
+}
+
+/* 2) header : titre plus gros + bouton thème à droite */
+.app-header .header-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-header .brand-block,
+.app-header .header-brand {
+  min-width: 0;
+}
+
+.app-header .brand-title,
+.app-header .site-title,
+.app-header .app-title {
+  font-size: clamp(1.5rem, 1rem + 1.2vw, 2.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-family: "Spectral", Georgia, serif;
+}
+
+/* sous-titre éventuel du header */
+.app-header .brand-subtitle,
+.app-header .site-subtitle,
+.app-header .app-subtitle {
+  font-size: 0.98rem;
+}
+
+/* 3) pousser le bouton clair/sombre à droite */
+.app-header .header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.app-header .theme-toggle,
+.app-header .dark-mode-toggle,
+.app-header button[aria-label*="thème"],
+.app-header button[aria-label*="sombre"],
+.app-header button[title*="thème"],
+.app-header button[title*="sombre"] {
+  justify-self: end;
+  margin-left: auto;
+}
+
+/* sécurité si le bouton est un .btn dans le header */
+.app-header .header-row > .btn:last-child,
+.app-header .header-row > button:last-child {
+  justify-self: end;
+}
+
+/* mobile */
+@media (max-width: 760px) {
+  .app-header .brand-title,
+  .app-header .site-title,
+  .app-header .app-title {
+    font-size: clamp(1.3rem, 1rem + 1vw, 1.7rem);
+  }
+}
