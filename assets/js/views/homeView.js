@@ -78,7 +78,7 @@ function createResumeLabel(target, levels) {
 
 export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
   const section = document.createElement("section");
-  section.className = "stack";
+  section.className = "stack home-view";
 
   const resumeTarget = getLastVisitedLesson();
 
