@@ -1,22 +1,22 @@
 // Données de leçons 5E · Période 3 — Discordia in Subura.
 const headerContexts5eP3 = {
-  "p3-l11": "Une rumeur nocturne rouvre l’affaire quand une voisine affirme avoir vu un homme sortir dans l’ombre.",
-  "p3-l12": "Marcus suit la trace entre les insulae, se cache dans les angles, et comprend qu’un homme a pris l’habitude de passer là quand les portes se ferment.",
-  "p3-l13": "Aux portes et aux fenêtres, les voisines de Subure regardent la rue chacune à sa façon.",
-  "p3-l14": "Au marché, un marchand reconnaît l’homme et parle d'un parfum tenace d'huile ; si bien que l’odeur grasse revient soudain dans tous les souvenirs.",
-  "p3-l15": "Dans les boutiques, les récits se contredisent, mais Flavia oblige chacun à reprendre les faits avant qu'on n'accuse encore quelqu'un à tort.",
-  "p3-l16": "Aux bains, un témoin confirme un détail, en retire un autre, puis Marcus sent que le mensonge fatigue ceux qui le portent depuis trop longtemps.",
-  "p3-l17": "Au forum, Subure vide enfin sa colère en plein jour, et les voisins se répondent et s'invectivent face à face au lieu de se mordre par rumeur interposée.",
-  "p3-l18": "Niger retourne à la porte louche, gratte le bois, refuse d’entrer, et plus personne n’ose traiter ce manège comme un simple caprice.",
-  "p3-l19": "Près de l’autel et de la fontaine, Marcus et Livia recoupent leurs indices, et voient les morceaux s’emboîter pour de bon.",
-  "p3-l20": "Chacun pose une lampe devant sa porte ou au carrefour, car Subure veut ouvrir les yeux au lieu de parler dans le noir.",
-  "p3-l21": "Sous les lampes restées allumées, la rue change de ton, l’homme ne repasse plus, et le calme revient peu à peu.",
-  "p3-l22": "Quand Subure s’éclaire tout entière, Niger se tait enfin, Marcus relève la tête, et la concorde reprend sa place au milieu des maisons."
+  "p3-l1": "Une rumeur nocturne rouvre l’affaire quand une voisine affirme avoir vu un homme sortir dans l’ombre.",
+  "p3-l2": "Marcus suit la trace entre les insulae, se cache dans les angles, et comprend qu’un homme a pris l’habitude de passer là quand les portes se ferment.",
+  "p3-l3": "Aux portes et aux fenêtres, les voisines de Subure regardent la rue chacune à sa façon.",
+  "p3-l4": "Au marché, un marchand reconnaît l’homme et parle d'un parfum tenace d'huile ; si bien que l’odeur grasse revient soudain dans tous les souvenirs.",
+  "p3-l5": "Dans les boutiques, les récits se contredisent, mais Flavia oblige chacun à reprendre les faits avant qu'on n'accuse encore quelqu'un à tort.",
+  "p3-l6": "Aux bains, un témoin confirme un détail, en retire un autre, puis Marcus sent que le mensonge fatigue ceux qui le portent depuis trop longtemps.",
+  "p3-l7": "Au forum, Subure vide enfin sa colère en plein jour, et les voisins se répondent et s'invectivent face à face au lieu de se mordre par rumeur interposée.",
+  "p3-l8": "Niger retourne à la porte louche, gratte le bois, refuse d’entrer, et plus personne n’ose traiter ce manège comme un simple caprice.",
+  "p3-l9": "Près de l’autel et de la fontaine, Marcus et Livia recoupent leurs indices, et voient les morceaux s’emboîter pour de bon.",
+  "p3-l10": "Chacun pose une lampe devant sa porte ou au carrefour, car Subure veut ouvrir les yeux au lieu de parler dans le noir.",
+  "p3-l11": "Sous les lampes restées allumées, la rue change de ton, l’homme ne repasse plus, et le calme revient peu à peu.",
+  "p3-l12": "Quand Subure s’éclaire tout entière, Niger se tait enfin, Marcus relève la tête, et la concorde reprend sa place au milieu des maisons."
 };
 
 export const lessons5eP3 = [
   {
-    "id": "p3-l11",
+    "id": "p3-l1",
     "period": 3,
     "periodId": "p3",
     "title": "Rumor nocturnus",
@@ -46,7 +46,7 @@ export const lessons5eP3 = [
     "maxScore": 10,
     "training": [
       {
-        "id": "p3-l11-t1",
+        "id": "p3-l1-t1",
         "type": "singleChoice",
         "prompt": "Quel mot signifie « qui ? »",
         "options": [
@@ -60,7 +60,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l11-t2",
+        "id": "p3-l1-t2",
         "type": "matching",
         "prompt": "Associe l’interrogatif et son sens.",
         "pairs": [
@@ -96,7 +96,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l11-t3",
+        "id": "p3-l1-t3",
         "type": "singleChoice",
         "prompt": "« vicina virum noctu videt » : qui voit l’homme ?",
         "options": [
@@ -110,7 +110,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l11-t4",
+        "id": "p3-l1-t4",
         "type": "multipleChoice",
         "prompt": "Traductions recevables de « vir noctu exit ».",
         "options": [
@@ -127,7 +127,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l11-t5",
+        "id": "p3-l1-t5",
         "type": "singleChoice",
         "prompt": "Dans « noctu vir exit », quel mot indique le moment ?",
         "options": [
@@ -141,7 +141,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l11-t6",
+        "id": "p3-l1-t6",
         "type": "singleChoice",
         "prompt": "Dans « rumor vicum turbat », le verbe est…",
         "options": [
@@ -155,7 +155,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l11-t7",
+        "id": "p3-l1-t7",
         "type": "multipleChoice",
         "prompt": "Mini-texte : « Vicina virum videt. Servus dicit multum. » Qu’est-ce qui est vu, qu’est-ce qui est dit ?",
         "options": [
@@ -174,7 +174,7 @@ export const lessons5eP3 = [
     ],
     "production": [
       {
-        "id": "p3-l11-p1",
+        "id": "p3-l1-p1",
         "type": "textInput",
         "prompt": "Traduis : Quis virum videt ?",
         "expected": "qui voit l'homme ?",
@@ -230,7 +230,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l11-p2",
+        "id": "p3-l1-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : La voisine voit l’homme.",
         "expected": "vicina virum videt",
@@ -282,7 +282,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l11-p3",
+        "id": "p3-l1-p3",
         "type": "textInput",
         "prompt": "Traduis : rumor vicum turbat.",
         "expected": "la rumeur trouble le quartier",
@@ -359,7 +359,7 @@ export const lessons5eP3 = [
     }
   },
   {
-    "id": "p3-l12",
+    "id": "p3-l2",
     "period": 3,
     "periodId": "p3",
     "title": "Inter insulas",
@@ -387,7 +387,7 @@ export const lessons5eP3 = [
     "maxScore": 10,
     "training": [
       {
-        "id": "p3-l12-t1",
+        "id": "p3-l2-t1",
         "type": "singleChoice",
         "prompt": "ex signifie…",
         "options": [
@@ -401,7 +401,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l12-t2",
+        "id": "p3-l2-t2",
         "type": "matching",
         "prompt": "Associe ad/in/ex/ante et leur sens.",
         "pairs": [
@@ -437,7 +437,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l12-t3",
+        "id": "p3-l2-t3",
         "type": "singleChoice",
         "prompt": "« vir ex insula exit » : d’où sort l’homme ?",
         "options": [
@@ -451,21 +451,21 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l12-t4",
+        "id": "p3-l2-t4",
         "type": "singleChoice",
         "prompt": "« ante ianuam vir stat » : que fait-il ?",
         "options": [
           "il se tient devant la porte",
           "il entre dans la porte",
           "il quitte la rue",
-          "il crie"
+          "il crie devant une porte"
         ],
         "expected": "il se tient devant la porte",
         "shuffle": true,
         "points": 1
       },
       {
-        "id": "p3-l12-t5",
+        "id": "p3-l2-t5",
         "type": "singleChoice",
         "prompt": "Dans « vir in via currit », quel groupe indique le lieu ?",
         "options": [
@@ -479,7 +479,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l12-t6",
+        "id": "p3-l2-t6",
         "type": "multipleChoice",
         "prompt": "Traductions recevables de « vir ad forum currit ».",
         "options": [
@@ -497,18 +497,18 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l12-t7",
+        "id": "p3-l2-t7",
         "type": "multipleChoice",
         "prompt": "Mini-texte : « Vir ex insula exit et ad forum currit. » Quels lieux sont traversés ?",
         "options": [
-          "insula",
-          "forum",
-          "balneum",
-          "macellum"
+          "un immeuble",
+          "les bains publics",
+          "une place",
+          "une boucherie"
         ],
         "expected": [
-          "insula",
-          "forum"
+          "un immeuble",
+          "une place"
         ],
         "shuffle": true,
         "points": 1
@@ -516,7 +516,7 @@ export const lessons5eP3 = [
     ],
     "production": [
       {
-        "id": "p3-l12-p1",
+        "id": "p3-l2-p1",
         "type": "textInput",
         "prompt": "Traduis : vir ante insulam manet",
         "expected": "l'homme reste devant l'immeuble",
@@ -580,7 +580,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l12-p2",
+        "id": "p3-l2-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : L’homme entre dans l’immeuble.",
         "expected": "vir in insulam intrat",
@@ -632,7 +632,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l12-p3",
+        "id": "p3-l2-p3",
         "type": "textInput",
         "prompt": "Traduis : vir ex insula exit et ante ianuam stat.",
         "expected": "l’homme sort de l’immeuble et se tient devant la porte",
@@ -713,14 +713,14 @@ export const lessons5eP3 = [
     }
   },
   {
-    "id": "p3-l13",
+    "id": "p3-l3",
     "period": 3,
     "periodId": "p3",
     "title": "Feminae ad ianuam",
     "subtitle": "Aux portes et aux fenêtres, les voisines de Subure regardent la rue chacune à sa façon.",
     "objective": "Réinvestir la 1re déclinaison dans une scène d’observation.",
     "lessonPoint": "Je regarde -a et -am pour distinguer qui agit et ce qui est regardé.",
-    "narrative": "Des voisines observent depuis ianuae et fenestrae pendant le passage nocturne.",
+    "narrative": "Des voisines observent depuis les portes et les fenêtres, guettant les allées et venues nocturnes...",
     "canDo": [
       "Je reconnais des noms de 1re déclinaison.",
       "Je lis une scène depuis la porte.",
@@ -732,7 +732,7 @@ export const lessons5eP3 = [
       "amica = amie",
       "ianua = porte",
       "fenestra = fenêtre",
-      "lucernam = la lampe",
+      "lucerna = la lampe",
       "viam = la rue",
       "spectat = il/elle regarde",
       "aperit = il/elle ouvre",
@@ -741,7 +741,7 @@ export const lessons5eP3 = [
     "maxScore": 10,
     "training": [
       {
-        "id": "p3-l13-t1",
+        "id": "p3-l3-t1",
         "type": "singleChoice",
         "prompt": "Quel mot appartient à la 1re déclinaison ?",
         "options": [
@@ -755,7 +755,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l13-t2",
+        "id": "p3-l3-t2",
         "type": "matching",
         "prompt": "Associe mot et sens.",
         "pairs": [
@@ -791,9 +791,9 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l13-t3",
+        "id": "p3-l3-t3",
         "type": "singleChoice",
-        "prompt": "Dans « vicina viam spectat », l’objet est…",
+        "prompt": "Dans « vicina viam spectat », le complément d'objet est…",
         "options": [
           "vicina",
           "viam",
@@ -805,9 +805,9 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l13-t4",
+        "id": "p3-l3-t4",
         "type": "singleChoice",
-        "prompt": "La terminaison accusative la plus fréquente ici est…",
+        "prompt": "La terminaison à l'accusatif singulier, dans la première déclinaison, est…",
         "options": [
           "-am",
           "-us",
@@ -819,7 +819,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l13-t5",
+        "id": "p3-l3-t5",
         "type": "matching",
         "prompt": "Associe chaque mot à sa fonction dans « vicina viam spectat ».",
         "pairs": [
@@ -849,7 +849,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l13-t6",
+        "id": "p3-l3-t6",
         "type": "multipleChoice",
         "prompt": "Traductions recevables de « amica lucernam portat ».",
         "options": [
@@ -866,7 +866,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l13-t7",
+        "id": "p3-l3-t7",
         "type": "multipleChoice",
         "prompt": "Mini-texte : « Vicina ad ianuam stat et viam spectat. » Quels éléments de la scène sont présents ?",
         "options": [
@@ -885,13 +885,14 @@ export const lessons5eP3 = [
     ],
     "production": [
       {
-        "id": "p3-l13-p1",
+        "id": "p3-l3-p1",
         "type": "textInput",
         "prompt": "Traduis : vicina ianuam aperit",
         "expected": "la voisine ouvre la porte",
         "acceptedAnswers": [
           "la voisine ouvre la porte",
           "une voisine ouvre la porte",
+          "une voisine ouvre une porte",
           "la voisine ouvre cette porte",
           "une voisine ouvre cette porte"
         ],
@@ -901,6 +902,7 @@ export const lessons5eP3 = [
           "accepted": [
             "la voisine ouvre la porte",
             "une voisine ouvre la porte",
+            "une voisine ouvre une porte",
             "la voisine ouvre cette porte",
             "une voisine ouvre cette porte"
           ]
@@ -933,7 +935,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l13-p2",
+        "id": "p3-l3-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : La femme regarde la rue.",
         "expected": "femina viam spectat",
@@ -985,7 +987,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l13-p3",
+        "id": "p3-l3-p3",
         "type": "textInput",
         "prompt": "Complète en latin : « La voisine porte la lampe » = « vicina ... portat »",
         "expected": "lucernam",
@@ -1029,7 +1031,6 @@ export const lessons5eP3 = [
     "summary": {
       "retains": [
         "Je distingue mieux qui agit et ce qui est regardé grâce à -a et -am.",
-        "Je lis une scène de porte et de fenêtre sans me tromper sur l’objet."
       ],
       "cahier": [
         "vicina viam spectat",
@@ -1051,7 +1052,7 @@ export const lessons5eP3 = [
     }
   },
   {
-    "id": "p3-l14",
+    "id": "p3-l4",
     "period": 3,
     "periodId": "p3",
     "title": "In macello",
@@ -1079,7 +1080,7 @@ export const lessons5eP3 = [
     "maxScore": 10,
     "training": [
       {
-        "id": "p3-l14-t1",
+        "id": "p3-l4-t1",
         "type": "singleChoice",
         "prompt": "macellum signifie…",
         "options": [
@@ -1093,7 +1094,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l14-t2",
+        "id": "p3-l4-t2",
         "type": "matching",
         "prompt": "Associe mot et sens.",
         "pairs": [
@@ -1129,7 +1130,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l14-t3",
+        "id": "p3-l4-t3",
         "type": "singleChoice",
         "prompt": "« vir oleum emit » : que fait l’homme ?",
         "options": [
@@ -1143,7 +1144,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l14-t4",
+        "id": "p3-l4-t4",
         "type": "singleChoice",
         "prompt": "Quel mot est neutre ?",
         "options": [
@@ -1157,7 +1158,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l14-t5",
+        "id": "p3-l4-t5",
         "type": "multipleChoice",
         "prompt": "Traductions recevables de « oleum vir portat ».",
         "options": [
@@ -1174,7 +1175,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l14-t6",
+        "id": "p3-l4-t6",
         "type": "singleChoice",
         "prompt": "Dans « vir oleum emit », quel mot est le complément d’objet direct ?",
         "options": [
@@ -1188,7 +1189,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l14-t7",
+        "id": "p3-l4-t7",
         "type": "multipleChoice",
         "prompt": "Mini-texte : « In macello rumor crescit : vir oleum emit noctu. » Quel indice nouveau apparaît ?",
         "options": [
@@ -1206,7 +1207,7 @@ export const lessons5eP3 = [
     ],
     "production": [
       {
-        "id": "p3-l14-p1",
+        "id": "p3-l4-p1",
         "type": "textInput",
         "prompt": "Traduis : vir oleum celat",
         "expected": "l'homme cache l'huile",
@@ -1254,7 +1255,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l14-p2",
+        "id": "p3-l4-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : Le marchand voit l’homme.",
         "expected": "mercator virum videt",
@@ -1306,7 +1307,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l14-p3",
+        "id": "p3-l4-p3",
         "type": "textInput",
         "prompt": "Complète en latin : « vicinus ... invenit » (l’indice).",
         "expected": "signum",
@@ -1372,7 +1373,7 @@ export const lessons5eP3 = [
     }
   },
   {
-    "id": "p3-l15",
+    "id": "p3-l5",
     "period": 3,
     "periodId": "p3",
     "title": "In tabernis",
@@ -1400,7 +1401,7 @@ export const lessons5eP3 = [
     "maxScore": 10,
     "training": [
       {
-        "id": "p3-l15-t1",
+        "id": "p3-l5-t1",
         "type": "singleChoice",
         "prompt": "Quel mot est de 2e déclinaison masculine ?",
         "options": [
@@ -1414,7 +1415,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l15-t2",
+        "id": "p3-l5-t2",
         "type": "matching",
         "prompt": "Associe mot et sens.",
         "pairs": [
@@ -1450,7 +1451,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l15-t3",
+        "id": "p3-l5-t3",
         "type": "singleChoice",
         "prompt": "« tabernarius virum audit » : qui entend l’homme ?",
         "options": [
@@ -1464,7 +1465,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l15-t4",
+        "id": "p3-l5-t4",
         "type": "singleChoice",
         "prompt": "« virum vicinus accusat » : qui est accusé ?",
         "options": [
@@ -1478,7 +1479,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l15-t5",
+        "id": "p3-l5-t5",
         "type": "multipleChoice",
         "prompt": "Traductions recevables de « dominus servum vocat ».",
         "options": [
@@ -1495,7 +1496,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l15-t6",
+        "id": "p3-l5-t6",
         "type": "singleChoice",
         "prompt": "Dans « amicus vicinum timet », qui a peur ?",
         "options": [
@@ -1509,7 +1510,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l15-t7",
+        "id": "p3-l5-t7",
         "type": "multipleChoice",
         "prompt": "Mini-texte : « Tabernarius sero virum videt. Amicus dubitat. » Qui a vu l’homme tard ?",
         "options": [
@@ -1527,7 +1528,7 @@ export const lessons5eP3 = [
     ],
     "production": [
       {
-        "id": "p3-l15-p1",
+        "id": "p3-l5-p1",
         "type": "textInput",
         "prompt": "Traduis : amicus vicinum timet",
         "expected": "l'ami craint le voisin",
@@ -1579,7 +1580,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l15-p2",
+        "id": "p3-l5-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : Le voisin appelle le serviteur.",
         "expected": "vicinus servum vocat",
@@ -1631,7 +1632,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l15-p3",
+        "id": "p3-l5-p3",
         "type": "textInput",
         "prompt": "Traduis : tabernarius vicinum audit.",
         "expected": "le boutiquier entend le voisin",
@@ -1704,7 +1705,7 @@ export const lessons5eP3 = [
     }
   },
   {
-    "id": "p3-l16",
+    "id": "p3-l6",
     "period": 3,
     "periodId": "p3",
     "title": "In balneo",
@@ -1732,7 +1733,7 @@ export const lessons5eP3 = [
     "maxScore": 10,
     "training": [
       {
-        "id": "p3-l16-t1",
+        "id": "p3-l6-t1",
         "type": "singleChoice",
         "prompt": "Quelle terminaison marque souvent « je » ?",
         "options": [
@@ -1746,7 +1747,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l16-t2",
+        "id": "p3-l6-t2",
         "type": "matching",
         "prompt": "Associe -o / -s / -t et la personne.",
         "pairs": [
@@ -1776,7 +1777,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l16-t3",
+        "id": "p3-l6-t3",
         "type": "singleChoice",
         "prompt": "« nego » signifie…",
         "options": [
@@ -1790,7 +1791,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l16-t4",
+        "id": "p3-l6-t4",
         "type": "singleChoice",
         "prompt": "« tu entends » =",
         "options": [
@@ -1804,7 +1805,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l16-t5",
+        "id": "p3-l6-t5",
         "type": "multipleChoice",
         "prompt": "Choisis les formes de 1re personne.",
         "options": [
@@ -1822,7 +1823,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l16-t6",
+        "id": "p3-l6-t6",
         "type": "singleChoice",
         "prompt": "Mini-témoignage : « Video virum. Nego rumorem. » Qui parle ?",
         "options": [
@@ -1836,7 +1837,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l16-t7",
+        "id": "p3-l6-t7",
         "type": "textInput",
         "prompt": "Passe de la 1re à la 2e personne : « audio » devient « ... »",
         "expected": "audis",
@@ -1879,7 +1880,7 @@ export const lessons5eP3 = [
     ],
     "production": [
       {
-        "id": "p3-l16-p1",
+        "id": "p3-l6-p1",
         "type": "textInput",
         "prompt": "Traduis : audio virum",
         "expected": "j'entends l'homme",
@@ -1927,7 +1928,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l16-p2",
+        "id": "p3-l6-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : Je nie la rumeur.",
         "expected": "nego rumorem",
@@ -1971,7 +1972,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l16-p3",
+        "id": "p3-l6-p3",
         "type": "textInput",
         "prompt": "Complète le témoignage : « Ego virum ... ; tu rumorem ... ; ille in balneum ... »",
         "expected": "video ; negas ; intrat",
@@ -2044,7 +2045,7 @@ export const lessons5eP3 = [
     }
   },
   {
-    "id": "p3-l17",
+    "id": "p3-l7",
     "period": 3,
     "periodId": "p3",
     "title": "In foro",
@@ -2072,7 +2073,7 @@ export const lessons5eP3 = [
     "maxScore": 10,
     "training": [
       {
-        "id": "p3-l17-t1",
+        "id": "p3-l7-t1",
         "type": "singleChoice",
         "prompt": "Quelle forme correspond à « nous » ?",
         "options": [
@@ -2086,7 +2087,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l17-t2",
+        "id": "p3-l7-t2",
         "type": "matching",
         "prompt": "Associe la terminaison et la personne.",
         "pairs": [
@@ -2116,7 +2117,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l17-t3",
+        "id": "p3-l7-t3",
         "type": "singleChoice",
         "prompt": "« vicini clamant » : qui crie ?",
         "options": [
@@ -2130,7 +2131,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l17-t4",
+        "id": "p3-l7-t4",
         "type": "singleChoice",
         "prompt": "Quelle forme est bien au pluriel ?",
         "options": [
@@ -2144,7 +2145,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l17-t5",
+        "id": "p3-l7-t5",
         "type": "multipleChoice",
         "prompt": "Repère les verbes au pluriel.",
         "options": [
@@ -2162,7 +2163,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l17-t6",
+        "id": "p3-l7-t6",
         "type": "multipleChoice",
         "prompt": "Mini-texte : « Vicini clamant, mercatores respondent, puellae audiunt. » Qui parle pour le quartier ?",
         "options": [
@@ -2180,7 +2181,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l17-t7",
+        "id": "p3-l7-t7",
         "type": "singleChoice",
         "prompt": "Dans « in foro vicini clamant », où crient les voisins ?",
         "options": [
@@ -2196,7 +2197,7 @@ export const lessons5eP3 = [
     ],
     "production": [
       {
-        "id": "p3-l17-p1",
+        "id": "p3-l7-p1",
         "type": "textInput",
         "prompt": "Traduis : quaerimus verum",
         "expected": "nous cherchons la vérité",
@@ -2242,7 +2243,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l17-p2",
+        "id": "p3-l7-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : Les voisins répondent au forum.",
         "expected": "vicini in foro respondent",
@@ -2294,7 +2295,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l17-p3",
+        "id": "p3-l7-p3",
         "type": "textInput",
         "prompt": "Complète : « In foro nos ... ; vos ... ; illi ... »",
         "expected": "quaerimus ; auditis ; respondent",
@@ -2367,7 +2368,7 @@ export const lessons5eP3 = [
     }
   },
   {
-    "id": "p3-l18",
+    "id": "p3-l8",
     "period": 3,
     "periodId": "p3",
     "title": "Canis et porta obscura",
@@ -2395,7 +2396,7 @@ export const lessons5eP3 = [
     "maxScore": 10,
     "training": [
       {
-        "id": "p3-l18-t1",
+        "id": "p3-l8-t1",
         "type": "singleChoice",
         "prompt": "latrat signifie…",
         "options": [
@@ -2409,7 +2410,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l18-t2",
+        "id": "p3-l8-t2",
         "type": "matching",
         "prompt": "Associe les mots-clés de la scène.",
         "pairs": [
@@ -2445,7 +2446,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l18-t3",
+        "id": "p3-l8-t3",
         "type": "singleChoice",
         "prompt": "« ante portam obscuram canis latrat » : sens correct ?",
         "options": [
@@ -2459,7 +2460,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l18-t4",
+        "id": "p3-l8-t4",
         "type": "singleChoice",
         "prompt": "« latrat ante portam canis » garde le même sens ?",
         "options": [
@@ -2473,7 +2474,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l18-t5",
+        "id": "p3-l8-t5",
         "type": "multipleChoice",
         "prompt": "Quels ordres peuvent signifier « Le chien reste devant la porte » ?",
         "options": [
@@ -2491,7 +2492,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l18-t6",
+        "id": "p3-l8-t6",
         "type": "singleChoice",
         "prompt": "Dans « manet ante portam canis », quel mot est le sujet ?",
         "options": [
@@ -2505,7 +2506,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l18-t7",
+        "id": "p3-l8-t7",
         "type": "multipleChoice",
         "prompt": "Mini-texte : « Canis portam obscuram timet et recusat. » Quelle porte l’effraie ?",
         "options": [
@@ -2523,7 +2524,7 @@ export const lessons5eP3 = [
     ],
     "production": [
       {
-        "id": "p3-l18-p1",
+        "id": "p3-l8-p1",
         "type": "textInput",
         "prompt": "Traduis : canis portam timet",
         "expected": "le chien craint la porte",
@@ -2569,7 +2570,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l18-p2",
+        "id": "p3-l8-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : Le chien reste devant la porte sombre.",
         "expected": "canis ante portam obscuram manet",
@@ -2621,7 +2622,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l18-p3",
+        "id": "p3-l8-p3",
         "type": "textInput",
         "prompt": "Complète la traduction : « Manet ante portam canis » = « ... reste devant la porte »",
         "expected": "le chien",
@@ -2689,7 +2690,7 @@ export const lessons5eP3 = [
     }
   },
   {
-    "id": "p3-l19",
+    "id": "p3-l9",
     "period": 3,
     "periodId": "p3",
     "title": "Apud aram et fontem",
@@ -2717,7 +2718,7 @@ export const lessons5eP3 = [
     "maxScore": 10,
     "training": [
       {
-        "id": "p3-l19-t1",
+        "id": "p3-l9-t1",
         "type": "singleChoice",
         "prompt": "« tabella falsa » signifie…",
         "options": [
@@ -2731,7 +2732,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l19-t2",
+        "id": "p3-l9-t2",
         "type": "matching",
         "prompt": "Associe les mots de la scène.",
         "pairs": [
@@ -2767,7 +2768,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l19-t3",
+        "id": "p3-l9-t3",
         "type": "singleChoice",
         "prompt": "« vicina tabellam legit » : qui lit ?",
         "options": [
@@ -2781,7 +2782,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l19-t4",
+        "id": "p3-l9-t4",
         "type": "multipleChoice",
         "prompt": "Texte bref : « Tabella mutat nomen. Verum non est. » Qu’est-ce qui est juste ?",
         "options": [
@@ -2798,7 +2799,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l19-t5",
+        "id": "p3-l9-t5",
         "type": "singleChoice",
         "prompt": "Dans « servus tabellam ostendit », que montre le serviteur ?",
         "options": [
@@ -2812,7 +2813,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l19-t6",
+        "id": "p3-l9-t6",
         "type": "singleChoice",
         "prompt": "Texte : « Oleum in tabella est. Vir noctu exit. » Quel détail relie la tablette à la scène nocturne ?",
         "options": [
@@ -2826,7 +2827,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l19-t7",
+        "id": "p3-l9-t7",
         "type": "multipleChoice",
         "prompt": "Lecture à ordre variable : « legit tabellam vicina » signifie…",
         "options": [
@@ -2844,7 +2845,7 @@ export const lessons5eP3 = [
     ],
     "production": [
       {
-        "id": "p3-l19-p1",
+        "id": "p3-l9-p1",
         "type": "textInput",
         "prompt": "Traduis : servus verum ostendit",
         "expected": "le serviteur montre la vérité",
@@ -2900,7 +2901,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l19-p2",
+        "id": "p3-l9-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : La voisine lit la tablette.",
         "expected": "vicina tabellam legit",
@@ -2952,7 +2953,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l19-p3",
+        "id": "p3-l9-p3",
         "type": "textInput",
         "prompt": "Traduis : tabella falsa verum non ostendit.",
         "expected": "la tablette falsifiée ne montre pas le vrai",
@@ -3025,7 +3026,7 @@ export const lessons5eP3 = [
     }
   },
   {
-    "id": "p3-l20",
+    "id": "p3-l2",
     "period": 3,
     "periodId": "p3",
     "title": "Lucernae in vico",
@@ -3053,7 +3054,7 @@ export const lessons5eP3 = [
     "maxScore": 10,
     "training": [
       {
-        "id": "p3-l20-t1",
+        "id": "p3-l2-t1",
         "type": "singleChoice",
         "prompt": "lucerna signifie…",
         "options": [
@@ -3067,7 +3068,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l20-t2",
+        "id": "p3-l10-t2",
         "type": "matching",
         "prompt": "Associe mot et traduction.",
         "pairs": [
@@ -3103,7 +3104,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l20-t3",
+        "id": "p3-l10-t3",
         "type": "singleChoice",
         "prompt": "« vicina lucernam ante ianuam ponit » : que fait la voisine ?",
         "options": [
@@ -3117,7 +3118,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l20-t4",
+        "id": "p3-l10-t4",
         "type": "multipleChoice",
         "prompt": "Traductions recevables de « vicini oleum portant ».",
         "options": [
@@ -3134,7 +3135,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l20-t5",
+        "id": "p3-l10-t5",
         "type": "singleChoice",
         "prompt": "Dans « vicina lucernam ante ianuam ponit », quel mot est le complément d’objet direct ?",
         "options": [
@@ -3148,7 +3149,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l20-t6",
+        "id": "p3-l10-t6",
         "type": "multipleChoice",
         "prompt": "Mini-texte : « Vicini oleum portant. Puellae lucernas tenent. Servus adiuvat. » Qui apporte quoi ?",
         "options": [
@@ -3166,7 +3167,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l20-t7",
+        "id": "p3-l10-t7",
         "type": "singleChoice",
         "prompt": "Dans « in vico vicinus lucernam ante ianuam ponit », le verbe est…",
         "options": [
@@ -3182,7 +3183,7 @@ export const lessons5eP3 = [
     ],
     "production": [
       {
-        "id": "p3-l20-p1",
+        "id": "p3-l10-p1",
         "type": "textInput",
         "prompt": "Traduis : lucerna in via est",
         "expected": "la lampe est dans la rue",
@@ -3230,7 +3231,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l20-p2",
+        "id": "p3-l10-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : Le voisin place la lampe devant la porte.",
         "expected": "vicinus lucernam ante ianuam ponit",
@@ -3318,7 +3319,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l20-p3",
+        "id": "p3-l10-p3",
         "type": "textInput",
         "prompt": "Traduis : vicini oleum portant et laborant.",
         "expected": "les voisins portent l’huile et travaillent",
@@ -3391,7 +3392,7 @@ export const lessons5eP3 = [
     }
   },
   {
-    "id": "p3-l21",
+    "id": "p3-l11",
     "period": 3,
     "periodId": "p3",
     "title": "Vicus noctu clarior est",
@@ -3419,7 +3420,7 @@ export const lessons5eP3 = [
     "maxScore": 10,
     "training": [
       {
-        "id": "p3-l21-t1",
+        "id": "p3-l11-t1",
         "type": "singleChoice",
         "prompt": "quietus signifie…",
         "options": [
@@ -3433,7 +3434,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l21-t2",
+        "id": "p3-l11-t2",
         "type": "matching",
         "prompt": "Associe vocabulaire et sens sans nouvelle règle.",
         "pairs": [
@@ -3469,7 +3470,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l21-t3",
+        "id": "p3-l11-t3",
         "type": "singleChoice",
         "prompt": "Phrase sûre : « vir in domo manet » signifie…",
         "options": [
@@ -3483,7 +3484,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l21-t4",
+        "id": "p3-l11-t4",
         "type": "multipleChoice",
         "prompt": "Traductions recevables de « lucerna vicum adiuvat ».",
         "options": [
@@ -3500,7 +3501,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l21-t5",
+        "id": "p3-l11-t5",
         "type": "singleChoice",
         "prompt": "Dans « lucerna vicum adiuvat », quel mot reçoit l’aide ?",
         "options": [
@@ -3514,7 +3515,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l21-t6",
+        "id": "p3-l11-t6",
         "type": "multipleChoice",
         "prompt": "Mini-texte : « Nunc vicus clarior est. Canis quietus manet. Rumor minor est. » Qu’est-ce qui change ?",
         "options": [
@@ -3532,7 +3533,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l21-t7",
+        "id": "p3-l11-t7",
         "type": "multipleChoice",
         "prompt": "Texte : « Lucernae manent. Vicus clarior est. Canis minus latrat. » Quels effets sont visibles ?",
         "options": [
@@ -3552,7 +3553,7 @@ export const lessons5eP3 = [
     ],
     "production": [
       {
-        "id": "p3-l21-p1",
+        "id": "p3-l11-p1",
         "type": "textInput",
         "prompt": "Traduis : vicus quietus manet",
         "expected": "le quartier reste calme",
@@ -3596,7 +3597,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l21-p2",
+        "id": "p3-l11-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : L’homme reste dans la maison.",
         "expected": "vir in domo manet",
@@ -3648,7 +3649,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l21-p3",
+        "id": "p3-l11-p3",
         "type": "textInput",
         "prompt": "Traduis : rumor minor est.",
         "expected": "la rumeur est plus faible",
@@ -3718,7 +3719,7 @@ export const lessons5eP3 = [
     }
   },
   {
-    "id": "p3-l22",
+    "id": "p3-l12",
     "period": 3,
     "periodId": "p3",
     "title": "Lux concordiam restituit",
@@ -3746,7 +3747,7 @@ export const lessons5eP3 = [
     "maxScore": 10,
     "training": [
       {
-        "id": "p3-l22-t1",
+        "id": "p3-l12-t1",
         "type": "singleChoice",
         "prompt": "Quel mot signifie « paix » ?",
         "options": [
@@ -3760,7 +3761,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l22-t2",
+        "id": "p3-l12-t2",
         "type": "multipleChoice",
         "prompt": "Quels lieux du quartier ont servi dans l’enquête de P3 ?",
         "options": [
@@ -3780,7 +3781,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l22-t3",
+        "id": "p3-l12-t3",
         "type": "matching",
         "prompt": "Associe latin et français.",
         "pairs": [
@@ -3816,7 +3817,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l22-t4",
+        "id": "p3-l12-t4",
         "type": "singleChoice",
         "prompt": "Dans « vicinus donum videt », le complément objet est…",
         "options": [
@@ -3830,7 +3831,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l22-t5",
+        "id": "p3-l12-t5",
         "type": "singleChoice",
         "prompt": "« respondent » correspond à…",
         "options": [
@@ -3844,7 +3845,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l22-t6",
+        "id": "p3-l12-t6",
         "type": "multipleChoice",
         "prompt": "Texte final : « Vir noctu ex insula exibat. Tabella falsa erat. Vicini lucernas ponebant. Pax in vico redit. » Quels éléments montrent que l’enquête s’achève ?",
         "options": [
@@ -3864,7 +3865,7 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l22-t7",
+        "id": "p3-l12-t7",
         "type": "singleChoice",
         "prompt": "Dans « vicini lucernam vident », que voient les voisins ?",
         "options": [
@@ -3880,7 +3881,7 @@ export const lessons5eP3 = [
     ],
     "production": [
       {
-        "id": "p3-l22-p1",
+        "id": "p3-l12-p1",
         "type": "textInput",
         "prompt": "Traduis : pax in vico redit",
         "expected": "la paix revient dans le quartier",
@@ -3928,7 +3929,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l22-p2",
+        "id": "p3-l12-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : Les voisins voient la lampe.",
         "expected": "vicini lucernam vident",
@@ -3980,7 +3981,7 @@ export const lessons5eP3 = [
         ]
       },
       {
-        "id": "p3-l22-p3",
+        "id": "p3-l12-p3",
         "type": "textInput",
         "prompt": "Traduis : concordia in Subura redit.",
         "expected": "la concorde revient dans Subure",
