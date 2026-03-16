@@ -2585,3 +2585,53 @@ select {
       );
   }
 }
+
+/* =========================
+   HOME: suppression du faux header
+   ========================= */
+
+/* lien d’évitement accessible, mais hors flux tant qu’il n’est pas focus */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  z-index: 2000;
+  padding: 0.7rem 0.95rem;
+  border-radius: 12px;
+  background: #fffaf2;
+  color: #2c241d;
+  border: 1px solid rgba(120, 93, 58, 0.22);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+}
+
+/* sur la home, on retire la coque supérieure qui fait doublon avec le hero */
+#app[data-route="home"] > .app-header,
+#app[data-route="home"] > .top-nav {
+  display: none;
+}
+
+/* on enlève l’espace haut parasite sur la home */
+#app[data-route="home"] {
+  padding-top: 0;
+}
+
+#app[data-route="home"] > #view-root {
+  padding-top: 0;
+}
+
+/* si tu veux vraiment coller le hero au haut utile de l’écran */
+#app[data-route="home"] .home-view {
+  margin-top: 0;
+}
