@@ -2441,7 +2441,18 @@ html[data-theme="dark"] .lesson-view .lesson-toolbar__panel-inner {
 }
 
 /* en-dessous, on garde un comportement fluide avec scroll */
-@media (max-width: 1099px), (max-height: 759px) {
+/* desktop : les 3 niveaux restent en ligne */
+@media (min-width: 980px) {
+  .home-view .level-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+  }
+}
+
+/* tablette : 2 colonnes */
+@media (min-width: 700px) and (max-width: 979px) {
   body:has(.home-view) {
     overflow: auto;
   }
@@ -2449,12 +2460,32 @@ html[data-theme="dark"] .lesson-view .lesson-toolbar__panel-inner {
   .home-view {
     min-height: auto;
     height: auto;
-    display: grid;
     grid-template-rows: auto auto auto;
   }
 
   .home-view .level-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+}
+
+/* mobile : 1 colonne */
+@media (max-width: 699px) {
+  body:has(.home-view) {
+    overflow: auto;
+  }
+
+  .home-view {
+    min-height: auto;
+    height: auto;
+    grid-template-rows: auto auto auto;
+  }
+
+  .home-view .level-grid {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 0.85rem;
   }
 }
 
