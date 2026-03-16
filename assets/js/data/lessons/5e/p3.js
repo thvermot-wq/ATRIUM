@@ -22,10 +22,10 @@ export const lessons5eP3 = [
     "title": "Rumor nocturnus",
     "subtitle": "Une rumeur nocturne rouvre l’affaire quand une voisine affirme avoir vu un homme sortir dans l’ombre.",
     "objective": "Réactiver les interrogatifs dans une scène d’enquête nocturne.",
-    "lessonPoint": "Je trouve le verbe d’abord, puis qui/quoi/où/pourquoi ; l’ordre latin peut varier.",
+    "lessonPoint": "Je trouve le verbe d’abord, puis qui / quoi / où / pourquoi ; l’ordre latin peut varier.",
     "narrative": "Une rumeur dit qu’un homme sort la nuit : les voisins veulent vérifier les faits.",
     "canDo": [
-      "Je reconnais quis/quid/ubi/cur.",
+      "Je reconnais quis / quid /ubi / cur.",
       "Je distingue vu et entendu.",
       "Je traduis une question simple."
     ],
@@ -36,9 +36,11 @@ export const lessons5eP3 = [
       "cur = pourquoi ?",
       "rumor = rumeur",
       "vir = homme",
+      "vicum = le voisinage, le quartier",
       "noctu = de nuit",
       "exit = il/elle sort",
       "videt = il/elle voit",
+      "turbat = il/elle trouble",
       "dicit = il/elle dit"
     ],
     "maxScore": 10,
@@ -112,13 +114,13 @@ export const lessons5eP3 = [
         "type": "multipleChoice",
         "prompt": "Traductions recevables de « vir noctu exit ».",
         "options": [
-          "L’homme sort de nuit",
+          "L’homme sort pendant la nuit",
           "Un homme sort la nuit",
-          "La nuit sort l’homme",
-          "L’homme entre la nuit"
+          "La nuit sort de l’homme",
+          "L’homme entre dans la nuit"
         ],
         "expected": [
-          "L’homme sort de nuit",
+          "L’homme sort pendant la nuit",
           "Un homme sort la nuit"
         ],
         "shuffle": true,
@@ -160,7 +162,7 @@ export const lessons5eP3 = [
           "L’homme est vu",
           "Le serviteur parle",
           "La tablette est vue",
-          "Le marché parle"
+          "La voisine parle"
         ],
         "expected": [
           "L’homme est vu",
@@ -174,7 +176,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l11-p1",
         "type": "textInput",
-        "prompt": "Traduis : quis virum videt ?",
+        "prompt": "Traduis : Quis virum videt ?",
         "expected": "qui voit l'homme ?",
         "acceptedAnswers": [
           "qui voit l'homme",
@@ -286,7 +288,9 @@ export const lessons5eP3 = [
         "expected": "la rumeur trouble le quartier",
         "acceptedAnswers": [
           "la rumeur trouble le quartier",
+          "la rumeur trouble le voisinage",
           "la rumeur perturbe le quartier",
+          "la rumeur perturbe le voisinage",
           "la rumeur trouble la rue",
           "la rumeur perturbe la rue"
         ],
@@ -295,7 +299,9 @@ export const lessons5eP3 = [
           "language": "fr",
           "accepted": [
             "la rumeur trouble le quartier",
+            "la rumeur trouble le voisinage",
             "la rumeur perturbe le quartier",
+            "la rumeur perturbe le voisinage",
             "la rumeur trouble la rue",
             "la rumeur perturbe la rue"
           ]
@@ -330,7 +336,7 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je commence par le verbe et je distingue ce qui est vu de ce qui est seulement dit.",
+        "Je commence par le verbe et je distingue sujet, objet (COD) et complément de lieu.",
         "Je sais traduire une question d’enquête simple."
       ],
       "cahier": [
