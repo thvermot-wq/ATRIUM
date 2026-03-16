@@ -2457,3 +2457,131 @@ html[data-theme="dark"] .lesson-view .lesson-toolbar__panel-inner {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================
+   GLOBAL BACKGROUND — ATRIUM
+   image de fond sur tout le site
+   ========================= */
+
+html {
+  background: #14110f;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+}
+
+/* fond global unique */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body::before {
+  z-index: -2;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 12, 10, 0.84) 0%,
+      rgba(28, 21, 16, 0.58) 24%,
+      rgba(40, 30, 22, 0.30) 50%,
+      rgba(15, 12, 10, 0.84) 100%
+    ),
+    url("../img/home-bg.webp") center center / cover no-repeat;
+  transform: scale(1.02);
+  transform-origin: center;
+}
+
+body::after {
+  z-index: -1;
+  background:
+    radial-gradient(
+      circle at 50% 12%,
+      rgba(255, 248, 236, 0.08) 0%,
+      rgba(255, 248, 236, 0) 34%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(10, 8, 7, 0.34) 0%,
+      rgba(10, 8, 7, 0.12) 18%,
+      rgba(10, 8, 7, 0.12) 82%,
+      rgba(10, 8, 7, 0.34) 100%
+    );
+}
+
+#app {
+  position: relative;
+  z-index: 1;
+}
+
+/* on neutralise les couches de fond spécifiques à la home
+   pour éviter une double image ou un double voile */
+.home-view::before,
+.home-view::after {
+  content: none;
+}
+
+/* conteneurs principaux : plus opaques pour lecture parfaite */
+.card,
+#period-summary,
+#lesson-list,
+#lesson-detail {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 252, 246, 0.94) 0%,
+    rgba(247, 239, 227, 0.94) 100%
+  );
+  backdrop-filter: blur(6px) saturate(108%);
+}
+
+/* éléments internes des dashboards et leçons */
+.period-card__toggle,
+.lesson-line,
+.period-box,
+.lesson-card {
+  background: linear-gradient(
+    180deg,
+    rgba(249, 242, 231, 0.90) 0%,
+    rgba(244, 235, 223, 0.90) 100%
+  );
+}
+
+/* champs de réponse : rester très clairs sur fond illustré */
+input[type="text"],
+textarea,
+select {
+  background: rgba(255, 253, 249, 0.97);
+}
+
+/* boutons secondaires un peu plus solides visuellement */
+.btn-secondary {
+  background: rgba(255, 250, 244, 0.92);
+}
+
+/* sur mobile, on garde le même principe mais avec un voile un peu plus fort */
+@media (max-width: 740px) {
+  body::before {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(15, 12, 10, 0.88) 0%,
+        rgba(30, 23, 18, 0.66) 28%,
+        rgba(15, 12, 10, 0.88) 100%
+      ),
+      url("../img/home-bg.webp") center 30% / cover no-repeat;
+  }
+
+  body::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(10, 8, 7, 0.10) 0%,
+        rgba(10, 8, 7, 0.18) 100%
+      );
+  }
+}
