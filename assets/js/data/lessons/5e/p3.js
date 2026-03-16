@@ -1,4 +1,3 @@
-
 // Données de leçons 5E · Période 3 — Discordia in Subura.
 const headerContexts5eP3 = {
   "p3-l11": "Une rumeur nocturne rouvre l’affaire quand une voisine affirme avoir vu un homme sortir dans l’ombre.",
@@ -21,8 +20,8 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Rumor nocturnus",
-    subtitle: headerContexts5eP3["p3-l11"],
-    "objective": "Relancer l’enquête nocturne dans Subure.",
+    "subtitle": "Une rumeur nocturne rouvre l’affaire quand une voisine affirme avoir vu un homme sortir dans l’ombre.",
+    "objective": "Réactiver les interrogatifs dans une scène d’enquête nocturne.",
     "lessonPoint": "Je trouve le verbe d’abord, puis qui/quoi/où/pourquoi ; l’ordre latin peut varier.",
     "narrative": "Une rumeur dit qu’un homme sort la nuit : les voisins veulent vérifier les faits.",
     "canDo": [
@@ -127,18 +126,16 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l11-t5",
-        "type": "ordering",
-        "prompt": "Remets en ordre : vir / noctu / exit",
+        "type": "singleChoice",
+        "prompt": "Dans « noctu vir exit », quel mot indique le moment ?",
         "options": [
-          "vir",
           "noctu",
-          "exit"
-        ],
-        "expected": [
           "vir",
-          "noctu",
-          "exit"
+          "exit",
+          "rumor"
         ],
+        "expected": "noctu",
+        "shuffle": true,
         "points": 1
       },
       {
@@ -285,24 +282,26 @@ export const lessons5eP3 = [
       {
         "id": "p3-l11-p3",
         "type": "textInput",
-        "prompt": "Explique en français court : qu’est-ce qu’une rumeur ?",
-        "expected": "une information non vérifiée",
+        "prompt": "Traduis : rumor vicum turbat.",
+        "expected": "la rumeur trouble le quartier",
         "acceptedAnswers": [
-          "une information non vérifiée",
-          "une parole qu'on répète sans preuve",
-          "quelque chose qu'on dit sans vérifier"
+          "la rumeur trouble le quartier",
+          "la rumeur perturbe le quartier",
+          "la rumeur trouble la rue",
+          "la rumeur perturbe la rue"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
-            "une information non vérifiée",
-            "une parole qu'on répète sans preuve",
-            "quelque chose qu'on dit sans vérifier"
+            "la rumeur trouble le quartier",
+            "la rumeur perturbe le quartier",
+            "la rumeur trouble la rue",
+            "la rumeur perturbe la rue"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "une information non vérifiée",
+        "canonicalAnswer": "la rumeur trouble le quartier",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -311,19 +310,19 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Traduction correcte d’une phrase simple avec sujet, COD et verbe.",
         "rejectIf": [
           "verbe incorrect",
           "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "une information non vérifiée",
+            "input": "la rumeur trouble le quartier",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "le quartier trouble la rumeur",
             "isCorrect": false
           }
         ]
@@ -331,17 +330,17 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je commence par le verbe.",
-        "Je distingue fait observé et parole rapportée."
+        "Je commence par le verbe et je distingue ce qui est vu de ce qui est seulement dit.",
+        "Je sais traduire une question d’enquête simple."
       ],
       "cahier": [
-        "Je retiens : quis/quid/ubi/cur",
-        "Je recopie sur mon cahier : l’ordre latin peut varier"
+        "quis / quid / ubi / cur",
+        "rumor vicum turbat = la rumeur trouble le quartier"
       ],
       "keywords": [
         "nuit",
         "rumeur",
-        "enquête"
+        "interrogatifs"
       ]
     },
     "meta": {
@@ -358,9 +357,9 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Inter insulas",
-    subtitle: headerContexts5eP3["p3-l12"],
-    "objective": "Suivre un trajet nocturne dans le quartier.",
-    "lessonPoint": "Les prépositions m’aident à suivre le chemin exact d’un personnage.",
+    "subtitle": "Marcus suit la trace entre les insulae, se cache dans les angles, et comprend qu’un homme a pris l’habitude de passer là quand les portes se ferment.",
+    "objective": "Lire un trajet nocturne grâce aux prépositions.",
+    "lessonPoint": "Je lis le groupe prépositionnel d’un seul bloc pour suivre le trajet.",
     "narrative": "L’homme passe entre les insulae, puis disparaît dans une ruelle.",
     "canDo": [
       "Je lis ad/in/ex/ante.",
@@ -461,35 +460,31 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l12-t5",
-        "type": "ordering",
-        "prompt": "Remets : vir / in via / currit",
+        "type": "singleChoice",
+        "prompt": "Dans « vir in via currit », quel groupe indique le lieu ?",
         "options": [
+          "in via",
           "vir",
-          "in",
-          "via",
-          "currit"
+          "currit",
+          "nullus"
         ],
-        "expected": [
-          "vir",
-          "in",
-          "via",
-          "currit"
-        ],
+        "expected": "in via",
+        "shuffle": true,
         "points": 1
       },
       {
         "id": "p3-l12-t6",
         "type": "multipleChoice",
-        "prompt": "Traductions recevables de « vir ad forum ambulat ».",
+        "prompt": "Traductions recevables de « vir ad forum currit ».",
         "options": [
+          "L’homme court vers le forum",
           "L’homme va vers le forum",
-          "L’homme marche au forum",
-          "Le forum va vers l’homme",
+          "Le forum court vers l’homme",
           "L’homme se dirige vers la place publique"
         ],
         "expected": [
+          "L’homme court vers le forum",
           "L’homme va vers le forum",
-          "L’homme marche au forum",
           "L’homme se dirige vers la place publique"
         ],
         "shuffle": true,
@@ -633,24 +628,34 @@ export const lessons5eP3 = [
       {
         "id": "p3-l12-p3",
         "type": "textInput",
-        "prompt": "Complète : ad = ... ; ex = ...",
-        "expected": "vers ; hors de",
+        "prompt": "Traduis : vir ex insula exit et ante ianuam stat.",
+        "expected": "l’homme sort de l’immeuble et se tient devant la porte",
         "acceptedAnswers": [
-          "vers ; hors de",
-          "vers ; depuis",
-          "ad vers ; ex hors de"
+          "l’homme sort de l’immeuble et se tient devant la porte",
+          "l’homme sort de l’insula et se tient devant la porte",
+          "un homme sort de l’immeuble et se tient devant la porte",
+          "un homme sort de l’insula et se tient devant la porte",
+          "l’homme sort de l’immeuble et reste devant la porte",
+          "l’homme sort de l’insula et reste devant la porte",
+          "un homme sort de l’immeuble et reste devant la porte",
+          "un homme sort de l’insula et reste devant la porte"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
-            "vers ; hors de",
-            "vers ; depuis",
-            "ad vers ; ex hors de"
+            "l’homme sort de l’immeuble et se tient devant la porte",
+            "l’homme sort de l’insula et se tient devant la porte",
+            "un homme sort de l’immeuble et se tient devant la porte",
+            "un homme sort de l’insula et se tient devant la porte",
+            "l’homme sort de l’immeuble et reste devant la porte",
+            "l’homme sort de l’insula et reste devant la porte",
+            "un homme sort de l’immeuble et reste devant la porte",
+            "un homme sort de l’insula et reste devant la porte"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "vers ; hors de",
+        "canonicalAnswer": "l’homme sort de l’immeuble et se tient devant la porte",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -659,19 +664,19 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Traduire correctement deux groupes de lieu dans une même phrase.",
         "rejectIf": [
+          "préposition mal comprise",
           "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "vers ; hors de",
+            "input": "l’homme sort de l’immeuble et se tient devant la porte",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "l’homme entre dans l’immeuble et quitte la porte",
             "isCorrect": false
           }
         ]
@@ -679,17 +684,17 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je suis un trajet grâce aux prépositions.",
-        "Je relis les lieux du quartier."
+        "Je lis le groupe prépositionnel d’un seul bloc pour suivre un trajet.",
+        "Je distingue sortie, entrée et arrêt dans la rue."
       ],
       "cahier": [
-        "Je retiens : ad/in/ex/ante",
-        "Je recopie sur mon cahier : insula, via, forum"
+        "ad = vers ; in = dans ; ex = hors de ; ante = devant",
+        "vir ex insula exit et ante ianuam stat"
       ],
       "keywords": [
         "trajet",
-        "quartier",
-        "déplacements"
+        "insula",
+        "prépositions"
       ]
     },
     "meta": {
@@ -706,9 +711,9 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Feminae ad ianuam",
-    subtitle: headerContexts5eP3["p3-l13"],
-    "objective": "Réactiver la 1re déclinaison dans une scène d’observation.",
-    "lessonPoint": "Je repère -a et -am pour distinguer souvent sujet et complément objet.",
+    "subtitle": "Aux portes et aux fenêtres, les voisines de Subure regardent la rue chacune à sa façon.",
+    "objective": "Réinvestir la 1re déclinaison dans une scène d’observation.",
+    "lessonPoint": "Je regarde -a et -am pour distinguer qui agit et ce qui est regardé.",
     "narrative": "Des voisines observent depuis ianuae et fenestrae pendant le passage nocturne.",
     "canDo": [
       "Je reconnais des noms de 1re déclinaison.",
@@ -724,7 +729,7 @@ export const lessons5eP3 = [
       "lucernam = la lampe",
       "viam = la rue",
       "spectat = il/elle regarde",
-      "narrat = il/elle raconte",
+      "aperit = il/elle ouvre",
       "portat = il/elle porte"
     ],
     "maxScore": 10,
@@ -809,18 +814,32 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l13-t5",
-        "type": "ordering",
-        "prompt": "Remets : femina / virum / spectat",
-        "options": [
-          "femina",
-          "virum",
-          "spectat"
+        "type": "matching",
+        "prompt": "Associe chaque mot à sa fonction dans « vicina viam spectat ».",
+        "pairs": [
+          {
+            "left": "vicina",
+            "right": "sujet"
+          },
+          {
+            "left": "viam",
+            "right": "COD"
+          },
+          {
+            "left": "spectat",
+            "right": "verbe"
+          }
         ],
-        "expected": [
-          "femina",
-          "virum",
-          "spectat"
+        "rightOptions": [
+          "verbe",
+          "sujet",
+          "COD"
         ],
+        "expected": {
+          "vicina": "sujet",
+          "viam": "COD",
+          "spectat": "verbe"
+        },
         "points": 1
       },
       {
@@ -843,7 +862,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l13-t7",
         "type": "multipleChoice",
-        "prompt": "Mini-texte : « Vicina ad ianuam stat et viam spectat. » Que voit-elle ?",
+        "prompt": "Mini-texte : « Vicina ad ianuam stat et viam spectat. » Quels éléments de la scène sont présents ?",
         "options": [
           "la rue",
           "la porte",
@@ -962,24 +981,20 @@ export const lessons5eP3 = [
       {
         "id": "p3-l13-p3",
         "type": "textInput",
-        "prompt": "Complète : -a = ... ; -am = ...",
-        "expected": "souvent sujet ; souvent objet",
+        "prompt": "Complète en latin : « La voisine porte la lampe » = « vicina ... portat »",
+        "expected": "lucernam",
         "acceptedAnswers": [
-          "souvent sujet ; souvent objet",
-          "forme de base ; forme objet",
-          "sujet ; complément objet"
+          "lucernam"
         ],
         "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
+          "type": "one-of",
+          "language": "la",
           "accepted": [
-            "souvent sujet ; souvent objet",
-            "forme de base ; forme objet",
-            "sujet ; complément objet"
+            "lucernam"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "souvent sujet ; souvent objet",
+        "canonicalAnswer": "lucernam",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -988,19 +1003,18 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Choisir la bonne forme de COD en -am.",
         "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "forme laissée au nominatif",
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "souvent sujet ; souvent objet",
+            "input": "lucernam",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "lucerna",
             "isCorrect": false
           }
         ]
@@ -1008,12 +1022,12 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je reconnais -a/-am dans une scène réelle.",
-        "J’utilise la porte et la fenêtre comme repères de lieu."
+        "Je distingue mieux qui agit et ce qui est regardé grâce à -a et -am.",
+        "Je lis une scène de porte et de fenêtre sans me tromper sur l’objet."
       ],
       "cahier": [
-        "Je retiens : 1re déclinaison (femina/viam)",
-        "Je recopie sur mon cahier : les voisines observent depuis la ianua"
+        "vicina viam spectat",
+        "-a : sujet fréquent ; -am : COD fréquent"
       ],
       "keywords": [
         "observation",
@@ -1035,9 +1049,9 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In macello",
-    subtitle: headerContexts5eP3["p3-l14"],
-    "objective": "Lire la scène du marché et le nouvel indice d’huile.",
-    "lessonPoint": "Je relie vocabulaire concret et formes neutres pour comprendre un indice.",
+    "subtitle": "Au marché, un marchand reconnaît l’homme et parle d'un parfum tenace d'huile ; si bien que l’odeur grasse revient soudain dans tous les souvenirs.",
+    "objective": "Réinvestir le neutre dans une scène de marché et d’indice.",
+    "lessonPoint": "Je repère les neutres et j’observe leur fonction dans l’indice.",
     "narrative": "Au macellum, un marchand affirme que l’homme a acheté de l’oleum.",
     "canDo": [
       "Je reconnais des neutres fréquents.",
@@ -1046,8 +1060,8 @@ export const lessons5eP3 = [
     ],
     "lexicon": [
       "macellum = marché",
+      "mercator = marchand",
       "oleum = huile",
-      "donum = offrande, cadeau",
       "signum = signe, marque, indice",
       "templum = temple",
       "emit = il/elle achète",
@@ -1155,18 +1169,16 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l14-t6",
-        "type": "ordering",
-        "prompt": "Remets : vir / oleum / emit",
+        "type": "singleChoice",
+        "prompt": "Dans « vir oleum emit », quel mot est le complément d’objet direct ?",
         "options": [
           "vir",
           "oleum",
-          "emit"
+          "emit",
+          "macellum"
         ],
-        "expected": [
-          "vir",
-          "oleum",
-          "emit"
-        ],
+        "expected": "oleum",
+        "shuffle": true,
         "points": 1
       },
       {
@@ -1270,7 +1282,7 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "gradingFocus": "Produire une phrase correcte avec un sujet masculin et un COD.",
         "rejectIf": [
           "verbe incorrect",
           "sens inversé sujet/objet",
@@ -1282,7 +1294,7 @@ export const lessons5eP3 = [
             "isCorrect": true
           },
           {
-            "input": "lorem ipsum",
+            "input": "vir mercatorem videt",
             "isCorrect": false
           }
         ]
@@ -1290,24 +1302,20 @@ export const lessons5eP3 = [
       {
         "id": "p3-l14-p3",
         "type": "textInput",
-        "prompt": "Règle simple : au neutre singulier, sujet et objet sont souvent…",
-        "expected": "semblables",
+        "prompt": "Complète en latin : « vicinus ... invenit » (l’indice).",
+        "expected": "signum",
         "acceptedAnswers": [
-          "semblables",
-          "identiques",
-          "la même forme"
+          "signum"
         ],
         "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
+          "type": "one-of",
+          "language": "la",
           "accepted": [
-            "semblables",
-            "identiques",
-            "la même forme"
+            "signum"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "semblables",
+        "canonicalAnswer": "signum",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -1316,19 +1324,18 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Employer un neutre correct comme COD sans changer sa forme.",
         "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "forme incorrecte",
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "semblables",
+            "input": "signum",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "signam",
             "isCorrect": false
           }
         ]
@@ -1336,17 +1343,17 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je comprends un indice concret (huile).",
-        "Je reconnais des neutres utiles à l’enquête."
+        "Je repère un neutre utile dans une scène concrète de marché.",
+        "Je comprends qu’un neutre peut rester identique comme sujet et comme COD."
       ],
       "cahier": [
-        "Je retiens : macellum, oleum, signum",
-        "Je recopie sur mon cahier : neutre = forme souvent semblable sujet/objet"
+        "mercator virum videt",
+        "signum : même forme au neutre comme sujet ou COD"
       ],
       "keywords": [
         "marché",
-        "indice",
-        "huile"
+        "huile",
+        "neutre"
       ]
     },
     "meta": {
@@ -1363,9 +1370,9 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In tabernis",
-    subtitle: headerContexts5eP3["p3-l15"],
-    "objective": "Comparer les versions au milieu des boutiques.",
-    "lessonPoint": "Je vérifie les formes en -us/-um pour savoir qui agit et qui est accusé.",
+    "subtitle": "Dans les boutiques, les récits se contredisent, mais Flavia oblige chacun à reprendre les faits avant qu'on n'accuse encore quelqu'un à tort.",
+    "objective": "Lire qui agit et qui subit dans des versions contradictoires.",
+    "lessonPoint": "Je regarde -us / -um avant d’interpréter une accusation.",
     "narrative": "Dans les tabernae, les paroles se mélangent : certains accusent trop vite.",
     "canDo": [
       "Je relis la 2e déclinaison masculine.",
@@ -1483,18 +1490,16 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l15-t6",
-        "type": "ordering",
-        "prompt": "Remets : vicinus / servum / accusat",
+        "type": "singleChoice",
+        "prompt": "Dans « amicus vicinum timet », qui a peur ?",
         "options": [
-          "vicinus",
-          "servum",
-          "accusat"
+          "l’ami",
+          "le voisin",
+          "le maître",
+          "le boutiquier"
         ],
-        "expected": [
-          "vicinus",
-          "servum",
-          "accusat"
-        ],
+        "expected": "l’ami",
+        "shuffle": true,
         "points": 1
       },
       {
@@ -1622,24 +1627,26 @@ export const lessons5eP3 = [
       {
         "id": "p3-l15-p3",
         "type": "textInput",
-        "prompt": "Lexique : dominus peut vouloir dire...",
-        "expected": "maître",
+        "prompt": "Traduis : tabernarius vicinum audit.",
+        "expected": "le boutiquier entend le voisin",
         "acceptedAnswers": [
-          "maître",
-          "maître de maison",
-          "patron"
+          "le boutiquier entend le voisin",
+          "le boutiquier écoute le voisin",
+          "un boutiquier entend le voisin",
+          "un boutiquier écoute le voisin"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
-            "maître",
-            "maître de maison",
-            "patron"
+            "le boutiquier entend le voisin",
+            "le boutiquier écoute le voisin",
+            "un boutiquier entend le voisin",
+            "un boutiquier écoute le voisin"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "maître",
+        "canonicalAnswer": "le boutiquier entend le voisin",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -1648,19 +1655,19 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Traduction correcte d’une phrase d’écoute dans la boutique.",
         "rejectIf": [
-          "verbe incorrect",
           "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "verbe incorrect",
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "maître",
+            "input": "le boutiquier entend le voisin",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "le voisin entend le boutiquier",
             "isCorrect": false
           }
         ]
@@ -1668,15 +1675,15 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je vérifie qui agit avant d’accuser.",
-        "Je relis -us/-um en contexte."
+        "Je vérifie les formes avant d’accuser ou d’innocenter.",
+        "Je lis mieux qui agit et qui subit dans les récits contradictoires."
       ],
       "cahier": [
-        "Je retiens : servus/servum, dominus/dominum",
-        "Je recopie sur mon cahier : dans les boutiques, les récits peuvent se déformer"
+        "dominus servum vocat",
+        "-us : sujet fréquent ; -um : COD fréquent"
       ],
       "keywords": [
-        "taberna",
+        "boutiques",
         "accusation",
         "2e déclinaison"
       ]
@@ -1695,9 +1702,9 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In balneo",
-    subtitle: headerContexts5eP3["p3-l16"],
-    "objective": "Réactiver le présent singulier avec des témoignages matinaux.",
-    "lessonPoint": "Au présent singulier : -o (je), -s (tu), -t (il/elle).",
+    "subtitle": "Aux bains, un témoin confirme un détail, en retire un autre, puis Marcus sent que le mensonge fatigue ceux qui le portent depuis trop longtemps.",
+    "objective": "Identifier je / tu / il-elle dans des témoignages.",
+    "lessonPoint": "Je lis la terminaison du verbe pour savoir qui parle.",
     "narrative": "Aux bains, des témoins disent avoir vu l’homme avant l’aube.",
     "canDo": [
       "Je repère les personnes du singulier.",
@@ -1811,7 +1818,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l16-t6",
         "type": "singleChoice",
-        "prompt": "Mini-témoignage : « Video virum. Nego rumor. » Qui parle ?",
+        "prompt": "Mini-témoignage : « Video virum. Nego rumorem. » Qui parle ?",
         "options": [
           "je",
           "tu",
@@ -1824,19 +1831,44 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l16-t7",
-        "type": "ordering",
-        "prompt": "Mets le verbe en fin : ego / virum / audio",
-        "options": [
-          "ego",
-          "virum",
-          "audio"
+        "type": "textInput",
+        "prompt": "Passe de la 1re à la 2e personne : « audio » devient « ... »",
+        "expected": "audis",
+        "acceptedAnswers": [
+          "audis"
         ],
-        "expected": [
-          "ego",
-          "virum",
-          "audio"
+        "answerConfig": {
+          "type": "one-of",
+          "language": "la",
+          "accepted": [
+            "audis"
+          ]
+        },
+        "points": 1,
+        "canonicalAnswer": "audis",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Transformer correctement une forme du singulier.",
+        "rejectIf": [
+          "personne incorrecte",
+          "réponse hors-sujet"
         ],
-        "points": 1
+        "tests": [
+          {
+            "input": "audis",
+            "isCorrect": true
+          },
+          {
+            "input": "audio",
+            "isCorrect": false
+          }
+        ]
       }
     ],
     "production": [
@@ -1935,24 +1967,26 @@ export const lessons5eP3 = [
       {
         "id": "p3-l16-p3",
         "type": "textInput",
-        "prompt": "Complète : -o / -s / -t",
-        "expected": "je / tu / il-elle",
+        "prompt": "Complète le témoignage : « Ego virum ... ; tu rumorem ... ; ille in balneum ... »",
+        "expected": "video ; negas ; intrat",
         "acceptedAnswers": [
-          "je / tu / il-elle",
-          "1s/2s/3s",
-          "je tu il/elle"
+          "video ; negas ; intrat",
+          "video, negas, intrat",
+          "video / negas / intrat",
+          "video negas intrat"
         ],
         "answerConfig": {
           "type": "translation-segment",
-          "language": "fr",
+          "language": "latin",
           "accepted": [
-            "je / tu / il-elle",
-            "1s/2s/3s",
-            "je tu il/elle"
+            "video ; negas ; intrat",
+            "video, negas, intrat",
+            "video / negas / intrat",
+            "video negas intrat"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "je / tu / il-elle",
+        "canonicalAnswer": "video ; negas ; intrat",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -1961,19 +1995,19 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Produire trois personnes du singulier dans une scène cohérente.",
         "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "forme verbale incorrecte",
+          "personne incorrecte",
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "je / tu / il-elle",
+            "input": "video ; negas ; intrat",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "video ; negat ; intrat",
             "isCorrect": false
           }
         ]
@@ -1981,17 +2015,17 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je lis qui parle grâce aux terminaisons.",
-        "Je distingue je/tu/il-elle dans les dépositions."
+        "Je lis la terminaison du verbe pour savoir qui parle.",
+        "Je peux produire les trois personnes du singulier dans une mini-déposition."
       ],
       "cahier": [
-        "Je retiens : -o = je ; -s = tu ; -t = il/elle",
-        "Je recopie sur mon cahier : présent singulier dans les témoignages"
+        "-o = je ; -s = tu ; -t = il/elle",
+        "video / vides / videt"
       ],
       "keywords": [
-        "balneum",
+        "bains",
         "présent singulier",
-        "témoignages"
+        "témoignage"
       ]
     },
     "meta": {
@@ -2008,9 +2042,9 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In foro",
-    subtitle: headerContexts5eP3["p3-l17"],
-    "objective": "Réactiver le présent pluriel dans un débat public.",
-    "lessonPoint": "Au pluriel : -mus (nous), -tis (vous), -nt (ils/elles).",
+    "subtitle": "Au forum, Subure vide enfin sa colère en plein jour, et les voisins se répondent et s'invectivent face à face au lieu de se mordre par rumeur interposée.",
+    "objective": "Identifier nous / vous / ils-elles dans un débat public.",
+    "lessonPoint": "Je lis la terminaison du verbe pour savoir quel groupe agit.",
     "narrative": "Au forum, le district confronte ses versions de façon publique.",
     "canDo": [
       "Je reconnais les personnes du pluriel.",
@@ -2141,20 +2175,16 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l17-t7",
-        "type": "ordering",
-        "prompt": "Remets : in foro / clamant / vicini",
+        "type": "singleChoice",
+        "prompt": "Dans « in foro vicini clamant », où crient les voisins ?",
         "options": [
-          "in",
-          "foro",
-          "vicini",
-          "clamant"
+          "au forum",
+          "dans la maison",
+          "à la fontaine",
+          "au marché"
         ],
-        "expected": [
-          "in",
-          "foro",
-          "vicini",
-          "clamant"
-        ],
+        "expected": "au forum",
+        "shuffle": true,
         "points": 1
       }
     ],
@@ -2260,24 +2290,26 @@ export const lessons5eP3 = [
       {
         "id": "p3-l17-p3",
         "type": "textInput",
-        "prompt": "Tableau présent : -o / -s / -t / -mus / -tis / -nt",
-        "expected": "je tu il/elle nous vous ils/elles",
+        "prompt": "Complète : « In foro nos ... ; vos ... ; illi ... »",
+        "expected": "quaerimus ; auditis ; respondent",
         "acceptedAnswers": [
-          "je tu il/elle nous vous ils/elles",
-          "1s 2s 3s 1p 2p 3p",
-          "je/tu/il ; nous/vous/ils"
+          "quaerimus ; auditis ; respondent",
+          "quaerimus, auditis, respondent",
+          "quaerimus / auditis / respondent",
+          "quaerimus auditis respondent"
         ],
         "answerConfig": {
           "type": "translation-segment",
-          "language": "fr",
+          "language": "latin",
           "accepted": [
-            "je tu il/elle nous vous ils/elles",
-            "1s 2s 3s 1p 2p 3p",
-            "je/tu/il ; nous/vous/ils"
+            "quaerimus ; auditis ; respondent",
+            "quaerimus, auditis, respondent",
+            "quaerimus / auditis / respondent",
+            "quaerimus auditis respondent"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "je tu il/elle nous vous ils/elles",
+        "canonicalAnswer": "quaerimus ; auditis ; respondent",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -2286,19 +2318,19 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Produire trois personnes du pluriel dans un échange collectif.",
         "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "forme verbale incorrecte",
+          "personne incorrecte",
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "je tu il/elle nous vous ils/elles",
+            "input": "quaerimus ; auditis ; respondent",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "quaerimus ; audimus ; respondent",
             "isCorrect": false
           }
         ]
@@ -2306,12 +2338,12 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je reconnais les personnes du pluriel.",
-        "Le forum sert à comparer publiquement les versions."
+        "Je reconnais les personnes du pluriel dans un échange collectif.",
+        "Je peux produire des formes du pluriel à partir du contexte du forum."
       ],
       "cahier": [
-        "Je retiens : -mus/-tis/-nt",
-        "Je recopie sur mon cahier : au forum, on cherche le verum ensemble"
+        "-mus = nous ; -tis = vous ; -nt = ils/elles",
+        "quaerimus / auditis / respondent"
       ],
       "keywords": [
         "forum",
@@ -2333,8 +2365,8 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Canis et porta obscura",
-    subtitle: headerContexts5eP3["p3-l18"],
-    "objective": "Travailler explicitement l’ordre des mots avec la scène de la porte sombre.",
+    "subtitle": "Niger retourne à la porte louche, gratte le bois, refuse d’entrer, et plus personne n’ose traiter ce manège comme un simple caprice.",
+    "objective": "Lire une phrase à ordre variable sans se tromper sur le sens.",
     "lessonPoint": "Le sens dépend des formes et du verbe, pas seulement de la position des mots.",
     "narrative": "Le chien refuse toujours la même porte sombre ; ce détail devient central.",
     "canDo": [
@@ -2454,20 +2486,16 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l18-t6",
-        "type": "ordering",
-        "prompt": "Produis un ordre valide.",
+        "type": "singleChoice",
+        "prompt": "Dans « manet ante portam canis », quel mot est le sujet ?",
         "options": [
-          "canis",
+          "manet",
           "ante",
           "portam",
-          "manet"
+          "canis"
         ],
-        "expected": [
-          "canis",
-          "ante",
-          "portam",
-          "manet"
-        ],
+        "expected": "canis",
+        "shuffle": true,
         "points": 1
       },
       {
@@ -2589,24 +2617,22 @@ export const lessons5eP3 = [
       {
         "id": "p3-l18-p3",
         "type": "textInput",
-        "prompt": "Pourquoi l’ordre seul ne suffit-il pas ?",
-        "expected": "il faut lire les formes",
+        "prompt": "Complète la traduction : « Manet ante portam canis » = « ... reste devant la porte »",
+        "expected": "le chien",
         "acceptedAnswers": [
-          "il faut lire les formes",
-          "il faut repérer le verbe et les terminaisons",
-          "les formes donnent le sens"
+          "le chien",
+          "un chien"
         ],
         "answerConfig": {
-          "type": "translation-segment",
+          "type": "one-of",
           "language": "fr",
           "accepted": [
-            "il faut lire les formes",
-            "il faut repérer le verbe et les terminaisons",
-            "les formes donnent le sens"
+            "le chien",
+            "un chien"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "il faut lire les formes",
+        "canonicalAnswer": "le chien",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -2615,19 +2641,18 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Identifier correctement le sujet malgré l’ordre variable.",
         "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "portam pris pour sujet",
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "il faut lire les formes",
+            "input": "le chien",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "la porte",
             "isCorrect": false
           }
         ]
@@ -2635,17 +2660,17 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je ne me fais pas piéger par l’ordre.",
-        "La porte sombre reste un indice stable."
+        "Je ne me fais pas piéger par l’ordre des mots.",
+        "Je regarde le verbe et les formes avant de traduire."
       ],
       "cahier": [
-        "Je retiens : S/C/V, V/S/C, C/V/S possibles",
-        "Je recopie sur mon cahier : canis ante portam manet"
+        "canis ante portam obscuram manet",
+        "Le sens dépend des formes et du verbe, pas seulement de la place des mots."
       ],
       "keywords": [
-        "ordre latin",
-        "canis",
-        "porta"
+        "ordre variable",
+        "porte sombre",
+        "canis"
       ]
     },
     "meta": {
@@ -2662,9 +2687,9 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Apud aram et fontem",
-    subtitle: headerContexts5eP3["p3-l19"],
-    "objective": "Relier autel, fontaine et tablette falsifiée dans une lecture continue.",
-    "lessonPoint": "Je rassemble plusieurs indices pour comprendre une scène complète.",
+    "subtitle": "Près de l’autel et de la fontaine, Marcus et Livia recoupent leurs indices, et voient les morceaux s’emboîter pour de bon.",
+    "objective": "Relier plusieurs indices dans un mini-dossier continu.",
+    "lessonPoint": "Je relis phrase après phrase et je croise les indices.",
     "narrative": "Près de l’ara et du fons, on relit la tabella falsa et les traces d’huile.",
     "canDo": [
       "Je lis un texte court continu.",
@@ -2675,13 +2700,13 @@ export const lessons5eP3 = [
       "ara = autel",
       "fons = fontaine",
       "tabella = tablette",
+      "oleum = huile",
       "falsa = fausse, falsifiée",
       "verum = vrai",
       "falsum = faux",
       "ostendit = il/elle montre",
       "legit = il/elle lit",
-      "mutat = il/elle change",
-      "separat = il/elle sépare"
+      "mutat = il/elle change"
     ],
     "maxScore": 10,
     "training": [
@@ -2768,29 +2793,27 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l19-t5",
-        "type": "ordering",
-        "prompt": "Remets : tabellam / servus / ostendit",
+        "type": "singleChoice",
+        "prompt": "Dans « servus tabellam ostendit », que montre le serviteur ?",
         "options": [
-          "servus",
-          "tabellam",
-          "ostendit"
+          "la tablette",
+          "la fontaine",
+          "la vérité",
+          "la porte"
         ],
-        "expected": [
-          "servus",
-          "tabellam",
-          "ostendit"
-        ],
+        "expected": "la tablette",
+        "shuffle": true,
         "points": 1
       },
       {
         "id": "p3-l19-t6",
         "type": "singleChoice",
-        "prompt": "Quel indice relie tablette, huile et nuit ?",
+        "prompt": "Texte : « Oleum in tabella est. Vir noctu exit. » Quel détail relie la tablette à la scène nocturne ?",
         "options": [
           "des traces d’huile sur la tablette",
-          "la pluie",
+          "un marché en fête",
           "un cri de jour",
-          "un jeu"
+          "une fontaine sèche"
         ],
         "expected": "des traces d’huile sur la tablette",
         "shuffle": true,
@@ -2925,24 +2948,26 @@ export const lessons5eP3 = [
       {
         "id": "p3-l19-p3",
         "type": "textInput",
-        "prompt": "Pourquoi la lumière est-elle importante dans l’enquête ?",
-        "expected": "elle permet de voir les indices",
+        "prompt": "Traduis : tabella falsa verum non ostendit.",
+        "expected": "la tablette falsifiée ne montre pas le vrai",
         "acceptedAnswers": [
-          "elle permet de voir les indices",
-          "elle limite les faux récits",
-          "on distingue mieux le vrai du faux"
+          "la tablette falsifiée ne montre pas le vrai",
+          "la tablette falsifiée ne montre pas la vérité",
+          "la tablette fausse ne montre pas le vrai",
+          "la tablette fausse ne montre pas la vérité"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
-            "elle permet de voir les indices",
-            "elle limite les faux récits",
-            "on distingue mieux le vrai du faux"
+            "la tablette falsifiée ne montre pas le vrai",
+            "la tablette falsifiée ne montre pas la vérité",
+            "la tablette fausse ne montre pas le vrai",
+            "la tablette fausse ne montre pas la vérité"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "elle permet de voir les indices",
+        "canonicalAnswer": "la tablette falsifiée ne montre pas le vrai",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -2951,19 +2976,46 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Traduire une conclusion de dossier en distinguant verum et falsa.",
         "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "sens inversé",
+          "négation oubliée",
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "elle permet de voir les indices",
+            "input": "la tablette falsifiée ne montre pas la vérité",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "la tablette falsifiée montre la vérité",
+            "isCorrect": false
+          }
+        ]
+      },
+        "points": 1,
+        "canonicalAnswer": "la tablette falsifiée ne montre pas le vrai",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Traduire une conclusion de dossier en distinguant verum et falsa.",
+        "rejectIf": [
+          "sens inversé",
+          "négation oubliée",
+          "réponse hors-sujet"
+        ],
+        "tests": [
+          {
+            "input": "la tablette falsifiée ne montre pas la vérité",
+            "isCorrect": true
+          },
+          {
+            "input": "la tablette falsifiée montre la vérité",
             "isCorrect": false
           }
         ]
@@ -2971,17 +3023,17 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je relie plusieurs indices entre eux.",
-        "Je relis vrai/faux avec la tabella."
+        "Je relie plusieurs indices matériels dans un même mini-dossier.",
+        "Je distingue mieux verum et falsum quand je relis chaque phrase."
       ],
       "cahier": [
-        "Je retiens : ara, fons, tabella",
-        "Je recopie sur mon cahier : la lumière aide à séparer verum et falsum"
+        "tabella falsa verum non ostendit",
+        "Je recoupe la tablette, l’huile et la scène nocturne."
       ],
       "keywords": [
         "indices",
-        "fontaine",
-        "tablette"
+        "tablette",
+        "vrai/faux"
       ]
     },
     "meta": {
@@ -2998,9 +3050,9 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Lucernae in vico",
-    subtitle: headerContexts5eP3["p3-l20"],
-    "objective": "Passer de l’enquête à une solution collective concrète.",
-    "lessonPoint": "Je comprends un plan d’action collectif simple en latin.",
+    "subtitle": "Chacun pose une lampe devant sa porte ou au carrefour, car Subure veut ouvrir les yeux au lieu de parler dans le noir.",
+    "objective": "Comprendre une solution collective formulée en latin simple.",
+    "lessonPoint": "Je repère sujet, objet et lieu pour comprendre le plan d’action.",
     "narrative": "Les habitants décident de poser des lucernae aux portes et carrefours.",
     "canDo": [
       "Je lis qui apporte quoi.",
@@ -3104,22 +3156,16 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l20-t5",
-        "type": "ordering",
-        "prompt": "Remets : lucernam / ante ianuam / ponit / vicina",
+        "type": "singleChoice",
+        "prompt": "Dans « vicina lucernam ante ianuam ponit », quel mot est le complément d’objet direct ?",
         "options": [
           "vicina",
           "lucernam",
-          "ante",
-          "ianuam",
+          "ante ianuam",
           "ponit"
         ],
-        "expected": [
-          "vicina",
-          "lucernam",
-          "ante",
-          "ianuam",
-          "ponit"
-        ],
+        "expected": "lucernam",
+        "shuffle": true,
         "points": 1
       },
       {
@@ -3295,24 +3341,26 @@ export const lessons5eP3 = [
       {
         "id": "p3-l20-p3",
         "type": "textInput",
-        "prompt": "Pourquoi cette idée est-elle utile ?",
-        "expected": "elle éclaire le quartier",
+        "prompt": "Traduis : vicini oleum portant et laborant.",
+        "expected": "les voisins portent l’huile et travaillent",
         "acceptedAnswers": [
-          "elle éclaire le quartier",
-          "on voit mieux la nuit",
-          "elle réduit la peur"
+          "les voisins portent l’huile et travaillent",
+          "les voisins transportent l’huile et travaillent",
+          "les voisins portent l’huile et se mettent au travail",
+          "les voisins transportent l’huile et se mettent au travail"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
-            "elle éclaire le quartier",
-            "on voit mieux la nuit",
-            "elle réduit la peur"
+            "les voisins portent l’huile et travaillent",
+            "les voisins transportent l’huile et travaillent",
+            "les voisins portent l’huile et se mettent au travail",
+            "les voisins transportent l’huile et se mettent au travail"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "elle éclaire le quartier",
+        "canonicalAnswer": "les voisins portent l’huile et travaillent",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -3321,19 +3369,19 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Comprendre une action collective concrète et son effort.",
         "rejectIf": [
+          "sens inversé",
           "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "elle éclaire le quartier",
+            "input": "les voisins portent l’huile et travaillent",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "les voisins regardent l’huile et dorment",
             "isCorrect": false
           }
         ]
@@ -3341,17 +3389,17 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Une solution collective peut calmer le quartier.",
-        "Je lis des actions concrètes au présent."
+        "Je lis une solution collective concrète formulée en latin simple.",
+        "Je repère qui apporte, qui pose et qui aide dans la rue."
       ],
       "cahier": [
-        "Je retiens : lucerna, oleum, ponit",
-        "Je recopie sur mon cahier : les voisins organisent l’éclairage"
+        "vicina lucernam ante ianuam ponit",
+        "Les habitants éclairent le quartier ensemble."
       ],
       "keywords": [
         "solution",
         "lampe",
-        "quartier"
+        "action collective"
       ]
     },
     "meta": {
@@ -3368,9 +3416,9 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Vicus noctu clarior est",
-    subtitle: headerContexts5eP3["p3-l21"],
-    "objective": "Comprendre les effets de l’éclairage sans nouvelle leçon de grammaire.",
-    "lessonPoint": "Je lis un avant/après du quartier avec le vocabulaire déjà connu.",
+    "subtitle": "Sous les lampes restées allumées, la rue change de ton, l’homme ne repasse plus, et le calme revient peu à peu.",
+    "objective": "Lire un avant / après du quartier avec le lexique acquis.",
+    "lessonPoint": "Je compare avant et après grâce au lexique déjà connu.",
     "narrative": "Les lampes restent allumées ; l’homme suspect ne circule plus, les troubles cessent.",
     "canDo": [
       "Je lis un changement de situation.",
@@ -3474,18 +3522,16 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l21-t5",
-        "type": "ordering",
-        "prompt": "Remets : lucerna / vicum / adiuvat",
+        "type": "singleChoice",
+        "prompt": "Dans « lucerna vicum adiuvat », quel mot reçoit l’aide ?",
         "options": [
           "lucerna",
           "vicum",
-          "adiuvat"
+          "adiuvat",
+          "quietus"
         ],
-        "expected": [
-          "lucerna",
-          "vicum",
-          "adiuvat"
-        ],
+        "expected": "vicum",
+        "shuffle": true,
         "points": 1
       },
       {
@@ -3508,15 +3554,19 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l21-t7",
-        "type": "singleChoice",
-        "prompt": "Pourquoi le chien aboie moins ?",
+        "type": "multipleChoice",
+        "prompt": "Texte : « Lucernae manent. Vicus clarior est. Canis minus latrat. » Quels effets sont visibles ?",
         "options": [
-          "la porte et la rue sont mieux visibles",
-          "il oublie la porte",
-          "le forum ferme",
-          "le marché crie"
+          "les lampes restent allumées",
+          "le quartier est plus clair",
+          "le chien aboie moins",
+          "le marché brûle"
         ],
-        "expected": "la porte et la rue sont mieux visibles",
+        "expected": [
+          "les lampes restent allumées",
+          "le quartier est plus clair",
+          "le chien aboie moins"
+        ],
         "shuffle": true,
         "points": 1
       }
@@ -3621,24 +3671,24 @@ export const lessons5eP3 = [
       {
         "id": "p3-l21-p3",
         "type": "textInput",
-        "prompt": "Qu’est-ce qui fait disparaître les troubles ?",
-        "expected": "l'éclairage collectif",
+        "prompt": "Traduis : rumor minor est.",
+        "expected": "la rumeur est plus faible",
         "acceptedAnswers": [
-          "l'éclairage collectif",
-          "les lampes dans le quartier",
-          "la rue plus visible"
+          "la rumeur est plus faible",
+          "la rumeur est moindre",
+          "la rumeur diminue"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
-            "l'éclairage collectif",
-            "les lampes dans le quartier",
-            "la rue plus visible"
+            "la rumeur est plus faible",
+            "la rumeur est moindre",
+            "la rumeur diminue"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "l'éclairage collectif",
+        "canonicalAnswer": "la rumeur est plus faible",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -3647,19 +3697,18 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Comprendre un bilan bref du retour au calme.",
         "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "sens inversé",
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "l'éclairage collectif",
+            "input": "la rumeur diminue",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "la rumeur augmente",
             "isCorrect": false
           }
         ]
@@ -3667,17 +3716,17 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je lis un bilan avant/après.",
-        "Le calme revient avec la visibilité nocturne."
+        "Je lis un avant / après du quartier avec le lexique déjà acquis.",
+        "Je comprends que l’éclairage modifie à la fois la rue et les récits."
       ],
       "cahier": [
-        "Je retiens : vicus clarior, vicus quietus",
-        "Je recopie sur mon cahier : les lampes stoppent les troubles"
+        "vicus clarior est ; vicus quietus manet",
+        "rumor minor est"
       ],
       "keywords": [
-        "bilan",
-        "nuit",
-        "calme"
+        "avant/après",
+        "calme",
+        "éclairage"
       ]
     },
     "meta": {
@@ -3694,9 +3743,9 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Lux concordiam restituit",
-    subtitle: headerContexts5eP3["p3-l22"],
-    "objective": "Finaliser la période avec une révision complète de l’enquête.",
-    "lessonPoint": "Je mobilise interrogatifs, lieux, formes nominales, présent et ordre variable pour conclure.",
+    "subtitle": "Quand Subure s’éclaire tout entière, Niger se tait enfin, Marcus relève la tête, et la concorde reprend sa place au milieu des maisons.",
+    "objective": "Relire tout le dossier et conclure l’enquête.",
+    "lessonPoint": "Je mobilise questions, lieux, formes et verbes pour conclure.",
     "narrative": "Après l’éclairage collectif, la Subure redevient paisible : la pax revient.",
     "canDo": [
       "Je relis un mini-dossier final.",
@@ -3734,13 +3783,13 @@ export const lessons5eP3 = [
       {
         "id": "p3-l22-t2",
         "type": "multipleChoice",
-        "prompt": "Choisis les lieux étudiés du quartier.",
+        "prompt": "Quels lieux du quartier ont servi dans l’enquête de P3 ?",
         "options": [
           "forum",
           "macellum",
           "balneum",
-          "montes",
-          "insula"
+          "insula",
+          "campus"
         ],
         "expected": [
           "forum",
@@ -3818,37 +3867,35 @@ export const lessons5eP3 = [
       {
         "id": "p3-l22-t6",
         "type": "multipleChoice",
-        "prompt": "Mini-enquête finale (5 phrases) : quelles infos sont présentes ?",
+        "prompt": "Texte final : « Vir noctu ex insula exibat. Tabella falsa erat. Vicini lucernas ponebant. Pax in vico redit. » Quels éléments montrent que l’enquête s’achève ?",
         "options": [
-          "l’homme sortait la nuit",
           "la tablette était falsifiée",
-          "les voisins installent des lampes",
-          "les troubles cessent",
+          "les voisins installaient des lampes",
+          "la paix revient dans le quartier",
+          "l’homme sortait la nuit",
           "le temple brûle"
         ],
         "expected": [
-          "l’homme sortait la nuit",
           "la tablette était falsifiée",
-          "les voisins installent des lampes",
-          "les troubles cessent"
+          "les voisins installaient des lampes",
+          "la paix revient dans le quartier",
+          "l’homme sortait la nuit"
         ],
         "shuffle": true,
         "points": 1
       },
       {
         "id": "p3-l22-t7",
-        "type": "ordering",
-        "prompt": "Rebâtis : vicini / lucernam / vident",
+        "type": "singleChoice",
+        "prompt": "Dans « vicini lucernam vident », que voient les voisins ?",
         "options": [
-          "vicini",
-          "lucernam",
-          "vident"
+          "une lampe",
+          "les voisins",
+          "la paix",
+          "la tablette"
         ],
-        "expected": [
-          "vicini",
-          "lucernam",
-          "vident"
-        ],
+        "expected": "une lampe",
+        "shuffle": true,
         "points": 1
       }
     ],
@@ -3861,10 +3908,8 @@ export const lessons5eP3 = [
         "acceptedAnswers": [
           "la paix revient dans le quartier",
           "la paix revient dans la rue",
-          "la paix revient",
           "le calme revient dans le quartier",
-          "le calme revient dans la rue",
-          "le calme revient"
+          "le calme revient dans la rue"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -3872,10 +3917,8 @@ export const lessons5eP3 = [
           "accepted": [
             "la paix revient dans le quartier",
             "la paix revient dans la rue",
-            "la paix revient",
             "le calme revient dans le quartier",
-            "le calme revient dans la rue",
-            "le calme revient"
+            "le calme revient dans la rue"
           ]
         },
         "points": 1,
@@ -3888,11 +3931,11 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "La localisation in vico doit être comprise.",
         "rejectIf": [
+          "lieu oublié",
           "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "réponse hors-sujet"
         ],
         "tests": [
           {
@@ -3900,7 +3943,7 @@ export const lessons5eP3 = [
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "la paix revient",
             "isCorrect": false
           }
         ]
@@ -3960,24 +4003,26 @@ export const lessons5eP3 = [
       {
         "id": "p3-l22-p3",
         "type": "textInput",
-        "prompt": "Pourquoi les troubles disparaissent-ils ?",
-        "expected": "le quartier est éclairé et les habitants agissent ensemble",
+        "prompt": "Traduis : concordia in Subura redit.",
+        "expected": "la concorde revient dans Subure",
         "acceptedAnswers": [
-          "le quartier est éclairé et les habitants agissent ensemble",
-          "les lampes rendent la rue visible",
-          "la concorde remplace la discorde"
+          "la concorde revient dans Subure",
+          "la concorde revient à Subure",
+          "la concorde revient dans la Subure",
+          "la concorde revient à la Subure"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
-            "le quartier est éclairé et les habitants agissent ensemble",
-            "les lampes rendent la rue visible",
-            "la concorde remplace la discorde"
+            "la concorde revient dans Subure",
+            "la concorde revient à Subure",
+            "la concorde revient dans la Subure",
+            "la concorde revient à la Subure"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "le quartier est éclairé et les habitants agissent ensemble",
+        "canonicalAnswer": "la concorde revient dans Subure",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -3986,19 +4031,18 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Conclure la période par une traduction symbolique nette.",
         "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "sens inversé",
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "le quartier est éclairé et les habitants agissent ensemble",
+            "input": "la concorde revient dans Subure",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "la discorde revient dans Subure",
             "isCorrect": false
           }
         ]
@@ -4006,20 +4050,18 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je sais relire toute l’enquête de Subure.",
-        "Je relie langue, lecture et vie de quartier romain."
+        "Je sais relire tout le dossier de Subure et en dégager la conclusion.",
+        "Je mobilise questions, lieux, formes et présents pour comprendre un mini-dossier."
       ],
       "cahier": [
-        "Je retiens : interrogatifs + lieux + présent + ordre variable",
-        "Je recopie sur mon cahier : rosa/rosam ; dominus/dominum ; donum/donum",
-        "Je recopie sur mon cahier : -o je ; -s tu ; -t il/elle ; -mus nous ; -tis vous ; -nt ils/elles",
-        "Je recopie sur mon cahier : sujet souvent forme de base, objet souvent forme modifiée, neutre souvent semblable"
+        "pax in vico redit",
+        "concordia in Subura redit",
+        "Je recroise les indices avant de conclure."
       ],
       "keywords": [
         "révision finale",
         "pax",
-        "concordia",
-        "Subura"
+        "concordia"
       ]
     },
     "meta": {
