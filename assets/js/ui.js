@@ -168,6 +168,7 @@ export function renderApp(rootElement, { router, route, level, progress, onSaveL
   scrollToTopImmediate();
 
   rootElement.innerHTML = "";
+  rootElement.dataset.route = route.name;
 
   const { fragment, main } = createAppLayout({ navigate: router.navigate, currentRouteName: route.name, levelId: level?.id });
   rootElement.appendChild(fragment);
