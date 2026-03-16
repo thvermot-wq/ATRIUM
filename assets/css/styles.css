@@ -1947,3 +1947,61 @@ a,
 [data-theme="dark"] .lesson-toolbar__btn[aria-expanded="true"] {
   box-shadow: none;
 }
+
+/* =========================================
+   LESSON VIEW — rendre le header/panels opaques
+   ========================================= */
+
+.lesson-view .lesson-toolbar-shell,
+.lesson-view .lesson-toolbar,
+.lesson-view .lesson-toolbar__panel,
+.lesson-view .lesson-toolbar__panel-inner {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background-image: none !important;
+}
+
+/* Header sticky principal */
+.lesson-view .lesson-toolbar {
+  background: var(--surface, #ffffff) !important;
+  opacity: 1 !important;
+  border: 1px solid var(--border, rgba(0, 0, 0, 0.08));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Panneau ouvert sous le header : rappel / lexique */
+.lesson-view .lesson-toolbar__panel,
+.lesson-view .lesson-toolbar__panel-inner {
+  background: var(--surface, #ffffff) !important;
+  opacity: 1 !important;
+  border-left: 1px solid var(--border, rgba(0, 0, 0, 0.08));
+  border-right: 1px solid var(--border, rgba(0, 0, 0, 0.08));
+  border-bottom: 1px solid var(--border, rgba(0, 0, 0, 0.08));
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+}
+
+/* Boutons dans le toolbar : lisibilité accrue */
+.lesson-view .lesson-toolbar button,
+.lesson-view .lesson-toolbar [role="button"],
+.lesson-view .lesson-toolbar__panel button,
+.lesson-view .lesson-toolbar__panel [role="button"] {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Chips de lexique : éviter tout effet de transparence parasite */
+.lesson-view .lesson-toolbar__panel .lexicon-chip,
+.lesson-view .lesson-toolbar__panel .lesson-lexicon-chip,
+.lesson-view .lesson-toolbar__panel .chip {
+  background: var(--surface-alt, #f5f7fb) !important;
+  opacity: 1 !important;
+}
+
+/* Mode sombre : fond opaque, simple, lisible */
+html[data-theme="dark"] .lesson-view .lesson-toolbar,
+html[data-theme="dark"] .lesson-view .lesson-toolbar__panel,
+html[data-theme="dark"] .lesson-view .lesson-toolbar__panel-inner {
+  background: var(--surface, #1f2430) !important;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
