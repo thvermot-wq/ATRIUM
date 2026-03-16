@@ -4018,33 +4018,6 @@ export const lessons5eP2 = [
     }
   ]
 },
-        "points": 1,
-        "canonicalAnswer": "parce que les troubles se multiplient",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "parce que les troubles se multiplient",
-            "isCorrect": true
-          },
-          {
-            "input": "réponse hors-sujet",
-            "isCorrect": false
-          }
-        ]
-      }
     ],
     "summary": {
       "retains": [
