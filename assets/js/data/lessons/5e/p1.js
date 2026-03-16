@@ -3010,7 +3010,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l10-t5",
         "type": "singleChoice",
-        "prompt": "🛁 Piège : « Thermas Marcus intrat » signifie :",
+        "prompt": "🛁 Piège : « In thermis Marcus intrat » signifie :",
         "options": [
           "Marcus entre dans les thermes",
           "Les thermes entrent dans Marcus",
@@ -3099,6 +3099,8 @@ export const lessons5eP1 = [
         "expected": "livia reste dans les thermes",
         "acceptedAnswers": [
           "livia reste dans les thermes",
+          "livia se repose dans les thermes",
+          "livia se trouve dans les thermes",
           "livia demeure dans les thermes"
         ],
         "answerConfig": {
@@ -3106,6 +3108,8 @@ export const lessons5eP1 = [
           "language": "fr",
           "accepted": [
             "livia reste dans les thermes",
+            "livia se repose dans les thermes",
+            "livia se trouve dans les thermes",
             "livia demeure dans les thermes"
           ]
         },
@@ -3140,29 +3144,29 @@ export const lessons5eP1 = [
         "id": "p1-l10-p3",
         "type": "textInput",
         "prompt": "🛁 Traduis en latin : Titus entre dans les thermes",
-        "expected": "Titus thermas intrat",
+        "expected": "Titus in thermis intrat",
         "acceptedAnswers": [
-          "Titus thermas intrat",
-          "Titus intrat thermas",
-          "thermas Titus intrat",
-          "thermas intrat Titus",
-          "intrat Titus thermas",
-          "intrat thermas Titus"
+          "Titus in thermis intrat",
+          "Titus intrat in thermis",
+          "in thermis Titus intrat",
+          "in thermis intrat Titus",
+          "intrat Titus in thermis",
+          "intrat in thermis Titus"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
-            "Titus thermas intrat",
-            "Titus intrat thermas",
-            "thermas Titus intrat",
-            "thermas intrat Titus",
-            "intrat Titus thermas",
-            "intrat thermas Titus"
+            "Titus in thermis intrat",
+            "Titus intrat in thermis",
+            "in thermis Titus intrat",
+            "in thermis intrat Titus",
+            "intrat Titus in thermis",
+            "intrat in thermis Titus"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "Titus thermas intrat",
+        "canonicalAnswer": "Titus in thermis intrat",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -3179,7 +3183,7 @@ export const lessons5eP1 = [
         ],
         "tests": [
           {
-            "input": "Titus thermas intrat",
+            "input": "Titus in thermis intrat",
             "isCorrect": true
           },
           {
