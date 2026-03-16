@@ -3817,7 +3817,7 @@ export const lessons5eP2 = [
       "isCorrect": false
     }
   ]
-}
+},
       {
         "id": "p2-l11-t7",
         "type": "multipleChoice",
