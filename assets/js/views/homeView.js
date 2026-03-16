@@ -84,19 +84,30 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
 
   const intro = document.createElement("article");
   intro.className = "card home-hero";
-  intro.innerHTML = `
-    <span class="home-hero__eyebrow">ATRIUM · Langues anciennes</span>
-    <h2 class="home-hero__headline">Un parcours unique du bain de langue à la lecture guidée.</h2>
+    intro.innerHTML = `
+    <p class="home-hero__eyebrow">Plateforme de langues et cultures de l’Antiquité</p>
+
+    <h1 class="home-hero__brand">
+      ATRIUM
+      <span>Langues anciennes</span>
+    </h1>
+
+    <p class="home-hero__headline">
+      Un parcours unique du bain de langue à la lecture guidée.
+    </p>
+
     <p class="home-hero__lead">
       Choisissez votre niveau puis entrez dans un dashboard pensé comme un itinéraire continu : 3 périodes,
       36 leçons, une progression indépendante, des outils de cours et un fil narratif qui accompagne la langue.
     </p>
+
     <div class="home-hero__meta">
       <span class="meta-pill">3 niveaux collège</span>
       <span class="meta-pill">3 périodes par niveau</span>
       <span class="meta-pill">36 leçons progressives</span>
       <span class="meta-pill">Repères CECRL et Euroclassica</span>
     </div>
+
     <div class="home-hero__actions"></div>
   `;
 
