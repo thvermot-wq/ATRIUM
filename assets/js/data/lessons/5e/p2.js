@@ -3771,7 +3771,7 @@ export const lessons5eP2 = [
   ],
   "shuffle": true,
   "points": 1
-}
+},
      {
   "id": "p2-l11-t6",
   "type": "textInput",
