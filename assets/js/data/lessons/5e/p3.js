@@ -1056,10 +1056,10 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In macello",
-    "subtitle": "Au marché, un marchand reconnaît l’homme et parle d'un parfum tenace d'huile ; si bien que l’odeur grasse revient soudain dans tous les souvenirs.",
+    "subtitle": "Au marché, un marchand reconnaît l’homme et parle d'un parfum tenace d'huile mal pressée ; si bien que l’odeur grasse revient soudain dans tous les souvenirs.",
     "objective": "Réinvestir le neutre dans une scène de marché et d’indice.",
     "lessonPoint": "Je repère les neutres et j’observe leur fonction dans l’indice.",
-    "narrative": "Au macellum, un marchand affirme que l’homme a acheté de l’oleum.",
+    "narrative": "Au marché, un marchand affirme que l’homme a acheté une mauvaise huile.",
     "canDo": [
       "Je reconnais des neutres fréquents.",
       "Je repère l’action principale.",
@@ -1071,6 +1071,7 @@ export const lessons5eP3 = [
       "oleum = huile",
       "signum = signe, marque, indice",
       "templum = temple",
+      "vir = homme",
       "emit = il/elle achète",
       "portat = il/elle porte",
       "celat = il/elle cache",
@@ -1189,21 +1190,21 @@ export const lessons5eP3 = [
         "points": 1
       },
       {
-        "id": "p3-l4-t7",
-        "type": "multipleChoice",
-        "prompt": "Mini-texte : « In macello rumor crescit : vir oleum emit noctu. » Quel indice nouveau apparaît ?",
-        "options": [
-          "l’huile",
-          "la lampe",
-          "la paix",
-          "le temple"
-        ],
-        "expected": [
-          "l’huile"
-        ],
-        "shuffle": true,
-        "points": 1
-      }
+  "id": "p3-l4-t7",
+  "type": "multipleChoice",
+  "prompt": "Mini-texte : « In macello rumor crescit : vir oleum emit noctu. » Pourquoi cet achat paraît-il inquiétant ?",
+  "options": [
+    "parce qu’il achète de l’huile en pleine nuit",
+    "parce qu’il vend du blé au marché",
+    "parce qu’il prie dans un temple",
+    "parce qu’il parle avec ses voisins"
+  ],
+  "expected": [
+    "parce qu’il achète de l’huile en pleine nuit"
+  ],
+  "shuffle": true,
+  "points": 1
+}
     ],
     "production": [
       {
@@ -1213,18 +1214,26 @@ export const lessons5eP3 = [
         "expected": "l'homme cache l'huile",
         "acceptedAnswers": [
           "l'homme cache l'huile",
+          "l'homme cache de l'huile",
           "l'homme dissimule l'huile",
+          "l'homme dissimule de l'huile",
           "un homme cache l'huile",
-          "un homme dissimule l'huile"
+          "un homme cache de l'huile",
+          "un homme dissimule l'huile",
+          "un homme dissimule de l'huile"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "l'homme cache l'huile",
+            "l'homme cache de l'huile",
             "l'homme dissimule l'huile",
+            "l'homme dissimule de l'huile",
             "un homme cache l'huile",
-            "un homme dissimule l'huile"
+            "un homme cache de l'huile",
+            "un homme dissimule l'huile",
+            "un homme dissimule de l'huile"
           ]
         },
         "points": 1,
@@ -1351,7 +1360,7 @@ export const lessons5eP3 = [
     "summary": {
       "retains": [
         "Je repère un neutre utile dans une scène concrète de marché.",
-        "Je comprends qu’un neutre peut rester identique comme sujet et comme COD."
+        "Je comprends qu’un neutre peut rester identique comme sujet (nominatif) et comme COD (accusatif)."
       ],
       "cahier": [
         "mercator virum videt",
