@@ -143,7 +143,6 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
       <p class="level-card__ambience">${meta.ambience || ambition || description}</p>
 
       <div class="level-card__metrics">
-        ${createMetric("Ambition", ambition || "Progression continue, lecture et réemploi guidés.")}
         ${createMetric("Euroclassica", meta.euroclassica)}
         ${createMetric("CECRL adapté", meta.cecrl)}
       </div>
