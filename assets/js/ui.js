@@ -116,24 +116,12 @@ function createAppLayout({ navigate, currentRouteName, levelId }) {
   header.className = "shell app-header";
 
   header.innerHTML = `
-  <div class="app-header__brand">
-    <h1>ATRIUM</h1>
-    <p>Application statique LCA · architecture progressive</p>
-  </div>
-`;
-  
-  const nav = createTopNav({ navigate, currentRouteName, levelId });
+    <div class="app-header__brand">
+      <h1>ATRIUM</h1>
+      <p>Application statique LCA · architecture progressive</p>
+    </div>
+  `;
 
-  const main = document.createElement("main");
-  main.id = "view-root";
-  main.className = "shell";
-  main.tabIndex = -1;
-  main.setAttribute("aria-live", "polite");
-
-  fragment.append(header, nav, main);
-  return { fragment, main };
-}
-  
   const nav = createTopNav({ navigate, currentRouteName, levelId });
 
   const main = document.createElement("main");
@@ -165,7 +153,11 @@ export function renderApp(rootElement, { router, route, level, progress, onSaveL
   rootElement.innerHTML = "";
   rootElement.dataset.route = route.name;
 
-  const { fragment, main } = createAppLayout({ navigate: router.navigate, currentRouteName: route.name, levelId: level?.id });
+  const { fragment, main } = createAppLayout({
+    navigate: router.navigate,
+    currentRouteName: route.name,
+    levelId: level?.id,
+  });
   rootElement.appendChild(fragment);
 
   const levelId = level?.id || "5e";
@@ -195,7 +187,12 @@ export function renderApp(rootElement, { router, route, level, progress, onSaveL
   } else if (route.name === "dashboard") {
     viewNode = renderDashboardView({ ...callbacks, level, progress });
   } else if (route.name === "lesson") {
-    viewNode = renderLessonView({ ...callbacks, level, lessonId: route.params.lessonId, progress });
+    viewNode = renderLessonView({
+      ...callbacks,
+      level,
+      lessonId: route.params.lessonId,
+      progress,
+    });
   } else if (route.name === "results") {
     viewNode = renderResultsView({ ...callbacks, level, progress });
   } else {
