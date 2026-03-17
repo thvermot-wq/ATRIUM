@@ -427,7 +427,7 @@ function mountLessonIntroOverlay(wrapper, lesson) {
       return;
     }
 
-    typingTimer = window.setTimeout(typeText, 220);
+    typingTimer = window.setTimeout(typeText, 280);
   });
 }
 
