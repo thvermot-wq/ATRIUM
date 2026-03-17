@@ -2203,7 +2203,7 @@ export const lessons5eP2 = [
 {
   "id": "p2-l6-p3",
   "type": "textInput",
-  "prompt": "Complète : en latin, la terminaison du verbe indique la … qui parle ou agit.",
+  "prompt": "Complète : En latin, la terminaison du verbe indique la _______ qui parle ou agit.",
   "expected": "personne",
   "acceptedAnswers": [
     "personne",
@@ -2395,15 +2395,22 @@ export const lessons5eP2 = [
         "type": "multipleChoice",
         "prompt": "Mini-texte : « 𝑄𝑢𝑎𝑒𝑟𝑖𝑚𝑢𝑠 𝑑𝑜𝑛𝑢𝑚. 𝑅𝑜𝑔𝑎𝑡𝑖𝑠 𝑡𝑒𝑠𝑡𝑒𝑚. 𝑉𝑖𝑐𝑖𝑛𝑖 𝑟𝑒𝑠𝑝𝑜𝑛𝑑𝑒𝑛𝑡. » Qui parle collectivement ?",
         "options": [
-          "nous",
-          "vous",
-          "les voisins",
-          "un seul témoin"
+          "Nous",
+          "Les donneurs",
+          "Vous",
+          "Un certain Roger",
+          "Les voisins",
+          "Ceux qui répondent",
+          "Un seul témoin"
         ],
         "expected": [
-          "nous",
-          "vous",
-          "les voisins"
+          "Nous",
+          "Les donneurs",
+          "Vous",
+          "Un certain Roger",
+          "Les voisins",
+          "Ceux qui répondent",
+          "Un seul témoin"
         ],
         "shuffle": true,
         "points": 1
