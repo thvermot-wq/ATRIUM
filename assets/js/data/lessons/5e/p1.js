@@ -1,8 +1,8 @@
 // Données de leçons 5E · Période 1.
 const headerContexts5eP1 = {
   "p1-l1": "Au matin, Flavia salue Marcus sur les pavés de Subure pendant que Niger, le petit chien, trotte entre les jambes des passants.",
-  "p1-l2": "Aurelia reste dans sa domus, Marcus observe l’insula d’en face, et Lucius garde la porte d’un air de comploteur.",
-  "p1-l3": "Marcus file au forum, Flavia ralentit devant une taberna, et le marchand suit du regard les gamins qui s'intéressent de trop près à son étal.",
+  "p1-l2": "Aurelia reste dans sa maison, Marcus observe l’immeuble d’en face, et Lucius garde la porte d’un air de comploteur.",
+  "p1-l3": "Marcus file au forum, Flavia ralentit devant une boutique, et le marchand suit du regard les gamins qui s'intéressent de trop près à son étal.",
   "p1-l4": "Près du petit sanctuaire, Livia voit tout de suite qu’une offrande a disparu de l'autel. On l'a volée ! C'est un acte grave. Qui a fait le coup ?",
   "p1-l5": "Niger s'arrête devant une porte fermée et grogne. Marcus devine que le petit chien n’aboie pas pour rien.",
   "p1-l6": "Lucius fait passer une tablette de cire de main en main, Flavia la déchiffre, et chacun essaie de déchiffrer le nom qu’on a voulu glisser là en douce.",
