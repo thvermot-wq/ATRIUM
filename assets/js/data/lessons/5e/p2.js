@@ -1587,12 +1587,12 @@ export const lessons5eP2 = [
         "type": "singleChoice",
         "prompt": "« 𝑆𝑖𝑔𝑛𝑢𝑚 𝑑𝑜𝑚𝑖𝑛𝑢𝑠 𝑣𝑖𝑑𝑒𝑡 » : que voit le maître ?",
         "options": [
-          "le signe",
+          "l'indice",
           "le maître",
           "la boutique",
-          "le voisin"
+          "le vide"
         ],
-        "expected": "le signe",
+        "expected": "l'indice",
         "shuffle": true,
         "points": 1
       },
