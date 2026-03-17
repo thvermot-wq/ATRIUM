@@ -3480,8 +3480,8 @@ export const lessons5eP2 = [
         "options": [
           "L’eau de la fontaine est sale",
           "La fontaine porte l’eau propre",
-          "La boutique fuit",
-          "Le mur crie"
+          "La boutique est inondée",
+          "Il y a des tulipes dans l'eau"
         ],
         "expected": "L’eau de la fontaine est sale",
         "shuffle": true,
@@ -4087,7 +4087,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l12"],
     "objective": "Clore l’enquête avec une révision cumulative et une mini-interprétation.",
     "lessonPoint": "Je mobilise toutes les clés du trimestre : questions, lieux, formes, présent, ordre souple.",
-    "narrative": "Dernière mise au point : l'histoire de l'offrande, de la tablette, du chien et de la fontaine sont passés en revue. La paix sera-t-elle rétablie ?.",
+    "narrative": "Dernière mise au point : les histoire de l'offrande, de la tablette, du chien et de la fontaine sont passées en revue. La paix sera-t-elle rétablie ?.",
     "canDo": [
       "Je relis un mini-dossier en latin débutant.",
       "Je réponds à des questions cumulatives.",
