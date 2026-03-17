@@ -122,6 +122,255 @@ function renderLexiconChips(lexicon) {
   return `<div class="lesson-lexicon">${chips}</div>`;
 }
 
+function getLessonIntroText(lesson) {
+  const candidates = [
+    lesson?.intro,
+    lesson?.introduction,
+    lesson?.ambiance,
+    lesson?.narrative,
+    lesson?.subtitle,
+    lesson?.story,
+    lesson?.lessonPoint,
+    lesson?.objective,
+  ];
+
+  return candidates.find((value) => typeof value === "string" && value.trim().length > 0) || "";
+}
+
+function ensureLessonIntroStyles() {
+  if (typeof document === "undefined") return;
+  if (document.getElementById("lesson-intro-overlay-styles")) return;
+
+  const style = document.createElement("style");
+  style.id = "lesson-intro-overlay-styles";
+  style.textContent = `
+    .lesson-view {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .lesson-intro-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1400;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 320ms ease;
+    }
+
+    .lesson-intro-overlay.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lesson-intro-overlay.is-leaving {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .lesson-intro-overlay__veil {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 32%),
+        radial-gradient(circle at 80% 30%, rgba(255, 220, 160, 0.08), transparent 28%),
+        linear-gradient(180deg, rgba(24, 20, 17, 0.34), rgba(24, 20, 17, 0.56));
+      backdrop-filter: blur(16px) saturate(0.9);
+      -webkit-backdrop-filter: blur(16px) saturate(0.9);
+    }
+
+    .lesson-intro-overlay__bubble {
+      position: relative;
+      width: min(720px, calc(100vw - 2rem));
+      padding: clamp(1rem, 1.1rem + 1vw, 1.6rem);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 244, 226, 0.22);
+      background: linear-gradient(180deg, rgba(47, 37, 31, 0.9), rgba(28, 23, 20, 0.94));
+      color: #f7f2ea;
+      box-shadow:
+        0 24px 80px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      transform: translateY(10px) scale(0.985);
+      transition: transform 320ms ease;
+    }
+
+    .lesson-intro-overlay.is-visible .lesson-intro-overlay__bubble {
+      transform: translateY(0) scale(1);
+    }
+
+    .lesson-intro-overlay__eyebrow {
+      margin: 0 0 0.55rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 228, 188, 0.88);
+    }
+
+    .lesson-intro-overlay__text {
+      margin: 0;
+      min-height: 4.8lh;
+      font-size: clamp(1rem, 0.95rem + 0.4vw, 1.18rem);
+      line-height: 1.65;
+      color: #fff9f0;
+    }
+
+    .lesson-intro-overlay__text::after {
+      content: "";
+      display: inline-block;
+      width: 0.62ch;
+      height: 1em;
+      margin-left: 0.14rem;
+      vertical-align: -0.08em;
+      border-right: 2px solid rgba(255, 233, 200, 0.88);
+      animation: lessonIntroCaret 0.9s steps(1) infinite;
+    }
+
+    .lesson-intro-overlay.is-complete .lesson-intro-overlay__text::after {
+      opacity: 0.35;
+    }
+
+    .lesson-intro-overlay__skip {
+      margin-top: 0.9rem;
+      align-self: start;
+      padding: 0.5rem 0.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff6ea;
+      cursor: pointer;
+    }
+
+    .lesson-intro-overlay__skip:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    @keyframes lessonIntroCaret {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    @media (max-width: 740px) {
+      .lesson-intro-overlay {
+        padding: 0.8rem;
+      }
+
+      .lesson-intro-overlay__bubble {
+        width: min(100%, calc(100vw - 1rem));
+        border-radius: 20px;
+        padding: 1rem;
+      }
+
+      .lesson-intro-overlay__text {
+        min-height: 5.4lh;
+        font-size: 1rem;
+        line-height: 1.58;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+}
+
+function mountLessonIntroOverlay(wrapper, lesson) {
+  const introText = getLessonIntroText(lesson);
+  if (!wrapper || !introText || typeof document === "undefined") return;
+
+  ensureLessonIntroStyles();
+
+  const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  const overlay = document.createElement("div");
+  overlay.className = "lesson-intro-overlay";
+  overlay.innerHTML = `
+    <div class="lesson-intro-overlay__veil"></div>
+    <div class="lesson-intro-overlay__bubble" role="dialog" aria-modal="true" aria-label="Introduction de la leçon">
+      <p class="lesson-intro-overlay__eyebrow">Entrée dans la leçon</p>
+      <p class="lesson-intro-overlay__text" data-role="typewriter" aria-live="polite"></p>
+      <button type="button" class="lesson-intro-overlay__skip" data-role="skip">Passer</button>
+    </div>
+  `;
+
+  const textNode = overlay.querySelector('[data-role="typewriter"]');
+  const skipButton = overlay.querySelector('[data-role="skip"]');
+
+  let closed = false;
+  let typingTimer = null;
+  let closingTimer = null;
+
+  const clearTimers = () => {
+    if (typingTimer) window.clearTimeout(typingTimer);
+    if (closingTimer) window.clearTimeout(closingTimer);
+  };
+
+  const handleEscape = (event) => {
+    if (event.key === "Escape") {
+      closeOverlay();
+    }
+  };
+
+  const closeOverlay = () => {
+    if (closed) return;
+    closed = true;
+    clearTimers();
+    window.removeEventListener("keydown", handleEscape);
+    overlay.classList.remove("is-visible");
+    overlay.classList.add("is-leaving");
+    window.setTimeout(() => overlay.remove(), 420);
+  };
+
+  const scheduleClose = (delay = 1100) => {
+    closingTimer = window.setTimeout(closeOverlay, delay);
+  };
+
+  const typeText = () => {
+    let index = 0;
+
+    const tick = () => {
+      if (closed) return;
+      index += 1;
+      textNode.textContent = introText.slice(0, index);
+
+      if (index < introText.length) {
+        const char = introText[index - 1];
+        const delay = /[.:;!?]/.test(char) ? 42 : char === "," ? 28 : 17;
+        typingTimer = window.setTimeout(tick, delay);
+        return;
+      }
+
+      overlay.classList.add("is-complete");
+      scheduleClose();
+    };
+
+    tick();
+  };
+
+  overlay.addEventListener("click", (event) => {
+    if (event.target.closest(".lesson-intro-overlay__bubble")) return;
+    closeOverlay();
+  });
+
+  skipButton?.addEventListener("click", closeOverlay);
+  window.addEventListener("keydown", handleEscape);
+
+  wrapper.appendChild(overlay);
+
+  window.requestAnimationFrame(() => {
+    overlay.classList.add("is-visible");
+
+    if (prefersReducedMotion) {
+      if (textNode) textNode.textContent = introText;
+      overlay.classList.add("is-complete");
+      scheduleClose(900);
+      return;
+    }
+
+    typingTimer = window.setTimeout(typeText, 220);
+  });
+}
+
 function createLessonToolbar({ lesson, onBackDashboard, totalSteps = LESSONS_SPEC.lessonMax }) {
   const shell = document.createElement("div");
   shell.className = "lesson-toolbar-shell";
@@ -476,7 +725,6 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
       section.classList.toggle("is-active", isActive);
     });
 
-
     const currentStep = stepEntries[activeStepIndex];
     const kindLabel = currentStep.kind === "training" ? "Entraînement" : "Production";
     flowCounter.textContent = `Exercice ${activeStepIndex + 1} / ${stepEntries.length} · ${kindLabel}`;
@@ -717,5 +965,8 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     finalSummary,
     feedback,
   );
+
+  mountLessonIntroOverlay(wrapper, lesson);
+
   return wrapper;
 }
