@@ -1879,7 +1879,7 @@ export const lessons5eP2 = [
     "title": "Video, audio, accuso",
     subtitle: headerContexts5eP2["p2-l6"],
     "objective": "Comprendre le présent singulier dans les témoignages.",
-    "lessonPoint": "Au présent : -o (je), -s (tu), -t (il/elle).",
+    "lessonPoint": "Terminaisons du présent, au singulier : -o = je, -s = tu, -t = il/elle.",
     "narrative": "Chacun parle : « video », « Nego », « audis ». Les versions s’opposent.",
     "canDo": [
       "Je reconnais je/tu/il-elle au présent.",
@@ -1896,7 +1896,10 @@ export const lessons5eP2 = [
       "clamo = je crie",
       "rogas = tu demandes",
       "narrat = il/elle raconte",
-      "habito = j’habite"
+      "habito = j’habite",
+      "ego, tu, ille/illa = je, tu, il/elle",
+      "periculum = péril, danger (sujet ou COD)",
+      "via = la rue / in via = dans la rue"
     ],
     "maxScore": 10,
     "training": [
@@ -1961,7 +1964,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l6-t4",
         "type": "singleChoice",
-        "prompt": "« tu entends » =",
+        "prompt": "« Tu entends » =",
         "options": [
           "audis",
           "audio",
@@ -1975,7 +1978,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l6-t5",
         "type": "multipleChoice",
-        "prompt": "Sélectionne les formes de 1re personne.",
+        "prompt": "Sélectionne les formes de 1re personne du singulier.",
         "options": [
           "video",
           "nego",
@@ -2199,7 +2202,7 @@ export const lessons5eP2 = [
 {
   "id": "p2-l6-p3",
   "type": "textInput",
-  "prompt": "Complète : en latin, la terminaison du verbe indique déjà la …",
+  "prompt": "Complète : en latin, la terminaison du verbe indique la … qui parle ou agit.",
   "expected": "personne",
   "acceptedAnswers": [
     "personne",
@@ -2247,11 +2250,10 @@ export const lessons5eP2 = [
     ],
     "summary": {
       "retains": [
-        "Je lis la personne grâce à la terminaison.",
-        "Les témoignages changent selon qui parle."
+        "J'identifie la personne qui parle ou agit grâce à la terminaison.",
       ],
       "cahier": [
-        "Présent singulier : -o / -s / -t",
+        "Présent, au singulier : -o / -s / -t",
         "1re conjugaison (repère) : -o / -as / -at / -amus / -atis / -ant"
       ],
       "keywords": [
