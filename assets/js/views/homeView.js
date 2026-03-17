@@ -176,7 +176,7 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
 
       <div class="level-card__footer">
         <button type="button" class="btn btn-primary" data-action="open-dashboard">
-          Ouvrir le dashboard
+          Tabula Studiorum
         </button>
       </div>
     `;
