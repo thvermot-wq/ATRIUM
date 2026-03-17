@@ -119,25 +119,12 @@ function createAppLayout({ navigate, currentRouteName, levelId }) {
   const isDark = theme === "dark";
 
   header.innerHTML = `
-    <div class="header-row">
-      <div>
-        <h1>ATRIUM</h1>
-        <p class="muted">Application statique LCA · architecture progressive</p>
-      </div>
-      <button type="button" class="btn btn-theme-toggle" aria-pressed="${isDark}" aria-label="Basculer le thème">
-        ${isDark ? "🌙 Mode sombre" : "☀️ Mode clair"}
-      </button>
-    </div>
-  `;
-
-  const themeButton = header.querySelector(".btn-theme-toggle");
-  themeButton.addEventListener("click", () => {
-    const nextTheme = toggleTheme();
-    const dark = nextTheme === "dark";
-    themeButton.setAttribute("aria-pressed", String(dark));
-    themeButton.textContent = dark ? "🌙 Mode sombre" : "☀️ Mode clair";
-  });
-
+  <div class="app-header__brand">
+    <h1>ATRIUM</h1>
+    <p>Application statique LCA · architecture progressive</p>
+  </div>
+`;
+  
   const nav = createTopNav({ navigate, currentRouteName, levelId });
 
   const main = document.createElement("main");
