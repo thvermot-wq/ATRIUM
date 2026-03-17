@@ -37,7 +37,7 @@ const HOME_LEVEL_META = {
     summary:
       "Lecture, version guidée, thème simple, liens plus autonomes entre langue et civilisation.",
     ambience:
-      "On vise une lecture plus sûre et un regard plus vaste : texte, culture, héritage, argumentation et réemploi se répondent enfin à hauteur de fin de cycle.",
+      "On vise une lecture plus sûre et un regard plus vaste : texte, culture, héritage, et réemploi des notions se répondent à hauteur de fin de cycle.",
     referentielLabel: "Référentiel",
     referentielUrl: "assets/docs/referentiel-3e.pdf",
     outilsLabel: "Outils",
