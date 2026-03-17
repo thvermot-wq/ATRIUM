@@ -1615,13 +1615,13 @@ export const lessons5eP2 = [
         "type": "multipleChoice",
         "prompt": "Traductions recevables : « 𝑇𝑒𝑚𝑝𝑙𝑢𝑚 𝑚𝑎𝑙𝑢𝑚 𝑐𝑒𝑙𝑎𝑡 ».",
         "options": [
-          "Le temple cache un mal",
+          "Le temple recèle un mal",
           "Le temple cache une mauvaise chose",
           "Le mal cache le temple",
-          "Le temple porte un cadeau"
+          "Le temple dissimule un cadeau"
         ],
         "expected": [
-          "Le temple cache un mal",
+          "Le temple recèle un mal",
           "Le temple cache une mauvaise chose"
         ],
         "shuffle": true,
