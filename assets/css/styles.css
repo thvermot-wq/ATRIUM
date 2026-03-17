@@ -2666,3 +2666,59 @@ select {
 #app[data-route="home"] .home-view {
   margin-top: 0;
 }
+
+/* =========================
+   HOME FIT DESKTOP
+   marge de sécurité verticale
+   ========================= */
+
+:root {
+  --home-desktop-buffer: clamp(10px, 0.9vw, 22px);
+  --home-desktop-gap: clamp(10px, 1vh, 16px);
+  --home-hero-height: clamp(150px, 21vh, 240px);
+}
+
+@media (min-width: 980px) {
+  body:has(.home-view) {
+    overflow: hidden;
+  }
+
+  #app[data-route="home"] {
+    padding-top: 0;
+  }
+
+  #app[data-route="home"] > #view-root {
+    padding-top: var(--home-desktop-buffer);
+    padding-bottom: var(--home-desktop-buffer);
+  }
+
+  .home-view {
+    min-height: 0;
+    height: calc(100dvh - (2 * var(--home-desktop-buffer)));
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: var(--home-desktop-gap);
+    box-sizing: border-box;
+    align-content: stretch;
+  }
+
+  .home-view .home-hero {
+    min-height: auto;
+    height: var(--home-hero-height);
+    max-height: 240px;
+    padding: clamp(0.95rem, 1.2vw, 1.35rem);
+    box-sizing: border-box;
+  }
+
+  .home-view .level-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .home-view .actions-row {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
