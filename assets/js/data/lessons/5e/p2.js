@@ -1684,22 +1684,40 @@ export const lessons5eP2 = [
         "expected": "l'offrande est dans le temple",
         "acceptedAnswers": [
           "l'offrande est dans le temple",
+          "une offrande est dans le temple",
           "le cadeau est dans le temple",
+          "un cadeau est dans le temple",
           "le don est dans le temple",
+          "un don est dans le temple",
           "l'offrande se trouve dans le temple",
+          "une offrande se trouve dans le temple",
           "le cadeau se trouve dans le temple",
-          "le don se trouve dans le temple"
+          "un cadeau se trouve dans le temple",
+          "le don se trouve dans le temple",
+          "un don se trouve dans le temple",
+          "il y a une offrande dans le temple",
+          "il y a un cadeau dans le temple",
+          "il y a un don dans le temple"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "l'offrande est dans le temple",
+            "une offrande est dans le temple",
             "le cadeau est dans le temple",
+            "un cadeau est dans le temple",
             "le don est dans le temple",
+            "un don est dans le temple",
             "l'offrande se trouve dans le temple",
+            "une offrande se trouve dans le temple",
             "le cadeau se trouve dans le temple",
-            "le don se trouve dans le temple"
+            "un cadeau se trouve dans le temple",
+            "le don se trouve dans le temple",
+            "un don se trouve dans le temple",
+            "il y a une offrande dans le temple",
+            "il y a un cadeau dans le temple",
+            "il y a un don dans le temple"
           ]
         },
         "points": 1,
@@ -1784,7 +1802,7 @@ export const lessons5eP2 = [
       {
         "id": "p2-l5-p3",
         "type": "textInput",
-        "prompt": "Règle courte : au neutre singulier, nominatif et accusatif sont…",
+        "prompt": "2e déclinaison / Règle courte : au neutre singulier, nominatif et accusatif sont…",
         "expected": "identiques",
         "acceptedAnswers": [
           "identiques",
