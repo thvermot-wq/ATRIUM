@@ -3,7 +3,6 @@ import { renderHomeView } from "./views/homeView.js";
 import { renderDashboardView } from "./views/dashboardView.js";
 import { renderLessonView } from "./views/lessonView.js";
 import { renderResultsView } from "./views/resultsView.js";
-import { getThemeState, toggleTheme } from "./theme.js";
 
 let backToTopInstalled = false;
 let backToTopButton = null;
