@@ -2728,7 +2728,7 @@ export const lessons5eP2 = [
           "Le nom est changé",
           "Le texte n'est pas vrai",
           "Le texte est sûr",
-          "Personne ne lit"
+          "Personne ne change"
         ],
         "expected": [
           "Le nom est changé",
@@ -2809,7 +2809,11 @@ export const lessons5eP2 = [
           "la tablette est falsifiée",
           "la tablette est fausse",
           "la tablette est truquée",
-          "la tablette est trafiquée"
+          "la tablette est trafiquée",
+          "une tablette est falsifiée",
+          "une tablette est fausse",
+          "une tablette est truquée",
+          "une tablette est trafiquée"
         ],
         "answerConfig": {
           "type": "translation-segment",
@@ -2818,7 +2822,11 @@ export const lessons5eP2 = [
             "la tablette est falsifiée",
             "la tablette est fausse",
             "la tablette est truquée",
-            "la tablette est trafiquée"
+            "la tablette est trafiquée",
+            "une tablette est falsifiée",
+            "une tablette est fausse",
+            "une tablette est truquée",
+            "une tablette est trafiquée"
           ]
         },
         "points": 1,
@@ -2981,8 +2989,8 @@ export const lessons5eP2 = [
         "Je justifie une suspicion avec des indices précis."
       ],
       "cahier": [
-        "verum/falsum",
-        "tabella falsa : nomen mutat"
+        "Verum/falsum = vrai/faux | Vera/falsa = vraie/fausse",
+        "Tabella falsa : nomen mutat = La tablette est fausse, le nom change"
       ],
       "keywords": [
         "tablette",
