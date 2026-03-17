@@ -1511,7 +1511,7 @@ export const lessons5eP2 = [
     "title": "Donum, signum, periculum",
     subtitle: headerContexts5eP2["p2-l5"],
     "objective": "Comprendre le neutre singulier dans les indices de l’enquête.",
-    "lessonPoint": "Au neutre singulier, nominatif et accusatif ont la même forme.",
+    "lessonPoint": "2e déclinaison / Au neutre singulier, nominatif et accusatif ont la même terminaison : -um.",
     "narrative": "On découvre un signum étrange près du templum : periculum ou simple hasard ?",
     "canDo": [
       "Je reconnais des neutres en -um.",
