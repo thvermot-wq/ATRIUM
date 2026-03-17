@@ -23,7 +23,7 @@ const HOME_LEVEL_META = {
     summary:
       "Consolidation morphologique et syntaxique, lecture suivie plus sûre, thème guidé.",
     ambience:
-      "Le décor s’élargit : le latin devient plus structuré, les textes s’allongent, et les liens entre langue, cité, politique et récit deviennent plus nets.",
+      "Le décor s’élargit : le latin devient plus structuré, les textes s’allongent, et les liens entre langue, cité, politique et récit deviennent plus clairs.",
     referentielLabel: "Référentiel",
     referentielUrl: "assets/docs/referentiel-4e.pdf",
     outilsLabel: "Outils",
