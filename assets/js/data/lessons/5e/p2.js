@@ -1899,7 +1899,8 @@ export const lessons5eP2 = [
       "habito = j’habite",
       "ego, tu, ille/illa = je, tu, il/elle",
       "periculum = péril, danger (sujet ou COD)",
-      "via = la rue / in via = dans la rue"
+      "via = la rue",
+      "in via = dans la rue"
     ],
     "maxScore": 10,
     "training": [
