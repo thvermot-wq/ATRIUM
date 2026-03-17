@@ -2636,7 +2636,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l8"],
     "objective": "Lire un court texte suspect autour d’une tablette falsifiée.",
     "lessonPoint": "Je lis un petit texte en vérifiant les mots-clés verum/falsum et les verbes d’action.",
-    "narrative": "Une tabella circule : un nom a été changé. Qui a modifié le message ?",
+    "narrative": "Il paraît qu'une tablette de cire passe de main en main : un nom a été changé. Qui a modifié le message ?",
     "canDo": [
       "Je lis un micro-texte continu.",
       "Je repère vrai/faux.",
