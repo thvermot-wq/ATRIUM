@@ -115,15 +115,24 @@ function createAppLayout({ navigate, currentRouteName, levelId }) {
   const header = document.createElement("header");
   header.className = "shell app-header";
 
-  const { theme } = getThemeState();
-  const isDark = theme === "dark";
-
   header.innerHTML = `
   <div class="app-header__brand">
     <h1>ATRIUM</h1>
     <p>Application statique LCA · architecture progressive</p>
   </div>
 `;
+  
+  const nav = createTopNav({ navigate, currentRouteName, levelId });
+
+  const main = document.createElement("main");
+  main.id = "view-root";
+  main.className = "shell";
+  main.tabIndex = -1;
+  main.setAttribute("aria-live", "polite");
+
+  fragment.append(header, nav, main);
+  return { fragment, main };
+}
   
   const nav = createTopNav({ navigate, currentRouteName, levelId });
 
