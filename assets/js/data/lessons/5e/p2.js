@@ -23,7 +23,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l1"],
     "objective": "Entrer dans l’enquête de Subure et comprendre les questions de base.",
     "lessonPoint": "Je commence par le verbe, puis je demande qui / quoi / où / pourquoi ; l’ordre latin peut changer.",
-    "narrative": "Près de l’ara, un donum a disparu. Les voisins se regardent avec méfiance.",
+    "narrative": "Sur l'autel, une offrande a disparu. Les voisins se regardent avec méfiance.",
     "canDo": [
       "Je reconnais quis / quid / cur / ubi.",
       "Je repère sujet, verbe et complément.",
@@ -350,7 +350,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l2"],
     "objective": "Suivre les déplacements suspects dans le quartier.",
     "lessonPoint": "Les prépositions donnent le mouvement : ad vers, in dans, ex hors de, ante devant.",
-    "narrative": "Un témoin dit avoir vu quelqu’un courir ad templum puis ex taberna.",
+    "narrative": "Un témoin dit avoir vu quelqu’un courir vers le temple, puis hors d'une boutique.",
     "canDo": [
       "Je lis ad/in/ex/ante.",
       "Je localise une action.",
@@ -695,7 +695,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l3"],
     "objective": "Lire la première déposition d’une témoin.",
     "lessonPoint": "La 1ère déclinaison rassemble beaucoup de noms féminins en -a. La terminaison -a est souvent le sujet (nominatif), -am souvent le complément objet (accusatif).",
-    "narrative": "Près du fons, une femina raconte ce qu’elle a vu avant le tumulte.",
+    "narrative": "Près de la fontaine, une femme raconte ce qu’elle a vu avant que le tumulte ne s'installe.",
     "canDo": [
       "Je reconnais -a / -am.",
       "Je repère l’objet d’une action.",
@@ -1088,7 +1088,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l4"],
     "objective": "Distinguer sujet et objet avec les masculins en -us/-um.",
     "lessonPoint": "Je regarde les terminaisons (ou 'désinences') : -us (souvent sujet), -um (souvent complément objet).",
-    "narrative": "Les voisins se disputent : dominus accuse servum, puis le contraire est affirmé.",
+    "narrative": "Les voisins se disputent : le maître accuse son serviteur, puis le serviteur son maître...",
     "canDo": [
       "Je reconnais des masculins de 2e déclinaison.",
       "Je distingue qui agit et qui subit.",
@@ -1512,7 +1512,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l5"],
     "objective": "Comprendre le neutre singulier dans les indices de l’enquête.",
     "lessonPoint": "2e déclinaison / Au neutre singulier, nominatif et accusatif ont la même terminaison : -um.",
-    "narrative": "On découvre un signum étrange près du templum : periculum ou simple hasard ?",
+    "narrative": "On découvre un indice étrange près du temple : signe de danger ou simple hasard ?",
     "canDo": [
       "Je reconnais des neutres en -um.",
       "Je comprends la règle nominatif = accusatif.",
@@ -1880,7 +1880,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l6"],
     "objective": "Comprendre le présent singulier dans les témoignages.",
     "lessonPoint": "Terminaisons du présent, au singulier : -o = je, -s = tu, -t = il/elle.",
-    "narrative": "Chacun parle : « video », « Nego », « audis ». Les versions s’opposent.",
+    "narrative": "Chacun parle : « Je vois... », « Je ne sais pas... », « Tu entends ? » Les versions s’opposent.",
     "canDo": [
       "Je reconnais je/tu/il-elle au présent.",
       "Je repère qui parle dans un témoignage.",
@@ -2280,7 +2280,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l7"],
     "objective": "Lire les formes du présent pluriel dans une rumeur collective.",
     "lessonPoint": "Au pluriel : -mus (nous), -tis (vous), -nt (ils/elles).",
-    "narrative": "Le quartier entier parle : certains crient, d’autres répondent, la rumeur enfle.",
+    "narrative": "Le quartier entier déblatère jusqu'à plus soif : certains crient, d’autres répondent, la rumeur enfle.",
     "canDo": [
       "Je reconnais les personnes du pluriel.",
       "Je comprends qui parle au nom du groupe.",
@@ -2636,7 +2636,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l8"],
     "objective": "Lire un court texte suspect autour d’une tablette falsifiée.",
     "lessonPoint": "Je lis un petit texte en vérifiant les mots-clés verum/falsum et les verbes d’action.",
-    "narrative": "Il paraît qu'une tablette de cire passe de main en main : un nom a été changé. Qui a modifié le message ?",
+    "narrative": "Il paraît qu'une tablette de cire passe de main en main : un nom a été changé. Qui a modifié l'inscription ?",
     "canDo": [
       "Je lis un micro-texte continu.",
       "Je repère vrai/faux.",
@@ -3015,7 +3015,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l9"],
     "objective": "Comprendre explicitement la souplesse de l’ordre latin.",
     "lessonPoint": "Je ne traduis pas mot à mot dans l’ordre ; je repère formes et verbe.",
-    "narrative": "Le canis refuse une porte précise. Les voisins y voient un signe inquiétant.",
+    "narrative": "Le chien aboie devant une porte précise. Les voisins y voient un signe inquiétant.",
     "canDo": [
       "Je lis S/C/V, V/S/C, C/V/S.",
       "Je garde le même sens malgré l’ordre variable.",
@@ -3685,7 +3685,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l11"],
     "objective": "Faire émerger l’hypothèse de la Discorde... et réviser le présent en contexte narratif.",
     "lessonPoint": "Je relie les verbes au présent aux effets dans le quartier.",
-    "narrative": "Les habitants parlent d’une force : Discordia. Elle sépare les voisins et trouble la pax.",
+    "narrative": "Les habitants parlent d’une force : Discordia. Elle sépare les voisins et trouble la paix du quartier.",
     "canDo": [
       "Je lis un mini-récit connecté.",
       "Je repère les verbes du présent.",
@@ -4087,7 +4087,7 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l12"],
     "objective": "Clore l’enquête avec une révision cumulative et une mini-interprétation.",
     "lessonPoint": "Je mobilise toutes les clés du trimestre : questions, lieux, formes, présent, ordre souple.",
-    "narrative": "Dernière mise au point : donum, tabella, canis et fons sont relus pour décider si la pax peut revenir.",
+    "narrative": "Dernière mise au point : l'histoire de l'offrande, de la tablette, du chien et de la fontaine sont passés en revue. La paix sera-t-elle rétablie ?.",
     "canDo": [
       "Je relis un mini-dossier en latin débutant.",
       "Je réponds à des questions cumulatives.",
