@@ -376,7 +376,8 @@ export const lessons5eP3 = [
       "insula = immeuble",
       "via = rue",
       "ad = vers",
-      "in = dans",
+      "in + ablatif (-a) = dans (statique)",
+      "in + accusatif (-am) = dans (mouvement)",
       "ex = hors de, depuis",
       "ante = devant",
       "currit = il/elle court",
@@ -467,7 +468,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l2-t5",
         "type": "singleChoice",
-        "prompt": "Dans « vir in via currit », quel groupe indique le lieu ?",
+        "prompt": "Dans « vir in via currit », quel mot ou groupe indique le lieu ?",
         "options": [
           "in via",
           "vir",
@@ -644,6 +645,8 @@ export const lessons5eP3 = [
           "l’homme sort de l’immeuble et reste devant la porte",
           "l’homme sort de l’insula et reste devant la porte",
           "un homme sort de l’immeuble et reste devant la porte",
+          "un homme sort de l’immeuble et se poste devant la porte",
+          "l'homme sort de l’immeuble et se poste devant la porte",
           "un homme sort de l’insula et reste devant la porte"
         ],
         "answerConfig": {
@@ -657,6 +660,8 @@ export const lessons5eP3 = [
             "l’homme sort de l’immeuble et reste devant la porte",
             "l’homme sort de l’insula et reste devant la porte",
             "un homme sort de l’immeuble et reste devant la porte",
+            "un homme sort de l’immeuble et se poste devant la porte",
+            "l'homme sort de l’immeuble et se poste devant la porte",
             "un homme sort de l’insula et reste devant la porte"
           ]
         },
