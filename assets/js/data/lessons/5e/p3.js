@@ -1796,15 +1796,15 @@ export const lessons5eP3 = [
     ],
     "lexicon": [
       "balneum = thermes, bains",
-      "video = je vois",
-      "audis = tu entends",
-      "narrat = il/elle raconte",
-      "nego = je nie",
-      "times = tu crains",
-      "intrat = il/elle entre",
-      "exit = il/elle sort",
-      "rogas = tu demandes",
-      "habito = j’habite"
+      "video, vides, videt = je vois, tu vois, il/elle voit",
+      "audio, audis, audit = j'entends, tu entends, il/elle entend",
+      "narro, narras, narrat = je raconte, tu racontes, il/elle raconte",
+      "nego, negas, negat = je nie, tu nies, il/elle nie",
+      "timeo, times, timet = je crains, tu crains, il/elle craint",
+      "intro, intras, intrat = j'entre, tu entres, il/elle entre",
+      "exeo, exis, exit = je sors, tu sors, il/elle sort",
+      "rogo, rogas, rogat = je demande, tu demandes, il/elle demande",
+      "habito, habitas, habitat = j’habite, tu habites, il/elle habite"
     ],
     "maxScore": 10,
     "training": [
@@ -2050,7 +2050,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l6-p3",
         "type": "textInput",
-        "prompt": "Complète le témoignage : « Ego virum ... ; tu rumorem ... ; ille in balneum ... »",
+        "prompt": "Complète le témoignage avec les verbes "voir", "nier" et "entrer", conjugués à la bonne personne : « Ego virum ... ; tu rumorem ... ; ille in balneum ... »",
         "expected": "video ; negas ; intrat",
         "acceptedAnswers": [
           "video ; negas ; intrat",
@@ -2098,12 +2098,12 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je lis la terminaison du verbe pour savoir qui parle.",
-        "Je peux produire les trois personnes du singulier dans une mini-déposition."
-      ],
-      "cahier": [
         "-o = je ; -s = tu ; -t = il/elle",
         "video / vides / videt"
+      ],
+      "cahier": [
+        "Je lis la terminaison du verbe pour savoir qui parle. 1ère conjugaison : -o = je, -as = tu, -at = il/elle, -amus = nous, -atis = vous, -ant = ils/elles.",
+        "Je peux produire les trois personnes du singulier dans une mini-déposition. (Video = je vois, audis = tu entends, narrat = elle raconte...)"
       ],
       "keywords": [
         "bains",
