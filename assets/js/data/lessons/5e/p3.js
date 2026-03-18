@@ -1062,8 +1062,8 @@ export const lessons5eP3 = [
     "title": "In macello",
     "subtitle": "Au marché, un marchand reconnaît l’homme et parle d'un parfum tenace d'huile mal pressée ; si bien que l’odeur grasse revient soudain dans tous les souvenirs.",
     "objective": "Réinvestir le neutre dans une scène de marché et d’indice.",
-    "lessonPoint": "Je repère les neutres et j’observe leur fonction dans l’indice.",
-    "narrative": "Au marché, un marchand affirme que l’homme a acheté une mauvaise huile.",
+    "lessonPoint": "Je repère les neutres de la 2e déclinaison, et j’observe leur fonction dans l’indice. Sujet (nominatif) = -um ; COD (accusatif) = -um.",
+    "narrative": "Au marché, un marchand affirme que l’homme a acheté une huile de mauvaise qualité. De nuit ! Voilà de quoi faire parler les gens...",
     "canDo": [
       "Je reconnais des neutres fréquents.",
       "Je repère l’action principale.",
@@ -1076,11 +1076,11 @@ export const lessons5eP3 = [
       "signum = signe, marque, indice",
       "templum = temple",
       "vir = homme",
-      "emit = il/elle achète",
-      "portat = il/elle porte",
-      "celat = il/elle cache",
-      "videt = il/elle voit",
-      "invenit = il/elle trouve"
+      "emo, emit = j'achète ; il/elle achète",
+      "porto, portat = je porte ; il/elle porte",
+      "celo, celat = je cache ; il/elle cache",
+      "video, videt = je vois ; il/elle voit",
+      "invenio, invenit = je trouve ; il/elle trouve"
     ],
     "maxScore": 10,
     "training": [
@@ -1167,13 +1167,13 @@ export const lessons5eP3 = [
         "type": "multipleChoice",
         "prompt": "Traductions recevables de « oleum vir portat ».",
         "options": [
-          "L’homme porte l’huile",
+          "L’homme porte de l’huile",
           "L’homme transporte l’huile",
           "L’huile porte l’homme",
           "L’homme achète l’huile"
         ],
         "expected": [
-          "L’homme porte l’huile",
+          "L’homme porte de l’huile",
           "L’homme transporte l’huile"
         ],
         "shuffle": true,
@@ -1390,10 +1390,10 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In tabernis",
-    "subtitle": "Dans les boutiques, les récits se contredisent, mais Flavia oblige chacun à reprendre les faits avant qu'on n'accuse encore quelqu'un à tort.",
+    "subtitle": "Dans les boutiques, les récits se contredisent, mais Flavia oblige chacun à reprendre les faits un par un et à ne pas tirer de conclusion hâtive.",
     "objective": "Lire qui agit et qui subit dans des versions contradictoires.",
     "lessonPoint": "Je regarde -us / -um avant d’interpréter une accusation.",
-    "narrative": "Dans les tabernae, les paroles se mélangent : certains accusent trop vite.",
+    "narrative": "Dans les tabernae, les gens aiment parler fort et se pousser au premier plan. Les paroles se mélangent : certains accusent trop vite.",
     "canDo": [
       "Je relis la 2e déclinaison masculine.",
       "Je compare deux versions contradictoires.",
