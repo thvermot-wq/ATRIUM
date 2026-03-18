@@ -493,15 +493,23 @@ function createLessonToolbar({ lesson, onBackDashboard, totalSteps = LESSONS_SPE
   let activePanel = null;
 
   const panelMarkup = {
-    reminder: `
-      <p class="lesson-toolbar__panel-title">Rappel</p>
-      <p class="lesson-toolbar__panel-text">${escapeHtml(reminderText)}</p>
-    `,
-    lexicon: `
-      <p class="lesson-toolbar__panel-title">Lexique</p>
-      ${renderLexiconChips(lesson.lexicon)}
-    `,
-  };
+  reminder: `
+    <p class="lesson-toolbar__panel-title">Rappel</p>
+    <p class="lesson-toolbar__panel-text">${escapeHtml(reminderText)}</p>
+  `,
+  lexicon: `
+    <p class="lesson-toolbar__panel-title">Lexique</p>
+    ${renderLexiconChips(lesson.lexicon)}
+  `,
+  conjugations: `
+    <p class="lesson-toolbar__panel-title">Conjugaisons</p>
+    ${renderConjugationTables()}
+  `,
+  declensions: `
+    <p class="lesson-toolbar__panel-title">Déclinaisons</p>
+    ${renderDeclensionTables()}
+  `,
+};
 
   const syncLayout = () => {
     const toolbarHeight = toolbar.offsetHeight || 56;
