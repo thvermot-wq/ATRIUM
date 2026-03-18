@@ -2128,7 +2128,7 @@ export const lessons5eP3 = [
     "subtitle": "Au forum, Subure vide enfin sa colère en plein jour, et les voisins se répondent et s'invectivent face à face au lieu de se mordre par rumeur interposée.",
     "objective": "Identifier nous / vous / ils-elles dans un débat public.",
     "lessonPoint": "Je lis la terminaison du verbe pour savoir quel groupe agit.",
-    "narrative": "Au forum, le district confronte ses versions de façon publique.",
+    "narrative": "Au forum, le quartier se retrouve pour confronter toutes les versions de l'histoire de façon publique.",
     "canDo": [
       "Je reconnais les personnes du pluriel.",
       "Je lis un échange collectif.",
