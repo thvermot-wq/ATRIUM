@@ -2050,7 +2050,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l6-p3",
         "type": "textInput",
-        "prompt": "Complète le témoignage avec les verbes "voir", "nier" et "entrer", conjugués à la bonne personne : « Ego virum ... ; tu rumorem ... ; ille in balneum ... »",
+        "prompt": "Complète le témoignage avec les verbes « voir », « nier » et « entrer », conjugués à la bonne personne : « Ego virum ... ; tu rumorem ... ; ille in balneum ... »",
         "expected": "video ; negas ; intrat",
         "acceptedAnswers": [
           "video ; negas ; intrat",
