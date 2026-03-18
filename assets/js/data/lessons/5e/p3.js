@@ -1392,7 +1392,7 @@ export const lessons5eP3 = [
     "title": "In tabernis",
     "subtitle": "Dans les boutiques, les récits se contredisent, mais Flavia oblige chacun à reprendre les faits un par un et à ne pas tirer de conclusion hâtive.",
     "objective": "Lire qui agit et qui subit dans des versions contradictoires.",
-    "lessonPoint": "Je regarde -us / -um avant d’interpréter une accusation.",
+    "lessonPoint": "Qui accuse qui ? Je regarde qui est sujet (-us) / complément d'objet (-um) avant d’interpréter une accusation.",
     "narrative": "Dans les tabernae, les gens aiment parler fort et se pousser au premier plan. Les paroles se mélangent : certains accusent trop vite.",
     "canDo": [
       "Je relis la 2e déclinaison masculine.",
@@ -1406,6 +1406,7 @@ export const lessons5eP3 = [
       "amicus = ami",
       "tabernarius = boutiquier",
       "murus = mur",
+      "sero = tard, tardivement",
       "audit = il/elle entend",
       "vocat = il/elle appelle",
       "accusat = il/elle accuse",
@@ -1525,7 +1526,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l5-t7",
         "type": "multipleChoice",
-        "prompt": "Mini-texte : « Tabernarius sero virum videt. Amicus dubitat. » Qui a vu l’homme tard ?",
+        "prompt": "Mini-texte : « Sero virum tabernarius videt. Amicus dubitat. » Qui a vu l’homme tard dans la nuit ?",
         "options": [
           "le boutiquier",
           "l’ami",
@@ -1547,22 +1548,34 @@ export const lessons5eP3 = [
         "expected": "l'ami craint le voisin",
         "acceptedAnswers": [
           "l'ami craint le voisin",
+          "l'ami craint un voisin",
           "l'ami a peur du voisin",
+          "l'ami a peur d'un voisin",
           "l'ami redoute le voisin",
+          "l'ami redoute un voisin",
           "un ami craint le voisin",
+          "un ami craint un voisin",
           "un ami a peur du voisin",
-          "un ami redoute le voisin"
+          "un ami a peur d'un voisin",
+          "un ami redoute le voisin",
+          "un ami redoute un voisin"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "l'ami craint le voisin",
+            "l'ami craint un voisin",
             "l'ami a peur du voisin",
+            "l'ami a peur d'un voisin",
             "l'ami redoute le voisin",
+            "l'ami redoute un voisin",
             "un ami craint le voisin",
+            "un ami craint un voisin",
             "un ami a peur du voisin",
-            "un ami redoute le voisin"
+            "un ami a peur d'un voisin",
+            "un ami redoute le voisin",
+            "un ami redoute un voisin"
           ]
         },
         "points": 1,
@@ -1650,20 +1663,70 @@ export const lessons5eP3 = [
         "prompt": "Traduis : tabernarius vicinum audit.",
         "expected": "le boutiquier entend le voisin",
         "acceptedAnswers": [
-          "le boutiquier entend le voisin",
-          "le boutiquier écoute le voisin",
-          "un boutiquier entend le voisin",
-          "un boutiquier écoute le voisin"
+  "le boutiquier entend le voisin",
+  "le boutiquier entend un voisin",
+  "le boutiquier écoute le voisin",
+  "le boutiquier écoute un voisin",
+
+  "un boutiquier entend le voisin",
+  "un boutiquier entend un voisin",
+  "un boutiquier écoute le voisin",
+  "un boutiquier écoute un voisin",
+
+  "le marchand entend le voisin",
+  "le marchand entend un voisin",
+  "le marchand écoute le voisin",
+  "le marchand écoute un voisin",
+
+  "un marchand entend le voisin",
+  "un marchand entend un voisin",
+  "un marchand écoute le voisin",
+  "un marchand écoute un voisin",
+
+  "l'aubergiste entend le voisin",
+  "l'aubergiste entend un voisin",
+  "l'aubergiste écoute le voisin",
+  "l'aubergiste écoute un voisin",
+
+  "un aubergiste entend le voisin",
+  "un aubergiste entend un voisin",
+  "un aubergiste écoute le voisin",
+  "un aubergiste écoute un voisin"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
-          "accepted": [
-            "le boutiquier entend le voisin",
-            "le boutiquier écoute le voisin",
-            "un boutiquier entend le voisin",
-            "un boutiquier écoute le voisin"
-          ]
+          "acceptedAnswers": [
+  "le boutiquier entend le voisin",
+  "le boutiquier entend un voisin",
+  "le boutiquier écoute le voisin",
+  "le boutiquier écoute un voisin",
+
+  "un boutiquier entend le voisin",
+  "un boutiquier entend un voisin",
+  "un boutiquier écoute le voisin",
+  "un boutiquier écoute un voisin",
+
+  "le marchand entend le voisin",
+  "le marchand entend un voisin",
+  "le marchand écoute le voisin",
+  "le marchand écoute un voisin",
+
+  "un marchand entend le voisin",
+  "un marchand entend un voisin",
+  "un marchand écoute le voisin",
+  "un marchand écoute un voisin",
+
+  "l'aubergiste entend le voisin",
+  "l'aubergiste entend un voisin",
+  "l'aubergiste écoute le voisin",
+  "l'aubergiste écoute un voisin",
+
+  "un aubergiste entend le voisin",
+  "un aubergiste entend un voisin",
+  "un aubergiste écoute le voisin",
+  "un aubergiste écoute un voisin"
+]
         },
         "points": 1,
         "canonicalAnswer": "le boutiquier entend le voisin",
@@ -1695,8 +1758,8 @@ export const lessons5eP3 = [
     ],
     "summary": {
       "retains": [
-        "Je vérifie les formes avant d’accuser ou d’innocenter.",
-        "Je lis mieux qui agit et qui subit dans les récits contradictoires."
+        "Je vérifie les terminaisons (sujet ? COD ?) avant d’accuser ou d’innocenter.",
+        "Je comprends mieux qui agit et qui subit dans les récits contradictoires."
       ],
       "cahier": [
         "dominus servum vocat",
