@@ -381,31 +381,36 @@ function mountLessonIntroOverlay(wrapper, lesson) {
     window.setTimeout(() => overlay.remove(), 420);
   };
 
-  const scheduleClose = (delay = 1100) => {
-    closingTimer = window.setTimeout(closeOverlay, delay);
+  const scheduleClose = (delay = 1800) => {
+  closingTimer = window.setTimeout(closeOverlay, delay);
+};
+
+const typeText = () => {
+  let index = 0;
+
+  const tick = () => {
+    if (closed) return;
+    index += 1;
+    textNode.textContent = introText.slice(0, index);
+
+    if (index < introText.length) {
+      const char = introText[index - 1];
+      const delay =
+        /[.!?]/.test(char) ? 90 :
+        /[,:;]/.test(char) ? 60 :
+        char === " " ? 18 :
+        34;
+
+      typingTimer = window.setTimeout(tick, delay);
+      return;
+    }
+
+    overlay.classList.add("is-complete");
+    scheduleClose();
   };
 
-  const typeText = () => {
-    let index = 0;
-
-    const tick = () => {
-      if (closed) return;
-      index += 1;
-      textNode.textContent = introText.slice(0, index);
-
-      if (index < introText.length) {
-        const char = introText[index - 1];
-        const delay = /[.:;!?]/.test(char) ? 42 : char === "," ? 28 : 17;
-        typingTimer = window.setTimeout(tick, delay);
-        return;
-      }
-
-      overlay.classList.add("is-complete");
-      scheduleClose();
-    };
-
-    tick();
-  };
+  tick();
+};
 
   overlay.addEventListener("click", (event) => {
     if (event.target.closest(".lesson-intro-overlay__bubble")) return;
