@@ -728,7 +728,6 @@ export const lessons5eP3 = [
     "narrative": "Des voisines observent depuis les portes et les fenêtres, guettant les allées et venues nocturnes...",
     "canDo": [
       "Je reconnais des noms de 1re déclinaison.",
-      "Je lis une scène depuis la porte.",
       "Je traduis une phrase simple."
     ],
     "lexicon": [
@@ -858,13 +857,13 @@ export const lessons5eP3 = [
         "type": "multipleChoice",
         "prompt": "Traductions recevables de « amica lucernam portat ».",
         "options": [
-          "L’amie porte la lampe",
+          "L’amie porte une lampe",
           "L’amie transporte la lampe",
           "La lampe porte l’amie",
           "L’amie cache la lampe"
         ],
         "expected": [
-          "L’amie porte la lampe",
+          "L’amie porte une lampe",
           "L’amie transporte la lampe"
         ],
         "shuffle": true,
