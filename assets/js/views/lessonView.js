@@ -395,7 +395,7 @@ function mountLessonIntroOverlay(wrapper, lesson) {
 
       if (index < introText.length) {
         const char = introText[index - 1];
-        const delay = /[.:;!?]/.test(char) ? 68 : char === "," ? 42 : 26;
+        const delay = /[.:;!?]/.test(char) ? 42 : char === "," ? 28 : 17;
         typingTimer = window.setTimeout(tick, delay);
         return;
       }
