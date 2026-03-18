@@ -465,9 +465,11 @@ function createLessonToolbar({ lesson, onBackDashboard, totalSteps = LESSONS_SPE
             <span class="lesson-toolbar__progress-fill" data-role="progress-fill" style="width: ${initialProgressPercent}%"></span>
           </div>
           <div class="lesson-toolbar__actions">
-            <button type="button" class="lesson-toolbar__btn" data-panel="reminder" aria-expanded="false">Rappel</button>
-            ${hasLexicon ? `<button type="button" class="lesson-toolbar__btn" data-panel="lexicon" aria-expanded="false">Lexique</button>` : ""}
-          </div>
+  <button type="button" class="lesson-toolbar__btn" data-panel="reminder" aria-expanded="false">Rappel</button>
+  ${hasLexicon ? `<button type="button" class="lesson-toolbar__btn" data-panel="lexicon" aria-expanded="false">Lexique</button>` : ""}
+  <button type="button" class="lesson-toolbar__btn" data-panel="conjugations" aria-expanded="false">Conjugaisons</button>
+  <button type="button" class="lesson-toolbar__btn" data-panel="declensions" aria-expanded="false">Déclinaisons</button>
+</div>
         </div>
       </div>
     </div>
