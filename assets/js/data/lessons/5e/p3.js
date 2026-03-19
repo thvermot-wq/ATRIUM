@@ -2463,6 +2463,9 @@ export const lessons5eP3 = [
       "porta = porte",
       "obscura = sombre",
       "ante = devant",
+      "ex = hors de",
+      "clamo, clamas = je crie, tu cries",
+      "exeo, exis = je sors, tu sors",
       "latro, latras = j'aboie, tu aboies",
       "maneo, manes = je reste, tu restes",
       "timeo, times = je crains, tu crains",
@@ -2475,14 +2478,14 @@ export const lessons5eP3 = [
       {
         "id": "p3-l8-t1",
         "type": "singleChoice",
-        "prompt": "latrat signifie…",
+        "prompt": "'latramus' signifie…",
         "options": [
-          "il/elle aboie",
-          "il/elle dort",
-          "il/elle entre",
-          "il/elle cache"
+          "J'aboie",
+          "Vous volez",
+          "Elles volent",
+          "Nous aboyons"
         ],
-        "expected": "il/elle aboie",
+        "expected": "Nous aboyons",
         "shuffle": true,
         "points": 1
       },
@@ -2525,12 +2528,12 @@ export const lessons5eP3 = [
       {
         "id": "p3-l8-t3",
         "type": "singleChoice",
-        "prompt": "« ante portam obscuram canis latrat » : sens correct ?",
+        "prompt": "« Ante portam obscuram canis latrat » : sens correct ?",
         "options": [
           "Le chien aboie devant la porte sombre",
-          "La porte aboie devant le chien",
-          "Le chien entre dans la porte",
-          "Le chien dort"
+          "La porte aboie devant le chien obscur",
+          "Le chien passe par la porte obscure",
+          "Le chien dort devant l'obscure latrine"
         ],
         "expected": "Le chien aboie devant la porte sombre",
         "shuffle": true,
@@ -2539,7 +2542,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l8-t4",
         "type": "singleChoice",
-        "prompt": "« latrat ante portam canis » garde le même sens ?",
+        "prompt": "« Latrat ante obscuram portam canis » : cette phrase garde-t-elle le même sens général ?",
         "options": [
           "oui",
           "non",
@@ -2553,7 +2556,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l8-t5",
         "type": "multipleChoice",
-        "prompt": "Quels ordres peuvent signifier « Le chien reste devant la porte » ?",
+        "prompt": "Quelles phrases peuvent signifier « Le chien reste devant la porte » ?",
         "options": [
           "canis ante portam manet",
           "ante portam canis manet",
@@ -2582,22 +2585,36 @@ export const lessons5eP3 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p3-l8-t7",
-        "type": "multipleChoice",
-        "prompt": "Mini-texte : « Canis portam obscuram timet et recusat. » Quelle porte l’effraie ?",
-        "options": [
-          "la porte sombre",
-          "la porte claire",
-          "la fontaine",
-          "le marché"
-        ],
-        "expected": [
-          "la porte sombre"
-        ],
-        "shuffle": true,
-        "points": 1
-      }
+     {
+  "id": "p3-l8-t7",
+  "type": "matching",
+  "prompt": "Associe chaque mot à sa fonction dans « 𝘊𝘢𝘯𝘪𝘴 𝘱𝘰𝘳𝘵𝘢𝘮 𝘰𝘣𝘴𝘤𝘶𝘳𝘢𝘮 𝘵𝘪𝘮𝘦𝘵 𝘦𝘵 𝘳𝘦𝘤𝘶𝘴𝘢𝘵 ».",
+  "pairs": [
+    {
+      "left": "canis",
+      "right": "sujet"
+    },
+    {
+      "left": "portam obscuram",
+      "right": "COD"
+    },
+    {
+      "left": "timet et recusat",
+      "right": "verbes"
+    }
+  ],
+  "rightOptions": [
+    "sujet",
+    "COD",
+    "verbes"
+  ],
+  "expected": {
+    "canis": "sujet",
+    "portam obscuram": "COD",
+    "timet et recusat": "verbes"
+  },
+  "points": 1
+}
     ],
     "production": [
       {
@@ -2607,16 +2624,36 @@ export const lessons5eP3 = [
         "expected": "le chien craint la porte",
         "acceptedAnswers": [
           "le chien craint la porte",
-          "le chien a peur de la porte",
-          "le chien redoute la porte"
+  "le chien craint une porte",
+  "le chien a peur de la porte",
+  "le chien a peur d'une porte",
+  "le chien redoute la porte",
+  "le chien redoute une porte",
+
+  "un chien craint la porte",
+  "un chien craint une porte",
+  "un chien a peur de la porte",
+  "un chien a peur d'une porte",
+  "un chien redoute la porte",
+  "un chien redoute une porte"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
             "le chien craint la porte",
-            "le chien a peur de la porte",
-            "le chien redoute la porte"
+  "le chien craint une porte",
+  "le chien a peur de la porte",
+  "le chien a peur d'une porte",
+  "le chien redoute la porte",
+  "le chien redoute une porte",
+
+  "un chien craint la porte",
+  "un chien craint une porte",
+  "un chien a peur de la porte",
+  "un chien a peur d'une porte",
+  "un chien redoute la porte",
+  "un chien redoute une porte"
           ]
         },
         "points": 1,
@@ -2649,26 +2686,26 @@ export const lessons5eP3 = [
       {
         "id": "p3-l8-p2",
         "type": "textInput",
-        "prompt": "Traduis en latin : Le chien reste devant la porte sombre.",
+        "prompt": "Traduis en latin : Le chien aboie devant la porte sombre.",
         "expected": "canis ante portam obscuram manet",
         "acceptedAnswers": [
-          "canis ante portam obscuram manet",
-          "canis manet ante portam obscuram",
-          "ante portam obscuram canis manet",
-          "ante portam obscuram manet canis",
-          "manet canis ante portam obscuram",
-          "manet ante portam obscuram canis"
+          "canis ante portam obscuram latrat",
+          "canis latrat ante portam obscuram",
+          "ante portam obscuram canis latrat",
+          "ante portam obscuram latrat canis",
+          "latrat canis ante portam obscuram",
+          "latrat ante portam obscuram canis"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
-            "canis ante portam obscuram manet",
-            "canis manet ante portam obscuram",
-            "ante portam obscuram canis manet",
-            "ante portam obscuram manet canis",
-            "manet canis ante portam obscuram",
-            "manet ante portam obscuram canis"
+            "canis ante portam obscuram latrat",
+            "canis latrat ante portam obscuram",
+            "ante portam obscuram canis latrat",
+            "ante portam obscuram latrat canis",
+            "latrat canis ante portam obscuram",
+            "latrat ante portam obscuram canis"
           ]
         },
         "points": 1,
@@ -2698,49 +2735,89 @@ export const lessons5eP3 = [
           }
         ]
       },
-      {
-        "id": "p3-l8-p3",
-        "type": "textInput",
-        "prompt": "Complète la traduction : « Manet ante portam canis » = « ... reste devant la porte »",
-        "expected": "le chien",
-        "acceptedAnswers": [
-          "le chien",
-          "un chien"
-        ],
-        "answerConfig": {
-          "type": "one-of",
-          "language": "fr",
-          "accepted": [
-            "le chien",
-            "un chien"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "le chien",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Identifier correctement le sujet malgré l’ordre variable.",
-        "rejectIf": [
-          "portam pris pour sujet",
-          "réponse hors-sujet"
-        ],
-        "tests": [
-          {
-            "input": "le chien",
-            "isCorrect": true
-          },
-          {
-            "input": "la porte",
-            "isCorrect": false
-          }
-        ]
-      }
+     {
+  "id": "p3-l8-p3",
+  "type": "textInput",
+  "prompt": "Traduis en français : « 𝘌𝘹 𝘱𝘰𝘳𝘵𝘢 𝘰𝘣𝘴𝘤𝘶𝘳𝘢 𝘷𝘪𝘳 𝘦𝘹𝘪𝘵 𝘦𝘵 𝘤𝘭𝘢𝘮𝘢𝘵. »",
+  "expected": "un homme sort de la porte sombre et crie",
+  "acceptedAnswers": [
+    "un homme sort de la porte sombre et crie",
+    "l'homme sort de la porte sombre et crie",
+    "un homme sort d'une porte sombre et crie",
+    "l'homme sort d'une porte sombre et crie",
+
+    "un homme sort de la porte obscure et crie",
+    "l'homme sort de la porte obscure et crie",
+    "un homme sort d'une porte obscure et crie",
+    "l'homme sort d'une porte obscure et crie",
+
+    "un homme sort de la porte sombre et il crie",
+    "l'homme sort de la porte sombre et il crie",
+    "un homme sort d'une porte sombre et il crie",
+    "l'homme sort d'une porte sombre et il crie",
+
+    "un homme sort de la porte obscure et il crie",
+    "l'homme sort de la porte obscure et il crie",
+    "un homme sort d'une porte obscure et il crie",
+    "l'homme sort d'une porte obscure et il crie"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "un homme sort de la porte sombre et crie",
+      "l'homme sort de la porte sombre et crie",
+      "un homme sort d'une porte sombre et crie",
+      "l'homme sort d'une porte sombre et crie",
+
+      "un homme sort de la porte obscure et crie",
+      "l'homme sort de la porte obscure et crie",
+      "un homme sort d'une porte obscure et crie",
+      "l'homme sort d'une porte obscure et crie",
+
+      "un homme sort de la porte sombre et il crie",
+      "l'homme sort de la porte sombre et il crie",
+      "un homme sort d'une porte sombre et il crie",
+      "l'homme sort d'une porte sombre et il crie",
+
+      "un homme sort de la porte obscure et il crie",
+      "l'homme sort de la porte obscure et il crie",
+      "un homme sort d'une porte obscure et il crie",
+      "l'homme sort d'une porte obscure et il crie"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "un homme sort de la porte sombre et crie",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Comprendre ex + ablatif, identifier le sujet vir et traduire correctement les deux verbes exit et clamat.",
+  "rejectIf": [
+    "contre-sens sur ex",
+    "porta prise pour sujet",
+    "omission d'un des deux verbes",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    {
+      "input": "un homme sort de la porte sombre et crie",
+      "isCorrect": true
+    },
+    {
+      "input": "l'homme sort de la porte obscure et il crie",
+      "isCorrect": true
+    },
+    {
+      "input": "la porte sombre sort et l'homme crie",
+      "isCorrect": false
+    }
+  ]
+}
     ],
     "summary": {
       "retains": [
