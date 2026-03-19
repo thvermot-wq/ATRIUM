@@ -556,14 +556,14 @@ function renderDeclensionTables() {
       </article>
 
       <article class="reference-card">
-        <h4>2e décl. · dominus / templum</h4>
+        <h4>2e décl. · type 'dominus' (masc.) / type 'templum' (neutre)</h4>
         <div class="table-wrap table-wrap--flat">
           <table class="reference-table reference-table--declension">
             <thead>
               <tr>
                 <th>Cas</th>
-                <th>Masc.</th>
-                <th>Neutre</th>
+                <th>Dominus</th>
+                <th>Templum</th>
               </tr>
             </thead>
             <tbody>
