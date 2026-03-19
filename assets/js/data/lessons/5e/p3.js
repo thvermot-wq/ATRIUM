@@ -3587,7 +3587,7 @@ export const lessons5eP3 = [
   "subtitle": "Le serviteur de l’avocat voit l’homme, n’appelle personne, puis ouvre la porte. Intrus dangereux ou complice attendu ?",
   "objective": "Réinvestir le génitif et lire plusieurs indices courts pour décider si l’homme semble connu de la maison.",
   "lessonPoint": "Je lis les phrases l’une après l’autre et j’additionne les indices.",
-  "narrative": "Dans l’atrium de la villa de l’avocat, Marcus et Livia observent le serviteur. Il voit l’homme, mais ne crie pas. Il ouvre la porte et prend la tablette. Peu à peu, un doute nouveau apparaît : cet homme n’entre peut-être pas par hasard.",
+  "narrative": "Dans l’atrium de la villa de l’avocat, Marcus et Livia observent le serviteur. Il voit l’homme, mais ne crie pas, et se contente d'ouvrir une porte dérobée. Un doute taraude Marcus et Livia : vient-il de favoriser la fuite du suspect ?",
   "canDo": [
     "Je lis un indice bref dans une scène continue.",
     "Je comprends un groupe au génitif dans la maison de l’avocat.",
