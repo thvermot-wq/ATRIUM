@@ -440,13 +440,13 @@ function renderConjugationTables() {
   return `
     <div class="reference-panel-grid">
       <article class="reference-card">
-        <h4>narro</h4>
+        <h4>NARRO</h4>
         <div class="table-wrap">
           <table class="reference-table reference-table--compact">
             <thead>
               <tr>
-                <th>Personne</th>
-                <th>Présent</th>
+                <th>Français</th>
+                <th>Latin</th>
               </tr>
             </thead>
             <tbody>
@@ -462,13 +462,13 @@ function renderConjugationTables() {
       </article>
 
       <article class="reference-card">
-        <h4>video</h4>
+        <h4>VIDEO</h4>
         <div class="table-wrap">
           <table class="reference-table reference-table--compact">
             <thead>
               <tr>
-                <th>Personne</th>
-                <th>Présent</th>
+                <th>Français</th>
+                <th>Latin</th>
               </tr>
             </thead>
             <tbody>
@@ -484,13 +484,13 @@ function renderConjugationTables() {
       </article>
 
       <article class="reference-card">
-        <h4>audio</h4>
+        <h4>AUDIO</h4>
         <div class="table-wrap">
           <table class="reference-table reference-table--compact">
             <thead>
               <tr>
-                <th>Personne</th>
-                <th>Présent</th>
+                <th>Français</th>
+                <th>Latin</th>
               </tr>
             </thead>
             <tbody>
