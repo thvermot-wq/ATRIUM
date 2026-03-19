@@ -8,7 +8,7 @@ const headerContexts5eP3 = {
   "p3-l6": "Aux bains, un témoin confirme un détail, en retire un autre, puis Marcus sent que le mensonge fatigue ceux qui le portent depuis trop longtemps.",
   "p3-l7": "Au forum, Subure vide enfin sa colère en plein jour, et les voisins se répondent et s'invectivent face à face au lieu de se mordre par rumeur interposée.",
   "p3-l8": "Niger retourne à la porte louche, gratte le bois, refuse d’entrer, et plus personne n’ose traiter ce manège comme un simple caprice.",
-  "p3-l9": "Près de l’autel et de la fontaine, Marcus et Livia recoupent leurs indices, et voient les morceaux s’emboîter pour de bon.",
+  "p3-l9": "L’homme louche a franchi la porte de la villa de l’avocat. Dans l’atrium, Marcus et Livia recoupent les indices : serviteur du maître, dîner du maître, tablette du maître. Intrus dangereux ou complice attendu ?"
   "p3-l10": "Chacun pose une lampe devant sa porte ou au carrefour, car Subure veut ouvrir les yeux au lieu de parler dans le noir.",
   "p3-l11": "Sous les lampes restées allumées, la rue change de ton, l’homme ne repasse plus, et le calme revient peu à peu.",
   "p3-l12": "Quand Subure s’éclaire tout entière, Niger se tait enfin, Marcus relève la tête, et la concorde reprend sa place au milieu des maisons."
@@ -3942,31 +3942,7 @@ export const lessons5eP3 = [
       "genitif",
       "villa",
       "advocatus"
-    ]
-  }
-    ],
-    "summary": {
-      "retains": [
-        "Je lis un avant / après du quartier avec le lexique déjà acquis.",
-        "Je comprends que l’éclairage modifie à la fois la rue et les récits."
-      ],
-      "cahier": [
-        "vicus clarior est ; vicus quietus manet",
-        "rumor minor est"
-      ],
-      "keywords": [
-        "avant/après",
-        "calme",
-        "éclairage"
-      ]
-    },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "p3",
-        "bilan",
-        "clarior"
-      ]
+   ]
     }
   },
   {
