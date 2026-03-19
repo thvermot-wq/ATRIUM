@@ -450,12 +450,12 @@ function renderConjugationTables() {
               </tr>
             </thead>
             <tbody>
-              <tr><td>je raconte =</td><td>narro</td></tr>
-              <tr><td>tu racontes =</td><td>narras</td></tr>
-              <tr><td>il/elle raconte =</td><td>narrat</td></tr>
-              <tr><td>nous racontons =</td><td>narramus</td></tr>
-              <tr><td>vous racontez =</td><td>narratis</td></tr>
-              <tr><td>ils/elles racontent =</td><td>narrant</td></tr>
+              <tr><td>je raconte</td><td>narro</td></tr>
+              <tr><td>tu racontes</td><td>narras</td></tr>
+              <tr><td>il/elle raconte</td><td>narrat</td></tr>
+              <tr><td>nous racontons</td><td>narramus</td></tr>
+              <tr><td>vous racontez</td><td>narratis</td></tr>
+              <tr><td>ils/elles racontent</td><td>narrant</td></tr>
             </tbody>
           </table>
         </div>
@@ -472,12 +472,12 @@ function renderConjugationTables() {
               </tr>
             </thead>
             <tbody>
-              <tr><td>je vois =</td><td>video</td></tr>
-              <tr><td>tu vois =</td><td>vides</td></tr>
-              <tr><td>il/elle voit =</td><td>videt</td></tr>
-              <tr><td>nous voyons =</td><td>videmus</td></tr>
-              <tr><td>vous voyez =</td><td>videtis</td></tr>
-              <tr><td>ils/elles voient =</td><td>vident</td></tr>
+              <tr><td>je vois</td><td>video</td></tr>
+              <tr><td>tu vois</td><td>vides</td></tr>
+              <tr><td>il/elle voit</td><td>videt</td></tr>
+              <tr><td>nous voyons</td><td>videmus</td></tr>
+              <tr><td>vous voyez</td><td>videtis</td></tr>
+              <tr><td>ils/elles voient</td><td>vident</td></tr>
             </tbody>
           </table>
         </div>
@@ -494,12 +494,12 @@ function renderConjugationTables() {
               </tr>
             </thead>
             <tbody>
-              <tr><td>j'entends =</td><td>audio</td></tr>
-              <tr><td>tu entends =</td><td>audis</td></tr>
-              <tr><td>il/elle entend =</td><td>audit</td></tr>
-              <tr><td>nous entendons =</td><td>audimus</td></tr>
-              <tr><td>vous entendez =</td><td>auditis</td></tr>
-              <tr><td>ils/elles entendent =</td><td>audiunt</td></tr>
+              <tr><td>j'entends</td><td>audio</td></tr>
+              <tr><td>tu entends</td><td>audis</td></tr>
+              <tr><td>il/elle entend</td><td>audit</td></tr>
+              <tr><td>nous entendons</td><td>audimus</td></tr>
+              <tr><td>vous entendez</td><td>auditis</td></tr>
+              <tr><td>ils/elles entendent</td><td>audiunt</td></tr>
             </tbody>
           </table>
         </div>
@@ -513,89 +513,66 @@ function renderDeclensionTables() {
     <div class="reference-panel-stack">
       <article class="reference-card">
         <h4>Fonctions → cas</h4>
-        <div class="table-wrap">
-          <table class="reference-table reference-table--compact">
+        <div class="table-wrap table-wrap--flat">
+          <table class="reference-table reference-table--declension">
             <thead>
               <tr>
                 <th>Fonction</th>
-                <th>Cas latin</th>
+                <th>Cas</th>
               </tr>
             </thead>
             <tbody>
               <tr><td>Sujet</td><td>Nominatif</td></tr>
               <tr><td>COD</td><td>Accusatif</td></tr>
-              <tr><td>Complément du nom</td><td>Génitif</td></tr>
+              <tr><td>C. du nom</td><td>Génitif</td></tr>
               <tr><td>COI</td><td>Datif</td></tr>
-              <tr><td>CC / moyen / lieu</td><td>Ablatif</td></tr>
+              <tr><td>CC</td><td>Ablatif</td></tr>
             </tbody>
           </table>
         </div>
       </article>
 
       <article class="reference-card">
-        <h4>1re déclinaison · fortuna</h4>
-        <div class="table-wrap">
-          <table class="reference-table reference-table--compact">
+        <h4>1re décl. · puella</h4>
+        <div class="table-wrap table-wrap--flat">
+          <table class="reference-table reference-table--declension">
             <thead>
               <tr>
                 <th>Cas</th>
-                <th>Singulier</th>
-                <th>Pluriel</th>
+                <th>Sg.</th>
+                <th>Pl.</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Nominatif</td><td>fortuna</td><td>fortunae</td></tr>
-              <tr><td>Vocatif</td><td>fortuna</td><td>fortunae</td></tr>
-              <tr><td>Accusatif</td><td>fortunam</td><td>fortunas</td></tr>
-              <tr><td>Génitif</td><td>fortunae</td><td>fortunarum</td></tr>
-              <tr><td>Datif</td><td>fortunae</td><td>fortunis</td></tr>
-              <tr><td>Ablatif</td><td>fortuna</td><td>fortunis</td></tr>
+              <tr><td>Nom.</td><td>-a</td><td>-ae</td></tr>
+              <tr><td>Voc.</td><td>-a</td><td>-ae</td></tr>
+              <tr><td>Acc.</td><td>-am</td><td>-as</td></tr>
+              <tr><td>Gén.</td><td>-ae</td><td>-arum</td></tr>
+              <tr><td>Dat.</td><td>-ae</td><td>-is</td></tr>
+              <tr><td>Abl.</td><td>-a</td><td>-is</td></tr>
             </tbody>
           </table>
         </div>
       </article>
 
       <article class="reference-card">
-        <h4>2e déclinaison · dominus</h4>
-        <div class="table-wrap">
-          <table class="reference-table reference-table--compact">
+        <h4>2e décl. · dominus / templum</h4>
+        <div class="table-wrap table-wrap--flat">
+          <table class="reference-table reference-table--declension">
             <thead>
               <tr>
                 <th>Cas</th>
-                <th>Singulier</th>
-                <th>Pluriel</th>
+                <th>Masc.</th>
+                <th>Neutre</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Nominatif</td><td>dominus</td><td>domini</td></tr>
-              <tr><td>Vocatif</td><td>domine</td><td>domini</td></tr>
-              <tr><td>Accusatif</td><td>dominum</td><td>dominos</td></tr>
-              <tr><td>Génitif</td><td>domini</td><td>dominorum</td></tr>
-              <tr><td>Datif</td><td>domino</td><td>dominis</td></tr>
-              <tr><td>Ablatif</td><td>domino</td><td>dominis</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-
-      <article class="reference-card">
-        <h4>2e déclinaison neutre · templum</h4>
-        <div class="table-wrap">
-          <table class="reference-table reference-table--compact">
-            <thead>
-              <tr>
-                <th>Cas</th>
-                <th>Singulier</th>
-                <th>Pluriel</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Nominatif</td><td>templum</td><td>templa</td></tr>
-              <tr><td>Vocatif</td><td>templum</td><td>templa</td></tr>
-              <tr><td>Accusatif</td><td>templum</td><td>templa</td></tr>
-              <tr><td>Génitif</td><td>templi</td><td>templorum</td></tr>
-              <tr><td>Datif</td><td>templo</td><td>templis</td></tr>
-              <tr><td>Ablatif</td><td>templo</td><td>templis</td></tr>
+              <tr><td>Nom.</td><td>-us / -i</td><td>-um / -a</td></tr>
+              <tr><td>Voc.</td><td>-e / -i</td><td>-um / -a</td></tr>
+              <tr><td>Acc.</td><td>-um / -os</td><td>-um / -a</td></tr>
+              <tr><td>Gén.</td><td>-i / -orum</td><td>-i / -orum</td></tr>
+              <tr><td>Dat.</td><td>-o / -is</td><td>-o / -is</td></tr>
+              <tr><td>Abl.</td><td>-o / -is</td><td>-o / -is</td></tr>
             </tbody>
           </table>
         </div>
