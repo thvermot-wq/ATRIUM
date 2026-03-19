@@ -450,12 +450,12 @@ function renderConjugationTables() {
               </tr>
             </thead>
             <tbody>
-              <tr><td>1re pers. sing.</td><td>narro</td></tr>
-              <tr><td>2e pers. sing.</td><td>narras</td></tr>
-              <tr><td>3e pers. sing.</td><td>narrat</td></tr>
-              <tr><td>1re pers. plur.</td><td>narramus</td></tr>
-              <tr><td>2e pers. plur.</td><td>narratis</td></tr>
-              <tr><td>3e pers. plur.</td><td>narrant</td></tr>
+              <tr><td>je raconte =</td><td>narro</td></tr>
+              <tr><td>tu racontes =</td><td>narras</td></tr>
+              <tr><td>il/elle raconte =</td><td>narrat</td></tr>
+              <tr><td>nous racontons =</td><td>narramus</td></tr>
+              <tr><td>vous racontez =</td><td>narratis</td></tr>
+              <tr><td>ils/elles racontent =</td><td>narrant</td></tr>
             </tbody>
           </table>
         </div>
@@ -472,12 +472,12 @@ function renderConjugationTables() {
               </tr>
             </thead>
             <tbody>
-              <tr><td>1re pers. sing.</td><td>video</td></tr>
-              <tr><td>2e pers. sing.</td><td>vides</td></tr>
-              <tr><td>3e pers. sing.</td><td>videt</td></tr>
-              <tr><td>1re pers. plur.</td><td>videmus</td></tr>
-              <tr><td>2e pers. plur.</td><td>videtis</td></tr>
-              <tr><td>3e pers. plur.</td><td>vident</td></tr>
+              <tr><td>je vois =</td><td>video</td></tr>
+              <tr><td>tu vois =</td><td>vides</td></tr>
+              <tr><td>il/elle voit =</td><td>videt</td></tr>
+              <tr><td>nous voyons =</td><td>videmus</td></tr>
+              <tr><td>vous voyez =</td><td>videtis</td></tr>
+              <tr><td>ils/elles voient =</td><td>vident</td></tr>
             </tbody>
           </table>
         </div>
@@ -494,12 +494,12 @@ function renderConjugationTables() {
               </tr>
             </thead>
             <tbody>
-              <tr><td>1re pers. sing.</td><td>audio</td></tr>
-              <tr><td>2e pers. sing.</td><td>audis</td></tr>
-              <tr><td>3e pers. sing.</td><td>audit</td></tr>
-              <tr><td>1re pers. plur.</td><td>audimus</td></tr>
-              <tr><td>2e pers. plur.</td><td>auditis</td></tr>
-              <tr><td>3e pers. plur.</td><td>audiunt</td></tr>
+              <tr><td>j'entends =</td><td>audio</td></tr>
+              <tr><td>tu entends =</td><td>audis</td></tr>
+              <tr><td>il/elle entend =</td><td>audit</td></tr>
+              <tr><td>nous entendons =</td><td>audimus</td></tr>
+              <tr><td>vous entendez =</td><td>auditis</td></tr>
+              <tr><td>ils/elles entendent =</td><td>audiunt</td></tr>
             </tbody>
           </table>
         </div>
