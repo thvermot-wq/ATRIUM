@@ -2666,3 +2666,101 @@ select {
 #app[data-route="home"] .home-view {
   margin-top: 0;
 }
+
+/* ===== Références de leçon : tableaux de conjugaison / déclinaison ===== */
+
+.reference-panel-stack{
+  display:grid;
+  gap:16px;
+}
+
+.reference-panel-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:16px;
+  align-items:start;
+}
+
+.reference-card{
+  min-width:0;
+  border:1px solid rgba(255,255,255,0.10);
+  border-radius:18px;
+  padding:14px 14px 12px;
+  background:rgba(255,255,255,0.04);
+  box-shadow:0 8px 24px rgba(0,0,0,0.12);
+}
+
+.reference-card h4{
+  margin:0 0 10px;
+  font-size:0.98rem;
+  line-height:1.3;
+}
+
+.table-wrap{
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+.reference-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:320px;
+}
+
+.reference-table th,
+.reference-table td{
+  padding:8px 10px;
+  text-align:left;
+  vertical-align:top;
+}
+
+.reference-table--compact th,
+.reference-table--compact td{
+  padding:7px 9px;
+  font-size:0.94rem;
+  line-height:1.35;
+}
+
+/* Déclinaisons : 4 cartes côte à côte sur grand écran */
+.lesson-view .reference-panel-stack{
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+}
+
+/* Si le bloc interne contient déjà une grille (conjugaison), on garde 3 colonnes confortables */
+.lesson-view .reference-panel-grid{
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+}
+
+/* Tablette */
+@media (max-width: 1100px){
+  .lesson-view .reference-panel-stack{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  .lesson-view .reference-panel-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px){
+  .lesson-view .reference-panel-stack,
+  .lesson-view .reference-panel-grid{
+    grid-template-columns:1fr;
+  }
+
+  .reference-card{
+    padding:12px 12px 10px;
+    border-radius:14px;
+  }
+
+  .reference-table{
+    min-width:280px;
+  }
+
+  .reference-table--compact th,
+  .reference-table--compact td{
+    font-size:0.9rem;
+    padding:6px 8px;
+  }
+}
