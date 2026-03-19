@@ -2452,7 +2452,7 @@ export const lessons5eP3 = [
     "subtitle": "Niger retourne à la porte louche, gratte le bois, refuse d’entrer, et plus personne n’ose traiter ce manège comme un simple caprice.",
     "objective": "Lire une phrase à ordre variable sans se tromper sur le sens.",
     "lessonPoint": "Le sens dépend des formes et du verbe, pas seulement de la position des mots.",
-    "narrative": "Le chien refuse toujours la même porte sombre ; ce détail devient central.",
+    "narrative": "Le chien rôde toujours aux alentours de la même porte sombre ; ce n'était qu'une question de temps avant que nos enquêteurs ne s'y intéressent...",
     "canDo": [
       "Je lis des ordres variés.",
       "Je garde le même sens malgré l’ordre.",
@@ -2463,12 +2463,12 @@ export const lessons5eP3 = [
       "porta = porte",
       "obscura = sombre",
       "ante = devant",
-      "latrat = il/elle aboie",
-      "manet = il/elle reste",
-      "timet = il/elle craint",
-      "recusat = il/elle refuse",
-      "intrat = il/elle entre",
-      "audit = il/elle entend"
+      "latro, latras = j'aboie, tu aboies",
+      "maneo, manes = je reste, tu restes",
+      "timeo, times = je crains, tu crains",
+      "recuso, recusas = je refuse, tu refuses",
+      "intro, intras = j'entre, tu entres",
+      "audio, audis = j'entends, tu entends"
     ],
     "maxScore": 10,
     "training": [
