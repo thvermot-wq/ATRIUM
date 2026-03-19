@@ -2128,7 +2128,7 @@ export const lessons5eP3 = [
     "subtitle": "Au forum, Subure vide enfin sa colère en plein jour, et les voisins se répondent et s'invectivent face à face au lieu de se mordre par rumeur interposée.",
     "objective": "Identifier nous / vous / ils-elles dans un débat public.",
     "lessonPoint": "Je lis la terminaison du verbe pour savoir quel groupe agit.",
-    "narrative": "Au forum, le quartier se retrouve pour confronter toutes les versions de l'histoire de façon publique.",
+    "narrative": "Au forum, le quartier se retrouve pour confronter toutes les versions de l'histoire de façon publique ; ce qui promet du boucan !",
     "canDo": [
       "Je reconnais les personnes du pluriel.",
       "Je lis un échange collectif.",
@@ -2242,7 +2242,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l7-t6",
         "type": "multipleChoice",
-        "prompt": "Mini-texte : « Vicini clamant, mercatores respondent, puellae audiunt. » Qui parle pour le quartier ?",
+        "prompt": "Mini-texte : « Vicini clamant, mercatores respondent, puellae audiunt. » Quels personnages du quartier échangent leurs points de vue ?",
         "options": [
           "les voisins",
           "les marchands",
