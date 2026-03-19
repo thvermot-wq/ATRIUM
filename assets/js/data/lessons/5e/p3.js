@@ -11,7 +11,7 @@ const headerContexts5eP3 = {
   "p3-l9": "L’homme louche a franchi la porte de la villa de l’avocat. Intrus dangereux ou complice attendu ? Dans l’atrium, Marcus et Livia recoupent les indices : serviteur du maître, dîner du maître, tablette du maître...",
   "p3-l10": "L’homme est entré dans la villa de l’avocat. Sur la porte, Marcus lit un titulus ; dans l’atrium, Livia voit le serviteur de l’avocat porter une tablette. Tout renvoie à la maison du maître, mais le silence du serviteur entretient le doute.",
   "p3-l11": "Dans l’atrium de la villa de l’avocat, Marcus et Livia observent le serviteur. Il voit l’homme, mais ne crie pas. Il ouvre la porte et prend la tablette. Peu à peu, un doute nouveau apparaît : cet homme n’entre peut-être pas par hasard.",
-  "p3-l12": "Quand Subure s’éclaire tout entière, Niger se tait enfin, Marcus relève la tête, et la concorde reprend sa place au milieu des maisons."
+  "p3-l12": "Dans les jardins de l’avocat, les chandelles éclairent les allées. Des habitants de Subure déjà croisés reviennent avec des flambeaux, cherchent partout, regardent la porte, la terre, les bords du mur. Enfin, une trace nette apparaît..."
 };
 
 export const lessons5eP3 = [
