@@ -660,7 +660,7 @@ function createLessonToolbar({ lesson, onBackDashboard, totalSteps = LESSONS_SPE
     const toolbarHeight = toolbar.offsetHeight || 56;
     panel.style.top = `${toolbarHeight}px`;
     const panelHeight = panel.hidden ? 0 : (panel.offsetHeight || panel.scrollHeight || 0);
-    spacer.style.height = `${toolbarHeight + panelHeight + 8}px`;
+    spacer.style.height = `${toolbarHeight + panelHeight + 2}px`;
   };
 
   const updateProgress = ({ activeIndex = 0, answeredCount = 0, totalCount = totalSteps } = {}) => {
