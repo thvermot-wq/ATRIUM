@@ -3917,338 +3917,353 @@ export const lessons5eP3 = [
   }
 },
   {
-    "id": "p3-l12",
-    "period": 3,
-    "periodId": "p3",
-    "title": "Lux concordiam restituit",
-    "subtitle": "Quand Subure s’éclaire tout entière, Niger se tait enfin, Marcus relève la tête, et la concorde reprend sa place au milieu des maisons.",
-    "objective": "Relire tout le dossier et conclure l’enquête.",
-    "lessonPoint": "Je mobilise questions, lieux, formes et verbes pour conclure.",
-    "narrative": "Après l’éclairage collectif, la Subure redevient paisible : la pax revient.",
-    "canDo": [
-      "Je relis un mini-dossier final.",
-      "Je réponds à des questions cumulatives.",
-      "Je formule une conclusion simple."
-    ],
-    "lexicon": [
-      "pax = paix",
-      "redit = il/elle revient",
-      "concordia = concorde",
-      "discordia = discorde",
-      "vicini = voisins",
-      "lucerna = lampe",
-      "forum = forum",
-      "macellum = marché",
-      "balneum = thermes",
-      "tabella = tablette"
-    ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l12-t1",
-        "type": "singleChoice",
-        "prompt": "Quel mot signifie « paix » ?",
-        "options": [
-          "pax",
-          "discordia",
-          "lucerna",
-          "tabella"
-        ],
-        "expected": "pax",
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l12-t2",
-        "type": "multipleChoice",
-        "prompt": "Quels lieux du quartier ont servi dans l’enquête de P3 ?",
-        "options": [
-          "forum",
-          "macellum",
-          "balneum",
-          "insula",
-          "campus"
-        ],
-        "expected": [
-          "forum",
-          "macellum",
-          "balneum",
-          "insula"
-        ],
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l12-t3",
-        "type": "matching",
-        "prompt": "Associe latin et français.",
-        "pairs": [
-          {
-            "left": "lucerna",
-            "right": "lampe"
-          },
-          {
-            "left": "tabella",
-            "right": "tablette"
-          },
-          {
-            "left": "discordia",
-            "right": "discorde"
-          },
-          {
-            "left": "concordia",
-            "right": "concorde"
-          }
-        ],
-        "rightOptions": [
-          "concorde",
-          "tablette",
-          "lampe",
-          "discorde"
-        ],
-        "expected": {
-          "lucerna": "lampe",
-          "tabella": "tablette",
-          "discordia": "discorde",
-          "concordia": "concorde"
+  "id": "p3-l12",
+  "period": 3,
+  "periodId": "p3",
+  "title": "Vestigium extra oppidum",
+  "subtitle": "De nuit, dans les jardins de l’avocat éclairés par les chandelles, plusieurs figures de Subure reviennent avec des flambeaux et fouillent les lieux. Puis une trace apparaît : elle mène hors de la ville. Le danger s’éloigne. Pour le moment.",
+  "objective": "Relire toute l’enquête dans une scène nocturne finale et comprendre où mène la trace découverte.",
+  "lessonPoint": "Je repère qui agit, ce qui est cherché, et à quel lieu mène la trace.",
+  "narrative": "Dans les jardins de l’avocat, les chandelles éclairent les allées. Des habitants de Subure déjà croisés reviennent avec des flambeaux, cherchent partout, regardent la porte, la terre, les bords du mur. Enfin, une trace nette apparaît : elle file vers la porte de la ville, puis hors de la ville. Le danger n’est plus ici. Pas encore revenu, du moins.",
+  "canDo": [
+    "Je lis une scène nocturne continue en latin simple.",
+    "Je repère le génitif dans des groupes comme porta oppidi ou vicini Suburae.",
+    "Je comprends la conclusion d’un mini-dossier d’indices."
+  ],
+  "lexicon": [
+    "Subura, Suburae f. = Subure",
+    "vicinus, vicini m. = voisin, habitant du quartier",
+    "puella, puellae f. = jeune fille",
+    "servus, servi m. = serviteur, esclave",
+    "advocatus, advocati m. = avocat",
+    "hortus, horti m. = jardin",
+    "taeda, taedae f. = flambeau, torche",
+    "candela, candelae f. = chandelle, bougie",
+    "vestigium, vestigii n. = trace, piste",
+    "porta, portae f. = porte",
+    "oppidum, oppidi n. = ville",
+    "per + acc. = à travers",
+    "ad + acc. = vers, jusqu’à",
+    "extra + acc. = hors de",
+    "illumino, illuminas = j’éclaire, tu éclaires",
+    "porto, portas = je porte, tu portes",
+    "quaero, quaeris = je cherche, tu cherches",
+    "video, vides = je vois, tu vois",
+    "invenio, invenis = je trouve, tu trouves",
+    "duco, ducis = je mène, je conduis ; tu mènes, tu conduis"
+  ],
+  "maxScore": 10,
+  "training": [
+    {
+      "id": "p3-l12-t1",
+      "type": "matching",
+      "prompt": "Associe chaque mot latin à sa bonne traduction.",
+      "pairs": [
+        {
+          "left": "hortus",
+          "right": "jardin"
         },
-        "points": 1
-      },
-      {
-        "id": "p3-l12-t4",
-        "type": "singleChoice",
-        "prompt": "Dans « vicinus donum videt », le complément objet est…",
-        "options": [
-          "donum",
-          "vicinus",
-          "videt",
-          "pax"
-        ],
-        "expected": "donum",
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l12-t5",
-        "type": "singleChoice",
-        "prompt": "« respondent » correspond à…",
-        "options": [
-          "ils/elles répondent",
-          "il/elle répond",
-          "vous répondez",
-          "je réponds"
-        ],
-        "expected": "ils/elles répondent",
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l12-t6",
-        "type": "multipleChoice",
-        "prompt": "Texte final : « Vir noctu ex insula exibat. Tabella falsa erat. Vicini lucernas ponebant. Pax in vico redit. » Quels éléments montrent que l’enquête s’achève ?",
-        "options": [
-          "la tablette était falsifiée",
-          "les voisins installaient des lampes",
-          "la paix revient dans le quartier",
-          "l’homme sortait la nuit",
-          "le temple brûle"
-        ],
-        "expected": [
-          "la tablette était falsifiée",
-          "les voisins installaient des lampes",
-          "la paix revient dans le quartier",
-          "l’homme sortait la nuit"
-        ],
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l12-t7",
-        "type": "singleChoice",
-        "prompt": "Dans « vicini lucernam vident », que voient les voisins ?",
-        "options": [
-          "une lampe",
-          "les voisins",
-          "la paix",
-          "la tablette"
-        ],
-        "expected": "une lampe",
-        "shuffle": true,
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l12-p1",
-        "type": "textInput",
-        "prompt": "Traduis : pax in vico redit",
-        "expected": "la paix revient dans le quartier",
-        "acceptedAnswers": [
-          "la paix revient dans le quartier",
-          "la paix revient dans la rue",
-          "le calme revient dans le quartier",
-          "le calme revient dans la rue"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "la paix revient dans le quartier",
-            "la paix revient dans la rue",
-            "le calme revient dans le quartier",
-            "le calme revient dans la rue"
-          ]
+        {
+          "left": "taeda",
+          "right": "flambeau"
         },
-        "points": 1,
-        "canonicalAnswer": "la paix revient dans le quartier",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
+        {
+          "left": "vestigium",
+          "right": "trace"
         },
-        "gradingFocus": "La localisation in vico doit être comprise.",
-        "rejectIf": [
-          "lieu oublié",
-          "verbe incorrect",
-          "réponse hors-sujet"
-        ],
-        "tests": [
-          {
-            "input": "la paix revient dans le quartier",
-            "isCorrect": true
-          },
-          {
-            "input": "la paix revient",
-            "isCorrect": false
-          }
-        ]
-      },
-      {
-        "id": "p3-l12-p2",
-        "type": "textInput",
-        "prompt": "Traduis en latin : Les voisins voient la lampe.",
-        "expected": "vicini lucernam vident",
-        "acceptedAnswers": [
-          "vicini lucernam vident",
-          "vicini vident lucernam",
-          "lucernam vicini vident",
-          "lucernam vident vicini",
-          "vident vicini lucernam",
-          "vident lucernam vicini"
-        ],
-        "answerConfig": {
-          "type": "one-of",
-          "language": "latin",
-          "accepted": [
-            "vicini lucernam vident",
-            "vicini vident lucernam",
-            "lucernam vicini vident",
-            "lucernam vident vicini",
-            "vident vicini lucernam",
-            "vident lucernam vicini"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "vicini lucernam vident",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "vicini lucernam vident",
-            "isCorrect": true
-          },
-          {
-            "input": "lorem ipsum",
-            "isCorrect": false
-          }
-        ]
-      },
-      {
-        "id": "p3-l12-p3",
-        "type": "textInput",
-        "prompt": "Traduis : concordia in Subura redit.",
-        "expected": "la concorde revient dans Subure",
-        "acceptedAnswers": [
-          "la concorde revient dans Subure",
-          "la concorde revient à Subure",
-          "la concorde revient dans la Subure",
-          "la concorde revient à la Subure"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "la concorde revient dans Subure",
-            "la concorde revient à Subure",
-            "la concorde revient dans la Subure",
-            "la concorde revient à la Subure"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "la concorde revient dans Subure",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Conclure la période par une traduction symbolique nette.",
-        "rejectIf": [
-          "sens inversé",
-          "réponse hors-sujet"
-        ],
-        "tests": [
-          {
-            "input": "la concorde revient dans Subure",
-            "isCorrect": true
-          },
-          {
-            "input": "la discorde revient dans Subure",
-            "isCorrect": false
-          }
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "Je sais relire tout le dossier de Subure et en dégager la conclusion.",
-        "Je mobilise questions, lieux, formes et présents pour comprendre un mini-dossier."
+        {
+          "left": "oppidum",
+          "right": "ville"
+        }
       ],
-      "cahier": [
-        "pax in vico redit",
-        "concordia in Subura redit",
-        "Je recroise les indices avant de conclure."
+      "rightOptions": [
+        "trace",
+        "ville",
+        "jardin",
+        "flambeau"
       ],
-      "keywords": [
-        "révision finale",
-        "pax",
-        "concordia"
+      "expected": {
+        "hortus": "jardin",
+        "taeda": "flambeau",
+        "vestigium": "trace",
+        "oppidum": "ville"
+      },
+      "points": 1
+    },
+    {
+      "id": "p3-l12-t2",
+      "type": "singleChoice",
+      "prompt": "« Taedae hortum illuminant » signifie…",
+      "options": [
+        "Les flambeaux éclairent le jardin",
+        "Les jardins portent les flambeaux",
+        "La trace éclaire la porte",
+        "Le serviteur cache la chandelle"
+      ],
+      "expected": "Les flambeaux éclairent le jardin",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l12-t3",
+      "type": "singleChoice",
+      "prompt": "Dans « vicini Suburae taedas portant », qui apporte les flambeaux ?",
+      "options": [
+        "les habitants de Subure",
+        "les serviteurs de la villa",
+        "les portes de la ville",
+        "les traces du jardin"
+      ],
+      "expected": "les habitants de Subure",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l12-t4",
+      "type": "multipleChoice",
+      "prompt": "Mini-texte : « Servus advocati candelas portat. Puella vestigium videt. Vicini hortum quaerunt. » Coche toutes les informations justes.",
+      "options": [
+        "Le serviteur de l’avocat porte les chandelles",
+        "La jeune fille voit une trace",
+        "Les habitants cherchent dans le jardin",
+        "L’avocat fuit hors de la ville"
+      ],
+      "expected": [
+        "Le serviteur de l’avocat porte les chandelles",
+        "La jeune fille voit une trace",
+        "Les habitants cherchent dans le jardin"
+      ],
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l12-t5",
+      "type": "singleChoice",
+      "prompt": "Dans « porta oppidi », quel mot veut dire « de la ville » ?",
+      "options": [
+        "porta",
+        "oppidi",
+        "vestigium",
+        "taedae"
+      ],
+      "expected": "oppidi",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l12-t6",
+      "type": "singleChoice",
+      "prompt": "« Vestigium ad portam oppidi ducit » signifie…",
+      "options": [
+        "La trace mène vers la porte de la ville",
+        "La porte porte la trace jusqu’au jardin",
+        "Le serviteur mène la ville vers la porte",
+        "Le flambeau sort du jardin"
+      ],
+      "expected": "La trace mène vers la porte de la ville",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l12-t7",
+      "type": "singleChoice",
+      "prompt": "Mini-dossier : « Taedae hortum illuminant. Vicini Suburae hortum quaerunt. Puella vestigium invenit. Vestigium extra oppidum ducit. » Quelle conclusion devient la plus plausible ?",
+      "options": [
+        "Le danger s’éloigne de la ville, pour le moment",
+        "Le danger reste caché dans la villa",
+        "La trace mène au dîner de l’avocat",
+        "Les habitants de Subure rentrent chez eux sans rien voir"
+      ],
+      "expected": "Le danger s’éloigne de la ville, pour le moment",
+      "shuffle": true,
+      "points": 1
+    }
+  ],
+  "production": [
+    {
+      "id": "p3-l12-p1",
+      "type": "textInput",
+      "prompt": "Traduis : taedae hortum illuminant.",
+      "expected": "les flambeaux éclairent le jardin",
+      "acceptedAnswers": [
+        "les flambeaux éclairent le jardin",
+        "des flambeaux éclairent le jardin",
+        "les torches éclairent le jardin",
+        "des torches éclairent le jardin"
+      ],
+      "answerConfig": {
+        "type": "translation-segment",
+        "language": "fr",
+        "accepted": [
+          "les flambeaux éclairent le jardin",
+          "des flambeaux éclairent le jardin",
+          "les torches éclairent le jardin",
+          "des torches éclairent le jardin"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "les flambeaux éclairent le jardin",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true,
+        "ignoreFrenchDeterminers": true
+      },
+      "gradingFocus": "Traduire correctement un sujet pluriel, un verbe au présent et un COD simple.",
+      "rejectIf": [
+        "verbe principal mal compris",
+        "contre-sens sur hortum",
+        "réponse hors-sujet"
+      ],
+      "tests": [
+        {
+          "input": "les flambeaux éclairent le jardin",
+          "isCorrect": true
+        },
+        {
+          "input": "les flambeaux quittent le jardin",
+          "isCorrect": false
+        }
       ]
     },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "p3",
-        "final",
-        "pax"
+    {
+      "id": "p3-l12-p2",
+      "type": "textInput",
+      "prompt": "'Les portes de la ville.' - Traduis en latin : ____ oppidi",
+      "expected": "portas",
+      "acceptedAnswers": [
+        "portas"
+      ],
+      "answerConfig": {
+        "type": "one-of",
+        "language": "latin",
+        "accepted": [
+          "portas"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "portas",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Ne pas confondre singulier et pluriel dans un groupe nominal simple.",
+      "rejectIf": [
+        "singulier au lieu du pluriel",
+        "mot hors leçon",
+        "réponse vide"
+      ],
+      "tests": [
+        {
+          "input": "portas",
+          "isCorrect": true
+        },
+        {
+          "input": "porta",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "p3-l12-p3",
+      "type": "textInput",
+      "prompt": "Traduis : Vicini Suburae taedas portant ; vestigium extra oppidum ducit.",
+      "expected": "les habitants de Subure portent des flambeaux ; la trace mène hors de la ville",
+      "acceptedAnswers": [
+        "les habitants de Subure portent des flambeaux la trace mène hors de la ville",
+        "les habitants de Subure portent les flambeaux la trace mène hors de la ville",
+        "les habitants de Subure portent des torches la trace mène hors de la ville",
+        "les habitants de Subure portent les torches la trace mène hors de la ville",
+        "les voisins de Subure portent des flambeaux la trace mène hors de la ville",
+        "les voisins de Subure portent les flambeaux la trace mène hors de la ville",
+        "les voisins de Subure portent des torches la trace mène hors de la ville",
+        "les voisins de Subure portent les torches la trace mène hors de la ville",
+        "les habitants de Subure portent des flambeaux la trace conduit hors de la ville",
+        "les habitants de Subure portent des torches la trace conduit hors de la ville",
+        "les voisins de Subure portent des flambeaux la trace conduit hors de la ville",
+        "les voisins de Subure portent des torches la trace conduit hors de la ville"
+      ],
+      "answerConfig": {
+        "type": "translation-segment",
+        "language": "fr",
+        "accepted": [
+          "les habitants de Subure portent des flambeaux la trace mène hors de la ville",
+          "les habitants de Subure portent les flambeaux la trace mène hors de la ville",
+          "les habitants de Subure portent des torches la trace mène hors de la ville",
+          "les habitants de Subure portent les torches la trace mène hors de la ville",
+          "les voisins de Subure portent des flambeaux la trace mène hors de la ville",
+          "les voisins de Subure portent les flambeaux la trace mène hors de la ville",
+          "les voisins de Subure portent des torches la trace mène hors de la ville",
+          "les voisins de Subure portent les torches la trace mène hors de la ville",
+          "les habitants de Subure portent des flambeaux la trace conduit hors de la ville",
+          "les habitants de Subure portent des torches la trace conduit hors de la ville",
+          "les voisins de Subure portent des flambeaux la trace conduit hors de la ville",
+          "les voisins de Subure portent des torches la trace conduit hors de la ville"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "les habitants de Subure portent des flambeaux ; la trace mène hors de la ville",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true,
+        "ignoreFrenchDeterminers": true
+      },
+      "gradingFocus": "Réinvestir le génitif et comprendre la conclusion de la scène finale.",
+      "rejectIf": [
+        "génitif ignoré",
+        "contre-sens sur extra oppidum",
+        "verbe principal mal compris"
+      ],
+      "tests": [
+        {
+          "input": "les habitants de Subure portent des flambeaux la trace mène hors de la ville",
+          "isCorrect": true
+        },
+        {
+          "input": "les habitants de Subure portent la ville la trace mène vers le jardin",
+          "isCorrect": false
+        }
       ]
     }
+  ],
+  "summary": {
+    "retains": [
+      "Je comprends une scène finale d’enquête en reliant plusieurs indices courts.",
+      "Je comprends le génitif dans des groupes comme 'vicini Suburae' et 'porta oppidi'.",
+      "Le génitif = Complément du nom.",
+
+    ],
+    "cahier": [
+      "vicini Suburae = les habitants de Subure",
+      "porta oppidi = la porte de la ville",
+      "vestigium extra oppidum ducit = la trace mène hors de la ville"
+    ],
+    "keywords": [
+      "jardin",
+      "trace",
+      "ville"
+    ]
+  },
+  "meta": {
+    "status": "ready",
+    "tags": [
+      "p3",
+      "scene-finale",
+      "genitif",
+      "vestigium",
+      "Subura"
+    ]
   }
+}
 ];
