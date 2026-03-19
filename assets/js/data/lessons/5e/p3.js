@@ -2135,16 +2135,17 @@ export const lessons5eP3 = [
       "Je traduis une phrase au présent pluriel."
     ],
     "lexicon": [
-      "forum = forum, place publique",
-      "videmus = nous voyons",
-      "auditis = vous entendez",
-      "clamant = ils/elles crient",
-      "respondent = ils/elles répondent",
-      "quaerimus = nous cherchons",
+      "forum, in foro = le forum, sur le forum",
+      "video, vides = je vois, tu vois",
+      "audio, audis = j'entends, tu entends",
+      "clamo, clamas = je crie, tu cries",
+      "respondeo, respondes = je réponds, tu réponds",
+      "quaero, quaeris = je cherche, tu cherches",
       "vicini = voisins",
       "mercatores = marchands",
       "puellae = jeunes filles",
-      "rumores = rumeurs"
+      "rumores = rumeurs",
+      "verum (neutre) = le vrai, la vérité" 
     ],
     "maxScore": 10,
     "training": [
@@ -2259,7 +2260,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l7-t7",
         "type": "singleChoice",
-        "prompt": "Dans « in foro vicini clamant », où crient les voisins ?",
+        "prompt": "Dans « In foro vicini clamant », où crient les voisins ?",
         "options": [
           "au forum",
           "dans la maison",
@@ -2275,7 +2276,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l7-p1",
         "type": "textInput",
-        "prompt": "Traduis : quaerimus verum",
+        "prompt": "Traduis : Quaerimus verum",
         "expected": "nous cherchons la vérité",
         "acceptedAnswers": [
           "nous cherchons la vérité",
@@ -2321,7 +2322,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l7-p2",
         "type": "textInput",
-        "prompt": "Traduis en latin : Les voisins répondent au forum.",
+        "prompt": "Traduis en latin : Sur le forum, les voisins crient.",
         "expected": "vicini in foro respondent",
         "acceptedAnswers": [
           "vicini in foro respondent",
@@ -2373,7 +2374,7 @@ export const lessons5eP3 = [
       {
         "id": "p3-l7-p3",
         "type": "textInput",
-        "prompt": "Complète : « In foro nos ... ; vos ... ; illi ... »",
+        "prompt": "Complète à l'aide des verbes 'chercher', 'écouter', 'répondre' : « In foro nos ... ; vos ... ; illi ... »",
         "expected": "quaerimus ; auditis ; respondent",
         "acceptedAnswers": [
           "quaerimus ; auditis ; respondent",
@@ -2422,7 +2423,7 @@ export const lessons5eP3 = [
     "summary": {
       "retains": [
         "Je reconnais les personnes du pluriel dans un échange collectif.",
-        "Je peux produire des formes du pluriel à partir du contexte du forum."
+        "Je peux produire des formes du pluriel à partir d'une scène à plusieurs."
       ],
       "cahier": [
         "-mus = nous ; -tis = vous ; -nt = ils/elles",
