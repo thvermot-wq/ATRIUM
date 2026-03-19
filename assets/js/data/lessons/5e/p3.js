@@ -2823,11 +2823,12 @@ export const lessons5eP3 = [
     "summary": {
       "retains": [
         "Je ne me fais pas piéger par l’ordre des mots.",
-        "Je regarde le verbe et les formes avant de traduire."
+        "J'essaie de repérer les groupes de mots qui fonctionnent ensemble : 'ante portam'.",
+        "Je regarde le verbe et les terminaisons avant de traduire."
       ],
       "cahier": [
         "canis ante portam obscuram manet",
-        "Le sens dépend des formes et du verbe, pas seulement de la place des mots."
+        "Le sens dépend des terminaisons et du verbe, pas seulement de la place des mots."
       ],
       "keywords": [
         "ordre variable",
@@ -2844,342 +2845,382 @@ export const lessons5eP3 = [
       ]
     }
   },
-  {
-    "id": "p3-l9",
-    "period": 3,
-    "periodId": "p3",
-    "title": "Apud aram et fontem",
-    "subtitle": "Près de l’autel et de la fontaine, Marcus et Livia recoupent leurs indices, et voient les morceaux s’emboîter pour de bon.",
-    "objective": "Relier plusieurs indices dans un mini-dossier continu.",
-    "lessonPoint": "Je relis phrase après phrase et je croise les indices.",
-    "narrative": "Près de l’ara et du fons, on relit la tabella falsa et les traces d’huile.",
-    "canDo": [
-      "Je lis un texte court continu.",
-      "Je repère vrai/faux.",
-      "Je fais le lien entre plusieurs indices."
-    ],
-    "lexicon": [
-      "ara = autel",
-      "fons = fontaine",
-      "tabella = tablette",
-      "oleum = huile",
-      "falsa = fausse, falsifiée",
-      "verum = vrai",
-      "falsum = faux",
-      "ostendit = il/elle montre",
-      "legit = il/elle lit",
-      "mutat = il/elle change"
-    ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l9-t1",
-        "type": "singleChoice",
-        "prompt": "« tabella falsa » signifie…",
-        "options": [
-          "tablette falsifiée",
-          "tablette neuve",
-          "fontaine claire",
-          "autel vide"
-        ],
-        "expected": "tablette falsifiée",
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l9-t2",
-        "type": "matching",
-        "prompt": "Associe les mots de la scène.",
-        "pairs": [
-          {
-            "left": "ara",
-            "right": "autel"
-          },
-          {
-            "left": "fons",
-            "right": "fontaine"
-          },
-          {
-            "left": "verum",
-            "right": "vrai"
-          },
-          {
-            "left": "falsum",
-            "right": "faux"
-          }
-        ],
-        "rightOptions": [
-          "vrai",
-          "autel",
-          "faux",
-          "fontaine"
-        ],
-        "expected": {
-          "ara": "autel",
-          "fons": "fontaine",
-          "verum": "vrai",
-          "falsum": "faux"
+ {
+  "id": "p3-l9",
+  "period": 3,
+  "periodId": "p3",
+  "title": "Sub porticu villae",
+  "subtitle": "La fuite mène à une villa illuminée : sous le porche, un homme se cache pendant qu’un avocat célèbre reçoit pour un grand dîner.",
+  "objective": "Suivre un déplacement et comprendre vers quel lieu précis mène la fuite.",
+  "lessonPoint": "Je repère le verbe, puis je lis d’un bloc le groupe de lieu : per vias, in villam, sub porticu.",
+  "narrative": "L’homme court à travers les rues et s’engouffre sous le porche d’une grande villa illuminée. Un avocat célèbre y prépare un grand dîner. Marcus et Livia comprennent que la fuite ne mène pas n’importe où : elle conduit à une maison bien précise.",
+  "canDo": [
+    "Je suis un déplacement dans une phrase simple.",
+    "Je distingue où l’on va et où l’on se cache.",
+    "Je relie un nouveau lieu à l’enquête."
+  ],
+  "lexicon": [
+  "vir = l’homme, un homme",
+  "via = la rue",
+  "villa = la villa, la grande maison",
+  "porticus = le porche, le portique",
+  "cena = le dîner, le repas",
+  "advocatus = l’avocat",
+  "magnus, magna, magnum = grand",
+  "per + acc. = à travers",
+  "in + acc. = dans, vers (mouvement vers un lieu)",
+  "sub + abl. = sous (lieu où l'on est)",
+  "curro, curris = je cours, tu cours",
+  "intro, intras = j'entre, tu entres",
+  "lateo, lates = je me cache, tu te caches",
+  "paro, paras = je prépare, tu prépares"
+],
+  "maxScore": 10,
+  "training": [
+    {
+      "id": "p3-l9-t1",
+      "type": "matching",
+      "prompt": "Associe chaque groupe latin à sa bonne lecture.",
+      "pairs": [
+        {
+          "left": "per vias",
+          "right": "à travers les rues"
         },
-        "points": 1
-      },
-      {
-        "id": "p3-l9-t3",
-        "type": "singleChoice",
-        "prompt": "« vicina tabellam legit » : qui lit ?",
-        "options": [
-          "la voisine",
-          "le maître",
-          "le chien",
-          "la rumeur"
-        ],
-        "expected": "la voisine",
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l9-t4",
-        "type": "multipleChoice",
-        "prompt": "Texte bref : « Tabella mutat nomen. Verum non est. » Qu’est-ce qui est juste ?",
-        "options": [
-          "Un nom est changé",
-          "Le texte n'est pas vrai",
-          "Tout est clair",
-          "La paix revient"
-        ],
-        "expected": [
-          "Un nom est changé",
-          "Le texte n'est pas vrai"
-        ],
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l9-t5",
-        "type": "singleChoice",
-        "prompt": "Dans « servus tabellam ostendit », que montre le serviteur ?",
-        "options": [
-          "la tablette",
-          "la fontaine",
-          "la vérité",
-          "la porte"
-        ],
-        "expected": "la tablette",
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l9-t6",
-        "type": "singleChoice",
-        "prompt": "Texte : « Oleum in tabella est. Vir noctu exit. » Quel détail relie la tablette à la scène nocturne ?",
-        "options": [
-          "des traces d’huile sur la tablette",
-          "un marché en fête",
-          "un cri de jour",
-          "une fontaine sèche"
-        ],
-        "expected": "des traces d’huile sur la tablette",
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l9-t7",
-        "type": "multipleChoice",
-        "prompt": "Lecture à ordre variable : « legit tabellam vicina » signifie…",
-        "options": [
-          "la voisine lit la tablette",
-          "la tablette lit la voisine",
-          "la voisine change la tablette",
-          "le voisin lit la tablette"
-        ],
-        "expected": [
-          "la voisine lit la tablette"
-        ],
-        "shuffle": true,
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l9-p1",
-        "type": "textInput",
-        "prompt": "Traduis : servus verum ostendit",
-        "expected": "le serviteur montre la vérité",
-        "acceptedAnswers": [
-          "le serviteur montre la vérité",
-          "le serviteur montre le vrai",
-          "le serviteur présente la vérité",
-          "le serviteur présente le vrai",
-          "l'esclave montre la vérité",
-          "l'esclave montre le vrai",
-          "l'esclave présente la vérité",
-          "l'esclave présente le vrai"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "le serviteur montre la vérité",
-            "le serviteur montre le vrai",
-            "le serviteur présente la vérité",
-            "le serviteur présente le vrai",
-            "l'esclave montre la vérité",
-            "l'esclave montre le vrai",
-            "l'esclave présente la vérité",
-            "l'esclave présente le vrai"
-          ]
+        {
+          "left": "in villam",
+          "right": "dans la villa"
         },
-        "points": 1,
-        "canonicalAnswer": "le serviteur montre la vérité",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
+        {
+          "left": "sub porticu",
+          "right": "sous le porche"
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "le serviteur montre la vérité",
-            "isCorrect": true
-          },
-          {
-            "input": "réponse hors-sujet",
-            "isCorrect": false
-          }
-        ]
-      },
-      {
-        "id": "p3-l9-p2",
-        "type": "textInput",
-        "prompt": "Traduis en latin : La voisine lit la tablette.",
-        "expected": "vicina tabellam legit",
-        "acceptedAnswers": [
-          "vicina tabellam legit",
-          "vicina legit tabellam",
-          "tabellam vicina legit",
-          "tabellam legit vicina",
-          "legit vicina tabellam",
-          "legit tabellam vicina"
-        ],
-        "answerConfig": {
-          "type": "one-of",
-          "language": "latin",
-          "accepted": [
-            "vicina tabellam legit",
-            "vicina legit tabellam",
-            "tabellam vicina legit",
-            "tabellam legit vicina",
-            "legit vicina tabellam",
-            "legit tabellam vicina"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "vicina tabellam legit",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "vicina tabellam legit",
-            "isCorrect": true
-          },
-          {
-            "input": "lorem ipsum",
-            "isCorrect": false
-          }
-        ]
-      },
-      {
-        "id": "p3-l9-p3",
-        "type": "textInput",
-        "prompt": "Traduis : tabella falsa verum non ostendit.",
-        "expected": "la tablette falsifiée ne montre pas le vrai",
-        "acceptedAnswers": [
-          "la tablette falsifiée ne montre pas le vrai",
-          "la tablette falsifiée ne montre pas la vérité",
-          "la tablette fausse ne montre pas le vrai",
-          "la tablette fausse ne montre pas la vérité"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "la tablette falsifiée ne montre pas le vrai",
-            "la tablette falsifiée ne montre pas la vérité",
-            "la tablette fausse ne montre pas le vrai",
-            "la tablette fausse ne montre pas la vérité"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "la tablette falsifiée ne montre pas le vrai",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Traduire une conclusion de dossier en distinguant verum et falsa.",
-        "rejectIf": [
-          "sens inversé",
-          "négation oubliée",
-          "réponse hors-sujet"
-        ],
-        "tests": [
-          {
-            "input": "la tablette falsifiée ne montre pas la vérité",
-            "isCorrect": true
-          },
-          {
-            "input": "la tablette falsifiée montre la vérité",
-            "isCorrect": false
-          }
-        ]
-      }
-    ],
-    "summary": {
-      "retains": [
-        "Je relie plusieurs indices matériels dans un même mini-dossier.",
-        "Je distingue mieux verum et falsum quand je relis chaque phrase."
+        {
+          "left": "cena magna",
+          "right": "un grand dîner"
+        }
       ],
-      "cahier": [
-        "tabella falsa verum non ostendit",
-        "Je recoupe la tablette, l’huile et la scène nocturne."
+      "rightOptions": [
+        "sous le porche",
+        "à travers les rues",
+        "un grand dîner",
+        "dans la villa"
       ],
-      "keywords": [
-        "indices",
-        "tablette",
-        "vrai/faux"
+      "expected": {
+        "per vias": "à travers les rues",
+        "in villam": "dans la villa",
+        "sub porticu": "sous le porche",
+        "cena magna": "un grand dîner"
+      },
+      "points": 1
+    },
+    {
+      "id": "p3-l9-t2",
+      "type": "singleChoice",
+      "prompt": "Dans « vir per vias currit », que fait l’homme ?",
+      "options": [
+        "il court à travers les rues",
+        "il entre dans la villa",
+        "il se cache sous le porche",
+        "il prépare le dîner"
+      ],
+      "expected": "il court à travers les rues",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l9-t3",
+      "type": "singleChoice",
+      "prompt": "Dans « vir in villam intrat », où va l’homme ?",
+      "options": [
+        "dans la villa",
+        "sous le porche",
+        "à travers les rues",
+        "près de la fontaine"
+      ],
+      "expected": "dans la villa",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l9-t4",
+      "type": "singleChoice",
+      "prompt": "Dans « vir sub porticu latet », quel groupe dit où l’homme se cache ?",
+      "options": [
+        "sub porticu",
+        "vir sub",
+        "vir latet",
+        "in villam"
+      ],
+      "expected": "sub porticu",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l9-t5",
+      "type": "multipleChoice",
+      "prompt": "Lis ce mini-texte : « Advocatus cenam magnam parat. Vir in villam intrat. » Coche les deux informations justes.",
+      "options": [
+        "L’avocat prépare un grand dîner",
+        "L’homme entre dans la villa",
+        "L’homme quitte la villa",
+        "L’avocat se cache sous le porche"
+      ],
+      "expected": [
+        "L’avocat prépare un grand dîner",
+        "L’homme entre dans la villa"
+      ],
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l9-t6",
+      "type": "singleChoice",
+      "prompt": "Lis : « Vir currit ; sub porticu latet. » Quelle lecture suit bien la scène ?",
+      "options": [
+        "Il fuit puis se cache",
+        "Il dîne puis s’endort",
+        "Il parle puis rit",
+        "Il prépare puis vend un dîner"
+      ],
+      "expected": "Il fuit puis se cache",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l9-t7",
+      "type": "multipleChoice",
+      "prompt": "Mini-dossier : « Vir per vias currit. In villam intrat. Sub porticu latet. » Coche toutes les étapes de la fuite.",
+      "options": [
+        "Il passe par les rues",
+        "Il entre dans la villa",
+        "Il se cache sous le porche",
+        "Il retourne au marché"
+      ],
+      "expected": [
+        "Il passe par les rues",
+        "Il entre dans la villa",
+        "Il se cache sous le porche"
+      ],
+      "shuffle": true,
+      "points": 1
+    }
+  ],
+  "production": [
+    {
+      "id": "p3-l9-p1",
+      "type": "textInput",
+      "prompt": "Traduis : vir sub porticu latet.",
+      "expected": "l’homme se cache sous le porche",
+     "acceptedAnswers": [
+  "l’homme se cache sous le porche",
+  "l’homme se cache sous un porche",
+  "un homme se cache sous le porche",
+  "un homme se cache sous un porche",
+  "l’homme se cache sous le portique",
+  "l’homme se cache sous un portique",
+  "un homme se cache sous le portique",
+  "un homme se cache sous un portique",
+  "l’homme est caché sous le porche",
+  "l’homme est caché sous un porche",
+  "un homme est caché sous le porche",
+  "un homme est caché sous un porche",
+  "l’homme est caché sous le portique",
+  "l’homme est caché sous un portique",
+  "un homme est caché sous le portique",
+  "un homme est caché sous un portique"
+],
+      "answerConfig": {
+        "type": "translation-segment",
+        "language": "fr",
+        "accepted": [
+          "l’homme se cache sous le porche",
+  "l’homme se cache sous un porche",
+  "un homme se cache sous le porche",
+  "un homme se cache sous un porche",
+  "l’homme se cache sous le portique",
+  "l’homme se cache sous un portique",
+  "un homme se cache sous le portique",
+  "un homme se cache sous un portique",
+  "l’homme est caché sous le porche",
+  "l’homme est caché sous un porche",
+  "un homme est caché sous le porche",
+  "un homme est caché sous un porche",
+  "l’homme est caché sous le portique",
+  "l’homme est caché sous un portique",
+  "un homme est caché sous le portique",
+  "un homme est caché sous un portique"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "l’homme se cache sous le porche",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Comprendre l’action et le groupe de lieu.",
+      "rejectIf": [
+        "sens inversé",
+        "verbe principal mal compris",
+        "lieu oublié ou faux"
+      ],
+      "tests": [
+        {
+          "input": "l'homme se cache sous le porche",
+          "isCorrect": true
+        },
+        {
+          "input": "l'homme entre dans la villa",
+          "isCorrect": false
+        }
       ]
     },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "p3",
-        "aram-fontem",
-        "tabella"
+    {
+      "id": "p3-l9-p2",
+      "type": "textInput",
+      "prompt": "Traduis en latin : L’homme entre dans la villa.",
+      "expected": "vir in villam intrat",
+      "acceptedAnswers": [
+        "vir in villam intrat",
+        "vir intrat in villam",
+        "in villam vir intrat",
+        "in villam intrat vir",
+        "intrat vir in villam",
+        "intrat in villam vir"
+      ],
+      "answerConfig": {
+        "type": "one-of",
+        "language": "latin",
+        "accepted": [
+          "vir in villam intrat",
+          "vir intrat in villam",
+          "in villam vir intrat",
+          "in villam intrat vir",
+          "intrat vir in villam",
+          "intrat in villam vir"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "vir in villam intrat",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Réinvestir le verbe de mouvement et le groupe de lieu avec in + accusatif.",
+      "rejectIf": [
+        "préposition absente",
+        "verbe incorrect",
+        "forme latine hors leçon"
+      ],
+      "tests": [
+        {
+          "input": "vir in villam intrat",
+          "isCorrect": true
+        },
+        {
+          "input": "vir sub porticu latet",
+          "isCorrect": false
+        }
       ]
-    }
+    },
+    {
+  "id": "p3-l9-p3",
+  "type": "textInput",
+  "prompt": "Traduis : Vir in villam intrat ; advocatus cenam magnam parat.",
+  "expected": "un homme entre dans la villa ; l’avocat prépare un grand dîner",
+  "acceptedAnswers": [
+    "l’homme entre dans la villa l’avocat prépare un grand dîner",
+    "un homme entre dans la villa l’avocat prépare un grand dîner",
+    "l’homme entre dans une villa l’avocat prépare un grand dîner",
+    "un homme entre dans une villa l’avocat prépare un grand dîner",
+    "l’homme entre dans la grande maison l’avocat prépare un grand dîner",
+    "un homme entre dans la grande maison l’avocat prépare un grand dîner",
+    "l’homme entre dans une grande maison l’avocat prépare un grand dîner",
+    "un homme entre dans une grande maison l’avocat prépare un grand dîner",
+    "l’homme entre dans la villa l’avocat prépare le grand dîner",
+    "un homme entre dans la villa l’avocat prépare le grand dîner",
+    "l’homme entre dans une villa l’avocat prépare le grand dîner",
+    "un homme entre dans une villa l’avocat prépare le grand dîner"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "l’homme entre dans la villa l’avocat prépare un grand dîner",
+      "un homme entre dans la villa l’avocat prépare un grand dîner",
+      "l’homme entre dans une villa l’avocat prépare un grand dîner",
+      "un homme entre dans une villa l’avocat prépare un grand dîner",
+      "l’homme entre dans la grande maison l’avocat prépare un grand dîner",
+      "un homme entre dans la grande maison l’avocat prépare un grand dîner",
+      "l’homme entre dans une grande maison l’avocat prépare un grand dîner",
+      "un homme entre dans une grande maison l’avocat prépare un grand dîner",
+      "l’homme entre dans la villa l’avocat prépare le grand dîner",
+      "un homme entre dans la villa l’avocat prépare le grand dîner",
+      "l’homme entre dans une villa l’avocat prépare le grand dîner",
+      "un homme entre dans une villa l’avocat prépare le grand dîner"
+    ]
   },
+  "points": 1,
+  "canonicalAnswer": "un homme entre dans la villa ; l’avocat prépare un grand dîner",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Relier un mouvement vers un lieu et une action parallèle dans la scène.",
+  "rejectIf": [
+    "préposition mal comprise",
+    "verbe principal mal compris",
+    "contre-sens sur cena ou advocatus"
+  ],
+  "tests": [
+    {
+      "input": "un homme entre dans la villa l’avocat prépare un grand dîner",
+      "isCorrect": true
+    },
+    {
+      "input": "un homme se cache sous le porche l’avocat fuit",
+      "isCorrect": false
+    }
+  ]
+}
+  ],
+  "summary": {
+    "retains": [
+      "Je lis le déplacement grâce aux groupes de lieux : préposition + endroit.",
+      "Je relie plusieurs actions brèves pour suivre une fuite."
+    ],
+    "cahier": [
+      "in + accusatif = mouvement, direction",
+      "per vias = à travers les rues ; in villam = dans la villa ; sub porticu = sous le porche",
+      "Vir per vias currit, in villam intrat, sub porticu latet."
+    ],
+    "keywords": [
+      "fuite",
+      "villa",
+      "porche"
+    ]
+  },
+  "meta": {
+    "status": "ready",
+    "tags": [
+      "p3",
+      "villa",
+      "fuite",
+      "groupes-de-lieu"
+    ]
+  }
+},
   {
     "id": "p3-l2",
     "period": 3,
