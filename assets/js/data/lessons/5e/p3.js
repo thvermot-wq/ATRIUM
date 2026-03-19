@@ -3702,9 +3702,9 @@ export const lessons5eP3 = [
       "type": "singleChoice",
       "prompt": "Dans « amicus advocati », quelle traduction +  association de cas latin / fonction française correspond à « advocati » ?",
       "options": [
-        "pour l'avocat : ablatif / CC de but"
-        "de l'avocat : génitif / Compl. du nom"
-        "à l'avocat : datif / COI"
+        "pour l'avocat : ablatif / CC de but",
+        "de l'avocat : génitif / Compl. du nom",
+        "à l'avocat : datif / COI",
         "dans l'avocat : ablatif / CC de lieu"
       ],
       "expected": "de l'avocat : génitif / C. du nom",
