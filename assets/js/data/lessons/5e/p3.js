@@ -3924,7 +3924,7 @@ export const lessons5eP3 = [
   "subtitle": "De nuit, dans les jardins de l’avocat éclairés par les chandelles, plusieurs figures de Subure reviennent avec des flambeaux et fouillent les lieux. Puis une trace apparaît : elle mène hors de la ville. Le danger s’éloigne. Pour le moment.",
   "objective": "Relire toute l’enquête dans une scène nocturne finale et comprendre où mène la trace découverte.",
   "lessonPoint": "Je repère qui agit, ce qui est cherché, et à quel lieu mène la trace.",
-  "narrative": "Dans les jardins de l’avocat, les chandelles éclairent les allées. Des habitants de Subure déjà croisés reviennent avec des flambeaux, cherchent partout, regardent la porte, la terre, les bords du mur. Enfin, une trace nette apparaît : elle file vers la porte de la ville, puis hors de la ville. Le danger n’est plus ici. Pas encore revenu, du moins.",
+  "narrative": "Dans les jardins de l’avocat, les chandelles éclairent les allées. Des habitants de Subure déjà croisés reviennent avec des flambeaux, cherchent partout, regardent la porte, la terre, les bords du mur. Enfin, une trace nette apparaît...",
   "canDo": [
     "Je lis une scène nocturne continue en latin simple.",
     "Je repère le génitif dans des groupes comme porta oppidi ou vicini Suburae.",
