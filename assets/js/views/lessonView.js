@@ -544,12 +544,12 @@ function renderDeclensionTables() {
               </tr>
             </thead>
             <tbody>
-              <tr><td>Nom.</td><td>-a</td><td>-ae</td></tr>
-              <tr><td>Voc.</td><td>-a</td><td>-ae</td></tr>
-              <tr><td>Acc.</td><td>-am</td><td>-as</td></tr>
-              <tr><td>Gén.</td><td>-ae</td><td>-arum</td></tr>
-              <tr><td>Dat.</td><td>-ae</td><td>-is</td></tr>
-              <tr><td>Abl.</td><td>-a</td><td>-is</td></tr>
+              <tr><td>Nom. (sujet)</td><td>-a</td><td>-ae</td></tr>
+              <tr><td>Voc. (appel)</td><td>-a</td><td>-ae</td></tr>
+              <tr><td>Acc. (COD)</td><td>-am</td><td>-as</td></tr>
+              <tr><td>Gén. (CdN)</td><td>-ae</td><td>-arum</td></tr>
+              <tr><td>Dat. (COI)</td><td>-ae</td><td>-is</td></tr>
+              <tr><td>Abl. (CC)</td><td>-a</td><td>-is</td></tr>
             </tbody>
           </table>
         </div>
@@ -567,12 +567,12 @@ function renderDeclensionTables() {
               </tr>
             </thead>
             <tbody>
-              <tr><td>Nom.</td><td>-us / -i</td><td>-um / -a</td></tr>
-              <tr><td>Voc.</td><td>-e / -i</td><td>-um / -a</td></tr>
-              <tr><td>Acc.</td><td>-um / -os</td><td>-um / -a</td></tr>
-              <tr><td>Gén.</td><td>-i / -orum</td><td>-i / -orum</td></tr>
-              <tr><td>Dat.</td><td>-o / -is</td><td>-o / -is</td></tr>
-              <tr><td>Abl.</td><td>-o / -is</td><td>-o / -is</td></tr>
+              <tr><td>Nom. (sujet)</td><td>-us / -i</td><td>-um / -a</td></tr>
+              <tr><td>Voc. (appel)</td><td>-e / -i</td><td>-um / -a</td></tr>
+              <tr><td>Acc. (COD)</td><td>-um / -os</td><td>-um / -a</td></tr>
+              <tr><td>Gén. (CdN)</td><td>-i / -orum</td><td>-i / -orum</td></tr>
+              <tr><td>Dat. (COI)</td><td>-o / -is</td><td>-o / -is</td></tr>
+              <tr><td>Abl. (CC)</td><td>-o / -is</td><td>-o / -is</td></tr>
             </tbody>
           </table>
         </div>
