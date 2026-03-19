@@ -3944,7 +3944,6 @@ export const lessons5eP3 = [
       "advocatus"
     ]
   }
-}
     ],
     "summary": {
       "retains": [
