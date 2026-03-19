@@ -3579,6 +3579,343 @@ export const lessons5eP3 = [
    ]
     }
   },
+{
+  "id": "p3-l11",
+  "period": 3,
+  "periodId": "p3",
+  "title": "Signa servi",
+  "subtitle": "Le serviteur de l’avocat voit l’homme, n’appelle personne, puis ouvre la porte. Intrus dangereux ou complice attendu ?",
+  "objective": "Réinvestir le génitif et lire plusieurs indices courts pour décider si l’homme semble connu de la maison.",
+  "lessonPoint": "Je lis les phrases l’une après l’autre et j’additionne les indices.",
+  "narrative": "Dans l’atrium de la villa de l’avocat, Marcus et Livia observent le serviteur. Il voit l’homme, mais ne crie pas. Il ouvre la porte et prend la tablette. Peu à peu, un doute nouveau apparaît : cet homme n’entre peut-être pas par hasard.",
+  "canDo": [
+    "Je lis un indice bref dans une scène continue.",
+    "Je comprends un groupe au génitif dans la maison de l’avocat.",
+    "Je traduis une conclusion simple à partir de plusieurs signes."
+  ],
+  "lexicon": [
+    "vir, viri m. = homme",
+    "advocatus, advocati m. = avocat",
+    "servus, servi m. = serviteur, esclave",
+    "villa, villae f. = villa, grande maison",
+    "ianua, ianuae f. = porte",
+    "atrium, atrii n. = atrium, hall",
+    "tabella, tabellae f. = tablette",
+    "amicus, amici m. = ami",
+    "periculosus, periculosa, periculosum = dangereux",
+    "non = ne ... pas, non",
+    "et = et",
+    "in + acc. = dans, vers (mouvement)",
+    "in + abl. = dans (lieu où l’on est)",
+    "video, vides, videt = je vois, tu vois, il/elle voit",
+    "clamo, clamas, clamat = je crie, tu cries, il/elle crie",
+    "aperio, aperis, aperit = j’ouvre, tu ouvres, il/elle ouvre",
+    "porto, portas, portat = je porte, tu portes, il/elle porte",
+    "sum, es, est = je suis, tu es, il/elle est"
+  ],
+  "maxScore": 10,
+  "training": [
+    {
+      "id": "p3-l11-t1",
+      "type": "matching",
+      "prompt": "Associe chaque groupe latin à sa bonne lecture.",
+      "pairs": [
+        {
+          "left": "servus advocati",
+          "right": "le serviteur de l’avocat"
+        },
+        {
+          "left": "villa advocati",
+          "right": "la villa de l’avocat"
+        },
+        {
+          "left": "tabella advocati",
+          "right": "la tablette de l’avocat"
+        },
+        {
+          "left": "amicus advocati",
+          "right": "l’ami de l’avocat"
+        }
+      ],
+      "rightOptions": [
+        "la tablette de l’avocat",
+        "l’ami de l’avocat",
+        "le serviteur de l’avocat",
+        "la villa de l’avocat"
+      ],
+      "expected": {
+        "servus advocati": "le serviteur de l’avocat",
+        "villa advocati": "la villa de l’avocat",
+        "tabella advocati": "la tablette de l’avocat",
+        "amicus advocati": "l’ami de l’avocat"
+      },
+      "points": 1
+    },
+    {
+      "id": "p3-l11-t2",
+      "type": "singleChoice",
+      "prompt": "Dans « servus ianuam aperit », que fait le serviteur ?",
+      "options": [
+        "il ouvre la porte",
+        "il ferme la porte",
+        "il cache la tablette",
+        "il quitte la villa"
+      ],
+      "expected": "il ouvre la porte",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l11-t3",
+      "type": "singleChoice",
+      "prompt": "Dans « servus virum videt et non clamat », quel indice nouveau apparaît ?",
+      "options": [
+        "le serviteur voit l’homme mais ne crie pas",
+        "le serviteur court dans la rue en criant",
+        "l’homme porte l’avocat qui hurle",
+        "la tablette ouvre la porte qui grince"
+      ],
+      "expected": "le serviteur voit l’homme mais ne crie pas",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l11-t4",
+      "type": "multipleChoice",
+      "prompt": "Mini-texte : « Servus virum videt. Non clamat. Ianuam aperit. » Coche tous les signes qui font penser que l’homme n’est peut-être pas un intrus complet.",
+      "options": [
+        "le serviteur voit l’homme",
+        "il ne crie pas",
+        "il ouvre la porte",
+        "il fuit jusqu’au forum"
+      ],
+      "expected": [
+        "le serviteur voit l’homme",
+        "il ne crie pas",
+        "il ouvre la porte"
+      ],
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l11-t5",
+      "type": "singleChoice",
+      "prompt": "Dans « amicus advocati », quelle traduction +  association de cas latin / fonction française correspond à « advocati » ?",
+      "options": [
+        "pour l'avocat : ablatif / CC de but"
+        "de l'avocat : génitif / Compl. du nom"
+        "à l'avocat : datif / COI"
+        "dans l'avocat : ablatif / CC de lieu"
+      ],
+      "expected": "de l'avocat : génitif / C. du nom",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l11-t6",
+      "type": "singleChoice",
+      "prompt": "« vir amicus advocati est » signifie…",
+      "options": [
+        "l’homme est un ami de l’avocat",
+        "l’avocat est un ami de l’homme",
+        "le serviteur est dangereux",
+        "la porte est dans l’ami"
+      ],
+      "expected": "l’homme est un ami de l’avocat",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l11-t7",
+      "type": "singleChoice",
+      "prompt": "Mini-dossier : « Servus advocati virum videt. Non clamat. Ianuam aperit. Vir tabellam advocati portat. » Quelle hypothèse devient la plus plausible ?",
+      "options": [
+        "l’homme semble connu de la maison",
+        "l’homme se perd complètement dans la rue",
+        "le serviteur attaque l’avocat",
+        "la tablette devient une lampe"
+      ],
+      "expected": "l’homme semble connu de la maison",
+      "shuffle": true,
+      "points": 1
+    }
+  ],
+  "production": [
+    {
+      "id": "p3-l11-p1",
+      "type": "textInput",
+      "prompt": "Traduis : servus ianuam aperit.",
+      "expected": "le serviteur ouvre la porte",
+      "acceptedAnswers": [
+        "le serviteur ouvre la porte",
+        "un serviteur ouvre la porte",
+        "l’esclave ouvre la porte",
+        "un esclave ouvre la porte"
+      ],
+      "answerConfig": {
+        "type": "translation-segment",
+        "language": "fr",
+        "accepted": [
+          "le serviteur ouvre la porte",
+          "un serviteur ouvre la porte",
+          "l’esclave ouvre la porte",
+          "un esclave ouvre la porte"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "le serviteur ouvre la porte",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true,
+        "ignoreFrenchDeterminers": true
+      },
+      "gradingFocus": "Traduire proprement une action brève et concrète.",
+      "rejectIf": [
+        "verbe principal mal compris",
+        "contre-sens sur ianuam",
+        "réponse hors-sujet"
+      ],
+      "tests": [
+        {
+          "input": "un serviteur ouvre la porte",
+          "isCorrect": true
+        },
+        {
+          "input": "le serviteur ferme la porte",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "p3-l11-p2",
+      "type": "textInput",
+      "prompt": "Complète en latin : vir amicus ____ est.",
+      "expected": "advocati",
+      "acceptedAnswers": [
+        "advocati"
+      ],
+      "answerConfig": {
+        "type": "one-of",
+        "language": "latin",
+        "accepted": [
+          "advocati"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "advocati",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Produire le génitif attendu dans un groupe simple.",
+      "rejectIf": [
+        "nominatif au lieu du génitif",
+        "mot hors leçon",
+        "réponse vide"
+      ],
+      "tests": [
+        {
+          "input": "advocati",
+          "isCorrect": true
+        },
+        {
+          "input": "advocatus",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "p3-l11-p3",
+      "type": "textInput",
+      "prompt": "Traduis : Servus advocati ianuam aperit ; vir amicus advocati est.",
+      "expected": "le serviteur de l’avocat ouvre la porte ; l’homme est un ami de l’avocat",
+      "acceptedAnswers": [
+        "le serviteur de l’avocat ouvre la porte l’homme est un ami de l’avocat",
+        "un serviteur de l’avocat ouvre la porte l’homme est un ami de l’avocat",
+        "le serviteur de l’avocat ouvre la porte l’homme est l’ami de l’avocat",
+        "un serviteur de l’avocat ouvre la porte l’homme est l’ami de l’avocat",
+        "l’esclave de l’avocat ouvre la porte l’homme est un ami de l’avocat",
+        "un esclave de l’avocat ouvre la porte l’homme est un ami de l’avocat",
+        "l’esclave de l’avocat ouvre la porte l’homme est l’ami de l’avocat",
+        "un esclave de l’avocat ouvre la porte l’homme est l’ami de l’avocat"
+      ],
+      "answerConfig": {
+        "type": "translation-segment",
+        "language": "fr",
+        "accepted": [
+          "le serviteur de l’avocat ouvre la porte l’homme est un ami de l’avocat",
+          "un serviteur de l’avocat ouvre la porte l’homme est un ami de l’avocat",
+          "le serviteur de l’avocat ouvre la porte l’homme est l’ami de l’avocat",
+          "un serviteur de l’avocat ouvre la porte l’homme est l’ami de l’avocat",
+          "l’esclave de l’avocat ouvre la porte l’homme est un ami de l’avocat",
+          "un esclave de l’avocat ouvre la porte l’homme est un ami de l’avocat",
+          "l’esclave de l’avocat ouvre la porte l’homme est l’ami de l’avocat",
+          "un esclave de l’avocat ouvre la porte l’homme est l’ami de l’avocat"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "le serviteur de l’avocat ouvre la porte ; l’homme est un ami de l’avocat",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true,
+        "ignoreFrenchDeterminers": true
+      },
+      "gradingFocus": "Réinvestir le génitif et conclure la lecture des indices dans une phrase-bilan.",
+      "rejectIf": [
+        "génitif ignoré",
+        "contre-sens sur amicus",
+        "verbe principal mal compris"
+      ],
+      "tests": [
+        {
+          "input": "le serviteur de l’avocat ouvre la porte l’homme est un ami de l’avocat",
+          "isCorrect": true
+        },
+        {
+          "input": "le serviteur de l’homme ouvre la porte l’avocat est un ami",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "retains": [
+      "Je lis plusieurs indices courts avant de conclure.",
+      "Je repère le génitif pour comprendre qui appartient à la maison de l’avocat."
+    ],
+    "cahier": [
+      "servus advocati = le serviteur de l’avocat",
+      "amicus advocati = l’ami de l’avocat"
+    ],
+    "keywords": [
+      "indices",
+      "serviteur",
+      "génitif"
+    ]
+  },
+  "meta": {
+    "status": "ready",
+    "tags": [
+      "p3",
+      "villa",
+      "servus",
+      "genitif",
+      "indices"
+    ]
+  }
+},
   {
     "id": "p3-l12",
     "period": 3,
