@@ -2461,6 +2461,7 @@ export const lessons5eP3 = [
     "lexicon": [
       "canis = chien",
       "porta = porte",
+      "vir, virum, viri = l'homme",
       "obscura = sombre",
       "ante = devant",
       "ex = hors de",
