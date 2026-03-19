@@ -2764,3 +2764,29 @@ select {
     padding:6px 8px;
   }
 }
+
+.table-wrap--flat {
+  overflow-x: visible;
+}
+
+.reference-table--declension {
+  table-layout: fixed;
+  width: 100%;
+  font-size: 0.84rem;
+}
+
+.reference-table--declension th,
+.reference-table--declension td {
+  white-space: normal;
+  padding: 0.38rem 0.42rem;
+}
+
+.reference-table--declension th:first-child,
+.reference-table--declension td:first-child {
+  width: 24%;
+}
+
+.reference-table--declension th:not(:first-child),
+.reference-table--declension td:not(:first-child) {
+  text-align: center;
+}
