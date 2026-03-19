@@ -2669,124 +2669,156 @@ select {
 
 /* ===== Références de leçon : tableaux de conjugaison / déclinaison ===== */
 
-.reference-panel-stack{
-  display:grid;
-  gap:16px;
+.reference-panel-stack {
+  display: grid;
+  gap: 14px;
 }
 
-.reference-panel-grid{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0, 1fr));
-  gap:16px;
-  align-items:start;
+.reference-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
 }
 
-.reference-card{
-  min-width:0;
-  border:1px solid rgba(255,255,255,0.10);
-  border-radius:18px;
-  padding:14px 14px 12px;
-  background:rgba(255,255,255,0.04);
-  box-shadow:0 8px 24px rgba(0,0,0,0.12);
+.reference-card {
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 18px;
+  padding: 12px 13px 11px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
 }
 
-.reference-card h4{
-  margin:0 0 10px;
-  font-size:0.98rem;
-  line-height:1.3;
+.reference-card h4 {
+  margin: 0 0 8px;
+  font-size: 0.98rem;
+  line-height: 1.24;
 }
 
-.table-wrap{
-  overflow-x:auto;
-  -webkit-overflow-scrolling:touch;
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-.reference-table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:320px;
+.reference-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 320px;
 }
 
 .reference-table th,
-.reference-table td{
-  padding:8px 10px;
-  text-align:left;
-  vertical-align:top;
+.reference-table td {
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: middle;
 }
 
 .reference-table--compact th,
-.reference-table--compact td{
-  padding:7px 9px;
-  font-size:0.94rem;
-  line-height:1.35;
+.reference-table--compact td {
+  padding: 7px 9px;
+  font-size: 0.94rem;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
-/* Déclinaisons : 4 cartes côte à côte sur grand écran */
-.lesson-view .reference-panel-stack{
-  grid-template-columns:repeat(4, minmax(0, 1fr));
+/* Conjugaisons : confort large écran */
+.lesson-view .reference-panel-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-/* Si le bloc interne contient déjà une grille (conjugaison), on garde 3 colonnes confortables */
-.lesson-view .reference-panel-grid{
-  grid-template-columns:repeat(3, minmax(0, 1fr));
+/* Déclinaisons : une colonne plus stable */
+.lesson-view .reference-panel-stack {
+  grid-template-columns: 1fr;
 }
 
 /* Tablette */
-@media (max-width: 1100px){
-  .lesson-view .reference-panel-stack{
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-  }
-
-  .lesson-view .reference-panel-grid{
-    grid-template-columns:repeat(2, minmax(0, 1fr));
+@media (max-width: 1100px) {
+  .lesson-view .reference-panel-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 /* Mobile */
-@media (max-width: 700px){
-  .lesson-view .reference-panel-stack,
-  .lesson-view .reference-panel-grid{
-    grid-template-columns:1fr;
+@media (max-width: 700px) {
+  .lesson-view .reference-panel-grid,
+  .lesson-view .reference-panel-stack {
+    grid-template-columns: 1fr;
   }
 
-  .reference-card{
-    padding:12px 12px 10px;
-    border-radius:14px;
+  .reference-card {
+    padding: 11px 11px 10px;
+    border-radius: 14px;
   }
 
-  .reference-table{
-    min-width:280px;
+  .reference-table {
+    min-width: 280px;
   }
 
   .reference-table--compact th,
-  .reference-table--compact td{
-    font-size:0.9rem;
-    padding:6px 8px;
+  .reference-table--compact td {
+    font-size: 0.9rem;
+    padding: 6px 8px;
   }
 }
 
+/* Déclinaisons : pas de mini-scroll, tableau resserré au contenu */
 .table-wrap--flat {
-  overflow-x: visible;
+  overflow: visible;
 }
 
 .reference-table--declension {
-  table-layout: fixed;
-  width: 100%;
-  font-size: 0.84rem;
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+  display: inline-table;
+  table-layout: auto;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.22;
 }
 
 .reference-table--declension th,
 .reference-table--declension td {
-  white-space: normal;
-  padding: 0.38rem 0.42rem;
+  padding: 0.34rem 0.46rem;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.reference-table--declension th {
+  font-weight: 700;
+}
+
+.reference-table--declension tr:last-child td {
+  border-bottom: none;
 }
 
 .reference-table--declension th:first-child,
 .reference-table--declension td:first-child {
-  width: 24%;
+  padding-left: 0;
+  padding-right: 0.72rem;
+  text-align: left;
 }
 
 .reference-table--declension th:not(:first-child),
 .reference-table--declension td:not(:first-child) {
   text-align: center;
+}
+
+@media (max-width: 700px) {
+  .reference-table--declension {
+    font-size: 0.9rem;
+  }
+
+  .reference-table--declension th,
+  .reference-table--declension td {
+    padding: 0.3rem 0.38rem;
+  }
+
+  .reference-table--declension th:first-child,
+  .reference-table--declension td:first-child {
+    padding-right: 0.58rem;
+  }
 }
