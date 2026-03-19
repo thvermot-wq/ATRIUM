@@ -3222,7 +3222,7 @@ export const lessons5eP3 = [
   }
 },
   {
-    "id": "p3-l2",
+    "id": "p3-l10",
     "period": 3,
     "periodId": "p3",
     "title": "Lucernae in vico",
@@ -3587,308 +3587,364 @@ export const lessons5eP3 = [
       ]
     }
   },
-  {
-    "id": "p3-l11",
-    "period": 3,
-    "periodId": "p3",
-    "title": "Vicus noctu clarior est",
-    "subtitle": "Sous les lampes restées allumées, la rue change de ton, l’homme ne repasse plus, et le calme revient peu à peu.",
-    "objective": "Lire un avant / après du quartier avec le lexique acquis.",
-    "lessonPoint": "Je compare avant et après grâce au lexique déjà connu.",
-    "narrative": "Les lampes restent allumées ; l’homme suspect ne circule plus, les troubles cessent.",
-    "canDo": [
-      "Je lis un changement de situation.",
-      "Je comprends cause et effet.",
-      "Je traduis une phrase de bilan."
-    ],
-    "lexicon": [
-      "noctu = de nuit",
-      "clarior = plus clair",
-      "quietus = calme",
-      "lucerna = lampe",
-      "vicus = quartier",
-      "manet = il/elle reste",
-      "videt = il/elle voit",
-      "dormit = il/elle dort",
-      "turbat = il/elle trouble",
-      "redit = il/elle revient"
-    ],
-    "maxScore": 10,
-    "training": [
-      {
-        "id": "p3-l11-t1",
-        "type": "singleChoice",
-        "prompt": "quietus signifie…",
-        "options": [
-          "calme",
-          "bruyant",
-          "sombre",
-          "faux"
-        ],
-        "expected": "calme",
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l11-t2",
-        "type": "matching",
-        "prompt": "Associe vocabulaire et sens sans nouvelle règle.",
-        "pairs": [
-          {
-            "left": "clarus/clarior",
-            "right": "clair / plus clair"
-          },
-          {
-            "left": "quietus",
-            "right": "calme"
-          },
-          {
-            "left": "lucerna",
-            "right": "lampe"
-          },
-          {
-            "left": "noctu",
-            "right": "de nuit"
-          }
-        ],
-        "rightOptions": [
-          "de nuit",
-          "clair / plus clair",
-          "lampe",
-          "calme"
-        ],
-        "expected": {
-          "clarus/clarior": "clair / plus clair",
-          "quietus": "calme",
-          "lucerna": "lampe",
-          "noctu": "de nuit"
+ {
+  "id": "p3-l10",
+  "period": 3,
+  "periodId": "p3",
+  "title": "In villa advocati : le génitif, complément du nom en latin",
+  "subtitle": "L’homme louche a franchi la porte de la villa de l’avocat. Dans l’atrium, Marcus et Livia recoupent les indices : serviteur du maître, dîner du maître, tablette du maître. Intrus dangereux ou complice attendu ?",
+  "objective": "Comprendre le génitif pour savoir à qui appartiennent la villa, le serviteur, la tablette et le dîner.",
+  "lessonPoint": "Je repère le mot au génitif pour répondre à la question « de qui ? » ou « de quoi ? ».",
+  "narrative": "L’homme est entré dans la villa de l’avocat. Sur la porte, Marcus lit un titulus ; dans l’atrium, Livia voit le serviteur de l’avocat porter une tablette. Tout renvoie à la maison du maître, mais le silence du serviteur entretient le doute.",
+  "canDo": [
+    "Je lis un groupe au génitif.",
+    "Je comprends à qui appartient un lieu, un objet ou un repas.",
+    "Je traduis une scène courte dans la villa de l’avocat."
+  ],
+  "lexicon": [
+    "vir, viri m. = homme",
+    "advocatus, advocati m. = avocat",
+    "villa, villae f. = villa, grande maison",
+    "ianua, ianuae f. = porte",
+    "servus, servi m. = serviteur, esclave",
+    "tabella, tabellae f. = tablette",
+    "cena, cenae f. = dîner, repas",
+    "atrium, atrii n. = atrium, hall",
+    "titulus, tituli m. = écriteau, inscription",
+    "in + acc. = dans, vers (mouvement)",
+    "in + abl. = dans (lieu où l’on est)",
+    "sub + abl. = sous (lieu où l’on est)",
+    "intro, intras, intrat = j’entre, tu entres, il/elle entre",
+    "porto, portas, portat = je porte, tu portes, il/elle porte",
+    "maneo, manes, manet = je reste, tu restes, il/elle reste",
+    "paro, paras, parat = je prépare, tu prépares, il/elle prépare",
+    "taceo, taces, tacet = je me tais, tu te tais, il/elle se tait"
+  ],
+  "maxScore": 10,
+  "training": [
+    {
+      "id": "p3-l10-t1",
+      "type": "matching",
+      "prompt": "Le génitif est utilisé en latin pour traduire un complément du nom (un homme 'de main', un chapeau 'de paille'). Associe chaque groupe latin à sa bonne lecture.",
+      "pairs": [
+        {
+          "left": "villa advocati",
+          "right": "la villa de l’avocat"
         },
-        "points": 1
-      },
-      {
-        "id": "p3-l11-t3",
-        "type": "singleChoice",
-        "prompt": "Phrase sûre : « vir in domo manet » signifie…",
-        "options": [
-          "l’homme reste dans la maison",
-          "l’homme sort de la maison",
-          "la maison reste",
-          "le quartier fuit"
-        ],
-        "expected": "l’homme reste dans la maison",
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l11-t4",
-        "type": "multipleChoice",
-        "prompt": "Traductions recevables de « lucerna vicum adiuvat ».",
-        "options": [
-          "La lampe aide le quartier",
-          "L’éclairage aide le quartier",
-          "Le quartier aide la lampe",
-          "La lampe trouble le quartier"
-        ],
-        "expected": [
-          "La lampe aide le quartier",
-          "L’éclairage aide le quartier"
-        ],
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l11-t5",
-        "type": "singleChoice",
-        "prompt": "Dans « lucerna vicum adiuvat », quel mot reçoit l’aide ?",
-        "options": [
-          "lucerna",
-          "vicum",
-          "adiuvat",
-          "quietus"
-        ],
-        "expected": "vicum",
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l11-t6",
-        "type": "multipleChoice",
-        "prompt": "Mini-texte : « Nunc vicus clarior est. Canis quietus manet. Rumor minor est. » Qu’est-ce qui change ?",
-        "options": [
-          "le quartier est plus clair",
-          "le chien est plus calme",
-          "la rumeur diminue",
-          "la fontaine disparaît"
-        ],
-        "expected": [
-          "le quartier est plus clair",
-          "le chien est plus calme",
-          "la rumeur diminue"
-        ],
-        "shuffle": true,
-        "points": 1
-      },
-      {
-        "id": "p3-l11-t7",
-        "type": "multipleChoice",
-        "prompt": "Texte : « Lucernae manent. Vicus clarior est. Canis minus latrat. » Quels effets sont visibles ?",
-        "options": [
-          "les lampes restent allumées",
-          "le quartier est plus clair",
-          "le chien aboie moins",
-          "le marché brûle"
-        ],
-        "expected": [
-          "les lampes restent allumées",
-          "le quartier est plus clair",
-          "le chien aboie moins"
-        ],
-        "shuffle": true,
-        "points": 1
-      }
-    ],
-    "production": [
-      {
-        "id": "p3-l11-p1",
-        "type": "textInput",
-        "prompt": "Traduis : vicus quietus manet",
-        "expected": "le quartier reste calme",
-        "acceptedAnswers": [
-          "le quartier reste calme",
-          "le quartier demeure calme"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "le quartier reste calme",
-            "le quartier demeure calme"
-          ]
+        {
+          "left": "servus advocati",
+          "right": "le serviteur de l’avocat"
         },
-        "points": 1,
-        "canonicalAnswer": "le quartier reste calme",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
+        {
+          "left": "cena advocati",
+          "right": "le dîner de l’avocat"
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "le quartier reste calme",
-            "isCorrect": true
-          },
-          {
-            "input": "réponse hors-sujet",
-            "isCorrect": false
-          }
+        {
+          "left": "ianua villae",
+          "right": "la porte de la villa"
+        }
+      ],
+      "rightOptions": [
+        "la porte de la villa",
+        "le dîner de l’avocat",
+        "la villa de l’avocat",
+        "le serviteur de l’avocat"
+      ],
+      "expected": {
+        "villa advocati": "la villa de l’avocat",
+        "servus advocati": "le serviteur de l’avocat",
+        "cena advocati": "le dîner de l’avocat",
+        "ianua villae": "la porte de la villa"
+      },
+      "points": 1
+    },
+    {
+      "id": "p3-l10-t2",
+      "type": "singleChoice",
+      "prompt": "Dans « vir in villam advocati intrat », où l’homme entre-t-il ?",
+      "options": [
+        "dans la villa de l’avocat",
+        "dans la rue de la voisine",
+        "sous le marché",
+        "dans la tablette du serviteur"
+      ],
+      "expected": "dans la villa de l’avocat",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l10-t3",
+      "type": "singleChoice",
+      "prompt": "Dans « servus advocati tabellam portat », qui porte la tablette ?",
+      "options": [
+        "le serviteur de l’avocat",
+        "l’avocat du serviteur",
+        "la tablette de l’avocat",
+        "la porte de la villa"
+      ],
+      "expected": "le serviteur de l’avocat",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l10-t4",
+      "type": "singleChoice",
+      "prompt": "Dans « servus advocati », quel mot veut dire « de l’avocat » ?",
+      "options": [
+        "servus",
+        "advocati",
+        "tacet",
+        "tabellam"
+      ],
+      "expected": "advocati",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l10-t5",
+      "type": "singleChoice",
+      "prompt": "Dans « ianua villae », quel mot est au génitif ?",
+      "options": [
+        "ianua",
+        "villae",
+        "in",
+        "portat"
+      ],
+      "expected": "villae",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l10-t6",
+      "type": "multipleChoice",
+      "prompt": "Mini-texte : « In atrio villae servus advocati tacet. Cena advocati parata est. » Coche toutes les informations justes.",
+      "options": [
+        "Le serviteur de l’avocat se tait dans l’atrium de la villa",
+        "Le dîner de l’avocat est prêt",
+        "L’avocat fuit dans la rue",
+        "La tablette est sous la fontaine"
+      ],
+      "expected": [
+        "Le serviteur de l’avocat se tait dans l’atrium de la villa",
+        "Le dîner de l’avocat est prêt"
+      ],
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l10-t7",
+      "type": "singleChoice",
+      "prompt": "Mini-dossier : « Vir in villam advocati intrat. Servus advocati tacet. » Quelle lecture est la plus prudente ?",
+      "options": [
+        "L’homme entre dans une maison bien précise, celle de l’avocat",
+        "Le serviteur quitte la villa pour courir au forum",
+        "L’avocat entre chez le serviteur",
+        "Le dîner se déroule dans la rue"
+      ],
+      "expected": "L’homme entre dans une maison bien précise, celle de l’avocat",
+      "shuffle": true,
+      "points": 1
+    }
+  ],
+  "production": [
+    {
+      "id": "p3-l10-p1",
+      "type": "textInput",
+      "prompt": "Traduis : servus advocati tacet.",
+      "expected": "le serviteur de l’avocat se tait",
+      "acceptedAnswers": [
+        "le serviteur de l’avocat se tait",
+        "un serviteur de l’avocat se tait",
+        "le serviteur de l’avocat garde le silence",
+        "un serviteur de l’avocat garde le silence",
+        "l’esclave de l’avocat se tait",
+        "un esclave de l’avocat se tait",
+        "l’esclave de l’avocat garde le silence",
+        "un esclave de l’avocat garde le silence"
+      ],
+      "answerConfig": {
+        "type": "translation-segment",
+        "language": "fr",
+        "accepted": [
+          "le serviteur de l’avocat se tait",
+          "un serviteur de l’avocat se tait",
+          "le serviteur de l’avocat garde le silence",
+          "un serviteur de l’avocat garde le silence",
+          "l’esclave de l’avocat se tait",
+          "un esclave de l’avocat se tait",
+          "l’esclave de l’avocat garde le silence",
+          "un esclave de l’avocat garde le silence"
         ]
       },
-      {
-        "id": "p3-l11-p2",
-        "type": "textInput",
-        "prompt": "Traduis en latin : L’homme reste dans la maison.",
-        "expected": "vir in domo manet",
-        "acceptedAnswers": [
-          "vir in domo manet",
-          "vir manet in domo",
-          "in domo vir manet",
-          "in domo manet vir",
-          "manet vir in domo",
-          "manet in domo vir"
-        ],
-        "answerConfig": {
-          "type": "one-of",
-          "language": "latin",
-          "accepted": [
-            "vir in domo manet",
-            "vir manet in domo",
-            "in domo vir manet",
-            "in domo manet vir",
-            "manet vir in domo",
-            "manet in domo vir"
-          ]
+      "points": 1,
+      "canonicalAnswer": "le serviteur de l’avocat se tait",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true,
+        "ignoreFrenchDeterminers": true
+      },
+      "gradingFocus": "Lire correctement le génitif et traduire une action brève.",
+      "rejectIf": [
+        "sens inversé",
+        "génitif ignoré",
+        "verbe principal mal compris"
+      ],
+      "tests": [
+        {
+          "input": "un serviteur de l’avocat se tait",
+          "isCorrect": true
         },
-        "points": 1,
-        "canonicalAnswer": "vir in domo manet",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "vir in domo manet",
-            "isCorrect": true
-          },
-          {
-            "input": "lorem ipsum",
-            "isCorrect": false
-          }
+        {
+          "input": "le serviteur entre chez l’avocat",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "p3-l10-p2",
+      "type": "textInput",
+      "prompt": "Complète en latin : servus ____ tabellam portat.",
+      "expected": "advocati",
+      "acceptedAnswers": [
+        "advocati"
+      ],
+      "answerConfig": {
+        "type": "one-of",
+        "language": "latin",
+        "accepted": [
+          "advocati"
         ]
       },
-      {
-        "id": "p3-l11-p3",
-        "type": "textInput",
-        "prompt": "Traduis : rumor minor est.",
-        "expected": "la rumeur est plus faible",
-        "acceptedAnswers": [
-          "la rumeur est plus faible",
-          "la rumeur est moindre",
-          "la rumeur diminue"
-        ],
-        "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
-          "accepted": [
-            "la rumeur est plus faible",
-            "la rumeur est moindre",
-            "la rumeur diminue"
-          ]
+      "points": 1,
+      "canonicalAnswer": "advocati",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Produire le génitif attendu dans un groupe nominal simple.",
+      "rejectIf": [
+        "nominatif au lieu du génitif",
+        "mot hors leçon",
+        "réponse vide"
+      ],
+      "tests": [
+        {
+          "input": "advocati",
+          "isCorrect": true
         },
-        "points": 1,
-        "canonicalAnswer": "la rumeur est plus faible",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Comprendre un bilan bref du retour au calme.",
-        "rejectIf": [
-          "sens inversé",
-          "réponse hors-sujet"
-        ],
-        "tests": [
-          {
-            "input": "la rumeur diminue",
-            "isCorrect": true
-          },
-          {
-            "input": "la rumeur augmente",
-            "isCorrect": false
-          }
+        {
+          "input": "advocatus",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "p3-l10-p3",
+      "type": "textInput",
+      "prompt": "Traduis : In villa advocati servus cenam parat ; vir sub porticu manet.",
+      "expected": "dans la villa de l’avocat, le serviteur prépare le dîner ; l’homme reste sous le porche",
+      "acceptedAnswers": [
+        "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
+        "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
+        "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
+        "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
+        "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
+        "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
+        "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
+        "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le portique",
+        "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
+        "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
+        "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
+        "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
+        "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
+        "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
+        "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
+        "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le portique"
+      ],
+      "answerConfig": {
+        "type": "translation-segment",
+        "language": "fr",
+        "accepted": [
+          "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
+          "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
+          "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
+          "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
+          "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
+          "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
+          "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
+          "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le portique",
+          "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
+          "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
+          "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
+          "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
+          "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
+          "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
+          "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
+          "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le portique"
         ]
-      }
+      },
+      "points": 1,
+      "canonicalAnswer": "dans la villa de l’avocat, le serviteur prépare le dîner ; l’homme reste sous le porche",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true,
+        "ignoreFrenchDeterminers": true
+      },
+      "gradingFocus": "Réinvestir le génitif dans une scène continue et distinguer l’intérieur de la villa et l’espace sous le porche.",
+      "rejectIf": [
+        "génitif ignoré",
+        "contresens sur le lieu",
+        "verbe principal mal compris"
+      ],
+      "tests": [
+        {
+          "input": "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
+          "isCorrect": true
+        },
+        {
+          "input": "dans la villa le serviteur de l’homme prépare l’avocat",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "retains": [
+      "Je repère le génitif pour comprendre de qui est un lieu, un objet ou un repas.",
+      "Je lis mieux les liens dans la villa de l’avocat : servus advocati, cena advocati, ianua villae."
+    ],
+    "cahier": [
+      "servus advocati = le serviteur de l’avocat",
+      "ianua villae = la porte de la villa"
+    ],
+    "keywords": [
+      "génitif",
+      "villa",
+      "avocat"
+    ]
+  },
+  "meta": {
+    "status": "ready",
+    "tags": [
+      "p3",
+      "genitif",
+      "villa",
+      "advocatus"
+    ]
+  }
+}
     ],
     "summary": {
       "retains": [
