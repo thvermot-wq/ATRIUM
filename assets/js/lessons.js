@@ -11,14 +11,14 @@ import { validateLessons } from "./data/lessonValidation.js";
 
 export const LESSONS_SPEC = {
   periods: 3,
-  lessonsPerPeriod: 12,
-  lessonsTotal: 36,
+  lessonsPerPeriod: 13,
+  lessonsTotal: 39,
   lessonMax: 10,
   trainingMax: 7,
   productionMax: 3,
-  periodMax: 120,
+  periodMax: 130,
   validationPercent: 80,
-  validationMinScore: 96,
+  validationMinScore: 104,
 };
 
 const PERIODS_5E_BASE = [
