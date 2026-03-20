@@ -90,35 +90,35 @@ export const lessons5eP1 = [
         "points": 1
       },
       {
-        "id": "p1-l1-t4",
-        "type": "matching",
-        "prompt": "👋 Associe formule et sens.",
-        "pairs": [
-          {
-            "left": "adsum",
-            "right": "je suis là"
-          },
-          {
-            "left": "salve",
-            "right": "bonjour (à une personne)"
-          },
-          {
-            "left": "vale",
-            "right": "au revoir (à une personne)"
-          }
-        ],
-        "rightOptions": [
-          "au revoir (à une personne)",
-          "je suis là",
-          "bonjour (à une personne)"
-        ],
-        "expected": {
-          "adsum": "je suis là",
-          "salve": "bonjour (à une personne)",
-          "vale": "au revoir (à une personne)"
-        },
-        "points": 1
-      },
+  "id": "p1-l1-t4",
+  "type": "matching",
+  "prompt": "👋 Associe formule et sens.",
+  "pairs": [
+    {
+      "left": "adsum",
+      "right": "je suis là"
+    },
+    {
+      "left": "salve",
+      "right": "bonjour (à une personne)"
+    },
+    {
+      "left": "vale",
+      "right": "au revoir (à une personne)"
+    }
+  ],
+  "rightOptions": [
+    "au revoir (à une personne)",
+    "je suis là",
+    "bonjour (à une personne)"
+  ],
+  "expected": {
+    "adsum": "je suis là",
+    "salve": "bonjour (à une personne)",
+    "vale": "au revoir (à une personne)"
+  },
+  "points": 1
+},
       {
         "id": "p1-l1-t5",
         "type": "singleChoice",
