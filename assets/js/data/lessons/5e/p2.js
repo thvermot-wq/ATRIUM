@@ -10,7 +10,7 @@ const headerContexts5eP2 = {
   "p2-l8": "La tablette passe de main en main. Lucius tressaille : quelqu'un a remplacé un nom par un autre ! D’un coup, l’enquête ne porte plus seulement sur le vol, mais sur ce qu’on a voulu faire croire.",
   "p2-l9": "Niger, le petit chien, revient devant la même porte, s’arrête, grogne, refuse d’avancer. Livia finit par faire plus confiance au chien qu’aux habitants de Subure.",
   "p2-l10": "À l’aube, Aurelia plonge son seau dans une eau trouble. Elle se dit que les soupçons ont fini par salir Subure d’une maison à l’autre.",
-  "p2-l11": "Quand Marcus prononce enfin le nom de Discordia, personne ne rit. La querelle qui courait de bouche en bouche prend soudain un visage net.",
+  "p2-l11": "Quand Marcus prononce enfin le nom de Discordia, personne ne rit. La querelle qui courait de bouche en bouche prend soudain un visage inquiétant.",
   "p2-l12": "Le soir retombe sur Subure. Flavia n'arrive pas à s'endormir, Marcus repense à la porte verte, et chacun se demande si la paix va revenir, ou si la maléfique déesse attend juste qu’on baisse la garde."
 };
 
@@ -2354,13 +2354,13 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-      {
+            {
         "id": "p2-l7-t6",
         "type": "multipleChoice",
-        "prompt": "Mini-texte : « 𝑄𝑢𝑎𝑒𝑟𝑖𝑚𝑢𝑠 𝑑𝑜𝑛𝑢𝑚. 𝑅𝑜𝑔𝑎𝑡𝑖𝑠 𝑡𝑒𝑠𝑡𝑒𝑚. 𝑉𝑖𝑐𝑖𝑛𝑖 𝑟𝑒𝑠𝑝𝑜𝑛𝑑𝑒𝑛𝑡. » Qui parle collectivement ?",
+        "prompt": "Mini-texte : « 𝑄𝑢𝑎𝑒𝑟𝑖𝑚𝑢𝑠 𝑑𝑜𝑛𝑢𝑚. 𝑅𝑜𝑔𝑎𝑡𝑖𝑠 𝑡𝑒𝑠𝑡𝑒𝑚. 𝑉𝑖𝑐𝑖𝑛𝑖 𝑟𝑒𝑠𝑝𝑜𝑛𝑑𝑒𝑛𝑡. » Quelles formulations désignent bien des groupes qui parlent ou agissent collectivement ?",
         "options": [
           "Nous",
-          "Les donneurs",
+          "Ceux qui cherchent",
           "Vous",
           "Un certain Roger",
           "Les voisins",
@@ -2369,12 +2369,10 @@ export const lessons5eP2 = [
         ],
         "expected": [
           "Nous",
-          "Les donneurs",
+          "Ceux qui cherchent",
           "Vous",
-          "Un certain Roger",
           "Les voisins",
-          "Ceux qui répondent",
-          "Un seul témoin"
+          "Ceux qui répondent"
         ],
         "shuffle": true,
         "points": 1
@@ -2684,10 +2682,10 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-      {
+           {
         "id": "p2-l8-t4",
         "type": "multipleChoice",
-        "prompt": "Texte court : « 𝑁𝑜𝑚𝑒𝑛 𝑚𝑢𝑡𝑎𝑡. 𝑉𝑒𝑟𝑢𝑚 𝑛𝑜𝑛 𝑒𝑠𝑡. » Quelles phrases sont vraies ?",
+        "prompt": "Texte court : « 𝑁𝑜𝑚𝑒𝑛 𝑚𝑢𝑡𝑎𝑡𝑢𝑚 𝑒𝑠𝑡. 𝑉𝑒𝑟𝑢𝑚 𝑛𝑜𝑛 𝑒𝑠𝑡. » Quelles phrases sont vraies ?",
         "options": [
           "Le nom est changé",
           "Le texte n'est pas vrai",
