@@ -23,7 +23,6 @@ export const lessons5eP2 = [
     subtitle: headerContexts5eP2["p2-l1"],
     "objective": "Entrer dans l’enquête de Subure et comprendre les questions de base.",
     "lessonPoint": "Je commence par le verbe, puis je demande qui / quoi / où / pourquoi ; l’ordre latin peut changer.",
-    "narrative": "Sur l'autel, une offrande a disparu. Les voisins se regardent avec méfiance.",
     "canDo": [
       "Je reconnais quis / quid / cur / ubi.",
       "Je repère sujet, verbe et complément.",
