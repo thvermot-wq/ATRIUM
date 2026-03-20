@@ -2309,58 +2309,59 @@ export const lessons5eP3 = [
           }
         ]
       },
-      {
-        "id": "p3-l7-p2",
-        "type": "textInput",
-        "prompt": "Traduis en latin : Sur le forum, les voisins crient.",
-        "expected": "vicini in foro clamant",
-        "acceptedAnswers": [
-          "vicini in foro clamant",
-          "vicini clamant in foro",
-          "in foro vicini clamant",
-          "in foro clamant vicini",
-          "clamant vicini in foro",
-          "clamant in foro vicini"
-        ],
-        "answerConfig": {
-          "type": "one-of",
-          "language": "latin",
-          "accepted": [
-            "vicini in foro clamant",
-            "vicini clamant in foro",
-            "in foro vicini clamant",
-            "in foro clamant vicini",
-            "clamant vicini in foro",
-            "clamant in foro vicini"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "vicini in foro clamant",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "vicini in foro clamant",
-            "isCorrect": true
-          },
-          {
-            "input": "lorem ipsum",
-            "isCorrect": false
-          }
-        ]
-      },
+    {
+  "id": "p3-l7-p2",
+  "type": "textInput",
+  "prompt": "Traduis en latin : Sur le forum, les voisins crient.",
+  "expected": "vicini in foro clamant",
+  "acceptedAnswers": [
+    "vicini in foro clamant",
+    "vicini clamant in foro",
+    "in foro vicini clamant",
+    "in foro clamant vicini",
+    "clamant vicini in foro",
+    "clamant in foro vicini"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "vicini in foro clamant",
+      "vicini clamant in foro",
+      "in foro vicini clamant",
+      "in foro clamant vicini",
+      "clamant vicini in foro",
+      "clamant in foro vicini"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "vicini in foro clamant",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+  "rejectIf": [
+    "verbe incorrect",
+    "sujet au mauvais nombre",
+    "complément de lieu absent ou incorrect",
+    "forme latine impossible au niveau de la leçon"
+  ],
+  "tests": [
+    {
+      "input": "vicini in foro clamant",
+      "isCorrect": true
+    },
+    {
+      "input": "lorem ipsum",
+      "isCorrect": false
+    }
+  ]
+},
       {
         "id": "p3-l7-p3",
         "type": "textInput",
