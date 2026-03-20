@@ -2313,29 +2313,29 @@ export const lessons5eP3 = [
         "id": "p3-l7-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : Sur le forum, les voisins crient.",
-        "expected": "vicini in foro respondent",
+        "expected": "vicini in foro clamant",
         "acceptedAnswers": [
-          "vicini in foro respondent",
-          "vicini respondent in foro",
-          "in foro vicini respondent",
-          "in foro respondent vicini",
-          "respondent vicini in foro",
-          "respondent in foro vicini"
+          "vicini in foro clamant",
+          "vicini clamant in foro",
+          "in foro vicini clamant",
+          "in foro clamant vicini",
+          "clamant vicini in foro",
+          "clamant in foro vicini"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
-            "vicini in foro respondent",
-            "vicini respondent in foro",
-            "in foro vicini respondent",
-            "in foro respondent vicini",
-            "respondent vicini in foro",
-            "respondent in foro vicini"
+            "vicini in foro clamant",
+            "vicini clamant in foro",
+            "in foro vicini clamant",
+            "in foro clamant vicini",
+            "clamant vicini in foro",
+            "clamant in foro vicini"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "vicini in foro respondent",
+        "canonicalAnswer": "vicini in foro clamant",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -2352,7 +2352,7 @@ export const lessons5eP3 = [
         ],
         "tests": [
           {
-            "input": "vicini in foro respondent",
+            "input": "vicini in foro clamant",
             "isCorrect": true
           },
           {
