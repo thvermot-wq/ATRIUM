@@ -3,14 +3,14 @@ const headerContexts5eP2 = {
   "p2-l1": "Au petit matin, l’autel vide attire encore les regards. « Maintenant, on arrête les mines choquées et on compare les versions ! », tranche Flavia, puis elle désigne les voisins un par un.",
   "p2-l2": "Un témoin assure que l’homme a couru vers le temple, puis jure qu’il venait de la boutique. « Il a vu beaucoup de choses pour quelqu’un d’aussi confus », dit Lucius, et il refait le trajet en courant.",
   "p2-l3": "Près de la fontaine, une femme serre la corde de son seau comme un poignet. « Je n’ai vu qu’une épaule, mais une épaule qui fuit, ça suffit », dit-elle, puis elle montre la porte du menton.",
-  "p2-l4": "Dans la rue, le maître accuse le serviteur, le serviteur accuse le voisin, le voisin accuse l’heure. « Continuez, et vous allez finir par dénoncer les pavés », grogne Marcus, puis il coupe la parole au plus bruyant.",
+  "p2-l4": "Dans la rue, le maître accuse le serviteur, le serviteur accuse le voisin, le voisin accuse le mauvais temps... « Continuez, et vous allez finir par dénoncer les pavés », grogne Marcus, puis il coupe la parole au plus bruyant.",
   "p2-l5": "Livia découvre une petite marque près du sanctuaire, presque rien, une griffure dans la pierre. « Le détail minuscule, c’est celui qui coûte le plus cher », dit-elle, puis elle gratte la poussière avec l’ongle.",
   "p2-l6": "Chacun raconte désormais ce qu’il a vu, entendu ou deviné, en se donnant le beau rôle. « Quand tout le monde devient témoin parfait, c’est que l’histoire a été piétinée », dit Flavia, puis elle reprend chaque phrase mot à mot.",
   "p2-l7": "Devant la maison, les voisins s’agglutinent si près qu’on ne sait plus qui aide et qui gêne. « Vous cherchez la vérité ou juste une meilleure place ? », lance Marcus, puis il repousse une épaule pour passer.",
   "p2-l8": "La tablette revient à Lucius, qui la relit plus lentement cette fois. « Quelqu’un n’a pas seulement écrit ; quelqu’un a déplacé la faute », dit-il, puis Flavia lui arrache presque l’objet.",
   "p2-l9": "Niger revient devant la même porte et refuse d’avancer d’un pas. « Moi, je commence à faire plus confiance au chien qu’au quartier », souffle Livia, puis Marcus suit l’angle exact de son museau.",
   "p2-l10": "À la fontaine, l’eau remonte trouble et laisse un dépôt gris sur le bois. « Ce qui sort du fond n’a jamais bonne allure », murmure Aurelia, puis elle incline le seau vers la lumière.",
-  "p2-l11": "Quand Marcus prononce enfin le nom de la déesse de la discorde, la rue se calme sans discuter. « Voilà ; au moins, notre désordre a trouvé son patron », dit Flavia, et personne ne rit.",
+  "p2-l11": "Quand Marcus prononce enfin le nom de la déesse Discordia, la rue se calme sans discuter. « Voilà ; au moins, notre désordre a trouvé son patron », dit Flavia, et personne ne rit.",
   "p2-l12": "Le soir retombe sur le quartier, mais les portes restent entrouvertes et les oreilles aussi. « La paix revient toujours après tout le monde », murmure Aurelia, puis Niger lève la tête au moindre pas."
 };
 
