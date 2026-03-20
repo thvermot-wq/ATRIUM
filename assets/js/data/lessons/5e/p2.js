@@ -1,17 +1,17 @@
 // Données de leçons 5E · Période 2 — Discordia in Subure.
 const headerContexts5eP2 = {
   "p2-l1": "Au petit matin, l’autel vide attire encore les regards. « Maintenant, on arrête les mines choquées et on compare les versions ! », tranche Flavia, puis elle désigne les voisins un par un.",
-  "p2-l2": "Un témoin assure avoir vu quelqu’un filer vers le temple puis ressortir d’une boutique ; Lucius décide d'aller sur place pour prendre des renseignements.",
-  "p2-l3": "Près de la fontaine, Aurelia parle enfin. Elle montre la porte par où elle a cru voir passer un gaillard plutôt louche, et Flavia ne la quitte pas des yeux.",
-  "p2-l4": "Sextus accuse un esclave, l'esclave lui renvoie la balles, et Marcus voit les accusations se croiser dans Subure plus vite que les preuves.",
-  "p2-l5": "Livia repère près du temple un gribouillis que personne n’avait voulu voir ; ce n’est pas grand-chose, juste assez pour remettre tout le quartier en mouvement.",
-  "p2-l6": "On entend tout et son contraire : un gros chien noir, une porte peinte en vert, du danger partout. Flavia laisse parler, puis commence à faire le tri entre peur et mensonge.",
-  "p2-l7": "Devant la porte, les voisins s’entassent, parlent tous plus fort que les autres, et Marcus comprend qu’à Subure une foule peut fabriquer une histoire entière avant même d’avoir compris la première phrase.",
-  "p2-l8": "La tablette passe de main en main. Lucius tressaille : quelqu'un a remplacé un nom par un autre ! D’un coup, l’enquête ne porte plus seulement sur le vol, mais sur ce qu’on a voulu faire croire.",
-  "p2-l9": "Niger, le petit chien, revient devant la même porte, s’arrête, grogne, refuse d’avancer. Livia finit par faire plus confiance au chien qu’aux habitants de Subure.",
-  "p2-l10": "À l’aube, Aurelia plonge son seau dans une eau trouble. Elle se dit que les soupçons ont fini par salir Subure d’une maison à l’autre.",
-  "p2-l11": "Quand Marcus prononce enfin le nom de Discordia, personne ne rit. La querelle qui courait de bouche en bouche prend soudain un visage inquiétant.",
-  "p2-l12": "Le soir retombe sur Subure. Flavia n'arrive pas à s'endormir, Marcus repense à la porte verte, et chacun se demande si la paix va revenir, ou si la maléfique déesse attend juste qu’on baisse la garde."
+  "p2-l2": "Un témoin assure que l’homme a couru vers le temple, puis jure qu’il venait de la boutique. « Il a vu beaucoup de choses pour quelqu’un d’aussi confus », dit Lucius, et il refait le trajet en courant.",
+  "p2-l3": "Près de la fontaine, une femme serre la corde de son seau comme un poignet. « Je n’ai vu qu’une épaule, mais une épaule qui fuit, ça suffit », dit-elle, puis elle montre la porte du menton.",
+  "p2-l4": "Dans la rue, le maître accuse le serviteur, le serviteur accuse le voisin, le voisin accuse l’heure. « Continuez, et vous allez finir par dénoncer les pavés », grogne Marcus, puis il coupe la parole au plus bruyant.",
+  "p2-l5": "Livia découvre une petite marque près du sanctuaire, presque rien, une griffure dans la pierre. « Le détail minuscule, c’est celui qui coûte le plus cher », dit-elle, puis elle gratte la poussière avec l’ongle.",
+  "p2-l6": "Chacun raconte désormais ce qu’il a vu, entendu ou deviné, en se donnant le beau rôle. « Quand tout le monde devient témoin parfait, c’est que l’histoire a été piétinée », dit Flavia, puis elle reprend chaque phrase mot à mot.",
+  "p2-l7": "Devant la maison, les voisins s’agglutinent si près qu’on ne sait plus qui aide et qui gêne. « Vous cherchez la vérité ou juste une meilleure place ? », lance Marcus, puis il repousse une épaule pour passer.",
+  "p2-l8": "La tablette revient à Lucius, qui la relit plus lentement cette fois. « Quelqu’un n’a pas seulement écrit ; quelqu’un a déplacé la faute », dit-il, puis Flavia lui arrache presque l’objet.",
+  "p2-l9": "Niger revient devant la même porte et refuse d’avancer d’un pas. « Moi, je commence à faire plus confiance au chien qu’au quartier », souffle Livia, puis Marcus suit l’angle exact de son museau.",
+  "p2-l10": "À la fontaine, l’eau remonte trouble et laisse un dépôt gris sur le bois. « Ce qui sort du fond n’a jamais bonne allure », murmure Aurelia, puis elle incline le seau vers la lumière.",
+  "p2-l11": "Quand Marcus prononce enfin le nom de la déesse de la discorde, la rue se calme sans discuter. « Voilà ; au moins, notre désordre a trouvé son patron », dit Flavia, et personne ne rit.",
+  "p2-l12": "Le soir retombe sur le quartier, mais les portes restent entrouvertes et les oreilles aussi. « La paix revient toujours après tout le monde », murmure Aurelia, puis Niger lève la tête au moindre pas."
 };
 
 export const lessons5eP2 = [
