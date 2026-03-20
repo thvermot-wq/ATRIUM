@@ -1,17 +1,17 @@
 // Données de leçons 5E · Période 3 — Discordia in Subura.
 const headerContexts5eP3 = {
-  "p3-l1": "Une rumeur nocturne rouvre l’affaire quand une voisine affirme avoir vu un homme sortir dans l’ombre.",
-  "p3-l2": "Marcus suit la trace entre les insulae, se cache dans les angles, et comprend qu’un homme a pris l’habitude de passer là quand les portes se ferment.",
-  "p3-l3": "Aux portes et aux fenêtres, les voisines de Subure regardent la rue chacune à sa façon.",
-  "p3-l4": "Au marché, un marchand reconnaît l’homme et parle d'un parfum tenace d'huile ; si bien que l’odeur grasse revient soudain dans tous les souvenirs.",
-  "p3-l5": "Dans les boutiques, les récits se contredisent, mais Flavia oblige chacun à reprendre les faits avant qu'on n'accuse encore quelqu'un à tort.",
-  "p3-l6": "Aux bains, un témoin confirme un détail, en retire un autre, puis Marcus sent que le mensonge fatigue ceux qui le portent depuis trop longtemps.",
-  "p3-l7": "Au forum, Subure vide enfin sa colère en plein jour, et les voisins se répondent et s'invectivent face à face au lieu de se mordre par rumeur interposée.",
-  "p3-l8": "Niger retourne à la porte louche, gratte le bois, refuse d’entrer, et plus personne n’ose traiter ce manège comme un simple caprice.",
-  "p3-l9": "L’homme louche a franchi la porte de la villa de l’avocat. Intrus dangereux ou complice attendu ? Dans l’atrium, Marcus et Livia recoupent les indices : serviteur du maître, dîner du maître, tablette du maître...",
-  "p3-l10": "L’homme est entré dans la villa de l’avocat. Sur la porte, Marcus lit un titulus ; dans l’atrium, Livia voit le serviteur de l’avocat porter une tablette. Tout renvoie à la maison du maître, mais le silence du serviteur entretient le doute.",
-  "p3-l11": "Dans l’atrium de la villa de l’avocat, Marcus et Livia observent le serviteur. Il voit l’homme, mais ne crie pas. Il ouvre la porte et prend la tablette. Peu à peu, un doute nouveau apparaît : cet homme n’entre peut-être pas par hasard.",
-  "p3-l12": "Dans les jardins de l’avocat, les chandelles éclairent les allées. Des habitants de Subure déjà croisés reviennent avec des flambeaux, cherchent partout, regardent la porte, la terre, les bords du mur. Enfin, une trace nette apparaît..."
+  "p3-l1": "Une voisine jure qu’elle a vu un homme sortir de nuit, la tête basse et le pas court. « Une histoire pareille ne marche pas ; elle déboule », dit Marcus, puis il attrape une lampe.",
+  "p3-l2": "Entre deux immeubles, la ruelle se resserre et garde l’odeur d’humidité. « S’il repasse par là, ce n’est plus une fuite, c’est une habitude », murmure Marcus, puis il touche une trace fraîche sur le mur.",
+  "p3-l3": "Aux fenêtres, les voisines regardent la rue avec cette patience qui use tout le monde. « Je ne fouine pas, j’observe mieux que les autres », dit l’une d’elles, puis elle indique une direction sans bouger les pieds.",
+  "p3-l4": "Au marché, un marchand d’huile reconnaît son client à l’odeur avant de reconnaître sa figure. « Celui-là entre dans une rue avant son parfum », ricane-t-il, puis Marcus ouvre l’amphore et grimace.",
+  "p3-l5": "Dans les boutiques, chacun reprend son récit avec une assurance neuve. « On recommence, mais sans théâtre cette fois », dit Flavia, puis elle bloque du plat de la main le plus bavard des témoins.",
+  "p3-l6": "Aux bains, un homme dit qu’il a vu, puis qu’il a entendu, puis qu’il a surtout compris. « Le mensonge fatigue plus vite que la vapeur », murmure Marcus, puis il attend que l’autre se contredise encore.",
+  "p3-l7": "Sur la place, les voisins crient, les marchands répliquent, les enfants ramassent des bribes. « Vous êtes nombreux ; essayez maintenant d’être utiles », lance Flavia, puis elle sépare le groupe en deux.",
+  "p3-l8": "Devant la porte sombre, Niger gratte le bois et recule aussitôt. « Même lui n’aime pas l’odeur, et il mange pourtant n’importe quoi », dit Livia, puis Marcus colle l’oreille au battant.",
+  "p3-l9": "Sous le portique de la grande maison, le sol sonne plus sec et les murs sentent la cire. « Un homme ne finit pas ici sans y être attendu », dit Marcus, puis il longe la galerie à petits pas.",
+  "p3-l10": "À l’entrée de la villa de l’avocat, tout est à sa place, jusqu’au silence. « Les riches rangent même leur accueil », glisse Livia, puis elle suit des yeux le serviteur et la tablette.",
+  "p3-l11": "Dans le vestibule, le serviteur ouvre, prend la tablette, referme, sans une hésitation. « On ne reçoit pas un inconnu comme ça », souffle Flavia, puis Marcus refait la scène dans sa tête.",
+  "p3-l12": "Dans le jardin, les torches balaient la terre humide au ras du mur. « Regardez bien : là... c’est une piste ! », dit Livia, puis tous se penchent d’un même mouvement."
 };
 
 export const lessons5eP3 = [
@@ -23,7 +23,6 @@ export const lessons5eP3 = [
     "subtitle": "Une rumeur nocturne rouvre l’affaire quand une voisine affirme avoir vu un homme sortir dans l’ombre.",
     "objective": "Réactiver les interrogatifs dans une scène d’enquête nocturne.",
     "lessonPoint": "Je trouve le verbe d’abord, puis qui / quoi / où / pourquoi ; l’ordre latin peut varier.",
-    "narrative": "Une rumeur dit qu’un homme sort la nuit : les voisins veulent vérifier les faits.",
     "canDo": [
       "Je reconnais quis / quid /ubi / cur.",
       "Je distingue vu et entendu.",
@@ -366,7 +365,6 @@ export const lessons5eP3 = [
     "subtitle": "Marcus suit la trace entre les insulae, se cache dans les angles, et comprend qu’un homme a pris l’habitude de passer là quand les portes se ferment.",
     "objective": "Lire un trajet nocturne grâce aux prépositions.",
     "lessonPoint": "Je lis le groupe prépositionnel d’un seul bloc pour suivre le trajet.",
-    "narrative": "L’homme passe entre les insulae, puis disparaît dans une ruelle.",
     "canDo": [
       "Je lis ad/in/ex/ante.",
       "Je repère des lieux traversés.",
@@ -725,7 +723,6 @@ export const lessons5eP3 = [
     "subtitle": "Aux portes et aux fenêtres, les voisines de Subure regardent la rue chacune à sa façon.",
     "objective": "Réinvestir la 1re déclinaison dans une scène d’observation.",
     "lessonPoint": "Je regarde -a et -am pour distinguer qui agit et ce qui est regardé.",
-    "narrative": "Des voisines observent depuis les portes et les fenêtres, guettant les allées et venues nocturnes...",
     "canDo": [
       "Je reconnais des noms de 1re déclinaison.",
       "Je traduis une phrase simple."
@@ -1063,7 +1060,6 @@ export const lessons5eP3 = [
     "subtitle": "Au marché, un marchand reconnaît l’homme et parle d'un parfum tenace d'huile mal pressée ; si bien que l’odeur grasse revient soudain dans tous les souvenirs.",
     "objective": "Réinvestir le neutre dans une scène de marché et d’indice.",
     "lessonPoint": "Je repère les neutres de la 2e déclinaison, et j’observe leur fonction dans l’indice. Sujet (nominatif) = -um ; COD (accusatif) = -um.",
-    "narrative": "Au marché, un marchand affirme que l’homme a acheté une huile de mauvaise qualité. De nuit ! Voilà de quoi faire parler les gens...",
     "canDo": [
       "Je reconnais des neutres fréquents.",
       "Je repère l’action principale.",
@@ -1393,7 +1389,6 @@ export const lessons5eP3 = [
     "subtitle": "Dans les boutiques, les récits se contredisent, mais Flavia oblige chacun à reprendre les faits un par un et à ne pas tirer de conclusion hâtive.",
     "objective": "Lire qui agit et qui subit dans des versions contradictoires.",
     "lessonPoint": "Qui accuse qui ? Je regarde qui est sujet (-us) / complément d'objet (-um) avant d’interpréter une accusation.",
-    "narrative": "Dans les tabernae, les gens aiment parler fort et se pousser au premier plan. Les paroles se mélangent : certains accusent trop vite.",
     "canDo": [
       "Je relis la 2e déclinaison masculine.",
       "Je compare deux versions contradictoires.",
@@ -1762,7 +1757,6 @@ export const lessons5eP3 = [
     "subtitle": "Aux bains, un témoin confirme un détail, en retire un autre, puis Marcus sent que le mensonge fatigue ceux qui le portent depuis trop longtemps.",
     "objective": "Identifier je / tu / il-elle dans des témoignages.",
     "lessonPoint": "Je lis la terminaison du verbe pour savoir qui parle.",
-    "narrative": "Aux bains, des témoins disent avoir vu l’homme avant l’aube.",
     "canDo": [
       "Je repère les personnes du singulier.",
       "Je comprends qui parle dans une déposition.",
@@ -2102,7 +2096,6 @@ export const lessons5eP3 = [
     "subtitle": "Au forum, Subure vide enfin sa colère en plein jour, et les voisins se répondent et s'invectivent face à face au lieu de se mordre par rumeur interposée.",
     "objective": "Identifier nous / vous / ils-elles dans un débat public.",
     "lessonPoint": "Je lis la terminaison du verbe pour savoir quel groupe agit.",
-    "narrative": "Au forum, le quartier se retrouve pour confronter toutes les versions de l'histoire de façon publique ; ce qui promet du boucan !",
     "canDo": [
       "Je reconnais les personnes du pluriel.",
       "Je lis un échange collectif.",
@@ -2426,7 +2419,6 @@ export const lessons5eP3 = [
     "subtitle": "Niger retourne à la porte louche, gratte le bois, refuse d’entrer, et plus personne n’ose traiter ce manège comme un simple caprice.",
     "objective": "Lire une phrase à ordre variable sans se tromper sur le sens.",
     "lessonPoint": "Le sens dépend des formes et du verbe, pas seulement de la position des mots.",
-    "narrative": "Le chien rôde toujours aux alentours de la même porte sombre ; ce n'était qu'une question de temps avant que nos enquêteurs ne s'y intéressent...",
     "canDo": [
       "Je lis des ordres variés.",
       "Je garde le même sens malgré l’ordre.",
@@ -2827,7 +2819,6 @@ export const lessons5eP3 = [
   "subtitle": "La fuite mène à une villa illuminée : sous le porche, un homme se cache pendant qu’un avocat célèbre reçoit pour un grand dîner.",
   "objective": "Suivre un déplacement et comprendre vers quel lieu précis mène la fuite.",
   "lessonPoint": "Je repère le verbe, puis je lis d’un bloc le groupe de lieu : per vias, in villam, sub porticu.",
-  "narrative": "L’homme court à travers les rues et s’engouffre sous le porche d’une grande villa illuminée. Un avocat célèbre y prépare un grand dîner. Marcus et Livia comprennent que la fuite ne mène pas n’importe où : elle conduit à une maison bien précise.",
   "canDo": [
     "Je suis un déplacement dans une phrase simple.",
     "Je distingue où l’on va et où l’on se cache.",
@@ -3250,7 +3241,6 @@ export const lessons5eP3 = [
   "subtitle": "L’homme louche a franchi la porte de la villa de l’avocat. Dans l’atrium, Marcus et Livia recoupent les indices : serviteur du maître, dîner du maître, tablette du maître. Intrus dangereux ou complice attendu ?",
   "objective": "Comprendre le génitif pour savoir à qui appartiennent la villa, le serviteur, la tablette et le dîner.",
   "lessonPoint": "Je repère le mot au génitif pour répondre à la question « de qui ? » ou « de quoi ? ».",
-  "narrative": "L’homme est entré dans la villa de l’avocat. Sur la porte, Marcus lit une inscription ; dans l’atrium, Livia voit le serviteur de l’avocat porter une tablette. Tout renvoie à la maison du maître, mais le silence du serviteur entretient le doute.",
   "canDo": [
     "Je lis un groupe au génitif.",
     "Je comprends à qui appartient un lieu, un objet ou un repas.",
@@ -3620,7 +3610,6 @@ export const lessons5eP3 = [
   "subtitle": "Le serviteur de l’avocat voit l’homme, n’appelle personne, puis ouvre la porte. Intrus dangereux ou complice attendu ?",
   "objective": "Réinvestir le génitif et lire plusieurs indices courts pour décider si l’homme semble connu de la maison.",
   "lessonPoint": "Je lis les phrases l’une après l’autre et j’additionne les indices.",
-  "narrative": "Le serviteur de l’avocat voit l’homme louche passer en coup de vent, ne donne pas l'alerte, puis ouvre une porte dérobée. Un doute taraude Marcus et Livia : vient-il de favoriser la fuite du suspect ?",
   "canDo": [
     "Je lis un indice bref dans une scène continue.",
     "Je comprends un groupe au génitif dans la maison de l’avocat.",
@@ -3960,7 +3949,6 @@ export const lessons5eP3 = [
   "subtitle": "De nuit, dans les jardins de l’avocat éclairés par les chandelles, plusieurs figures de Subure reviennent avec des flambeaux et fouillent les lieux. Puis une trace apparaît : elle mène hors de la ville. Le danger s’éloigne. Pour le moment.",
   "objective": "Relire toute l’enquête dans une scène nocturne finale et comprendre où mène la trace découverte.",
   "lessonPoint": "Je repère qui agit, ce qui est cherché, et à quel lieu mène la trace.",
-  "narrative": "Dans les jardins de l’avocat, les chandelles éclairent les allées. Des habitants de Subure déjà croisés reviennent avec des flambeaux, cherchent partout, regardent la porte, la terre, les bords du mur. Enfin, une trace nette apparaît...",
   "canDo": [
     "Je lis une scène nocturne continue en latin simple.",
     "Je repère le génitif dans des groupes comme porta oppidi ou vicini Suburae.",
