@@ -2008,7 +2008,7 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-    {
+   {
   "id": "p2-l6-t7",
   "type": "textInput",
   "prompt": "Traduis en latin en plaçant le verbe à la fin : « Je crie dans la rue. »",
