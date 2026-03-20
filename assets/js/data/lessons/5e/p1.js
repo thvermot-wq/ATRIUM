@@ -109,11 +109,11 @@ export const lessons5eP1 = [
         ],
         "rightOptions": [
           "au revoir (à une personne)",
-          "je suis présent",
+          "je suis là",
           "bonjour (à une personne)"
         ],
         "expected": {
-          "adsum": "je suis présent",
+          "adsum": "je suis là",
           "salve": "bonjour (à une personne)",
           "vale": "au revoir (à une personne)"
         },
