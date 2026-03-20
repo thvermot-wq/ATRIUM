@@ -1,7 +1,15 @@
 import { normalizeInput } from "./normalize.js";
 
+function stripFrenchArticles(text) {
+  return String(text ?? "")
+    .replace(/\b(l'|l’)/gi, "")
+    .replace(/\b(le|la|les|un|une|des)\b/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function normalizeScalar(value) {
-  return normalizeInput(String(value ?? ""), {
+  const normalized = normalizeInput(String(value ?? ""), {
     toLowerCase: true,
     trim: true,
     collapseSpaces: true,
@@ -9,6 +17,8 @@ function normalizeScalar(value) {
     normalizeApostrophe: true,
     ignoreDiacritics: true,
   });
+
+  return stripFrenchArticles(normalized);
 }
 
 function normalizeType(type = "") {
