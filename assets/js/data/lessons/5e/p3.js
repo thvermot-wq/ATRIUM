@@ -3413,7 +3413,7 @@ export const lessons5eP3 = [
     {
       "id": "p3-l10-t7",
       "type": "singleChoice",
-      "prompt": "Mini-dossier : « Vir in villam advocati intrat. Servus advocati tacet. » Quelle lecture est la plus prudente ?",
+      "prompt": "Mini-dossier : « Vir in villam advocati intrat. Servus advocati tacet. » Quelle information est bien présente dans ce court texte ?",
       "options": [
         "L’homme entre dans une maison bien précise, celle de l’avocat",
         "Le serviteur quitte la villa pour courir au forum",
@@ -3429,7 +3429,7 @@ export const lessons5eP3 = [
     {
       "id": "p3-l10-p1",
       "type": "textInput",
-      "prompt": "Traduis : servus advocati tacet.",
+      "prompt": "Traduis : Servus advocati tacet.",
       "expected": "le serviteur de l’avocat se tait",
       "acceptedAnswers": [
         "le serviteur de l’avocat se tait",
@@ -3486,7 +3486,7 @@ export const lessons5eP3 = [
     {
       "id": "p3-l10-p2",
       "type": "textInput",
-      "prompt": "Complète en latin : servus ____ tabellam portat.",
+      "prompt": "'Le serviteur de l'avocat porte une tablette.' Complète en latin : servus ____ tabellam portat.",
       "expected": "advocati",
       "acceptedAnswers": [
         "advocati"
