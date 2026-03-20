@@ -1000,7 +1000,7 @@ export const lessons5eP3 = [
         ],
         "answerConfig": {
           "type": "one-of",
-          "language": "la",
+          "language": "latin",
           "accepted": [
             "lucernam"
           ]
@@ -1329,7 +1329,7 @@ export const lessons5eP3 = [
         ],
         "answerConfig": {
           "type": "one-of",
-          "language": "la",
+          "language": "latin",
           "accepted": [
             "signum"
           ]
@@ -1896,7 +1896,7 @@ export const lessons5eP3 = [
         ],
         "answerConfig": {
           "type": "one-of",
-          "language": "la",
+          "language": "latin",
           "accepted": [
             "audis"
           ]
@@ -2293,7 +2293,7 @@ export const lessons5eP3 = [
           }
         ]
       },
-    {
+   {
   "id": "p3-l7-p2",
   "type": "textInput",
   "prompt": "Traduis en latin : Sur le forum, les voisins crient.",
@@ -2331,8 +2331,7 @@ export const lessons5eP3 = [
   "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
   "rejectIf": [
     "verbe incorrect",
-    "sujet au mauvais nombre",
-    "complément de lieu absent ou incorrect",
+    "sens inversé sujet/objet",
     "forme latine impossible au niveau de la leçon"
   ],
   "tests": [
@@ -2659,11 +2658,11 @@ export const lessons5eP3 = [
           }
         ]
       },
-      {
+            {
         "id": "p3-l8-p2",
         "type": "textInput",
         "prompt": "Traduis en latin : Le chien aboie devant la porte sombre.",
-        "expected": "canis ante portam obscuram manet",
+        "expected": "canis ante portam obscuram latrat",
         "acceptedAnswers": [
           "canis ante portam obscuram latrat",
           "canis latrat ante portam obscuram",
@@ -2685,7 +2684,7 @@ export const lessons5eP3 = [
           ]
         },
         "points": 1,
-        "canonicalAnswer": "canis ante portam obscuram manet",
+        "canonicalAnswer": "canis ante portam obscuram latrat",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -2702,7 +2701,7 @@ export const lessons5eP3 = [
         ],
         "tests": [
           {
-            "input": "canis ante portam obscuram manet",
+            "input": "canis ante portam obscuram latrat",
             "isCorrect": true
           },
           {
@@ -3733,17 +3732,17 @@ export const lessons5eP3 = [
       "shuffle": true,
       "points": 1
     },
-    {
+        {
       "id": "p3-l11-t5",
       "type": "singleChoice",
-      "prompt": "Dans « amicus advocati », quelle traduction +  association de cas latin / fonction française correspond à « advocati » ?",
+      "prompt": "Dans « amicus advocati », quelle traduction + association de cas latin / fonction française correspond à « advocati » ?",
       "options": [
         "pour l'avocat : ablatif / CC de but",
         "de l'avocat : génitif / Compl. du nom",
-        "à l'avocat : datif / COI",
-        "dans l'avocat : ablatif / CC de lieu"
+        "avec l'avocat : accusatif / COD",
+        "par l'avocat : nominatif / sujet"
       ],
-      "expected": "de l'avocat : génitif / C. du nom",
+      "expected": "de l'avocat : génitif / Compl. du nom",
       "shuffle": true,
       "points": 1
     },
@@ -4166,23 +4165,23 @@ export const lessons5eP3 = [
         }
       ]
     },
-    {
+        {
       "id": "p3-l12-p2",
       "type": "textInput",
       "prompt": "'Les portes de la ville.' - Traduis en latin : ____ oppidi",
-      "expected": "portas",
+      "expected": "portae",
       "acceptedAnswers": [
-        "portas"
+        "portae"
       ],
       "answerConfig": {
         "type": "one-of",
         "language": "latin",
         "accepted": [
-          "portas"
+          "portae"
         ]
       },
       "points": 1,
-      "canonicalAnswer": "portas",
+      "canonicalAnswer": "portae",
       "normalization": {
         "trim": true,
         "collapseSpaces": true,
@@ -4199,7 +4198,7 @@ export const lessons5eP3 = [
       ],
       "tests": [
         {
-          "input": "portas",
+          "input": "portae",
           "isCorrect": true
         },
         {
