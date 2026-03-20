@@ -12,6 +12,7 @@ const headerContexts5eP1 = {
   "p1-l10": "Aux bains, la buée colle aux bras et les voix passent d’un bassin à l’autre. « Ici, les gens lavent leur peau, jamais leur langue », dit Marcus, puis il se rapproche du bord sans faire de bruit.",
   "p1-l11": "Sur le mur, des accusations ont été griffés si fort que la chaux s’est soulevée. « Joli courage : écrire ça dehors et se taire dedans », souffle Flavia, puis elle relit le nom une seconde fois.",
   "p1-l12": "Le soir, ils étalent pain, tablette et souvenirs du jour sur la même table. « On ne cherche plus un voleur, on cherche ce qui fait dérailler tout le monde », note Marcus, puis le silence tombe d’un coup."
+  "p1-l13": "Le soir tombe sur Subure. Marcus vérifie qui est là, qui manque encore, et chacun apprend enfin à dire simplement : je suis, tu es, il est ; je suis là, tu es là, il est là.",
 };
 
 export const lessons5eP1 = [
@@ -3878,5 +3879,335 @@ export const lessons5eP1 = [
         "p1-l12"
       ]
     }
+  },
+  {
+  "id": "p1-l13",
+  "period": 1,
+  "periodId": "p1",
+  "title": "Sum et adsum",
+  subtitle: headerContexts5eP1["p1-l13"],
+  "objective": "Reconnaître et produire les formes sum, es, est, puis les relier à adsum déjà rencontré.",
+  "lessonPoint": "Je reconnais les formes d’esse et je comprends que adsum signifie être là, être présent.",
+  "canDo": [
+    "Je reconnais sum, es, est.",
+    "Je comprends adsum, ades, adest dans une scène simple.",
+    "Je traduis et je produis de très courtes phrases avec être."
+  ],
+  "lexicon": [
+    "sum = je suis",
+    "es = tu es",
+    "est = il / elle est",
+    "adsum = je suis là, je suis présent",
+    "ades = tu es là, tu es présent",
+    "adest = il / elle est là, il / elle est présent(e)",
+    "in domo = dans la maison",
+    "in foro = sur le forum",
+    "hic = ici"
+  ],
+  "maxScore": 10,
+  "training": [
+    {
+      "id": "p1-l13-t1",
+      "type": "singleChoice",
+      "prompt": "🟢 « sum » signifie :",
+      "options": [
+        "je suis",
+        "tu es",
+        "il est",
+        "je vois"
+      ],
+      "expected": "je suis",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p1-l13-t2",
+      "type": "matching",
+      "prompt": "🟢 Associe chaque forme à sa traduction.",
+      "pairs": [
+        {
+          "left": "sum",
+          "right": "je suis"
+        },
+        {
+          "left": "es",
+          "right": "tu es"
+        },
+        {
+          "left": "est",
+          "right": "il / elle est"
+        }
+      ],
+      "rightOptions": [
+        "il / elle est",
+        "je suis",
+        "tu es"
+      ],
+      "expected": {
+        "sum": "je suis",
+        "es": "tu es",
+        "est": "il / elle est"
+      },
+      "points": 1
+    },
+    {
+      "id": "p1-l13-t3",
+      "type": "singleChoice",
+      "prompt": "🟢 « adest » signifie surtout :",
+      "options": [
+        "il / elle est là",
+        "il / elle marche",
+        "il / elle écrit",
+        "il / elle porte"
+      ],
+      "expected": "il / elle est là",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p1-l13-t4",
+      "type": "multipleChoice",
+      "prompt": "🟢 Quelles phrases parlent de présence ?",
+      "options": [
+        "Marcus adest.",
+        "Livia in domo est.",
+        "Lucius tabellam portat.",
+        "Flavia adest."
+      ],
+      "expected": [
+        "Marcus adest.",
+        "Livia in domo est.",
+        "Flavia adest."
+      ],
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p1-l13-t5",
+      "type": "singleChoice",
+      "prompt": "🟢 Dans « Livia in domo est », quel est le verbe ?",
+      "options": [
+        "Livia",
+        "domo",
+        "est",
+        "in"
+      ],
+      "expected": "est",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p1-l13-t6",
+      "type": "matching",
+      "prompt": "🟢 Associe chaque petite phrase à son sens.",
+      "pairs": [
+        {
+          "left": "Marcus adest",
+          "right": "Marcus est là"
+        },
+        {
+          "left": "Flavia in foro est",
+          "right": "Flavia est sur le forum"
+        },
+        {
+          "left": "Lucius hic est",
+          "right": "Lucius est ici"
+        }
+      ],
+      "rightOptions": [
+        "Lucius est ici",
+        "Marcus est là",
+        "Flavia est sur le forum"
+      ],
+      "expected": {
+        "Marcus adest": "Marcus est là",
+        "Flavia in foro est": "Flavia est sur le forum",
+        "Lucius hic est": "Lucius est ici"
+      },
+      "points": 1
+    },
+    {
+      "id": "p1-l13-t7",
+      "type": "singleChoice",
+      "prompt": "🟢 Mini-scène : « Marcus adest. Flavia adest. Lucius non adest. » Quelle conclusion est juste ?",
+      "options": [
+        "Lucius n’est pas encore là",
+        "Marcus n’est pas là",
+        "Flavia quitte la maison",
+        "Personne n’est présent"
+      ],
+      "expected": "Lucius n’est pas encore là",
+      "shuffle": true,
+      "points": 1
+    }
+  ],
+  "production": [
+    {
+      "id": "p1-l13-p1",
+      "type": "textInput",
+      "prompt": "🟢 Traduis en français : Marcus adest.",
+      "expected": "marcus est là",
+      "acceptedAnswers": [
+        "marcus est là",
+        "marcus est present",
+        "marcus est présent"
+      ],
+      "answerConfig": {
+        "type": "translation-segment",
+        "language": "fr",
+        "accepted": [
+          "marcus est là",
+          "marcus est present",
+          "marcus est présent"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "marcus est là",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Comprendre correctement adest dans une phrase très simple.",
+      "rejectIf": [
+        "verbe mal compris",
+        "sens inversé",
+        "réponse hors-sujet"
+      ],
+      "tests": [
+        {
+          "input": "marcus est là",
+          "isCorrect": true
+        },
+        {
+          "input": "marcus porte la tablette",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "p1-l13-p2",
+      "type": "textInput",
+      "prompt": "🟢 Traduis en latin : Livia est dans la maison.",
+      "expected": "Livia in domo est",
+      "acceptedAnswers": [
+        "Livia in domo est",
+        "Livia est in domo",
+        "in domo Livia est",
+        "in domo est Livia",
+        "est Livia in domo",
+        "est in domo Livia"
+      ],
+      "answerConfig": {
+        "type": "one-of",
+        "language": "latin",
+        "accepted": [
+          "Livia in domo est",
+          "Livia est in domo",
+          "in domo Livia est",
+          "in domo est Livia",
+          "est Livia in domo",
+          "est in domo Livia"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "Livia in domo est",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Produire une phrase très simple avec esse et un groupe de lieu.",
+      "rejectIf": [
+        "forme incorrecte de esse",
+        "groupe de lieu incorrect",
+        "réponse hors-sujet"
+      ],
+      "tests": [
+        {
+          "input": "Livia in domo est",
+          "isCorrect": true
+        },
+        {
+          "input": "Livia domum est",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "p1-l13-p3",
+      "type": "textInput",
+      "prompt": "🟢 Traduis en latin : Je suis là.",
+      "expected": "adsum",
+      "acceptedAnswers": [
+        "adsum"
+      ],
+      "answerConfig": {
+        "type": "one-of",
+        "language": "latin",
+        "accepted": [
+          "adsum"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "adsum",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Réemployer correctement adsum comme forme simple mémorisable.",
+      "rejectIf": [
+        "confusion avec sum",
+        "forme inexistante",
+        "réponse hors-sujet"
+      ],
+      "tests": [
+        {
+          "input": "adsum",
+          "isCorrect": true
+        },
+        {
+          "input": "sum",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "retains": [
+      "sum / es / est = je suis / tu es / il est",
+      "adsum / ades / adest = je suis là / tu es là / il est là"
+    ],
+    "cahier": [
+      "Marcus adest",
+      "Livia in domo est",
+      "adsum = je suis là"
+    ],
+    "keywords": [
+      "esse",
+      "adsum",
+      "présence",
+      "être"
+    ]
+  },
+  "meta": {
+    "status": "ready",
+    "tags": [
+      "p1",
+      "esse",
+      "adsum",
+      "presence"
+    ]
   }
+}
 ];
