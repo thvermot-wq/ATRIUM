@@ -12,6 +12,7 @@ const headerContexts5eP2 = {
   "p2-l10": "À la fontaine, l’eau remonte trouble et laisse un dépôt gris sur le bois. « Ce qui sort du fond n’a jamais bonne allure », murmure Aurelia, puis elle incline le seau vers la lumière.",
   "p2-l11": "Quand Marcus prononce enfin le nom de la déesse Discordia, la rue se calme sans discuter. « Voilà ; au moins, notre désordre a trouvé son patron », dit Flavia, et personne ne rit.",
   "p2-l12": "Le soir retombe sur le quartier, mais les portes restent entrouvertes et les oreilles aussi. « La paix revient toujours après tout le monde », murmure Aurelia, puis Niger lève la tête au moindre pas."
+  "p2-l13": "En reprenant les témoignages, Flavia bute sur quelques mots plus rugueux que les autres : rex, mater, urbs, corpus. Ils ne ressemblent pas aux noms déjà connus... Est-ce que ce serait des morceaux d'un code ?",
 };
 
 export const lessons5eP2 = [
@@ -4409,5 +4410,346 @@ export const lessons5eP2 = [
         "discordia"
       ]
     }
+  },
+  {
+  "id": "p2-l13",
+  "period": 2,
+  "periodId": "p2",
+  "title": "Premiers mots en 3e déclinaison",
+  subtitle: headerContexts5eP2["p2-l13"],
+  "objective": "Reconnaître quelques noms fréquents de 3e déclinaison en lecture simple.",
+  "lessonPoint": "Je reconnais quelques noms de 3e déclinaison, même quand leur forme change entre sujet et complément.",
+  "narrative": "L’enquête avance, mais certains mots résistent. Flavia comprend qu’ils n’entrent ni dans la 1re ni dans la 2e déclinaison : il faut apprendre à les reconnaître sans paniquer.",
+  "canDo": [
+    "Je reconnais quelques mots fréquents de 3e déclinaison.",
+    "Je repère sujet et complément dans une phrase simple.",
+    "Je traduis de très courtes phrases avec des noms nouveaux."
+  ],
+  "lexicon": [
+    "rex, regis m. = roi",
+    "regem = le roi (COD)",
+    "mater, matris f. = mère",
+    "matrem = la mère (COD)",
+    "nomen, nominis n. = nom",
+    "corpus, corporis n. = corps",
+    "urbs, urbis f. = ville",
+    "urbem = la ville (COD)",
+    "videt = il / elle voit",
+    "audit = il / elle entend",
+    "legit = il / elle lit",
+    "portat = il / elle porte"
+  ],
+  "maxScore": 10,
+  "training": [
+    {
+      "id": "p2-l13-t1",
+      "type": "matching",
+      "prompt": "Associe chaque mot latin à sa traduction.",
+      "pairs": [
+        {
+          "left": "rex",
+          "right": "roi"
+        },
+        {
+          "left": "mater",
+          "right": "mère"
+        },
+        {
+          "left": "urbs",
+          "right": "ville"
+        },
+        {
+          "left": "corpus",
+          "right": "corps"
+        }
+      ],
+      "rightOptions": [
+        "ville",
+        "corps",
+        "roi",
+        "mère"
+      ],
+      "expected": {
+        "rex": "roi",
+        "mater": "mère",
+        "urbs": "ville",
+        "corpus": "corps"
+      },
+      "points": 1
+    },
+    {
+      "id": "p2-l13-t2",
+      "type": "multipleChoice",
+      "prompt": "Quels mots appartiennent à la 3e déclinaison ?",
+      "options": [
+        "rex",
+        "mater",
+        "urbs",
+        "dominus",
+        "puella"
+      ],
+      "expected": [
+        "rex",
+        "mater",
+        "urbs"
+      ],
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p2-l13-t3",
+      "type": "matching",
+      "prompt": "Associe le sujet à sa forme de complément objet.",
+      "pairs": [
+        {
+          "left": "rex",
+          "right": "regem"
+        },
+        {
+          "left": "mater",
+          "right": "matrem"
+        },
+        {
+          "left": "urbs",
+          "right": "urbem"
+        }
+      ],
+      "rightOptions": [
+        "regem",
+        "matrem",
+        "urbem"
+      ],
+      "expected": {
+        "rex": "regem",
+        "mater": "matrem",
+        "urbs": "urbem"
+      },
+      "points": 1
+    },
+    {
+      "id": "p2-l13-t4",
+      "type": "singleChoice",
+      "prompt": "Dans « mater nomen legit », qui lit ?",
+      "options": [
+        "mater",
+        "nomen",
+        "legit",
+        "urbs"
+      ],
+      "expected": "mater",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p2-l13-t5",
+      "type": "singleChoice",
+      "prompt": "Dans « rex urbem videt », quel mot est le complément objet ?",
+      "options": [
+        "rex",
+        "urbem",
+        "videt",
+        "regis"
+      ],
+      "expected": "urbem",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p2-l13-t6",
+      "type": "singleChoice",
+      "prompt": "Quel mot garde la même forme comme sujet et comme complément objet ?",
+      "options": [
+        "nomen",
+        "rex",
+        "mater",
+        "urbs"
+      ],
+      "expected": "nomen",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p2-l13-t7",
+      "type": "singleChoice",
+      "prompt": "Mini-scène : « Mater nomen legit. Rex urbem videt. Corpus in via est. » Quelle phrase résume le mieux ces espèces de phrases codées ?",
+      "options": [
+        "On rencontre plusieurs mots nouveaux de 3e déclinaison dans des phrases simples",
+        "Tous les mots sont de 1re déclinaison",
+        "Le roi écrit sur la tablette",
+        "La ville voit la mère"
+      ],
+      "expected": "On rencontre plusieurs mots nouveaux de 3e déclinaison dans des phrases simples",
+      "shuffle": true,
+      "points": 1
+    }
+  ],
+  "production": [
+    {
+      "id": "p2-l13-p1",
+      "type": "textInput",
+      "prompt": "Traduis : Mater nomen legit",
+      "expected": "la mère lit le nom",
+      "acceptedAnswers": [
+        "la mère lit le nom",
+        "une mère lit le nom"
+      ],
+      "answerConfig": {
+        "type": "translation-segment",
+        "language": "fr",
+        "accepted": [
+          "la mère lit le nom",
+          "une mère lit le nom"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "la mère lit le nom",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Comprendre une phrase très simple avec deux noms de 3e déclinaison.",
+      "rejectIf": [
+        "sens inversé sujet/objet",
+        "verbe incorrect",
+        "réponse hors-sujet"
+      ],
+      "tests": [
+        {
+          "input": "la mère lit le nom",
+          "isCorrect": true
+        },
+        {
+          "input": "le nom lit la mère",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "p2-l13-p2",
+      "type": "textInput",
+      "prompt": "Traduis en latin : Le roi voit la ville.",
+      "expected": "rex urbem videt",
+      "acceptedAnswers": [
+        "rex urbem videt",
+        "rex videt urbem",
+        "urbem rex videt",
+        "urbem videt rex",
+        "videt rex urbem",
+        "videt urbem rex"
+      ],
+      "answerConfig": {
+        "type": "one-of",
+        "language": "latin",
+        "accepted": [
+          "rex urbem videt",
+          "rex videt urbem",
+          "urbem rex videt",
+          "urbem videt rex",
+          "videt rex urbem",
+          "videt urbem rex"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "rex urbem videt",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Produire une phrase simple avec un sujet et un COD de 3e déclinaison.",
+      "rejectIf": [
+        "forme incorrecte de urbem",
+        "sens inversé sujet/objet",
+        "réponse hors-sujet"
+      ],
+      "tests": [
+        {
+          "input": "rex urbem videt",
+          "isCorrect": true
+        },
+        {
+          "input": "rex urbs videt",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "p2-l13-p3",
+      "type": "textInput",
+      "prompt": "Complète : « La mère entend le roi » = Mater ____ audit.",
+      "expected": "regem",
+      "acceptedAnswers": [
+        "regem"
+      ],
+      "answerConfig": {
+        "type": "one-of",
+        "language": "latin",
+        "accepted": [
+          "regem"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "regem",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Reconnaître et produire une forme objet en -em.",
+      "rejectIf": [
+        "forme sujet au lieu du COD",
+        "mot hors leçon",
+        "réponse vide"
+      ],
+      "tests": [
+        {
+          "input": "regem",
+          "isCorrect": true
+        },
+        {
+          "input": "rex",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "retains": [
+      "La 3e déclinaison ne ressemble pas toujours aux noms déjà connus.",
+      "Je peux déjà reconnaître quelques mots fréquents : rex, mater, nomen, urbs, corpus."
+    ],
+    "cahier": [
+      "rex / regem",
+      "mater / matrem",
+      "urbs / urbem",
+      "nomen garde la même forme au neutre"
+    ],
+    "keywords": [
+      "3e déclinaison",
+      "rex",
+      "mater",
+      "urbs",
+      "nomen"
+    ]
+  },
+  "meta": {
+    "status": "ready",
+    "tags": [
+      "p2",
+      "troisieme-declinaison",
+      "amorce",
+      "lecture"
+    ]
   }
+}
 ];
