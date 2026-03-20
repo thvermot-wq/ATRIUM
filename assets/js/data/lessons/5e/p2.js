@@ -2008,11 +2008,15 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-     {
+    {
   "id": "p2-l6-t7",
   "type": "textInput",
   "prompt": "Traduis en latin en plaçant le verbe à la fin : « Je crie dans la rue. »",
-  "expected": "ego in via clamo",
+  "expected": [
+    "ego in via clamo",
+    "in via ego clamo",
+    "in via clamo"
+  ],
   "acceptedAnswers": [
     "ego in via clamo",
     "in via ego clamo",
@@ -2046,6 +2050,10 @@ export const lessons5eP2 = [
   "tests": [
     {
       "input": "ego in via clamo",
+      "isCorrect": true
+    },
+    {
+      "input": "in via ego clamo",
       "isCorrect": true
     },
     {
