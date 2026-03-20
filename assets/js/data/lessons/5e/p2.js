@@ -1,6 +1,6 @@
 // Données de leçons 5E · Période 2 — Discordia in Subure.
 const headerContexts5eP2 = {
-  "p2-l1": "Au pied de l’ara, Marcus examine la place vide de l'offrande, Flavia scrute les visages. L'enquête s'annonce plus compliquée que prévu !",
+  "p2-l1": "Au petit matin, l’autel vide attire encore les regards. « Maintenant, on arrête les mines choquées et on compare les versions ! », tranche Flavia, puis elle désigne les voisins un par un.",
   "p2-l2": "Un témoin assure avoir vu quelqu’un filer vers le temple puis ressortir d’une boutique ; Lucius décide d'aller sur place pour prendre des renseignements.",
   "p2-l3": "Près de la fontaine, Aurelia parle enfin. Elle montre la porte par où elle a cru voir passer un gaillard plutôt louche, et Flavia ne la quitte pas des yeux.",
   "p2-l4": "Sextus accuse un esclave, l'esclave lui renvoie la balles, et Marcus voit les accusations se croiser dans Subure plus vite que les preuves.",
