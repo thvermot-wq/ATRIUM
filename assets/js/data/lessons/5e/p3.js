@@ -3646,7 +3646,7 @@ export const lessons5eP3 = [
   "subtitle": "Le serviteur de l’avocat voit l’homme, n’appelle personne, puis ouvre la porte. Intrus dangereux ou complice attendu ?",
   "objective": "Réinvestir le génitif et lire plusieurs indices courts pour décider si l’homme semble connu de la maison.",
   "lessonPoint": "Je lis les phrases l’une après l’autre et j’additionne les indices.",
-  "narrative": "Dans l’atrium de la villa de l’avocat, Marcus et Livia observent le serviteur. Il voit l’homme, mais ne crie pas, et se contente d'ouvrir une porte dérobée. Un doute taraude Marcus et Livia : vient-il de favoriser la fuite du suspect ?",
+  "narrative": "Le serviteur de l’avocat voit l’homme louche passer en coup de vent, ne donne pas l'alerte, puis ouvre une porte dérobée. Un doute taraude Marcus et Livia : vient-il de favoriser la fuite du suspect ?",
   "canDo": [
     "Je lis un indice bref dans une scène continue.",
     "Je comprends un groupe au génitif dans la maison de l’avocat.",
@@ -3664,12 +3664,14 @@ export const lessons5eP3 = [
     "periculosus, periculosa, periculosum = dangereux",
     "non = ne ... pas, non",
     "et = et",
+    "deinde = puis, après cela",
     "in + acc. = dans, vers (mouvement)",
     "in + abl. = dans (lieu où l’on est)",
     "video, vides, videt = je vois, tu vois, il/elle voit",
     "clamo, clamas, clamat = je crie, tu cries, il/elle crie",
     "aperio, aperis, aperit = j’ouvre, tu ouvres, il/elle ouvre",
     "porto, portas, portat = je porte, tu portes, il/elle porte",
+    "teneo, tenes, tenet = je tiens, tu tiens, il/elle tient",
     "sum, es, est = je suis, tu es, il/elle est"
   ],
   "maxScore": 10,
@@ -3741,7 +3743,7 @@ export const lessons5eP3 = [
     {
       "id": "p3-l11-t4",
       "type": "multipleChoice",
-      "prompt": "Mini-texte : « Servus virum videt. Non clamat. Ianuam aperit. » Coche tous les signes qui font penser que l’homme n’est peut-être pas un intrus complet.",
+      "prompt": "Mini-texte : « Servus virum videt. Non clamat. Ianuam aperit. » Coche tous les signes qui font penser que l’homme n’est peut-être pas considéré comme un intrus.",
       "options": [
         "le serviteur voit l’homme",
         "il ne crie pas",
@@ -3785,19 +3787,19 @@ export const lessons5eP3 = [
       "points": 1
     },
     {
-      "id": "p3-l11-t7",
-      "type": "singleChoice",
-      "prompt": "Mini-dossier : « Servus advocati virum videt. Non clamat. Ianuam aperit. Vir tabellam advocati portat. » Quelle hypothèse devient la plus plausible ?",
-      "options": [
-        "l’homme semble connu de la maison",
-        "l’homme se perd complètement dans la rue",
-        "le serviteur attaque l’avocat",
-        "la tablette devient une lampe"
-      ],
-      "expected": "l’homme semble connu de la maison",
-      "shuffle": true,
-      "points": 1
-    }
+  "id": "p3-l11-t7",
+  "type": "singleChoice",
+  "prompt": "Mini-dossier : « Servus ad ianuam venit. Vir tabellam advocati tenet. Servus eum spectat, deinde ianuam aperit. » Quelle déduction est la plus solide ?",
+  "options": [
+    "le visiteur apporte sans doute un message pour l’avocat",
+    "le serviteur prend peur et veut se cacher",
+    "l’homme cherche à voler la maison",
+    "l’avocat ordonne de fermer la porte"
+  ],
+  "expected": "le visiteur apporte sans doute un message pour l’avocat",
+  "shuffle": true,
+  "points": 1
+}
   ],
   "production": [
     {
@@ -3852,7 +3854,7 @@ export const lessons5eP3 = [
     {
       "id": "p3-l11-p2",
       "type": "textInput",
-      "prompt": "Complète en latin : vir amicus ____ est.",
+      "prompt": "'L'homme est un ami de l'avocat.' Complète en latin : vir amicus ____ est.",
       "expected": "advocati",
       "acceptedAnswers": [
         "advocati"
@@ -3956,7 +3958,8 @@ export const lessons5eP3 = [
     ],
     "cahier": [
       "servus advocati = le serviteur de l’avocat",
-      "amicus advocati = l’ami de l’avocat"
+      "amicus advocati = l’ami de l’avocat",
+      "Prépositions : deinde = puis, après cela"
     ],
     "keywords": [
       "indices",
@@ -4142,7 +4145,7 @@ export const lessons5eP3 = [
     {
       "id": "p3-l12-p1",
       "type": "textInput",
-      "prompt": "Traduis : taedae hortum illuminant.",
+      "prompt": "Traduis : Taedae hortum illuminant.",
       "expected": "les flambeaux éclairent le jardin",
       "acceptedAnswers": [
         "les flambeaux éclairent le jardin",
@@ -4236,35 +4239,77 @@ export const lessons5eP3 = [
       "prompt": "Traduis : Vicini Suburae taedas portant ; vestigium extra oppidum ducit.",
       "expected": "les habitants de Subure portent des flambeaux ; la trace mène hors de la ville",
       "acceptedAnswers": [
-        "les habitants de Subure portent des flambeaux la trace mène hors de la ville",
-        "les habitants de Subure portent les flambeaux la trace mène hors de la ville",
-        "les habitants de Subure portent des torches la trace mène hors de la ville",
-        "les habitants de Subure portent les torches la trace mène hors de la ville",
-        "les voisins de Subure portent des flambeaux la trace mène hors de la ville",
-        "les voisins de Subure portent les flambeaux la trace mène hors de la ville",
-        "les voisins de Subure portent des torches la trace mène hors de la ville",
-        "les voisins de Subure portent les torches la trace mène hors de la ville",
-        "les habitants de Subure portent des flambeaux la trace conduit hors de la ville",
-        "les habitants de Subure portent des torches la trace conduit hors de la ville",
-        "les voisins de Subure portent des flambeaux la trace conduit hors de la ville",
-        "les voisins de Subure portent des torches la trace conduit hors de la ville"
+  "habitants de Subure portent flambeaux trace mène hors de ville",
+  "habitants de Subure portent flambeaux trace conduit hors de ville",
+  "habitants de Subure portent flambeaux piste mène hors de ville",
+  "habitants de Subure portent flambeaux piste conduit hors de ville",
+  "habitants de Subure portent torches trace mène hors de ville",
+  "habitants de Subure portent torches trace conduit hors de ville",
+  "habitants de Subure portent torches piste mène hors de ville",
+  "habitants de Subure portent torches piste conduit hors de ville",
+  "habitants de Subure brandissent flambeaux trace mène hors de ville",
+  "habitants de Subure brandissent flambeaux trace conduit hors de ville",
+  "habitants de Subure brandissent flambeaux piste mène hors de ville",
+  "habitants de Subure brandissent flambeaux piste conduit hors de ville",
+  "habitants de Subure brandissent torches trace mène hors de ville",
+  "habitants de Subure brandissent torches trace conduit hors de ville",
+  "habitants de Subure brandissent torches piste mène hors de ville",
+  "habitants de Subure brandissent torches piste conduit hors de ville",
+
+  "voisins de Subure portent flambeaux trace mène hors de ville",
+  "voisins de Subure portent flambeaux trace conduit hors de ville",
+  "voisins de Subure portent flambeaux piste mène hors de ville",
+  "voisins de Subure portent flambeaux piste conduit hors de ville",
+  "voisins de Subure portent torches trace mène hors de ville",
+  "voisins de Subure portent torches trace conduit hors de ville",
+  "voisins de Subure portent torches piste mène hors de ville",
+  "voisins de Subure portent torches piste conduit hors de ville",
+  "voisins de Subure brandissent flambeaux trace mène hors de ville",
+  "voisins de Subure brandissent flambeaux trace conduit hors de ville",
+  "voisins de Subure brandissent flambeaux piste mène hors de ville",
+  "voisins de Subure brandissent flambeaux piste conduit hors de ville",
+  "voisins de Subure brandissent torches trace mène hors de ville",
+  "voisins de Subure brandissent torches trace conduit hors de ville",
+  "voisins de Subure brandissent torches piste mène hors de ville",
+  "voisins de Subure brandissent torches piste conduit hors de ville"
       ],
       "answerConfig": {
         "type": "translation-segment",
         "language": "fr",
         "accepted": [
-          "les habitants de Subure portent des flambeaux la trace mène hors de la ville",
-          "les habitants de Subure portent les flambeaux la trace mène hors de la ville",
-          "les habitants de Subure portent des torches la trace mène hors de la ville",
-          "les habitants de Subure portent les torches la trace mène hors de la ville",
-          "les voisins de Subure portent des flambeaux la trace mène hors de la ville",
-          "les voisins de Subure portent les flambeaux la trace mène hors de la ville",
-          "les voisins de Subure portent des torches la trace mène hors de la ville",
-          "les voisins de Subure portent les torches la trace mène hors de la ville",
-          "les habitants de Subure portent des flambeaux la trace conduit hors de la ville",
-          "les habitants de Subure portent des torches la trace conduit hors de la ville",
-          "les voisins de Subure portent des flambeaux la trace conduit hors de la ville",
-          "les voisins de Subure portent des torches la trace conduit hors de la ville"
+          "habitants de Subure portent flambeaux trace mène hors de ville",
+  "habitants de Subure portent flambeaux trace conduit hors de ville",
+  "habitants de Subure portent flambeaux piste mène hors de ville",
+  "habitants de Subure portent flambeaux piste conduit hors de ville",
+  "habitants de Subure portent torches trace mène hors de ville",
+  "habitants de Subure portent torches trace conduit hors de ville",
+  "habitants de Subure portent torches piste mène hors de ville",
+  "habitants de Subure portent torches piste conduit hors de ville",
+  "habitants de Subure brandissent flambeaux trace mène hors de ville",
+  "habitants de Subure brandissent flambeaux trace conduit hors de ville",
+  "habitants de Subure brandissent flambeaux piste mène hors de ville",
+  "habitants de Subure brandissent flambeaux piste conduit hors de ville",
+  "habitants de Subure brandissent torches trace mène hors de ville",
+  "habitants de Subure brandissent torches trace conduit hors de ville",
+  "habitants de Subure brandissent torches piste mène hors de ville",
+  "habitants de Subure brandissent torches piste conduit hors de ville",
+
+  "voisins de Subure portent flambeaux trace mène hors de ville",
+  "voisins de Subure portent flambeaux trace conduit hors de ville",
+  "voisins de Subure portent flambeaux piste mène hors de ville",
+  "voisins de Subure portent flambeaux piste conduit hors de ville",
+  "voisins de Subure portent torches trace mène hors de ville",
+  "voisins de Subure portent torches trace conduit hors de ville",
+  "voisins de Subure portent torches piste mène hors de ville",
+  "voisins de Subure portent torches piste conduit hors de ville",
+  "voisins de Subure brandissent flambeaux trace mène hors de ville",
+  "voisins de Subure brandissent flambeaux trace conduit hors de ville",
+  "voisins de Subure brandissent flambeaux piste mène hors de ville",
+  "voisins de Subure brandissent flambeaux piste conduit hors de ville",
+  "voisins de Subure brandissent torches trace mène hors de ville",
+  "voisins de Subure brandissent torches trace conduit hors de ville",
+  "voisins de Subure brandissent torches piste mène hors de ville",
+  "voisins de Subure brandissent torches piste conduit hors de ville"
         ]
       },
       "points": 1,
