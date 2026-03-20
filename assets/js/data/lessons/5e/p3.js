@@ -3606,7 +3606,7 @@ export const lessons5eP3 = [
   "id": "p3-l11",
   "period": 3,
   "periodId": "p3",
-  "title": "Amicus advocati - Génitif",
+  "title": "Amicus advocati - Le génitif",
   "subtitle": "Le serviteur de l’avocat voit l’homme, n’appelle personne, puis ouvre la porte. Intrus dangereux ou complice attendu ?",
   "objective": "Réinvestir le génitif et lire plusieurs indices courts pour décider si l’homme semble connu de la maison.",
   "lessonPoint": "Je lis les phrases l’une après l’autre et j’additionne les indices.",
