@@ -1678,15 +1678,7 @@ export const lessons5eP3 = [
     "un marchand entend le voisin",
     "un marchand entend un voisin",
     "un marchand écoute le voisin",
-    "un marchand écoute un voisin",
-    "l'aubergiste entend le voisin",
-    "l'aubergiste entend un voisin",
-    "l'aubergiste écoute le voisin",
-    "l'aubergiste écoute un voisin",
-    "un aubergiste entend le voisin",
-    "un aubergiste entend un voisin",
-    "un aubergiste écoute le voisin",
-    "un aubergiste écoute un voisin"
+    "un marchand écoute un voisin"
   ],
   "answerConfig": {
     "type": "translation-segment",
@@ -1707,15 +1699,7 @@ export const lessons5eP3 = [
       "un marchand entend le voisin",
       "un marchand entend un voisin",
       "un marchand écoute le voisin",
-      "un marchand écoute un voisin",
-      "l'aubergiste entend le voisin",
-      "l'aubergiste entend un voisin",
-      "l'aubergiste écoute le voisin",
-      "l'aubergiste écoute un voisin",
-      "un aubergiste entend le voisin",
-      "un aubergiste entend un voisin",
-      "un aubergiste écoute le voisin",
-      "un aubergiste écoute un voisin"
+      "un marchand écoute un voisin"
     ]
   },
   "points": 1,
