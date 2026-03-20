@@ -3207,8 +3207,9 @@ export const lessons5eP1 = [
         "thermes",
         "lieux",
         "prépositions"
-      ]
+       ]
     }
+  },
   {
     "id": "p1-l11",
     "period": 1,
