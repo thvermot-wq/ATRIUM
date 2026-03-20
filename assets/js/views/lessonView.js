@@ -513,66 +513,89 @@ function renderDeclensionTables() {
     <div class="reference-panel-stack">
       <article class="reference-card">
         <h4>Fonctions → cas</h4>
-        <div class="table-wrap table-wrap--flat">
-          <table class="reference-table reference-table--declension">
+        <div class="table-wrap">
+          <table class="reference-table reference-table--compact">
             <thead>
               <tr>
                 <th>Fonction</th>
-                <th>Cas</th>
+                <th>Cas latin</th>
               </tr>
             </thead>
             <tbody>
               <tr><td>Sujet</td><td>Nominatif</td></tr>
               <tr><td>COD</td><td>Accusatif</td></tr>
-              <tr><td>C. du nom</td><td>Génitif</td></tr>
+              <tr><td>Complément du nom</td><td>Génitif</td></tr>
               <tr><td>COI</td><td>Datif</td></tr>
-              <tr><td>CC</td><td>Ablatif</td></tr>
+              <tr><td>CC / moyen / lieu</td><td>Ablatif</td></tr>
             </tbody>
           </table>
         </div>
       </article>
 
       <article class="reference-card">
-        <h4>1re décl. · puella</h4>
-        <div class="table-wrap table-wrap--flat">
-          <table class="reference-table reference-table--declension">
+        <h4>1re déclinaison · puella</h4>
+        <div class="table-wrap">
+          <table class="reference-table reference-table--compact">
             <thead>
               <tr>
                 <th>Cas</th>
-                <th>Sg.</th>
-                <th>Pl.</th>
+                <th>Singulier</th>
+                <th>Pluriel</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Nom. (sujet)</td><td>-a</td><td>-ae</td></tr>
-              <tr><td>Voc. (appel)</td><td>-a</td><td>-ae</td></tr>
-              <tr><td>Acc. (COD)</td><td>-am</td><td>-as</td></tr>
-              <tr><td>Gén. (CdN)</td><td>-ae</td><td>-arum</td></tr>
-              <tr><td>Dat. (COI)</td><td>-ae</td><td>-is</td></tr>
-              <tr><td>Abl. (CC)</td><td>-a</td><td>-is</td></tr>
+              <tr><td>Nominatif</td><td>puella</td><td>puellae</td></tr>
+              <tr><td>Vocatif</td><td>puella</td><td>puellae</td></tr>
+              <tr><td>Accusatif</td><td>puellam</td><td>puellas</td></tr>
+              <tr><td>Génitif</td><td>puellae</td><td>puellarum</td></tr>
+              <tr><td>Datif</td><td>puellae</td><td>puellis</td></tr>
+              <tr><td>Ablatif</td><td>puella</td><td>puellis</td></tr>
             </tbody>
           </table>
         </div>
       </article>
 
       <article class="reference-card">
-        <h4>2e décl. · type 'dominus' (masc.) / type 'templum' (neutre)</h4>
-        <div class="table-wrap table-wrap--flat">
-          <table class="reference-table reference-table--declension">
+        <h4>2e déclinaison · servus</h4>
+        <div class="table-wrap">
+          <table class="reference-table reference-table--compact">
             <thead>
               <tr>
                 <th>Cas</th>
-                <th>Dominus</th>
-                <th>Templum</th>
+                <th>Singulier</th>
+                <th>Pluriel</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Nom. (sujet)</td><td>-us / -i</td><td>-um / -a</td></tr>
-              <tr><td>Voc. (appel)</td><td>-e / -i</td><td>-um / -a</td></tr>
-              <tr><td>Acc. (COD)</td><td>-um / -os</td><td>-um / -a</td></tr>
-              <tr><td>Gén. (CdN)</td><td>-i / -orum</td><td>-i / -orum</td></tr>
-              <tr><td>Dat. (COI)</td><td>-o / -is</td><td>-o / -is</td></tr>
-              <tr><td>Abl. (CC)</td><td>-o / -is</td><td>-o / -is</td></tr>
+              <tr><td>Nominatif</td><td>servus</td><td>servi</td></tr>
+              <tr><td>Vocatif</td><td>serve</td><td>servi</td></tr>
+              <tr><td>Accusatif</td><td>servum</td><td>servos</td></tr>
+              <tr><td>Génitif</td><td>servi</td><td>servorum</td></tr>
+              <tr><td>Datif</td><td>servo</td><td>servis</td></tr>
+              <tr><td>Ablatif</td><td>servo</td><td>servis</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="reference-card">
+        <h4>2e déclinaison neutre · donum</h4>
+        <div class="table-wrap">
+          <table class="reference-table reference-table--compact">
+            <thead>
+              <tr>
+                <th>Cas</th>
+                <th>Singulier</th>
+                <th>Pluriel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Nominatif</td><td>donum</td><td>dona</td></tr>
+              <tr><td>Vocatif</td><td>donum</td><td>dona</td></tr>
+              <tr><td>Accusatif</td><td>donum</td><td>dona</td></tr>
+              <tr><td>Génitif</td><td>doni</td><td>donorum</td></tr>
+              <tr><td>Datif</td><td>dono</td><td>donis</td></tr>
+              <tr><td>Ablatif</td><td>dono</td><td>donis</td></tr>
             </tbody>
           </table>
         </div>
