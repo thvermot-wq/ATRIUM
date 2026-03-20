@@ -12,21 +12,21 @@ L’objectif n’est pas seulement de “faire des exercices”, mais d’instal
 
 ## Architecture pédagogique canonique (non négociable)
 
-- 3 périodes par niveau
-- 12 leçons par période
-- 36 leçons par niveau
-- 10 points par leçon
-- 7 points d’entraînement auto-corrigé
-- 3 points de production écrite guidée
-- 120 points par période
-- Validation d’une période à partir de 80 % (`96 / 120`)
+* 3 périodes par niveau
+* 13 leçons par période
+* 39 leçons par niveau
+* 10 points par leçon
+* 7 points d’entraînement auto-corrigé
+* 3 points de production écrite guidée
+* 130 points par période
+* Validation d’une période à partir de 80 % (`104 / 130`)
 
 ## Logique de scoring
 
-- Leçon = `training (/7) + production (/3) = total (/10)`
-- Période = somme des 12 leçons = `/120`
-- Une période est validée si le pourcentage obtenu est `>= 80%`
-- Le scoring est contractuel et ne doit pas être modifié hors décision produit explicite
+* Leçon = `training (/7) + production (/3) = total (/10)`
+* Période = somme des 13 leçons = `/130`
+* Une période est validée si le pourcentage obtenu est `>= 80%`
+* Le scoring est contractuel et ne doit pas être modifié hors décision produit explicite
 
 ## Logique pédagogique générale
 
