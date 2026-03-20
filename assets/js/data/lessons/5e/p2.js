@@ -171,28 +171,40 @@ export const lessons5eP2 = [
       }
     ],
     "production": [
-      {
+           {
         "id": "p2-l1-p1",
         "type": "textInput",
         "prompt": "Traduis en français : 𝑞𝑢𝑖𝑠 𝑑𝑜𝑛𝑢𝑚 𝑣𝑖𝑑𝑒𝑡 ?",
         "expected": "qui voit l'offrande ?",
         "acceptedAnswers": [
+          "qui voit l'offrande ?",
           "qui voit l'offrande",
+          "qui voit le cadeau ?",
           "qui voit le cadeau",
+          "qui voit le don ?",
           "qui voit le don",
+          "qui aperçoit l'offrande ?",
           "qui aperçoit l'offrande",
+          "qui aperçoit le cadeau ?",
           "qui aperçoit le cadeau",
+          "qui aperçoit le don ?",
           "qui aperçoit le don"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
+            "qui voit l'offrande ?",
             "qui voit l'offrande",
+            "qui voit le cadeau ?",
             "qui voit le cadeau",
+            "qui voit le don ?",
             "qui voit le don",
+            "qui aperçoit l'offrande ?",
             "qui aperçoit l'offrande",
+            "qui aperçoit le cadeau ?",
             "qui aperçoit le cadeau",
+            "qui aperçoit le don ?",
             "qui aperçoit le don"
           ]
         },
@@ -2743,19 +2755,19 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-    {
+       {
   "id": "p2-l8-t7",
   "type": "multipleChoice",
-  "prompt": "Mini-texte : « Nomen mutatum est. Verbum falsa apparet. » Quels éléments montrent que la tablette est suspecte ?",
+  "prompt": "Mini-texte : « Nomen mutatum est. Tabella falsa est. » Quels éléments montrent que la tablette est suspecte ?",
   "options": [
     "Un nom a été changé",
-    "'Falsa' signifie 'fausse'",
+    "La tablette est fausse",
     "La tablette est propre",
     "Le mutant apparaît"
   ],
   "expected": [
     "Un nom a été changé",
-    "'Falsa' signifie 'fausse'"
+    "La tablette est fausse"
   ],
   "shuffle": true,
   "points": 1
@@ -3410,7 +3422,7 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-     {
+         {
   "id": "p2-l10-t6",
   "type": "matching",
   "prompt": "Associe chaque nominatif (= sujet) à son accusatif (= COD).",
@@ -3427,6 +3439,11 @@ export const lessons5eP2 = [
       "left": "donum",
       "right": "donum"
     }
+  ],
+  "rightOptions": [
+    "rosam",
+    "dominum",
+    "donum"
   ],
   "expected": {
     "rosa": "rosam",
@@ -3770,7 +3787,7 @@ export const lessons5eP2 = [
   "shuffle": true,
   "points": 1
 },
-     {
+         {
   "id": "p2-l11-t6",
   "type": "textInput",
   "prompt": "Passe de la 3e à la 1re personne : « 𝑉𝑖𝑐𝑢𝑚 𝑡𝑢𝑟𝑏𝑎𝑡 » devient « 𝑉𝑖𝑐𝑢𝑚 ... »",
@@ -3780,7 +3797,7 @@ export const lessons5eP2 = [
   ],
   "answerConfig": {
     "type": "one-of",
-    "language": "la",
+    "language": "latin",
     "accepted": [
       "turbo"
     ]
