@@ -3526,78 +3526,90 @@ export const lessons5eP3 = [
       ]
     },
     {
-      "id": "p3-l10-p3",
-      "type": "textInput",
-      "prompt": "Traduis : In villa advocati servus cenam parat ; vir sub porticu manet.",
-      "expected": "dans la villa de l’avocat, le serviteur prépare le dîner ; l’homme reste sous le porche",
-      "acceptedAnswers": [
-        "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
-        "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
-        "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
-        "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
-        "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
-        "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
-        "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
-        "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le portique",
-        "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
-        "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
-        "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
-        "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
-        "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
-        "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
-        "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
-        "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le portique"
-      ],
-      "answerConfig": {
-        "type": "translation-segment",
-        "language": "fr",
-        "accepted": [
-          "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
-          "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
-          "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
-          "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
-          "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
-          "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
-          "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
-          "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le portique",
-          "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
-          "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
-          "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
-          "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
-          "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
-          "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
-          "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
-          "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le portique"
-        ]
-      },
-      "points": 1,
-      "canonicalAnswer": "dans la villa de l’avocat, le serviteur prépare le dîner ; l’homme reste sous le porche",
-      "normalization": {
-        "trim": true,
-        "collapseSpaces": true,
-        "ignoreCase": true,
-        "ignorePunctuation": true,
-        "normalizeApostrophes": true,
-        "ignoreDiacritics": true,
-        "ignoreFrenchDeterminers": true
-      },
-      "gradingFocus": "Réinvestir le génitif dans une scène continue et distinguer l’intérieur de la villa et l’espace sous le porche.",
-      "rejectIf": [
-        "génitif ignoré",
-        "contresens sur le lieu",
-        "verbe principal mal compris"
-      ],
-      "tests": [
-        {
-          "input": "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
-          "isCorrect": true
-        },
-        {
-          "input": "dans la villa le serviteur de l’homme prépare l’avocat",
-          "isCorrect": false
-        }
-      ]
+  "id": "p3-l10-p3",
+  "type": "textInput",
+  "prompt": "Traduis : In villa advocati servus cenam parat ; vir sub porticu manet.",
+  "expected": "dans la villa de l’avocat, le serviteur prépare le dîner ; l’homme reste sous le porche",
+  "acceptedAnswers": [
+    "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
+    "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
+    "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
+    "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
+
+    "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
+    "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
+    "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
+    "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le portique",
+
+    "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
+    "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
+    "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
+    "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
+
+    "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
+    "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
+    "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
+    "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le portique"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
+      "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
+      "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
+      "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
+
+      "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
+      "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
+      "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
+      "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le portique",
+
+      "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
+      "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
+      "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
+      "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
+
+      "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
+      "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
+      "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
+      "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le portique"
+    ],
+    "tolerateArticles": true
+  },
+  "points": 1,
+  "canonicalAnswer": "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Comprendre villa advocati, servus, cenam parat et sub porticu manet, sans pénaliser les variations de déterminants.",
+  "rejectIf": [
+    "contre-sens sur advocati",
+    "contre-sens sur servus",
+    "contre-sens sur cenam",
+    "contre-sens sur sub porticu",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    {
+      "input": "dans une villa d’un avocat un serviteur prépare un dîner un homme reste sous un porche",
+      "isCorrect": true
+    },
+    {
+      "input": "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le portique",
+      "isCorrect": true
+    },
+    {
+      "input": "dans la villa de l’avocat le serviteur mange le dîner l’homme reste sous le porche",
+      "isCorrect": false
     }
+  ]
+}
   ],
   "summary": {
     "retains": [
