@@ -1657,7 +1657,7 @@ export const lessons5eP3 = [
           }
         ]
       },
-     {
+   {
   "id": "p3-l5-p3",
   "type": "textInput",
   "prompt": "Traduis : tabernarius vicinum audit.",
@@ -1667,27 +1667,22 @@ export const lessons5eP3 = [
     "le boutiquier entend un voisin",
     "le boutiquier écoute le voisin",
     "le boutiquier écoute un voisin",
-
     "un boutiquier entend le voisin",
     "un boutiquier entend un voisin",
     "un boutiquier écoute le voisin",
     "un boutiquier écoute un voisin",
-
     "le marchand entend le voisin",
     "le marchand entend un voisin",
     "le marchand écoute le voisin",
     "le marchand écoute un voisin",
-
     "un marchand entend le voisin",
     "un marchand entend un voisin",
     "un marchand écoute le voisin",
     "un marchand écoute un voisin",
-
     "l'aubergiste entend le voisin",
     "l'aubergiste entend un voisin",
     "l'aubergiste écoute le voisin",
     "l'aubergiste écoute un voisin",
-
     "un aubergiste entend le voisin",
     "un aubergiste entend un voisin",
     "un aubergiste écoute le voisin",
@@ -1701,27 +1696,22 @@ export const lessons5eP3 = [
       "le boutiquier entend un voisin",
       "le boutiquier écoute le voisin",
       "le boutiquier écoute un voisin",
-
       "un boutiquier entend le voisin",
       "un boutiquier entend un voisin",
       "un boutiquier écoute le voisin",
       "un boutiquier écoute un voisin",
-
       "le marchand entend le voisin",
       "le marchand entend un voisin",
       "le marchand écoute le voisin",
       "le marchand écoute un voisin",
-
       "un marchand entend le voisin",
       "un marchand entend un voisin",
       "un marchand écoute le voisin",
       "un marchand écoute un voisin",
-
       "l'aubergiste entend le voisin",
       "l'aubergiste entend un voisin",
       "l'aubergiste écoute le voisin",
       "l'aubergiste écoute un voisin",
-
       "un aubergiste entend le voisin",
       "un aubergiste entend un voisin",
       "un aubergiste écoute le voisin",
