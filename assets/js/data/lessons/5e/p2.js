@@ -2112,50 +2112,6 @@ export const lessons5eP2 = [
           }
         ]
       },
-      {
-        "id": "p2-l6-p2",
-        "type": "textInput",
-        "prompt": "Traduis en latin : Je nie le danger.",
-        "expected": "nego periculum",
-        "acceptedAnswers": [
-          "nego periculum",
-          "periculum nego"
-        ],
-        "answerConfig": {
-          "type": "one-of",
-          "language": "latin",
-          "accepted": [
-            "nego periculum",
-            "periculum nego"
-          ]
-        },
-        "points": 1,
-        "canonicalAnswer": "nego periculum",
-        "normalization": {
-          "trim": true,
-          "collapseSpaces": true,
-          "ignoreCase": true,
-          "ignorePunctuation": true,
-          "normalizeApostrophes": true,
-          "ignoreDiacritics": true
-        },
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-        "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
-        ],
-        "tests": [
-          {
-            "input": "nego periculum",
-            "isCorrect": true
-          },
-          {
-            "input": "lorem ipsum",
-            "isCorrect": false
-          }
-        ]
-      },
     {
   "id": "p2-l6-p2",
   "type": "textInput",
