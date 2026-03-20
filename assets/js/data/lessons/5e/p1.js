@@ -89,36 +89,36 @@ export const lessons5eP1 = [
         "shuffle": true,
         "points": 1
       },
-      {
-  "id": "p1-l1-t4",
-  "type": "matching",
-  "prompt": "👋 Associe formule et sens.",
-  "pairs": [
-    {
-      "left": "adsum",
-      "right": "je suis là"
-    },
-    {
-      "left": "salve",
-      "right": "bonjour (à une personne)"
-    },
-    {
-      "left": "vale",
-      "right": "au revoir (à une personne)"
-    }
-  ],
-  "rightOptions": [
-    "au revoir (à une personne)",
-    "je suis là",
-    "bonjour (à une personne)"
-  ],
-  "expected": {
-    "adsum": "je suis là",
-    "salve": "bonjour (à une personne)",
-    "vale": "au revoir (à une personne)"
-  },
-  "points": 1
-},
+            {
+        "id": "p1-l1-t4",
+        "type": "matching",
+        "prompt": "👋 Associe formule et sens.",
+        "pairs": [
+          {
+            "left": "adsum",
+            "right": "je suis là"
+          },
+          {
+            "left": "salve",
+            "right": "bonjour (à une personne)"
+          },
+          {
+            "left": "vale",
+            "right": "au revoir (à une personne)"
+          }
+        ],
+        "rightOptions": [
+          "au revoir (à une personne)",
+          "je suis là",
+          "bonjour (à une personne)"
+        ],
+        "expected": {
+          "adsum": "je suis là",
+          "salve": "bonjour (à une personne)",
+          "vale": "au revoir (à une personne)"
+        },
+        "points": 1
+      },
       {
         "id": "p1-l1-t5",
         "type": "singleChoice",
@@ -2138,11 +2138,11 @@ export const lessons5eP1 = [
           }
         ]
       },
-      {
+            {
         "id": "p1-l7-p2",
         "type": "textInput",
         "prompt": "⛲ Traduis en français : Lucius situlam portat",
-        "expected": "lucius porte de l'eau",
+        "expected": "lucius porte le seau",
         "acceptedAnswers": [
           "lucius porte le seau",
           "lucius apporte le seau",
@@ -2170,7 +2170,7 @@ export const lessons5eP1 = [
           ]
         },
         "points": 1,
-        "canonicalAnswer": "lucius porte de l'eau",
+        "canonicalAnswer": "lucius porte le seau",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -2187,7 +2187,7 @@ export const lessons5eP1 = [
         ],
         "tests": [
           {
-            "input": "lucius porte de l'eau",
+            "input": "lucius porte le seau",
             "isCorrect": true
           },
           {
@@ -2348,7 +2348,7 @@ export const lessons5eP1 = [
         "shuffle": true,
         "points": 1
       },
-      {
+          {
         "id": "p1-l8-t4",
         "type": "matching",
         "prompt": "🍞 Associe phrase et sens.",
@@ -2362,19 +2362,19 @@ export const lessons5eP1 = [
             "right": "Flavia achète du pain"
           },
           {
-            "left": "Marcus pistrum videt",
-            "right": "Marcus voit le boulanger"
+            "left": "Marcus panem videt",
+            "right": "Marcus voit le pain"
           }
         ],
         "rightOptions": [
-          "Marcus voit le boulanger",
+          "Marcus voit le pain",
           "Flavia achète du pain",
           "Le boulanger porte le pain"
         ],
         "expected": {
           "Pistor panem portat": "Le boulanger porte le pain",
           "Flavia panem emit": "Flavia achète du pain",
-          "Marcus pistrum videt": "Marcus voit le boulanger"
+          "Marcus panem videt": "Marcus voit le pain"
         },
         "points": 1
       },
@@ -2515,33 +2515,33 @@ export const lessons5eP1 = [
           }
         ]
       },
-      {
+           {
         "id": "p1-l8-p3",
         "type": "textInput",
-        "prompt": "🍞 Traduis en latin : Marcus voit le boulanger",
-        "expected": "Marcus pistrum videt",
+        "prompt": "🍞 Traduis en latin : Marcus voit le pain",
+        "expected": "Marcus panem videt",
         "acceptedAnswers": [
-          "Marcus pistrum videt",
-          "Marcus videt pistrum",
-          "pistrum Marcus videt",
-          "pistrum videt Marcus",
-          "videt Marcus pistrum",
-          "videt pistrum Marcus"
+          "Marcus panem videt",
+          "Marcus videt panem",
+          "panem Marcus videt",
+          "panem videt Marcus",
+          "videt Marcus panem",
+          "videt panem Marcus"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
-            "Marcus pistrum videt",
-            "Marcus videt pistrum",
-            "pistrum Marcus videt",
-            "pistrum videt Marcus",
-            "videt Marcus pistrum",
-            "videt pistrum Marcus"
+            "Marcus panem videt",
+            "Marcus videt panem",
+            "panem Marcus videt",
+            "panem videt Marcus",
+            "videt Marcus panem",
+            "videt panem Marcus"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "Marcus pistrum videt",
+        "canonicalAnswer": "Marcus panem videt",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -2558,7 +2558,7 @@ export const lessons5eP1 = [
         ],
         "tests": [
           {
-            "input": "Marcus pistrum videt",
+            "input": "Marcus panem videt",
             "isCorrect": true
           },
           {
@@ -3007,10 +3007,10 @@ export const lessons5eP1 = [
         },
         "points": 1
       },
-      {
+           {
         "id": "p1-l10-t5",
         "type": "singleChoice",
-        "prompt": "🛁 Piège : « In thermis Marcus intrat » signifie :",
+        "prompt": "🛁 Piège : « Thermas Marcus intrat » signifie :",
         "options": [
           "Marcus entre dans les thermes",
           "Les thermes entrent dans Marcus",
@@ -3140,33 +3140,33 @@ export const lessons5eP1 = [
           }
         ]
       },
-      {
+            {
         "id": "p1-l10-p3",
         "type": "textInput",
         "prompt": "🛁 Traduis en latin : Titus entre dans les thermes",
-        "expected": "Titus in thermis intrat",
+        "expected": "Titus thermas intrat",
         "acceptedAnswers": [
-          "Titus in thermis intrat",
-          "Titus intrat in thermis",
-          "in thermis Titus intrat",
-          "in thermis intrat Titus",
-          "intrat Titus in thermis",
-          "intrat in thermis Titus"
+          "Titus thermas intrat",
+          "Titus intrat thermas",
+          "thermas Titus intrat",
+          "thermas intrat Titus",
+          "intrat Titus thermas",
+          "intrat thermas Titus"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
-            "Titus in thermis intrat",
-            "Titus intrat in thermis",
-            "in thermis Titus intrat",
-            "in thermis intrat Titus",
-            "intrat Titus in thermis",
-            "intrat in thermis Titus"
+            "Titus thermas intrat",
+            "Titus intrat thermas",
+            "thermas Titus intrat",
+            "thermas intrat Titus",
+            "intrat Titus thermas",
+            "intrat thermas Titus"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "Titus in thermis intrat",
+        "canonicalAnswer": "Titus thermas intrat",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -3183,7 +3183,7 @@ export const lessons5eP1 = [
         ],
         "tests": [
           {
-            "input": "Titus in thermis intrat",
+            "input": "Titus thermas intrat",
             "isCorrect": true
           },
           {
@@ -3193,9 +3193,9 @@ export const lessons5eP1 = [
         ]
       }
     ],
-    "summary": {
+       "summary": {
       "retains": [
-        "ad marque un déplacement, in une position.",
+        "AD + accusatif marque un déplacement, IN + ablatif une position fixe.",
         "Même en contexte culturel, je garde mes réflexes de lecture."
       ],
       "cahier": [
@@ -3209,15 +3209,6 @@ export const lessons5eP1 = [
         "prépositions"
       ]
     },
-    "meta": {
-      "status": "ready",
-      "tags": [
-        "thermes",
-        "ville",
-        "p1-l10"
-      ]
-    }
-  },
   {
     "id": "p1-l11",
     "period": 1,
