@@ -19,11 +19,18 @@ function normalizeFr(value) {
   });
 }
 
-function stripLeadingArticle(value) {
-  return value.replace(/^(l'|l |le |la |les |un |une |des )/u, "").trim();
+function stripFrenchArticles(value) {
+  return value
+    .replace(/(^|\s)(l'|l’)/giu, " ")
+    .replace(/\b(le|la|les|un|une|des)\b/giu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
-export function buildAcceptedFrenchAnswers(accepted = [], { tolerateArticles = true, synonyms = [] } = {}) {
+export function buildAcceptedFrenchAnswers(
+  accepted = [],
+  { tolerateArticles = true, synonyms = [] } = {}
+) {
   const set = new Set();
 
   [...accepted, ...synonyms].forEach((candidate) => {
@@ -33,16 +40,18 @@ export function buildAcceptedFrenchAnswers(accepted = [], { tolerateArticles = t
     set.add(normalized);
 
     if (tolerateArticles) {
-      set.add(stripLeadingArticle(normalized));
+      set.add(stripFrenchArticles(normalized));
     }
 
     const lexicalSynonyms = FRENCH_SYNONYMS[normalized] || [];
     lexicalSynonyms.forEach((alt) => {
       const altNormalized = normalizeFr(alt);
       if (!altNormalized) return;
+
       set.add(altNormalized);
+
       if (tolerateArticles) {
-        set.add(stripLeadingArticle(altNormalized));
+        set.add(stripFrenchArticles(altNormalized));
       }
     });
   });
@@ -53,5 +62,5 @@ export function buildAcceptedFrenchAnswers(accepted = [], { tolerateArticles = t
 export function normalizeFrenchAnswer(value, { tolerateArticles = true } = {}) {
   const normalized = normalizeFr(value);
   if (!tolerateArticles) return normalized;
-  return stripLeadingArticle(normalized);
+  return stripFrenchArticles(normalized);
 }
