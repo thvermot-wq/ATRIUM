@@ -2762,9 +2762,941 @@ export const lessons4eP1 = [
     }
   },
   
-  makePlaceholderLesson(1, 10, "Iterum conveniunt"),
-  makePlaceholderLesson(1, 11, "Tempora in via"),
-  makePlaceholderLesson(1, 12, "Hic rumor, illa littera"),
+  const headerContexts4eP1_L10toL12 = {
+  "p1-l10": "Le soir descend sur la ville avec une poussière dorée ; près d’un petit sanctuaire, deux silhouettes se reconnaissent avant même de parler, et une tablette passe d’une main à l’autre sans être lâchée tout de suite. « Une nouvelle n’a pas le même poids selon qu’on la lit seul ou qu’on la reçoit de quelqu’un », dit Livia, puis elle incline la tête comme si elle hésitait encore à sourire.",
+  "p1-l11": "Le long d’une route blanche, un cavalier dépasse un convoi de mulets puis disparaît derrière un tournant ; plus loin, une borne tiède garde la chaleur du jour, et la poussière reste en suspens après le passage des roues. « Ce n’est jamais le même temps selon qu’on voit, qu’on raconte ou qu’on se souvient », dit Marcus, puis il relit trois lignes dans un autre ordre.",
+  "p1-l12": "Sur une table chargée de tablettes, d’anneaux et de rubans, un secrétaire trie des messages pendant que le portique bruisse de voix retenues. « Ce n’est pas la même chose, cette lettre, cette rumeur, et l’homme même qui parle », dit Flavia, puis elle pousse du doigt la mauvaise tablette du mauvais côté."
+};
+
+const lessonL10 = {
+  id: "4e-p1-l10",
+  levelId: "4e",
+  period: 1,
+  periodId: "p1",
+  title: "Iterum conveniunt",
+  subtitle: headerContexts4eP1_L10toL12["p1-l10"],
+  objective: "Relire plus fluidement une scène de retrouvailles en combinant plusieurs acquis de période dans un même passage.",
+  lessonPoint: "Je combine ce que je sais déjà au lieu de chercher une règle nouvelle à chaque phrase.",
+  canDo: [
+    "Je lis une scène plus fluide sans repartir de zéro.",
+    "Je combine temps, lieux et actions dans un même passage.",
+    "Je traduis un petit échange narratif."
+  ],
+  lexicon: [
+    "amicus, amici = ami",
+    "tabella, tabellae = tablette",
+    "nuntius, nuntii = message, messager",
+    "sanctuarium, sanctuarii = sanctuaire",
+    "vesper, vesperis = soir",
+    "via, viae = route, rue",
+    "vox, vocis = voix",
+    "manus, manus = main",
+    "timor, timoris = peur",
+    "iterum = de nouveau",
+    "convenio, convenis = se retrouver",
+    "porto, portas = porter",
+    "dico, dicis = dire",
+    "audio, audis = entendre",
+    "timeo, times = craindre"
+  ],
+  maxScore: 10,
+  training: [
+    {
+      id: "4e-p1-l10-t1",
+      type: "singleChoice",
+      prompt: "🌆 Quel mot signifie « de nouveau » ?",
+      options: ["iterum", "heri", "longe", "prope"],
+      expected: "iterum",
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l10-t2",
+      type: "singleChoice",
+      prompt: "🌆 Dans « amici iterum conveniunt », quelle action a lieu ?",
+      options: [
+        "les amis se retrouvent",
+        "les amis fuient",
+        "les amis écrivent",
+        "les amis fondent une colonie"
+      ],
+      expected: "les amis se retrouvent",
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l10-t3",
+      type: "multipleChoice",
+      prompt: "🌆 Mini-texte : « Livia tabellam portat. Marcus audit. Amici iterum conveniunt. » Quelles informations deviennent certaines ?",
+      options: [
+        "Livia porte une tablette",
+        "Marcus écoute",
+        "des amis se retrouvent",
+        "un navire quitte Ostie",
+        "Hannibal traverse les Alpes"
+      ],
+      expected: [
+        "Livia porte une tablette",
+        "Marcus écoute",
+        "des amis se retrouvent"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l10-t4",
+      type: "matching",
+      prompt: "🌆 Associe forme et sens.",
+      pairs: [
+        { left: "conveniunt", right: "se retrouvent" },
+        { left: "portat", right: "porte" },
+        { left: "audit", right: "écoute" }
+      ],
+      rightOptions: ["porte", "écoute", "se retrouvent"],
+      expected: {
+        "conveniunt": "se retrouvent",
+        "portat": "porte",
+        "audit": "écoute"
+      },
+      points: 1
+    },
+    {
+      id: "4e-p1-l10-t5",
+      type: "singleChoice",
+      prompt: "🌆 Piège : « Livia tabellam portat et Marcus tacet » signifie :",
+      options: [
+        "Livia porte une tablette et Marcus se tait",
+        "Marcus porte Livia et la tablette parle",
+        "Livia a porté une tablette et Marcus parlait",
+        "Marcus quitte le port avec Livia"
+      ],
+      expected: "Livia porte une tablette et Marcus se tait",
+      shuffle: true,
+      points: 1,
+      feedback: "Je lis chaque verbe avec son sujet, sans déplacer les rôles."
+    },
+    {
+      id: "4e-p1-l10-t6",
+      type: "multipleChoice",
+      prompt: "🌆 Mini-texte : « Amici conveniunt. Tabella traditur. Timor tamen manet. » Quels éléments montrent que la scène mêle retrouvaille et tension ?",
+      options: [
+        "les amis se retrouvent",
+        "une tablette circule",
+        "la peur demeure",
+        "la scène se passe en pleine bataille"
+      ],
+      expected: [
+        "les amis se retrouvent",
+        "une tablette circule",
+        "la peur demeure"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l10-t7",
+      type: "textInput",
+      prompt: "🌆 Écris en latin : « soir ».",
+      expected: "vesper",
+      acceptedAnswers: ["vesper"],
+      answerConfig: {
+        type: "one-of",
+        language: "latin",
+        accepted: ["vesper"]
+      },
+      points: 1,
+      canonicalAnswer: "vesper",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true
+      },
+      gradingFocus: "Réactivation d’un nom concret de la scène.",
+      rejectIf: ["forme incorrecte", "réponse hors-sujet"],
+      tests: [
+        { input: "vesper", isCorrect: true },
+        { input: "vox", isCorrect: false }
+      ]
+    }
+  ],
+  production: [
+    {
+      id: "4e-p1-l10-p1",
+      type: "textInput",
+      prompt: "🌆 Traduis en français : amici iterum conveniunt et tabellam legunt",
+      expected: "les amis se retrouvent de nouveau et lisent la tablette",
+      acceptedAnswers: [
+        "les amis se retrouvent de nouveau et lisent la tablette",
+        "des amis se retrouvent de nouveau et lisent la tablette",
+        "les amis se retrouvent encore et lisent la tablette",
+        "des amis se retrouvent encore et lisent la tablette"
+      ],
+      answerConfig: {
+        type: "translation-segment",
+        language: "fr",
+        accepted: [
+          "les amis se retrouvent de nouveau et lisent la tablette",
+          "des amis se retrouvent de nouveau et lisent la tablette",
+          "les amis se retrouvent encore et lisent la tablette",
+          "des amis se retrouvent encore et lisent la tablette"
+        ],
+        ignoreDeterminers: true,
+        ignoreContractions: true,
+        allowPartialAnswer: "core-meaning-only"
+      },
+      points: 1,
+      canonicalAnswer: "les amis se retrouvent de nouveau et lisent la tablette",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true,
+        normalizeFrenchContractions: true,
+        ignoreFrenchDeterminers: true
+      },
+      gradingFocus: "Les deux actions doivent être correctement saisies dans une scène fluide.",
+      rejectIf: [
+        "verbe incorrect",
+        "contre-sens global",
+        "réponse hors-sujet"
+      ],
+      tests: [
+        { input: "les amis se retrouvent de nouveau et lisent la tablette", isCorrect: true },
+        { input: "des amis se retrouvent encore et lisent la tablette", isCorrect: true },
+        { input: "les amis fuient encore et écrivent la tablette", isCorrect: false }
+      ]
+    },
+    {
+      id: "4e-p1-l10-p2",
+      type: "textInput",
+      prompt: "🌆 Traduis en latin : Les amis se retrouvent de nouveau.",
+      expected: "amici iterum conveniunt",
+      acceptedAnswers: [
+        "amici iterum conveniunt",
+        "iterum amici conveniunt",
+        "amici conveniunt iterum",
+        "iterum conveniunt amici",
+        "conveniunt amici iterum",
+        "conveniunt iterum amici"
+      ],
+      answerConfig: {
+        type: "one-of",
+        language: "latin",
+        accepted: [
+          "amici iterum conveniunt",
+          "iterum amici conveniunt",
+          "amici conveniunt iterum",
+          "iterum conveniunt amici",
+          "conveniunt amici iterum",
+          "conveniunt iterum amici"
+        ],
+        orderMode: "chunk-permutation"
+      },
+      points: 1,
+      canonicalAnswer: "amici iterum conveniunt",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true
+      },
+      gradingFocus: "Réinvestir plusieurs acquis dans une phrase simple et naturelle.",
+      rejectIf: [
+        "verbe incorrect",
+        "forme latine impossible au niveau de la leçon",
+        "réponse hors-sujet"
+      ],
+      tests: [
+        { input: "amici iterum conveniunt", isCorrect: true },
+        { input: "iterum conveniunt amici", isCorrect: true },
+        { input: "amici iterum conveniuntunt", isCorrect: false }
+      ]
+    },
+    {
+      id: "4e-p1-l10-p3",
+      type: "textInput",
+      prompt: "🌆 Mini-texte : « Amici iterum conveniunt. Tabella traditur. Timor tamen manet. » Quel élément empêche la scène d’être complètement paisible ?",
+      expected: "la peur qui demeure",
+      acceptedAnswers: [
+        "la peur qui demeure",
+        "le fait que la peur reste là",
+        "le timor qui subsiste",
+        "la tension qui demeure"
+      ],
+      answerConfig: {
+        type: "inference-fr",
+        language: "fr",
+        accepted: [
+          "la peur qui demeure",
+          "le fait que la peur reste là",
+          "le timor qui subsiste",
+          "la tension qui demeure"
+        ],
+        ignoreDeterminers: true,
+        ignoreContractions: true,
+        allowPartialAnswer: "never"
+      },
+      points: 1,
+      canonicalAnswer: "la peur qui demeure",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true,
+        normalizeFrenchContractions: true,
+        ignoreFrenchDeterminers: true
+      },
+      gradingFocus: "Inférence courte sur la coexistence de l’apaisement et de la tension.",
+      rejectIf: ["contre-sens global", "réponse hors-sujet"],
+      tests: [
+        { input: "la peur qui demeure", isCorrect: true },
+        { input: "la tension qui demeure", isCorrect: true },
+        { input: "la richesse du banquet", isCorrect: false }
+      ]
+    }
+  ],
+  summary: {
+    retains: [
+      "Une bonne lecture combine plusieurs repères déjà installés.",
+      "Une scène de retrouvailles peut garder une tension sous-jacente."
+    ],
+    cahier: [
+      "iterum = de nouveau",
+      "amici iterum conveniunt"
+    ],
+    keywords: ["retrouvailles", "fluidité", "réemploi"]
+  },
+  meta: {
+    status: "ready",
+    tags: ["4e", "p1", "retrouvailles", "rebrassage"]
+  }
+};
+
+const lessonL11 = {
+  id: "4e-p1-l11",
+  levelId: "4e",
+  period: 1,
+  periodId: "p1",
+  title: "Tempora in via",
+  subtitle: headerContexts4eP1_L10toL12["p1-l11"],
+  objective: "Brasser présent, imparfait et parfait dans un même dossier de route et de nouvelles.",
+  lessonPoint: "Je relie chaque temps à son effet dans le récit.",
+  canDo: [
+    "Je distingue trois temps déjà vus.",
+    "Je comprends leur effet dans une scène.",
+    "Je traduis un petit dossier de route."
+  ],
+  lexicon: [
+    "via, viae = route, rue",
+    "eques, equitis = cavalier",
+    "mulus, muli = mulet",
+    "littera, litterae = lettre",
+    "nuntius, nuntii = nouvelle, messager",
+    "hostis, hostis = ennemi",
+    "pulvis, pulveris = poussière",
+    "meta, metae = borne",
+    "hodie = aujourd'hui",
+    "heri = hier",
+    "transeo, transis = passer, traverser",
+    "video, vides = voir",
+    "dico, dicis = dire",
+    "venio, venis = venir",
+    "timeo, times = craindre"
+  ],
+  maxScore: 10,
+  training: [
+    {
+      id: "4e-p1-l11-t1",
+      type: "singleChoice",
+      prompt: "🛣️ Quel mot signifie « hier » ?",
+      options: ["heri", "hodie", "longe", "prope"],
+      expected: "heri",
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l11-t2",
+      type: "singleChoice",
+      prompt: "🛣️ Dans « eques hodie transit », quel temps vois-tu ?",
+      options: ["présent", "imparfait", "parfait", "passif"],
+      expected: "présent",
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l11-t3",
+      type: "multipleChoice",
+      prompt: "🛣️ Choisis les formes qui relèvent du même passé prolongé.",
+      options: ["timebat", "dicebat", "manebat", "venit", "vidit"],
+      expected: ["timebat", "dicebat", "manebat"],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l11-t4",
+      type: "matching",
+      prompt: "🛣️ Associe forme et valeur.",
+      pairs: [
+        { left: "transit", right: "actualité / présent" },
+        { left: "timebat", right: "durée / fond" },
+        { left: "venit", right: "fait accompli" }
+      ],
+      rightOptions: ["durée / fond", "fait accompli", "actualité / présent"],
+      expected: {
+        "transit": "actualité / présent",
+        "timebat": "durée / fond",
+        "venit": "fait accompli"
+      },
+      points: 1
+    },
+    {
+      id: "4e-p1-l11-t5",
+      type: "singleChoice",
+      prompt: "🛣️ Piège : « nuntius heri venit, Marcus hodie legit » signifie :",
+      options: [
+        "le messager est venu hier, Marcus lit aujourd’hui",
+        "le messager venait hier, Marcus lut aujourd’hui",
+        "Marcus est venu hier, le message lit aujourd’hui",
+        "la borne a écrit une lettre"
+      ],
+      expected: "le messager est venu hier, Marcus lit aujourd’hui",
+      shuffle: true,
+      points: 1,
+      feedback: "Je relie chaque forme verbale à son temps et à son effet."
+    },
+    {
+      id: "4e-p1-l11-t6",
+      type: "multipleChoice",
+      prompt: "🛣️ Mini-texte : « Eques transit. Pulvis manebat. Nuntius heri venit. Marcus hodie legit. » Quelles informations sont bien distribuées dans le temps ?",
+      options: [
+        "un cavalier passe maintenant",
+        "la poussière demeurait dans le décor",
+        "le messager est arrivé hier",
+        "Marcus lit aujourd’hui",
+        "la colonie était fondée demain"
+      ],
+      expected: [
+        "un cavalier passe maintenant",
+        "la poussière demeurait dans le décor",
+        "le messager est arrivé hier",
+        "Marcus lit aujourd’hui"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l11-t7",
+      type: "textInput",
+      prompt: "🛣️ Écris en latin : « cavalier ».",
+      expected: "eques",
+      acceptedAnswers: ["eques"],
+      answerConfig: {
+        type: "one-of",
+        language: "latin",
+        accepted: ["eques"]
+      },
+      points: 1,
+      canonicalAnswer: "eques",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true
+      },
+      gradingFocus: "Réactivation d’un nom concret de la scène de route.",
+      rejectIf: ["forme incorrecte", "réponse hors-sujet"],
+      tests: [
+        { input: "eques", isCorrect: true },
+        { input: "mulus", isCorrect: false }
+      ]
+    }
+  ],
+  production: [
+    {
+      id: "4e-p1-l11-p1",
+      type: "textInput",
+      prompt: "🛣️ Traduis en français : nuntius heri venit, Marcus hodie legit",
+      expected: "le messager est venu hier, Marcus lit aujourd’hui",
+      acceptedAnswers: [
+        "le messager est venu hier, Marcus lit aujourd'hui",
+        "un messager est venu hier, Marcus lit aujourd'hui",
+        "le messager est arrivé hier, Marcus lit aujourd'hui",
+        "un messager est arrivé hier, Marcus lit aujourd'hui"
+      ],
+      answerConfig: {
+        type: "translation-segment",
+        language: "fr",
+        accepted: [
+          "le messager est venu hier, Marcus lit aujourd'hui",
+          "un messager est venu hier, Marcus lit aujourd'hui",
+          "le messager est arrivé hier, Marcus lit aujourd'hui",
+          "un messager est arrivé hier, Marcus lit aujourd'hui"
+        ],
+        ignoreDeterminers: true,
+        ignoreContractions: true,
+        allowPartialAnswer: "core-meaning-only"
+      },
+      points: 1,
+      canonicalAnswer: "le messager est venu hier, Marcus lit aujourd’hui",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true,
+        normalizeFrenchContractions: true,
+        ignoreFrenchDeterminers: true
+      },
+      gradingFocus: "La répartition temporelle doit être nette.",
+      rejectIf: [
+        "verbe incorrect",
+        "contre-sens global",
+        "réponse hors-sujet"
+      ],
+      tests: [
+        { input: "le messager est venu hier, Marcus lit aujourd'hui", isCorrect: true },
+        { input: "un messager est arrivé hier, Marcus lit aujourd'hui", isCorrect: true },
+        { input: "le messager venait hier, Marcus a lu aujourd'hui", isCorrect: false }
+      ]
+    },
+    {
+      id: "4e-p1-l11-p2",
+      type: "textInput",
+      prompt: "🛣️ Traduis en latin : Le messager est venu hier.",
+      expected: "nuntius heri venit",
+      acceptedAnswers: [
+        "nuntius heri venit",
+        "heri nuntius venit",
+        "nuntius venit heri",
+        "heri venit nuntius",
+        "venit nuntius heri",
+        "venit heri nuntius"
+      ],
+      answerConfig: {
+        type: "one-of",
+        language: "latin",
+        accepted: [
+          "nuntius heri venit",
+          "heri nuntius venit",
+          "nuntius venit heri",
+          "heri venit nuntius",
+          "venit nuntius heri",
+          "venit heri nuntius"
+        ],
+        orderMode: "chunk-permutation"
+      },
+      points: 1,
+      canonicalAnswer: "nuntius heri venit",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true
+      },
+      gradingFocus: "Réinvestir proprement un parfait avec repère temporel.",
+      rejectIf: [
+        "verbe incorrect",
+        "forme latine impossible au niveau de la leçon",
+        "réponse hors-sujet"
+      ],
+      tests: [
+        { input: "nuntius heri venit", isCorrect: true },
+        { input: "heri venit nuntius", isCorrect: true },
+        { input: "nuntius heri veniebat", isCorrect: false }
+      ]
+    },
+    {
+      id: "4e-p1-l11-p3",
+      type: "textInput",
+      prompt: "🛣️ Mini-texte : « Eques transit. Pulvis manebat. Nuntius heri venit. Marcus hodie legit. » Pourquoi les temps ne disent-ils pas tous la même chose dans ce passage ?",
+      expected: "parce qu'ils distinguent l'actuel, le fond et le fait déjà accompli",
+      acceptedAnswers: [
+        "parce qu'ils distinguent l'actuel, le fond et le fait déjà accompli",
+        "ils servent à distinguer présent, durée et fait accompli",
+        "chaque temps donne un effet différent dans le récit",
+        "le présent, l'imparfait et le parfait n'ont pas la même valeur ici"
+      ],
+      answerConfig: {
+        type: "inference-fr",
+        language: "fr",
+        accepted: [
+          "parce qu'ils distinguent l'actuel, le fond et le fait déjà accompli",
+          "ils servent à distinguer présent, durée et fait accompli",
+          "chaque temps donne un effet différent dans le récit",
+          "le présent, l'imparfait et le parfait n'ont pas la même valeur ici"
+        ],
+        ignoreDeterminers: true,
+        ignoreContractions: true,
+        allowPartialAnswer: "never"
+      },
+      points: 1,
+      canonicalAnswer: "parce qu'ils distinguent l'actuel, le fond et le fait déjà accompli",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true,
+        normalizeFrenchContractions: true,
+        ignoreFrenchDeterminers: true
+      },
+      gradingFocus: "Inférence grammaticale synthétique sur les valeurs des temps.",
+      rejectIf: ["contre-sens global", "réponse hors-sujet"],
+      tests: [
+        { input: "ils servent à distinguer présent, durée et fait accompli", isCorrect: true },
+        { input: "chaque temps donne un effet différent dans le récit", isCorrect: true },
+        { input: "tous les verbes racontent exactement la même chose", isCorrect: false }
+      ]
+    }
+  ],
+  summary: {
+    retains: [
+      "Le temps verbal guide la lecture du récit.",
+      "Je peux distinguer l’actuel, le fond et le fait accompli dans une même scène."
+    ],
+    cahier: [
+      "heri = hier ; hodie = aujourd'hui",
+      "nuntius heri venit, Marcus hodie legit"
+    ],
+    keywords: ["temps", "route", "brassage"]
+  },
+  meta: {
+    status: "ready",
+    tags: ["4e", "p1", "temps", "synthese"]
+  }
+};
+
+const lessonL12 = {
+  id: "4e-p1-l12",
+  levelId: "4e",
+  period: 1,
+  periodId: "p1",
+  title: "Hic rumor, illa littera",
+  subtitle: headerContexts4eP1_L10toL12["p1-l12"],
+  objective: "Consolider les démonstratifs fréquents dans une scène de tri, d’information et de comparaison.",
+  lessonPoint: "Je lis le petit mot démonstratif avec le nom qu’il précise.",
+  canDo: [
+    "Je distingue hic, ille et ipse dans une scène concrète.",
+    "Je lis plus précisément un groupe nominal.",
+    "Je traduis un court passage d’information."
+  ],
+  lexicon: [
+    "hic, haec, hoc = ce / cette / ceci-ci",
+    "ille, illa, illud = ce / cette / cela-là",
+    "ipse, ipsa, ipsum = lui-même / elle-même / même",
+    "littera, litterae = lettre",
+    "rumor, rumoris = rumeur",
+    "consul, consulis = consul",
+    "tabella, tabellae = tablette",
+    "verbum, verbi = mot",
+    "nomen, nominis = nom",
+    "porta, portae = porte",
+    "lego, legis = lire",
+    "teneo, tenes = tenir",
+    "pono, ponis = poser",
+    "erro, erras = se tromper",
+    "monstro, monstras = montrer"
+  ],
+  maxScore: 10,
+  training: [
+    {
+      id: "4e-p1-l12-t1",
+      type: "singleChoice",
+      prompt: "📜 Quel petit mot signifie souvent « ce / cette-ci » ?",
+      options: ["hic", "ille", "ipse", "nomen"],
+      expected: "hic",
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l12-t2",
+      type: "singleChoice",
+      prompt: "📜 Dans « haec littera », que désigne le petit mot ?",
+      options: [
+        "cette lettre-ci",
+        "cette lettre-là",
+        "la lettre même",
+        "le mot écrit"
+      ],
+      expected: "cette lettre-ci",
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l12-t3",
+      type: "multipleChoice",
+      prompt: "📜 Choisis les groupes qui distinguent correctement des objets ou des informations.",
+      options: [
+        "hic rumor",
+        "illa littera",
+        "ipse consul",
+        "currus sonabat",
+        "hostis fugit"
+      ],
+      expected: [
+        "hic rumor",
+        "illa littera",
+        "ipse consul"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l12-t4",
+      type: "matching",
+      prompt: "📜 Associe groupe et sens.",
+      pairs: [
+        { left: "hic rumor", right: "cette rumeur-ci" },
+        { left: "illa littera", right: "cette lettre-là" },
+        { left: "ipse consul", right: "le consul lui-même" }
+      ],
+      rightOptions: [
+        "le consul lui-même",
+        "cette lettre-là",
+        "cette rumeur-ci"
+      ],
+      expected: {
+        "hic rumor": "cette rumeur-ci",
+        "illa littera": "cette lettre-là",
+        "ipse consul": "le consul lui-même"
+      },
+      points: 1
+    },
+    {
+      id: "4e-p1-l12-t5",
+      type: "singleChoice",
+      prompt: "📜 Piège : « hic rumor falsus est, illa littera vera est » signifie :",
+      options: [
+        "cette rumeur-ci est fausse, cette lettre-là est vraie",
+        "toutes les lettres sont fausses",
+        "le consul écrit la rumeur",
+        "la route brille au soleil"
+      ],
+      expected: "cette rumeur-ci est fausse, cette lettre-là est vraie",
+      shuffle: true,
+      points: 1,
+      feedback: "Le petit mot démonstratif précise l’objet visé : il ne s’ajoute pas au hasard."
+    },
+    {
+      id: "4e-p1-l12-t6",
+      type: "multipleChoice",
+      prompt: "📜 Mini-texte : « Hic rumor crescit. Illa littera legitur. Ipse consul tacet. » Quelles informations deviennent certaines ?",
+      options: [
+        "une rumeur précise se répand",
+        "une lettre précise est lue",
+        "le consul lui-même se tait",
+        "un navire est fondé"
+      ],
+      expected: [
+        "une rumeur précise se répand",
+        "une lettre précise est lue",
+        "le consul lui-même se tait"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l12-t7",
+      type: "textInput",
+      prompt: "📜 Écris en latin : « lettre ».",
+      expected: "littera",
+      acceptedAnswers: ["littera"],
+      answerConfig: {
+        type: "one-of",
+        language: "latin",
+        accepted: ["littera"]
+      },
+      points: 1,
+      canonicalAnswer: "littera",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true
+      },
+      gradingFocus: "Réactivation d’un nom central de la scène d’information.",
+      rejectIf: ["forme incorrecte", "réponse hors-sujet"],
+      tests: [
+        { input: "littera", isCorrect: true },
+        { input: "rumor", isCorrect: false }
+      ]
+    }
+  ],
+  production: [
+    {
+      id: "4e-p1-l12-p1",
+      type: "textInput",
+      prompt: "📜 Traduis en français : hic rumor falsus est, illa littera vera est",
+      expected: "cette rumeur-ci est fausse, cette lettre-là est vraie",
+      acceptedAnswers: [
+        "cette rumeur-ci est fausse, cette lettre-là est vraie",
+        "ce bruit-ci est faux, cette lettre-là est vraie",
+        "cette rumeur-ci est mensongère, cette lettre-là est vraie",
+        "ce bruit-ci est mensonger, cette lettre-là est vraie"
+      ],
+      answerConfig: {
+        type: "translation-segment",
+        language: "fr",
+        accepted: [
+          "cette rumeur-ci est fausse, cette lettre-là est vraie",
+          "ce bruit-ci est faux, cette lettre-là est vraie",
+          "cette rumeur-ci est mensongère, cette lettre-là est vraie",
+          "ce bruit-ci est mensonger, cette lettre-là est vraie"
+        ],
+        ignoreDeterminers: true,
+        ignoreContractions: true,
+        allowPartialAnswer: "core-meaning-only"
+      },
+      points: 1,
+      canonicalAnswer: "cette rumeur-ci est fausse, cette lettre-là est vraie",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true,
+        normalizeFrenchContractions: true,
+        ignoreFrenchDeterminers: true
+      },
+      gradingFocus: "Il faut comprendre la valeur oppositive des démonstratifs.",
+      rejectIf: [
+        "verbe incorrect",
+        "contre-sens global",
+        "réponse hors-sujet"
+      ],
+      tests: [
+        { input: "cette rumeur-ci est fausse, cette lettre-là est vraie", isCorrect: true },
+        { input: "ce bruit-ci est faux, cette lettre-là est vraie", isCorrect: true },
+        { input: "cette lettre-ci est fausse, cette rumeur-là est vraie", isCorrect: false }
+      ]
+    },
+    {
+      id: "4e-p1-l12-p2",
+      type: "textInput",
+      prompt: "📜 Traduis en latin : Le consul lui-même lit cette lettre-ci.",
+      expected: "ipse consul hanc litteram legit",
+      acceptedAnswers: [
+        "ipse consul hanc litteram legit",
+        "hanc litteram ipse consul legit",
+        "ipse consul legit hanc litteram",
+        "legit ipse consul hanc litteram",
+        "hanc litteram legit ipse consul",
+        "legit hanc litteram ipse consul"
+      ],
+      answerConfig: {
+        type: "one-of",
+        language: "latin",
+        accepted: [
+          "ipse consul hanc litteram legit",
+          "hanc litteram ipse consul legit",
+          "ipse consul legit hanc litteram",
+          "legit ipse consul hanc litteram",
+          "hanc litteram legit ipse consul",
+          "legit hanc litteram ipse consul"
+        ],
+        orderMode: "chunk-permutation"
+      },
+      points: 1,
+      canonicalAnswer: "ipse consul hanc litteram legit",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true
+      },
+      gradingFocus: "Réinvestir démonstratif et insistance dans une phrase précise.",
+      rejectIf: [
+        "verbe incorrect",
+        "forme latine impossible au niveau de la leçon",
+        "réponse hors-sujet"
+      ],
+      tests: [
+        { input: "ipse consul hanc litteram legit", isCorrect: true },
+        { input: "hanc litteram legit ipse consul", isCorrect: true },
+        { input: "ipse consul illa littera legit", isCorrect: false }
+      ]
+    },
+    {
+      id: "4e-p1-l12-p3",
+      type: "textInput",
+      prompt: "📜 Mini-texte : « Hic rumor crescit. Illa littera legitur. Ipse consul tacet. » Pourquoi ces petits mots sont-ils utiles dans la scène ?",
+      expected: "ils permettent de distinguer précisément les informations et les objets",
+      acceptedAnswers: [
+        "ils permettent de distinguer précisément les informations et les objets",
+        "ils servent à pointer ce dont on parle exactement",
+        "ils précisent quelle rumeur, quelle lettre et quel personnage sont visés",
+        "ils évitent de tout confondre dans la scène"
+      ],
+      answerConfig: {
+        type: "inference-fr",
+        language: "fr",
+        accepted: [
+          "ils permettent de distinguer précisément les informations et les objets",
+          "ils servent à pointer ce dont on parle exactement",
+          "ils précisent quelle rumeur, quelle lettre et quel personnage sont visés",
+          "ils évitent de tout confondre dans la scène"
+        ],
+        ignoreDeterminers: true,
+        ignoreContractions: true,
+        allowPartialAnswer: "never"
+      },
+      points: 1,
+      canonicalAnswer: "ils permettent de distinguer précisément les informations et les objets",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true,
+        normalizeFrenchContractions: true,
+        ignoreFrenchDeterminers: true
+      },
+      gradingFocus: "Inférence grammaticale fermée sur la fonction de précision.",
+      rejectIf: ["contre-sens global", "réponse hors-sujet"],
+      tests: [
+        { input: "ils servent à pointer ce dont on parle exactement", isCorrect: true },
+        { input: "ils évitent de tout confondre dans la scène", isCorrect: true },
+        { input: "ils rendent les phrases plus longues sans changer le sens", isCorrect: false }
+      ]
+    }
+  ],
+  summary: {
+    retains: [
+      "Le petit mot démonstratif change la précision du sens.",
+      "Je lis hic, ille, ipse avec le nom qu’ils accompagnent."
+    ],
+    cahier: [
+      "hic rumor ; illa littera ; ipse consul",
+      "hic rumor falsus est, illa littera vera est"
+    ],
+    keywords: ["démonstratifs", "précision", "information"]
+  },
+  meta: {
+    status: "ready",
+    tags: ["4e", "p1", "demonstratifs", "precision"]
+  }
+};
   makePlaceholderLesson(1, 13, "Civis, consul, colonia"),
   makePlaceholderLesson(1, 14, "Tabellae ex Sicilia"),
   makePlaceholderLesson(1, 15, "Roma, mare, metus")
