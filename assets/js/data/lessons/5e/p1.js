@@ -12,7 +12,7 @@ const headerContexts5eP1 = {
   "p1-l10": "Aux bains, la buée colle aux bras et les voix passent d’un bassin à l’autre. « Ici, les gens lavent leur peau, jamais leur langue », dit Marcus, puis il se rapproche du bord sans faire de bruit.",
   "p1-l11": "Sur le mur, des accusations ont été griffés si fort que la chaux s’est soulevée. « Joli courage : écrire ça dehors et se taire dedans », souffle Flavia, puis elle relit le nom une seconde fois.",
   "p1-l12": "Le soir, ils étalent pain, tablette et souvenirs du jour sur la même table. « On ne cherche plus un voleur, on cherche ce qui fait dérailler tout le monde », note Marcus, puis le silence tombe d’un coup.",
-  "p1-l13": "Le soir tombe sur Subure. Marcus vérifie qui est là, qui manque encore, et chacun apprend enfin à dire simplement : je suis, tu es, il est ; je suis là, tu es là, il est là.",
+  "p1-l13": "Le soir tombe sur Subure. Marcus vérifie qui est là, qui manque encore, et chacun apprend enfin à dire simplement : je suis, tu es, il est ; je suis là, tu es là, il est là."
 };
 
 export const lessons5eP1 = [
