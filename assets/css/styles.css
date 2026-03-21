@@ -20,6 +20,10 @@
   --shadow-2: 0 14px 34px rgba(44, 49, 64, 0.12);
 }
 
+[hidden] {
+  display: none !important;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -2877,3 +2881,4 @@ a.btn-secondary:focus *,
 a.btn-secondary:focus-visible * {
   color: #ffffff !important;
 }
+
