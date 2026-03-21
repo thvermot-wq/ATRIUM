@@ -2853,3 +2853,27 @@ button:not([class]):focus-visible {
   color: #ffffff;
   outline: none;
 }
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:focus-visible,
+a.btn-secondary:hover,
+a.btn-secondary:focus,
+a.btn-secondary:focus-visible,
+.btn.btn-secondary:hover,
+.btn.btn-secondary:focus,
+.btn.btn-secondary:focus-visible {
+  background: #5f7286 !important;
+  border-color: #5f7286 !important;
+  color: #ffffff !important;
+  outline: none;
+}
+
+.btn-secondary:hover *,
+.btn-secondary:focus *,
+.btn-secondary:focus-visible *,
+a.btn-secondary:hover *,
+a.btn-secondary:focus *,
+a.btn-secondary:focus-visible * {
+  color: #ffffff !important;
+}
