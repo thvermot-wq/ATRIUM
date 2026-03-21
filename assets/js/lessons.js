@@ -9,26 +9,52 @@ import { lessons3eP2 } from "./data/lessons/3e/p2.js";
 import { lessons3eP3 } from "./data/lessons/3e/p3.js";
 import { validateLessons } from "./data/lessonValidation.js";
 
-export const LESSONS_SPEC = {
-  periods: 3,
-  lessonsPerPeriod: 13,
-  lessonsTotal: 39,
-  lessonMax: 10,
-  trainingMax: 7,
-  productionMax: 3,
-  periodMax: 130,
-  validationPercent: 80,
-  validationMinScore: 104,
+export const LEVEL_LESSONS_SPEC = {
+  "5e": {
+    periods: 3,
+    lessonsPerPeriod: 13,
+    lessonsTotal: 39,
+    lessonMax: 10,
+    trainingMax: 7,
+    productionMax: 3,
+    periodMax: 130,
+    validationPercent: 80,
+    validationMinScore: 104,
+  },
+  "4e": {
+    periods: 3,
+    lessonsPerPeriod: 15,
+    lessonsTotal: 45,
+    lessonMax: 10,
+    trainingMax: 7,
+    productionMax: 3,
+    periodMax: 150,
+    validationPercent: 80,
+    validationMinScore: 120,
+  },
+  "3e": {
+    periods: 3,
+    lessonsPerPeriod: 15,
+    lessonsTotal: 45,
+    lessonMax: 10,
+    trainingMax: 7,
+    productionMax: 3,
+    periodMax: 150,
+    validationPercent: 80,
+    validationMinScore: 120,
+  },
 };
 
-const PERIODS_5E_BASE = [
+// Compatibilité descendante : la 5e reste la spec par défaut exposée
+export const LESSONS_SPEC = LEVEL_LESSONS_SPEC["5e"];
+
+const PERIODS_BASE = [
   {
     id: "p1",
     period: 1,
     title: "Période 1",
     level: "Fondations",
     objective: "Entrer dans les premières formes et routines du latin scolaire.",
-    maxScore: LESSONS_SPEC.periodMax,
   },
   {
     id: "p2",
@@ -36,7 +62,6 @@ const PERIODS_5E_BASE = [
     title: "Période 2",
     level: "Consolidation",
     objective: "Stabiliser les repères morphologiques et syntaxiques simples.",
-    maxScore: LESSONS_SPEC.periodMax,
   },
   {
     id: "p3",
@@ -44,7 +69,6 @@ const PERIODS_5E_BASE = [
     title: "Période 3",
     level: "Structuration",
     objective: "Préparer la production guidée plus autonome.",
-    maxScore: LESSONS_SPEC.periodMax,
   },
 ];
 
@@ -66,6 +90,9 @@ const LESSONS_3E_BASE = [
   ...lessons3eP3,
 ];
 
+function getSpecForLevel(levelId) {
+  return LEVEL_LESSONS_SPEC[levelId] || LEVEL_LESSONS_SPEC["5e"];
+}
 
 function extractLessonNumber(lessonId) {
   const match = String(lessonId || "").match(/-l(\d+)$/i);
@@ -73,7 +100,13 @@ function extractLessonNumber(lessonId) {
 }
 
 function normalizeLessonShape(lesson, levelId, lessonNumber) {
-  const lessonPoint = lesson.lessonPoint || lesson.lessonNote || lesson.courseReminder || lesson.objective || "";
+  const lessonPoint =
+    lesson.lessonPoint ||
+    lesson.lessonNote ||
+    lesson.courseReminder ||
+    lesson.objective ||
+    "";
+
   const training = Array.isArray(lesson.training) ? lesson.training : [];
   const production = Array.isArray(lesson.production) ? lesson.production : [];
 
@@ -108,7 +141,6 @@ function buildNormalizedLevelLessons(levelId, sourceLessons) {
     return normalizeLessonShape(lesson, levelId, lessonNumber);
   });
 }
-
 
 export const LEVELS_SPEC = [
   {
@@ -155,11 +187,20 @@ export const LEVELS_SPEC = [
 export const DEFAULT_LEVEL_ID = "5e";
 
 function toLevelPeriodId(levelId, basePeriodId) {
-  return `${levelId}-${basePeriodId}`;
+  return basePeriodId?.startsWith(`${levelId}-`)
+    ? basePeriodId
+    : `${levelId}-${basePeriodId}`;
 }
 
 function toLevelLessonId(levelId, baseLessonId) {
-  return `${levelId}-${baseLessonId}`;
+  return baseLessonId?.startsWith(`${levelId}-`)
+    ? baseLessonId
+    : `${levelId}-${baseLessonId}`;
+}
+
+function namespaceExerciseItemId(nextLessonId, itemId) {
+  const tail = String(itemId || "").split("-").slice(-1)[0] || "item";
+  return `${nextLessonId}-${tail}`;
 }
 
 function namespaceLessonForLevel(levelId, lesson) {
@@ -168,7 +209,7 @@ function namespaceLessonForLevel(levelId, lesson) {
 
   const mapItem = (item) => ({
     ...item,
-    id: `${nextLessonId}-${String(item.id || "").split("-").slice(-1)[0] || "item"}`,
+    id: namespaceExerciseItemId(nextLessonId, item.id),
   });
 
   return {
@@ -182,26 +223,39 @@ function namespaceLessonForLevel(levelId, lesson) {
 }
 
 function namespacePeriodsForLevel(levelId, basePeriods) {
+  const spec = getSpecForLevel(levelId);
+
   return basePeriods.map((period) => ({
     ...period,
     id: toLevelPeriodId(levelId, period.id),
     levelId,
+    maxScore: spec.periodMax,
   }));
 }
 
 function resolveAcceptedAnswers(item) {
-  if (Array.isArray(item.acceptedAnswers) && item.acceptedAnswers.length > 0) return item.acceptedAnswers;
+  if (Array.isArray(item.acceptedAnswers) && item.acceptedAnswers.length > 0) {
+    return item.acceptedAnswers;
+  }
 
   const config = item.answerConfig || {};
-  if (Array.isArray(config.accepted) && config.accepted.length > 0) return config.accepted;
-  if (typeof config.expected === "string" && config.expected.trim()) return [config.expected.trim()];
-  if (typeof item.expected === "string" && item.expected.trim()) return [item.expected.trim()];
+  if (Array.isArray(config.accepted) && config.accepted.length > 0) {
+    return config.accepted;
+  }
+  if (typeof config.expected === "string" && config.expected.trim()) {
+    return [config.expected.trim()];
+  }
+  if (typeof item.expected === "string" && item.expected.trim()) {
+    return [item.expected.trim()];
+  }
 
   return [];
 }
 
 function enrichPeriod1To3ProductionAcceptedAnswers(lesson) {
-  if (![1, 2, 3].includes(lesson?.period) || !Array.isArray(lesson.production)) return lesson;
+  if (![1, 2, 3].includes(lesson?.period) || !Array.isArray(lesson.production)) {
+    return lesson;
+  }
 
   return {
     ...lesson,
@@ -213,10 +267,18 @@ function enrichPeriod1To3ProductionAcceptedAnswers(lesson) {
   };
 }
 
+function lessonHasPlaceholderStatus(lesson) {
+  return lesson?.meta?.status === "placeholder" || lesson?.status === "placeholder";
+}
+
+function levelCanBeValidated(levelLessons) {
+  return Array.isArray(levelLessons) && levelLessons.length > 0 && !levelLessons.some(lessonHasPlaceholderStatus);
+}
+
 export const periodsByLevel = {
-  "5e": namespacePeriodsForLevel("5e", PERIODS_5E_BASE),
-  "4e": namespacePeriodsForLevel("4e", PERIODS_5E_BASE),
-  "3e": namespacePeriodsForLevel("3e", PERIODS_5E_BASE),
+  "5e": namespacePeriodsForLevel("5e", PERIODS_BASE),
+  "4e": namespacePeriodsForLevel("4e", PERIODS_BASE),
+  "3e": namespacePeriodsForLevel("3e", PERIODS_BASE),
 };
 
 export const lessonsByLevel = {
@@ -226,15 +288,25 @@ export const lessonsByLevel = {
       .map((lesson) => enrichPeriod1To3ProductionAcceptedAnswers(lesson))
       .map((lesson) => namespaceLessonForLevel("5e", lesson)),
   ),
-  "4e": buildNormalizedLevelLessons("4e", LESSONS_4E_BASE),
-  "3e": buildNormalizedLevelLessons("3e", LESSONS_3E_BASE),
+  "4e": buildNormalizedLevelLessons(
+    "4e",
+    LESSONS_4E_BASE.map((lesson) => namespaceLessonForLevel("4e", lesson)),
+  ),
+  "3e": buildNormalizedLevelLessons(
+    "3e",
+    LESSONS_3E_BASE.map((lesson) => namespaceLessonForLevel("3e", lesson)),
+  ),
 };
 
 const shouldValidateLessons =
-  typeof window === "undefined" || ["localhost", "127.0.0.1"].includes(window?.location?.hostname);
+  typeof window === "undefined" ||
+  ["localhost", "127.0.0.1"].includes(window?.location?.hostname);
 
 if (shouldValidateLessons) {
-  validateLessons(lessonsByLevel, LESSONS_SPEC);
+  Object.entries(lessonsByLevel).forEach(([levelId, levelLessons]) => {
+    if (!levelCanBeValidated(levelLessons)) return;
+    validateLessons({ [levelId]: levelLessons }, getSpecForLevel(levelId));
+  });
 }
 
 export const periods = periodsByLevel[DEFAULT_LEVEL_ID];
@@ -244,6 +316,7 @@ export const levels = LEVELS_SPEC.map((level) => ({
   ...level,
   periods: periodsByLevel[level.id] || [],
   lessons: lessonsByLevel[level.id] || [],
+  spec: getSpecForLevel(level.id),
 }));
 
 function findLevel(levelId = DEFAULT_LEVEL_ID) {
@@ -263,11 +336,25 @@ export function getLessonsByLevel(levelId = DEFAULT_LEVEL_ID) {
 }
 
 export function getLessonsByPeriod(periodId, levelId = DEFAULT_LEVEL_ID) {
-  const normalizedPeriodId = periodId?.startsWith(`${levelId}-`) ? periodId : toLevelPeriodId(levelId, periodId);
-  return getLessonsByLevel(levelId).filter((lesson) => lesson.periodId === normalizedPeriodId);
+  const normalizedPeriodId = periodId?.startsWith(`${levelId}-`)
+    ? periodId
+    : toLevelPeriodId(levelId, periodId);
+
+  return getLessonsByLevel(levelId).filter(
+    (lesson) => lesson.periodId === normalizedPeriodId
+  );
 }
 
 export function getLessonById(lessonId, levelId = DEFAULT_LEVEL_ID) {
-  const normalizedLessonId = lessonId?.startsWith(`${levelId}-`) ? lessonId : toLevelLessonId(levelId, lessonId);
-  return getLessonsByLevel(levelId).find((lesson) => lesson.id === normalizedLessonId) || null;
+  const normalizedLessonId = lessonId?.startsWith(`${levelId}-`)
+    ? lessonId
+    : toLevelLessonId(levelId, lessonId);
+
+  return getLessonsByLevel(levelId).find(
+    (lesson) => lesson.id === normalizedLessonId
+  ) || null;
+}
+
+export function getLessonSpecForLevel(levelId = DEFAULT_LEVEL_ID) {
+  return getSpecForLevel(levelId);
 }
