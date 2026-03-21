@@ -956,8 +956,7 @@ export const lessons4eP1 = [
       status: "ready",
       tags: ["4e", "p1", "sicilia", "perfectum"]
     }
-  }
-];
+   },
   makePlaceholderLesson(1, 4, "Ad navem Ostiensim"),
   makePlaceholderLesson(1, 5, "Epistulae ex castris"),
   makePlaceholderLesson(1, 6, "Roma crescit"),
