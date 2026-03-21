@@ -8,6 +8,7 @@ import {
   getPeriodsByLevel,
   getLessonsByLevel,
   getLessonsByPeriod,
+  getLessonSpecForLevel,
 } from "./lessons.js";
 import { getScoringContract } from "./scoring.js";
 import { loadProgress, saveLessonProgress, saveProgress } from "./storage.js";
@@ -15,111 +16,73 @@ import { initRouter } from "./router.js";
 import { renderApp } from "./ui.js";
 import { initTheme } from "./theme.js";
 
-const CANONICAL_SPEC = {
-  periods: 3,
-  lessonsPerPeriod: 13,
-  lessonsTotal: 39,
-  lessonMax: 10,
-  trainingMax: 7,
-  productionMax: 3,
-  periodMax: 130,
-  validationPercent: 80,
-  validationMinScore: 104,
-};
-
-/**
- * Tant que 4e / 3e n'ont pas encore été migrées vers le canon 13 leçons,
- * on ne bloque pas l'ouverture de l'application à cause d'elles.
- * On valide strictement le niveau par défaut (ici la 5e), qui est le niveau migré.
- *
- * Quand toute l'application sera passée à 13 leçons, remplace simplement :
- *   const STRICT_LEVEL_IDS = new Set([DEFAULT_LEVEL_ID]);
- * par :
- *   const STRICT_LEVEL_IDS = new Set(levels.map((level) => level.id));
- */
-const STRICT_LEVEL_IDS = new Set([DEFAULT_LEVEL_ID]);
-
 function getLevelDisplayLabel(level) {
   return level?.classLabel || level?.title || level?.id || "Niveau";
+}
+
+function lessonIsPlaceholder(lesson) {
+  return lesson?.meta?.status === "placeholder" || lesson?.status === "placeholder";
+}
+
+function levelHasPlaceholders(levelLessons) {
+  return Array.isArray(levelLessons) && levelLessons.some(lessonIsPlaceholder);
 }
 
 function assertInvariants() {
   const errors = [];
 
-  // Contrat global de scoring / structure
-  if (LESSONS_SPEC.periods !== CANONICAL_SPEC.periods) {
-    errors.push(`Le nombre de périodes doit rester à ${CANONICAL_SPEC.periods}.`);
-  }
-  if (LESSONS_SPEC.lessonsPerPeriod !== CANONICAL_SPEC.lessonsPerPeriod) {
-    errors.push(`Le nombre de leçons par période doit rester à ${CANONICAL_SPEC.lessonsPerPeriod}.`);
-  }
-  if (LESSONS_SPEC.lessonsTotal !== CANONICAL_SPEC.lessonsTotal) {
-    errors.push(`Le nombre total de leçons doit rester à ${CANONICAL_SPEC.lessonsTotal}.`);
-  }
-  if (LESSONS_SPEC.lessonMax !== CANONICAL_SPEC.lessonMax) {
-    errors.push(`Le score max d'une leçon doit rester à ${CANONICAL_SPEC.lessonMax}.`);
-  }
-  if (LESSONS_SPEC.trainingMax !== CANONICAL_SPEC.trainingMax) {
-    errors.push(`Le score d'entraînement doit rester à ${CANONICAL_SPEC.trainingMax}.`);
-  }
-  if (LESSONS_SPEC.productionMax !== CANONICAL_SPEC.productionMax) {
-    errors.push(`Le score de production doit rester à ${CANONICAL_SPEC.productionMax}.`);
-  }
-  if (LESSONS_SPEC.periodMax !== CANONICAL_SPEC.periodMax) {
-    errors.push(`Le score max d'une période doit rester à ${CANONICAL_SPEC.periodMax}.`);
-  }
-  if (LESSONS_SPEC.validationPercent !== CANONICAL_SPEC.validationPercent) {
-    errors.push(`Le seuil de validation doit rester à ${CANONICAL_SPEC.validationPercent}%.`);
-  }
-  if (LESSONS_SPEC.validationMinScore !== CANONICAL_SPEC.validationMinScore) {
-    errors.push(
-      `Le score minimal de validation doit rester à ${CANONICAL_SPEC.validationMinScore}/${CANONICAL_SPEC.periodMax}.`
-    );
-  }
-
-  // Vérification du niveau par défaut exporté directement
-  if (periods.length !== LESSONS_SPEC.periods) {
-    errors.push("Incohérence entre spec et périodes déclarées.");
-  }
-  if (lessons.length !== LESSONS_SPEC.lessonsTotal) {
-    errors.push("Incohérence entre spec et leçons déclarées.");
-  }
-
-  // Vérification stricte seulement sur les niveaux déjà migrés
   levels.forEach((level) => {
-    if (!STRICT_LEVEL_IDS.has(level.id)) return;
-
+    const spec = getLessonSpecForLevel(level.id);
     const levelName = getLevelDisplayLabel(level);
     const levelPeriods = getPeriodsByLevel(level.id);
     const levelLessons = getLessonsByLevel(level.id);
+    const hasPlaceholders = levelHasPlaceholders(levelLessons);
 
-    if (levelPeriods.length !== LESSONS_SPEC.periods) {
+    if (levelPeriods.length !== spec.periods) {
       errors.push(`${levelName}: incohérence du nombre de périodes.`);
     }
-    if (levelLessons.length !== LESSONS_SPEC.lessonsTotal) {
+
+    if (levelLessons.length !== spec.lessonsTotal) {
       errors.push(`${levelName}: incohérence du nombre de leçons.`);
     }
 
     levelPeriods.forEach((period) => {
       const periodLessons = getLessonsByPeriod(period.id, level.id);
 
-      if (periodLessons.length !== LESSONS_SPEC.lessonsPerPeriod) {
-        errors.push(`${levelName} · ${period.title} doit contenir ${LESSONS_SPEC.lessonsPerPeriod} leçons.`);
+      if (periodLessons.length !== spec.lessonsPerPeriod) {
+        errors.push(
+          `${levelName} · ${period.title} doit contenir ${spec.lessonsPerPeriod} leçons.`
+        );
       }
 
-      if (period.maxScore !== LESSONS_SPEC.periodMax) {
-        errors.push(`${levelName} · ${period.title} doit être notée sur ${LESSONS_SPEC.periodMax}.`);
+      if (period.maxScore !== spec.periodMax) {
+        errors.push(
+          `${levelName} · ${period.title} doit être notée sur ${spec.periodMax}.`
+        );
       }
 
       periodLessons.forEach((lesson) => {
-        if (lesson.maxScore !== LESSONS_SPEC.lessonMax) {
-          errors.push(`${levelName} · ${lesson.id}: maxScore doit être ${LESSONS_SPEC.lessonMax}.`);
+        if (lesson.maxScore !== spec.lessonMax) {
+          errors.push(
+            `${levelName} · ${lesson.id}: maxScore doit être ${spec.lessonMax}.`
+          );
         }
-        if (!Array.isArray(lesson.training) || lesson.training.length === 0) {
-          errors.push(`${levelName} · ${lesson.id}: training manquant.`);
+
+        if (!Array.isArray(lesson.training)) {
+          errors.push(`${levelName} · ${lesson.id}: training invalide.`);
         }
-        if (!Array.isArray(lesson.production) || lesson.production.length === 0) {
-          errors.push(`${levelName} · ${lesson.id}: production manquante.`);
+
+        if (!Array.isArray(lesson.production)) {
+          errors.push(`${levelName} · ${lesson.id}: production invalide.`);
+        }
+
+        if (!hasPlaceholders) {
+          if (lesson.training.length === 0) {
+            errors.push(`${levelName} · ${lesson.id}: training manquant.`);
+          }
+          if (lesson.production.length === 0) {
+            errors.push(`${levelName} · ${lesson.id}: production manquante.`);
+          }
         }
       });
     });
@@ -199,7 +162,9 @@ function boot() {
 
     return {
       lessonProgress: nextProgress.lessons?.[lessonId],
-      periodProgress: lessonData ? nextProgress.periods?.[lessonData.periodId] : null,
+      periodProgress: lessonData
+        ? nextProgress.periods?.[lessonData.periodId]
+        : null,
     };
   }
 
@@ -244,6 +209,9 @@ function boot() {
   window.ATRIUM_BOOT = {
     scoring,
     contract: LESSONS_SPEC,
+    levelSpecs: Object.fromEntries(
+      levels.map((level) => [level.id, getLessonSpecForLevel(level.id)])
+    ),
     levels: levels.map((level) => ({
       id: level.id,
       label: getLevelDisplayLabel(level),
