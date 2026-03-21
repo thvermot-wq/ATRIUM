@@ -2835,3 +2835,21 @@ select {
     padding-right: 0.58rem;
   }
 }
+
+/* Hover plus doux : bleu grisé */
+.btn-primary:hover,
+button:not([class]):hover {
+  background: #6b7f93;
+  border-color: #6b7f93;
+  color: #ffffff;
+}
+
+.btn-primary:focus,
+.btn-primary:focus-visible,
+button:not([class]):focus,
+button:not([class]):focus-visible {
+  background: #5f7286;
+  border-color: #5f7286;
+  color: #ffffff;
+  outline: none;
+}
