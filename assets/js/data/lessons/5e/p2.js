@@ -12,7 +12,7 @@ const headerContexts5eP2 = {
   "p2-l10": "À la fontaine, l’eau remonte trouble et laisse un dépôt gris sur le bois. « Ce qui sort du fond n’a jamais bonne allure », murmure Aurelia, puis elle incline le seau vers la lumière.",
   "p2-l11": "Quand Marcus prononce enfin le nom de la déesse Discordia, la rue se calme sans discuter. « Voilà ; au moins, notre désordre a trouvé son patron », dit Flavia, et personne ne rit.",
   "p2-l12": "Le soir retombe sur le quartier, mais les portes restent entrouvertes et les oreilles aussi. « La paix revient toujours après tout le monde », murmure Aurelia, puis Niger lève la tête au moindre pas.",
-  "p2-l13": "En reprenant les témoignages, Flavia bute sur quelques mots plus rugueux que les autres : rex, mater, urbs, corpus. Ils ne ressemblent pas aux noms déjà connus... Est-ce que ce serait des morceaux d'un code ?",
+  "p2-l13": "En reprenant les témoignages, Flavia bute sur quelques mots plus rugueux que les autres : rex, mater, urbs, corpus. Ils ne ressemblent pas aux noms déjà connus... Est-ce que ce serait des morceaux d'un code ?"
 };
 
 export const lessons5eP2 = [
