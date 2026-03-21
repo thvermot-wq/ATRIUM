@@ -3697,7 +3697,946 @@ const lessonL12 = {
     tags: ["4e", "p1", "demonstratifs", "precision"]
   }
 };
-  makePlaceholderLesson(1, 13, "Civis, consul, colonia"),
-  makePlaceholderLesson(1, 14, "Tabellae ex Sicilia"),
-  makePlaceholderLesson(1, 15, "Roma, mare, metus")
+  const headerContexts4eP1_L13toL15 = {
+  "p1-l13": "Sous un portique peint, une carte du monde connu pend au mur ; des routes rouges filent depuis Rome vers des noms qu’on prononce à mi-voix, comme si chacun pesait davantage que les autres. « Une cité se raconte aussi par les mots qu’elle invente pour se gouverner », dit Lucius, puis il pose deux doigts sur Rome avant de les faire glisser jusqu’à Sicilia.",
+  "p1-l14": "La tablette passe de main en main ; certains lisent en silence, d’autres à voix basse, comme si le bois lui-même pouvait garder un secret venu du large. « Une même nouvelle change selon celui qui l’apporte, selon celui qui la lit, et selon celui qui préfère ne pas y croire », dit Marcus, puis il trie trois messages en trois tas distincts.",
+  "p1-l15": "Le soir tombe sur le forum, mais au loin les mâts d’Ostie gardent encore une lueur pâle ; des noms de lieux, de peuples et d’hommes circulent d’une voix à l’autre, jusqu’à se mêler à la poussière et au bruit des pas. « Rome paraît immense quand on la regarde d’ici ; elle paraît fragile dès qu’on écoute plus loin », dit Flavia, puis personne ne répond tout de suite."
+};
+
+const lessonL13 = {
+  id: "4e-p1-l13",
+  levelId: "4e",
+  period: 1,
+  periodId: "p1",
+  title: "Civis, consul, colonia",
+  subtitle: headerContexts4eP1_L13toL15["p1-l13"],
+  objective: "Relier la langue à des réalités civiques et politiques simples de Rome en expansion.",
+  lessonPoint: "Je relie le mot latin à une réalité concrète du monde romain.",
+  canDo: [
+    "Je comprends quelques mots civiques essentiels.",
+    "Je situe la colonie dans l’expansion romaine.",
+    "Je lis une courte présentation institutionnelle."
+  ],
+  lexicon: [
+    "civis, civis = citoyen",
+    "consul, consulis = consul",
+    "senatus, senatus = sénat",
+    "colonia, coloniae = colonie",
+    "provincia, provinciae = province",
+    "magistratus, magistratus = magistrat",
+    "urbs, urbis = ville",
+    "via, viae = route",
+    "mare, maris = mer",
+    "populus, populi = peuple",
+    "rego, regis = diriger",
+    "mitto, mittis = envoyer",
+    "defendo, defendis = défendre",
+    "voco, vocas = appeler",
+    "administro, administras = administrer"
+  ],
+  maxScore: 10,
+  training: [
+    {
+      id: "4e-p1-l13-t1",
+      type: "matching",
+      prompt: "🏛️ Associe le mot latin à la réalité romaine qu’il désigne.",
+      pairs: [
+        { left: "consul", right: "magistrat suprême annuel" },
+        { left: "senatus", right: "assemblée politique de notables" },
+        { left: "colonia", right: "ville fondée hors du centre initial" }
+      ],
+      rightOptions: [
+        "ville fondée hors du centre initial",
+        "magistrat suprême annuel",
+        "assemblée politique de notables"
+      ],
+      expected: {
+        "consul": "magistrat suprême annuel",
+        "senatus": "assemblée politique de notables",
+        "colonia": "ville fondée hors du centre initial"
+      },
+      points: 1
+    },
+    {
+      id: "4e-p1-l13-t2",
+      type: "multipleChoice",
+      prompt: "🏛️ Quels mots relèvent clairement de la vie civique et politique ?",
+      options: [
+        "civis",
+        "consul",
+        "senatus",
+        "provincia",
+        "unda"
+      ],
+      expected: [
+        "civis",
+        "consul",
+        "senatus",
+        "provincia"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l13-t3",
+      type: "singleChoice",
+      prompt: "🏛️ Mini-texte : « Consul cives mittit. Colonia conditur. Via paratur. » Quelle idée politique domine cette scène ?",
+      options: [
+        "Rome organise une expansion",
+        "Rome abandonne ses territoires",
+        "un banquet privé est préparé",
+        "un procès se tient au Sénat"
+      ],
+      expected: "Rome organise une expansion",
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l13-t4",
+      type: "multipleChoice",
+      prompt: "🏛️ Mini-texte : « Senatus deliberat. Consul cives vocat. Colonia longe conditur. » Quelles actions appartiennent à l’autorité publique ?",
+      options: [
+        "délibérer",
+        "appeler des citoyens",
+        "fonder une colonie loin de Rome",
+        "raccommoder un vêtement"
+      ],
+      expected: [
+        "délibérer",
+        "appeler des citoyens",
+        "fonder une colonie loin de Rome"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l13-t5",
+      type: "singleChoice",
+      prompt: "🏛️ Piège : « provincia defenditur, civis mittitur » signifie :",
+      options: [
+        "la province est défendue, un citoyen est envoyé",
+        "la province défend un citoyen, il envoie la ville",
+        "le citoyen défend le Sénat, la province fuit",
+        "Rome ferme ses routes"
+      ],
+      expected: "la province est défendue, un citoyen est envoyé",
+      shuffle: true,
+      points: 1,
+      feedback: "Je repère le passif et je rattache chaque groupe à la bonne réalité politique."
+    },
+    {
+      id: "4e-p1-l13-t6",
+      type: "multipleChoice",
+      prompt: "🏛️ Mini-dossier : « Civis est Romanus. Consul rem publicam administrat. Colonia in nova terra conditur. Provincia defenditur. » Quelles relations mot / fonction apparaissent ?",
+      options: [
+        "le citoyen appartient à la cité",
+        "le consul agit dans la vie publique",
+        "la colonie prolonge Rome ailleurs",
+        "la province est seulement un bâtiment"
+      ],
+      expected: [
+        "le citoyen appartient à la cité",
+        "le consul agit dans la vie publique",
+        "la colonie prolonge Rome ailleurs"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l13-t7",
+      type: "singleChoice",
+      prompt: "🏛️ Mini-texte : « Roma vias mittit, cives vocat, colonias condit. » Quel mouvement général se dessine ?",
+      options: [
+        "Rome étend son organisation au loin",
+        "Rome s’enferme derrière ses murs",
+        "Rome oublie la mer",
+        "Rome cesse de gouverner"
+      ],
+      expected: "Rome étend son organisation au loin",
+      shuffle: true,
+      points: 1
+    }
+  ],
+  production: [
+    {
+      id: "4e-p1-l13-p1",
+      type: "textInput",
+      prompt: "🏛️ Traduis en français : consul cives mittit et colonia conditur",
+      expected: "le consul envoie des citoyens et une colonie est fondée",
+      acceptedAnswers: [
+        "le consul envoie des citoyens et une colonie est fondée",
+        "le consul envoie les citoyens et une colonie est fondée",
+        "un consul envoie des citoyens et une colonie est fondée",
+        "un consul envoie les citoyens et une colonie est fondée"
+      ],
+      answerConfig: {
+        type: "translation-segment",
+        language: "fr",
+        accepted: [
+          "le consul envoie des citoyens et une colonie est fondée",
+          "le consul envoie les citoyens et une colonie est fondée",
+          "un consul envoie des citoyens et une colonie est fondée",
+          "un consul envoie les citoyens et une colonie est fondée"
+        ],
+        ignoreDeterminers: true,
+        ignoreContractions: true,
+        allowPartialAnswer: "core-meaning-only"
+      },
+      points: 1,
+      canonicalAnswer: "le consul envoie des citoyens et une colonie est fondée",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true,
+        normalizeFrenchContractions: true,
+        ignoreFrenchDeterminers: true
+      },
+      gradingFocus: "Il faut articuler correctement action politique et passif de fondation.",
+      rejectIf: [
+        "verbe incorrect",
+        "contre-sens global",
+        "réponse hors-sujet"
+      ],
+      tests: [
+        { input: "le consul envoie des citoyens et une colonie est fondée", isCorrect: true },
+        { input: "un consul envoie les citoyens et une colonie est fondée", isCorrect: true },
+        { input: "la colonie envoie le consul et les citoyens sont fondés", isCorrect: false }
+      ]
+    },
+    {
+      id: "4e-p1-l13-p2",
+      type: "textInput",
+      prompt: "🏛️ Traduis en latin : Le Sénat appelle les citoyens.",
+      expected: "senatus cives vocat",
+      acceptedAnswers: [
+        "senatus cives vocat",
+        "senatus vocat cives",
+        "cives senatus vocat",
+        "cives vocat senatus",
+        "vocat senatus cives",
+        "vocat cives senatus"
+      ],
+      answerConfig: {
+        type: "one-of",
+        language: "latin",
+        accepted: [
+          "senatus cives vocat",
+          "senatus vocat cives",
+          "cives senatus vocat",
+          "cives vocat senatus",
+          "vocat senatus cives",
+          "vocat cives senatus"
+        ],
+        orderMode: "chunk-permutation"
+      },
+      points: 1,
+      canonicalAnswer: "senatus cives vocat",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true
+      },
+      gradingFocus: "Réinvestir le lexique civique dans une phrase active nette.",
+      rejectIf: [
+        "sens inversé sujet/objet",
+        "verbe incorrect",
+        "forme latine impossible au niveau de la leçon",
+        "réponse hors-sujet"
+      ],
+      tests: [
+        { input: "senatus cives vocat", isCorrect: true },
+        { input: "cives vocat senatus", isCorrect: true },
+        { input: "senatus cives vocant", isCorrect: false }
+      ]
+    },
+    {
+      id: "4e-p1-l13-p3",
+      type: "textInput",
+      prompt: "🏛️ Mini-texte : « Consul cives mittit. Colonia conditur. Provincia defenditur. Via paratur. » Quelle logique d’ensemble se dessine dans ce dossier ?",
+      expected: "une logique d’expansion et d’organisation romaines",
+      acceptedAnswers: [
+        "une logique d'expansion et d'organisation romaines",
+        "Rome étend et organise son pouvoir",
+        "la cité envoie, fonde, défend et aménage",
+        "un pouvoir public organise l'extension de Rome"
+      ],
+      answerConfig: {
+        type: "inference-fr",
+        language: "fr",
+        accepted: [
+          "une logique d'expansion et d'organisation romaines",
+          "Rome étend et organise son pouvoir",
+          "la cité envoie, fonde, défend et aménage",
+          "un pouvoir public organise l'extension de Rome"
+        ],
+        ignoreDeterminers: true,
+        ignoreContractions: true,
+        allowPartialAnswer: "never"
+      },
+      points: 1,
+      canonicalAnswer: "une logique d’expansion et d’organisation romaines",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true,
+        normalizeFrenchContractions: true,
+        ignoreFrenchDeterminers: true
+      },
+      gradingFocus: "Inférence synthétique sur institutions, territoire et expansion.",
+      rejectIf: ["contre-sens global", "réponse hors-sujet"],
+      tests: [
+        { input: "Rome étend et organise son pouvoir", isCorrect: true },
+        { input: "la cité envoie, fonde, défend et aménage", isCorrect: true },
+        { input: "des individus isolés prennent des décisions privées", isCorrect: false }
+      ]
+    }
+  ],
+  summary: {
+    retains: [
+      "Les mots civiques dessinent une carte mentale de Rome.",
+      "La langue permet de comprendre l’expansion politique comme une organisation concrète."
+    ],
+    cahier: [
+      "consul / senatus / colonia / provincia",
+      "consul cives mittit et colonia conditur"
+    ],
+    keywords: ["civique", "institution", "expansion"]
+  },
+  meta: {
+    status: "ready",
+    tags: ["4e", "p1", "institutions", "civis-consul-colonia"]
+  }
+};
+
+const lessonL14 = {
+  id: "4e-p1-l14",
+  levelId: "4e",
+  period: 1,
+  periodId: "p1",
+  title: "Tabellae ex Sicilia",
+  subtitle: headerContexts4eP1_L13toL15["p1-l14"],
+  objective: "Lire un premier petit ensemble suivi mêlant lettre, annonce et témoignage venus du large.",
+  lessonPoint: "Je lis chaque segment comme une voix différente dans le même dossier.",
+  canDo: [
+    "Je lis plusieurs phrases liées entre elles.",
+    "Je distingue récit, nouvelle et ordre.",
+    "Je comprends un petit dossier venu du large."
+  ],
+  lexicon: [
+    "tabella, tabellae = tablette",
+    "nuntius, nuntii = message, messager",
+    "Sicilia, Siciliae = Sicile",
+    "mare, maris = mer",
+    "navis, navis = navire",
+    "portus, portus = port",
+    "iter, itineris = trajet, route",
+    "vox, vocis = voix",
+    "timor, timoris = peur",
+    "silentium, silentii = silence",
+    "venio, venis = venir",
+    "scribo, scribis = écrire",
+    "lego, legis = lire",
+    "narro, narras = raconter",
+    "iubeo, iubes = ordonner"
+  ],
+  maxScore: 10,
+  training: [
+    {
+      id: "4e-p1-l14-t1",
+      type: "multipleChoice",
+      prompt: "🌊 Mini-dossier : « Prima tabella venit ex Sicilia. Secunda navem narrat. Tertia cives monet. » Quels types de voix apparaissent déjà ?",
+      options: [
+        "une annonce arrivée de Sicile",
+        "un récit sur un navire",
+        "un avertissement adressé aux citoyens",
+        "une scène de classe",
+        "une fable mythologique"
+      ],
+      expected: [
+        "une annonce arrivée de Sicile",
+        "un récit sur un navire",
+        "un avertissement adressé aux citoyens"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l14-t2",
+      type: "matching",
+      prompt: "🌊 Associe segment et fonction dominante.",
+      pairs: [
+        { left: "nuntius venit", right: "arrivée d'une nouvelle" },
+        { left: "navis periclitatur", right: "récit d'un danger" },
+        { left: "cives parati sint", right: "ordre / consigne" }
+      ],
+      rightOptions: [
+        "ordre / consigne",
+        "récit d'un danger",
+        "arrivée d'une nouvelle"
+      ],
+      expected: {
+        "nuntius venit": "arrivée d'une nouvelle",
+        "navis periclitatur": "récit d'un danger",
+        "cives parati sint": "ordre / consigne"
+      },
+      points: 1
+    },
+    {
+      id: "4e-p1-l14-t3",
+      type: "singleChoice",
+      prompt: "🌊 Mini-texte : « Prima tabella narrat. Secunda iubet. Tertia monet. » Quelle différence structure le dossier ?",
+      options: [
+        "chaque tablette n'a pas la même fonction",
+        "tout répète exactement la même chose",
+        "tout se passe au même instant de la même façon",
+        "les trois tablettes sont vides"
+      ],
+      expected: "chaque tablette n'a pas la même fonction",
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l14-t4",
+      type: "multipleChoice",
+      prompt: "🌊 Mini-texte : « Nuntius venit. Multi tacent. Marcus legit. Alius narrat. » Quels indices montrent que plusieurs voix se croisent ?",
+      options: [
+        "une nouvelle arrive",
+        "quelqu'un lit",
+        "un autre raconte",
+        "tout le monde dort",
+        "la ville disparaît"
+      ],
+      expected: [
+        "une nouvelle arrive",
+        "quelqu'un lit",
+        "un autre raconte"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l14-t5",
+      type: "singleChoice",
+      prompt: "🌊 Piège : « tabella narrat, altera iubet » signifie :",
+      options: [
+        "une tablette raconte, l'autre donne un ordre",
+        "une tablette obéit, l'autre s'enfuit",
+        "la mer lit la tablette",
+        "la route devient un port"
+      ],
+      expected: "une tablette raconte, l'autre donne un ordre",
+      shuffle: true,
+      points: 1,
+      feedback: "Je distingue la fonction de chaque segment, pas seulement les mots isolés."
+    },
+    {
+      id: "4e-p1-l14-t6",
+      type: "multipleChoice",
+      prompt: "🌊 Mini-dossier : « Prima tabella venit ex Sicilia. Secunda navem per noctem ivisse scribit. Tertia cives paratos esse iubet. » Quelles informations deviennent certaines ?",
+      options: [
+        "une première tablette vient de Sicile",
+        "une autre rapporte un trajet nocturne",
+        "une troisième donne une consigne aux citoyens",
+        "le consul célèbre une victoire certaine"
+      ],
+      expected: [
+        "une première tablette vient de Sicile",
+        "une autre rapporte un trajet nocturne",
+        "une troisième donne une consigne aux citoyens"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l14-t7",
+      type: "singleChoice",
+      prompt: "🌊 Mini-texte : « Nuntius venit. Multi tacent. » Quel effet de scène apparaît immédiatement ?",
+      options: [
+        "une tension silencieuse",
+        "une fête bruyante",
+        "un débat scolaire",
+        "un départ joyeux"
+      ],
+      expected: "une tension silencieuse",
+      shuffle: true,
+      points: 1
+    }
+  ],
+  production: [
+    {
+      id: "4e-p1-l14-p1",
+      type: "textInput",
+      prompt: "🌊 Traduis en français : nuntius ex Sicilia venit et cives monet",
+      expected: "un message venu de Sicile arrive et avertit les citoyens",
+      acceptedAnswers: [
+        "un message venu de Sicile arrive et avertit les citoyens",
+        "le messager venu de Sicile arrive et avertit les citoyens",
+        "une nouvelle venue de Sicile arrive et avertit les citoyens",
+        "un message de Sicile arrive et avertit les citoyens"
+      ],
+      answerConfig: {
+        type: "translation-segment",
+        language: "fr",
+        accepted: [
+          "un message venu de Sicile arrive et avertit les citoyens",
+          "le messager venu de Sicile arrive et avertit les citoyens",
+          "une nouvelle venue de Sicile arrive et avertit les citoyens",
+          "un message de Sicile arrive et avertit les citoyens"
+        ],
+        ignoreDeterminers: true,
+        ignoreContractions: true,
+        allowPartialAnswer: "core-meaning-only"
+      },
+      points: 1,
+      canonicalAnswer: "un message venu de Sicile arrive et avertit les citoyens",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true,
+        normalizeFrenchContractions: true,
+        ignoreFrenchDeterminers: true
+      },
+      gradingFocus: "Il faut comprendre l’origine, l’arrivée et la fonction d’avertissement.",
+      rejectIf: [
+        "verbe incorrect",
+        "contre-sens global",
+        "réponse hors-sujet"
+      ],
+      tests: [
+        { input: "un message venu de Sicile arrive et avertit les citoyens", isCorrect: true },
+        { input: "une nouvelle venue de Sicile arrive et avertit les citoyens", isCorrect: true },
+        { input: "des citoyens partent vers la Sicile et écrivent un navire", isCorrect: false }
+      ]
+    },
+    {
+      id: "4e-p1-l14-p2",
+      type: "textInput",
+      prompt: "🌊 Traduis en latin : Une tablette raconte le trajet du navire.",
+      expected: "tabella iter navis narrat",
+      acceptedAnswers: [
+        "tabella iter navis narrat",
+        "tabella narrat iter navis",
+        "iter navis tabella narrat",
+        "iter navis narrat tabella",
+        "narrat tabella iter navis",
+        "narrat iter navis tabella"
+      ],
+      answerConfig: {
+        type: "one-of",
+        language: "latin",
+        accepted: [
+          "tabella iter navis narrat",
+          "tabella narrat iter navis",
+          "iter navis tabella narrat",
+          "iter navis narrat tabella",
+          "narrat tabella iter navis",
+          "narrat iter navis tabella"
+        ],
+        orderMode: "chunk-permutation"
+      },
+      points: 1,
+      canonicalAnswer: "tabella iter navis narrat",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true
+      },
+      gradingFocus: "Réinvestir le texte suivi par une production ciblée et sobre.",
+      rejectIf: [
+        "sens inversé sujet/objet",
+        "verbe incorrect",
+        "forme latine impossible au niveau de la leçon",
+        "réponse hors-sujet"
+      ],
+      tests: [
+        { input: "tabella iter navis narrat", isCorrect: true },
+        { input: "iter navis narrat tabella", isCorrect: true },
+        { input: "tabella iter navis narratur", isCorrect: false }
+      ]
+    },
+    {
+      id: "4e-p1-l14-p3",
+      type: "textInput",
+      prompt: "🌊 Mini-dossier : « Prima tabella venit ex Sicilia. Secunda navem narrat. Tertia cives monet. » Quelle hypothèse devient la plus plausible sur l’effet d’ensemble du dossier ?",
+      expected: "il transforme une nouvelle venue du large en alerte pour la ville",
+      acceptedAnswers: [
+        "il transforme une nouvelle venue du large en alerte pour la ville",
+        "les messages venus du large deviennent un avertissement collectif",
+        "le dossier fait passer de l'information au signal d'alerte",
+        "une nouvelle maritime finit par concerner toute la cité"
+      ],
+      answerConfig: {
+        type: "inference-fr",
+        language: "fr",
+        accepted: [
+          "il transforme une nouvelle venue du large en alerte pour la ville",
+          "les messages venus du large deviennent un avertissement collectif",
+          "le dossier fait passer de l'information au signal d'alerte",
+          "une nouvelle maritime finit par concerner toute la cité"
+        ],
+        ignoreDeterminers: true,
+        ignoreContractions: true,
+        allowPartialAnswer: "never"
+      },
+      points: 1,
+      canonicalAnswer: "il transforme une nouvelle venue du large en alerte pour la ville",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true,
+        normalizeFrenchContractions: true,
+        ignoreFrenchDeterminers: true
+      },
+      gradingFocus: "Inférence de synthèse sur la progression interne du dossier.",
+      rejectIf: ["contre-sens global", "réponse hors-sujet"],
+      tests: [
+        { input: "les messages venus du large deviennent un avertissement collectif", isCorrect: true },
+        { input: "une nouvelle maritime finit par concerner toute la cité", isCorrect: true },
+        { input: "il s'agit d'un dossier de recettes de cuisine", isCorrect: false }
+      ]
+    }
+  ],
+  summary: {
+    retains: [
+      "Un texte suivi se lit par segments et par fonctions.",
+      "Une même nouvelle change de portée selon qu’elle raconte, informe ou ordonne."
+    ],
+    cahier: [
+      "nuntius ex Sicilia venit",
+      "tabella iter navis narrat"
+    ],
+    keywords: ["texte suivi", "Sicile", "dossier"]
+  },
+  meta: {
+    status: "ready",
+    tags: ["4e", "p1", "texte-suivi", "tabellae"]
+  }
+};
+
+const lessonL15 = {
+  id: "4e-p1-l15",
+  levelId: "4e",
+  period: 1,
+  periodId: "p1",
+  title: "Roma, mare, metus",
+  subtitle: headerContexts4eP1_L13toL15["p1-l15"],
+  objective: "Réinvestir l’ensemble des acquis de période dans une synthèse narrative cohérente et ample.",
+  lessonPoint: "Je combine temps, formes et lexique pour lire une scène plus large sans me perdre.",
+  canDo: [
+    "Je lis une synthèse de période.",
+    "Je distingue expansion, départ et menace.",
+    "Je réemploie plusieurs acquis dans la même tâche."
+  ],
+  lexicon: [
+    "Roma, Romae = Rome",
+    "mare, maris = mer",
+    "metus, metus = peur",
+    "consul, consulis = consul",
+    "civis, civis = citoyen",
+    "nuntius, nuntii = messager",
+    "navis, navis = navire",
+    "via, viae = route",
+    "portus, portus = port",
+    "rumor, rumoris = rumeur",
+    "venio, venis = venir",
+    "timeo, times = craindre",
+    "transeo, transis = passer, traverser",
+    "mitto, mittis = envoyer",
+    "audio, audis = entendre"
+  ],
+  maxScore: 10,
+  training: [
+    {
+      id: "4e-p1-l15-t1",
+      type: "multipleChoice",
+      prompt: "🏛️🌊 Quels mots peuvent former l’armature thématique de la période ?",
+      options: [
+        "Roma",
+        "mare",
+        "metus",
+        "nuntius",
+        "hortus"
+      ],
+      expected: [
+        "Roma",
+        "mare",
+        "metus",
+        "nuntius"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l15-t2",
+      type: "matching",
+      prompt: "🏛️🌊 Associe le mot-clé à la grande sphère qu’il évoque.",
+      pairs: [
+        { left: "Roma", right: "centre politique" },
+        { left: "mare", right: "ouverture et circulation" },
+        { left: "metus", right: "menace et inquiétude" }
+      ],
+      rightOptions: [
+        "ouverture et circulation",
+        "menace et inquiétude",
+        "centre politique"
+      ],
+      expected: {
+        "Roma": "centre politique",
+        "mare": "ouverture et circulation",
+        "metus": "menace et inquiétude"
+      },
+      points: 1
+    },
+    {
+      id: "4e-p1-l15-t3",
+      type: "multipleChoice",
+      prompt: "🏛️🌊 Mini-dossier : « Roma vias mittit. Nuntii ex Sicilia veniunt. Cives timent. » Quels axes majeurs se croisent dans ce dossier ?",
+      options: [
+        "l’expansion romaine",
+        "l’arrivée de nouvelles maritimes",
+        "la montée de la peur",
+        "la vie agricole paisible",
+        "un concours poétique"
+      ],
+      expected: [
+        "l’expansion romaine",
+        "l’arrivée de nouvelles maritimes",
+        "la montée de la peur"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l15-t4",
+      type: "singleChoice",
+      prompt: "🏛️🌊 Mini-texte : « Roma magna est. Mare apertum est. Rumor tamen crescit. » Quelle tension interne traverse la période ?",
+      options: [
+        "la puissance coexiste avec la fragilité",
+        "la ville est vide et sans avenir",
+        "la mer supprime toute inquiétude",
+        "le forum remplace complètement Ostie"
+      ],
+      expected: "la puissance coexiste avec la fragilité",
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l15-t5",
+      type: "singleChoice",
+      prompt: "🏛️🌊 Piège : « nuntii veniunt, cives timent, viae tamen patent » signifie :",
+      options: [
+        "des nouvelles arrivent, les citoyens ont peur, mais les routes restent ouvertes",
+        "les routes ont peur et les citoyens ferment la mer",
+        "Rome abandonne toute circulation",
+        "la peur supprime les routes et les navires"
+      ],
+      expected: "des nouvelles arrivent, les citoyens ont peur, mais les routes restent ouvertes",
+      shuffle: true,
+      points: 1,
+      feedback: "Je tiens ensemble les éléments opposés de la scène au lieu d’en effacer un."
+    },
+    {
+      id: "4e-p1-l15-t6",
+      type: "multipleChoice",
+      prompt: "🏛️🌊 Mini-dossier : « Roma crescit. Colonia conditur. Nuntius venit. Multi tacent. » Quelles informations deviennent certaines ?",
+      options: [
+        "Rome continue de s’étendre",
+        "une fondation a lieu",
+        "une nouvelle arrive",
+        "le silence gagne plusieurs personnages",
+        "tout devient léger et festif"
+      ],
+      expected: [
+        "Rome continue de s’étendre",
+        "une fondation a lieu",
+        "une nouvelle arrive",
+        "le silence gagne plusieurs personnages"
+      ],
+      shuffle: true,
+      points: 1
+    },
+    {
+      id: "4e-p1-l15-t7",
+      type: "singleChoice",
+      prompt: "🏛️🌊 Mini-texte : « Roma magna est, sed metus manet. » Quel mot empêche la synthèse de devenir triomphale ?",
+      options: ["metus", "Roma", "magna", "est"],
+      expected: "metus",
+      shuffle: true,
+      points: 1
+    }
+  ],
+  production: [
+    {
+      id: "4e-p1-l15-p1",
+      type: "textInput",
+      prompt: "🏛️🌊 Traduis en français : Roma crescit, nuntius venit, cives tamen timent",
+      expected: "Rome grandit, un message arrive, pourtant les citoyens ont peur",
+      acceptedAnswers: [
+        "Rome grandit, un message arrive, pourtant les citoyens ont peur",
+        "Rome grandit, un messager arrive, pourtant les citoyens ont peur",
+        "Rome s'agrandit, un message vient, pourtant les citoyens craignent",
+        "Rome s'étend, un message arrive, pourtant les citoyens ont peur"
+      ],
+      answerConfig: {
+        type: "translation-segment",
+        language: "fr",
+        accepted: [
+          "Rome grandit, un message arrive, pourtant les citoyens ont peur",
+          "Rome grandit, un messager arrive, pourtant les citoyens ont peur",
+          "Rome s'agrandit, un message vient, pourtant les citoyens craignent",
+          "Rome s'étend, un message arrive, pourtant les citoyens ont peur"
+        ],
+        ignoreDeterminers: true,
+        ignoreContractions: true,
+        allowPartialAnswer: "core-meaning-only"
+      },
+      points: 1,
+      canonicalAnswer: "Rome grandit, un message arrive, pourtant les citoyens ont peur",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true,
+        normalizeFrenchContractions: true,
+        ignoreFrenchDeterminers: true
+      },
+      gradingFocus: "Il faut tenir ensemble expansion, information et inquiétude.",
+      rejectIf: [
+        "verbe incorrect",
+        "contre-sens global",
+        "réponse hors-sujet"
+      ],
+      tests: [
+        { input: "Rome grandit, un message arrive, pourtant les citoyens ont peur", isCorrect: true },
+        { input: "Rome s'étend, un message arrive, pourtant les citoyens ont peur", isCorrect: true },
+        { input: "Rome disparaît, aucun message n'arrive, les citoyens se réjouissent", isCorrect: false }
+      ]
+    },
+    {
+      id: "4e-p1-l15-p2",
+      type: "textInput",
+      prompt: "🏛️🌊 Traduis en latin : Rome grandit, mais la peur demeure.",
+      expected: "Roma crescit, sed metus manet",
+      acceptedAnswers: [
+        "Roma crescit, sed metus manet",
+        "Roma crescit sed metus manet",
+        "sed metus manet, Roma crescit",
+        "Roma crescit, metus tamen manet",
+        "Roma crescit metus tamen manet"
+      ],
+      answerConfig: {
+        type: "one-of",
+        language: "latin",
+        accepted: [
+          "Roma crescit, sed metus manet",
+          "Roma crescit sed metus manet",
+          "sed metus manet, Roma crescit",
+          "Roma crescit, metus tamen manet",
+          "Roma crescit metus tamen manet"
+        ],
+        orderMode: "chunk-permutation"
+      },
+      points: 1,
+      canonicalAnswer: "Roma crescit, sed metus manet",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true
+      },
+      gradingFocus: "Réinvestir la tension de période dans une formule sobre et claire.",
+      rejectIf: [
+        "verbe incorrect",
+        "forme latine impossible au niveau de la leçon",
+        "réponse hors-sujet"
+      ],
+      tests: [
+        { input: "Roma crescit, sed metus manet", isCorrect: true },
+        { input: "Roma crescit, metus tamen manet", isCorrect: true },
+        { input: "Roma crevit, sed metus manet", isCorrect: false }
+      ]
+    },
+    {
+      id: "4e-p1-l15-p3",
+      type: "textInput",
+      prompt: "🏛️🌊 Mini-dossier : « Roma crescit. Colonia conditur. Nuntii veniunt. Cives timent. » Quelle formule résume le mieux la période ?",
+      expected: "une puissance en expansion traversée par l'inquiétude",
+      acceptedAnswers: [
+        "une puissance en expansion traversée par l'inquiétude",
+        "Rome grandit mais reste menacée",
+        "une cité qui s'étend tout en vivant sous la tension",
+        "l'expansion romaine avance avec une peur persistante"
+      ],
+      answerConfig: {
+        type: "inference-fr",
+        language: "fr",
+        accepted: [
+          "une puissance en expansion traversée par l'inquiétude",
+          "Rome grandit mais reste menacée",
+          "une cité qui s'étend tout en vivant sous la tension",
+          "l'expansion romaine avance avec une peur persistante"
+        ],
+        ignoreDeterminers: true,
+        ignoreContractions: true,
+        allowPartialAnswer: "never"
+      },
+      points: 1,
+      canonicalAnswer: "une puissance en expansion traversée par l'inquiétude",
+      normalization: {
+        trim: true,
+        collapseSpaces: true,
+        ignoreCase: true,
+        ignorePunctuation: true,
+        normalizeApostrophes: true,
+        ignoreDiacritics: true,
+        normalizeFrenchContractions: true,
+        ignoreFrenchDeterminers: true
+      },
+      gradingFocus: "Inférence de synthèse finale sur tout l’arc de la période.",
+      rejectIf: ["contre-sens global", "réponse hors-sujet"],
+      tests: [
+        { input: "Rome grandit mais reste menacée", isCorrect: true },
+        { input: "l'expansion romaine avance avec une peur persistante", isCorrect: true },
+        { input: "une paix immobile et sans trouble domine tout", isCorrect: false }
+      ]
+    }
+  ],
+  summary: {
+    retains: [
+      "Je peux lire une scène plus ample en combinant mes repères.",
+      "La ville, la mer et la peur se répondent dans cette période."
+    ],
+    cahier: [
+      "Roma crescit, sed metus manet",
+      "nuntii veniunt, cives timent"
+    ],
+    keywords: ["bilan", "Rome", "mer", "peur"]
+  },
+  meta: {
+    status: "ready",
+    tags: ["4e", "p1", "bilan", "roma-mare-metus"]
+  }
+}
 ];
