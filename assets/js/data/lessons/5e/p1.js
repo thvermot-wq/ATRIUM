@@ -3884,7 +3884,7 @@ export const lessons5eP1 = [
   "id": "p1-l13",
   "period": 1,
   "periodId": "p1",
-  "title": "Sum et adsum",
+  "title": "Sum et adsum - 'Être' au singulier",
   subtitle: headerContexts5eP1["p1-l13"],
   "objective": "Reconnaître et produire les formes sum, es, est, puis les relier à adsum déjà rencontré.",
   "lessonPoint": "Je reconnais les formes d’esse et je comprends que adsum signifie être là, être présent.",
