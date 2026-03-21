@@ -11,7 +11,8 @@ const headerContexts5eP3 = {
   "p3-l9": "Sous le portique de la grande maison, le sol sonne plus sec et les murs sentent la cire. « Un homme ne finit pas ici sans y être attendu », dit Marcus, puis il longe la galerie à petits pas.",
   "p3-l10": "À l’entrée de la villa de l’avocat, tout est à sa place, jusqu’au silence. « Les riches rangent même leur accueil », glisse Livia, puis elle suit des yeux le serviteur et la tablette.",
   "p3-l11": "Dans le vestibule, le serviteur ouvre, prend la tablette, referme, sans une hésitation. « On ne reçoit pas un inconnu comme ça », souffle Flavia, puis Marcus refait la scène dans sa tête.",
-  "p3-l12": "Dans le jardin, les torches balaient la terre humide au ras du mur. « Regardez bien : là... c’est une piste ! », dit Livia, puis tous se penchent d’un même mouvement."
+  "p3-l12": "Dans le jardin, les torches balaient la terre humide au ras du mur. « Regardez bien : là... c’est une piste ! », dit Livia, puis tous se penchent d’un même mouvement.",
+  "p3-l13": "Une dernière nuit tombe sur Subure. Marcus et Livia reprennent les indices un à un, dans l’ordre, jusqu’au moment où la trace, la porte, le jardin et la route se rejoignent enfin en un petit récit continu."
 };
 
 export const lessons5eP3 = [
@@ -4329,6 +4330,381 @@ export const lessons5eP3 = [
       "genitif",
       "vestigium",
       "Subura"
+    ]
+  }
+},
+  {
+  "id": "p3-l13",
+  "period": 3,
+  "periodId": "p3",
+  "title": "Texte final",
+  "subtitle": headerContexts5eP3["p3-l13"],
+  "objective": "Lire un court texte de 4 à 6 phrases, repérer les verbes, reconstruire le sens, puis traduire partiellement.",
+  "lessonPoint": "Je lis phrase après phrase, je repère les verbes, puis je recompose le sens global sans traduire mot à mot.",
+  "narrative": "Pour la première fois, les indices ne viennent plus en miettes mais en petit récit suivi. Marcus et Livia doivent recoller les morceaux de ce qu’ils ont vu dans la villa, dans le jardin et près de la porte.",
+  "canDo": [
+    "Je lis un mini-récit latin de plusieurs phrases.",
+    "Je repère les verbes et les groupes de lieu.",
+    "Je formule une conclusion simple à partir d’un texte suivi."
+  ],
+  "lexicon": [
+    "caelum, caeli n. = ciel",
+    "Discordia = Discordia, déesse de la discorde",
+    "nox, noctis f. = nuit",
+    "porta, portae f. = porte",
+    "signum, signi n. = signe",
+    "villa, villae f. = villa, grande maison",
+    "hortus, horti m. = jardin",
+    "via, viae f. = route, chemin",
+    "vestigium, vestigii n. = trace",
+    "servus, servi m. = serviteur",
+    "taeda, taedae f. = flambeau",
+    "stat = il / elle se tient, se trouve",
+    "portat = il / elle porte",
+    "tacet = il / elle se tait",
+    "apparet = il / elle apparaît",
+    "ducit = il / elle mène",
+    "fugit = il / elle fuit",
+    "extra + acc. = hors de"
+  ],
+  "maxScore": 10,
+  "training": [
+    {
+      "id": "p3-l13-t1",
+      "type": "matching",
+      "prompt": "Associe chaque mot du texte à sa bonne traduction.",
+      "pairs": [
+        {
+          "left": "vestigium",
+          "right": "trace"
+        },
+        {
+          "left": "taeda",
+          "right": "flambeau"
+        },
+        {
+          "left": "via",
+          "right": "route"
+        },
+        {
+          "left": "fugit",
+          "right": "il / elle fuit"
+        }
+      ],
+      "rightOptions": [
+        "il / elle fuit",
+        "trace",
+        "route",
+        "flambeau"
+      ],
+      "expected": {
+        "vestigium": "trace",
+        "taeda": "flambeau",
+        "via": "route",
+        "fugit": "il / elle fuit"
+      },
+      "points": 1
+    },
+    {
+      "id": "p3-l13-t2",
+      "type": "singleChoice",
+      "prompt": "Dans le texte, que font Marcus et Livia au début ? — « Marcus et Livia ad portam villae stant. »",
+      "options": [
+        "Ils se tiennent devant la porte de la villa",
+        "Ils fuient hors de la ville",
+        "Ils ferment le jardin",
+        "Ils cachent la tablette"
+      ],
+      "expected": "Ils se tiennent devant la porte de la villa",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l13-t3",
+      "type": "multipleChoice",
+      "prompt": "Mini-texte : « Marcus et Livia ad portam villae stant. Servus taedam portat et tacet. In horto vestigium apparet. » Coche les informations justes.",
+      "options": [
+        "Marcus et Livia sont devant la porte de la villa",
+        "Le serviteur porte un flambeau",
+        "Une trace apparaît dans le jardin",
+        "Le serviteur parle beaucoup"
+      ],
+      "expected": [
+        "Marcus et Livia sont devant la porte de la villa",
+        "Le serviteur porte un flambeau",
+        "Une trace apparaît dans le jardin"
+      ],
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l13-t4",
+      "type": "singleChoice",
+      "prompt": "Dans « Servus taedam portat et tacet », quel mot est le complément objet ?",
+      "options": [
+        "servus",
+        "taedam",
+        "portat",
+        "tacet"
+      ],
+      "expected": "taedam",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l13-t5",
+      "type": "singleChoice",
+      "prompt": "« Vestigium ad viam ducit » signifie…",
+      "options": [
+        "La trace mène vers la route",
+        "La route mène vers la trace",
+        "Le serviteur porte la route",
+        "La porte fuit hors de la ville"
+      ],
+      "expected": "La trace mène vers la route",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l13-t6",
+      "type": "matching",
+      "prompt": "Associe chaque phrase du texte à son interprétation.",
+      "pairs": [
+        {
+          "left": "Servus taedam portat et tacet",
+          "right": "Le serviteur est là, mais il ne dit rien"
+        },
+        {
+          "left": "In horto vestigium apparet",
+          "right": "Un indice concret surgit dans le jardin"
+        },
+        {
+          "left": "Vir extra oppidum fugit",
+          "right": "L’homme s’éloigne hors de la ville"
+        }
+      ],
+      "rightOptions": [
+        "Un indice concret surgit dans le jardin",
+        "L’homme s’éloigne hors de la ville",
+        "Le serviteur est là, mais il ne dit rien"
+      ],
+      "expected": {
+        "Servus taedam portat et tacet": "Le serviteur est là, mais il ne dit rien",
+        "In horto vestigium apparet": "Un indice concret surgit dans le jardin",
+        "Vir extra oppidum fugit": "L’homme s’éloigne hors de la ville"
+      },
+      "points": 1
+    },
+    {
+      "id": "p3-l13-t7",
+      "type": "singleChoice",
+      "prompt": "Mini-récit complet : « Marcus et Livia ad portam villae stant. Servus taedam portat et tacet. In horto vestigium apparet. Vestigium ad viam ducit. Marcus dicit : “Vir extra oppidum fugit.” » Quelle conclusion devient la plus plausible ?",
+      "options": [
+        "Le suspect a quitté la ville",
+        "Le serviteur a volé le jardin",
+        "Marcus ne comprend rien à la scène",
+        "La trace retourne au forum"
+      ],
+      "expected": "Le suspect a quitté la ville",
+      "shuffle": true,
+      "points": 1
+    }
+  ],
+  "production": [
+    {
+      "id": "p3-l13-p1",
+      "type": "textInput",
+      "prompt": "Traduis : Servus taedam portat et tacet.",
+      "expected": "le serviteur porte un flambeau et se tait",
+      "acceptedAnswers": [
+        "le serviteur porte un flambeau et se tait",
+        "le serviteur porte le flambeau et se tait",
+        "le serviteur porte une torche et se tait",
+        "le serviteur porte la torche et se tait"
+      ],
+      "answerConfig": {
+        "type": "translation-segment",
+        "language": "fr",
+        "accepted": [
+          "le serviteur porte un flambeau et se tait",
+          "le serviteur porte le flambeau et se tait",
+          "le serviteur porte une torche et se tait",
+          "le serviteur porte la torche et se tait"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "le serviteur porte un flambeau et se tait",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Traduire correctement une phrase suivie avec deux verbes simples coordonnés.",
+      "rejectIf": [
+        "verbe principal mal compris",
+        "contre-sens sur taedam",
+        "réponse hors-sujet"
+      ],
+      "tests": [
+        {
+          "input": "le serviteur porte un flambeau et se tait",
+          "isCorrect": true
+        },
+        {
+          "input": "le serviteur fuit hors de la ville",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "p3-l13-p2",
+      "type": "textInput",
+      "prompt": "Traduis en latin : La trace mène vers la route.",
+      "expected": "vestigium ad viam ducit",
+      "acceptedAnswers": [
+        "vestigium ad viam ducit",
+        "vestigium ducit ad viam",
+        "ad viam vestigium ducit",
+        "ad viam ducit vestigium",
+        "ducit vestigium ad viam",
+        "ducit ad viam vestigium"
+      ],
+      "answerConfig": {
+        "type": "one-of",
+        "language": "latin",
+        "accepted": [
+          "vestigium ad viam ducit",
+          "vestigium ducit ad viam",
+          "ad viam vestigium ducit",
+          "ad viam ducit vestigium",
+          "ducit vestigium ad viam",
+          "ducit ad viam vestigium"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "vestigium ad viam ducit",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Produire une phrase simple à partir d’un texte suivi, avec groupe prépositionnel.",
+      "rejectIf": [
+        "préposition incorrecte",
+        "contre-sens sur vestigium",
+        "réponse hors-sujet"
+      ],
+      "tests": [
+        {
+          "input": "vestigium ad viam ducit",
+          "isCorrect": true
+        },
+        {
+          "input": "via ad vestigium ducit",
+          "isCorrect": false
+        }
+      ]
+    },
+   {
+  "id": "p3-l13-p3",
+  "type": "textInput",
+  "prompt": "Traduction guidée. Fin du mini-récit : « In caelo signum Discordiae apparet. Marcus tacet. » Aides : in caelo = dans le ciel ; signum = signe ; Discordiae = de Discordia ; apparet = apparaît ; tacet = se tait. Traduis les deux phrases, dans l’ordre.",
+  "expected": "dans le ciel le signe de discordia apparaît marcus se tait",
+  "acceptedAnswers": [
+    "dans le ciel le signe de discordia apparaît marcus se tait",
+    "dans le ciel un signe de discordia apparaît marcus se tait",
+    "dans le ciel le signe de la discorde apparaît marcus se tait",
+    "dans le ciel un signe de la discorde apparaît marcus se tait",
+
+    "dans le ciel le signe de discordia apparaît puis marcus se tait",
+    "dans le ciel un signe de discordia apparaît puis marcus se tait",
+    "dans le ciel le signe de la discorde apparaît puis marcus se tait",
+    "dans le ciel un signe de la discorde apparaît puis marcus se tait"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "dans le ciel le signe de discordia apparaît marcus se tait",
+      "dans le ciel un signe de discordia apparaît marcus se tait",
+      "dans le ciel le signe de la discorde apparaît marcus se tait",
+      "dans le ciel un signe de la discorde apparaît marcus se tait",
+
+      "dans le ciel le signe de discordia apparaît puis marcus se tait",
+      "dans le ciel un signe de discordia apparaît puis marcus se tait",
+      "dans le ciel le signe de la discorde apparaît puis marcus se tait",
+      "dans le ciel un signe de la discorde apparaît puis marcus se tait"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "dans le ciel, le signe de Discordia apparaît ; Marcus se tait",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
+  },
+  "gradingFocus": "Traduire correctement une révélation finale en tenant ensemble lieu, groupe nominal au génitif et verbe.",
+  "rejectIf": [
+    "contre-sens sur in caelo",
+    "contre-sens sur signum",
+    "contre-sens sur Discordiae",
+    "omission d'une des deux phrases",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    {
+      "input": "dans le ciel le signe de discordia apparaît marcus se tait",
+      "isCorrect": true
+    },
+    {
+      "input": "dans le ciel un signe de la discorde apparaît marcus se tait",
+      "isCorrect": true
+    },
+    {
+      "input": "dans le jardin la trace apparaît marcus court",
+      "isCorrect": false
+    }
+  ]
+}
+  ],
+  "summary": {
+    "retains": [
+      "Je peux lire un mini-récit suivi en avançant phrase après phrase.",
+      "Je repère les verbes avant de reconstruire le sens global.",
+      "Une trace, un lieu et une parole finale suffisent à faire émerger une conclusion."
+    ],
+    "cahier": [
+      "Servus taedam portat et tacet",
+      "In horto vestigium apparet",
+      "Vestigium ad viam ducit",
+      "Vir extra oppidum fugit"
+    ],
+    "keywords": [
+      "texte suivi",
+      "récit",
+      "trace",
+      "route",
+      "conclusion"
+    ]
+  },
+  "meta": {
+    "status": "ready",
+    "tags": [
+      "p3",
+      "texte-suivi",
+      "lecture",
+      "conclusion",
+      "final"
     ]
   }
 }
