@@ -54,7 +54,10 @@ const makePlaceholderLesson = (period, lessonNumber, title) => ({
 const headerContexts4eP1 = {
   "p1-l1": "Les ruelles de Subure déversent déjà leurs voix vers le forum ; des portefaix se croisent, une boutique lève ses volets, et les premières odeurs de laine teinte se mêlent au pain chaud. « À Rome, le matin ne tombe jamais d’un seul coup ; il gagne rue après rue », dit Marcus, puis il voit deux citoyens quitter la même venelle pour prendre la montée du forum.",
   "p1-l2": "Sous les portiques, les toges se serrent et les noms circulent plus vite que les corps ; au centre, un homme lève la main, aussitôt noyé sous les voix. « Une place publique ne parle jamais doucement ; même son silence pousse », dit Flavia, puis elle suit l’endroit précis où la foule se referme.",
-  "p1-l3": "Au bord du forum, une tablette arrive avec une odeur de sel, de bois humide et de voyage trop long ; la cire garde la trace d’un lien rompu à la hâte. « Quand la mer envoie quelque chose, elle n’envoie jamais seulement une nouvelle », dit Lucius, puis il passe le pouce sur une fente noire qui coupe un mot."
+  "p1-l3": "Au bord du forum, une tablette arrive avec une odeur de sel, de bois humide et de voyage trop long ; la cire garde la trace d’un lien rompu à la hâte. « Quand la mer envoie quelque chose, elle n’envoie jamais seulement une nouvelle », dit Lucius, puis il passe le pouce sur une fente noire qui coupe un mot.",
+  "p1-l4": "À Ostie, les coques sombres boivent encore la lumière du matin ; les cordages grincent, un marin jette un ordre sans lever la tête, et le ressac frappe bas contre les pierres du quai. « Un départ commence toujours avant la voile », dit Marcus, puis il suit du regard une passerelle qu’on retire à moitié.",
+  "p1-l5": "La lettre venue du camp sent la fumée froide, le cuir mouillé et la cire mal fermée ; en la dépliant, Livia découvre un angle noirci comme si le feu l’avait touchée sans la prendre. « On écrit vite quand on a peu de temps ; on écrit encore plus vite quand on a peur », dit-elle, puis elle relit deux fois la même ligne.",
+  "p1-l6": "Les routes blanches rendent la lumière, les marteaux répondent aux chars, et le marbre neuf accroche le soleil au bord du forum ; plus loin, des ouvriers tirent des blocs sous la poussière ocre. « On dit que Rome s’étend ; moi, je l’entends », dit Flavia, puis elle se protège les yeux d’un revers de main."
 };
 
 export const lessons4eP1 = [
@@ -956,10 +959,909 @@ export const lessons4eP1 = [
       status: "ready",
       tags: ["4e", "p1", "sicilia", "perfectum"]
     }
-   },
-  makePlaceholderLesson(1, 4, "Ad navem Ostiensim"),
-  makePlaceholderLesson(1, 5, "Epistulae ex castris"),
-  makePlaceholderLesson(1, 6, "Roma crescit"),
+  },
+
+  {
+    id: "4e-p1-l4",
+    levelId: "4e",
+    period: 1,
+    periodId: "p1",
+    title: "Ad navem Ostiensim",
+    subtitle: headerContexts4eP1["p1-l4"],
+    objective: "Lire une scène de quai en suivant les groupes de lieu et de mouvement dans un espace maritime plus vaste.",
+    lessonPoint: "Je lis chaque groupe prépositionnel comme un bloc de trajet dans la scène.",
+    canDo: [
+      "Je suis un déplacement sur le quai sans perdre les repères.",
+      "Je distingue lieu fixe, provenance et destination.",
+      "Je traduis une scène de départ maritime."
+    ],
+    lexicon: [
+      "Ostia, Ostiae = Ostie",
+      "navis, navis = navire",
+      "portus, portus = port",
+      "nauta, nautae = marin",
+      "ancora, ancorae = ancre",
+      "pons, pontis = passerelle, pont",
+      "ora, orae = bord, rivage",
+      "unda, undae = vague",
+      "velum, veli = voile",
+      "ad navem = vers le navire",
+      "ex portu = hors du port",
+      "in navi = dans le navire",
+      "ascendo, ascendis = monter",
+      "exeo, exis = sortir",
+      "propero, properas = se hâter"
+    ],
+    maxScore: 10,
+    training: [
+      {
+        id: "4e-p1-l4-t1",
+        type: "singleChoice",
+        prompt: "⚓ Dans « nauta ad navem properat », quel groupe indique la destination ?",
+        options: ["nauta", "ad navem", "properat", "Ostia"],
+        expected: "ad navem",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l4-t2",
+        type: "singleChoice",
+        prompt: "⚓ Dans « mercator ex portu exit et nauta in navi stat », qui se trouve déjà dans le navire ?",
+        options: ["mercator", "nauta", "portus", "ancora"],
+        expected: "nauta",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l4-t3",
+        type: "multipleChoice",
+        prompt: "⚓ Mini-texte : « Nauta ad navem currit. Mercator ex portu exit. Puer in navi stat. » Quelles actions ont bien lieu ?",
+        options: [
+          "un marin se dirige vers le navire",
+          "un marchand sort du port",
+          "un garçon se tient déjà dans le navire",
+          "une armée traverse les Alpes",
+          "un consul choisit un citoyen"
+        ],
+        expected: [
+          "un marin se dirige vers le navire",
+          "un marchand sort du port",
+          "un garçon se tient déjà dans le navire"
+        ],
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l4-t4",
+        type: "matching",
+        prompt: "⚓ Associe le groupe latin et son sens.",
+        pairs: [
+          { left: "ad navem", right: "vers le navire" },
+          { left: "ex portu", right: "hors du port" },
+          { left: "in navi", right: "dans le navire" }
+        ],
+        rightOptions: [
+          "dans le navire",
+          "hors du port",
+          "vers le navire"
+        ],
+        expected: {
+          "ad navem": "vers le navire",
+          "ex portu": "hors du port",
+          "in navi": "dans le navire"
+        },
+        points: 1
+      },
+      {
+        id: "4e-p1-l4-t5",
+        type: "singleChoice",
+        prompt: "⚓ Piège : « ad navem mercator properat, nauta stat » signifie :",
+        options: [
+          "le marchand se hâte vers le navire, le marin reste là",
+          "le marin se hâte vers le marchand",
+          "le navire court vers le port",
+          "le marchand sort déjà du port"
+        ],
+        expected: "le marchand se hâte vers le navire, le marin reste là",
+        shuffle: true,
+        points: 1,
+        feedback: "Je lis chaque verbe avec son personnage, puis chaque groupe de lieu avec son mouvement."
+      },
+      {
+        id: "4e-p1-l4-t6",
+        type: "multipleChoice",
+        prompt: "⚓ Mini-texte : « Pons tollitur. Nautae clamant. Multi ad navem currunt. » Quels indices montrent qu’un départ est en train de se préparer ?",
+        options: [
+          "la passerelle est retirée",
+          "les marins donnent des ordres",
+          "plusieurs gens courent vers le navire",
+          "la scène se déroule dans une école"
+        ],
+        expected: [
+          "la passerelle est retirée",
+          "les marins donnent des ordres",
+          "plusieurs gens courent vers le navire"
+        ],
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l4-t7",
+        type: "textInput",
+        prompt: "⚓ Écris en latin : « port ».",
+        expected: "portus",
+        acceptedAnswers: ["portus"],
+        answerConfig: {
+          type: "one-of",
+          language: "latin",
+          accepted: ["portus"]
+        },
+        points: 1,
+        canonicalAnswer: "portus",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true
+        },
+        gradingFocus: "Réactivation du lexique maritime central.",
+        rejectIf: ["forme incorrecte", "réponse hors-sujet"],
+        tests: [
+          { input: "portus", isCorrect: true },
+          { input: "forum", isCorrect: false }
+        ]
+      }
+    ],
+    production: [
+      {
+        id: "4e-p1-l4-p1",
+        type: "textInput",
+        prompt: "⚓ Traduis en français : nauta ad navem properat et mercator ex portu exit",
+        expected: "le marin se hâte vers le navire et le marchand sort du port",
+        acceptedAnswers: [
+          "le marin se hâte vers le navire et le marchand sort du port",
+          "un marin se hâte vers le navire et un marchand sort du port",
+          "le marin court vers le navire et le marchand quitte le port",
+          "un marin court vers le navire et un marchand quitte le port"
+        ],
+        answerConfig: {
+          type: "translation-segment",
+          language: "fr",
+          accepted: [
+            "le marin se hâte vers le navire et le marchand sort du port",
+            "un marin se hâte vers le navire et un marchand sort du port",
+            "le marin court vers le navire et le marchand quitte le port",
+            "un marin court vers le navire et un marchand quitte le port"
+          ],
+          ignoreDeterminers: true,
+          ignoreContractions: true,
+          allowPartialAnswer: "core-meaning-only"
+        },
+        points: 1,
+        canonicalAnswer: "le marin se hâte vers le navire et le marchand sort du port",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true,
+          normalizeFrenchContractions: true,
+          ignoreFrenchDeterminers: true
+        },
+        gradingFocus: "Les deux mouvements et leurs directions doivent être saisis.",
+        rejectIf: [
+          "verbe incorrect",
+          "contre-sens global",
+          "réponse hors-sujet"
+        ],
+        tests: [
+          { input: "le marin se hâte vers le navire et le marchand sort du port", isCorrect: true },
+          { input: "un marin court vers le navire et un marchand quitte le port", isCorrect: true },
+          { input: "le marin sort du navire et le marchand entre dans le port", isCorrect: false }
+        ]
+      },
+      {
+        id: "4e-p1-l4-p2",
+        type: "textInput",
+        prompt: "⚓ Traduis en latin : Le marin monte dans le navire.",
+        expected: "nauta in navem ascendit",
+        acceptedAnswers: [
+          "nauta in navem ascendit",
+          "nauta ascendit in navem",
+          "in navem nauta ascendit",
+          "in navem ascendit nauta",
+          "ascendit nauta in navem",
+          "ascendit in navem nauta"
+        ],
+        answerConfig: {
+          type: "one-of",
+          language: "latin",
+          accepted: [
+            "nauta in navem ascendit",
+            "nauta ascendit in navem",
+            "in navem nauta ascendit",
+            "in navem ascendit nauta",
+            "ascendit nauta in navem",
+            "ascendit in navem nauta"
+          ],
+          orderMode: "chunk-permutation"
+        },
+        points: 1,
+        canonicalAnswer: "nauta in navem ascendit",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true
+        },
+        gradingFocus: "Le mouvement d’entrée dans le navire doit être correctement formulé.",
+        rejectIf: [
+          "verbe incorrect",
+          "groupe de lieu incorrect",
+          "forme latine impossible au niveau de la leçon",
+          "réponse hors-sujet"
+        ],
+        tests: [
+          { input: "nauta in navem ascendit", isCorrect: true },
+          { input: "in navem ascendit nauta", isCorrect: true },
+          { input: "nauta in navi ascendit", isCorrect: false }
+        ]
+      },
+      {
+        id: "4e-p1-l4-p3",
+        type: "textInput",
+        prompt: "⚓ Mini-texte : « Pons tollitur. Multi ad navem currunt. Nautae clamant. » Quel geste rend le départ plus proche ?",
+        expected: "le retrait de la passerelle",
+        acceptedAnswers: [
+          "le retrait de la passerelle",
+          "on retire la passerelle",
+          "la passerelle est retirée",
+          "le fait qu'on enlève la passerelle"
+        ],
+        answerConfig: {
+          type: "inference-fr",
+          language: "fr",
+          accepted: [
+            "le retrait de la passerelle",
+            "on retire la passerelle",
+            "la passerelle est retirée",
+            "le fait qu'on enlève la passerelle"
+          ],
+          ignoreDeterminers: true,
+          ignoreContractions: true,
+          allowPartialAnswer: "never"
+        },
+        points: 1,
+        canonicalAnswer: "le retrait de la passerelle",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true,
+          normalizeFrenchContractions: true,
+          ignoreFrenchDeterminers: true
+        },
+        gradingFocus: "Inférence courte, appuyée sur un indice matériel précis.",
+        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        tests: [
+          { input: "le retrait de la passerelle", isCorrect: true },
+          { input: "la passerelle est retirée", isCorrect: true },
+          { input: "la pluie commence à tomber", isCorrect: false }
+        ]
+      }
+    ],
+    summary: {
+      retains: [
+        "Je lis les groupes de lieu comme des blocs de trajet.",
+        "Un départ maritime se comprend par les gestes, les positions et les directions."
+      ],
+      cahier: [
+        "ad navem = vers le navire ; ex portu = hors du port ; in navi = dans le navire",
+        "nauta ad navem properat et mercator ex portu exit"
+      ],
+      keywords: ["Ostie", "port", "départ"]
+    },
+    meta: {
+      status: "ready",
+      tags: ["4e", "p1", "ostie", "depart-maritime"]
+    }
+  },
+
+  {
+    id: "4e-p1-l5",
+    levelId: "4e",
+    period: 1,
+    periodId: "p1",
+    title: "Epistulae ex castris",
+    subtitle: headerContexts4eP1["p1-l5"],
+    objective: "Distinguer imparfait descriptif et parfait événementiel dans une lettre venue du camp.",
+    lessonPoint: "Je lis l’imparfait pour le fond de la scène, le parfait pour ce qui a rompu le cours des choses.",
+    canDo: [
+      "Je reconnais un imparfait descriptif.",
+      "Je reconnais un parfait qui marque un fait accompli.",
+      "Je traduis un court passage de lettre militaire."
+    ],
+    lexicon: [
+      "epistula, epistulae = lettre",
+      "castra, castrorum = camp",
+      "miles, militis = soldat",
+      "hostis, hostis = ennemi",
+      "ignis, ignis = feu",
+      "nox, noctis = nuit",
+      "timor, timoris = peur",
+      "fumus, fumi = fumée",
+      "cera, cerae = cire",
+      "ex castris = du camp",
+      "scribo, scribis = écrire",
+      "maneo, manes = rester",
+      "venio, venis = venir",
+      "video, vides = voir",
+      "timeo, times = craindre"
+    ],
+    maxScore: 10,
+    training: [
+      {
+        id: "4e-p1-l5-t1",
+        type: "singleChoice",
+        prompt: "✉️ Quel mot signifie « camp » ?",
+        options: ["castra", "urbs", "navis", "forum"],
+        expected: "castra",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l5-t2",
+        type: "singleChoice",
+        prompt: "✉️ Dans « miles scribebat », quel temps vois-tu ?",
+        options: ["présent", "imparfait", "parfait", "futur"],
+        expected: "imparfait",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l5-t3",
+        type: "multipleChoice",
+        prompt: "✉️ Choisis les formes qui décrivent un fond de scène ou une durée.",
+        options: ["scribebat", "manebat", "timebat", "vidit", "venit"],
+        expected: ["scribebat", "manebat", "timebat"],
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l5-t4",
+        type: "matching",
+        prompt: "✉️ Associe forme et valeur.",
+        pairs: [
+          { left: "scribebat", right: "écrivait" },
+          { left: "vidit", right: "a vu" },
+          { left: "timebat", right: "craignait" }
+        ],
+        rightOptions: ["a vu", "écrivait", "craignait"],
+        expected: {
+          "scribebat": "écrivait",
+          "vidit": "a vu",
+          "timebat": "craignait"
+        },
+        points: 1
+      },
+      {
+        id: "4e-p1-l5-t5",
+        type: "singleChoice",
+        prompt: "✉️ Piège : « miles scribebat et hostem vidit » signifie :",
+        options: [
+          "le soldat écrivait et il a vu l’ennemi",
+          "le soldat a écrit et voyait l’ennemi",
+          "l’ennemi écrivait au soldat",
+          "le camp regardait la nuit"
+        ],
+        expected: "le soldat écrivait et il a vu l’ennemi",
+        shuffle: true,
+        points: 1,
+        feedback: "L’imparfait installe le fond ; le parfait marque l’irruption du fait."
+      },
+      {
+        id: "4e-p1-l5-t6",
+        type: "multipleChoice",
+        prompt: "✉️ Mini-texte : « Miles scribebat. Nox erat. Hostis venit. » Quels éléments forment le fond avant l’arrivée de l’ennemi ?",
+        options: [
+          "le soldat était en train d’écrire",
+          "la nuit était là",
+          "l’ennemi est arrivé",
+          "le port se remplissait"
+        ],
+        expected: [
+          "le soldat était en train d’écrire",
+          "la nuit était là"
+        ],
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l5-t7",
+        type: "textInput",
+        prompt: "✉️ Écris en latin : « nuit ».",
+        expected: "nox",
+        acceptedAnswers: ["nox"],
+        answerConfig: {
+          type: "one-of",
+          language: "latin",
+          accepted: ["nox"]
+        },
+        points: 1,
+        canonicalAnswer: "nox",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true
+        },
+        gradingFocus: "Réactivation d’un nom concret du front.",
+        rejectIf: ["forme incorrecte", "réponse hors-sujet"],
+        tests: [
+          { input: "nox", isCorrect: true },
+          { input: "mare", isCorrect: false }
+        ]
+      }
+    ],
+    production: [
+      {
+        id: "4e-p1-l5-p1",
+        type: "textInput",
+        prompt: "✉️ Traduis en français : miles scribebat et hostem vidit",
+        expected: "le soldat écrivait et il a vu l’ennemi",
+        acceptedAnswers: [
+          "le soldat écrivait et il a vu l’ennemi",
+          "un soldat écrivait et il a vu l’ennemi",
+          "le soldat était en train d’écrire et a vu l’ennemi",
+          "un soldat était en train d’écrire et a vu l’ennemi"
+        ],
+        answerConfig: {
+          type: "translation-segment",
+          language: "fr",
+          accepted: [
+            "le soldat écrivait et il a vu l’ennemi",
+            "un soldat écrivait et il a vu l’ennemi",
+            "le soldat était en train d’écrire et a vu l’ennemi",
+            "un soldat était en train d’écrire et a vu l’ennemi"
+          ],
+          ignoreDeterminers: true,
+          ignoreContractions: true,
+          allowPartialAnswer: "core-meaning-only"
+        },
+        points: 1,
+        canonicalAnswer: "le soldat écrivait et il a vu l’ennemi",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true,
+          normalizeFrenchContractions: true,
+          ignoreFrenchDeterminers: true
+        },
+        gradingFocus: "Il faut distinguer nettement le fond à l’imparfait et l’événement au parfait.",
+        rejectIf: [
+          "verbe incorrect",
+          "contre-sens global",
+          "réponse hors-sujet"
+        ],
+        tests: [
+          { input: "le soldat écrivait et il a vu l’ennemi", isCorrect: true },
+          { input: "un soldat était en train d’écrire et a vu l’ennemi", isCorrect: true },
+          { input: "le soldat a écrit et voyait l’ennemi", isCorrect: false }
+        ]
+      },
+      {
+        id: "4e-p1-l5-p2",
+        type: "textInput",
+        prompt: "✉️ Traduis en latin : Le soldat craignait l’ennemi.",
+        expected: "miles hostem timebat",
+        acceptedAnswers: [
+          "miles hostem timebat",
+          "miles timebat hostem",
+          "hostem miles timebat",
+          "hostem timebat miles",
+          "timebat miles hostem",
+          "timebat hostem miles"
+        ],
+        answerConfig: {
+          type: "one-of",
+          language: "latin",
+          accepted: [
+            "miles hostem timebat",
+            "miles timebat hostem",
+            "hostem miles timebat",
+            "hostem timebat miles",
+            "timebat miles hostem",
+            "timebat hostem miles"
+          ],
+          orderMode: "chunk-permutation"
+        },
+        points: 1,
+        canonicalAnswer: "miles hostem timebat",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true
+        },
+        gradingFocus: "L’imparfait doit être correctement réinvesti dans une phrase simple.",
+        rejectIf: [
+          "sens inversé sujet/objet",
+          "verbe incorrect",
+          "forme latine impossible au niveau de la leçon",
+          "réponse hors-sujet"
+        ],
+        tests: [
+          { input: "miles hostem timebat", isCorrect: true },
+          { input: "hostem timebat miles", isCorrect: true },
+          { input: "miles hostem timuit", isCorrect: false }
+        ]
+      },
+      {
+        id: "4e-p1-l5-p3",
+        type: "textInput",
+        prompt: "✉️ Mini-texte : « Miles scribebat. Nox erat. Hostis venit. » Quel élément fait basculer la scène ?",
+        expected: "l’arrivée de l’ennemi",
+        acceptedAnswers: [
+          "l’arrivée de l’ennemi",
+          "le moment où l’ennemi arrive",
+          "le fait que l’ennemi est venu",
+          "l’ennemi qui arrive"
+        ],
+        answerConfig: {
+          type: "inference-fr",
+          language: "fr",
+          accepted: [
+            "l’arrivée de l’ennemi",
+            "le moment où l’ennemi arrive",
+            "le fait que l’ennemi est venu",
+            "l’ennemi qui arrive"
+          ],
+          ignoreDeterminers: true,
+          ignoreContractions: true,
+          allowPartialAnswer: "never"
+        },
+        points: 1,
+        canonicalAnswer: "l’arrivée de l’ennemi",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true,
+          normalizeFrenchContractions: true,
+          ignoreFrenchDeterminers: true
+        },
+        gradingFocus: "Inférence fermée sur la rupture narrative.",
+        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        tests: [
+          { input: "l’arrivée de l’ennemi", isCorrect: true },
+          { input: "le moment où l’ennemi arrive", isCorrect: true },
+          { input: "la tranquillité de la nuit", isCorrect: false }
+        ]
+      }
+    ],
+    summary: {
+      retains: [
+        "Je lis l’imparfait pour le fond, le parfait pour la rupture.",
+        "Dans une lettre venue du camp, les temps aident à distinguer atmosphère et événement."
+      ],
+      cahier: [
+        "scribebat = écrivait ; vidit = a vu",
+        "miles scribebat et hostem vidit"
+      ],
+      keywords: ["lettre", "camp", "temps"]
+    },
+    meta: {
+      status: "ready",
+      tags: ["4e", "p1", "lettre", "imparfait-parfait"]
+    }
+  },
+
+  {
+    id: "4e-p1-l6",
+    levelId: "4e",
+    period: 1,
+    periodId: "p1",
+    title: "Roma crescit",
+    subtitle: headerContexts4eP1["p1-l6"],
+    objective: "Lire l’imparfait comme temps de description et de durée dans une scène d’expansion matérielle de Rome.",
+    lessonPoint: "Quand le décor dure et se développe, je m’attends souvent à un imparfait.",
+    canDo: [
+      "Je reconnais une description à l’imparfait.",
+      "Je comprends une scène de chantier ou de circulation.",
+      "Je traduis un passage descriptif plus ample."
+    ],
+    lexicon: [
+      "Roma, Romae = Rome",
+      "via, viae = route, rue",
+      "lapis, lapidis = pierre",
+      "marmor, marmoris = marbre",
+      "currus, currus = char",
+      "flumen, fluminis = fleuve",
+      "pulvis, pulveris = poussière",
+      "malleus, mallei = marteau",
+      "forum, fori = forum",
+      "sol, solis = soleil",
+      "cresco, crescis = grandir",
+      "duco, ducis = mener",
+      "fero, fers = porter",
+      "luceo, luces = briller",
+      "sono, sonas = sonner, résonner"
+    ],
+    maxScore: 10,
+    training: [
+      {
+        id: "4e-p1-l6-t1",
+        type: "singleChoice",
+        prompt: "🏗️ Dans « marmor lucebat », quel temps vois-tu ?",
+        options: ["présent", "imparfait", "parfait", "futur"],
+        expected: "imparfait",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l6-t2",
+        type: "singleChoice",
+        prompt: "🏗️ Quel mot désigne la poussière ?",
+        options: ["pulvis", "marmor", "currus", "flumen"],
+        expected: "pulvis",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l6-t3",
+        type: "multipleChoice",
+        prompt: "🏗️ Choisis les formes qui décrivent un décor en durée.",
+        options: ["crescebat", "lucebat", "sonabat", "vidit", "venit"],
+        expected: ["crescebat", "lucebat", "sonabat"],
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l6-t4",
+        type: "matching",
+        prompt: "🏗️ Associe forme et sens.",
+        pairs: [
+          { left: "crescebat", right: "grandissait" },
+          { left: "lucebat", right: "brillait" },
+          { left: "sonabat", right: "sonnait" }
+        ],
+        rightOptions: ["brillait", "sonnait", "grandissait"],
+        expected: {
+          "crescebat": "grandissait",
+          "lucebat": "brillait",
+          "sonabat": "sonnait"
+        },
+        points: 1
+      },
+      {
+        id: "4e-p1-l6-t5",
+        type: "singleChoice",
+        prompt: "🏗️ Piège : « via lucebat et currus sonabat » signifie :",
+        options: [
+          "la route brillait et le char résonnait",
+          "la route a brillé et le char a sonné",
+          "le char regardait la route",
+          "la pierre a couru vers le fleuve"
+        ],
+        expected: "la route brillait et le char résonnait",
+        shuffle: true,
+        points: 1,
+        feedback: "L’imparfait installe ici un décor prolongé, pas un fait brutal."
+      },
+      {
+        id: "4e-p1-l6-t6",
+        type: "multipleChoice",
+        prompt: "🏗️ Mini-texte : « Via lucebat. Currus sonabat. Pulvis surgebat. » Quels indices montrent une ville en travail ?",
+        options: [
+          "la route renvoie la lumière",
+          "les chars font entendre leur passage",
+          "la poussière se soulève",
+          "la mer se retire du quai"
+        ],
+        expected: [
+          "la route renvoie la lumière",
+          "les chars font entendre leur passage",
+          "la poussière se soulève"
+        ],
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l6-t7",
+        type: "textInput",
+        prompt: "🏗️ Écris en latin : « marbre ».",
+        expected: "marmor",
+        acceptedAnswers: ["marmor"],
+        answerConfig: {
+          type: "one-of",
+          language: "latin",
+          accepted: ["marmor"]
+        },
+        points: 1,
+        canonicalAnswer: "marmor",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true
+        },
+        gradingFocus: "Réactivation d’un nom concret du décor romain.",
+        rejectIf: ["forme incorrecte", "réponse hors-sujet"],
+        tests: [
+          { input: "marmor", isCorrect: true },
+          { input: "mare", isCorrect: false }
+        ]
+      }
+    ],
+    production: [
+      {
+        id: "4e-p1-l6-p1",
+        type: "textInput",
+        prompt: "🏗️ Traduis en français : via lucebat et currus sonabat",
+        expected: "la route brillait et le char résonnait",
+        acceptedAnswers: [
+          "la route brillait et le char résonnait",
+          "une route brillait et un char résonnait",
+          "la route brillait et le char faisait entendre son bruit",
+          "une route brillait et un char faisait entendre son bruit"
+        ],
+        answerConfig: {
+          type: "translation-segment",
+          language: "fr",
+          accepted: [
+            "la route brillait et le char résonnait",
+            "une route brillait et un char résonnait",
+            "la route brillait et le char faisait entendre son bruit",
+            "une route brillait et un char faisait entendre son bruit"
+          ],
+          ignoreDeterminers: true,
+          ignoreContractions: true,
+          allowPartialAnswer: "core-meaning-only"
+        },
+        points: 1,
+        canonicalAnswer: "la route brillait et le char résonnait",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true,
+          normalizeFrenchContractions: true,
+          ignoreFrenchDeterminers: true
+        },
+        gradingFocus: "Il faut lire l’imparfait comme une description prolongée.",
+        rejectIf: [
+          "verbe incorrect",
+          "contre-sens global",
+          "réponse hors-sujet"
+        ],
+        tests: [
+          { input: "la route brillait et le char résonnait", isCorrect: true },
+          { input: "une route brillait et un char résonnait", isCorrect: true },
+          { input: "la route a brillé et le char a résonné", isCorrect: false }
+        ]
+      },
+      {
+        id: "4e-p1-l6-p2",
+        type: "textInput",
+        prompt: "🏗️ Traduis en latin : Le marbre brillait.",
+        expected: "marmor lucebat",
+        acceptedAnswers: [
+          "marmor lucebat",
+          "lucebat marmor"
+        ],
+        answerConfig: {
+          type: "one-of",
+          language: "latin",
+          accepted: [
+            "marmor lucebat",
+            "lucebat marmor"
+          ],
+          orderMode: "chunk-permutation"
+        },
+        points: 1,
+        canonicalAnswer: "marmor lucebat",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true
+        },
+        gradingFocus: "Réinvestir l’imparfait descriptif dans une phrase minimale nette.",
+        rejectIf: [
+          "verbe incorrect",
+          "forme latine impossible au niveau de la leçon",
+          "réponse hors-sujet"
+        ],
+        tests: [
+          { input: "marmor lucebat", isCorrect: true },
+          { input: "lucebat marmor", isCorrect: true },
+          { input: "marmor luxit", isCorrect: false }
+        ]
+      },
+      {
+        id: "4e-p1-l6-p3",
+        type: "textInput",
+        prompt: "🏗️ Mini-texte : « Via lucebat. Currus sonabat. Pulvis surgebat. » Quel élément rend la ville particulièrement matérielle dans cette scène ?",
+        expected: "la poussière qui se soulève",
+        acceptedAnswers: [
+          "la poussière qui se soulève",
+          "le soulèvement de la poussière",
+          "la poussière qui monte",
+          "la poussière en mouvement"
+        ],
+        answerConfig: {
+          type: "inference-fr",
+          language: "fr",
+          accepted: [
+            "la poussière qui se soulève",
+            "le soulèvement de la poussière",
+            "la poussière qui monte",
+            "la poussière en mouvement"
+          ],
+          ignoreDeterminers: true,
+          ignoreContractions: true,
+          allowPartialAnswer: "never"
+        },
+        points: 1,
+        canonicalAnswer: "la poussière qui se soulève",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true,
+          normalizeFrenchContractions: true,
+          ignoreFrenchDeterminers: true
+        },
+        gradingFocus: "Inférence courte fondée sur un indice matériel précis du décor.",
+        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        tests: [
+          { input: "la poussière qui se soulève", isCorrect: true },
+          { input: "la poussière qui monte", isCorrect: true },
+          { input: "le calme de la mer", isCorrect: false }
+        ]
+      }
+    ],
+    summary: {
+      retains: [
+        "Quand le décor dure et se développe, je lis souvent un imparfait.",
+        "Rome en expansion se laisse lire par ses matières, ses sons et ses mouvements continus."
+      ],
+      cahier: [
+        "crescebat = grandissait ; lucebat = brillait ; sonabat = sonnait",
+        "via lucebat et currus sonabat"
+      ],
+      keywords: ["Rome", "imparfait", "description"]
+    },
+    meta: {
+      status: "ready",
+      tags: ["4e", "p1", "rome", "imparfait-descriptif"]
+    }
+  },
+
   makePlaceholderLesson(1, 7, "Hannibal appropinquat?"),
   makePlaceholderLesson(1, 8, "Colonia nova conditur"),
   makePlaceholderLesson(1, 9, "Amici separantur"),
