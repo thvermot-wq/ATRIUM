@@ -4415,7 +4415,7 @@ export const lessons5eP2 = [
   "id": "p2-l13",
   "period": 2,
   "periodId": "p2",
-  "title": "Premiers mots en 3e déclinaison",
+  "title": "Rex, Mater, Urbs - Premiers mots 3e déclinaison",
   subtitle: headerContexts5eP2["p2-l13"],
   "objective": "Reconnaître quelques noms fréquents de 3e déclinaison en lecture simple.",
   "lessonPoint": "Je reconnais quelques noms de 3e déclinaison, même quand leur forme change entre sujet et complément.",
