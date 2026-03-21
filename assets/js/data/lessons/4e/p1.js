@@ -57,7 +57,10 @@ const headerContexts4eP1 = {
   "p1-l3": "Au bord du forum, une tablette arrive avec une odeur de sel, de bois humide et de voyage trop long ; la cire garde la trace d’un lien rompu à la hâte. « Quand la mer envoie quelque chose, elle n’envoie jamais seulement une nouvelle », dit Lucius, puis il passe le pouce sur une fente noire qui coupe un mot.",
   "p1-l4": "À Ostie, les coques sombres boivent encore la lumière du matin ; les cordages grincent, un marin jette un ordre sans lever la tête, et le ressac frappe bas contre les pierres du quai. « Un départ commence toujours avant la voile », dit Marcus, puis il suit du regard une passerelle qu’on retire à moitié.",
   "p1-l5": "La lettre venue du camp sent la fumée froide, le cuir mouillé et la cire mal fermée ; en la dépliant, Livia découvre un angle noirci comme si le feu l’avait touchée sans la prendre. « On écrit vite quand on a peu de temps ; on écrit encore plus vite quand on a peur », dit-elle, puis elle relit deux fois la même ligne.",
-  "p1-l6": "Les routes blanches rendent la lumière, les marteaux répondent aux chars, et le marbre neuf accroche le soleil au bord du forum ; plus loin, des ouvriers tirent des blocs sous la poussière ocre. « On dit que Rome s’étend ; moi, je l’entends », dit Flavia, puis elle se protège les yeux d’un revers de main."
+  "p1-l6": "Les routes blanches rendent la lumière, les marteaux répondent aux chars, et le marbre neuf accroche le soleil au bord du forum ; plus loin, des ouvriers tirent des blocs sous la poussière ocre. « On dit que Rome s’étend ; moi, je l’entends », dit Flavia, puis elle se protège les yeux d’un revers de main.",
+  "p1-l7": "Au pied des marches du forum, les voix baissent d’un coup autour d’un seul nom, puis repartent plus vite encore ; sur plusieurs tablettes, la cire garde l’empreinte de doigts pressés. « Une rumeur marche plus vite qu’une armée ; c’est bien pour ça qu’elle fait peur », dit Lucius, puis il relève la tête quand quelqu’un prononce enfin le nom d’Hannibal.",
+  "p1-l8": "Sur une carte de bois couverte de cire, une ligne rouge descend vers le sud et s’arrête sur un nom encore neuf ; tout près, un scribe recopie une liste de citoyens à envoyer. « Une ville fondée loin d’ici agrandit Rome sans la déplacer », dit Marcus, puis il pose l’ongle sur un point minuscule au bord de la mer.",
+  "p1-l9": "Sur le quai, personne ne parle fort ; les gestes se font plus courts, les regards reviennent toujours vers la passerelle, et le vent prend les pans des manteaux sans réussir à briser le silence. « Les villes gagnent du terrain, mais elles prennent aussi des gens », dit Flavia, puis elle replie une bande de tissu safran autour d’un paquet mal fermé."
 };
 
 export const lessons4eP1 = [
@@ -1861,10 +1864,902 @@ export const lessons4eP1 = [
       tags: ["4e", "p1", "rome", "imparfait-descriptif"]
     }
   },
+  
+  {
+    id: "4e-p1-l7",
+    levelId: "4e",
+    period: 1,
+    periodId: "p1",
+    title: "Hannibal appropinquat?",
+    subtitle: headerContexts4eP1_L7toL9["p1-l7"],
+    objective: "Comprendre comment imparfait et parfait construisent une rumeur de guerre, entre peur durable et fait soudain.",
+    lessonPoint: "Je distingue ce qu’on répétait, ce qu’on craignait et ce qui s’est produit.",
+    canDo: [
+      "Je lis une rumeur courte sans me perdre.",
+      "Je distingue le bruit qui dure et le fait qui rompt.",
+      "Je traduis une phrase liée à la menace militaire."
+    ],
+    lexicon: [
+      "Hannibal, Hannibalis = Hannibal",
+      "Alpes, Alpium = Alpes",
+      "hostis, hostis = ennemi",
+      "rumor, rumoris = rumeur",
+      "timor, timoris = peur",
+      "exercitus, exercitus = armée",
+      "urbs, urbis = ville",
+      "civis, civis = citoyen",
+      "vox, vocis = voix",
+      "prope = près de",
+      "appropinquo, appropinquas = s'approcher",
+      "audio, audis = entendre",
+      "timeo, times = craindre",
+      "clamo, clamas = crier",
+      "fugio, fugis = fuir"
+    ],
+    maxScore: 10,
+    training: [
+      {
+        id: "4e-p1-l7-t1",
+        type: "singleChoice",
+        prompt: "⚔️ Quel mot signifie « rumeur » ?",
+        options: ["rumor", "timor", "hostis", "exercitus"],
+        expected: "rumor",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l7-t2",
+        type: "singleChoice",
+        prompt: "⚔️ Dans « cives Hannibalem timebant », qui avait peur ?",
+        options: ["cives", "Hannibalem", "timor", "urbs"],
+        expected: "cives",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l7-t3",
+        type: "multipleChoice",
+        prompt: "⚔️ Quelles formes relèvent du parfait ?",
+        options: ["audiverunt", "clamaverunt", "fugerunt", "timebant", "appropinquabat"],
+        expected: ["audiverunt", "clamaverunt", "fugerunt"],
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l7-t4",
+        type: "matching",
+        prompt: "⚔️ Associe forme et sens.",
+        pairs: [
+          { left: "timebant", right: "craignaient" },
+          { left: "audiverunt", right: "ont entendu" },
+          { left: "fugerunt", right: "ont fui" }
+        ],
+        rightOptions: ["ont entendu", "ont fui", "craignaient"],
+        expected: {
+          "timebant": "craignaient",
+          "audiverunt": "ont entendu",
+          "fugerunt": "ont fui"
+        },
+        points: 1
+      },
+      {
+        id: "4e-p1-l7-t5",
+        type: "singleChoice",
+        prompt: "⚔️ Piège : « rumor crescebat, nonnulli fugerunt » signifie :",
+        options: [
+          "la rumeur grandissait, certains ont fui",
+          "la rumeur a grandi, certains fuyaient",
+          "la peur écrit une lettre",
+          "l’armée restait dans le port"
+        ],
+        expected: "la rumeur grandissait, certains ont fui",
+        shuffle: true,
+        points: 1,
+        feedback: "L’imparfait installe la montée ; le parfait marque la rupture."
+      },
+      {
+        id: "4e-p1-l7-t6",
+        type: "multipleChoice",
+        prompt: "⚔️ Mini-texte : « Rumor in urbe crescebat. Cives timebant. Nonnulli fugerunt. Marcus tamen manebat. » Quelles informations deviennent certaines ?",
+        options: [
+          "la rumeur montait dans la ville",
+          "les citoyens avaient peur",
+          "certains ont fui",
+          "Marcus est resté",
+          "la colonie est fondée"
+        ],
+        expected: [
+          "la rumeur montait dans la ville",
+          "les citoyens avaient peur",
+          "certains ont fui",
+          "Marcus est resté"
+        ],
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l7-t7",
+        type: "textInput",
+        prompt: "⚔️ Écris en latin : « peur ».",
+        expected: "timor",
+        acceptedAnswers: ["timor"],
+        answerConfig: {
+          type: "one-of",
+          language: "latin",
+          accepted: ["timor"]
+        },
+        points: 1,
+        canonicalAnswer: "timor",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true
+        },
+        gradingFocus: "Réactivation d’un nom-clé de la scène historique.",
+        rejectIf: ["forme incorrecte", "réponse hors-sujet"],
+        tests: [
+          { input: "timor", isCorrect: true },
+          { input: "rumor", isCorrect: false }
+        ]
+      }
+    ],
+    production: [
+      {
+        id: "4e-p1-l7-p1",
+        type: "textInput",
+        prompt: "⚔️ Traduis en français : cives Hannibalem timebant, nonnulli fugerunt",
+        expected: "les citoyens craignaient Hannibal, certains ont fui",
+        acceptedAnswers: [
+          "les citoyens craignaient Hannibal, certains ont fui",
+          "des citoyens craignaient Hannibal, certains ont fui",
+          "les citoyens avaient peur d'Hannibal, certains ont fui",
+          "des citoyens avaient peur d'Hannibal, certains ont fui"
+        ],
+        answerConfig: {
+          type: "translation-segment",
+          language: "fr",
+          accepted: [
+            "les citoyens craignaient Hannibal, certains ont fui",
+            "des citoyens craignaient Hannibal, certains ont fui",
+            "les citoyens avaient peur d'Hannibal, certains ont fui",
+            "des citoyens avaient peur d'Hannibal, certains ont fui"
+          ],
+          ignoreDeterminers: true,
+          ignoreContractions: true,
+          allowPartialAnswer: "core-meaning-only"
+        },
+        points: 1,
+        canonicalAnswer: "les citoyens craignaient Hannibal, certains ont fui",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true,
+          normalizeFrenchContractions: true,
+          ignoreFrenchDeterminers: true
+        },
+        gradingFocus: "Il faut distinguer la peur durable et le départ soudain.",
+        rejectIf: [
+          "verbe incorrect",
+          "contre-sens global",
+          "réponse hors-sujet"
+        ],
+        tests: [
+          { input: "les citoyens craignaient Hannibal, certains ont fui", isCorrect: true },
+          { input: "des citoyens avaient peur d'Hannibal, certains ont fui", isCorrect: true },
+          { input: "les citoyens ont craint Hannibal, certains fuyaient", isCorrect: false }
+        ]
+      },
+      {
+        id: "4e-p1-l7-p2",
+        type: "textInput",
+        prompt: "⚔️ Traduis en latin : Les citoyens craignaient Hannibal.",
+        expected: "cives Hannibalem timebant",
+        acceptedAnswers: [
+          "cives Hannibalem timebant",
+          "Hannibalem cives timebant",
+          "cives timebant Hannibalem",
+          "Hannibalem timebant cives",
+          "timebant cives Hannibalem",
+          "timebant Hannibalem cives"
+        ],
+        answerConfig: {
+          type: "one-of",
+          language: "latin",
+          accepted: [
+            "cives Hannibalem timebant",
+            "Hannibalem cives timebant",
+            "cives timebant Hannibalem",
+            "Hannibalem timebant cives",
+            "timebant cives Hannibalem",
+            "timebant Hannibalem cives"
+          ],
+          orderMode: "chunk-permutation"
+        },
+        points: 1,
+        canonicalAnswer: "cives Hannibalem timebant",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true
+        },
+        gradingFocus: "Réinvestir l’imparfait dans une phrase historique simple.",
+        rejectIf: [
+          "sens inversé sujet/objet",
+          "verbe incorrect",
+          "forme latine impossible au niveau de la leçon",
+          "réponse hors-sujet"
+        ],
+        tests: [
+          { input: "cives Hannibalem timebant", isCorrect: true },
+          { input: "Hannibalem timebant cives", isCorrect: true },
+          { input: "cives Hannibalem timuerunt", isCorrect: false }
+        ]
+      },
+      {
+        id: "4e-p1-l7-p3",
+        type: "textInput",
+        prompt: "⚔️ Mini-texte : « Rumor crescebat. Cives timebant. Nonnulli fugerunt. » Comment distingue-t-on dans ce texte la peur durable et l’événement soudain ?",
+        expected: "l’imparfait dit la peur qui dure, le parfait dit la fuite soudaine",
+        acceptedAnswers: [
+          "l'imparfait dit la peur qui dure, le parfait dit la fuite soudaine",
+          "la durée est à l'imparfait, l'événement brusque au parfait",
+          "timebant montre le fond durable, fugerunt marque la rupture",
+          "l'imparfait installe la peur, le parfait marque le choc"
+        ],
+        answerConfig: {
+          type: "inference-fr",
+          language: "fr",
+          accepted: [
+            "l'imparfait dit la peur qui dure, le parfait dit la fuite soudaine",
+            "la durée est à l'imparfait, l'événement brusque au parfait",
+            "timebant montre le fond durable, fugerunt marque la rupture",
+            "l'imparfait installe la peur, le parfait marque le choc"
+          ],
+          ignoreDeterminers: true,
+          ignoreContractions: true,
+          allowPartialAnswer: "never"
+        },
+        points: 1,
+        canonicalAnswer: "l’imparfait dit la peur qui dure, le parfait dit la fuite soudaine",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true,
+          normalizeFrenchContractions: true,
+          ignoreFrenchDeterminers: true
+        },
+        gradingFocus: "Inférence grammaticale fermée sur la valeur des temps.",
+        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        tests: [
+          { input: "la durée est à l'imparfait, l'événement brusque au parfait", isCorrect: true },
+          { input: "l'imparfait installe la peur, le parfait marque le choc", isCorrect: true },
+          { input: "les deux verbes disent la même chose de la même manière", isCorrect: false }
+        ]
+      }
+    ],
+    summary: {
+      retains: [
+        "Je distingue ce qu’on disait de ce qui s’est produit.",
+        "La peur s’installe souvent à l’imparfait, le choc se marque souvent au parfait."
+      ],
+      cahier: [
+        "timebant = craignaient ; fugerunt = ont fui",
+        "cives Hannibalem timebant, nonnulli fugerunt"
+      ],
+      keywords: ["Hannibal", "rumeur", "temps"]
+    },
+    meta: {
+      status: "ready",
+      tags: ["4e", "p1", "hannibal", "imparfait-parfait"]
+    }
+  },
 
-  makePlaceholderLesson(1, 7, "Hannibal appropinquat?"),
-  makePlaceholderLesson(1, 8, "Colonia nova conditur"),
-  makePlaceholderLesson(1, 9, "Amici separantur"),
+  {
+    id: "4e-p1-l8",
+    levelId: "4e",
+    period: 1,
+    periodId: "p1",
+    title: "Colonia nova conditur",
+    subtitle: headerContexts4eP1_L7toL9["p1-l8"],
+    objective: "Introduire la voix passive dans une scène d’expansion romaine et de fondation coloniale.",
+    lessonPoint: "Quand le sujet reçoit l’action, je lis autrement le verbe.",
+    canDo: [
+      "Je reconnais un passif simple fréquent.",
+      "Je comprends qu’une action peut être subie.",
+      "Je traduis une phrase courte de fondation."
+    ],
+    lexicon: [
+      "colonia, coloniae = colonie",
+      "terra, terrae = terre",
+      "via, viae = route",
+      "ager, agri = champ, territoire",
+      "urbs, urbis = ville",
+      "murus, muri = mur",
+      "civis, civis = citoyen",
+      "nomen, nominis = nom",
+      "littera, litterae = lettre, inscription",
+      "longe = loin",
+      "condo, condis = fonder",
+      "voco, vocas = appeler",
+      "lego, legis = lire",
+      "mitto, mittis = envoyer",
+      "paro, paras = préparer"
+    ],
+    maxScore: 10,
+    training: [
+      {
+        id: "4e-p1-l8-t1",
+        type: "singleChoice",
+        prompt: "🏛️ Quel mot signifie « colonie » ?",
+        options: ["colonia", "terra", "via", "ager"],
+        expected: "colonia",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l8-t2",
+        type: "matching",
+        prompt: "🏛️ Associe la forme passive et son sens.",
+        pairs: [
+          { left: "conditur", right: "est fondée" },
+          { left: "vocatur", right: "est appelée" },
+          { left: "mittitur", right: "est envoyé(e)" }
+        ],
+        rightOptions: ["est envoyée", "est fondée", "est appelée"],
+        expected: {
+          "conditur": "est fondée",
+          "vocatur": "est appelée",
+          "mittitur": "est envoyé(e)"
+        },
+        points: 1
+      },
+      {
+        id: "4e-p1-l8-t3",
+        type: "singleChoice",
+        prompt: "🏛️ Dans « colonia nova conditur », qu’est-ce qui est fondé ?",
+        options: ["colonia", "nova", "via", "ager"],
+        expected: "colonia",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l8-t4",
+        type: "multipleChoice",
+        prompt: "🏛️ Quelles traductions conviennent à « via paratur » ?",
+        options: [
+          "la route est préparée",
+          "on prépare la route",
+          "la voie est en cours de préparation",
+          "la route a fui"
+        ],
+        expected: [
+          "la route est préparée",
+          "on prépare la route",
+          "la voie est en cours de préparation"
+        ],
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l8-t5",
+        type: "singleChoice",
+        prompt: "🏛️ Quel verbe est au passif ?",
+        options: ["conditur", "condit", "mittit", "vocat"],
+        expected: "conditur",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l8-t6",
+        type: "multipleChoice",
+        prompt: "🏛️ Mini-texte : « Colonia nova conditur. Cives mittuntur. Via paratur. Marcus stupet. » Quelles informations deviennent certaines ?",
+        options: [
+          "une colonie est fondée",
+          "des citoyens sont envoyés",
+          "une route est préparée",
+          "Hannibal fuit vers les Alpes"
+        ],
+        expected: [
+          "une colonie est fondée",
+          "des citoyens sont envoyés",
+          "une route est préparée"
+        ],
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l8-t7",
+        type: "textInput",
+        prompt: "🏛️ Écris en latin : « territoire ».",
+        expected: "ager",
+        acceptedAnswers: ["ager"],
+        answerConfig: {
+          type: "one-of",
+          language: "latin",
+          accepted: ["ager"]
+        },
+        points: 1,
+        canonicalAnswer: "ager",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true
+        },
+        gradingFocus: "Réactivation du lexique de fondation.",
+        rejectIf: ["forme incorrecte", "réponse hors-sujet"],
+        tests: [
+          { input: "ager", isCorrect: true },
+          { input: "urbs", isCorrect: false }
+        ]
+      }
+    ],
+    production: [
+      {
+        id: "4e-p1-l8-p1",
+        type: "textInput",
+        prompt: "🏛️ Traduis en français : cives mittuntur",
+        expected: "les citoyens sont envoyés",
+        acceptedAnswers: [
+          "les citoyens sont envoyés",
+          "des citoyens sont envoyés",
+          "on envoie les citoyens",
+          "on envoie des citoyens"
+        ],
+        answerConfig: {
+          type: "translation-segment",
+          language: "fr",
+          accepted: [
+            "les citoyens sont envoyés",
+            "des citoyens sont envoyés",
+            "on envoie les citoyens",
+            "on envoie des citoyens"
+          ],
+          ignoreDeterminers: true,
+          ignoreContractions: true,
+          allowPartialAnswer: "core-meaning-only"
+        },
+        points: 1,
+        canonicalAnswer: "les citoyens sont envoyés",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true,
+          normalizeFrenchContractions: true,
+          ignoreFrenchDeterminers: true
+        },
+        gradingFocus: "Le passif doit être compris comme action subie.",
+        rejectIf: [
+          "verbe incorrect",
+          "contre-sens global",
+          "réponse hors-sujet"
+        ],
+        tests: [
+          { input: "les citoyens sont envoyés", isCorrect: true },
+          { input: "on envoie les citoyens", isCorrect: true },
+          { input: "les citoyens envoient", isCorrect: false }
+        ]
+      },
+      {
+        id: "4e-p1-l8-p2",
+        type: "textInput",
+        prompt: "🏛️ Traduis en latin : La colonie est fondée.",
+        expected: "colonia conditur",
+        acceptedAnswers: [
+          "colonia conditur",
+          "colonia nova conditur",
+          "conditur colonia",
+          "conditur colonia nova"
+        ],
+        answerConfig: {
+          type: "one-of",
+          language: "latin",
+          accepted: [
+            "colonia conditur",
+            "colonia nova conditur",
+            "conditur colonia",
+            "conditur colonia nova"
+          ],
+          orderMode: "chunk-permutation"
+        },
+        points: 1,
+        canonicalAnswer: "colonia conditur",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true
+        },
+        gradingFocus: "Premier réinvestissement du passif dans une phrase simple.",
+        rejectIf: [
+          "verbe incorrect",
+          "forme latine impossible au niveau de la leçon",
+          "réponse hors-sujet"
+        ],
+        tests: [
+          { input: "colonia conditur", isCorrect: true },
+          { input: "colonia nova conditur", isCorrect: true },
+          { input: "colonia condit", isCorrect: false }
+        ]
+      },
+      {
+        id: "4e-p1-l8-p3",
+        type: "textInput",
+        prompt: "🏛️ Mini-texte : « Colonia nova conditur. Cives mittuntur. Via paratur. » Que change la voix passive dans la manière de lire la phrase ?",
+        expected: "elle met en avant ce qui subit l'action",
+        acceptedAnswers: [
+          "elle met en avant ce qui subit l'action",
+          "le sujet reçoit l'action",
+          "on lit ce qui est fondé ou envoyé",
+          "le passif montre ce qui subit l'action"
+        ],
+        answerConfig: {
+          type: "inference-fr",
+          language: "fr",
+          accepted: [
+            "elle met en avant ce qui subit l'action",
+            "le sujet reçoit l'action",
+            "on lit ce qui est fondé ou envoyé",
+            "le passif montre ce qui subit l'action"
+          ],
+          ignoreDeterminers: true,
+          ignoreContractions: true,
+          allowPartialAnswer: "never"
+        },
+        points: 1,
+        canonicalAnswer: "elle met en avant ce qui subit l'action",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true,
+          normalizeFrenchContractions: true,
+          ignoreFrenchDeterminers: true
+        },
+        gradingFocus: "Inférence grammaticale fermée sur la lecture du passif.",
+        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        tests: [
+          { input: "le sujet reçoit l'action", isCorrect: true },
+          { input: "le passif montre ce qui subit l'action", isCorrect: true },
+          { input: "le sujet agit plus fort que d'habitude", isCorrect: false }
+        ]
+      }
+    ],
+    summary: {
+      retains: [
+        "Le sujet n’agit pas toujours : il peut recevoir l’action.",
+        "Le passif change le regard sur la scène."
+      ],
+      cahier: [
+        "conditur = est fondée ; mittuntur = sont envoyés",
+        "colonia nova conditur"
+      ],
+      keywords: ["colonie", "passif", "expansion"]
+    },
+    meta: {
+      status: "ready",
+      tags: ["4e", "p1", "colonia", "passif"]
+    }
+  },
+
+  {
+    id: "4e-p1-l9",
+    levelId: "4e",
+    period: 1,
+    periodId: "p1",
+    title: "Amici separantur",
+    subtitle: headerContexts4eP1_L7toL9["p1-l9"],
+    objective: "Réinvestir le passif dans une scène affective et concrète de séparation et d’éloignement.",
+    lessonPoint: "Je lis le passif comme l’indice qu’un personnage subit une décision ou un départ.",
+    canDo: [
+      "Je repère un passif déjà vu.",
+      "Je comprends une scène de séparation.",
+      "Je traduis une phrase courte d’éloignement."
+    ],
+    lexicon: [
+      "amicus, amici = ami",
+      "familia, familiae = famille",
+      "navis, navis = navire",
+      "litus, litoris = rivage",
+      "mare, maris = mer",
+      "donum, doni = cadeau",
+      "mater, matris = mère",
+      "vox, vocis = voix",
+      "silentium, silentii = silence",
+      "in litore = sur le rivage",
+      "separo, separas = séparer",
+      "duco, ducis = conduire",
+      "mitto, mittis = envoyer",
+      "relinquo, relinquis = laisser",
+      "taceo, taces = se taire"
+    ],
+    maxScore: 10,
+    training: [
+      {
+        id: "4e-p1-l9-t1",
+        type: "singleChoice",
+        prompt: "🌫️ Que signifie « separantur » ?",
+        options: [
+          "ils/elles sont séparé(e)s",
+          "ils/elles séparent",
+          "ils/elles reviennent",
+          "ils/elles écrivent"
+        ],
+        expected: "ils/elles sont séparé(e)s",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l9-t2",
+        type: "matching",
+        prompt: "🌫️ Associe forme et sens.",
+        pairs: [
+          { left: "separantur", right: "sont séparés" },
+          { left: "ducitur", right: "est conduit" },
+          { left: "relinquitur", right: "est laissé" }
+        ],
+        rightOptions: ["est conduit", "est laissé", "sont séparés"],
+        expected: {
+          "separantur": "sont séparés",
+          "ducitur": "est conduit",
+          "relinquitur": "est laissé"
+        },
+        points: 1
+      },
+      {
+        id: "4e-p1-l9-t3",
+        type: "singleChoice",
+        prompt: "🌫️ Dans « amici separantur », qui subit l’action ?",
+        options: ["amici", "mare", "donum", "litus"],
+        expected: "amici",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l9-t4",
+        type: "multipleChoice",
+        prompt: "🌫️ Quelles traductions conviennent à « Tullia mansit, Publius rediit » ?",
+        options: [
+          "Tullia est restée, Publius est revenu",
+          "Publius revint, Tullia resta",
+          "Tullia a fondé une colonie",
+          "Publius a traversé les Alpes"
+        ],
+        expected: [
+          "Tullia est restée, Publius est revenu",
+          "Publius revint, Tullia resta"
+        ],
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l9-t5",
+        type: "singleChoice",
+        prompt: "🌫️ Quel verbe est au parfait ?",
+        options: ["flevit", "separantur", "ducitur", "relinquitur"],
+        expected: "flevit",
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l9-t6",
+        type: "multipleChoice",
+        prompt: "🌫️ Mini-texte : « Amici separantur. Publius abest. Tullia flevit. Marcus tamen mansit. » Quelles informations deviennent certaines ?",
+        options: [
+          "les amis sont séparés",
+          "Publius est absent",
+          "Tullia a pleuré",
+          "Marcus est resté",
+          "une route est préparée"
+        ],
+        expected: [
+          "les amis sont séparés",
+          "Publius est absent",
+          "Tullia a pleuré",
+          "Marcus est resté"
+        ],
+        shuffle: true,
+        points: 1
+      },
+      {
+        id: "4e-p1-l9-t7",
+        type: "textInput",
+        prompt: "🌫️ Écris en latin : « cadeau ».",
+        expected: "donum",
+        acceptedAnswers: ["donum"],
+        answerConfig: {
+          type: "one-of",
+          language: "latin",
+          accepted: ["donum"]
+        },
+        points: 1,
+        canonicalAnswer: "donum",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true
+        },
+        gradingFocus: "Réactivation d’un objet concret de la scène affective.",
+        rejectIf: ["forme incorrecte", "réponse hors-sujet"],
+        tests: [
+          { input: "donum", isCorrect: true },
+          { input: "mare", isCorrect: false }
+        ]
+      }
+    ],
+    production: [
+      {
+        id: "4e-p1-l9-p1",
+        type: "textInput",
+        prompt: "🌫️ Traduis en français : amici separantur",
+        expected: "les amis sont séparés",
+        acceptedAnswers: [
+          "les amis sont séparés",
+          "des amis sont séparés",
+          "on sépare les amis"
+        ],
+        answerConfig: {
+          type: "translation-segment",
+          language: "fr",
+          accepted: [
+            "les amis sont séparés",
+            "des amis sont séparés",
+            "on sépare les amis"
+          ],
+          ignoreDeterminers: true,
+          ignoreContractions: true,
+          allowPartialAnswer: "core-meaning-only"
+        },
+        points: 1,
+        canonicalAnswer: "les amis sont séparés",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true,
+          normalizeFrenchContractions: true,
+          ignoreFrenchDeterminers: true
+        },
+        gradingFocus: "Le passif doit être compris comme séparation subie.",
+        rejectIf: [
+          "verbe incorrect",
+          "contre-sens global",
+          "réponse hors-sujet"
+        ],
+        tests: [
+          { input: "les amis sont séparés", isCorrect: true },
+          { input: "on sépare les amis", isCorrect: true },
+          { input: "les amis se séparent volontairement tous ensemble", isCorrect: false }
+        ]
+      },
+      {
+        id: "4e-p1-l9-p2",
+        type: "textInput",
+        prompt: "🌫️ Traduis en latin : Les amis sont séparés.",
+        expected: "amici separantur",
+        acceptedAnswers: [
+          "amici separantur",
+          "separantur amici"
+        ],
+        answerConfig: {
+          type: "one-of",
+          language: "latin",
+          accepted: [
+            "amici separantur",
+            "separantur amici"
+          ],
+          orderMode: "chunk-permutation"
+        },
+        points: 1,
+        canonicalAnswer: "amici separantur",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true
+        },
+        gradingFocus: "Réinvestir le passif dans une phrase simple et nette.",
+        rejectIf: [
+          "verbe incorrect",
+          "forme latine impossible au niveau de la leçon",
+          "réponse hors-sujet"
+        ],
+        tests: [
+          { input: "amici separantur", isCorrect: true },
+          { input: "separantur amici", isCorrect: true },
+          { input: "amici separant", isCorrect: false }
+        ]
+      },
+      {
+        id: "4e-p1-l9-p3",
+        type: "textInput",
+        prompt: "🌫️ Mini-texte : « Amici separantur. Publius abest. Tullia flevit. Marcus tamen mansit. » Comment les événements publics touchent-ils la vie privée des amis ?",
+        expected: "ils provoquent le départ, la séparation et la douleur",
+        acceptedAnswers: [
+          "ils provoquent le départ, la séparation et la douleur",
+          "la guerre les sépare et les fait souffrir",
+          "les événements publics touchent leur amitié par l'éloignement",
+          "la vie publique les atteint jusque dans leurs liens personnels"
+        ],
+        answerConfig: {
+          type: "inference-fr",
+          language: "fr",
+          accepted: [
+            "ils provoquent le départ, la séparation et la douleur",
+            "la guerre les sépare et les fait souffrir",
+            "les événements publics touchent leur amitié par l'éloignement",
+            "la vie publique les atteint jusque dans leurs liens personnels"
+          ],
+          ignoreDeterminers: true,
+          ignoreContractions: true,
+          allowPartialAnswer: "never"
+        },
+        points: 1,
+        canonicalAnswer: "ils provoquent le départ, la séparation et la douleur",
+        normalization: {
+          trim: true,
+          collapseSpaces: true,
+          ignoreCase: true,
+          ignorePunctuation: true,
+          normalizeApostrophes: true,
+          ignoreDiacritics: true,
+          normalizeFrenchContractions: true,
+          ignoreFrenchDeterminers: true
+        },
+        gradingFocus: "Inférence fermée sur l’effet humain des événements publics.",
+        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        tests: [
+          { input: "la guerre les sépare et les fait souffrir", isCorrect: true },
+          { input: "les événements publics touchent leur amitié par l'éloignement", isCorrect: true },
+          { input: "ils deviennent plus riches grâce au commerce", isCorrect: false }
+        ]
+      }
+    ],
+    summary: {
+      retains: [
+        "La langue sert aussi à raconter l’éloignement et ce qu’on subit.",
+        "Le passif devient concret quand il touche les liens humains."
+      ],
+      cahier: [
+        "separantur = sont séparés ; relinquitur = est laissé",
+        "amici separantur"
+      ],
+      keywords: ["amis", "séparation", "passif"]
+    },
+    meta: {
+      status: "ready",
+      tags: ["4e", "p1", "separation", "passif-affectif"]
+    }
+  },
+  
   makePlaceholderLesson(1, 10, "Iterum conveniunt"),
   makePlaceholderLesson(1, 11, "Tempora in via"),
   makePlaceholderLesson(1, 12, "Hic rumor, illa littera"),
