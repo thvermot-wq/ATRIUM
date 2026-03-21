@@ -1,6 +1,5 @@
 import { LESSONS_SPEC, getLessonById, getPeriodsByLevel, getLessonsByPeriod } from "../lessons.js";
 import { markLessonVisited, buildLessonHash } from "../storage.js";
-import { createFeedbackBox } from "../components/feedbackBox.js";
 import { createTrainingItemCard } from "../components/trainingItemCard.js";
 import { createProductionItemCard } from "../components/productionItemCard.js";
 import { evaluateTrainingItem, computeTrainingProgress } from "../trainingEngine.js";
@@ -1105,21 +1104,15 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     onOpenResults();
   });
 
-  const feedback = createFeedbackBox({
-    title: "Moteur de leçon complet",
-    text: "ATRIUM conserve le contrat /7 + /3 = /10. Les corrections détaillées apparaissent uniquement sur l'écran final.",
-  });
-
   syncStates();
 
-    wrapper.append(
-    lessonToolbar,
-    hero,
-    focusBoard,
-    form,
-    finalSummary,
-    feedback,
-  );
+   wrapper.append(
+  lessonToolbar,
+  hero,
+  focusBoard,
+  form,
+  finalSummary,
+);
 
   mountLessonIntroOverlay(wrapper, lesson);
 
