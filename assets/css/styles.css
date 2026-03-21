@@ -146,15 +146,25 @@ button {
   transform: translateY(-1px);
 }
 
-button,
 .btn-primary {
   background: var(--primary);
   color: #fff;
   border-color: var(--primary);
 }
 
-button:hover,
 .btn-primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+/* option de secours pour les boutons sans classe */
+button:not([class]) {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+button:not([class]):hover {
   background: var(--primary-hover);
   border-color: var(--primary-hover);
 }
