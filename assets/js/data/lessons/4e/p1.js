@@ -51,8 +51,7 @@ const makePlaceholderLesson = (period, lessonNumber, title) => ({
   }
 });
 
-export const lessons4eP1 = [
-  const headerContexts4eP1 = {
+const headerContexts4eP1 = {
   "p1-l1": "Les ruelles de Subure déversent déjà leurs voix vers le forum ; des portefaix se croisent, une boutique lève ses volets, et les premières odeurs de laine teinte se mêlent au pain chaud. « À Rome, le matin ne tombe jamais d’un seul coup ; il gagne rue après rue », dit Marcus, puis il voit deux citoyens quitter la même venelle pour prendre la montée du forum.",
   "p1-l2": "Sous les portiques, les toges se serrent et les noms circulent plus vite que les corps ; au centre, un homme lève la main, aussitôt noyé sous les voix. « Une place publique ne parle jamais doucement ; même son silence pousse », dit Flavia, puis elle suit l’endroit précis où la foule se referme.",
   "p1-l3": "Au bord du forum, une tablette arrive avec une odeur de sel, de bois humide et de voyage trop long ; la cire garde la trace d’un lien rompu à la hâte. « Quand la mer envoie quelque chose, elle n’envoie jamais seulement une nouvelle », dit Lucius, puis il passe le pouce sur une fente noire qui coupe un mot."
