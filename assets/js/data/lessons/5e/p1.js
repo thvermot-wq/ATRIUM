@@ -1,6 +1,3 @@
-p1.js — patch lexique
-Code JS complet patché — lexique harmonisé
-
 // Données de leçons 5E · Période 1.
 const headerContexts5eP1 = {
   "p1-l1": "Les pavés sont encore mouillés quand Niger rase les jambes des passants. « Ton chien a déjà choisi la bagarre », souffle Marcus, et l’animal file vers une porte entrouverte.",
