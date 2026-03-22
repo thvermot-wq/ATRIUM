@@ -12,6 +12,9 @@ L’objectif n’est pas seulement de “faire des exercices”, mais d’instal
 
 ## Architecture pédagogique canonique (non négociable)
 
+Le contrat pédagogique dépend désormais du niveau.
+
+### 5e
 * 3 périodes par niveau
 * 13 leçons par période
 * 39 leçons par niveau
@@ -21,12 +24,29 @@ L’objectif n’est pas seulement de “faire des exercices”, mais d’instal
 * 130 points par période
 * Validation d’une période à partir de 80 % (`104 / 130`)
 
+### 4e et 3e
+* 3 périodes par niveau
+* 15 leçons par période
+* 45 leçons par niveau
+* 13 points par leçon
+* 7 points d’entraînement auto-corrigé
+* 6 points de production écrite guidée
+* 195 points par période
+* Validation d’une période à partir de 80 % (`156 / 195`)
+
 ## Logique de scoring
 
+### 5e
 * Leçon = `training (/7) + production (/3) = total (/10)`
 * Période = somme des 13 leçons = `/130`
 * Une période est validée si le pourcentage obtenu est `>= 80%`
-* Le scoring est contractuel et ne doit pas être modifié hors décision produit explicite
+
+### 4e et 3e
+* Leçon = `training (/7) + production (/6) = total (/13)`
+* Période = somme des 15 leçons = `/195`
+* Une période est validée si le pourcentage obtenu est `>= 80%`
+
+* Le scoring reste contractuel et ne doit pas être modifié hors décision produit explicite
 
 ## Logique pédagogique générale
 
