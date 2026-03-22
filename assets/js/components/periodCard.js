@@ -11,8 +11,9 @@ function getLessonMetrics(lessons, lessonProgressMap) {
   return lessons.reduce(
     (acc, lesson) => {
       const lessonProgress = lessonProgressMap?.[lesson.id];
+      const lessonMax = lesson?.maxScore || 10;
       const played = Boolean(lessonProgress?.playedAt || lessonProgress?.current || lessonProgress?.best);
-      const status = getLessonStatus(lessonProgress, { lessonMax: 10 });
+      const status = getLessonStatus(lessonProgress, { lessonMax });
 
       if (played) acc.played += 1;
       if (status.className === "status-ok") acc.validated += 1;
@@ -113,14 +114,15 @@ export function createPeriodCard({
 
     lessons.forEach((lesson) => {
       const lessonProgress = lessonProgressMap?.[lesson.id];
+      const lessonMax = lesson?.maxScore || 10;
       const best = lessonProgress?.best?.totalScore ?? 0;
       const current = lessonProgress?.current?.totalScore ?? 0;
-      const status = getLessonStatus(lessonProgress, { lessonMax: 10 });
+      const status = getLessonStatus(lessonProgress, { lessonMax });
       const scoreLabel =
         best > 0
           ? current > 0 && current !== best
-            ? `actuel ${current}/10 · meilleur ${best}/10`
-            : `meilleur ${best}/10`
+            ? `actuel ${current}/${lessonMax} · meilleur ${best}/${lessonMax}`
+            : `meilleur ${best}/${lessonMax}`
           : "pas encore jouée";
 
       const item = document.createElement("li");
