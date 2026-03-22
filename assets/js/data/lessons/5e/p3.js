@@ -4091,7 +4091,11 @@ export const lessons5eP3 = [
         "les flambeaux éclairent le jardin",
         "des flambeaux éclairent le jardin",
         "les torches éclairent le jardin",
-        "des torches éclairent le jardin"
+        "des torches éclairent le jardin",
+        "les flambeaux illuminent le jardin",
+        "des flambeaux illuminent le jardin",
+        "les torches illuminent le jardin",
+        "des torches illuminent le jardin"
       ],
       "answerConfig": {
         "type": "translation-segment",
@@ -4100,7 +4104,11 @@ export const lessons5eP3 = [
           "les flambeaux éclairent le jardin",
           "des flambeaux éclairent le jardin",
           "les torches éclairent le jardin",
-          "des torches éclairent le jardin"
+          "des torches éclairent le jardin",
+          "les flambeaux illuminent le jardin",
+          "des flambeaux illuminent le jardin",
+          "les torches illuminent le jardin",
+          "des torches illuminent le jardin"
         ]
       },
       "points": 1,
