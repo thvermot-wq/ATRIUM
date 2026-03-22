@@ -58,15 +58,27 @@ const headerContexts4eP1 = {
   "p1-l4": "À Ostie, les coques sombres boivent encore la lumière du matin ; les cordages grincent, un marin jette un ordre sans lever la tête, et le ressac frappe bas contre les pierres du quai. « Un départ commence toujours avant la voile », dit Marcus, puis il suit du regard une passerelle qu’on retire à moitié.",
   "p1-l5": "La lettre venue du camp sent la fumée froide, le cuir mouillé et la cire mal fermée ; en la dépliant, Livia découvre un angle noirci comme si le feu l’avait touchée sans la prendre. « On écrit vite quand on a peu de temps ; on écrit encore plus vite quand on a peur », dit-elle, puis elle relit deux fois la même ligne.",
   "p1-l6": "Les routes blanches rendent la lumière, les marteaux répondent aux chars, et le marbre neuf accroche le soleil au bord du forum ; plus loin, des ouvriers tirent des blocs sous la poussière ocre. « On dit que Rome s’étend ; moi, je l’entends », dit Flavia, puis elle se protège les yeux d’un revers de main."
- };
-    const headerContexts4eP1_L7toL9 = {
+};
+
+const headerContexts4eP1_L7toL9 = {
   "p1-l7": "Au pied des marches du forum, les voix baissent d’un coup autour d’un seul nom, puis repartent plus vite encore ; sur plusieurs tablettes, la cire garde l’empreinte de doigts pressés. « Une rumeur marche plus vite qu’une armée ; c’est bien pour ça qu’elle fait peur », dit Lucius, puis il relève la tête quand quelqu’un prononce enfin le nom d’Hannibal.",
   "p1-l8": "Sur une carte de bois couverte de cire, une ligne rouge descend vers le sud et s’arrête sur un nom encore neuf ; tout près, un scribe recopie une liste de citoyens à envoyer. « Une ville fondée loin d’ici agrandit Rome sans la déplacer », dit Marcus, puis il pose l’ongle sur un point minuscule au bord de la mer.",
   "p1-l9": "Sur le quai, personne ne parle fort ; les gestes se font plus courts, les regards reviennent toujours vers la passerelle, et le vent prend les pans des manteaux sans réussir à briser le silence. « Les villes gagnent du terrain, mais elles prennent aussi des gens », dit Flavia, puis elle replie une bande de tissu safran autour d’un paquet mal fermé."
 };
 
-export const lessons4eP1 = [
-  {
+const headerContexts4eP1_L10toL12 = {
+  "p1-l10": "Le soir descend sur la ville avec une poussière dorée ; près d’un petit sanctuaire, deux silhouettes se reconnaissent avant même de parler, et une tablette passe d’une main à l’autre sans être lâchée tout de suite. « Une nouvelle n’a pas le même poids selon qu’on la lit seul ou qu’on la reçoit de quelqu’un », dit Livia, puis elle incline la tête comme si elle hésitait encore à sourire.",
+  "p1-l11": "Le long d’une route blanche, un cavalier dépasse un convoi de mulets puis disparaît derrière un tournant ; plus loin, une borne tiède garde la chaleur du jour, et la poussière reste en suspens après le passage des roues. « Ce n’est jamais le même temps selon qu’on voit, qu’on raconte ou qu’on se souvient », dit Marcus, puis il relit trois lignes dans un autre ordre.",
+  "p1-l12": "Sur une table chargée de tablettes, d’anneaux et de rubans, un secrétaire trie des messages pendant que le portique bruisse de voix retenues. « Ce n’est pas la même chose, cette lettre, cette rumeur, et l’homme même qui parle », dit Flavia, puis elle pousse du doigt la mauvaise tablette du mauvais côté."
+};
+
+const headerContexts4eP1_L13toL15 = {
+  "p1-l13": "Sous un portique peint, une carte du monde connu pend au mur ; des routes rouges filent depuis Rome vers des noms qu’on prononce à mi-voix, comme si chacun pesait davantage que les autres. « Une cité se raconte aussi par les mots qu’elle invente pour se gouverner », dit Lucius, puis il pose deux doigts sur Rome avant de les faire glisser jusqu’à Sicilia.",
+  "p1-l14": "La tablette passe de main en main ; certains lisent en silence, d’autres à voix basse, comme si le bois lui-même pouvait garder un secret venu du large. « Une même nouvelle change selon celui qui l’apporte, selon celui qui la lit, et selon celui qui préfère ne pas y croire », dit Marcus, puis il trie trois messages en trois tas distincts.",
+  "p1-l15": "Le soir tombe sur le forum, mais au loin les mâts d’Ostie gardent encore une lueur pâle ; des noms de lieux, de peuples et d’hommes circulent d’une voix à l’autre, jusqu’à se mêler à la poussière et au bruit des pas. « Rome paraît immense quand on la regarde d’ici ; elle paraît fragile dès qu’on écoute plus loin », dit Flavia, puis personne ne répond tout de suite."
+};
+
+const lessonL1 = {
     id: "4e-p1-l1",
     levelId: "4e",
     period: 1,
@@ -371,9 +383,9 @@ export const lessons4eP1 = [
       status: "ready",
       tags: ["4e", "p1", "subura", "reactivation-haute"]
     }
-  },
+  };
 
-  {
+const lessonL2 = {
     id: "4e-p1-l2",
     levelId: "4e",
     period: 1,
@@ -668,9 +680,9 @@ export const lessons4eP1 = [
       status: "ready",
       tags: ["4e", "p1", "forum", "declinaison3"]
     }
-  },
+  };
 
-  {
+const lessonL3 = {
     id: "4e-p1-l3",
     levelId: "4e",
     period: 1,
@@ -964,9 +976,9 @@ export const lessons4eP1 = [
       status: "ready",
       tags: ["4e", "p1", "sicilia", "perfectum"]
     }
-  },
+  };
 
-  {
+const lessonL4 = {
     id: "4e-p1-l4",
     levelId: "4e",
     period: 1,
@@ -1277,9 +1289,9 @@ export const lessons4eP1 = [
       status: "ready",
       tags: ["4e", "p1", "ostie", "depart-maritime"]
     }
-  },
+  };
 
-  {
+const lessonL5 = {
     id: "4e-p1-l5",
     levelId: "4e",
     period: 1,
@@ -1575,9 +1587,9 @@ export const lessons4eP1 = [
       status: "ready",
       tags: ["4e", "p1", "lettre", "imparfait-parfait"]
     }
-  },
+  };
 
-  {
+const lessonL6 = {
     id: "4e-p1-l6",
     levelId: "4e",
     period: 1,
@@ -1865,9 +1877,9 @@ export const lessons4eP1 = [
       status: "ready",
       tags: ["4e", "p1", "rome", "imparfait-descriptif"]
     }
-  },
-  
-  {
+  };
+
+const lessonL7 = {
     id: "4e-p1-l7",
     levelId: "4e",
     period: 1,
@@ -2166,9 +2178,9 @@ export const lessons4eP1 = [
       status: "ready",
       tags: ["4e", "p1", "hannibal", "imparfait-parfait"]
     }
-  },
+  };
 
-  {
+const lessonL8 = {
     id: "4e-p1-l8",
     levelId: "4e",
     period: 1,
@@ -2463,9 +2475,9 @@ export const lessons4eP1 = [
       status: "ready",
       tags: ["4e", "p1", "colonia", "passif"]
     }
-  },
+  };
 
-  {
+const lessonL9 = {
     id: "4e-p1-l9",
     levelId: "4e",
     period: 1,
@@ -2760,13 +2772,7 @@ export const lessons4eP1 = [
       status: "ready",
       tags: ["4e", "p1", "separation", "passif-affectif"]
     }
-  },
-  
-  const headerContexts4eP1_L10toL12 = {
-  "p1-l10": "Le soir descend sur la ville avec une poussière dorée ; près d’un petit sanctuaire, deux silhouettes se reconnaissent avant même de parler, et une tablette passe d’une main à l’autre sans être lâchée tout de suite. « Une nouvelle n’a pas le même poids selon qu’on la lit seul ou qu’on la reçoit de quelqu’un », dit Livia, puis elle incline la tête comme si elle hésitait encore à sourire.",
-  "p1-l11": "Le long d’une route blanche, un cavalier dépasse un convoi de mulets puis disparaît derrière un tournant ; plus loin, une borne tiède garde la chaleur du jour, et la poussière reste en suspens après le passage des roues. « Ce n’est jamais le même temps selon qu’on voit, qu’on raconte ou qu’on se souvient », dit Marcus, puis il relit trois lignes dans un autre ordre.",
-  "p1-l12": "Sur une table chargée de tablettes, d’anneaux et de rubans, un secrétaire trie des messages pendant que le portique bruisse de voix retenues. « Ce n’est pas la même chose, cette lettre, cette rumeur, et l’homme même qui parle », dit Flavia, puis elle pousse du doigt la mauvaise tablette du mauvais côté."
-};
+  };
 
 const lessonL10 = {
   id: "4e-p1-l10",
@@ -3696,11 +3702,6 @@ const lessonL12 = {
     status: "ready",
     tags: ["4e", "p1", "demonstratifs", "precision"]
   }
-};
-  const headerContexts4eP1_L13toL15 = {
-  "p1-l13": "Sous un portique peint, une carte du monde connu pend au mur ; des routes rouges filent depuis Rome vers des noms qu’on prononce à mi-voix, comme si chacun pesait davantage que les autres. « Une cité se raconte aussi par les mots qu’elle invente pour se gouverner », dit Lucius, puis il pose deux doigts sur Rome avant de les faire glisser jusqu’à Sicilia.",
-  "p1-l14": "La tablette passe de main en main ; certains lisent en silence, d’autres à voix basse, comme si le bois lui-même pouvait garder un secret venu du large. « Une même nouvelle change selon celui qui l’apporte, selon celui qui la lit, et selon celui qui préfère ne pas y croire », dit Marcus, puis il trie trois messages en trois tas distincts.",
-  "p1-l15": "Le soir tombe sur le forum, mais au loin les mâts d’Ostie gardent encore une lueur pâle ; des noms de lieux, de peuples et d’hommes circulent d’une voix à l’autre, jusqu’à se mêler à la poussière et au bruit des pas. « Rome paraît immense quand on la regarde d’ici ; elle paraît fragile dès qu’on écoute plus loin », dit Flavia, puis personne ne répond tout de suite."
 };
 
 const lessonL13 = {
@@ -4638,5 +4639,22 @@ const lessonL15 = {
     status: "ready",
     tags: ["4e", "p1", "bilan", "roma-mare-metus"]
   }
-}
+};
+
+export const lessons4eP1 = [
+  lessonL1,
+  lessonL2,
+  lessonL3,
+  lessonL4,
+  lessonL5,
+  lessonL6,
+  lessonL7,
+  lessonL8,
+  lessonL9,
+  lessonL10,
+  lessonL11,
+  lessonL12,
+  lessonL13,
+  lessonL14,
+  lessonL15
 ];
