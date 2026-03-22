@@ -1,3 +1,6 @@
+p1-spirale-patch
+Code JS complet patché : remplacements morphosyntaxiques ciblés et, pour P3, réinjection des headerContexts en subtitle.
+
 // Données de leçons 5E · Période 1.
 const headerContexts5eP1 = {
   "p1-l1": "Les pavés sont encore mouillés quand Niger rase les jambes des passants. « Ton chien a déjà choisi la bagarre », souffle Marcus, et l’animal file vers une porte entrouverte.",
@@ -408,32 +411,16 @@ export const lessons5eP1 = [
       },
       {
         "id": "p1-l2-t4",
-        "type": "matching",
-        "prompt": "🏠 Associe mot et sens.",
-        "pairs": [
-          {
-            "left": "domus",
-            "right": "maison"
-          },
-          {
-            "left": "insula",
-            "right": "immeuble"
-          },
-          {
-            "left": "ianua",
-            "right": "porte"
-          }
+        "type": "singleChoice",
+        "prompt": "🏠 Quelle phrase signifie « Le chien reste devant la porte » ?",
+        "options": [
+          "canis ante ianuam manet",
+          "ianua ante canem manet",
+          "canis in domo currit",
+          "canis ad ianuam intrat"
         ],
-        "rightOptions": [
-          "porte",
-          "maison",
-          "immeuble"
-        ],
-        "expected": {
-          "domus": "maison",
-          "insula": "immeuble",
-          "ianua": "porte"
-        },
+        "expected": "canis ante ianuam manet",
+        "shuffle": true,
         "points": 1
       },
       {
@@ -2669,32 +2656,16 @@ export const lessons5eP1 = [
       },
       {
         "id": "p1-l9-t4",
-        "type": "matching",
-        "prompt": "🎓 Associe phrase et sens.",
-        "pairs": [
-          {
-            "left": "Discipulus in tabella scribit",
-            "right": "L'élève écrit sur la tablette"
-          },
-          {
-            "left": "Magister legit",
-            "right": "Le maître lit"
-          },
-          {
-            "left": "Marcus respondet",
-            "right": "Marcus répond"
-          }
+        "type": "singleChoice",
+        "prompt": "🎓 Qui fait quoi ? Choisis la bonne lecture de « Discipulus in tabella scribit ».",
+        "options": [
+          "L’élève écrit sur la tablette",
+          "Le maître écoute la tablette",
+          "La tablette lit l’élève",
+          "L’élève entre dans l’école"
         ],
-        "rightOptions": [
-          "Marcus répond",
-          "Le maître lit",
-          "L'élève écrit sur la tablette"
-        ],
-        "expected": {
-          "Discipulus in tabella scribit": "L'élève écrit sur la tablette",
-          "Magister legit": "Le maître lit",
-          "Marcus respondet": "Marcus répond"
-        },
+        "expected": "L’élève écrit sur la tablette",
+        "shuffle": true,
         "points": 1
       },
       {
@@ -2981,32 +2952,16 @@ export const lessons5eP1 = [
       },
       {
         "id": "p1-l10-t4",
-        "type": "matching",
-        "prompt": "🛁 Associe expression et sens.",
-        "pairs": [
-          {
-            "left": "in thermis",
-            "right": "dans les thermes"
-          },
-          {
-            "left": "ad thermas",
-            "right": "vers les thermes"
-          },
-          {
-            "left": "aqua calida",
-            "right": "eau chaude"
-          }
+        "type": "singleChoice",
+        "prompt": "🛁 Quelle phrase signifie « Livia reste aux thermes » ?",
+        "options": [
+          "Livia in thermis manet",
+          "Livia ad thermas currit",
+          "Livia thermas intrat",
+          "Livia ex thermis exit"
         ],
-        "rightOptions": [
-          "eau chaude",
-          "dans les thermes",
-          "vers les thermes"
-        ],
-        "expected": {
-          "in thermis": "dans les thermes",
-          "ad thermas": "vers les thermes",
-          "aqua calida": "eau chaude"
-        },
+        "expected": "Livia in thermis manet",
+        "shuffle": true,
         "points": 1
       },
            {
