@@ -1,6 +1,3 @@
-p1-spirale-patch
-Code JS complet patché : remplacements morphosyntaxiques ciblés et, pour P3, réinjection des headerContexts en subtitle.
-
 // Données de leçons 5E · Période 1.
 const headerContexts5eP1 = {
   "p1-l1": "Les pavés sont encore mouillés quand Niger rase les jambes des passants. « Ton chien a déjà choisi la bagarre », souffle Marcus, et l’animal file vers une porte entrouverte.",
