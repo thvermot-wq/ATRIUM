@@ -1,6 +1,3 @@
-p2-spirale-patch
-Code JS complet patché : remplacements morphosyntaxiques ciblés et, pour P3, réinjection des headerContexts en subtitle.
-
 // Données de leçons 5E · Période 2 — Discordia in Subure.
 const headerContexts5eP2 = {
   "p2-l1": "Au petit matin, l’autel vide attire encore les regards. « Maintenant, on arrête les mines choquées et on compare les versions ! », tranche Flavia, puis elle désigne les voisins un par un.",
