@@ -21,7 +21,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Rumor nocturnus - Interrogatifs",
-    "subtitle": headerContexts5eP3["p3-l1"],
+    "subtitle": "Une rumeur nocturne rouvre l’affaire quand une voisine affirme avoir vu un homme sortir dans l’ombre.",
     "objective": "Réactiver les interrogatifs dans une scène d’enquête nocturne.",
     "lessonPoint": "Je trouve le verbe d’abord, puis qui / quoi / où / pourquoi ; l’ordre latin peut varier.",
     "canDo": [
@@ -34,14 +34,14 @@ export const lessons5eP3 = [
       "quid = quoi ?",
       "ubi = où ?",
       "cur = pourquoi ?",
-      "rumor = rumeur",
-      "vir = homme",
-      "vicum = le voisinage, le quartier",
+      "rumor, rumoris m. = rumeur",
+      "vir, viri m. = homme",
+      "vicus, vici m. = quartier",
       "noctu = de nuit",
-      "exit = il/elle sort",
-      "videt = il/elle voit",
-      "turbat = il/elle trouble",
-      "dicit = il/elle dit"
+      "exeo, exit = je sors ; il/elle sort",
+      "video, videt = je vois ; il/elle voit",
+      "turbo, turbat = je trouble ; il/elle trouble",
+      "dico, dicit = je dis ; il/elle dit"
     ],
     "maxScore": 10,
     "training": [
@@ -363,7 +363,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Inter insulas - Prépositions",
-    "subtitle": headerContexts5eP3["p3-l2"],
+    "subtitle": "Marcus suit la trace entre les insulae, se cache dans les angles, et comprend qu’un homme a pris l’habitude de passer là quand les portes se ferment.",
     "objective": "Lire un trajet nocturne grâce aux prépositions.",
     "lessonPoint": "Je lis le groupe prépositionnel d’un seul bloc pour suivre le trajet.",
     "canDo": [
@@ -372,17 +372,17 @@ export const lessons5eP3 = [
       "Je traduis un trajet."
     ],
     "lexicon": [
-      "insula = immeuble",
-      "via = rue",
-      "ad = vers",
-      "in + ablatif (-a) = dans (statique)",
-      "in + accusatif (-am) = dans (mouvement)",
-      "ex = hors de, depuis",
-      "ante = devant",
-      "currit = il/elle court",
-      "stat = il/elle se tient",
-      "manet = il/elle reste",
-      "intrat = il/elle entre"
+      "insula, insulae f. = immeuble",
+      "via, viae f. = rue",
+      "ad + acc. = vers",
+      "in + abl. = dans (lieu où l’on est)",
+      "in + acc. = dans, vers (mouvement)",
+      "ex + abl. = hors de, depuis",
+      "ante + acc. = devant",
+      "curro, currit = je cours ; il/elle court",
+      "sto, stat = je me tiens ; il/elle se tient",
+      "maneo, manet = je reste ; il/elle reste",
+      "intro, intrat = j’entre ; il/elle entre"
     ],
     "maxScore": 10,
     "training": [
@@ -721,7 +721,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Feminae ad ianuam - 1ère déclinaison",
-    "subtitle": headerContexts5eP3["p3-l3"],
+    "subtitle": "Aux portes et aux fenêtres, les voisines de Subure regardent la rue chacune à sa façon.",
     "objective": "Réinvestir la 1re déclinaison dans une scène d’observation.",
     "lessonPoint": "Je regarde -a et -am pour distinguer qui agit et ce qui est regardé.",
     "canDo": [
@@ -729,16 +729,16 @@ export const lessons5eP3 = [
       "Je traduis une phrase simple."
     ],
     "lexicon": [
-      "femina = femme",
-      "vicina = voisine",
-      "amica = amie",
-      "ianua = porte",
-      "fenestra = fenêtre",
-      "lucerna = la lampe",
-      "viam = la rue",
-      "spectat = il/elle regarde",
-      "aperit = il/elle ouvre",
-      "portat = il/elle porte"
+      "femina, feminae f. = femme",
+      "vicina, vicinae f. = voisine",
+      "amica, amicae f. = amie",
+      "ianua, ianuae f. = porte",
+      "fenestra, fenestrae f. = fenêtre",
+      "lucerna, lucernae f. = lampe",
+      "via, viae f. = rue",
+      "specto, spectat = je regarde ; il/elle regarde",
+      "aperio, aperit = j’ouvre ; il/elle ouvre",
+      "porto, portat = je porte ; il/elle porte"
     ],
     "maxScore": 10,
     "training": [
@@ -758,16 +758,38 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l3-t2",
-        "type": "singleChoice",
-        "prompt": "Quelle phrase signifie « La voisine ouvre la fenêtre » ?",
-        "options": [
-          "vicina fenestram aperit",
-          "vicinam fenestra aperit",
-          "vicina fenestra aperit",
-          "fenestra vicinam aperit"
+        "type": "matching",
+        "prompt": "Associe mot et sens.",
+        "pairs": [
+          {
+            "left": "femina",
+            "right": "femme"
+          },
+          {
+            "left": "vicina",
+            "right": "voisine"
+          },
+          {
+            "left": "ianua",
+            "right": "porte"
+          },
+          {
+            "left": "fenestra",
+            "right": "fenêtre"
+          }
         ],
-        "expected": "vicina fenestram aperit",
-        "shuffle": true,
+        "rightOptions": [
+          "porte",
+          "femme",
+          "fenêtre",
+          "voisine"
+        ],
+        "expected": {
+          "femina": "femme",
+          "vicina": "voisine",
+          "ianua": "porte",
+          "fenestra": "fenêtre"
+        },
         "points": 1
       },
       {
@@ -787,14 +809,14 @@ export const lessons5eP3 = [
       {
         "id": "p3-l3-t4",
         "type": "singleChoice",
-        "prompt": "Quelle phrase signifie « La voisine porte la lampe » ?",
+        "prompt": "La terminaison à l'accusatif singulier, dans la première déclinaison, est…",
         "options": [
-          "vicina lucernam portat",
-          "vicinam lucerna portat",
-          "vicina lucerna portat",
-          "lucerna vicinam portat"
+          "-am",
+          "-us",
+          "-um",
+          "-nt"
         ],
-        "expected": "vicina lucernam portat",
+        "expected": "-am",
         "shuffle": true,
         "points": 1
       },
@@ -969,24 +991,20 @@ export const lessons5eP3 = [
       {
         "id": "p3-l3-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : L’amie ouvre la fenêtre.",
-        "expected": "amica fenestram aperit",
+        "prompt": "Complète en latin : « La voisine porte la lampe » = « vicina ... portat »",
+        "expected": "lucernam",
         "acceptedAnswers": [
-          "amica fenestram aperit",
-          "fenestram amica aperit",
-          "amica aperit fenestram"
+          "lucernam"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
-            "amica fenestram aperit",
-            "fenestram amica aperit",
-            "amica aperit fenestram"
+            "lucernam"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "amica fenestram aperit",
+        "canonicalAnswer": "lucernam",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -995,23 +1013,18 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Produire une phrase complète avec sujet, COD en -am et verbe.",
+        "gradingFocus": "Choisir la bonne forme de COD en -am.",
         "rejectIf": [
-          "COD laissé au nominatif",
-          "verbe incorrect",
+          "forme laissée au nominatif",
           "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "amica fenestram aperit",
+            "input": "lucernam",
             "isCorrect": true
           },
           {
-            "input": "fenestram amica aperit",
-            "isCorrect": true
-          },
-          {
-            "input": "amica fenestra aperit",
+            "input": "lucerna",
             "isCorrect": false
           }
         ]
@@ -1045,7 +1058,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In macello - Le genre neutre",
-    "subtitle": headerContexts5eP3["p3-l4"],
+    "subtitle": "Au marché, un marchand reconnaît l’homme et parle d'un parfum tenace d'huile mal pressée ; si bien que l’odeur grasse revient soudain dans tous les souvenirs.",
     "objective": "Réinvestir le neutre dans une scène de marché et d’indice.",
     "lessonPoint": "Je repère les neutres de la 2e déclinaison, et j’observe leur fonction dans l’indice. Sujet (nominatif) = -um ; COD (accusatif) = -um.",
     "canDo": [
@@ -1054,13 +1067,13 @@ export const lessons5eP3 = [
       "Je traduis un indice concret."
     ],
     "lexicon": [
-      "macellum = marché",
-      "mercator = marchand",
-      "oleum = huile",
-      "signum = signe, marque, indice",
-      "templum = temple",
-      "vir = homme",
-      "emo, emit = j'achète ; il/elle achète",
+      "macellum, macelli n. = marché",
+      "mercator, mercatoris m. = marchand",
+      "oleum, olei n. = huile",
+      "signum, signi n. = signe, marque, indice",
+      "templum, templi n. = temple",
+      "vir, viri m. = homme",
+      "emo, emit = j’achète ; il/elle achète",
       "porto, portat = je porte ; il/elle porte",
       "celo, celat = je cache ; il/elle cache",
       "video, videt = je vois ; il/elle voit",
@@ -1306,24 +1319,20 @@ export const lessons5eP3 = [
       {
         "id": "p3-l4-p3",
         "type": "textInput",
-        "prompt": "Traduis en latin : Le marchand cache l’huile.",
-        "expected": "mercator oleum celat",
+        "prompt": "Complète en latin : « vicinus ... invenit » (l’indice).",
+        "expected": "signum",
         "acceptedAnswers": [
-          "mercator oleum celat",
-          "mercator celat oleum",
-          "oleum mercator celat"
+          "signum"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
-            "mercator oleum celat",
-            "mercator celat oleum",
-            "oleum mercator celat"
+            "signum"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "mercator oleum celat",
+        "canonicalAnswer": "signum",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -1332,23 +1341,18 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Employer un neutre correct comme COD dans une vraie phrase de scène.",
+        "gradingFocus": "Employer un neutre correct comme COD sans changer sa forme.",
         "rejectIf": [
-          "nom incorrect",
-          "verbe incorrect",
+          "forme incorrecte",
           "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "mercator oleum celat",
+            "input": "signum",
             "isCorrect": true
           },
           {
-            "input": "oleum mercator celat",
-            "isCorrect": true
-          },
-          {
-            "input": "mercator olea celat",
+            "input": "signam",
             "isCorrect": false
           }
         ]
@@ -1383,7 +1387,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In tabernis - 2ème déclinaison",
-    "subtitle": headerContexts5eP3["p3-l5"],
+    "subtitle": "Dans les boutiques, les récits se contredisent, mais Flavia oblige chacun à reprendre les faits un par un et à ne pas tirer de conclusion hâtive.",
     "objective": "Lire qui agit et qui subit dans des versions contradictoires.",
     "lessonPoint": "Qui accuse qui ? Je regarde qui est sujet (-us) / complément d'objet (-um) avant d’interpréter une accusation.",
     "canDo": [
@@ -1392,17 +1396,17 @@ export const lessons5eP3 = [
       "Je traduis une phrase d’accusation."
     ],
     "lexicon": [
-      "servus = esclave, serviteur",
-      "dominus = maître, maître de maison",
-      "vicinus = voisin",
-      "amicus = ami",
-      "tabernarius = boutiquier",
-      "murus = mur",
+      "servus, servi m. = esclave, serviteur",
+      "dominus, domini m. = maître, maître de maison",
+      "vicinus, vicini m. = voisin",
+      "amicus, amici m. = ami",
+      "tabernarius, tabernarii m. = boutiquier",
+      "murus, muri m. = mur",
       "sero = tard, tardivement",
-      "audit = il/elle entend",
-      "vocat = il/elle appelle",
-      "accusat = il/elle accuse",
-      "timet = il/elle craint"
+      "audio, audit = j’entends ; il/elle entend",
+      "voco, vocat = j’appelle ; il/elle appelle",
+      "accuso, accusat = j’accuse ; il/elle accuse",
+      "timeo, timet = je crains ; il/elle craint"
     ],
     "maxScore": 10,
     "training": [
@@ -1422,19 +1426,38 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l5-t2",
-        "type": "multipleChoice",
-        "prompt": "Choisis les phrases qui signifient « Le voisin accuse l’homme ».",
-        "options": [
-          "vicinus virum accusat",
-          "virum vicinus accusat",
-          "vir vicinum accusat",
-          "vicinum vir accusat"
+        "type": "matching",
+        "prompt": "Associe mot et sens.",
+        "pairs": [
+          {
+            "left": "servus",
+            "right": "serviteur"
+          },
+          {
+            "left": "dominus",
+            "right": "maître"
+          },
+          {
+            "left": "vicinus",
+            "right": "voisin"
+          },
+          {
+            "left": "amicus",
+            "right": "ami"
+          }
         ],
-        "expected": [
-          "vicinus virum accusat",
-          "virum vicinus accusat"
+        "rightOptions": [
+          "voisin",
+          "ami",
+          "serviteur",
+          "maître"
         ],
-        "shuffle": true,
+        "expected": {
+          "servus": "serviteur",
+          "dominus": "maître",
+          "vicinus": "voisin",
+          "amicus": "ami"
+        },
         "points": 1
       },
       {
@@ -1732,7 +1755,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In balneo - Présent singulier",
-    "subtitle": headerContexts5eP3["p3-l6"],
+    "subtitle": "Aux bains, un témoin confirme un détail, en retire un autre, puis Marcus sent que le mensonge fatigue ceux qui le portent depuis trop longtemps.",
     "objective": "Identifier je / tu / il-elle dans des témoignages.",
     "lessonPoint": "Je lis la terminaison du verbe pour savoir qui parle.",
     "canDo": [
@@ -2071,7 +2094,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In foro - Présent pluriel",
-    "subtitle": headerContexts5eP3["p3-l7"],
+    "subtitle": "Au forum, Subure vide enfin sa colère en plein jour, et les voisins se répondent et s'invectivent face à face au lieu de se mordre par rumeur interposée.",
     "objective": "Identifier nous / vous / ils-elles dans un débat public.",
     "lessonPoint": "Je lis la terminaison du verbe pour savoir quel groupe agit.",
     "canDo": [
@@ -2080,17 +2103,18 @@ export const lessons5eP3 = [
       "Je traduis une phrase au présent pluriel."
     ],
     "lexicon": [
-      "forum, in foro = le forum, sur le forum",
-      "video, vides = je vois, tu vois",
-      "audio, audis = j'entends, tu entends",
-      "clamo, clamas = je crie, tu cries",
-      "respondeo, respondes = je réponds, tu réponds",
-      "quaero, quaeris = je cherche, tu cherches",
-      "vicini = voisins",
-      "mercatores = marchands",
-      "puellae = jeunes filles",
-      "rumores = rumeurs",
-      "verum (neutre) = le vrai, la vérité" 
+      "forum, fori n. = forum",
+      "in foro = sur le forum",
+      "video, videmus = je vois ; nous voyons",
+      "audio, auditis = j’entends ; vous entendez",
+      "clamo, clamant = je crie ; ils/elles crient",
+      "respondeo, respondent = je réponds ; ils/elles répondent",
+      "quaero, quaerimus = je cherche ; nous cherchons",
+      "vicinus (sg.), vicini (pl.) = voisin, voisins",
+      "mercator (sg.), mercatores (pl.) = marchand, marchands",
+      "puella (sg.), puellae (pl.) = jeune fille, jeunes filles",
+      "rumor (sg.), rumores (pl.) = rumeur, rumeurs",
+      "verum (nom./acc.) = le vrai, la vérité"
     ],
     "maxScore": 10,
     "training": [
@@ -2394,7 +2418,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Canis et porta obscura - Ordre des mots",
-    "subtitle": headerContexts5eP3["p3-l8"],
+    "subtitle": "Niger retourne à la porte louche, gratte le bois, refuse d’entrer, et plus personne n’ose traiter ce manège comme un simple caprice.",
     "objective": "Lire une phrase à ordre variable sans se tromper sur le sens.",
     "lessonPoint": "Le sens dépend des formes et du verbe, pas seulement de la position des mots.",
     "canDo": [
@@ -2403,20 +2427,20 @@ export const lessons5eP3 = [
       "Je produis une phrase latine correcte."
     ],
     "lexicon": [
-      "canis = chien",
-      "porta = porte",
-      "vir, virum, viri = l'homme",
-      "obscura = sombre",
-      "ante = devant",
-      "ex = hors de",
-      "clamo, clamas = je crie, tu cries",
-      "exeo, exis = je sors, tu sors",
-      "latro, latras = j'aboie, tu aboies",
-      "maneo, manes = je reste, tu restes",
-      "timeo, times = je crains, tu crains",
-      "recuso, recusas = je refuse, tu refuses",
-      "intro, intras = j'entre, tu entres",
-      "audio, audis = j'entends, tu entends"
+      "canis, canis m. = chien",
+      "porta, portae f. = porte",
+      "vir, viri m. = homme",
+      "obscurus, obscura, obscurum = sombre",
+      "ante + acc. = devant",
+      "ex + abl. = hors de, depuis",
+      "clamo, clamas, clamat = je crie, tu cries, il/elle crie",
+      "exeo, exis, exit = je sors, tu sors, il/elle sort",
+      "latro, latras, latrat = j’aboie, tu aboies, il/elle aboie",
+      "maneo, manes, manet = je reste, tu restes, il/elle reste",
+      "timeo, times, timet = je crains, tu crains, il/elle craint",
+      "recuso, recusas, recusat = je refuse, tu refuses, il/elle refuse",
+      "intro, intras, intrat = j’entre, tu entres, il/elle entre",
+      "audio, audis, audit = j’entends, tu entends, il/elle entend"
     ],
     "maxScore": 10,
     "training": [
@@ -2794,7 +2818,7 @@ export const lessons5eP3 = [
   "period": 3,
   "periodId": "p3",
   "title": "Sub porticu villae - Lieux et prépositions",
-  "subtitle": headerContexts5eP3["p3-l9"],
+  "subtitle": "La fuite mène à une villa illuminée : sous le porche, un homme se cache pendant qu’un avocat célèbre reçoit pour un grand dîner.",
   "objective": "Suivre un déplacement et comprendre vers quel lieu précis mène la fuite.",
   "lessonPoint": "Je repère le verbe, puis je lis d’un bloc le groupe de lieu : per vias, in villam, sub porticu.",
   "canDo": [
@@ -2803,20 +2827,20 @@ export const lessons5eP3 = [
     "Je relie un nouveau lieu à l’enquête."
   ],
   "lexicon": [
-  "vir = l’homme, un homme",
-  "via = la rue",
-  "villa = la villa, la grande maison",
-  "porticus = le porche, le portique",
-  "cena = le dîner, le repas",
-  "advocatus = l’avocat",
-  "magnus, magna, magnum = grand",
-  "per + acc. = à travers",
-  "in + acc. = dans, vers (mouvement vers un lieu)",
-  "sub + abl. = sous (lieu où l'on est)",
-  "curro, curris = je cours, tu cours",
-  "intro, intras = j'entre, tu entres",
-  "lateo, lates = je me cache, tu te caches",
-  "paro, paras = je prépare, tu prépares"
+      "vir, viri m. = homme",
+      "via, viae f. = rue",
+      "villa, villae f. = villa, grande maison",
+      "porticus, porticus f. = porche, portique",
+      "cena, cenae f. = dîner, repas",
+      "advocatus, advocati m. = avocat",
+      "magnus, magna, magnum = grand",
+      "per + acc. = à travers",
+      "in + acc. = dans, vers (mouvement vers un lieu)",
+      "sub + abl. = sous (lieu où l’on est)",
+      "curro, curris, currit = je cours, tu cours, il/elle court",
+      "intro, intras, intrat = j’entre, tu entres, il/elle entre",
+      "lateo, lates, latet = je me cache, tu te caches, il/elle se cache",
+      "paro, paras, parat = je prépare, tu prépares, il/elle prépare"
 ],
   "maxScore": 10,
   "training": [
@@ -3216,7 +3240,7 @@ export const lessons5eP3 = [
   "period": 3,
   "periodId": "p3",
   "title": "In villa advocati - Le génitif",
-  "subtitle": headerContexts5eP3["p3-l10"],
+  "subtitle": "L’homme louche a franchi la porte de la villa de l’avocat. Dans l’atrium, Marcus et Livia recoupent les indices : serviteur du maître, dîner du maître, tablette du maître. Intrus dangereux ou complice attendu ?",
   "objective": "Comprendre le génitif pour savoir à qui appartiennent la villa, le serviteur, la tablette et le dîner.",
   "lessonPoint": "Je repère le mot au génitif pour répondre à la question « de qui ? » ou « de quoi ? ».",
   "canDo": [
@@ -3585,7 +3609,7 @@ export const lessons5eP3 = [
   "period": 3,
   "periodId": "p3",
   "title": "Amicus advocati - Le génitif",
-  "subtitle": headerContexts5eP3["p3-l11"],
+  "subtitle": "Le serviteur de l’avocat voit l’homme, n’appelle personne, puis ouvre la porte. Intrus dangereux ou complice attendu ?",
   "objective": "Réinvestir le génitif et lire plusieurs indices courts pour décider si l’homme semble connu de la maison.",
   "lessonPoint": "Je lis les phrases l’une après l’autre et j’additionne les indices.",
   "canDo": [
@@ -3924,7 +3948,7 @@ export const lessons5eP3 = [
   "period": 3,
   "periodId": "p3",
   "title": "Vestigium extra oppidum - Synthèse",
-  "subtitle": headerContexts5eP3["p3-l12"],
+  "subtitle": "De nuit, dans les jardins de l’avocat éclairés par les chandelles, plusieurs figures de Subure reviennent avec des flambeaux et fouillent les lieux. Puis une trace apparaît : elle mène hors de la ville. Le danger s’éloigne. Pour le moment.",
   "objective": "Relire toute l’enquête dans une scène nocturne finale et comprendre où mène la trace découverte.",
   "lessonPoint": "Je repère qui agit, ce qui est cherché, et à quel lieu mène la trace.",
   "canDo": [
@@ -3933,26 +3957,26 @@ export const lessons5eP3 = [
     "Je comprends la conclusion d’un mini-dossier d’indices."
   ],
   "lexicon": [
-    "Subura, Suburae f. = Subure",
-    "vicinus, vicini m. = voisin, habitant du quartier",
-    "puella, puellae f. = jeune fille",
-    "servus, servi m. = serviteur, esclave",
-    "advocatus, advocati m. = avocat",
-    "hortus, horti m. = jardin",
-    "taeda, taedae f. = flambeau, torche",
-    "candela, candelae f. = chandelle, bougie",
-    "vestigium, vestigii n. = trace, piste",
-    "porta, portae f. = porte",
-    "oppidum, oppidi n. = ville",
-    "per + acc. = à travers",
-    "ad + acc. = vers, jusqu’à",
-    "extra + acc. = hors de",
-    "illumino, illuminas = j’éclaire, tu éclaires",
-    "porto, portas = je porte, tu portes",
-    "quaero, quaeris = je cherche, tu cherches",
-    "video, vides = je vois, tu vois",
-    "invenio, invenis = je trouve, tu trouves",
-    "duco, ducis = je mène, je conduis ; tu mènes, tu conduis"
+      "Subura, Suburae f. = Subure",
+      "vicinus, vicini m. = voisin, habitant du quartier",
+      "puella, puellae f. = jeune fille",
+      "servus, servi m. = serviteur, esclave",
+      "advocatus, advocati m. = avocat",
+      "hortus, horti m. = jardin",
+      "taeda, taedae f. = flambeau, torche",
+      "candela, candelae f. = chandelle, bougie",
+      "vestigium, vestigii n. = trace, piste",
+      "porta, portae f. = porte",
+      "oppidum, oppidi n. = ville",
+      "per + acc. = à travers",
+      "ad + acc. = vers, jusqu’à",
+      "extra + acc. = hors de",
+      "illumino, illuminas, illuminat = j’éclaire, tu éclaires, il/elle éclaire",
+      "porto, portas, portat = je porte, tu portes, il/elle porte",
+      "quaero, quaeris, quaerit = je cherche, tu cherches, il/elle cherche",
+      "video, vides, videt = je vois, tu vois, il/elle voit",
+      "invenio, invenis, invenit = je trouve, tu trouves, il/elle trouve",
+      "duco, ducis, ducit = je mène, tu mènes, il/elle mène"
   ],
   "maxScore": 10,
   "training": [
@@ -4091,11 +4115,7 @@ export const lessons5eP3 = [
         "les flambeaux éclairent le jardin",
         "des flambeaux éclairent le jardin",
         "les torches éclairent le jardin",
-        "des torches éclairent le jardin",
-        "les flambeaux illuminent le jardin",
-        "des flambeaux illuminent le jardin",
-        "les torches illuminent le jardin",
-        "des torches illuminent le jardin"
+        "des torches éclairent le jardin"
       ],
       "answerConfig": {
         "type": "translation-segment",
@@ -4104,11 +4124,7 @@ export const lessons5eP3 = [
           "les flambeaux éclairent le jardin",
           "des flambeaux éclairent le jardin",
           "les torches éclairent le jardin",
-          "des torches éclairent le jardin",
-          "les flambeaux illuminent le jardin",
-          "des flambeaux illuminent le jardin",
-          "les torches illuminent le jardin",
-          "des torches illuminent le jardin"
+          "des torches éclairent le jardin"
         ]
       },
       "points": 1,
@@ -4333,24 +4349,24 @@ export const lessons5eP3 = [
     "Je formule une conclusion simple à partir d’un texte suivi."
   ],
   "lexicon": [
-    "caelum, caeli n. = ciel",
-    "Discordia = Discordia, déesse de la discorde",
-    "nox, noctis f. = nuit",
-    "porta, portae f. = porte",
-    "signum, signi n. = signe",
-    "villa, villae f. = villa, grande maison",
-    "hortus, horti m. = jardin",
-    "via, viae f. = route, chemin",
-    "vestigium, vestigii n. = trace",
-    "servus, servi m. = serviteur",
-    "taeda, taedae f. = flambeau",
-    "sto, stas = Je me tiens, tu te tiens",
-    "porto, portas = je porte, tu portes",
-    "taceo, taces = je me tais, tu te tais",
-    "appareo, appares = j'apparais, tu apparais",
-    "duco, ducis = je mène, tu mènes",
-    "fugio, fugis = je fuis, tu fuis",
-    "extra + acc. = hors de"
+      "caelum, caeli n. = ciel",
+      "Discordia, Discordiae f. = Discordia, déesse de la discorde",
+      "nox, noctis f. = nuit",
+      "porta, portae f. = porte",
+      "signum, signi n. = signe",
+      "villa, villae f. = villa, grande maison",
+      "hortus, horti m. = jardin",
+      "via, viae f. = route, chemin",
+      "vestigium, vestigii n. = trace",
+      "servus, servi m. = serviteur",
+      "taeda, taedae f. = flambeau",
+      "sto, stas, stat = je me tiens, tu te tiens, il/elle se tient",
+      "porto, portas, portat = je porte, tu portes, il/elle porte",
+      "taceo, taces, tacet = je me tais, tu te tais, il/elle se tait",
+      "appareo, appares, apparet = j’apparais, tu apparais, il/elle apparaît",
+      "duco, ducis, ducit = je mène, tu mènes, il/elle mène",
+      "fugio, fugis, fugit = je fuis, tu fuis, il/elle fuit",
+      "extra + acc. = hors de"
   ],
   "maxScore": 10,
   "training": [
