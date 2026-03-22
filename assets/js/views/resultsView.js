@@ -1,4 +1,4 @@
-import { LESSONS_SPEC, getPeriodsByLevel, getLessonsByPeriod } from "../lessons.js";
+import { getLessonSpecForLevel, getPeriodsByLevel, getLessonsByPeriod } from "../lessons.js";
 import { getLastVisitedLesson, buildLessonHash } from "../storage.js";
 
 function getStatusClass(status) {
@@ -37,16 +37,18 @@ export function renderResultsView({ level, onOpenDashboard, progress }) {
   const section = document.createElement("section");
   section.className = "stack";
 
-  const periods = getPeriodsByLevel(level?.id);
-  const allLessons = periods.flatMap((period) => getLessonsByPeriod(period.id, level?.id));
-  const continueTarget = getSuggestedLessonTarget({ levelId: level?.id, lessons: allLessons, progress });
+  const levelId = level?.id || "5e";
+  const spec = getLessonSpecForLevel(levelId);
+  const periods = getPeriodsByLevel(levelId);
+  const allLessons = periods.flatMap((period) => getLessonsByPeriod(period.id, levelId));
+  const continueTarget = getSuggestedLessonTarget({ levelId, lessons: allLessons, progress });
 
   const summary = document.createElement("article");
   summary.className = "card results-hero";
   summary.innerHTML = `
     <h2>Résultats · ${level?.label || "5e"}</h2>
-    <p class="muted">Barème leçon : ${LESSONS_SPEC.trainingMax} + ${LESSONS_SPEC.productionMax} = ${LESSONS_SPEC.lessonMax}</p>
-    <p class="muted">Barème période : ${LESSONS_SPEC.periodMax}</p>
+    <p class="muted">Barème leçon : ${spec.trainingMax} + ${spec.productionMax} = ${spec.lessonMax}</p>
+    <p class="muted">Barème période : ${spec.periodMax}</p>
     <div class="actions-row results-actions">
       <button type="button" class="btn btn-primary" data-action="dashboard">Retour au dashboard ${level?.label || "5e"}</button>
       ${continueTarget ? `<button type="button" class="btn btn-secondary" data-action="continue">Reprendre · ${continueTarget.lessonTitle}</button>` : ""}
@@ -66,7 +68,7 @@ export function renderResultsView({ level, onOpenDashboard, progress }) {
   periods.forEach((period) => {
     const data = progress?.periods?.[period.id] || {
       totalScore: 0,
-      maxScore: LESSONS_SPEC.periodMax,
+      maxScore: spec.periodMax,
       percent: 0,
       status: "période à reprendre",
     };
@@ -81,7 +83,8 @@ export function renderResultsView({ level, onOpenDashboard, progress }) {
         const current = lessonProgress?.current?.totalScore ?? 0;
         const best = lessonProgress?.best?.totalScore ?? 0;
         const playedState = getPlayedState(lessonProgress);
-        return `<li>${lesson.title} (${lesson.id}) · ${playedState} · courant ${current}/10 · meilleur ${best}/10</li>`;
+        const lessonMax = lesson?.maxScore || spec.lessonMax;
+        return `<li>${lesson.title} (${lesson.id}) · ${playedState} · courant ${current}/${lessonMax} · meilleur ${best}/${lessonMax}</li>`;
       })
       .join("");
 
