@@ -470,8 +470,8 @@ export const lessons5eP1 = [
       {
         "id": "p1-l2-t7",
         "type": "textInput",
-        "prompt": "🏠 Écris en latin : « porte » (nom).",
-        "expected": "ianua",
+        "prompt": "🏠 Complète en latin : « Aurelia ante ... stat » (la porte).",
+        "expected": "ianuam",
         "points": 1
       }
     ],
@@ -808,8 +808,8 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-t7",
         "type": "textInput",
-        "prompt": "🛍️ Écris en latin : « marchand ».",
-        "expected": "mercator",
+        "prompt": "🛍️ Complète en latin : « Mercator ... vendit » (le pain).",
+        "expected": "panem",
         "points": 1
       }
     ],
@@ -1120,8 +1120,8 @@ export const lessons5eP1 = [
       {
         "id": "p1-l4-t7",
         "type": "textInput",
-        "prompt": "🏺 Écris en latin : « couronne ».",
-        "expected": "corona",
+        "prompt": "🏺 Complète en latin : « Sacerdos ... movet » (la couronne).",
+        "expected": "coronam",
         "points": 1
       }
     ],
@@ -1446,8 +1446,8 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-t7",
         "type": "textInput",
-        "prompt": "🐕 Écris en latin : « chien ».",
-        "expected": "canis",
+        "prompt": "🐕 Complète en latin : « Marcus ... videt » (le chien).",
+        "expected": "canem",
         "points": 1
       }
     ],
@@ -1759,8 +1759,8 @@ export const lessons5eP1 = [
       {
         "id": "p1-l6-t7",
         "type": "textInput",
-        "prompt": "📜 Écris en latin : « lettre ».",
-        "expected": "epistula",
+        "prompt": "📜 Complète en latin : « Lucius ... quaerit » (la lettre).",
+        "expected": "epistulam",
         "points": 1
       }
     ],
@@ -2085,7 +2085,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-t7",
         "type": "textInput",
-        "prompt": "⛲ Écris en latin : « eau ».",
+        "prompt": "⛲ Complète en latin : « In situla ... est » (de l’eau).",
         "expected": "aqua",
         "points": 1
       }
@@ -2412,8 +2412,8 @@ export const lessons5eP1 = [
       {
         "id": "p1-l8-t7",
         "type": "textInput",
-        "prompt": "🍞 Écris en latin : « pain ».",
-        "expected": "panis",
+        "prompt": "🍞 Complète en latin : « Pistor ... portat » (le pain).",
+        "expected": "panem",
         "points": 1
       }
     ],
@@ -2730,7 +2730,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l9-t7",
         "type": "textInput",
-        "prompt": "🎓 Écris en latin : « élève ».",
+        "prompt": "🎓 Complète en latin : « ... in tabella scribit » (l’élève).",
         "expected": "discipulus",
         "points": 1
       }
@@ -3040,9 +3040,16 @@ export const lessons5eP1 = [
       },
       {
         "id": "p1-l10-t7",
-        "type": "textInput",
-        "prompt": "🛁 Écris en latin : « eau chaude ».",
-        "expected": ["aqua calida", "calida aqua"],
+        "type": "singleChoice",
+        "prompt": "🛁 Choisis la phrase qui signifie : « Marcus entre dans les thermes. »",
+        "options": [
+          "Marcus in thermis manet",
+          "Marcus ad thermas currit",
+          "Marcus in thermas intrat",
+          "Marcus aqua calida manet"
+        ],
+        "expected": "Marcus in thermas intrat",
+        "shuffle": true,
         "points": 1
       }
     ],
@@ -3348,7 +3355,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l11-t7",
         "type": "textInput",
-        "prompt": "🧱 Écris en latin : « nom ».",
+        "prompt": "🧱 Complète en latin : « ... in muro est » (le nom).",
         "expected": "nomen",
         "points": 1
       }
