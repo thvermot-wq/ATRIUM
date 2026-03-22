@@ -1,3 +1,6 @@
+p2-spirale-patch
+Code JS complet patché : remplacements morphosyntaxiques ciblés et, pour P3, réinjection des headerContexts en subtitle.
+
 // Données de leçons 5E · Période 2 — Discordia in Subure.
 const headerContexts5eP2 = {
   "p2-l1": "Au petit matin, l’autel vide attire encore les regards. « Maintenant, on arrête les mines choquées et on compare les versions ! », tranche Flavia, puis elle désigne les voisins un par un.",
@@ -60,36 +63,36 @@ export const lessons5eP2 = [
       {
         "id": "p2-l1-t2",
         "type": "matching",
-        "prompt": "Associe chaque interrogatif à son sens.",
+        "prompt": "Associe chaque réponse à la bonne question.",
         "pairs": [
           {
-            "left": "quis",
-            "right": "qui ?"
+            "left": "Sextus.",
+            "right": "quis ?"
           },
           {
-            "left": "quid",
-            "right": "quoi ?"
+            "left": "In via.",
+            "right": "ubi ?"
           },
           {
-            "left": "cur",
-            "right": "pourquoi ?"
+            "left": "Quia timet.",
+            "right": "cur ?"
           },
           {
-            "left": "ubi",
-            "right": "où ?"
+            "left": "Donum.",
+            "right": "quid ?"
           }
         ],
         "rightOptions": [
-          "pourquoi ?",
-          "où ?",
-          "qui ?",
-          "quoi ?"
+          "ubi ?",
+          "quid ?",
+          "cur ?",
+          "quis ?"
         ],
         "expected": {
-          "quis": "qui ?",
-          "quid": "quoi ?",
-          "cur": "pourquoi ?",
-          "ubi": "où ?"
+          "Sextus.": "quis ?",
+          "In via.": "ubi ?",
+          "Quia timet.": "cur ?",
+          "Donum.": "quid ?"
         },
         "points": 1
       },
@@ -751,38 +754,19 @@ export const lessons5eP2 = [
       },
       {
         "id": "p2-l3-t2",
-        "type": "matching",
-        "prompt": "Associe mot et traduction.",
-        "pairs": [
-          {
-            "left": "femina",
-            "right": "femme"
-          },
-          {
-            "left": "amica",
-            "right": "amie"
-          },
-          {
-            "left": "taberna",
-            "right": "boutique"
-          },
-          {
-            "left": "via",
-            "right": "rue"
-          }
+        "type": "multipleChoice",
+        "prompt": "Choisis les mots qui peuvent être COD dans les phrases de cette leçon.",
+        "options": [
+          "viam",
+          "aquam",
+          "femina",
+          "amica"
         ],
-        "rightOptions": [
-          "rue",
-          "femme",
-          "boutique",
-          "amie"
+        "expected": [
+          "viam",
+          "aquam"
         ],
-        "expected": {
-          "femina": "femme",
-          "amica": "amie",
-          "taberna": "boutique",
-          "via": "rue"
-        },
+        "shuffle": true,
         "points": 1
       },
       {
@@ -2296,32 +2280,9 @@ export const lessons5eP2 = [
       },
       {
         "id": "p2-l7-t2",
-        "type": "matching",
-        "prompt": "Associe la terminaison et la personne plurielle.",
-        "pairs": [
-          {
-            "left": "-mus",
-            "right": "nous"
-          },
-          {
-            "left": "-tis",
-            "right": "vous"
-          },
-          {
-            "left": "-nt",
-            "right": "ils/elles"
-          }
-        ],
-        "rightOptions": [
-          "vous",
-          "ils/elles",
-          "nous"
-        ],
-        "expected": {
-          "-mus": "nous",
-          "-tis": "vous",
-          "-nt": "ils/elles"
-        },
+        "type": "textInput",
+        "prompt": "Transforme au pluriel : « vicinus clamat ».",
+        "expected": "vicini clamant",
         "points": 1
       },
       {
