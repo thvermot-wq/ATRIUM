@@ -4069,7 +4069,7 @@ export const lessons5eP2 = [
       "tabella (nom.), tabellam (acc.) = tablette",
       "canis (nom.), canem (acc.) = chien",
       "fons (nom.), fontem (acc.) = fontaine",
-      "video, vident = je vois ; ils/elles voient",
+      "video, videt, vident = je vois ; il/elle voit ; ils/elles voient",
       "verum (nom./acc.) = le vrai",
       "falsum (nom./acc.) = le faux"
     ],
