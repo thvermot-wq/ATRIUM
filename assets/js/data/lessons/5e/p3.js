@@ -1,6 +1,3 @@
-p3-spirale-patch
-Code JS complet patché : remplacements morphosyntaxiques ciblés et, pour P3, réinjection des headerContexts en subtitle.
-
 // Données de leçons 5E · Période 3 — Discordia in Subura.
 const headerContexts5eP3 = {
   "p3-l1": "Une voisine jure qu’elle a vu un homme sortir de nuit, la tête basse et le pas court. « Une histoire pareille ne marche pas ; elle déboule », dit Marcus, puis il attrape une lampe.",
