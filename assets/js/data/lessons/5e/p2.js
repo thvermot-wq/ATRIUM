@@ -290,20 +290,24 @@ export const lessons5eP2 = [
       {
         "id": "p2-l1-p3",
         "type": "textInput",
-        "prompt": "Lexique : 𝑣𝑖𝑐𝑖𝑛𝑢𝑠 = ?",
-        "expected": "voisin",
+        "prompt": "Traduis en latin : Qui voit l’offrande ?",
+        "expected": "quis donum videt",
         "acceptedAnswers": [
-          "voisin"
+          "quis donum videt",
+          "quis videt donum",
+          "donum quis videt"
         ],
         "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
+          "type": "one-of",
+          "language": "latin",
           "accepted": [
-            "voisin"
+            "quis donum videt",
+            "quis videt donum",
+            "donum quis videt"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "voisin",
+        "canonicalAnswer": "quis donum videt",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -312,19 +316,23 @@ export const lessons5eP2 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Employer quis dans une vraie question et garder donum comme COD.",
         "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
+          "interrogatif incorrect",
+          "ordre ou construction rendant la phrase incompréhensible",
           "forme latine impossible au niveau de la leçon"
         ],
         "tests": [
           {
-            "input": "voisin",
+            "input": "quis donum videt",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "donum quis videt",
+            "isCorrect": true
+          },
+          {
+            "input": "quid donum videt",
             "isCorrect": false
           }
         ]
@@ -622,57 +630,57 @@ export const lessons5eP2 = [
         ]
       },
      {
-  "id": "p2-l2-p3",
-  "type": "textInput",
-  "prompt": "Écris en latin le trajet du témoin : vers le temple ; dans la rue ; hors de la boutique ; devant la porte.",
-  "expected": "ad templum ; in via ; ex taberna ; ante ianuam",
-  "acceptedAnswers": [
-    "ad templum ; in via ; ex taberna ; ante ianuam",
-    "ad templum, in via, ex taberna, ante ianuam",
-    "ad templum / in via / ex taberna / ante ianuam",
-    "ad templum in via ex taberna ante ianuam"
-  ],
-  "answerConfig": {
-    "type": "one-of",
-    "language": "latin",
-    "accepted": [
-      "ad templum ; in via ; ex taberna ; ante ianuam",
-      "ad templum, in via, ex taberna, ante ianuam",
-      "ad templum / in via / ex taberna / ante ianuam",
-      "ad templum in via ex taberna ante ianuam"
-    ]
-  },
-  "points": 1,
-  "canonicalAnswer": "ad templum ; in via ; ex taberna ; ante ianuam",
-  "normalization": {
-    "trim": true,
-    "collapseSpaces": true,
-    "ignoreCase": true,
-    "ignorePunctuation": true,
-    "normalizeApostrophes": true,
-    "ignoreDiacritics": true
-  },
-  "gradingFocus": "Production correcte des quatre prépositions de la leçon et association juste avec le groupe nominal.",
-  "rejectIf": [
-    "préposition incorrecte",
-    "ordre des segments non respecté",
-    "forme latine impossible au niveau de la leçon"
-  ],
-  "tests": [
-    {
-      "input": "ad templum ; in via ; ex taberna ; ante ianuam",
-      "isCorrect": true
-    },
-    {
-      "input": "ad templum, in via, ex taberna, ante ianuam",
-      "isCorrect": true
-    },
-    {
-      "input": "in templum ; ad via ; ex taberna ; ante ianuam",
-      "isCorrect": false
-    }
-  ]
-} 
+        "id": "p2-l2-p3",
+        "type": "textInput",
+        "prompt": "Traduis en latin : Il vient vers le temple puis sort de la boutique.",
+        "expected": "ad templum venit et ex taberna exit",
+        "acceptedAnswers": [
+          "ad templum venit et ex taberna exit",
+          "venit ad templum et ex taberna exit",
+          "ad templum venit ; ex taberna exit",
+          "venit ad templum ; ex taberna exit"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "ad templum venit et ex taberna exit",
+            "venit ad templum et ex taberna exit",
+            "ad templum venit ; ex taberna exit",
+            "venit ad templum ; ex taberna exit"
+          ]
+        },
+        "points": 1,
+        "canonicalAnswer": "ad templum venit et ex taberna exit",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Associer correctement le verbe de mouvement à la bonne préposition.",
+        "rejectIf": [
+          "préposition incorrecte",
+          "sens inversé",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "ad templum venit et ex taberna exit",
+            "isCorrect": true
+          },
+          {
+            "input": "venit ad templum et ex taberna exit",
+            "isCorrect": true
+          },
+          {
+            "input": "in templum venit et ad taberna exit",
+            "isCorrect": false
+          }
+        ]
+      } 
     ],
     "summary": {
       "retains": [
@@ -792,14 +800,14 @@ export const lessons5eP2 = [
       {
         "id": "p2-l3-t4",
         "type": "singleChoice",
-        "prompt": "Quelle terminaison de la 1ère déclinaison indique souvent que le mot est complément objet ?",
+        "prompt": "Quelle phrase signifie « L’amie regarde la porte » ?",
         "options": [
-          "-am",
-          "-a",
-          "-um",
-          "-us"
+          "amica portam spectat",
+          "amicam porta spectat",
+          "amica porta spectat",
+          "porta amica spectat"
         ],
-        "expected": "-am",
+        "expected": "amica portam spectat",
         "shuffle": true,
         "points": 1
       },
@@ -1810,26 +1818,22 @@ export const lessons5eP2 = [
       {
         "id": "p2-l5-p3",
         "type": "textInput",
-        "prompt": "2e déclinaison / Règle courte : au neutre singulier, nominatif et accusatif sont…",
-        "expected": "identiques",
+        "prompt": "Traduis en latin : Il trouve l’indice.",
+        "expected": "signum invenit",
         "acceptedAnswers": [
-          "identiques",
-          "pareils",
-          "semblables",
-          "les mêmes"
+          "signum invenit",
+          "invenit signum"
         ],
         "answerConfig": {
-          "type": "translation-segment",
-          "language": "fr",
+          "type": "one-of",
+          "language": "latin",
           "accepted": [
-            "identiques",
-            "pareils",
-            "semblables",
-            "les mêmes"
+            "signum invenit",
+            "invenit signum"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "identiques",
+        "canonicalAnswer": "signum invenit",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -1838,19 +1842,23 @@ export const lessons5eP2 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Employer correctement un neutre en -um comme COD.",
         "rejectIf": [
+          "forme nominale incorrecte",
           "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "identiques",
+            "input": "signum invenit",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "invenit signum",
+            "isCorrect": true
+          },
+          {
+            "input": "signam invenit",
             "isCorrect": false
           }
         ]
@@ -2172,53 +2180,53 @@ export const lessons5eP2 = [
   ]
 },
 {
-  "id": "p2-l6-p3",
-  "type": "textInput",
-  "prompt": "Complète : En latin, la terminaison du verbe indique la _______ qui parle ou agit.",
-  "expected": "personne",
-  "acceptedAnswers": [
-    "personne",
-    "personne grammaticale"
-  ],
-  "answerConfig": {
-    "type": "translation-segment",
-    "language": "fr",
-    "accepted": [
-      "personne",
-      "personne grammaticale"
-    ]
-  },
-  "points": 1,
-  "canonicalAnswer": "personne",
-  "normalization": {
-    "trim": true,
-    "collapseSpaces": true,
-    "ignoreCase": true,
-    "ignorePunctuation": true,
-    "normalizeApostrophes": true,
-    "ignoreDiacritics": true
-  },
-  "gradingFocus": "Comprendre que la terminaison verbale latine porte déjà l’information de personne.",
-  "rejectIf": [
-    "réponse hors-sujet",
-    "confusion entre temps et personne",
-    "confusion entre sujet et verbe"
-  ],
-  "tests": [
-    {
-      "input": "personne",
-      "isCorrect": true
-    },
-    {
-      "input": "personne grammaticale",
-      "isCorrect": true
-    },
-    {
-      "input": "temps",
-      "isCorrect": false
-    }
-  ]
-}
+        "id": "p2-l6-p3",
+        "type": "textInput",
+        "prompt": "Traduis en latin : Tu crains le danger.",
+        "expected": "times periculum",
+        "acceptedAnswers": [
+          "times periculum",
+          "periculum times"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "times periculum",
+            "periculum times"
+          ]
+        },
+        "points": 1,
+        "canonicalAnswer": "times periculum",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Faire dépendre le sens de la terminaison verbale plutôt que d’un pronom donné.",
+        "rejectIf": [
+          "personne incorrecte",
+          "mot hors leçon",
+          "réponse hors-sujet"
+        ],
+        "tests": [
+          {
+            "input": "times periculum",
+            "isCorrect": true
+          },
+          {
+            "input": "periculum times",
+            "isCorrect": true
+          },
+          {
+            "input": "timeo periculum",
+            "isCorrect": false
+          }
+        ]
+      }
     ],
     "summary": {
       "retains": [
@@ -2520,57 +2528,57 @@ export const lessons5eP2 = [
         ]
       },
       {
-  "id": "p2-l7-p3",
-  "type": "textInput",
-  "prompt": "Écris en latin les trois formes du pluriel : « nous crions ; vous criez ; ils / elles crient ».",
-  "expected": "clamamus ; clamatis ; clamant",
-  "acceptedAnswers": [
-    "clamamus ; clamatis ; clamant",
-    "clamamus, clamatis, clamant",
-    "clamamus / clamatis / clamant",
-    "clamamus clamatis clamant"
-  ],
-  "answerConfig": {
-    "type": "translation-segment",
-    "language": "latin",
-    "accepted": [
-      "clamamus ; clamatis ; clamant",
-      "clamamus, clamatis, clamant",
-      "clamamus / clamatis / clamant",
-      "clamamus clamatis clamant"
-    ]
-  },
-  "points": 1,
-  "canonicalAnswer": "clamamus ; clamatis ; clamant",
-  "normalization": {
-    "trim": true,
-    "collapseSpaces": true,
-    "ignoreCase": true,
-    "ignorePunctuation": true,
-    "normalizeApostrophes": true,
-    "ignoreDiacritics": true
-  },
-  "gradingFocus": "Produire correctement les तीन formes du pluriel : 1re, 2e et 3e personne.",
-  "rejectIf": [
-    "personnes inversées",
-    "forme verbale incorrecte",
-    "réponse hors-sujet"
-  ],
-  "tests": [
-    {
-      "input": "clamamus ; clamatis ; clamant",
-      "isCorrect": true
-    },
-    {
-      "input": "clamamus clamatis clamant",
-      "isCorrect": true
-    },
-    {
-      "input": "clamatis ; clamamus ; clamant",
-      "isCorrect": false
-    }
-  ]
-}
+        "id": "p2-l7-p3",
+        "type": "textInput",
+        "prompt": "Traduis en latin : Nous cherchons ; vous demandez ; ils répondent.",
+        "expected": "quaerimus ; rogatis ; respondent",
+        "acceptedAnswers": [
+          "quaerimus ; rogatis ; respondent",
+          "quaerimus, rogatis, respondent",
+          "quaerimus / rogatis / respondent",
+          "quaerimus rogatis respondent"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "quaerimus ; rogatis ; respondent",
+            "quaerimus, rogatis, respondent",
+            "quaerimus / rogatis / respondent",
+            "quaerimus rogatis respondent"
+          ]
+        },
+        "points": 1,
+        "canonicalAnswer": "quaerimus ; rogatis ; respondent",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Associer correctement sens lexical et personne verbale au pluriel.",
+        "rejectIf": [
+          "personnes inversées",
+          "forme verbale incorrecte",
+          "réponse hors-sujet"
+        ],
+        "tests": [
+          {
+            "input": "quaerimus ; rogatis ; respondent",
+            "isCorrect": true
+          },
+          {
+            "input": "quaerimus rogatis respondent",
+            "isCorrect": true
+          },
+          {
+            "input": "rogatis ; quaerimus ; respondent",
+            "isCorrect": false
+          }
+        ]
+      }
     ],
     "summary": {
       "retains": [
@@ -3228,49 +3236,61 @@ export const lessons5eP2 = [
         ]
       },
      {
-  "id": "p2-l9-p3",
-  "type": "textInput",
-  "prompt": "Complète la traduction : « 𝑀𝑎𝑛𝑒𝑡 𝑎𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝑐𝑎𝑛𝑖𝑠 » = « Le chien reste ... »",
-  "expected": "devant la porte",
-  "acceptedAnswers": [
-    "devant la porte",
-    "devant une porte"
-  ],
-  "answerConfig": {
-    "type": "one-of",
-    "language": "fr",
-    "accepted": [
-      "devant la porte",
-      "devant une porte"
-    ]
-  },
-  "points": 1,
-  "canonicalAnswer": "devant la porte",
-  "normalization": {
-    "trim": true,
-    "collapseSpaces": true,
-    "ignoreCase": true,
-    "ignorePunctuation": true,
-    "normalizeApostrophes": true,
-    "ignoreDiacritics": true
-  },
-  "gradingFocus": "Identifier correctement le groupe de lieu malgré l’ordre latin.",
-  "rejectIf": [
-    "lieu faux",
-    "ianuam mal compris",
-    "réponse hors-sujet"
-  ],
-  "tests": [
-    {
-      "input": "devant la porte",
-      "isCorrect": true
-    },
-    {
-      "input": "dans la porte",
-      "isCorrect": false
-    }
-  ]
-}
+        "id": "p2-l9-p3",
+        "type": "textInput",
+        "prompt": "Traduis en français : « 𝑀𝑎𝑛𝑒𝑡 𝑎𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝑐𝑎𝑛𝑖𝑠 ».",
+        "expected": "Le chien reste devant la porte",
+        "acceptedAnswers": [
+          "le chien reste devant la porte",
+          "le chien reste devant une porte",
+          "un chien reste devant la porte",
+          "un chien reste devant une porte",
+          "le chien se tient devant la porte",
+          "le chien se tient devant une porte",
+          "un chien se tient devant la porte",
+          "un chien se tient devant une porte"
+        ],
+        "answerConfig": {
+          "type": "translation-segment",
+          "language": "fr",
+          "accepted": [
+            "le chien reste devant la porte",
+            "le chien reste devant une porte",
+            "un chien reste devant la porte",
+            "un chien reste devant une porte",
+            "le chien se tient devant la porte",
+            "le chien se tient devant une porte",
+            "un chien se tient devant la porte",
+            "un chien se tient devant une porte"
+          ]
+        },
+        "points": 1,
+        "canonicalAnswer": "Le chien reste devant la porte",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Identifier correctement le groupe de lieu malgré l’ordre latin.",
+        "rejectIf": [
+          "lieu faux",
+          "sujet faux",
+          "réponse hors-sujet"
+        ],
+        "tests": [
+          {
+            "input": "le chien reste devant la porte",
+            "isCorrect": true
+          },
+          {
+            "input": "le chien est dans la porte",
+            "isCorrect": false
+          }
+        ]
+      }
     ],
     "summary": {
       "retains": [
@@ -4332,30 +4352,26 @@ export const lessons5eP2 = [
       {
         "id": "p2-l12-p3",
         "type": "textInput",
-        "prompt": "Quelle divinité a troublé Subure ? (réponse courte)",
-        "expected": "la Discorde",
+        "prompt": "Traduis en français : « Vicini tabellam vident et pax redit. »",
+        "expected": "Les voisins voient la tablette et la paix revient",
         "acceptedAnswers": [
-          "la Discorde",
-          "Discordia",
-          "les conflits entre voisins",
-          "la querelle",
-          "les disputes entre voisins",
-          "les soupçons entre voisins"
+          "les voisins voient la tablette et la paix revient",
+          "les voisins voient une tablette et la paix revient",
+          "les voisins aperçoivent la tablette et la paix revient",
+          "les voisins aperçoivent une tablette et la paix revient"
         ],
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
           "accepted": [
-            "la Discorde",
-            "Discordia",
-            "les conflits entre voisins",
-            "la querelle",
-            "les disputes entre voisins",
-            "les soupçons entre voisins"
+            "les voisins voient la tablette et la paix revient",
+            "les voisins voient une tablette et la paix revient",
+            "les voisins aperçoivent la tablette et la paix revient",
+            "les voisins aperçoivent une tablette et la paix revient"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "la Discorde",
+        "canonicalAnswer": "Les voisins voient la tablette et la paix revient",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -4364,19 +4380,19 @@ export const lessons5eP2 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+        "gradingFocus": "Mobiliser la lecture cumulative de fin de période sans revenir au simple rappel narratif.",
         "rejectIf": [
-          "verbe incorrect",
-          "sens inversé sujet/objet",
-          "forme latine impossible au niveau de la leçon"
+          "sujet faux",
+          "verbe faux",
+          "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "la Discorde",
+            "input": "les voisins voient la tablette et la paix revient",
             "isCorrect": true
           },
           {
-            "input": "réponse hors-sujet",
+            "input": "la tablette voit les voisins et la paix revient",
             "isCorrect": false
           }
         ]
