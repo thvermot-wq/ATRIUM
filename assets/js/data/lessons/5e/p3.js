@@ -809,14 +809,14 @@ export const lessons5eP3 = [
       {
         "id": "p3-l3-t4",
         "type": "singleChoice",
-        "prompt": "La terminaison à l'accusatif singulier, dans la première déclinaison, est…",
+        "prompt": "Quelle phrase signifie « La voisine porte la lampe » ?",
         "options": [
-          "-am",
-          "-us",
-          "-um",
-          "-nt"
+          "vicina lucernam portat",
+          "vicinam lucerna portat",
+          "vicina lucerna portat",
+          "lucerna vicinam portat"
         ],
-        "expected": "-am",
+        "expected": "vicina lucernam portat",
         "shuffle": true,
         "points": 1
       },
@@ -991,20 +991,24 @@ export const lessons5eP3 = [
       {
         "id": "p3-l3-p3",
         "type": "textInput",
-        "prompt": "Complète en latin : « La voisine porte la lampe » = « vicina ... portat »",
-        "expected": "lucernam",
+        "prompt": "Traduis en latin : L’amie ouvre la fenêtre.",
+        "expected": "amica fenestram aperit",
         "acceptedAnswers": [
-          "lucernam"
+          "amica fenestram aperit",
+          "fenestram amica aperit",
+          "amica aperit fenestram"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
-            "lucernam"
+            "amica fenestram aperit",
+            "fenestram amica aperit",
+            "amica aperit fenestram"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "lucernam",
+        "canonicalAnswer": "amica fenestram aperit",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -1013,18 +1017,23 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Choisir la bonne forme de COD en -am.",
+        "gradingFocus": "Produire une phrase complète avec sujet, COD en -am et verbe.",
         "rejectIf": [
-          "forme laissée au nominatif",
+          "COD laissé au nominatif",
+          "verbe incorrect",
           "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "lucernam",
+            "input": "amica fenestram aperit",
             "isCorrect": true
           },
           {
-            "input": "lucerna",
+            "input": "fenestram amica aperit",
+            "isCorrect": true
+          },
+          {
+            "input": "amica fenestra aperit",
             "isCorrect": false
           }
         ]
@@ -1319,20 +1328,24 @@ export const lessons5eP3 = [
       {
         "id": "p3-l4-p3",
         "type": "textInput",
-        "prompt": "Complète en latin : « vicinus ... invenit » (l’indice).",
-        "expected": "signum",
+        "prompt": "Traduis en latin : Le marchand cache l’huile.",
+        "expected": "mercator oleum celat",
         "acceptedAnswers": [
-          "signum"
+          "mercator oleum celat",
+          "mercator celat oleum",
+          "oleum mercator celat"
         ],
         "answerConfig": {
           "type": "one-of",
           "language": "latin",
           "accepted": [
-            "signum"
+            "mercator oleum celat",
+            "mercator celat oleum",
+            "oleum mercator celat"
           ]
         },
         "points": 1,
-        "canonicalAnswer": "signum",
+        "canonicalAnswer": "mercator oleum celat",
         "normalization": {
           "trim": true,
           "collapseSpaces": true,
@@ -1341,18 +1354,23 @@ export const lessons5eP3 = [
           "normalizeApostrophes": true,
           "ignoreDiacritics": true
         },
-        "gradingFocus": "Employer un neutre correct comme COD sans changer sa forme.",
+        "gradingFocus": "Employer un neutre correct comme COD dans une vraie phrase de scène.",
         "rejectIf": [
-          "forme incorrecte",
+          "nom incorrect",
+          "verbe incorrect",
           "réponse hors-sujet"
         ],
         "tests": [
           {
-            "input": "signum",
+            "input": "mercator oleum celat",
             "isCorrect": true
           },
           {
-            "input": "signam",
+            "input": "oleum mercator celat",
+            "isCorrect": true
+          },
+          {
+            "input": "mercator olea celat",
             "isCorrect": false
           }
         ]
