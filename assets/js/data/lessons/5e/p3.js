@@ -1,3 +1,6 @@
+p3-spirale-patch
+Code JS complet patché : remplacements morphosyntaxiques ciblés et, pour P3, réinjection des headerContexts en subtitle.
+
 // Données de leçons 5E · Période 3 — Discordia in Subura.
 const headerContexts5eP3 = {
   "p3-l1": "Une voisine jure qu’elle a vu un homme sortir de nuit, la tête basse et le pas court. « Une histoire pareille ne marche pas ; elle déboule », dit Marcus, puis il attrape une lampe.",
@@ -21,7 +24,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Rumor nocturnus - Interrogatifs",
-    "subtitle": "Une rumeur nocturne rouvre l’affaire quand une voisine affirme avoir vu un homme sortir dans l’ombre.",
+    "subtitle": headerContexts5eP3["p3-l1"],
     "objective": "Réactiver les interrogatifs dans une scène d’enquête nocturne.",
     "lessonPoint": "Je trouve le verbe d’abord, puis qui / quoi / où / pourquoi ; l’ordre latin peut varier.",
     "canDo": [
@@ -363,7 +366,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Inter insulas - Prépositions",
-    "subtitle": "Marcus suit la trace entre les insulae, se cache dans les angles, et comprend qu’un homme a pris l’habitude de passer là quand les portes se ferment.",
+    "subtitle": headerContexts5eP3["p3-l2"],
     "objective": "Lire un trajet nocturne grâce aux prépositions.",
     "lessonPoint": "Je lis le groupe prépositionnel d’un seul bloc pour suivre le trajet.",
     "canDo": [
@@ -721,7 +724,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Feminae ad ianuam - 1ère déclinaison",
-    "subtitle": "Aux portes et aux fenêtres, les voisines de Subure regardent la rue chacune à sa façon.",
+    "subtitle": headerContexts5eP3["p3-l3"],
     "objective": "Réinvestir la 1re déclinaison dans une scène d’observation.",
     "lessonPoint": "Je regarde -a et -am pour distinguer qui agit et ce qui est regardé.",
     "canDo": [
@@ -758,38 +761,16 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l3-t2",
-        "type": "matching",
-        "prompt": "Associe mot et sens.",
-        "pairs": [
-          {
-            "left": "femina",
-            "right": "femme"
-          },
-          {
-            "left": "vicina",
-            "right": "voisine"
-          },
-          {
-            "left": "ianua",
-            "right": "porte"
-          },
-          {
-            "left": "fenestra",
-            "right": "fenêtre"
-          }
+        "type": "singleChoice",
+        "prompt": "Quelle phrase signifie « La voisine ouvre la fenêtre » ?",
+        "options": [
+          "vicina fenestram aperit",
+          "vicinam fenestra aperit",
+          "vicina fenestra aperit",
+          "fenestra vicinam aperit"
         ],
-        "rightOptions": [
-          "porte",
-          "femme",
-          "fenêtre",
-          "voisine"
-        ],
-        "expected": {
-          "femina": "femme",
-          "vicina": "voisine",
-          "ianua": "porte",
-          "fenestra": "fenêtre"
-        },
+        "expected": "vicina fenestram aperit",
+        "shuffle": true,
         "points": 1
       },
       {
@@ -1067,7 +1048,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In macello - Le genre neutre",
-    "subtitle": "Au marché, un marchand reconnaît l’homme et parle d'un parfum tenace d'huile mal pressée ; si bien que l’odeur grasse revient soudain dans tous les souvenirs.",
+    "subtitle": headerContexts5eP3["p3-l4"],
     "objective": "Réinvestir le neutre dans une scène de marché et d’indice.",
     "lessonPoint": "Je repère les neutres de la 2e déclinaison, et j’observe leur fonction dans l’indice. Sujet (nominatif) = -um ; COD (accusatif) = -um.",
     "canDo": [
@@ -1405,7 +1386,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In tabernis - 2ème déclinaison",
-    "subtitle": "Dans les boutiques, les récits se contredisent, mais Flavia oblige chacun à reprendre les faits un par un et à ne pas tirer de conclusion hâtive.",
+    "subtitle": headerContexts5eP3["p3-l5"],
     "objective": "Lire qui agit et qui subit dans des versions contradictoires.",
     "lessonPoint": "Qui accuse qui ? Je regarde qui est sujet (-us) / complément d'objet (-um) avant d’interpréter une accusation.",
     "canDo": [
@@ -1444,38 +1425,19 @@ export const lessons5eP3 = [
       },
       {
         "id": "p3-l5-t2",
-        "type": "matching",
-        "prompt": "Associe mot et sens.",
-        "pairs": [
-          {
-            "left": "servus",
-            "right": "serviteur"
-          },
-          {
-            "left": "dominus",
-            "right": "maître"
-          },
-          {
-            "left": "vicinus",
-            "right": "voisin"
-          },
-          {
-            "left": "amicus",
-            "right": "ami"
-          }
+        "type": "multipleChoice",
+        "prompt": "Choisis les phrases qui signifient « Le voisin accuse l’homme ».",
+        "options": [
+          "vicinus virum accusat",
+          "virum vicinus accusat",
+          "vir vicinum accusat",
+          "vicinum vir accusat"
         ],
-        "rightOptions": [
-          "voisin",
-          "ami",
-          "serviteur",
-          "maître"
+        "expected": [
+          "vicinus virum accusat",
+          "virum vicinus accusat"
         ],
-        "expected": {
-          "servus": "serviteur",
-          "dominus": "maître",
-          "vicinus": "voisin",
-          "amicus": "ami"
-        },
+        "shuffle": true,
         "points": 1
       },
       {
@@ -1773,7 +1735,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In balneo - Présent singulier",
-    "subtitle": "Aux bains, un témoin confirme un détail, en retire un autre, puis Marcus sent que le mensonge fatigue ceux qui le portent depuis trop longtemps.",
+    "subtitle": headerContexts5eP3["p3-l6"],
     "objective": "Identifier je / tu / il-elle dans des témoignages.",
     "lessonPoint": "Je lis la terminaison du verbe pour savoir qui parle.",
     "canDo": [
@@ -2112,7 +2074,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "In foro - Présent pluriel",
-    "subtitle": "Au forum, Subure vide enfin sa colère en plein jour, et les voisins se répondent et s'invectivent face à face au lieu de se mordre par rumeur interposée.",
+    "subtitle": headerContexts5eP3["p3-l7"],
     "objective": "Identifier nous / vous / ils-elles dans un débat public.",
     "lessonPoint": "Je lis la terminaison du verbe pour savoir quel groupe agit.",
     "canDo": [
@@ -2435,7 +2397,7 @@ export const lessons5eP3 = [
     "period": 3,
     "periodId": "p3",
     "title": "Canis et porta obscura - Ordre des mots",
-    "subtitle": "Niger retourne à la porte louche, gratte le bois, refuse d’entrer, et plus personne n’ose traiter ce manège comme un simple caprice.",
+    "subtitle": headerContexts5eP3["p3-l8"],
     "objective": "Lire une phrase à ordre variable sans se tromper sur le sens.",
     "lessonPoint": "Le sens dépend des formes et du verbe, pas seulement de la position des mots.",
     "canDo": [
@@ -2835,7 +2797,7 @@ export const lessons5eP3 = [
   "period": 3,
   "periodId": "p3",
   "title": "Sub porticu villae - Lieux et prépositions",
-  "subtitle": "La fuite mène à une villa illuminée : sous le porche, un homme se cache pendant qu’un avocat célèbre reçoit pour un grand dîner.",
+  "subtitle": headerContexts5eP3["p3-l9"],
   "objective": "Suivre un déplacement et comprendre vers quel lieu précis mène la fuite.",
   "lessonPoint": "Je repère le verbe, puis je lis d’un bloc le groupe de lieu : per vias, in villam, sub porticu.",
   "canDo": [
@@ -3257,7 +3219,7 @@ export const lessons5eP3 = [
   "period": 3,
   "periodId": "p3",
   "title": "In villa advocati - Le génitif",
-  "subtitle": "L’homme louche a franchi la porte de la villa de l’avocat. Dans l’atrium, Marcus et Livia recoupent les indices : serviteur du maître, dîner du maître, tablette du maître. Intrus dangereux ou complice attendu ?",
+  "subtitle": headerContexts5eP3["p3-l10"],
   "objective": "Comprendre le génitif pour savoir à qui appartiennent la villa, le serviteur, la tablette et le dîner.",
   "lessonPoint": "Je repère le mot au génitif pour répondre à la question « de qui ? » ou « de quoi ? ».",
   "canDo": [
@@ -3626,7 +3588,7 @@ export const lessons5eP3 = [
   "period": 3,
   "periodId": "p3",
   "title": "Amicus advocati - Le génitif",
-  "subtitle": "Le serviteur de l’avocat voit l’homme, n’appelle personne, puis ouvre la porte. Intrus dangereux ou complice attendu ?",
+  "subtitle": headerContexts5eP3["p3-l11"],
   "objective": "Réinvestir le génitif et lire plusieurs indices courts pour décider si l’homme semble connu de la maison.",
   "lessonPoint": "Je lis les phrases l’une après l’autre et j’additionne les indices.",
   "canDo": [
@@ -3965,7 +3927,7 @@ export const lessons5eP3 = [
   "period": 3,
   "periodId": "p3",
   "title": "Vestigium extra oppidum - Synthèse",
-  "subtitle": "De nuit, dans les jardins de l’avocat éclairés par les chandelles, plusieurs figures de Subure reviennent avec des flambeaux et fouillent les lieux. Puis une trace apparaît : elle mène hors de la ville. Le danger s’éloigne. Pour le moment.",
+  "subtitle": headerContexts5eP3["p3-l12"],
   "objective": "Relire toute l’enquête dans une scène nocturne finale et comprendre où mène la trace découverte.",
   "lessonPoint": "Je repère qui agit, ce qui est cherché, et à quel lieu mène la trace.",
   "canDo": [
