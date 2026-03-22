@@ -384,8 +384,10 @@ export const lessons5eP2 = [
       "taberna = boutique",
       "via = rue",
       "fons = fontaine",
-      "venit = il/elle vient",
-      "exit = il/elle sort"
+      "et = et",
+      "venio, venit = je viens, il/elle vient",
+      "video, vident = je vois ; ils/elles voient",
+      "exeo, exit = je sors, il/elle sort"
     ],
     "maxScore": 10,
     "training": [
