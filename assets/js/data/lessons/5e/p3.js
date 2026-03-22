@@ -1765,6 +1765,7 @@ export const lessons5eP3 = [
     ],
     "lexicon": [
       "balneum = thermes, bains",
+      "in balneo = aux bains",
       "video, vides, videt = je vois, tu vois, il/elle voit",
       "audio, audis, audit = j'entends, tu entends, il/elle entend",
       "narro, narras, narrat = je raconte, tu racontes, il/elle raconte",
