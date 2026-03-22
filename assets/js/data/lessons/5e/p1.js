@@ -2924,7 +2924,8 @@ export const lessons5eP1 = [
       "in thermis = aux thermes",
       "ad thermas = vers les thermes",
       "intrat = il/elle entre",
-      "manet = il/ elle reste"
+      "curro, currit = je cours, il/elle court",
+      "maneo, manet = je reste, il/ elle reste"
     ],
     "maxScore": 10,
     "training": [
