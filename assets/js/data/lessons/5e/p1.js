@@ -1,3 +1,6 @@
+p1.js — patch lexique
+Code JS complet patché — lexique harmonisé
+
 // Données de leçons 5E · Période 1.
 const headerContexts5eP1 = {
   "p1-l1": "Les pavés sont encore mouillés quand Niger rase les jambes des passants. « Ton chien a déjà choisi la bagarre », souffle Marcus, et l’animal file vers une porte entrouverte.",
@@ -348,10 +351,10 @@ export const lessons5eP1 = [
       "ianua = porte",
       "fenestra = fenêtre",
       "cella = cellier",
-      "in domo = à la maison",
-      "prope = près",
-      "ante = devant",
-      "stat = il / elle se tient",
+      "in domo = dans la maison",
+      "prope ianuam = près de la porte",
+      "ante ianuam = devant la porte",
+      "stat = il/elle se tient",
       "habitat = il/elle habite",
       "manet = il/elle reste"
     ],
@@ -408,16 +411,32 @@ export const lessons5eP1 = [
       },
       {
         "id": "p1-l2-t4",
-        "type": "singleChoice",
-        "prompt": "🏠 Quelle phrase signifie « Le chien reste devant la porte » ?",
-        "options": [
-          "canis ante ianuam manet",
-          "ianua ante canem manet",
-          "canis in domo currit",
-          "canis ad ianuam intrat"
+        "type": "matching",
+        "prompt": "🏠 Associe mot et sens.",
+        "pairs": [
+          {
+            "left": "domus",
+            "right": "maison"
+          },
+          {
+            "left": "insula",
+            "right": "immeuble"
+          },
+          {
+            "left": "ianua",
+            "right": "porte"
+          }
         ],
-        "expected": "canis ante ianuam manet",
-        "shuffle": true,
+        "rightOptions": [
+          "porte",
+          "maison",
+          "immeuble"
+        ],
+        "expected": {
+          "domus": "maison",
+          "insula": "immeuble",
+          "ianua": "porte"
+        },
         "points": 1
       },
       {
@@ -454,8 +473,8 @@ export const lessons5eP1 = [
       {
         "id": "p1-l2-t7",
         "type": "textInput",
-        "prompt": "🏠 Complète en latin : « Aurelia ante ... stat » (la porte).",
-        "expected": "ianuam",
+        "prompt": "🏠 Écris en latin : « porte » (nom).",
+        "expected": "ianua",
         "points": 1
       }
     ],
@@ -675,7 +694,7 @@ export const lessons5eP1 = [
       "currit = il/elle court",
       "spectat = il/elle regarde",
       "vendit = il/elle vend",
-      "ad = vers, en direction de"
+      "ad forum = vers le forum"
     ],
     "maxScore": 10,
     "training": [
@@ -792,8 +811,8 @@ export const lessons5eP1 = [
       {
         "id": "p1-l3-t7",
         "type": "textInput",
-        "prompt": "🛍️ Complète en latin : « Mercator ... vendit » (le pain).",
-        "expected": "panem",
+        "prompt": "🛍️ Écris en latin : « marchand ».",
+        "expected": "mercator",
         "points": 1
       }
     ],
@@ -1104,8 +1123,8 @@ export const lessons5eP1 = [
       {
         "id": "p1-l4-t7",
         "type": "textInput",
-        "prompt": "🏺 Complète en latin : « Sacerdos ... movet » (la couronne).",
-        "expected": "coronam",
+        "prompt": "🏺 Écris en latin : « couronne ».",
+        "expected": "corona",
         "points": 1
       }
     ],
@@ -1430,8 +1449,8 @@ export const lessons5eP1 = [
       {
         "id": "p1-l5-t7",
         "type": "textInput",
-        "prompt": "🐕 Complète en latin : « Marcus ... videt » (le chien).",
-        "expected": "canem",
+        "prompt": "🐕 Écris en latin : « chien ».",
+        "expected": "canis",
         "points": 1
       }
     ],
@@ -1621,12 +1640,12 @@ export const lessons5eP1 = [
     "lexicon": [
       "tabella = tablette",
       "epistula = lettre",
+      "scribit = il/elle écrit",
+      "legit = il/elle lit",
       "portat = il/elle porte",
       "habet = il/elle a",
       "quaerit = il/elle cherche",
-      "invenit = il/elle trouve",
-      "Marcus",
-      "Lucius"
+      "invenit = il/elle trouve"
     ],
     "maxScore": 10,
     "training": [
@@ -1743,8 +1762,8 @@ export const lessons5eP1 = [
       {
         "id": "p1-l6-t7",
         "type": "textInput",
-        "prompt": "📜 Complète en latin : « Lucius ... quaerit » (la lettre).",
-        "expected": "epistulam",
+        "prompt": "📜 Écris en latin : « lettre ».",
+        "expected": "epistula",
         "points": 1
       }
     ],
@@ -2069,7 +2088,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l7-t7",
         "type": "textInput",
-        "prompt": "⛲ Complète en latin : « In situla ... est » (de l’eau).",
+        "prompt": "⛲ Écris en latin : « eau ».",
         "expected": "aqua",
         "points": 1
       }
@@ -2277,7 +2296,7 @@ export const lessons5eP1 = [
       "panis = pain",
       "farina = farine",
       "taberna = boutique",
-      "emit = il/elle envoie / achète",
+      "emit = il/elle achète",
       "portat = il/elle porte",
       "videt = il/elle voit",
       "accipit = il/elle reçoit"
@@ -2396,8 +2415,8 @@ export const lessons5eP1 = [
       {
         "id": "p1-l8-t7",
         "type": "textInput",
-        "prompt": "🍞 Complète en latin : « Pistor ... portat » (le pain).",
-        "expected": "panem",
+        "prompt": "🍞 Écris en latin : « pain ».",
+        "expected": "panis",
         "points": 1
       }
     ],
@@ -2653,16 +2672,32 @@ export const lessons5eP1 = [
       },
       {
         "id": "p1-l9-t4",
-        "type": "singleChoice",
-        "prompt": "🎓 Qui fait quoi ? Choisis la bonne lecture de « Discipulus in tabella scribit ».",
-        "options": [
-          "L’élève écrit sur la tablette",
-          "Le maître écoute la tablette",
-          "La tablette lit l’élève",
-          "L’élève entre dans l’école"
+        "type": "matching",
+        "prompt": "🎓 Associe phrase et sens.",
+        "pairs": [
+          {
+            "left": "Discipulus in tabella scribit",
+            "right": "L'élève écrit sur la tablette"
+          },
+          {
+            "left": "Magister legit",
+            "right": "Le maître lit"
+          },
+          {
+            "left": "Marcus respondet",
+            "right": "Marcus répond"
+          }
         ],
-        "expected": "L’élève écrit sur la tablette",
-        "shuffle": true,
+        "rightOptions": [
+          "Marcus répond",
+          "Le maître lit",
+          "L'élève écrit sur la tablette"
+        ],
+        "expected": {
+          "Discipulus in tabella scribit": "L'élève écrit sur la tablette",
+          "Magister legit": "Le maître lit",
+          "Marcus respondet": "Marcus répond"
+        },
         "points": 1
       },
       {
@@ -2698,7 +2733,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l9-t7",
         "type": "textInput",
-        "prompt": "🎓 Complète en latin : « ... in tabella scribit » (l’élève).",
+        "prompt": "🎓 Écris en latin : « élève ».",
         "expected": "discipulus",
         "points": 1
       }
@@ -2892,8 +2927,8 @@ export const lessons5eP1 = [
       "in thermis = aux thermes",
       "ad thermas = vers les thermes",
       "intrat = il/elle entre",
-      "curro, currit = je cours, il/elle court",
-      "maneo, manet = je reste, il/ elle reste"
+      "currit = il/elle court",
+      "manet = il/elle reste"
     ],
     "maxScore": 10,
     "training": [
@@ -2949,16 +2984,32 @@ export const lessons5eP1 = [
       },
       {
         "id": "p1-l10-t4",
-        "type": "singleChoice",
-        "prompt": "🛁 Quelle phrase signifie « Livia reste aux thermes » ?",
-        "options": [
-          "Livia in thermis manet",
-          "Livia ad thermas currit",
-          "Livia thermas intrat",
-          "Livia ex thermis exit"
+        "type": "matching",
+        "prompt": "🛁 Associe expression et sens.",
+        "pairs": [
+          {
+            "left": "in thermis",
+            "right": "dans les thermes"
+          },
+          {
+            "left": "ad thermas",
+            "right": "vers les thermes"
+          },
+          {
+            "left": "aqua calida",
+            "right": "eau chaude"
+          }
         ],
-        "expected": "Livia in thermis manet",
-        "shuffle": true,
+        "rightOptions": [
+          "eau chaude",
+          "dans les thermes",
+          "vers les thermes"
+        ],
+        "expected": {
+          "in thermis": "dans les thermes",
+          "ad thermas": "vers les thermes",
+          "aqua calida": "eau chaude"
+        },
         "points": 1
       },
            {
@@ -2993,16 +3044,9 @@ export const lessons5eP1 = [
       },
       {
         "id": "p1-l10-t7",
-        "type": "singleChoice",
-        "prompt": "🛁 Choisis la phrase qui signifie : « Marcus entre dans les thermes. »",
-        "options": [
-          "Marcus in thermis manet",
-          "Marcus ad thermas currit",
-          "Marcus in thermas intrat",
-          "Marcus aqua calida manet"
-        ],
-        "expected": "Marcus in thermas intrat",
-        "shuffle": true,
+        "type": "textInput",
+        "prompt": "🛁 Écris en latin : « eau chaude ».",
+        "expected": ["aqua calida", "calida aqua"],
         "points": 1
       }
     ],
@@ -3308,7 +3352,7 @@ export const lessons5eP1 = [
       {
         "id": "p1-l11-t7",
         "type": "textInput",
-        "prompt": "🧱 Complète en latin : « ... in muro est » (le nom).",
+        "prompt": "🧱 Écris en latin : « nom ».",
         "expected": "nomen",
         "points": 1
       }
@@ -3504,11 +3548,11 @@ export const lessons5eP1 = [
     ],
     "lexicon": [
       "Discordia = Discorde (déesse)",
-      "Discordiae = forme au génitif (complément du nom) = de Discordia",
+      "nomen Discordiae = le nom de Discordia",
       "Subura = Subure (quartier)",
       "popina = taverne",
-      "ad = au, à la (direction, lieu. Exemple : ad popinam = à la taverne)",
-      "forum = forum, place",
+      "ad popinam = vers la taverne",
+      "in foro = sur le forum",
       "domus = maison",
       "murus = mur",
       "nomen = nom",
