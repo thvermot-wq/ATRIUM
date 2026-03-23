@@ -1676,25 +1676,25 @@ export const lessons5eP1 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p1-l6-t3",
-        "type": "multipleChoice",
-        "prompt": "📜 Choisis les actions plausibles dans le cadre d'une enquête.",
-        "options": [
-          "quaerit",
-          "invenit",
-          "portat",
-          "scribit",
-          "murmurat"
-        ],
-        "expected": [
-          "quaerit",
-          "invenit",
-          "scribit"
-        ],
-        "shuffle": true,
-        "points": 1
-      },
+     {
+  "id": "p1-l6-t3",
+  "type": "multipleChoice",
+  "prompt": "📜 Coche les groupes verbe + complément cohérents avec la leçon.",
+  "options": [
+    "tabellam legit",
+    "epistulam quaerit",
+    "tabellam portat",
+    "forum scribit",
+    "ianuam invenit"
+  ],
+  "expected": [
+    "tabellam legit",
+    "epistulam quaerit",
+    "tabellam portat"
+  ],
+  "shuffle": true,
+  "points": 1
+},
       {
         "id": "p1-l6-t4",
         "type": "matching",
@@ -4028,19 +4028,19 @@ export const lessons5eP1 = [
       "points": 1
     },
     {
-      "id": "p1-l13-t7",
-      "type": "singleChoice",
-      "prompt": "🟢 Mini-scène : « Marcus adest. Flavia adest. Lucius non adest. » Quelle conclusion est juste ?",
-      "options": [
-        "Lucius n’est pas encore là",
-        "Marcus n’est pas là",
-        "Flavia quitte la maison",
-        "Personne n’est présent"
-      ],
-      "expected": "Lucius n’est pas encore là",
-      "shuffle": true,
-      "points": 1
-    }
+  "id": "p1-l13-t7",
+  "type": "singleChoice",
+  "prompt": "🟢 Mini-scène : « Marcus adest. Flavia adest. Lucius non adest. » Qui n’est pas là ?",
+  "options": [
+    "Lucius",
+    "Marcus",
+    "Flavia",
+    "tout le monde est là"
+  ],
+  "expected": "Lucius",
+  "shuffle": true,
+  "points": 1
+}
   ],
   "production": [
     {
