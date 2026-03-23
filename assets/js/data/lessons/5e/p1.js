@@ -387,25 +387,24 @@ export const lessons5eP1 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p1-l2-t3",
-        "type": "multipleChoice",
-        "prompt": "🏠 Choisis des éléments de la maison.",
-        "options": [
-          "ianua",
-          "fenestra",
-          "forum",
-          "cella",
-          "taberna"
-        ],
-        "expected": [
-          "ianua",
-          "fenestra",
-          "cella"
-        ],
-        "shuffle": true,
-        "points": 1
-      },
+     {
+  "id": "p1-l2-t3",
+  "type": "multipleChoice",
+  "prompt": "🏠 Mini-scène : « Niger ante ianuam stat. Lucius per fenestram spectat. » Quels mots désignent des éléments de la maison ?",
+  "options": [
+    "ianuam",
+    "fenestram",
+    "Niger",
+    "stat",
+    "Lucius"
+  ],
+  "expected": [
+    "ianuam",
+    "fenestram"
+  ],
+  "shuffle": true,
+  "points": 1
+},
       {
         "id": "p1-l2-t4",
         "type": "matching",
@@ -725,25 +724,24 @@ export const lessons5eP1 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p1-l3-t3",
-        "type": "multipleChoice",
-        "prompt": "🛍️ Choisis les mots liés à une scène de marché.",
-        "options": [
-          "mercator",
-          "panis",
-          "vinum",
-          "murus",
-          "ianua"
-        ],
-        "expected": [
-          "mercator",
-          "panis",
-          "vinum"
-        ],
-        "shuffle": true,
-        "points": 1
-      },
+    {
+  "id": "p1-l3-t3",
+  "type": "multipleChoice",
+  "prompt": "🛍️ Mini-scène : « Mercator panem et vinum portat. » Quels objets le marchand porte-t-il ?",
+  "options": [
+    "panem",
+    "vinum",
+    "mercator",
+    "forum",
+    "ianua"
+  ],
+  "expected": [
+    "panem",
+    "vinum"
+  ],
+  "shuffle": true,
+  "points": 1
+},
       {
         "id": "p1-l3-t4",
         "type": "matching",
