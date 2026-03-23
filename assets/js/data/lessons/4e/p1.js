@@ -103,7 +103,7 @@ const lessonL10 = {
     "audio, audis = entendre",
     "timeo, times = craindre"
   ],
-  maxScore: 10,
+  maxScore: 13,
   training: [
     {
       id: "4e-p1-l10-t1",
@@ -128,21 +128,21 @@ const lessonL10 = {
       shuffle: true,
       points: 1
     },
-    {
+        {
       id: "4e-p1-l10-t3",
       type: "multipleChoice",
-      prompt: "🌆 Mini-texte : « Livia tabellam portat. Marcus audit. Amici iterum conveniunt. » Quelles informations deviennent certaines ?",
+      prompt: "🌆 Mini-texte : « Livia tabellam portat. Marcus audit. Amici iterum conveniunt. » Quels couples sujet + verbe sont corrects ?",
       options: [
-        "Livia porte une tablette",
-        "Marcus écoute",
-        "des amis se retrouvent",
-        "un navire quitte Ostie",
-        "Hannibal traverse les Alpes"
+        "Livia — portat",
+        "Marcus — audit",
+        "amici — conveniunt",
+        "tabellam — audit",
+        "iterum — conveniunt"
       ],
       expected: [
-        "Livia porte une tablette",
-        "Marcus écoute",
-        "des amis se retrouvent"
+        "Livia — portat",
+        "Marcus — audit",
+        "amici — conveniunt"
       ],
       shuffle: true,
       points: 1
@@ -251,7 +251,7 @@ const lessonL10 = {
         ignoreContractions: true,
         allowPartialAnswer: "core-meaning-only"
       },
-      points: 1,
+      points: 2,
       canonicalAnswer: "les amis se retrouvent de nouveau et lisent la tablette",
       normalization: {
         trim: true,
@@ -301,7 +301,7 @@ const lessonL10 = {
         ],
         orderMode: "chunk-permutation"
       },
-      points: 1,
+      points: 2,
       canonicalAnswer: "amici iterum conveniunt",
       normalization: {
         trim: true,
@@ -323,48 +323,38 @@ const lessonL10 = {
         { input: "amici iterum conveniuntunt", isCorrect: false }
       ]
     },
-    {
+        {
       id: "4e-p1-l10-p3",
       type: "textInput",
-      prompt: "🌆 Mini-texte : « Amici iterum conveniunt. Tabella traditur. Timor tamen manet. » Quel élément empêche la scène d’être complètement paisible ?",
-      expected: "la peur qui demeure",
+      prompt: "🌆 Mini-texte : « Amici iterum conveniunt. Tabella traditur. Timor tamen manet. » Classe les trois verbes sous la forme « actif pluriel : ... ; passif : ... ; actif singulier : ... ».",
+      expected: "actif pluriel : conveniunt ; passif : traditur ; actif singulier : manet",
       acceptedAnswers: [
-        "la peur qui demeure",
-        "le fait que la peur reste là",
-        "le timor qui subsiste",
-        "la tension qui demeure"
+        "actif pluriel : conveniunt ; passif : traditur ; actif singulier : manet",
+        "actif pluriel: conveniunt ; passif: traditur ; actif singulier: manet"
       ],
       answerConfig: {
-        type: "inference-fr",
-        language: "fr",
+        type: "one-of",
+        language: "latin",
         accepted: [
-          "la peur qui demeure",
-          "le fait que la peur reste là",
-          "le timor qui subsiste",
-          "la tension qui demeure"
-        ],
-        ignoreDeterminers: true,
-        ignoreContractions: true,
-        allowPartialAnswer: "never"
+          "actif pluriel : conveniunt ; passif : traditur ; actif singulier : manet",
+          "actif pluriel: conveniunt ; passif: traditur ; actif singulier: manet"
+        ]
       },
-      points: 1,
-      canonicalAnswer: "la peur qui demeure",
+      points: 2,
+      canonicalAnswer: "actif pluriel : conveniunt ; passif : traditur ; actif singulier : manet",
       normalization: {
         trim: true,
         collapseSpaces: true,
         ignoreCase: true,
         ignorePunctuation: true,
         normalizeApostrophes: true,
-        ignoreDiacritics: true,
-        normalizeFrenchContractions: true,
-        ignoreFrenchDeterminers: true
+        ignoreDiacritics: true
       },
-      gradingFocus: "Inférence courte sur la coexistence de l’apaisement et de la tension.",
-      rejectIf: ["contre-sens global", "réponse hors-sujet"],
+      gradingFocus: "Classement raisonné de trois formes verbales différentes.",
+      rejectIf: ["verbe incorrect", "réponse hors-sujet"],
       tests: [
-        { input: "la peur qui demeure", isCorrect: true },
-        { input: "la tension qui demeure", isCorrect: true },
-        { input: "la richesse du banquet", isCorrect: false }
+        { input: "actif pluriel : conveniunt ; passif : traditur ; actif singulier : manet", isCorrect: true },
+        { input: "actif pluriel : traditur ; passif : conveniunt ; actif singulier : manet", isCorrect: false }
       ]
     }
   ],
@@ -416,7 +406,7 @@ const lessonL11 = {
     "venio, venis = venir",
     "timeo, times = craindre"
   ],
-  maxScore: 10,
+  maxScore: 13,
   training: [
     {
       id: "4e-p1-l11-t1",
@@ -551,7 +541,7 @@ const lessonL11 = {
         ignoreContractions: true,
         allowPartialAnswer: "core-meaning-only"
       },
-      points: 1,
+      points: 2,
       canonicalAnswer: "le messager est venu hier, Marcus lit aujourd’hui",
       normalization: {
         trim: true,
@@ -601,7 +591,7 @@ const lessonL11 = {
         ],
         orderMode: "chunk-permutation"
       },
-      points: 1,
+      points: 2,
       canonicalAnswer: "nuntius heri venit",
       normalization: {
         trim: true,
@@ -623,48 +613,40 @@ const lessonL11 = {
         { input: "nuntius heri veniebat", isCorrect: false }
       ]
     },
-    {
+        {
       id: "4e-p1-l11-p3",
       type: "textInput",
-      prompt: "🛣️ Mini-texte : « Eques transit. Pulvis manebat. Nuntius heri venit. Marcus hodie legit. » Pourquoi les temps ne disent-ils pas tous la même chose dans ce passage ?",
-      expected: "parce qu'ils distinguent l'actuel, le fond et le fait déjà accompli",
+      prompt: "🛣️ Mini-texte : « Eques transit. Pulvis manebat. Nuntius heri venit. Marcus hodie legit. » Classe les verbes sous la forme « présents : ... ; imparfait : ... ; parfait : ... ».",
+      expected: "présents : transit, legit ; imparfait : manebat ; parfait : venit",
       acceptedAnswers: [
-        "parce qu'ils distinguent l'actuel, le fond et le fait déjà accompli",
-        "ils servent à distinguer présent, durée et fait accompli",
-        "chaque temps donne un effet différent dans le récit",
-        "le présent, l'imparfait et le parfait n'ont pas la même valeur ici"
+        "présents : transit, legit ; imparfait : manebat ; parfait : venit",
+        "présents: transit, legit ; imparfait: manebat ; parfait: venit",
+        "présents : transit legit ; imparfait : manebat ; parfait : venit"
       ],
       answerConfig: {
-        type: "inference-fr",
-        language: "fr",
+        type: "one-of",
+        language: "latin",
         accepted: [
-          "parce qu'ils distinguent l'actuel, le fond et le fait déjà accompli",
-          "ils servent à distinguer présent, durée et fait accompli",
-          "chaque temps donne un effet différent dans le récit",
-          "le présent, l'imparfait et le parfait n'ont pas la même valeur ici"
-        ],
-        ignoreDeterminers: true,
-        ignoreContractions: true,
-        allowPartialAnswer: "never"
+          "présents : transit, legit ; imparfait : manebat ; parfait : venit",
+          "présents: transit, legit ; imparfait: manebat ; parfait: venit",
+          "présents : transit legit ; imparfait : manebat ; parfait : venit"
+        ]
       },
-      points: 1,
-      canonicalAnswer: "parce qu'ils distinguent l'actuel, le fond et le fait déjà accompli",
+      points: 2,
+      canonicalAnswer: "présents : transit, legit ; imparfait : manebat ; parfait : venit",
       normalization: {
         trim: true,
         collapseSpaces: true,
         ignoreCase: true,
         ignorePunctuation: true,
         normalizeApostrophes: true,
-        ignoreDiacritics: true,
-        normalizeFrenchContractions: true,
-        ignoreFrenchDeterminers: true
+        ignoreDiacritics: true
       },
-      gradingFocus: "Inférence grammaticale synthétique sur les valeurs des temps.",
-      rejectIf: ["contre-sens global", "réponse hors-sujet"],
+      gradingFocus: "Classement morphosyntaxique des temps dans un mini-dossier.",
+      rejectIf: ["verbe incorrect", "réponse hors-sujet"],
       tests: [
-        { input: "ils servent à distinguer présent, durée et fait accompli", isCorrect: true },
-        { input: "chaque temps donne un effet différent dans le récit", isCorrect: true },
-        { input: "tous les verbes racontent exactement la même chose", isCorrect: false }
+        { input: "présents : transit, legit ; imparfait : manebat ; parfait : venit", isCorrect: true },
+        { input: "présents : manebat ; imparfait : transit ; parfait : legit", isCorrect: false }
       ]
     }
   ],
@@ -716,7 +698,7 @@ const lessonL12 = {
     "erro, erras = se tromper",
     "monstro, monstras = montrer"
   ],
-  maxScore: 10,
+  maxScore: 13,
   training: [
     {
       id: "4e-p1-l12-t1",
@@ -796,21 +778,18 @@ const lessonL12 = {
       points: 1,
       feedback: "Le petit mot démonstratif précise l’objet visé : il ne s’ajoute pas au hasard."
     },
-    {
+        {
       id: "4e-p1-l12-t6",
       type: "multipleChoice",
-      prompt: "📜 Mini-texte : « Hic rumor crescit. Illa littera legitur. Ipse consul tacet. » Quelles informations deviennent certaines ?",
+      prompt: "📜 Mini-texte : « Hic rumor crescit. Illa littera legitur. Ipse consul tacet. » Quels groupes contiennent un démonstratif ou un intensif ?",
       options: [
-        "une rumeur précise se répand",
-        "une lettre précise est lue",
-        "le consul lui-même se tait",
-        "un navire est fondé"
+        "hic rumor",
+        "illa littera",
+        "ipse consul",
+        "crescit",
+        "legitur"
       ],
-      expected: [
-        "une rumeur précise se répand",
-        "une lettre précise est lue",
-        "le consul lui-même se tait"
-      ],
+      expected: ["hic rumor", "illa littera", "ipse consul"],
       shuffle: true,
       points: 1
     },
@@ -868,7 +847,7 @@ const lessonL12 = {
         ignoreContractions: true,
         allowPartialAnswer: "core-meaning-only"
       },
-      points: 1,
+      points: 2,
       canonicalAnswer: "cette rumeur-ci est fausse, cette lettre-là est vraie",
       normalization: {
         trim: true,
@@ -918,7 +897,7 @@ const lessonL12 = {
         ],
         orderMode: "chunk-permutation"
       },
-      points: 1,
+      points: 2,
       canonicalAnswer: "ipse consul hanc litteram legit",
       normalization: {
         trim: true,
@@ -940,48 +919,38 @@ const lessonL12 = {
         { input: "ipse consul illa littera legit", isCorrect: false }
       ]
     },
-    {
+        {
       id: "4e-p1-l12-p3",
       type: "textInput",
-      prompt: "📜 Mini-texte : « Hic rumor crescit. Illa littera legitur. Ipse consul tacet. » Pourquoi ces petits mots sont-ils utiles dans la scène ?",
-      expected: "ils permettent de distinguer précisément les informations et les objets",
+      prompt: "📜 Mini-texte : « Hic rumor crescit. Illa littera legitur. Ipse consul tacet. » Classe les groupes sous la forme « proximité : ... ; éloignement : ... ; insistance : ... ».",
+      expected: "proximité : hic rumor ; éloignement : illa littera ; insistance : ipse consul",
       acceptedAnswers: [
-        "ils permettent de distinguer précisément les informations et les objets",
-        "ils servent à pointer ce dont on parle exactement",
-        "ils précisent quelle rumeur, quelle lettre et quel personnage sont visés",
-        "ils évitent de tout confondre dans la scène"
+        "proximité : hic rumor ; éloignement : illa littera ; insistance : ipse consul",
+        "proximité: hic rumor ; éloignement: illa littera ; insistance: ipse consul"
       ],
       answerConfig: {
-        type: "inference-fr",
-        language: "fr",
+        type: "one-of",
+        language: "latin",
         accepted: [
-          "ils permettent de distinguer précisément les informations et les objets",
-          "ils servent à pointer ce dont on parle exactement",
-          "ils précisent quelle rumeur, quelle lettre et quel personnage sont visés",
-          "ils évitent de tout confondre dans la scène"
-        ],
-        ignoreDeterminers: true,
-        ignoreContractions: true,
-        allowPartialAnswer: "never"
+          "proximité : hic rumor ; éloignement : illa littera ; insistance : ipse consul",
+          "proximité: hic rumor ; éloignement: illa littera ; insistance: ipse consul"
+        ]
       },
-      points: 1,
-      canonicalAnswer: "ils permettent de distinguer précisément les informations et les objets",
+      points: 2,
+      canonicalAnswer: "proximité : hic rumor ; éloignement : illa littera ; insistance : ipse consul",
       normalization: {
         trim: true,
         collapseSpaces: true,
         ignoreCase: true,
         ignorePunctuation: true,
         normalizeApostrophes: true,
-        ignoreDiacritics: true,
-        normalizeFrenchContractions: true,
-        ignoreFrenchDeterminers: true
+        ignoreDiacritics: true
       },
-      gradingFocus: "Inférence grammaticale fermée sur la fonction de précision.",
-      rejectIf: ["contre-sens global", "réponse hors-sujet"],
+      gradingFocus: "Classement fonctionnel des démonstratifs.",
+      rejectIf: ["forme incorrecte", "réponse hors-sujet"],
       tests: [
-        { input: "ils servent à pointer ce dont on parle exactement", isCorrect: true },
-        { input: "ils évitent de tout confondre dans la scène", isCorrect: true },
-        { input: "ils rendent les phrases plus longues sans changer le sens", isCorrect: false }
+        { input: "proximité : hic rumor ; éloignement : illa littera ; insistance : ipse consul", isCorrect: true },
+        { input: "proximité : illa littera ; éloignement : hic rumor ; insistance : ipse consul", isCorrect: false }
       ]
     }
   ],
@@ -1040,7 +1009,7 @@ const lessonL13 = {
     "voco, vocas = appeler",
     "administro, administras = administrer"
   ],
-  maxScore: 10,
+  maxScore: 13,
   training: [
     {
       id: "4e-p1-l13-t1",
@@ -1083,34 +1052,30 @@ const lessonL13 = {
       shuffle: true,
       points: 1
     },
-    {
+        {
       id: "4e-p1-l13-t3",
-      type: "singleChoice",
-      prompt: "🏛️ Mini-texte : « Consul cives mittit. Colonia conditur. Via paratur. » Quelle idée politique domine cette scène ?",
-      options: [
-        "Rome organise une expansion",
-        "Rome abandonne ses territoires",
-        "un banquet privé est préparé",
-        "un procès se tient au Sénat"
-      ],
-      expected: "Rome organise une expansion",
+      type: "multipleChoice",
+      prompt: "🏛️ Mini-texte : « Consul cives mittit. Colonia conditur. Via paratur. » Quelles formes sont au passif ?",
+      options: ["mittit", "conditur", "paratur", "cives"],
+      expected: ["conditur", "paratur"],
       shuffle: true,
       points: 1
     },
-    {
+        {
       id: "4e-p1-l13-t4",
       type: "multipleChoice",
-      prompt: "🏛️ Mini-texte : « Senatus deliberat. Consul cives vocat. Colonia longe conditur. » Quelles actions appartiennent à l’autorité publique ?",
+      prompt: "🏛️ Mini-texte : « Senatus deliberat. Consul cives vocat. Colonia longe conditur. » Quelles analyses sont justes ?",
       options: [
-        "délibérer",
-        "appeler des citoyens",
-        "fonder une colonie loin de Rome",
-        "raccommoder un vêtement"
+        "deliberat est un actif",
+        "cives est le COD de vocat",
+        "conditur est un passif",
+        "senatus est un accusatif",
+        "longe est un verbe"
       ],
       expected: [
-        "délibérer",
-        "appeler des citoyens",
-        "fonder une colonie loin de Rome"
+        "deliberat est un actif",
+        "cives est le COD de vocat",
+        "conditur est un passif"
       ],
       shuffle: true,
       points: 1
@@ -1130,35 +1095,29 @@ const lessonL13 = {
       points: 1,
       feedback: "Je repère le passif et je rattache chaque groupe à la bonne réalité politique."
     },
-    {
+        {
       id: "4e-p1-l13-t6",
       type: "multipleChoice",
-      prompt: "🏛️ Mini-dossier : « Civis est Romanus. Consul rem publicam administrat. Colonia in nova terra conditur. Provincia defenditur. » Quelles relations mot / fonction apparaissent ?",
+      prompt: "🏛️ Mini-dossier : « Civis est Romanus. Consul rem publicam administrat. Colonia in nova terra conditur. Provincia defenditur. » Quels segments montrent explicitement un passif ?",
       options: [
-        "le citoyen appartient à la cité",
-        "le consul agit dans la vie publique",
-        "la colonie prolonge Rome ailleurs",
-        "la province est seulement un bâtiment"
+        "civis est Romanus",
+        "consul rem publicam administrat",
+        "colonia in nova terra conditur",
+        "provincia defenditur"
       ],
       expected: [
-        "le citoyen appartient à la cité",
-        "le consul agit dans la vie publique",
-        "la colonie prolonge Rome ailleurs"
+        "colonia in nova terra conditur",
+        "provincia defenditur"
       ],
       shuffle: true,
       points: 1
     },
-    {
+        {
       id: "4e-p1-l13-t7",
       type: "singleChoice",
-      prompt: "🏛️ Mini-texte : « Roma vias mittit, cives vocat, colonias condit. » Quel mouvement général se dessine ?",
-      options: [
-        "Rome étend son organisation au loin",
-        "Rome s’enferme derrière ses murs",
-        "Rome oublie la mer",
-        "Rome cesse de gouverner"
-      ],
-      expected: "Rome étend son organisation au loin",
+      prompt: "🏛️ Mini-texte : « Roma vias mittit, cives vocat, colonias condit. » Combien de COD vois-tu dans la phrase ?",
+      options: ["1", "2", "3", "4"],
+      expected: "3",
       shuffle: true,
       points: 1
     }
@@ -1188,7 +1147,7 @@ const lessonL13 = {
         ignoreContractions: true,
         allowPartialAnswer: "core-meaning-only"
       },
-      points: 1,
+      points: 2,
       canonicalAnswer: "le consul envoie des citoyens et une colonie est fondée",
       normalization: {
         trim: true,
@@ -1238,7 +1197,7 @@ const lessonL13 = {
         ],
         orderMode: "chunk-permutation"
       },
-      points: 1,
+      points: 2,
       canonicalAnswer: "senatus cives vocat",
       normalization: {
         trim: true,
@@ -1261,48 +1220,40 @@ const lessonL13 = {
         { input: "senatus cives vocant", isCorrect: false }
       ]
     },
-    {
+        {
       id: "4e-p1-l13-p3",
       type: "textInput",
-      prompt: "🏛️ Mini-texte : « Consul cives mittit. Colonia conditur. Provincia defenditur. Via paratur. » Quelle logique d’ensemble se dessine dans ce dossier ?",
-      expected: "une logique d’expansion et d’organisation romaines",
+      prompt: "🏛️ Mini-texte : « Consul cives mittit. Colonia conditur. Provincia defenditur. Via paratur. » Réponds sous la forme « actif : ... ; passifs : ... » en recopiant les verbes latins.",
+      expected: "actif : mittit ; passifs : conditur, defenditur, paratur",
       acceptedAnswers: [
-        "une logique d'expansion et d'organisation romaines",
-        "Rome étend et organise son pouvoir",
-        "la cité envoie, fonde, défend et aménage",
-        "un pouvoir public organise l'extension de Rome"
+        "actif : mittit ; passifs : conditur, defenditur, paratur",
+        "actif: mittit ; passifs: conditur, defenditur, paratur",
+        "actif : mittit ; passifs : conditur defenditur paratur"
       ],
       answerConfig: {
-        type: "inference-fr",
-        language: "fr",
+        type: "one-of",
+        language: "latin",
         accepted: [
-          "une logique d'expansion et d'organisation romaines",
-          "Rome étend et organise son pouvoir",
-          "la cité envoie, fonde, défend et aménage",
-          "un pouvoir public organise l'extension de Rome"
-        ],
-        ignoreDeterminers: true,
-        ignoreContractions: true,
-        allowPartialAnswer: "never"
+          "actif : mittit ; passifs : conditur, defenditur, paratur",
+          "actif: mittit ; passifs: conditur, defenditur, paratur",
+          "actif : mittit ; passifs : conditur defenditur paratur"
+        ]
       },
-      points: 1,
-      canonicalAnswer: "une logique d’expansion et d’organisation romaines",
+      points: 2,
+      canonicalAnswer: "actif : mittit ; passifs : conditur, defenditur, paratur",
       normalization: {
         trim: true,
         collapseSpaces: true,
         ignoreCase: true,
         ignorePunctuation: true,
         normalizeApostrophes: true,
-        ignoreDiacritics: true,
-        normalizeFrenchContractions: true,
-        ignoreFrenchDeterminers: true
+        ignoreDiacritics: true
       },
-      gradingFocus: "Inférence synthétique sur institutions, territoire et expansion.",
-      rejectIf: ["contre-sens global", "réponse hors-sujet"],
+      gradingFocus: "Distinction nette entre une action politique active et trois procès au passif.",
+      rejectIf: ["verbe incorrect", "réponse hors-sujet"],
       tests: [
-        { input: "Rome étend et organise son pouvoir", isCorrect: true },
-        { input: "la cité envoie, fonde, défend et aménage", isCorrect: true },
-        { input: "des individus isolés prennent des décisions privées", isCorrect: false }
+        { input: "actif : mittit ; passifs : conditur, defenditur, paratur", isCorrect: true },
+        { input: "actif : conditur ; passifs : mittit, defenditur, paratur", isCorrect: false }
       ]
     }
   ],
@@ -1354,77 +1305,59 @@ const lessonL14 = {
     "narro, narras = raconter",
     "iubeo, iubes = ordonner"
   ],
-  maxScore: 10,
+  maxScore: 13,
   training: [
-    {
+        {
       id: "4e-p1-l14-t1",
       type: "multipleChoice",
-      prompt: "🌊 Mini-dossier : « Prima tabella venit ex Sicilia. Secunda navem narrat. Tertia cives monet. » Quels types de voix apparaissent déjà ?",
-      options: [
-        "une annonce arrivée de Sicile",
-        "un récit sur un navire",
-        "un avertissement adressé aux citoyens",
-        "une scène de classe",
-        "une fable mythologique"
-      ],
-      expected: [
-        "une annonce arrivée de Sicile",
-        "un récit sur un navire",
-        "un avertissement adressé aux citoyens"
-      ],
+      prompt: "🌊 Mini-dossier : « Prima tabella venit ex Sicilia. Secunda navem narrat. Tertia cives monet. » Quels verbes donnent la fonction propre de chaque tablette ?",
+      options: ["venit", "narrat", "monet", "Sicilia", "cives"],
+      expected: ["venit", "narrat", "monet"],
       shuffle: true,
       points: 1
     },
-    {
+        {
       id: "4e-p1-l14-t2",
       type: "matching",
-      prompt: "🌊 Associe segment et fonction dominante.",
+      prompt: "🌊 Associe chaque segment au verbe conjugué qui le commande.",
       pairs: [
-        { left: "nuntius venit", right: "arrivée d'une nouvelle" },
-        { left: "navis periclitatur", right: "récit d'un danger" },
-        { left: "cives parati sint", right: "ordre / consigne" }
+        { left: "tabella venit ex Sicilia", right: "venit" },
+        { left: "tabella navem narrat", right: "narrat" },
+        { left: "tabella cives monet", right: "monet" }
       ],
-      rightOptions: [
-        "ordre / consigne",
-        "récit d'un danger",
-        "arrivée d'une nouvelle"
-      ],
+      rightOptions: ["monet", "venit", "narrat"],
       expected: {
-        "nuntius venit": "arrivée d'une nouvelle",
-        "navis periclitatur": "récit d'un danger",
-        "cives parati sint": "ordre / consigne"
+        "tabella venit ex Sicilia": "venit",
+        "tabella navem narrat": "narrat",
+        "tabella cives monet": "monet"
       },
       points: 1
     },
-    {
+        {
       id: "4e-p1-l14-t3",
       type: "singleChoice",
-      prompt: "🌊 Mini-texte : « Prima tabella narrat. Secunda iubet. Tertia monet. » Quelle différence structure le dossier ?",
-      options: [
-        "chaque tablette n'a pas la même fonction",
-        "tout répète exactement la même chose",
-        "tout se passe au même instant de la même façon",
-        "les trois tablettes sont vides"
-      ],
-      expected: "chaque tablette n'a pas la même fonction",
+      prompt: "🌊 Mini-texte : « Prima tabella narrat. Secunda iubet. Tertia monet. » Quel verbe exprime le plus clairement un ordre ?",
+      options: ["narrat", "iubet", "monet", "tabella"],
+      expected: "iubet",
       shuffle: true,
       points: 1
     },
-    {
+        {
       id: "4e-p1-l14-t4",
       type: "multipleChoice",
-      prompt: "🌊 Mini-texte : « Nuntius venit. Multi tacent. Marcus legit. Alius narrat. » Quels indices montrent que plusieurs voix se croisent ?",
+      prompt: "🌊 Mini-texte : « Nuntius venit. Multi tacent. Marcus legit. Alius narrat. » Quels couples sujet + verbe sont corrects ?",
       options: [
-        "une nouvelle arrive",
-        "quelqu'un lit",
-        "un autre raconte",
-        "tout le monde dort",
-        "la ville disparaît"
+        "nuntius — venit",
+        "multi — tacent",
+        "Marcus — legit",
+        "alius — narrat",
+        "Marcus — venit"
       ],
       expected: [
-        "une nouvelle arrive",
-        "quelqu'un lit",
-        "un autre raconte"
+        "nuntius — venit",
+        "multi — tacent",
+        "Marcus — legit",
+        "alius — narrat"
       ],
       shuffle: true,
       points: 1
@@ -1444,35 +1377,21 @@ const lessonL14 = {
       points: 1,
       feedback: "Je distingue la fonction de chaque segment, pas seulement les mots isolés."
     },
-    {
+        {
       id: "4e-p1-l14-t6",
       type: "multipleChoice",
-      prompt: "🌊 Mini-dossier : « Prima tabella venit ex Sicilia. Secunda navem per noctem ivisse scribit. Tertia cives paratos esse iubet. » Quelles informations deviennent certaines ?",
-      options: [
-        "une première tablette vient de Sicile",
-        "une autre rapporte un trajet nocturne",
-        "une troisième donne une consigne aux citoyens",
-        "le consul célèbre une victoire certaine"
-      ],
-      expected: [
-        "une première tablette vient de Sicile",
-        "une autre rapporte un trajet nocturne",
-        "une troisième donne une consigne aux citoyens"
-      ],
+      prompt: "🌊 Mini-dossier : « Prima tabella venit ex Sicilia. Secunda navem per noctem ivisse scribit. Tertia cives paratos esse iubet. » Quels verbes conjugués lis-tu dans ce dossier ?",
+      options: ["venit", "scribit", "iubet", "ivisse", "esse"],
+      expected: ["venit", "scribit", "iubet"],
       shuffle: true,
       points: 1
     },
-    {
+        {
       id: "4e-p1-l14-t7",
       type: "singleChoice",
-      prompt: "🌊 Mini-texte : « Nuntius venit. Multi tacent. » Quel effet de scène apparaît immédiatement ?",
-      options: [
-        "une tension silencieuse",
-        "une fête bruyante",
-        "un débat scolaire",
-        "un départ joyeux"
-      ],
-      expected: "une tension silencieuse",
+      prompt: "🌊 Mini-texte : « Nuntius venit. Multi tacent. » Quelle forme a pour sujet un nominatif pluriel ?",
+      options: ["venit", "tacent", "nuntius", "multi"],
+      expected: "tacent",
       shuffle: true,
       points: 1
     }
@@ -1502,7 +1421,7 @@ const lessonL14 = {
         ignoreContractions: true,
         allowPartialAnswer: "core-meaning-only"
       },
-      points: 1,
+      points: 2,
       canonicalAnswer: "un message venu de Sicile arrive et avertit les citoyens",
       normalization: {
         trim: true,
@@ -1552,7 +1471,7 @@ const lessonL14 = {
         ],
         orderMode: "chunk-permutation"
       },
-      points: 1,
+      points: 2,
       canonicalAnswer: "tabella iter navis narrat",
       normalization: {
         trim: true,
@@ -1575,48 +1494,38 @@ const lessonL14 = {
         { input: "tabella iter navis narratur", isCorrect: false }
       ]
     },
-    {
+        {
       id: "4e-p1-l14-p3",
       type: "textInput",
-      prompt: "🌊 Mini-dossier : « Prima tabella venit ex Sicilia. Secunda navem narrat. Tertia cives monet. » Quelle hypothèse devient la plus plausible sur l’effet d’ensemble du dossier ?",
-      expected: "il transforme une nouvelle venue du large en alerte pour la ville",
+      prompt: "🌊 Mini-dossier : « Prima tabella venit ex Sicilia. Secunda navem narrat. Tertia cives monet. » Classe les verbes sous la forme « arrivée : ... ; récit : ... ; avertissement : ... ».",
+      expected: "arrivée : venit ; récit : narrat ; avertissement : monet",
       acceptedAnswers: [
-        "il transforme une nouvelle venue du large en alerte pour la ville",
-        "les messages venus du large deviennent un avertissement collectif",
-        "le dossier fait passer de l'information au signal d'alerte",
-        "une nouvelle maritime finit par concerner toute la cité"
+        "arrivée : venit ; récit : narrat ; avertissement : monet",
+        "arrivée: venit ; récit: narrat ; avertissement: monet"
       ],
       answerConfig: {
-        type: "inference-fr",
-        language: "fr",
+        type: "one-of",
+        language: "latin",
         accepted: [
-          "il transforme une nouvelle venue du large en alerte pour la ville",
-          "les messages venus du large deviennent un avertissement collectif",
-          "le dossier fait passer de l'information au signal d'alerte",
-          "une nouvelle maritime finit par concerner toute la cité"
-        ],
-        ignoreDeterminers: true,
-        ignoreContractions: true,
-        allowPartialAnswer: "never"
+          "arrivée : venit ; récit : narrat ; avertissement : monet",
+          "arrivée: venit ; récit: narrat ; avertissement: monet"
+        ]
       },
-      points: 1,
-      canonicalAnswer: "il transforme une nouvelle venue du large en alerte pour la ville",
+      points: 2,
+      canonicalAnswer: "arrivée : venit ; récit : narrat ; avertissement : monet",
       normalization: {
         trim: true,
         collapseSpaces: true,
         ignoreCase: true,
         ignorePunctuation: true,
         normalizeApostrophes: true,
-        ignoreDiacritics: true,
-        normalizeFrenchContractions: true,
-        ignoreFrenchDeterminers: true
+        ignoreDiacritics: true
       },
-      gradingFocus: "Inférence de synthèse sur la progression interne du dossier.",
-      rejectIf: ["contre-sens global", "réponse hors-sujet"],
+      gradingFocus: "Classement fonctionnel de trois verbes dans un texte suivi.",
+      rejectIf: ["verbe incorrect", "réponse hors-sujet"],
       tests: [
-        { input: "les messages venus du large deviennent un avertissement collectif", isCorrect: true },
-        { input: "une nouvelle maritime finit par concerner toute la cité", isCorrect: true },
-        { input: "il s'agit d'un dossier de recettes de cuisine", isCorrect: false }
+        { input: "arrivée : venit ; récit : narrat ; avertissement : monet", isCorrect: true },
+        { input: "arrivée : narrat ; récit : venit ; avertissement : monet", isCorrect: false }
       ]
     }
   ],
@@ -1668,79 +1577,49 @@ const lessonL15 = {
     "mitto, mittis = envoyer",
     "audio, audis = entendre"
   ],
-  maxScore: 10,
+  maxScore: 13,
   training: [
-    {
+        {
       id: "4e-p1-l15-t1",
       type: "multipleChoice",
-      prompt: "🏛️🌊 Quels mots peuvent former l’armature thématique de la période ?",
-      options: [
-        "Roma",
-        "mare",
-        "metus",
-        "nuntius",
-        "hortus"
-      ],
-      expected: [
-        "Roma",
-        "mare",
-        "metus",
-        "nuntius"
-      ],
+      prompt: "🏛️🌊 Quels mots suivants sont des verbes conjugués utiles pour lire le bilan ?",
+      options: ["Roma", "mare", "venit", "timent", "conditur"],
+      expected: ["venit", "timent", "conditur"],
       shuffle: true,
       points: 1
     },
-    {
+        {
       id: "4e-p1-l15-t2",
       type: "matching",
-      prompt: "🏛️🌊 Associe le mot-clé à la grande sphère qu’il évoque.",
+      prompt: "🏛️🌊 Associe chaque forme à son statut grammatical.",
       pairs: [
-        { left: "Roma", right: "centre politique" },
-        { left: "mare", right: "ouverture et circulation" },
-        { left: "metus", right: "menace et inquiétude" }
+        { left: "crescit", right: "verbe actif" },
+        { left: "conditur", right: "verbe passif" },
+        { left: "nuntii", right: "nominatif pluriel" }
       ],
-      rightOptions: [
-        "ouverture et circulation",
-        "menace et inquiétude",
-        "centre politique"
-      ],
+      rightOptions: ["verbe passif", "nominatif pluriel", "verbe actif"],
       expected: {
-        "Roma": "centre politique",
-        "mare": "ouverture et circulation",
-        "metus": "menace et inquiétude"
+        "crescit": "verbe actif",
+        "conditur": "verbe passif",
+        "nuntii": "nominatif pluriel"
       },
       points: 1
     },
-    {
+        {
       id: "4e-p1-l15-t3",
       type: "multipleChoice",
-      prompt: "🏛️🌊 Mini-dossier : « Roma vias mittit. Nuntii ex Sicilia veniunt. Cives timent. » Quels axes majeurs se croisent dans ce dossier ?",
-      options: [
-        "l’expansion romaine",
-        "l’arrivée de nouvelles maritimes",
-        "la montée de la peur",
-        "la vie agricole paisible",
-        "un concours poétique"
-      ],
-      expected: [
-        "l’expansion romaine",
-        "l’arrivée de nouvelles maritimes",
-        "la montée de la peur"
-      ],
+      prompt: "🏛️🌊 Mini-dossier : « Roma vias mittit. Nuntii ex Sicilia veniunt. Cives timent. » Quels sujets sont au nominatif pluriel ?",
+      options: ["Roma", "vias", "Nuntii", "Sicilia", "Cives"],
+      expected: ["Nuntii", "Cives"],
       shuffle: true,
       points: 1
     },
-    {
+        {
       id: "4e-p1-l15-t4",
       type: "singleChoice",
-      prompt: "🏛️🌊 Mini-texte : « Roma magna est. Mare apertum est. Rumor tamen crescit. » Quelle tension interne traverse la période ?",
-      options: [
-        "la puissance coexiste avec la fragilité",
-        "la ville est vide et sans avenir",
-        "la mer supprime toute inquiétude",
-        "le forum remplace complètement Ostie"
-      ],
-      expected: "la puissance coexiste avec la fragilité",
+      prompt: "🏛️🌊 Mini-texte : « Roma magna est. Mare apertum est. Rumor tamen crescit. » Quel mot sert de pivot oppositif dans la phrase ?",
+      options: ["Roma", "magna", "tamen", "crescit"],
+      expected: "tamen",
       shuffle: true,
       points: 1
     },
@@ -1759,22 +1638,22 @@ const lessonL15 = {
       points: 1,
       feedback: "Je tiens ensemble les éléments opposés de la scène au lieu d’en effacer un."
     },
-    {
+        {
       id: "4e-p1-l15-t6",
       type: "multipleChoice",
-      prompt: "🏛️🌊 Mini-dossier : « Roma crescit. Colonia conditur. Nuntius venit. Multi tacent. » Quelles informations deviennent certaines ?",
+      prompt: "🏛️🌊 Mini-dossier : « Roma crescit. Colonia conditur. Nuntius venit. Multi tacent. » Quels éléments suivants sont correctement identifiés ?",
       options: [
-        "Rome continue de s’étendre",
-        "une fondation a lieu",
-        "une nouvelle arrive",
-        "le silence gagne plusieurs personnages",
-        "tout devient léger et festif"
+        "crescit est un actif",
+        "conditur est un passif",
+        "nuntius est un nominatif singulier",
+        "multi est un nominatif pluriel",
+        "venit est un adjectif"
       ],
       expected: [
-        "Rome continue de s’étendre",
-        "une fondation a lieu",
-        "une nouvelle arrive",
-        "le silence gagne plusieurs personnages"
+        "crescit est un actif",
+        "conditur est un passif",
+        "nuntius est un nominatif singulier",
+        "multi est un nominatif pluriel"
       ],
       shuffle: true,
       points: 1
@@ -1814,7 +1693,7 @@ const lessonL15 = {
         ignoreContractions: true,
         allowPartialAnswer: "core-meaning-only"
       },
-      points: 1,
+      points: 2,
       canonicalAnswer: "Rome grandit, un message arrive, pourtant les citoyens ont peur",
       normalization: {
         trim: true,
@@ -1862,7 +1741,7 @@ const lessonL15 = {
         ],
         orderMode: "chunk-permutation"
       },
-      points: 1,
+      points: 2,
       canonicalAnswer: "Roma crescit, sed metus manet",
       normalization: {
         trim: true,
@@ -1884,48 +1763,40 @@ const lessonL15 = {
         { input: "Roma crevit, sed metus manet", isCorrect: false }
       ]
     },
-    {
+        {
       id: "4e-p1-l15-p3",
       type: "textInput",
-      prompt: "🏛️🌊 Mini-dossier : « Roma crescit. Colonia conditur. Nuntii veniunt. Cives timent. » Quelle formule résume le mieux la période ?",
-      expected: "une puissance en expansion traversée par l'inquiétude",
+      prompt: "🏛️🌊 Mini-dossier : « Roma crescit. Colonia conditur. Nuntii veniunt. Cives timent. » Réponds sous la forme « actifs : ... ; passif : ... ; sujets pluriels : ... ».",
+      expected: "actifs : crescit, veniunt, timent ; passif : conditur ; sujets pluriels : nuntii, cives",
       acceptedAnswers: [
-        "une puissance en expansion traversée par l'inquiétude",
-        "Rome grandit mais reste menacée",
-        "une cité qui s'étend tout en vivant sous la tension",
-        "l'expansion romaine avance avec une peur persistante"
+        "actifs : crescit, veniunt, timent ; passif : conditur ; sujets pluriels : nuntii, cives",
+        "actifs: crescit, veniunt, timent ; passif: conditur ; sujets pluriels: nuntii, cives",
+        "actifs : crescit veniunt timent ; passif : conditur ; sujets pluriels : nuntii cives"
       ],
       answerConfig: {
-        type: "inference-fr",
-        language: "fr",
+        type: "one-of",
+        language: "latin",
         accepted: [
-          "une puissance en expansion traversée par l'inquiétude",
-          "Rome grandit mais reste menacée",
-          "une cité qui s'étend tout en vivant sous la tension",
-          "l'expansion romaine avance avec une peur persistante"
-        ],
-        ignoreDeterminers: true,
-        ignoreContractions: true,
-        allowPartialAnswer: "never"
+          "actifs : crescit, veniunt, timent ; passif : conditur ; sujets pluriels : nuntii, cives",
+          "actifs: crescit, veniunt, timent ; passif: conditur ; sujets pluriels: nuntii, cives",
+          "actifs : crescit veniunt timent ; passif : conditur ; sujets pluriels : nuntii cives"
+        ]
       },
-      points: 1,
-      canonicalAnswer: "une puissance en expansion traversée par l'inquiétude",
+      points: 2,
+      canonicalAnswer: "actifs : crescit, veniunt, timent ; passif : conditur ; sujets pluriels : nuntii, cives",
       normalization: {
         trim: true,
         collapseSpaces: true,
         ignoreCase: true,
         ignorePunctuation: true,
         normalizeApostrophes: true,
-        ignoreDiacritics: true,
-        normalizeFrenchContractions: true,
-        ignoreFrenchDeterminers: true
+        ignoreDiacritics: true
       },
-      gradingFocus: "Inférence de synthèse finale sur tout l’arc de la période.",
-      rejectIf: ["contre-sens global", "réponse hors-sujet"],
+      gradingFocus: "Bilan morphosyntaxique de fin de période : voix, nombre, repérage verbal.",
+      rejectIf: ["forme incorrecte", "réponse hors-sujet"],
       tests: [
-        { input: "Rome grandit mais reste menacée", isCorrect: true },
-        { input: "l'expansion romaine avance avec une peur persistante", isCorrect: true },
-        { input: "une paix immobile et sans trouble domine tout", isCorrect: false }
+        { input: "actifs : crescit, veniunt, timent ; passif : conditur ; sujets pluriels : nuntii, cives", isCorrect: true },
+        { input: "actifs : conditur ; passif : crescit ; sujets pluriels : Roma, colonia", isCorrect: false }
       ]
     }
   ],
@@ -1975,7 +1846,7 @@ export const lessons4eP1 = [
       "intrat = il/elle entre",
       "ad forum = vers le forum"
     ],
-    maxScore: 10,
+    maxScore: 13,
     training: [
       {
         id: "4e-p1-l1-t1",
@@ -2050,20 +1921,18 @@ export const lessons4eP1 = [
         points: 1,
         feedback: "Lis chaque verbe avec son personnage, puis rattache le groupe de lieu au bon segment."
       },
-      {
+            {
         id: "4e-p1-l1-t6",
         type: "multipleChoice",
-        prompt: "🏛️ Mini-texte : « Multi ad forum currunt. Tabernae aperiuntur. Mercatores ante insulas stant. » Quels indices montrent que la ville est déjà lancée ?",
+        prompt: "🏛️ Mini-texte : « Multi ad forum currunt. Tabernae aperiuntur. Mercatores ante insulas stant. » Quels groupes ou formes indiquent explicitement le mouvement ou l’activité de la ville ?",
         options: [
-          "plusieurs gens vont déjà vers le forum",
-          "les boutiques commencent à ouvrir",
-          "tout le monde dort encore",
-          "la scène se passe au large de la Sicile"
+          "ad forum",
+          "aperiuntur",
+          "stant",
+          "ante insulas",
+          "insulae"
         ],
-        expected: [
-          "plusieurs gens vont déjà vers le forum",
-          "les boutiques commencent à ouvrir"
-        ],
+        expected: ["ad forum", "aperiuntur", "stant"],
         shuffle: true,
         points: 1
       },
@@ -2121,7 +1990,7 @@ export const lessons4eP1 = [
           ignoreContractions: true,
           allowPartialAnswer: "core-meaning-only"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "le marchand reste dans la boutique et deux citoyens courent vers le forum",
         normalization: {
           trim: true,
@@ -2171,7 +2040,7 @@ export const lessons4eP1 = [
           ],
           orderMode: "chunk-permutation"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "sarcinator ex via intrat",
         normalization: {
           trim: true,
@@ -2194,46 +2063,38 @@ export const lessons4eP1 = [
           { input: "sarcinator in via intrat", isCorrect: false }
         ]
       },
-      {
+            {
         id: "4e-p1-l1-p3",
         type: "textInput",
-        prompt: "🏛️ Mini-texte : « Duo cives ad forum currunt. Tabernae aperiuntur. Mercatores ante insulas stant. » Vers quel lieu plusieurs personnages convergent-ils ?",
-        expected: "vers le forum",
+        prompt: "🏛️ Mini-texte : « Duo cives ad forum currunt. Tabernae aperiuntur. Mercatores ante insulas stant. » Recopie, dans cet ordre : le sujet du déplacement ; le groupe de destination ; le sujet du dernier verbe.",
+        expected: "duo cives ; ad forum ; mercatores",
         acceptedAnswers: [
-          "vers le forum",
-          "ils convergent vers le forum",
-          "plusieurs personnages vont vers le forum"
+          "duo cives ; ad forum ; mercatores",
+          "duo cives; ad forum; mercatores"
         ],
         answerConfig: {
-          type: "inference-fr",
-          language: "fr",
+          type: "one-of",
+          language: "latin",
           accepted: [
-            "vers le forum",
-            "ils convergent vers le forum",
-            "plusieurs personnages vont vers le forum"
-          ],
-          ignoreDeterminers: true,
-          ignoreContractions: true,
-          allowPartialAnswer: "never"
+            "duo cives ; ad forum ; mercatores",
+            "duo cives; ad forum; mercatores"
+          ]
         },
-        points: 1,
-        canonicalAnswer: "vers le forum",
+        points: 2,
+        canonicalAnswer: "duo cives ; ad forum ; mercatores",
         normalization: {
           trim: true,
           collapseSpaces: true,
           ignoreCase: true,
           ignorePunctuation: true,
           normalizeApostrophes: true,
-          ignoreDiacritics: true,
-          normalizeFrenchContractions: true,
-          ignoreFrenchDeterminers: true
+          ignoreDiacritics: true
         },
-        gradingFocus: "Inférence courte, fermée, fondée sur un mini-texte latin.",
-        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        gradingFocus: "Repérage ordonné sujet / destination / sujet final.",
+        rejectIf: ["forme incorrecte", "réponse hors-sujet"],
         tests: [
-          { input: "vers le forum", isCorrect: true },
-          { input: "ils convergent vers le forum", isCorrect: true },
-          { input: "vers le port", isCorrect: false }
+          { input: "duo cives ; ad forum ; mercatores", isCorrect: true },
+          { input: "mercatores ; ad forum ; duo cives", isCorrect: false }
         ]
       }
     ],
@@ -2282,7 +2143,7 @@ export const lessons4eP1 = [
       "audit = il/elle entend",
       "eligit = il/elle choisit"
     ],
-    maxScore: 10,
+    maxScore: 13,
     training: [
       {
         id: "4e-p1-l2-t1",
@@ -2343,20 +2204,21 @@ export const lessons4eP1 = [
         points: 1,
         feedback: "Ne te fie pas seulement à la place : garde l’œil sur la forme du nom."
       },
-      {
+            {
         id: "4e-p1-l2-t6",
         type: "multipleChoice",
-        prompt: "🏛️ Mini-texte : « Vox crescit. Nomen consulis auditur. Civis consulem eligit. » Quelles informations deviennent certaines ?",
+        prompt: "🏛️ Mini-texte : « Vox crescit. Nomen consulis auditur. Civis consulem eligit. » Quels éléments suivants sont correctement identifiés ?",
         options: [
-          "le nom du consul circule dans la foule",
-          "un citoyen choisit le consul",
-          "la scène est publique",
-          "un navire entre au port"
+          "auditur est un passif",
+          "civis est le sujet du dernier verbe",
+          "consulem est le COD du dernier verbe",
+          "consulis est un nominatif",
+          "vox est un accusatif"
         ],
         expected: [
-          "le nom du consul circule dans la foule",
-          "un citoyen choisit le consul",
-          "la scène est publique"
+          "auditur est un passif",
+          "civis est le sujet du dernier verbe",
+          "consulem est le COD du dernier verbe"
         ],
         shuffle: true,
         points: 1
@@ -2415,7 +2277,7 @@ export const lessons4eP1 = [
           ignoreContractions: true,
           allowPartialAnswer: "core-meaning-only"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "le citoyen entend le consul et crie le nom",
         normalization: {
           trim: true,
@@ -2466,7 +2328,7 @@ export const lessons4eP1 = [
           ],
           orderMode: "chunk-permutation"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "civis consulem eligit",
         normalization: {
           trim: true,
@@ -2489,48 +2351,38 @@ export const lessons4eP1 = [
           { input: "consul civem eligit", isCorrect: false }
         ]
       },
-      {
+            {
         id: "4e-p1-l2-p3",
         type: "textInput",
-        prompt: "🏛️ Mini-texte : « Vox crescit. Nomen consulis auditur. Multi ad centrum pergunt. » Quelle information devient certaine ?",
-        expected: "la foule se rassemble autour du nom du consul",
+        prompt: "🏛️ Mini-texte : « Vox crescit. Nomen consulis auditur. Civis consulem eligit. » Recopie, dans cet ordre : la forme au génitif ; le sujet du dernier verbe ; le COD du dernier verbe.",
+        expected: "consulis ; civis ; consulem",
         acceptedAnswers: [
-          "la foule se rassemble autour du nom du consul",
-          "le nom du consul attire la foule",
-          "plusieurs personnes se resserrent autour du consul",
-          "le centre de la place attire la foule autour du consul"
+          "consulis ; civis ; consulem",
+          "consulis; civis; consulem"
         ],
         answerConfig: {
-          type: "inference-fr",
-          language: "fr",
+          type: "one-of",
+          language: "latin",
           accepted: [
-            "la foule se rassemble autour du nom du consul",
-            "le nom du consul attire la foule",
-            "plusieurs personnes se resserrent autour du consul",
-            "le centre de la place attire la foule autour du consul"
-          ],
-          ignoreDeterminers: true,
-          ignoreContractions: true,
-          allowPartialAnswer: "never"
+            "consulis ; civis ; consulem",
+            "consulis; civis; consulem"
+          ]
         },
-        points: 1,
-        canonicalAnswer: "la foule se rassemble autour du nom du consul",
+        points: 2,
+        canonicalAnswer: "consulis ; civis ; consulem",
         normalization: {
           trim: true,
           collapseSpaces: true,
           ignoreCase: true,
           ignorePunctuation: true,
           normalizeApostrophes: true,
-          ignoreDiacritics: true,
-          normalizeFrenchContractions: true,
-          ignoreFrenchDeterminers: true
+          ignoreDiacritics: true
         },
-        gradingFocus: "Inférence fermée sur un mini-texte latin ; réponse courte et calibrable.",
-        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        gradingFocus: "Repérage de cas et de fonctions dans une phrase de 3e déclinaison.",
+        rejectIf: ["cas incorrect", "réponse hors-sujet"],
         tests: [
-          { input: "la foule se rassemble autour du nom du consul", isCorrect: true },
-          { input: "le nom du consul attire la foule", isCorrect: true },
-          { input: "la foule quitte le forum pour Ostie", isCorrect: false }
+          { input: "consulis ; civis ; consulem", isCorrect: true },
+          { input: "consulem ; civis ; consulis", isCorrect: false }
         ]
       }
     ],
@@ -2579,7 +2431,7 @@ export const lessons4eP1 = [
       "scripsit = il/elle a écrit",
       "heri = hier"
     ],
-    maxScore: 10,
+    maxScore: 13,
     training: [
       {
         id: "4e-p1-l3-t1",
@@ -2711,7 +2563,7 @@ export const lessons4eP1 = [
           ignoreContractions: true,
           allowPartialAnswer: "core-meaning-only"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "le messager est venu de Sicile et a apporté la tablette",
         normalization: {
           trim: true,
@@ -2761,7 +2613,7 @@ export const lessons4eP1 = [
           ],
           orderMode: "chunk-permutation"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "nuntius navem in portu vidit",
         normalization: {
           trim: true,
@@ -2785,48 +2637,38 @@ export const lessons4eP1 = [
           { input: "nuntius navis in portu vidit", isCorrect: false }
         ]
       },
-      {
+            {
         id: "4e-p1-l3-p3",
         type: "textInput",
-        prompt: "🌊 Mini-texte : « Nuntius ex Sicilia venit. Tabellam attulit. Multi tacent. » Quel effet immédiat produit l’arrivée du message ?",
-        expected: "elle fait entrer une inquiétude nouvelle dans la scène",
+        prompt: "🌊 Mini-texte : « Nuntius ex Sicilia venit. Tabellam attulit. Multi tacent. » Recopie, dans cet ordre : le sujet des deux premières actions ; le COD ; les deux formes au parfait.",
+        expected: "nuntius ; tabellam ; venit ; attulit",
         acceptedAnswers: [
-          "elle fait entrer une inquiétude nouvelle dans la scène",
-          "le message apporte une inquiétude nouvelle",
-          "une inquiétude nouvelle entre dans la scène avec le message",
-          "le silence gagne la scène avec l'arrivée du message"
+          "nuntius ; tabellam ; venit ; attulit",
+          "nuntius; tabellam; venit; attulit"
         ],
         answerConfig: {
-          type: "inference-fr",
-          language: "fr",
+          type: "one-of",
+          language: "latin",
           accepted: [
-            "elle fait entrer une inquiétude nouvelle dans la scène",
-            "le message apporte une inquiétude nouvelle",
-            "une inquiétude nouvelle entre dans la scène avec le message",
-            "le silence gagne la scène avec l'arrivée du message"
-          ],
-          ignoreDeterminers: true,
-          ignoreContractions: true,
-          allowPartialAnswer: "never"
+            "nuntius ; tabellam ; venit ; attulit",
+            "nuntius; tabellam; venit; attulit"
+          ]
         },
-        points: 1,
-        canonicalAnswer: "elle fait entrer une inquiétude nouvelle dans la scène",
+        points: 2,
+        canonicalAnswer: "nuntius ; tabellam ; venit ; attulit",
         normalization: {
           trim: true,
           collapseSpaces: true,
           ignoreCase: true,
           ignorePunctuation: true,
           normalizeApostrophes: true,
-          ignoreDiacritics: true,
-          normalizeFrenchContractions: true,
-          ignoreFrenchDeterminers: true
+          ignoreDiacritics: true
         },
-        gradingFocus: "Inférence fermée fondée sur le mini-texte latin et l’effet du message.",
-        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        gradingFocus: "Repérage croisé sujet / COD / parfait.",
+        rejectIf: ["forme incorrecte", "réponse hors-sujet"],
         tests: [
-          { input: "le message apporte une inquiétude nouvelle", isCorrect: true },
-          { input: "une inquiétude nouvelle entre dans la scène avec le message", isCorrect: true },
-          { input: "tout le monde se réjouit et la scène devient légère", isCorrect: false }
+          { input: "nuntius ; tabellam ; venit ; attulit", isCorrect: true },
+          { input: "tabellam ; nuntius ; attulit ; venit", isCorrect: false }
         ]
       }
     ],
@@ -2878,7 +2720,7 @@ export const lessons4eP1 = [
       "exeo, exis = sortir",
       "propero, properas = se hâter"
     ],
-    maxScore: 10,
+    maxScore: 13,
     training: [
       {
         id: "4e-p1-l4-t1",
@@ -2953,21 +2795,18 @@ export const lessons4eP1 = [
         points: 1,
         feedback: "Je lis chaque verbe avec son personnage, puis chaque groupe de lieu avec son mouvement."
       },
-      {
+            {
         id: "4e-p1-l4-t6",
         type: "multipleChoice",
-        prompt: "⚓ Mini-texte : « Pons tollitur. Nautae clamant. Multi ad navem currunt. » Quels indices montrent qu’un départ est en train de se préparer ?",
+        prompt: "⚓ Mini-texte : « Pons tollitur. Nautae clamant. Multi ad navem currunt. » Quels éléments relèvent directement du départ ou du mouvement ?",
         options: [
-          "la passerelle est retirée",
-          "les marins donnent des ordres",
-          "plusieurs gens courent vers le navire",
-          "la scène se déroule dans une école"
+          "tollitur",
+          "ad navem",
+          "currunt",
+          "clamant",
+          "nautae"
         ],
-        expected: [
-          "la passerelle est retirée",
-          "les marins donnent des ordres",
-          "plusieurs gens courent vers le navire"
-        ],
+        expected: ["tollitur", "ad navem", "currunt"],
         shuffle: true,
         points: 1
       },
@@ -3025,7 +2864,7 @@ export const lessons4eP1 = [
           ignoreContractions: true,
           allowPartialAnswer: "core-meaning-only"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "le marin se hâte vers le navire et le marchand sort du port",
         normalization: {
           trim: true,
@@ -3075,7 +2914,7 @@ export const lessons4eP1 = [
           ],
           orderMode: "chunk-permutation"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "nauta in navem ascendit",
         normalization: {
           trim: true,
@@ -3098,48 +2937,38 @@ export const lessons4eP1 = [
           { input: "nauta in navi ascendit", isCorrect: false }
         ]
       },
-      {
+            {
         id: "4e-p1-l4-p3",
         type: "textInput",
-        prompt: "⚓ Mini-texte : « Pons tollitur. Multi ad navem currunt. Nautae clamant. » Quel geste rend le départ plus proche ?",
-        expected: "le retrait de la passerelle",
+        prompt: "⚓ Mini-texte : « Pons tollitur. Multi ad navem currunt. Mercator ex portu exit. Puer in navi stat. » Recopie, dans cet ordre : le groupe de destination ; le groupe de provenance ; le groupe de lieu fixe.",
+        expected: "ad navem ; ex portu ; in navi",
         acceptedAnswers: [
-          "le retrait de la passerelle",
-          "on retire la passerelle",
-          "la passerelle est retirée",
-          "le fait qu'on enlève la passerelle"
+          "ad navem ; ex portu ; in navi",
+          "ad navem; ex portu; in navi"
         ],
         answerConfig: {
-          type: "inference-fr",
-          language: "fr",
+          type: "one-of",
+          language: "latin",
           accepted: [
-            "le retrait de la passerelle",
-            "on retire la passerelle",
-            "la passerelle est retirée",
-            "le fait qu'on enlève la passerelle"
-          ],
-          ignoreDeterminers: true,
-          ignoreContractions: true,
-          allowPartialAnswer: "never"
+            "ad navem ; ex portu ; in navi",
+            "ad navem; ex portu; in navi"
+          ]
         },
-        points: 1,
-        canonicalAnswer: "le retrait de la passerelle",
+        points: 2,
+        canonicalAnswer: "ad navem ; ex portu ; in navi",
         normalization: {
           trim: true,
           collapseSpaces: true,
           ignoreCase: true,
           ignorePunctuation: true,
           normalizeApostrophes: true,
-          ignoreDiacritics: true,
-          normalizeFrenchContractions: true,
-          ignoreFrenchDeterminers: true
+          ignoreDiacritics: true
         },
-        gradingFocus: "Inférence courte, appuyée sur un indice matériel précis.",
-        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        gradingFocus: "Manipulation ordonnée des groupes de lieu.",
+        rejectIf: ["groupe de lieu incorrect", "réponse hors-sujet"],
         tests: [
-          { input: "le retrait de la passerelle", isCorrect: true },
-          { input: "la passerelle est retirée", isCorrect: true },
-          { input: "la pluie commence à tomber", isCorrect: false }
+          { input: "ad navem ; ex portu ; in navi", isCorrect: true },
+          { input: "ex portu ; ad navem ; in navi", isCorrect: false }
         ]
       }
     ],
@@ -3191,7 +3020,7 @@ export const lessons4eP1 = [
       "video, vides = voir",
       "timeo, times = craindre"
     ],
-    maxScore: 10,
+    maxScore: 13,
     training: [
       {
         id: "4e-p1-l5-t1",
@@ -3323,7 +3152,7 @@ export const lessons4eP1 = [
           ignoreContractions: true,
           allowPartialAnswer: "core-meaning-only"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "le soldat écrivait et il a vu l’ennemi",
         normalization: {
           trim: true,
@@ -3373,7 +3202,7 @@ export const lessons4eP1 = [
           ],
           orderMode: "chunk-permutation"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "miles hostem timebat",
         normalization: {
           trim: true,
@@ -3396,48 +3225,40 @@ export const lessons4eP1 = [
           { input: "miles hostem timuit", isCorrect: false }
         ]
       },
-      {
+            {
         id: "4e-p1-l5-p3",
         type: "textInput",
-        prompt: "✉️ Mini-texte : « Miles scribebat. Nox erat. Hostis venit. » Quel élément fait basculer la scène ?",
-        expected: "l’arrivée de l’ennemi",
+        prompt: "✉️ Mini-texte : « Miles scribebat. Nox erat. Hostis venit. » Réponds sous la forme « fond : ... ; rupture : ... » en recopiant les verbes latins.",
+        expected: "fond : scribebat, erat ; rupture : venit",
         acceptedAnswers: [
-          "l’arrivée de l’ennemi",
-          "le moment où l’ennemi arrive",
-          "le fait que l’ennemi est venu",
-          "l’ennemi qui arrive"
+          "fond : scribebat, erat ; rupture : venit",
+          "fond: scribebat, erat ; rupture: venit",
+          "fond : scribebat erat ; rupture : venit"
         ],
         answerConfig: {
-          type: "inference-fr",
-          language: "fr",
+          type: "one-of",
+          language: "latin",
           accepted: [
-            "l’arrivée de l’ennemi",
-            "le moment où l’ennemi arrive",
-            "le fait que l’ennemi est venu",
-            "l’ennemi qui arrive"
-          ],
-          ignoreDeterminers: true,
-          ignoreContractions: true,
-          allowPartialAnswer: "never"
+            "fond : scribebat, erat ; rupture : venit",
+            "fond: scribebat, erat ; rupture: venit",
+            "fond : scribebat erat ; rupture : venit"
+          ]
         },
-        points: 1,
-        canonicalAnswer: "l’arrivée de l’ennemi",
+        points: 2,
+        canonicalAnswer: "fond : scribebat, erat ; rupture : venit",
         normalization: {
           trim: true,
           collapseSpaces: true,
           ignoreCase: true,
           ignorePunctuation: true,
           normalizeApostrophes: true,
-          ignoreDiacritics: true,
-          normalizeFrenchContractions: true,
-          ignoreFrenchDeterminers: true
+          ignoreDiacritics: true
         },
-        gradingFocus: "Inférence fermée sur la rupture narrative.",
-        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        gradingFocus: "Classement raisonné imparfait / parfait.",
+        rejectIf: ["verbe incorrect", "réponse hors-sujet"],
         tests: [
-          { input: "l’arrivée de l’ennemi", isCorrect: true },
-          { input: "le moment où l’ennemi arrive", isCorrect: true },
-          { input: "la tranquillité de la nuit", isCorrect: false }
+          { input: "fond : scribebat, erat ; rupture : venit", isCorrect: true },
+          { input: "fond : venit ; rupture : scribebat, erat", isCorrect: false }
         ]
       }
     ],
@@ -3489,7 +3310,7 @@ export const lessons4eP1 = [
       "luceo, luces = briller",
       "sono, sonas = sonner, résonner"
     ],
-    maxScore: 10,
+    maxScore: 13,
     training: [
       {
         id: "4e-p1-l6-t1",
@@ -3550,21 +3371,12 @@ export const lessons4eP1 = [
         points: 1,
         feedback: "L’imparfait installe ici un décor prolongé, pas un fait brutal."
       },
-      {
+            {
         id: "4e-p1-l6-t6",
         type: "multipleChoice",
-        prompt: "🏗️ Mini-texte : « Via lucebat. Currus sonabat. Pulvis surgebat. » Quels indices montrent une ville en travail ?",
-        options: [
-          "la route renvoie la lumière",
-          "les chars font entendre leur passage",
-          "la poussière se soulève",
-          "la mer se retire du quai"
-        ],
-        expected: [
-          "la route renvoie la lumière",
-          "les chars font entendre leur passage",
-          "la poussière se soulève"
-        ],
+        prompt: "🏗️ Mini-texte : « Via lucebat. Currus sonabat. Pulvis surgebat. » Quelles formes sont à l’imparfait ?",
+        options: ["lucebat", "sonabat", "surgebat", "via", "pulvis"],
+        expected: ["lucebat", "sonabat", "surgebat"],
         shuffle: true,
         points: 1
       },
@@ -3622,7 +3434,7 @@ export const lessons4eP1 = [
           ignoreContractions: true,
           allowPartialAnswer: "core-meaning-only"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "la route brillait et le char résonnait",
         normalization: {
           trim: true,
@@ -3664,7 +3476,7 @@ export const lessons4eP1 = [
           ],
           orderMode: "chunk-permutation"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "marmor lucebat",
         normalization: {
           trim: true,
@@ -3686,48 +3498,38 @@ export const lessons4eP1 = [
           { input: "marmor luxit", isCorrect: false }
         ]
       },
-      {
+            {
         id: "4e-p1-l6-p3",
         type: "textInput",
-        prompt: "🏗️ Mini-texte : « Via lucebat. Currus sonabat. Pulvis surgebat. » Quel élément rend la ville particulièrement matérielle dans cette scène ?",
-        expected: "la poussière qui se soulève",
+        prompt: "🏗️ Mini-texte : « Via lucebat. Currus sonabat. Pulvis surgebat. » Recopie les trois couples sujet + verbe, dans l'ordre du texte, sous la forme « sujet-verbe ; sujet-verbe ; sujet-verbe ».",
+        expected: "via-lucebat ; currus-sonabat ; pulvis-surgebat",
         acceptedAnswers: [
-          "la poussière qui se soulève",
-          "le soulèvement de la poussière",
-          "la poussière qui monte",
-          "la poussière en mouvement"
+          "via-lucebat ; currus-sonabat ; pulvis-surgebat",
+          "via lucebat ; currus sonabat ; pulvis surgebat"
         ],
         answerConfig: {
-          type: "inference-fr",
-          language: "fr",
+          type: "one-of",
+          language: "latin",
           accepted: [
-            "la poussière qui se soulève",
-            "le soulèvement de la poussière",
-            "la poussière qui monte",
-            "la poussière en mouvement"
-          ],
-          ignoreDeterminers: true,
-          ignoreContractions: true,
-          allowPartialAnswer: "never"
+            "via-lucebat ; currus-sonabat ; pulvis-surgebat",
+            "via lucebat ; currus sonabat ; pulvis surgebat"
+          ]
         },
-        points: 1,
-        canonicalAnswer: "la poussière qui se soulève",
+        points: 2,
+        canonicalAnswer: "via-lucebat ; currus-sonabat ; pulvis-surgebat",
         normalization: {
           trim: true,
           collapseSpaces: true,
           ignoreCase: true,
           ignorePunctuation: true,
           normalizeApostrophes: true,
-          ignoreDiacritics: true,
-          normalizeFrenchContractions: true,
-          ignoreFrenchDeterminers: true
+          ignoreDiacritics: true
         },
-        gradingFocus: "Inférence courte fondée sur un indice matériel précis du décor.",
-        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        gradingFocus: "Repérage structuré de trois syntagmes descriptifs.",
+        rejectIf: ["forme incorrecte", "réponse hors-sujet"],
         tests: [
-          { input: "la poussière qui se soulève", isCorrect: true },
-          { input: "la poussière qui monte", isCorrect: true },
-          { input: "le calme de la mer", isCorrect: false }
+          { input: "via-lucebat ; currus-sonabat ; pulvis-surgebat", isCorrect: true },
+          { input: "currus-sonabat ; via-lucebat ; pulvis-surgebat", isCorrect: false }
         ]
       }
     ],
@@ -3779,7 +3581,7 @@ export const lessons4eP1 = [
       "clamo, clamas = crier",
       "fugio, fugis = fuir"
     ],
-    maxScore: 10,
+    maxScore: 13,
     training: [
       {
         id: "4e-p1-l7-t1",
@@ -3840,23 +3642,12 @@ export const lessons4eP1 = [
         points: 1,
         feedback: "L’imparfait installe la montée ; le parfait marque la rupture."
       },
-      {
+            {
         id: "4e-p1-l7-t6",
         type: "multipleChoice",
-        prompt: "⚔️ Mini-texte : « Rumor in urbe crescebat. Cives timebant. Nonnulli fugerunt. Marcus tamen manebat. » Quelles informations deviennent certaines ?",
-        options: [
-          "la rumeur montait dans la ville",
-          "les citoyens avaient peur",
-          "certains ont fui",
-          "Marcus est resté",
-          "la colonie est fondée"
-        ],
-        expected: [
-          "la rumeur montait dans la ville",
-          "les citoyens avaient peur",
-          "certains ont fui",
-          "Marcus est resté"
-        ],
+        prompt: "⚔️ Mini-texte : « Rumor in urbe crescebat. Cives timebant. Nonnulli fugerunt. Marcus tamen manebat. » Quelles formes relèvent de la durée ou du fond ?",
+        options: ["crescebat", "timebant", "fugerunt", "manebat", "nonnulli"],
+        expected: ["crescebat", "timebant", "manebat"],
         shuffle: true,
         points: 1
       },
@@ -3914,7 +3705,7 @@ export const lessons4eP1 = [
           ignoreContractions: true,
           allowPartialAnswer: "core-meaning-only"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "les citoyens craignaient Hannibal, certains ont fui",
         normalization: {
           trim: true,
@@ -3964,7 +3755,7 @@ export const lessons4eP1 = [
           ],
           orderMode: "chunk-permutation"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "cives Hannibalem timebant",
         normalization: {
           trim: true,
@@ -3987,48 +3778,40 @@ export const lessons4eP1 = [
           { input: "cives Hannibalem timuerunt", isCorrect: false }
         ]
       },
-      {
+            {
         id: "4e-p1-l7-p3",
         type: "textInput",
-        prompt: "⚔️ Mini-texte : « Rumor crescebat. Cives timebant. Nonnulli fugerunt. » Comment distingue-t-on dans ce texte la peur durable et l’événement soudain ?",
-        expected: "l’imparfait dit la peur qui dure, le parfait dit la fuite soudaine",
+        prompt: "⚔️ Mini-texte : « Rumor crescebat. Cives timebant. Nonnulli fugerunt. » Réponds sous la forme « durée : ... ; rupture : ... » en recopiant les verbes latins.",
+        expected: "durée : crescebat, timebant ; rupture : fugerunt",
         acceptedAnswers: [
-          "l'imparfait dit la peur qui dure, le parfait dit la fuite soudaine",
-          "la durée est à l'imparfait, l'événement brusque au parfait",
-          "timebant montre le fond durable, fugerunt marque la rupture",
-          "l'imparfait installe la peur, le parfait marque le choc"
+          "durée : crescebat, timebant ; rupture : fugerunt",
+          "durée: crescebat, timebant ; rupture: fugerunt",
+          "durée : crescebat timebant ; rupture : fugerunt"
         ],
         answerConfig: {
-          type: "inference-fr",
-          language: "fr",
+          type: "one-of",
+          language: "latin",
           accepted: [
-            "l'imparfait dit la peur qui dure, le parfait dit la fuite soudaine",
-            "la durée est à l'imparfait, l'événement brusque au parfait",
-            "timebant montre le fond durable, fugerunt marque la rupture",
-            "l'imparfait installe la peur, le parfait marque le choc"
-          ],
-          ignoreDeterminers: true,
-          ignoreContractions: true,
-          allowPartialAnswer: "never"
+            "durée : crescebat, timebant ; rupture : fugerunt",
+            "durée: crescebat, timebant ; rupture: fugerunt",
+            "durée : crescebat timebant ; rupture : fugerunt"
+          ]
         },
-        points: 1,
-        canonicalAnswer: "l’imparfait dit la peur qui dure, le parfait dit la fuite soudaine",
+        points: 2,
+        canonicalAnswer: "durée : crescebat, timebant ; rupture : fugerunt",
         normalization: {
           trim: true,
           collapseSpaces: true,
           ignoreCase: true,
           ignorePunctuation: true,
           normalizeApostrophes: true,
-          ignoreDiacritics: true,
-          normalizeFrenchContractions: true,
-          ignoreFrenchDeterminers: true
+          ignoreDiacritics: true
         },
-        gradingFocus: "Inférence grammaticale fermée sur la valeur des temps.",
-        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        gradingFocus: "Classement morphosyntaxique des temps dans une scène de rumeur.",
+        rejectIf: ["verbe incorrect", "réponse hors-sujet"],
         tests: [
-          { input: "la durée est à l'imparfait, l'événement brusque au parfait", isCorrect: true },
-          { input: "l'imparfait installe la peur, le parfait marque le choc", isCorrect: true },
-          { input: "les deux verbes disent la même chose de la même manière", isCorrect: false }
+          { input: "durée : crescebat, timebant ; rupture : fugerunt", isCorrect: true },
+          { input: "durée : fugerunt ; rupture : crescebat, timebant", isCorrect: false }
         ]
       }
     ],
@@ -4080,7 +3863,7 @@ export const lessons4eP1 = [
       "mitto, mittis = envoyer",
       "paro, paras = préparer"
     ],
-    maxScore: 10,
+    maxScore: 13,
     training: [
       {
         id: "4e-p1-l8-t1",
@@ -4144,21 +3927,12 @@ export const lessons4eP1 = [
         shuffle: true,
         points: 1
       },
-      {
+            {
         id: "4e-p1-l8-t6",
         type: "multipleChoice",
-        prompt: "🏛️ Mini-texte : « Colonia nova conditur. Cives mittuntur. Via paratur. Marcus stupet. » Quelles informations deviennent certaines ?",
-        options: [
-          "une colonie est fondée",
-          "des citoyens sont envoyés",
-          "une route est préparée",
-          "Hannibal fuit vers les Alpes"
-        ],
-        expected: [
-          "une colonie est fondée",
-          "des citoyens sont envoyés",
-          "une route est préparée"
-        ],
+        prompt: "🏛️ Mini-texte : « Colonia nova conditur. Cives mittuntur. Via paratur. Marcus stupet. » Quelles formes verbales sont au passif ?",
+        options: ["conditur", "mittuntur", "paratur", "stupet", "nova"],
+        expected: ["conditur", "mittuntur", "paratur"],
         shuffle: true,
         points: 1
       },
@@ -4216,7 +3990,7 @@ export const lessons4eP1 = [
           ignoreContractions: true,
           allowPartialAnswer: "core-meaning-only"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "les citoyens sont envoyés",
         normalization: {
           trim: true,
@@ -4262,7 +4036,7 @@ export const lessons4eP1 = [
           ],
           orderMode: "chunk-permutation"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "colonia conditur",
         normalization: {
           trim: true,
@@ -4284,48 +4058,38 @@ export const lessons4eP1 = [
           { input: "colonia condit", isCorrect: false }
         ]
       },
-      {
+            {
         id: "4e-p1-l8-p3",
         type: "textInput",
-        prompt: "🏛️ Mini-texte : « Colonia nova conditur. Cives mittuntur. Via paratur. » Que change la voix passive dans la manière de lire la phrase ?",
-        expected: "elle met en avant ce qui subit l'action",
+        prompt: "🏛️ Mini-texte : « Colonia nova conditur. Cives mittuntur. Via paratur. » Recopie, dans l'ordre du texte, les trois couples sujet + verbe passif sous la forme « sujet-verbe ; sujet-verbe ; sujet-verbe ».",
+        expected: "colonia-conditur ; cives-mittuntur ; via-paratur",
         acceptedAnswers: [
-          "elle met en avant ce qui subit l'action",
-          "le sujet reçoit l'action",
-          "on lit ce qui est fondé ou envoyé",
-          "le passif montre ce qui subit l'action"
+          "colonia-conditur ; cives-mittuntur ; via-paratur",
+          "colonia conditur ; cives mittuntur ; via paratur"
         ],
         answerConfig: {
-          type: "inference-fr",
-          language: "fr",
+          type: "one-of",
+          language: "latin",
           accepted: [
-            "elle met en avant ce qui subit l'action",
-            "le sujet reçoit l'action",
-            "on lit ce qui est fondé ou envoyé",
-            "le passif montre ce qui subit l'action"
-          ],
-          ignoreDeterminers: true,
-          ignoreContractions: true,
-          allowPartialAnswer: "never"
+            "colonia-conditur ; cives-mittuntur ; via-paratur",
+            "colonia conditur ; cives mittuntur ; via paratur"
+          ]
         },
-        points: 1,
-        canonicalAnswer: "elle met en avant ce qui subit l'action",
+        points: 2,
+        canonicalAnswer: "colonia-conditur ; cives-mittuntur ; via-paratur",
         normalization: {
           trim: true,
           collapseSpaces: true,
           ignoreCase: true,
           ignorePunctuation: true,
           normalizeApostrophes: true,
-          ignoreDiacritics: true,
-          normalizeFrenchContractions: true,
-          ignoreFrenchDeterminers: true
+          ignoreDiacritics: true
         },
-        gradingFocus: "Inférence grammaticale fermée sur la lecture du passif.",
-        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        gradingFocus: "Repérage structuré de la voix passive.",
+        rejectIf: ["forme incorrecte", "réponse hors-sujet"],
         tests: [
-          { input: "le sujet reçoit l'action", isCorrect: true },
-          { input: "le passif montre ce qui subit l'action", isCorrect: true },
-          { input: "le sujet agit plus fort que d'habitude", isCorrect: false }
+          { input: "colonia-conditur ; cives-mittuntur ; via-paratur", isCorrect: true },
+          { input: "conditur-colonia ; mittuntur-cives ; paratur-via", isCorrect: false }
         ]
       }
     ],
@@ -4377,7 +4141,7 @@ export const lessons4eP1 = [
       "relinquo, relinquis = laisser",
       "taceo, taces = se taire"
     ],
-    maxScore: 10,
+    maxScore: 13,
     training: [
       {
         id: "4e-p1-l9-t1",
@@ -4445,23 +4209,12 @@ export const lessons4eP1 = [
         shuffle: true,
         points: 1
       },
-      {
+            {
         id: "4e-p1-l9-t6",
         type: "multipleChoice",
-        prompt: "🌫️ Mini-texte : « Amici separantur. Publius abest. Tullia flevit. Marcus tamen mansit. » Quelles informations deviennent certaines ?",
-        options: [
-          "les amis sont séparés",
-          "Publius est absent",
-          "Tullia a pleuré",
-          "Marcus est resté",
-          "une route est préparée"
-        ],
-        expected: [
-          "les amis sont séparés",
-          "Publius est absent",
-          "Tullia a pleuré",
-          "Marcus est resté"
-        ],
+        prompt: "🌫️ Mini-texte : « Amici separantur. Publius abest. Tullia flevit. Marcus tamen mansit. » Quelles formes suivantes relèvent soit du passif, soit du parfait ?",
+        options: ["separantur", "abest", "flevit", "mansit", "amici"],
+        expected: ["separantur", "flevit", "mansit"],
         shuffle: true,
         points: 1
       },
@@ -4517,7 +4270,7 @@ export const lessons4eP1 = [
           ignoreContractions: true,
           allowPartialAnswer: "core-meaning-only"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "les amis sont séparés",
         normalization: {
           trim: true,
@@ -4559,7 +4312,7 @@ export const lessons4eP1 = [
           ],
           orderMode: "chunk-permutation"
         },
-        points: 1,
+        points: 2,
         canonicalAnswer: "amici separantur",
         normalization: {
           trim: true,
@@ -4581,48 +4334,38 @@ export const lessons4eP1 = [
           { input: "amici separant", isCorrect: false }
         ]
       },
-      {
+            {
         id: "4e-p1-l9-p3",
         type: "textInput",
-        prompt: "🌫️ Mini-texte : « Amici separantur. Publius abest. Tullia flevit. Marcus tamen mansit. » Comment les événements publics touchent-ils la vie privée des amis ?",
-        expected: "ils provoquent le départ, la séparation et la douleur",
+        prompt: "🌫️ Mini-texte : « Amici separantur. Publius abest. Tullia flevit. Marcus tamen mansit. » Recopie, dans l'ordre du texte, le couple sujet + verbe passif, puis les deux couples sujet + verbe au parfait.",
+        expected: "amici-separantur ; Tullia-flevit ; Marcus-mansit",
         acceptedAnswers: [
-          "ils provoquent le départ, la séparation et la douleur",
-          "la guerre les sépare et les fait souffrir",
-          "les événements publics touchent leur amitié par l'éloignement",
-          "la vie publique les atteint jusque dans leurs liens personnels"
+          "amici-separantur ; Tullia-flevit ; Marcus-mansit",
+          "amici separantur ; Tullia flevit ; Marcus mansit"
         ],
         answerConfig: {
-          type: "inference-fr",
-          language: "fr",
+          type: "one-of",
+          language: "latin",
           accepted: [
-            "ils provoquent le départ, la séparation et la douleur",
-            "la guerre les sépare et les fait souffrir",
-            "les événements publics touchent leur amitié par l'éloignement",
-            "la vie publique les atteint jusque dans leurs liens personnels"
-          ],
-          ignoreDeterminers: true,
-          ignoreContractions: true,
-          allowPartialAnswer: "never"
+            "amici-separantur ; Tullia-flevit ; Marcus-mansit",
+            "amici separantur ; Tullia flevit ; Marcus mansit"
+          ]
         },
-        points: 1,
-        canonicalAnswer: "ils provoquent le départ, la séparation et la douleur",
+        points: 2,
+        canonicalAnswer: "amici-separantur ; Tullia-flevit ; Marcus-mansit",
         normalization: {
           trim: true,
           collapseSpaces: true,
           ignoreCase: true,
           ignorePunctuation: true,
           normalizeApostrophes: true,
-          ignoreDiacritics: true,
-          normalizeFrenchContractions: true,
-          ignoreFrenchDeterminers: true
+          ignoreDiacritics: true
         },
-        gradingFocus: "Inférence fermée sur l’effet humain des événements publics.",
-        rejectIf: ["contre-sens global", "réponse hors-sujet"],
+        gradingFocus: "Repérage combiné passif / parfait avec sujets.",
+        rejectIf: ["forme incorrecte", "réponse hors-sujet"],
         tests: [
-          { input: "la guerre les sépare et les fait souffrir", isCorrect: true },
-          { input: "les événements publics touchent leur amitié par l'éloignement", isCorrect: true },
-          { input: "ils deviennent plus riches grâce au commerce", isCorrect: false }
+          { input: "amici-separantur ; Tullia-flevit ; Marcus-mansit", isCorrect: true },
+          { input: "Tullia-flevit ; amici-separantur ; Marcus-mansit", isCorrect: false }
         ]
       }
     ],
