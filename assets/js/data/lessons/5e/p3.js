@@ -154,23 +154,36 @@ export const lessons5eP3 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p3-l1-t7",
-        "type": "multipleChoice",
-        "prompt": "Mini-texte : « Vicina virum videt. Servus dicit multum. » Qu’est-ce qui est vu, qu’est-ce qui est dit ?",
-        "options": [
-          "L’homme est vu",
-          "Le serviteur parle",
-          "La tablette est vue",
-          "La voisine parle"
-        ],
-        "expected": [
-          "L’homme est vu",
-          "Le serviteur parle"
-        ],
-        "shuffle": true,
-        "points": 1
-      }
+     {
+  "id": "p3-l1-t7",
+  "type": "matching",
+  "prompt": "Mini-texte : « Vicina virum videt. Servus dicit multum. » Associe chaque mot ou groupe à son rôle dans la scène.",
+  "pairs": [
+    {
+      "left": "vicina",
+      "right": "celle qui voit"
+    },
+    {
+      "left": "virum",
+      "right": "celui qui est vu"
+    },
+    {
+      "left": "servus",
+      "right": "celui qui parle"
+    }
+  ],
+  "rightOptions": [
+    "celui qui est vu",
+    "celle qui voit",
+    "celui qui parle"
+  ],
+  "expected": {
+    "vicina": "celle qui voit",
+    "virum": "celui qui est vu",
+    "servus": "celui qui parle"
+  },
+  "points": 1
+}
     ],
     "production": [
       {
@@ -496,23 +509,30 @@ export const lessons5eP3 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p3-l2-t7",
-        "type": "multipleChoice",
-        "prompt": "Mini-texte : « Vir ex insula exit et ad forum currit. » Quels lieux sont traversés ?",
-        "options": [
-          "un immeuble",
-          "les bains publics",
-          "une place",
-          "une boucherie"
-        ],
-        "expected": [
-          "un immeuble",
-          "une place"
-        ],
-        "shuffle": true,
-        "points": 1
-      }
+     {
+  "id": "p3-l2-t7",
+  "type": "matching",
+  "prompt": "Mini-texte : « Vir ex insula exit et ad forum currit. » Associe chaque groupe au bon rôle.",
+  "pairs": [
+    {
+      "left": "ex insula",
+      "right": "point de départ"
+    },
+    {
+      "left": "ad forum",
+      "right": "point d’arrivée"
+    }
+  ],
+  "rightOptions": [
+    "point de départ",
+    "point d’arrivée"
+  ],
+  "expected": {
+    "ex insula": "point de départ",
+    "ad forum": "point d’arrivée"
+  },
+  "points": 1
+}
     ],
     "production": [
       {
@@ -867,23 +887,36 @@ export const lessons5eP3 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p3-l3-t7",
-        "type": "multipleChoice",
-        "prompt": "Mini-texte : « Vicina ad ianuam stat et viam spectat. » Quels éléments de la scène sont présents ?",
-        "options": [
-          "la rue",
-          "la porte",
-          "le forum",
-          "le marché"
-        ],
-        "expected": [
-          "la rue",
-          "la porte"
-        ],
-        "shuffle": true,
-        "points": 1
-      }
+    {
+  "id": "p3-l3-t7",
+  "type": "matching",
+  "prompt": "Mini-texte : « Vicina ad ianuam stat et viam spectat. » Associe chaque élément à sa fonction dans la phrase.",
+  "pairs": [
+    {
+      "left": "vicina",
+      "right": "celle qui agit"
+    },
+    {
+      "left": "ad ianuam",
+      "right": "près de la porte"
+    },
+    {
+      "left": "viam",
+      "right": "ce qui est regardé"
+    }
+  ],
+  "rightOptions": [
+    "celle qui agit",
+    "près de la porte",
+    "ce qui est regardé"
+  ],
+  "expected": {
+    "vicina": "celle qui agit",
+    "ad ianuam": "près de la porte",
+    "viam": "ce qui est regardé"
+  },
+  "points": 1
+}
     ],
     "production": [
       {
@@ -3752,17 +3785,17 @@ export const lessons5eP3 = [
       "shuffle": true,
       "points": 1
     },
-    {
+   {
   "id": "p3-l11-t7",
   "type": "singleChoice",
-  "prompt": "Mini-dossier : « Servus ad ianuam venit. Vir tabellam advocati tenet. Servus eum spectat, deinde ianuam aperit. » Quelle déduction est la plus solide ?",
+  "prompt": "Mini-dossier : « Servus ad ianuam venit. Vir tabellam advocati tenet. Servus eum spectat, deinde ianuam aperit. » Dans « vir tabellam advocati tenet », quel mot est au génitif ?",
   "options": [
-    "le visiteur apporte sans doute un message pour l’avocat",
-    "le serviteur prend peur et veut se cacher",
-    "l’homme cherche à voler la maison",
-    "l’avocat ordonne de fermer la porte"
+    "vir",
+    "tabellam",
+    "advocati",
+    "tenet"
   ],
-  "expected": "le visiteur apporte sans doute un message pour l’avocat",
+  "expected": "advocati",
   "shuffle": true,
   "points": 1
 }
@@ -4091,20 +4124,20 @@ export const lessons5eP3 = [
       "shuffle": true,
       "points": 1
     },
-    {
-      "id": "p3-l12-t7",
-      "type": "singleChoice",
-      "prompt": "Mini-dossier : « Taedae hortum illuminant. Vicini Suburae hortum quaerunt. Puella vestigium invenit. Vestigium extra oppidum ducit. » Quelle conclusion devient la plus plausible ?",
-      "options": [
-        "Le danger s’éloigne de la ville, pour le moment",
-        "Le danger reste caché dans la villa",
-        "La trace mène au dîner de l’avocat",
-        "Les habitants de Subure rentrent chez eux sans rien voir"
-      ],
-      "expected": "Le danger s’éloigne de la ville, pour le moment",
-      "shuffle": true,
-      "points": 1
-    }
+  {
+  "id": "p3-l12-t7",
+  "type": "singleChoice",
+  "prompt": "Mini-dossier : « Taedae hortum illuminant. Vicini Suburae hortum quaerunt. Puella vestigium invenit. Vestigium extra oppidum ducit. » Où mène explicitement la trace ?",
+  "options": [
+    "hors de la ville",
+    "dans la villa",
+    "au dîner de l’avocat",
+    "au forum"
+  ],
+  "expected": "hors de la ville",
+  "shuffle": true,
+  "points": 1
+}
   ],
   "production": [
     {
@@ -4467,50 +4500,50 @@ export const lessons5eP3 = [
       "shuffle": true,
       "points": 1
     },
+  {
+  "id": "p3-l13-t6",
+  "type": "matching",
+  "prompt": "Associe chaque phrase du texte à sa traduction exacte.",
+  "pairs": [
     {
-      "id": "p3-l13-t6",
-      "type": "matching",
-      "prompt": "Associe chaque phrase du texte à son interprétation.",
-      "pairs": [
-        {
-          "left": "Servus taedam portat et tacet",
-          "right": "Le serviteur est là, mais il ne dit rien"
-        },
-        {
-          "left": "In horto vestigium apparet",
-          "right": "Un indice concret surgit dans le jardin"
-        },
-        {
-          "left": "Vir extra oppidum fugit",
-          "right": "L’homme s’éloigne hors de la ville"
-        }
-      ],
-      "rightOptions": [
-        "Un indice concret surgit dans le jardin",
-        "L’homme s’éloigne hors de la ville",
-        "Le serviteur est là, mais il ne dit rien"
-      ],
-      "expected": {
-        "Servus taedam portat et tacet": "Le serviteur est là, mais il ne dit rien",
-        "In horto vestigium apparet": "Un indice concret surgit dans le jardin",
-        "Vir extra oppidum fugit": "L’homme s’éloigne hors de la ville"
-      },
-      "points": 1
+      "left": "Servus taedam portat et tacet",
+      "right": "Le serviteur porte un flambeau et se tait"
     },
     {
-      "id": "p3-l13-t7",
-      "type": "singleChoice",
-      "prompt": "Mini-récit complet : « Marcus et Livia ad portam villae stant. Servus taedam portat et tacet. In horto vestigium apparet. Vestigium ad viam ducit. Marcus dicit : “Vir extra oppidum fugit.” » Quelle conclusion devient la plus plausible ?",
-      "options": [
-        "Le suspect a quitté la ville",
-        "Le serviteur a volé le jardin",
-        "Marcus ne comprend rien à la scène",
-        "La trace retourne au forum"
-      ],
-      "expected": "Le suspect a quitté la ville",
-      "shuffle": true,
-      "points": 1
+      "left": "In horto vestigium apparet",
+      "right": "Une trace apparaît dans le jardin"
+    },
+    {
+      "left": "Vir extra oppidum fugit",
+      "right": "L’homme fuit hors de la ville"
     }
+  ],
+  "rightOptions": [
+    "Une trace apparaît dans le jardin",
+    "L’homme fuit hors de la ville",
+    "Le serviteur porte un flambeau et se tait"
+  ],
+  "expected": {
+    "Servus taedam portat et tacet": "Le serviteur porte un flambeau et se tait",
+    "In horto vestigium apparet": "Une trace apparaît dans le jardin",
+    "Vir extra oppidum fugit": "L’homme fuit hors de la ville"
+  },
+  "points": 1
+},
+   {
+  "id": "p3-l13-t7",
+  "type": "singleChoice",
+  "prompt": "Mini-récit complet : « Marcus et Livia ad portam villae stant. Servus taedam portat et tacet. In horto vestigium apparet. Vestigium ad viam ducit. Marcus dicit : “Vir extra oppidum fugit.” » Quelle traduction exacte de « Vir extra oppidum fugit » ?",
+  "options": [
+    "L’homme fuit hors de la ville",
+    "L’homme revient dans la ville",
+    "L'homme s'est pris la porte en pleine poire",
+    "Le fugitif retourne au forum"
+  ],
+  "expected": "L’homme fuit hors de la ville",
+  "shuffle": true,
+  "points": 1
+}
   ],
   "production": [
     {
