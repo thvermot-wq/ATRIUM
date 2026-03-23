@@ -494,23 +494,30 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p2-l2-t7",
-        "type": "multipleChoice",
-        "prompt": "Mini-texte : « 𝐹𝑒𝑚𝑖𝑛𝑎 𝑖𝑛 𝑣𝑖𝑎 𝑒𝑠𝑡. 𝑆𝑒𝑟𝑣𝑢𝑠 𝑎𝑑 𝑓𝑜𝑛𝑡𝑒𝑚 𝑣𝑒𝑛𝑖𝑡. » Quels sont les lieux ?",
-        "options": [
-          "via",
-          "fons",
-          "tabella",
-          "donum"
-        ],
-        "expected": [
-          "via",
-          "fons"
-        ],
-        "shuffle": true,
-        "points": 1
-      }
+    {
+  "id": "p2-l2-t7",
+  "type": "matching",
+  "prompt": "Mini-texte : « 𝐹𝑒𝑚𝑖𝑛𝑎 𝑖𝑛 𝑣𝑖𝑎 𝑒𝑠𝑡. 𝑆𝑒𝑟𝑣𝑢𝑠 𝑎𝑑 𝑓𝑜𝑛𝑡𝑒𝑚 𝑣𝑒𝑛𝑖𝑡. » Associe chaque groupe au bon sens.",
+  "pairs": [
+    {
+      "left": "in via",
+      "right": "lieu où l’on est"
+    },
+    {
+      "left": "ad fontem",
+      "right": "lieu vers lequel on va"
+    }
+  ],
+  "rightOptions": [
+    "lieu où l’on est",
+    "lieu vers lequel on va"
+  ],
+  "expected": {
+    "in via": "lieu où l’on est",
+    "ad fontem": "lieu vers lequel on va"
+  },
+  "points": 1
+}
     ],
     "production": [
       {
@@ -850,23 +857,23 @@ export const lessons5eP2 = [
         "shuffle": true,
         "points": 1
       },
-      {
-        "id": "p2-l3-t7",
-        "type": "multipleChoice",
-        "prompt": "Mini-texte : « 𝐹𝑒𝑚𝑖𝑛𝑎 𝑎𝑑 𝑓𝑜𝑛𝑡𝑒𝑚 𝑠𝑡𝑎𝑡. 𝐴𝑚𝑖𝑐𝑎 𝑝𝑜𝑟𝑡𝑎𝑚 𝑠𝑝𝑒𝑐𝑡𝑎𝑡. » Quelles informations sont contenues dans ces phrases ?",
-        "options": [
-          "Une amie porte un grand seau",
-          "L’amie regarde la porte",
-          "Le chien se tient devant la fontaine",
-          "Une femme attend près de la fontaine"
-        ],
-        "expected": [
-          "Une femme attend près de la fontaine",
-          "L’amie regarde la porte"
-        ],
-        "shuffle": true,
-        "points": 1
-      }
+     {
+  "id": "p2-l3-t7",
+  "type": "multipleChoice",
+  "prompt": "Mini-texte : « 𝐹𝑒𝑚𝑖𝑛𝑎 𝑎𝑑 𝑓𝑜𝑛𝑡𝑒𝑚 𝑠𝑡𝑎𝑡. 𝐴𝑚𝑖𝑐𝑎 𝑝𝑜𝑟𝑡𝑎𝑚 𝑠𝑝𝑒𝑐𝑡𝑎𝑡. » Coche les deux traductions exactes.",
+  "options": [
+    "Une amie porte un grand seau",
+    "L’amie regarde la porte",
+    "Le chien se tient devant la fontaine",
+    "Une femme se tient vers la fontaine"
+  ],
+  "expected": [
+    "L’amie regarde la porte",
+    "Une femme se tient vers la fontaine"
+  ],
+  "shuffle": true,
+  "points": 1
+}
     ],
     "production": [
       {
@@ -4565,20 +4572,26 @@ export const lessons5eP2 = [
       "shuffle": true,
       "points": 1
     },
-    {
-      "id": "p2-l13-t7",
-      "type": "singleChoice",
-      "prompt": "Mini-scène : « Mater nomen legit. Rex urbem videt. Corpus in via est. » Quelle phrase résume le mieux ces espèces de phrases codées ?",
-      "options": [
-        "On rencontre plusieurs mots nouveaux de 3e déclinaison dans des phrases simples",
-        "Tous les mots sont de 1re déclinaison",
-        "Le roi écrit sur la tablette",
-        "La ville voit la mère"
-      ],
-      "expected": "On rencontre plusieurs mots nouveaux de 3e déclinaison dans des phrases simples",
-      "shuffle": true,
-      "points": 1
-    }
+   {
+  "id": "p2-l13-t7",
+  "type": "multipleChoice",
+  "prompt": "Mini-scène : « Mater nomen legit. Rex urbem videt. Corpus in via est. » Quels mots de 3e déclinaison apparaissent dans ce mini-texte ?",
+  "options": [
+    "mater",
+    "nomen",
+    "rex",
+    "urbem",
+    "via"
+  ],
+  "expected": [
+    "mater",
+    "nomen",
+    "rex",
+    "urbem"
+  ],
+  "shuffle": true,
+  "points": 1
+}
   ],
   "production": [
     {
