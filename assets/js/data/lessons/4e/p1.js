@@ -27,7 +27,7 @@ const makePlaceholderLesson = (period, lessonNumber, title) => ({
     "mot11 = sens11",
     "mot12 = sens12"
   ],
-  maxScore: 10,
+  maxScore: 13,
   training: [],
   production: [],
   summary: {
