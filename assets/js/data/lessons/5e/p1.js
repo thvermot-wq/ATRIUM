@@ -67,6 +67,7 @@ export const lessons5eP1 = [
       "salvete = bonjour à tous",
 
       "vale = au revoir",
+      "sum, es, est = je suis, tu es, il/elle est",
 
       "adsum = je suis là, je suis présent",
 
