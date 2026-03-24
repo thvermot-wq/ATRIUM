@@ -8337,7 +8337,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Quelle divinité a troublé Subure ? (réponse courte)",
+        "prompt": "Quelle divinité a troublé Subure ? (en un mot)",
 
         "expected": "la Discorde",
 
@@ -8345,15 +8345,7 @@ export const lessons5eP2 = [
 
           "la Discorde",
 
-          "Discordia",
-
-          "les conflits entre voisins",
-
-          "la querelle",
-
-          "les disputes entre voisins",
-
-          "les soupçons entre voisins"
+          "Discordia"
 
         ],
 
@@ -8367,15 +8359,7 @@ export const lessons5eP2 = [
 
             "la Discorde",
 
-            "Discordia",
-
-            "les conflits entre voisins",
-
-            "la querelle",
-
-            "les disputes entre voisins",
-
-            "les soupçons entre voisins"
+            "Discordia"
 
           ]
 
