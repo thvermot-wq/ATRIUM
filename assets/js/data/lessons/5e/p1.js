@@ -291,7 +291,7 @@ export const lessons5eP1 = [
 
           "Niger est un mur",
 
-          "Niger crie",
+          "Niger a une canne",
 
           "Le chien salue"
 
