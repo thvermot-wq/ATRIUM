@@ -338,6 +338,9 @@ export const lessons5eP1 = [
             "flavia habite à subure",
 
             "flavia habite dans subure",
+            "flavia demeure à subure",
+
+            "flavia demeure à subura",
 
             "flavia vit à subure",
 
@@ -360,14 +363,24 @@ export const lessons5eP1 = [
           "language": "fr",
 
           "accepted":             [
+            "flavia habite à subure",
 
-              "flavia habite à subure",
+            "flavia habite dans subure",
+            "flavia demeure à subure",
 
-              "flavia habite dans subure",
+            "flavia demeure à subura",
 
-              "flavia vit à subure",
+            "flavia vit à subure",
 
-              "flavia vit dans subure"
+            "flavia vit dans subure",
+
+            "flavia habite à subura",
+
+            "flavia habite dans subura",
+
+            "flavia vit à subura",
+
+            "flavia vit dans subura"
 
             ],
 
