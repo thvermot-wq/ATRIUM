@@ -1662,99 +1662,65 @@ export const lessons5eP1 = [
 
     "production": [
 
-      {
-
-        "id": "p1-l3-p1",
-
-        "type": "textInput",
-
-        "prompt": "🛍️ Traduis en français : Mercator panem vendit",
-
-        "expected": "le marchand vend du pain",
-
-        "acceptedAnswers":           [
-
-            "le marchand vend du pain",
-
-            "le marchand vend le pain",
-
-            "le marchand vend un pain"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted":             [
-
-              "le marchand vend du pain",
-
-              "le marchand vend le pain",
-
-              "le marchand vend un pain"
-
-            ],
-
-          "synonyms": []
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "le marchand vend du pain",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "le marchand vend du pain",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
+     {
+  "id": "p1-l3-p1",
+  "type": "textInput",
+  "prompt": " Traduis en français : Mercator panem vendit",
+  "expected": "le marchand vend du pain",
+  "acceptedAnswers": [
+    "le marchand vend du pain",
+    "le marchand vend le pain",
+    "le marchand vend un pain",
+    "un marchand vend du pain",
+    "un marchand vend le pain",
+    "un marchand vend un pain",
+    "le marchand vend du pain.",
+    "un marchand vend du pain."
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "tolerateArticles": true,
+    "accepted": [
+      "le marchand vend du pain",
+      "le marchand vend le pain",
+      "le marchand vend un pain",
+      "un marchand vend du pain",
+      "un marchand vend le pain",
+      "un marchand vend un pain"
+    ],
+    "synonyms": [
+      "le marchand vend du pain",
+      "un marchand vend du pain",
+      "le marchand vend du pain frais",
+      "un marchand vend du pain frais",
+      "le marchand vend des pains",
+      "un marchand vend des pains"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "le marchand vend du pain",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+  "rejectIf": [
+    "verbe incorrect",
+    "sens inversé sujet/objet",
+    "forme latine impossible au niveau de la leçon"
+  ],
+  "tests": [
+    { "input": "le marchand vend du pain", "isCorrect": true },
+    { "input": "un marchand vend du pain", "isCorrect": true },
+    { "input": "le marchand vend le pain", "isCorrect": true },
+    { "input": "réponse hors-sujet", "isCorrect": false }
+  ]
+},
 
       {
 
@@ -5705,100 +5671,58 @@ export const lessons5eP1 = [
       },
 
       {
-
-        "id": "p1-l9-p2",
-
-        "type": "textInput",
-
-        "prompt": "🎓 Traduis en français : Marcus respondet",
-
-        "expected": "marcus répond",
-
-        "acceptedAnswers":           [
-
-            "marcus répond",
-
-            "marcus donne une réponse",
-
-            "marcus donne sa réponse"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted":             [
-
-              "marcus répond",
-
-              "marcus donne une réponse"
-
-            ],
-
-          "synonyms":             [
-
-              "marcus donne sa réponse"
-
-            ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "marcus répond",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "marcus répond",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
+  "id": "p1-l9-p2",
+  "type": "textInput",
+  "prompt": " Traduis en français : Marcus respondet",
+  "expected": "marcus répond",
+  "acceptedAnswers": [
+    "marcus répond",
+    "marcus donne une réponse",
+    "marcus donne sa réponse",
+    "marcus répond.",
+    "marcus répond maintenant"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "tolerateArticles": true,
+    "accepted": [
+      "marcus répond",
+      "marcus donne une réponse",
+      "marcus donne sa réponse",
+      "marcus répond maintenant",
+      "marcus fait une réponse"
+    ],
+    "synonyms": [
+      "marcus apporte une réponse",
+      "marcus répond bien",
+      "marcus donne une réponse",
+      "marcus donne sa réponse"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "marcus répond",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+  "rejectIf": [
+    "verbe incorrect",
+    "sens inversé sujet/objet",
+    "forme latine impossible au niveau de la leçon"
+  ],
+  "tests": [
+    { "input": "marcus répond", "isCorrect": true },
+    { "input": "marcus donne sa réponse", "isCorrect": true },
+    { "input": "marcus fait une réponse", "isCorrect": true },
+    { "input": "réponse hors-sujet", "isCorrect": false }
+  ]
+},
 
       {
 
