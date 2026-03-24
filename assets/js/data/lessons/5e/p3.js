@@ -6300,162 +6300,30 @@ export const lessons5eP3 = [
  "expected": "un homme entre dans la villa ; l’avocat prépare un grand dîner",
 
   "acceptedAnswers": [
-
-    "l’homme entre dans la villa l’avocat prépare un grand dîner",
-
-    "l’homme entre dans la villa l’avocat prépare un grand dîner",
-
-    "un homme entre dans la villa l’avocat prépare un grand dîner",
-
-    "l’homme entre dans une villa l’avocat prépare un grand dîner",
-
-    "un homme entre dans une villa l’avocat prépare un grand dîner",
-
-    "l’homme entre dans la grande maison l’avocat prépare un grand dîner",
-
-    "un homme entre dans la grande maison l’avocat prépare un grand dîner",
-
-    "l’homme entre dans une grande maison l’avocat prépare un grand dîner",
-
-    "un homme entre dans une grande maison l’avocat prépare un grand dîner",
-
- 
-
-    "l’homme entre dans la villa un avocat prépare un grand dîner",
-
-    "un homme entre dans la villa un avocat prépare un grand dîner",
-
-    "l’homme entre dans une villa un avocat prépare un grand dîner",
-
-    "un homme entre dans une villa un avocat prépare un grand dîner",
-
-    "l’homme entre dans la grande maison un avocat prépare un grand dîner",
-
-    "un homme entre dans la grande maison un avocat prépare un grand dîner",
-
-    "l’homme entre dans une grande maison un avocat prépare un grand dîner",
-
-    "un homme entre dans une grande maison un avocat prépare un grand dîner",
-
- 
-
-  "l’homme entre dans la villa l’avocat prépare le grand dîner",
-
-  "un homme entre dans la villa l’avocat prépare le grand dîner",
-
-  "l’homme entre dans une villa l’avocat prépare le grand dîner",
-
-  "un homme entre dans une villa l’avocat prépare le grand dîner",
-
-  "l’homme entre dans la grande maison l’avocat prépare le grand dîner",
-
-  "un homme entre dans la grande maison l’avocat prépare le grand dîner",
-
-  "l’homme entre dans une grande maison l’avocat prépare le grand dîner",
-
-  "un homme entre dans une grande maison l’avocat prépare le grand dîner",
-
- 
-
-  "l’homme entre dans la villa un avocat prépare le grand dîner",
-
-  "un homme entre dans la villa un avocat prépare le grand dîner",
-
-  "l’homme entre dans une villa un avocat prépare le grand dîner",
-
-  "un homme entre dans une villa un avocat prépare le grand dîner",
-
-  "l’homme entre dans la grande maison un avocat prépare le grand dîner",
-
-  "un homme entre dans la grande maison un avocat prépare le grand dîner",
-
-  "l’homme entre dans une grande maison un avocat prépare le grand dîner",
-
-  "un homme entre dans une grande maison un avocat prépare le grand dîner"
-
-  ],
-
-  "answerConfig": {
-
-    "type": "translation-segment",
-
-    "language": "fr",
-
-    "accepted": [
-
-      "l’homme entre dans la villa l’avocat prépare un grand dîner",
-
-  "un homme entre dans la villa l’avocat prépare un grand dîner",
-
-  "l’homme entre dans une villa l’avocat prépare un grand dîner",
-
-  "un homme entre dans une villa l’avocat prépare un grand dîner",
-
-  "l’homme entre dans la grande maison l’avocat prépare un grand dîner",
-
-  "un homme entre dans la grande maison l’avocat prépare un grand dîner",
-
-  "l’homme entre dans une grande maison l’avocat prépare un grand dîner",
-
-  "un homme entre dans une grande maison l’avocat prépare un grand dîner",
-
- 
-
-  "l’homme entre dans la villa un avocat prépare un grand dîner",
-
-  "un homme entre dans la villa un avocat prépare un grand dîner",
-
-  "l’homme entre dans une villa un avocat prépare un grand dîner",
-
-  "un homme entre dans une villa un avocat prépare un grand dîner",
-
-  "l’homme entre dans la grande maison un avocat prépare un grand dîner",
-
-  "un homme entre dans la grande maison un avocat prépare un grand dîner",
-
-  "l’homme entre dans une grande maison un avocat prépare un grand dîner",
-
-  "un homme entre dans une grande maison un avocat prépare un grand dîner",
-
- 
-
-  "l’homme entre dans la villa l’avocat prépare le grand dîner",
-
-  "un homme entre dans la villa l’avocat prépare le grand dîner",
-
-  "l’homme entre dans une villa l’avocat prépare le grand dîner",
-
-  "un homme entre dans une villa l’avocat prépare le grand dîner",
-
-  "l’homme entre dans la grande maison l’avocat prépare le grand dîner",
-
-  "un homme entre dans la grande maison l’avocat prépare le grand dîner",
-
-  "l’homme entre dans une grande maison l’avocat prépare le grand dîner",
-
-  "un homme entre dans une grande maison l’avocat prépare le grand dîner",
-
- 
-
-  "l’homme entre dans la villa un avocat prépare le grand dîner",
-
-  "un homme entre dans la villa un avocat prépare le grand dîner",
-
-  "l’homme entre dans une villa un avocat prépare le grand dîner",
-
-  "un homme entre dans une villa un avocat prépare le grand dîner",
-
-  "l’homme entre dans la grande maison un avocat prépare le grand dîner",
-
-  "un homme entre dans la grande maison un avocat prépare le grand dîner",
-
-  "l’homme entre dans une grande maison un avocat prépare le grand dîner",
-
-  "un homme entre dans une grande maison un avocat prépare le grand dîner"
-
-    ]
-
-  },
+  "l'homme entre dans la villa et l'avocat prépare un grand dîner",
+  "un homme entre dans la villa et l'avocat prépare un grand dîner",
+  "l'homme entre dans une villa et l'avocat prépare un grand dîner",
+  "l'homme entre dans la grande maison et l'avocat prépare un grand dîner",
+  "l'homme entre dans la villa, et l'avocat prépare un grand dîner",
+  "l'homme entre dans la villa ; l'avocat prépare un grand dîner",
+  "l'homme entre dans la villa et l'avocat prépare le dîner",
+  "un homme entre dans la villa et l'avocat prépare le dîner"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "tolerateArticles": true,
+  "accepted": [
+    "l'homme entre dans la villa et l'avocat prépare un grand dîner",
+    "un homme entre dans la villa et l'avocat prépare un grand dîner",
+    "l'homme entre dans une villa et l'avocat prépare un grand dîner",
+    "l'homme entre dans la grande maison et l'avocat prépare un grand dîner",
+    "l'homme entre dans la villa, et l'avocat prépare un grand dîner",
+    "l'homme entre dans la villa ; l'avocat prépare un grand dîner",
+    "l'homme entre dans la villa et l'avocat prépare le dîner",
+    "un homme entre dans la villa et l'avocat prépare le dîner"
+  ]
+},
 
   "points": 1,
 
@@ -7091,99 +6959,27 @@ export const lessons5eP3 = [
 
   "expected": "dans la villa de l’avocat, le serviteur prépare le dîner ; l’homme reste sous le porche",
 
-  "acceptedAnswers": [
-
-    "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
-
-    "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
-
-    "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
-
-    "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
-
- 
-
-    "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
-
-    "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
-
-    "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
-
-    "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le portique",
-
- 
-
-    "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
-
-    "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
-
-    "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
-
-    "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
-
- 
-
-    "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
-
-    "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
-
-    "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
-
-    "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le portique"
-
-  ],
-
-  "answerConfig": {
-
-    "type": "translation-segment",
-
-    "language": "fr",
-
-    "accepted": [
-
-      "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
-
-      "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
-
-      "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
-
-      "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
-
- 
-
-      "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
-
-      "dans la villa de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
-
-      "dans la villa de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
-
-      "dans la villa de l’avocat l’esclave prépare le repas l’homme reste sous le portique",
-
- 
-
-      "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
-
-      "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le porche",
-
-      "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le porche",
-
-      "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le porche",
-
- 
-
-      "dans la grande maison de l’avocat le serviteur prépare le dîner l’homme reste sous le portique",
-
-      "dans la grande maison de l’avocat le serviteur prépare le repas l’homme reste sous le portique",
-
-      "dans la grande maison de l’avocat l’esclave prépare le dîner l’homme reste sous le portique",
-
-      "dans la grande maison de l’avocat l’esclave prépare le repas l’homme reste sous le portique"
-
-    ],
-
-    "tolerateArticles": true
-
-  },
+ "acceptedAnswers": [
+  "dans la villa de l'avocat, le serviteur prépare le dîner et l'homme reste sous le porche",
+  "dans la villa de l'avocat, l'esclave prépare le dîner et l'homme reste sous le porche",
+  "dans la villa de l'avocat, le serviteur prépare le repas et l'homme reste sous le porche",
+  "dans la villa de l'avocat, le serviteur prépare le dîner et l'homme reste sous le portique",
+  "dans la villa de l'avocat, le serviteur prépare le dîner, et l'homme reste sous le porche",
+  "dans la villa de l'avocat ; le serviteur prépare le dîner et l'homme reste sous le porche"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "tolerateArticles": true,
+  "accepted": [
+    "dans la villa de l'avocat, le serviteur prépare le dîner et l'homme reste sous le porche",
+    "dans la villa de l'avocat, l'esclave prépare le dîner et l'homme reste sous le porche",
+    "dans la villa de l'avocat, le serviteur prépare le repas et l'homme reste sous le porche",
+    "dans la villa de l'avocat, le serviteur prépare le dîner et l'homme reste sous le portique",
+    "dans la villa de l'avocat, le serviteur prépare le dîner, et l'homme reste sous le porche",
+    "dans la villa de l'avocat ; le serviteur prépare le dîner et l'homme reste sous le porche"
+  ]
+},
 
   "points": 1,
 
@@ -7810,53 +7606,25 @@ export const lessons5eP3 = [
 
       "expected": "le serviteur de l’avocat ouvre la porte ; l’homme est un ami de l’avocat",
 
-      "acceptedAnswers": [
-
-        "le serviteur de l’avocat ouvre la porte l’homme est un ami de l’avocat",
-
-        "un serviteur de l’avocat ouvre la porte l’homme est un ami de l’avocat",
-
-        "le serviteur de l’avocat ouvre la porte l’homme est l’ami de l’avocat",
-
-        "un serviteur de l’avocat ouvre la porte l’homme est l’ami de l’avocat",
-
-        "l’esclave de l’avocat ouvre la porte l’homme est un ami de l’avocat",
-
-        "un esclave de l’avocat ouvre la porte l’homme est un ami de l’avocat",
-
-        "l’esclave de l’avocat ouvre la porte l’homme est l’ami de l’avocat",
-
-        "un esclave de l’avocat ouvre la porte l’homme est l’ami de l’avocat"
-
-      ],
-
-      "answerConfig": {
-
-        "type": "translation-segment",
-
-        "language": "fr",
-
-        "accepted": [
-
-          "le serviteur de l’avocat ouvre la porte l’homme est un ami de l’avocat",
-
-          "un serviteur de l’avocat ouvre la porte l’homme est un ami de l’avocat",
-
-          "le serviteur de l’avocat ouvre la porte l’homme est l’ami de l’avocat",
-
-          "un serviteur de l’avocat ouvre la porte l’homme est l’ami de l’avocat",
-
-          "l’esclave de l’avocat ouvre la porte l’homme est un ami de l’avocat",
-
-          "un esclave de l’avocat ouvre la porte l’homme est un ami de l’avocat",
-
-          "l’esclave de l’avocat ouvre la porte l’homme est l’ami de l’avocat",
-
-          "un esclave de l’avocat ouvre la porte l’homme est l’ami de l’avocat"
-
-        ]
-
-      },
+     "acceptedAnswers": [
+  "le serviteur de l'avocat ouvre la porte et l'homme est un ami de l'avocat",
+  "l'esclave de l'avocat ouvre la porte et l'homme est un ami de l'avocat",
+  "le serviteur de l'avocat ouvre la porte et l'homme est l'ami de l'avocat",
+  "le serviteur de l'avocat ouvre la porte, et l'homme est un ami de l'avocat",
+  "le serviteur de l'avocat ouvre la porte ; l'homme est un ami de l'avocat"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "tolerateArticles": true,
+  "accepted": [
+    "le serviteur de l'avocat ouvre la porte et l'homme est un ami de l'avocat",
+    "l'esclave de l'avocat ouvre la porte et l'homme est un ami de l'avocat",
+    "le serviteur de l'avocat ouvre la porte et l'homme est l'ami de l'avocat",
+    "le serviteur de l'avocat ouvre la porte, et l'homme est un ami de l'avocat",
+    "le serviteur de l'avocat ouvre la porte ; l'homme est un ami de l'avocat"
+  ]
+},
 
       "points": 1,
 
@@ -8483,153 +8251,43 @@ export const lessons5eP3 = [
 
       "expected": "les habitants de Subure portent des flambeaux ; la trace mène hors de la ville",
 
-      "acceptedAnswers": [
-
-  "habitants de Subure portent flambeaux trace mène hors de ville",
-
-  "habitants de Subure portent flambeaux trace conduit hors de ville",
-
-  "habitants de Subure portent flambeaux piste mène hors de ville",
-
-  "habitants de Subure portent flambeaux piste conduit hors de ville",
-
-  "habitants de Subure portent torches trace mène hors de ville",
-
-  "habitants de Subure portent torches trace conduit hors de ville",
-
-  "habitants de Subure portent torches piste mène hors de ville",
-
-  "habitants de Subure portent torches piste conduit hors de ville",
-
-  "habitants de Subure brandissent flambeaux trace mène hors de ville",
-
-  "habitants de Subure brandissent flambeaux trace conduit hors de ville",
-
-  "habitants de Subure brandissent flambeaux piste mène hors de ville",
-
-  "habitants de Subure brandissent flambeaux piste conduit hors de ville",
-
-  "habitants de Subure brandissent torches trace mène hors de ville",
-
-  "habitants de Subure brandissent torches trace conduit hors de ville",
-
-  "habitants de Subure brandissent torches piste mène hors de ville",
-
-  "habitants de Subure brandissent torches piste conduit hors de ville",
-
- 
-
-  "voisins de Subure portent flambeaux trace mène hors de ville",
-
-  "voisins de Subure portent flambeaux trace conduit hors de ville",
-
-  "voisins de Subure portent flambeaux piste mène hors de ville",
-
-  "voisins de Subure portent flambeaux piste conduit hors de ville",
-
-  "voisins de Subure portent torches trace mène hors de ville",
-
-  "voisins de Subure portent torches trace conduit hors de ville",
-
-  "voisins de Subure portent torches piste mène hors de ville",
-
-  "voisins de Subure portent torches piste conduit hors de ville",
-
-  "voisins de Subure brandissent flambeaux trace mène hors de ville",
-
-  "voisins de Subure brandissent flambeaux trace conduit hors de ville",
-
-  "voisins de Subure brandissent flambeaux piste mène hors de ville",
-
-  "voisins de Subure brandissent flambeaux piste conduit hors de ville",
-
-  "voisins de Subure brandissent torches trace mène hors de ville",
-
-  "voisins de Subure brandissent torches trace conduit hors de ville",
-
-  "voisins de Subure brandissent torches piste mène hors de ville",
-
-  "voisins de Subure brandissent torches piste conduit hors de ville"
-
-      ],
-
-      "answerConfig": {
-
-        "type": "translation-segment",
-
-        "language": "fr",
-
-        "accepted": [
-
-          "habitants de Subure portent flambeaux trace mène hors de ville",
-
-  "habitants de Subure portent flambeaux trace conduit hors de ville",
-
-  "habitants de Subure portent flambeaux piste mène hors de ville",
-
-  "habitants de Subure portent flambeaux piste conduit hors de ville",
-
-  "habitants de Subure portent torches trace mène hors de ville",
-
-  "habitants de Subure portent torches trace conduit hors de ville",
-
-  "habitants de Subure portent torches piste mène hors de ville",
-
-  "habitants de Subure portent torches piste conduit hors de ville",
-
-  "habitants de Subure brandissent flambeaux trace mène hors de ville",
-
-  "habitants de Subure brandissent flambeaux trace conduit hors de ville",
-
-  "habitants de Subure brandissent flambeaux piste mène hors de ville",
-
-  "habitants de Subure brandissent flambeaux piste conduit hors de ville",
-
-  "habitants de Subure brandissent torches trace mène hors de ville",
-
-  "habitants de Subure brandissent torches trace conduit hors de ville",
-
-  "habitants de Subure brandissent torches piste mène hors de ville",
-
-  "habitants de Subure brandissent torches piste conduit hors de ville",
-
- 
-
-  "voisins de Subure portent flambeaux trace mène hors de ville",
-
-  "voisins de Subure portent flambeaux trace conduit hors de ville",
-
-  "voisins de Subure portent flambeaux piste mène hors de ville",
-
-  "voisins de Subure portent flambeaux piste conduit hors de ville",
-
-  "voisins de Subure portent torches trace mène hors de ville",
-
-  "voisins de Subure portent torches trace conduit hors de ville",
-
-  "voisins de Subure portent torches piste mène hors de ville",
-
-  "voisins de Subure portent torches piste conduit hors de ville",
-
-  "voisins de Subure brandissent flambeaux trace mène hors de ville",
-
-  "voisins de Subure brandissent flambeaux trace conduit hors de ville",
-
-  "voisins de Subure brandissent flambeaux piste mène hors de ville",
-
-  "voisins de Subure brandissent flambeaux piste conduit hors de ville",
-
-  "voisins de Subure brandissent torches trace mène hors de ville",
-
-  "voisins de Subure brandissent torches trace conduit hors de ville",
-
-  "voisins de Subure brandissent torches piste mène hors de ville",
-
-  "voisins de Subure brandissent torches piste conduit hors de ville"
-
-        ]
-
-      },
+     "acceptedAnswers": [
+  "les habitants de subure portent des flambeaux et la trace mène hors de la ville",
+  "les habitants de subure portent les flambeaux et la trace mène hors de la ville",
+  "les habitants de subure portent des torches et la trace mène hors de la ville",
+  "les habitants de subure portent les torches et la trace mène hors de la ville",
+  "les voisins de subure portent des flambeaux et la trace mène hors de la ville",
+  "les voisins de subure portent les flambeaux et la trace mène hors de la ville",
+  "les voisins de subure portent des torches et la trace mène hors de la ville",
+  "les voisins de subure portent les torches et la trace mène hors de la ville",
+  "les habitants de subure portent des flambeaux et la piste mène hors de la ville",
+  "les habitants de subure portent des torches et la piste mène hors de la ville",
+  "les voisins de subure portent des flambeaux et la piste mène hors de la ville",
+  "les voisins de subure portent des torches et la piste mène hors de la ville",
+  "les habitants de subure portent des flambeaux, et la trace mène hors de la ville",
+  "les habitants de subure portent des flambeaux ; la trace mène hors de la ville"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "tolerateArticles": true,
+  "accepted": [
+    "les habitants de subure portent des flambeaux et la trace mène hors de la ville",
+    "les habitants de subure portent les flambeaux et la trace mène hors de la ville",
+    "les habitants de subure portent des torches et la trace mène hors de la ville",
+    "les habitants de subure portent les torches et la trace mène hors de la ville",
+    "les voisins de subure portent des flambeaux et la trace mène hors de la ville",
+    "les voisins de subure portent les flambeaux et la trace mène hors de la ville",
+    "les voisins de subure portent des torches et la trace mène hors de la ville",
+    "les voisins de subure portent les torches et la trace mène hors de la ville",
+    "les habitants de subure portent des flambeaux et la piste mène hors de la ville",
+    "les habitants de subure portent des torches et la piste mène hors de la ville",
+    "les voisins de subure portent des flambeaux et la piste mène hors de la ville",
+    "les voisins de subure portent des torches et la piste mène hors de la ville",
+    "les habitants de subure portent des flambeaux, et la trace mène hors de la ville",
+    "les habitants de subure portent des flambeaux ; la trace mène hors de la ville"
+  ]
+},
 
       "points": 1,
 
@@ -9308,57 +8966,27 @@ export const lessons5eP3 = [
 
   "expected": "dans le ciel le signe de discordia apparaît marcus se tait",
 
-  "acceptedAnswers": [
-
-    "dans le ciel le signe de discordia apparaît marcus se tait",
-
-    "dans le ciel un signe de discordia apparaît marcus se tait",
-
-    "dans le ciel le signe de la discorde apparaît marcus se tait",
-
-    "dans le ciel un signe de la discorde apparaît marcus se tait",
-
- 
-
-    "dans le ciel le signe de discordia apparaît puis marcus se tait",
-
-    "dans le ciel un signe de discordia apparaît puis marcus se tait",
-
-    "dans le ciel le signe de la discorde apparaît puis marcus se tait",
-
-    "dans le ciel un signe de la discorde apparaît puis marcus se tait"
-
-  ],
-
-  "answerConfig": {
-
-    "type": "translation-segment",
-
-    "language": "fr",
-
-    "accepted": [
-
-      "dans le ciel le signe de discordia apparaît marcus se tait",
-
-      "dans le ciel un signe de discordia apparaît marcus se tait",
-
-      "dans le ciel le signe de la discorde apparaît marcus se tait",
-
-      "dans le ciel un signe de la discorde apparaît marcus se tait",
-
- 
-
-      "dans le ciel le signe de discordia apparaît puis marcus se tait",
-
-      "dans le ciel un signe de discordia apparaît puis marcus se tait",
-
-      "dans le ciel le signe de la discorde apparaît puis marcus se tait",
-
-      "dans le ciel un signe de la discorde apparaît puis marcus se tait"
-
-    ]
-
-  },
+ "acceptedAnswers": [
+  "dans le ciel, le signe de discordia apparaît et marcus se tait",
+  "dans le ciel, le signe de discordia apparaît, et marcus se tait",
+  "dans le ciel, le signe de discordia apparaît ; marcus se tait",
+  "dans le ciel le signe de discordia apparaît et marcus se tait",
+  "le signe de discordia apparaît dans le ciel et marcus se tait",
+  "le signe de discordia apparaît dans le ciel, et marcus se tait"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "tolerateArticles": true,
+  "accepted": [
+    "dans le ciel, le signe de discordia apparaît et marcus se tait",
+    "dans le ciel, le signe de discordia apparaît, et marcus se tait",
+    "dans le ciel, le signe de discordia apparaît ; marcus se tait",
+    "dans le ciel le signe de discordia apparaît et marcus se tait",
+    "le signe de discordia apparaît dans le ciel et marcus se tait",
+    "le signe de discordia apparaît dans le ciel, et marcus se tait"
+  ]
+},
 
   "points": 1,
 
