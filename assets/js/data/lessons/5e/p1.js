@@ -75,7 +75,7 @@ export const lessons5eP1 = [
 
       "Subura = Subure",
 
-      "in via = sur la route",
+      "in via = sur la route/dans la rue",
 
       "amicus = ami",
 
