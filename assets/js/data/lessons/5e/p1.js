@@ -438,105 +438,50 @@ export const lessons5eP1 = [
 
       },
 
-      {
-
-        "id": "p1-l1-p2",
-
-        "type": "textInput",
-
-        "prompt": "👋 Traduis en français : Niger canis est",
-
-        "expected": "niger est un chien",
-
-        "acceptedAnswers":           [
-
-            "niger est un chien",
-
-            "niger est le chien",
-
-            "niger c'est un chien",
-
-            "niger c'est le chien"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted":             [
-
-              "niger est un chien",
-
-              "niger est le chien"
-
-            ],
-
-          "synonyms":             [
-
-              "niger c'est un chien",
-
-              "niger c'est le chien"
-
-            ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "niger est un chien",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "niger est un chien",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
+    {
+  "id": "p1-l1-p2",
+  "type": "textInput",
+  "prompt": " Traduis en français : Niger canis est",
+  "expected": "niger est un chien",
+  "acceptedAnswers": [
+    "niger est un chien",
+    "niger est le chien",
+    "niger c'est un chien",
+    "niger c'est le chien"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "tolerateArticles": true,
+    "accepted": [
+      "niger est un chien",
+      "niger est le chien",
+      "niger c'est un chien",
+      "niger c'est le chien"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "niger est un chien",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+  "rejectIf": [
+    "verbe incorrect",
+    "sens inversé sujet/objet",
+    "forme latine impossible au niveau de la leçon"
+  ],
+  "tests": [
+    { "input": "niger est un chien", "isCorrect": true },
+    { "input": "niger c'est un chien", "isCorrect": true },
+    { "input": "réponse hors-sujet", "isCorrect": false }
+  ]
+},
 
       {
 
@@ -1089,34 +1034,11 @@ export const lessons5eP1 = [
       },
 
       {
-
-        "id": "p1-l2-p2",
-
-        "type": "textInput",
-
-        "prompt": "🏠 Traduis en français : Marcus in insula habitat",
-
-        "expected": "marcus habite dans l'insula",
-
-       "acceptedAnswers": [
-  "marcus habite dans l'insula",
-  "marcus habite dans l'immeuble",
-  "marcus habite dans une insula",
-  "marcus habite dans un immeuble",
-  "marcus habite en insula",
-  "marcus habite en immeuble",
-  "marcus vit dans l'insula",
-  "marcus vit dans l'immeuble",
-  "marcus vit dans une insula",
-  "marcus vit dans un immeuble",
-  "marcus vit en insula",
-  "marcus vit en immeuble"
-],
-"answerConfig": {
-  "type": "translation-segment",
-  "language": "fr",
-  "tolerateArticles": true,
-  "accepted": [
+  "id": "p1-l2-p2",
+  "type": "textInput",
+  "prompt": " Traduis en français : Marcus in insula habitat",
+  "expected": "marcus habite dans l'insula",
+  "acceptedAnswers": [
     "marcus habite dans l'insula",
     "marcus habite dans l'immeuble",
     "marcus habite dans une insula",
@@ -1129,62 +1051,48 @@ export const lessons5eP1 = [
     "marcus vit dans un immeuble",
     "marcus vit en insula",
     "marcus vit en immeuble"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "tolerateArticles": true,
+    "accepted": [
+      "marcus habite dans l'insula",
+      "marcus habite dans l'immeuble",
+      "marcus habite dans une insula",
+      "marcus habite dans un immeuble",
+      "marcus habite en insula",
+      "marcus habite en immeuble",
+      "marcus vit dans l'insula",
+      "marcus vit dans l'immeuble",
+      "marcus vit dans une insula",
+      "marcus vit dans un immeuble",
+      "marcus vit en insula",
+      "marcus vit en immeuble"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "marcus habite dans l'insula",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+  "rejectIf": [
+    "verbe incorrect",
+    "sens inversé sujet/objet",
+    "forme latine impossible au niveau de la leçon"
+  ],
+  "tests": [
+    { "input": "marcus habite dans l'insula", "isCorrect": true },
+    { "input": "marcus vit dans l'immeuble", "isCorrect": true },
+    { "input": "réponse hors-sujet", "isCorrect": false }
   ]
 },
-
-        "points": 1,
-
-        "canonicalAnswer": "marcus habite dans l'insula",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "marcus habite dans l'insula",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
 
       {
 
