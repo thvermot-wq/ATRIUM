@@ -2414,7 +2414,7 @@ export const lessons5eP3 = [
 
   "type": "singleChoice",
 
-  "prompt": "Mini-texte : « In macello rumor crescit : vir oleum emit noctu. » Pourquoi cet achat paraît-il inquiétant ?",
+  "prompt": "Mini-texte : « In macello rumor crescit : vir oleum emit noctu. » Pourquoi cet achat effectué par l'homme paraît-il inquiétant ?",
 
   "options": [
 
