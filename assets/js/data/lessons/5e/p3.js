@@ -3929,36 +3929,21 @@ export const lessons5eP3 = [
         "expected": "j'entends l'homme",
 
         "acceptedAnswers": [
-
-          "j'entends l'homme",
-
-          "j'entends cet homme",
-
-          "j'écoute l'homme",
-
-          "j'écoute cet homme"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "j'entends l'homme",
-
-            "j'entends cet homme",
-
-            "j'écoute l'homme",
-
-            "j'écoute cet homme"
-
-          ]
-
-        },
+  "j'entends l'homme",
+  "j'entends cet homme",
+  "j'écoute l'homme",
+  "j'écoute cet homme"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "accepted": [
+    "j'entends l'homme",
+    "j'entends cet homme",
+    "j'écoute l'homme",
+    "j'écoute cet homme"
+  ]
+},
 
         "points": 1,
 
@@ -7654,37 +7639,26 @@ export const lessons5eP3 = [
 
       "expected": "le serviteur ouvre la porte",
 
-      "acceptedAnswers": [
-
-        "le serviteur ouvre la porte",
-
-        "un serviteur ouvre la porte",
-
-        "l’esclave ouvre la porte",
-
-        "un esclave ouvre la porte"
-
-      ],
-
-      "answerConfig": {
-
-        "type": "translation-segment",
-
-        "language": "fr",
-
-        "accepted": [
-
-          "le serviteur ouvre la porte",
-
-          "un serviteur ouvre la porte",
-
-          "l’esclave ouvre la porte",
-
-          "un esclave ouvre la porte"
-
-        ]
-
-      },
+     "acceptedAnswers": [
+  "le serviteur ouvre la porte",
+  "un serviteur ouvre la porte",
+  "l'esclave ouvre la porte",
+  "un esclave ouvre la porte",
+  "le serviteur ouvre cette porte",
+  "l'esclave ouvre cette porte"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "accepted": [
+    "le serviteur ouvre la porte",
+    "un serviteur ouvre la porte",
+    "l'esclave ouvre la porte",
+    "un esclave ouvre la porte",
+    "le serviteur ouvre cette porte",
+    "l'esclave ouvre cette porte"
+  ]
+},
 
       "points": 1,
 
@@ -8332,37 +8306,32 @@ export const lessons5eP3 = [
 
       "expected": "les flambeaux éclairent le jardin",
 
-      "acceptedAnswers": [
-
-        "les flambeaux éclairent le jardin",
-
-        "des flambeaux éclairent le jardin",
-
-        "les torches éclairent le jardin",
-
-        "des torches éclairent le jardin"
-
-      ],
-
-      "answerConfig": {
-
-        "type": "translation-segment",
-
-        "language": "fr",
-
-        "accepted": [
-
-          "les flambeaux éclairent le jardin",
-
-          "des flambeaux éclairent le jardin",
-
-          "les torches éclairent le jardin",
-
-          "des torches éclairent le jardin"
-
-        ]
-
-      },
+     "acceptedAnswers": [
+  "les flambeaux éclairent le jardin",
+  "des flambeaux éclairent le jardin",
+  "les torches éclairent le jardin",
+  "des torches éclairent le jardin",
+  "les flambeaux illuminent le jardin",
+  "des flambeaux illuminent le jardin",
+  "les torches illuminent le jardin",
+  "des torches illuminent le jardin"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "accepted": [
+    "les flambeaux éclairent le jardin",
+    "des flambeaux éclairent le jardin",
+    "les torches éclairent le jardin",
+    "des torches éclairent le jardin"
+  ],
+  "synonyms": [
+    "les flambeaux illuminent le jardin",
+    "des flambeaux illuminent le jardin",
+    "les torches illuminent le jardin",
+    "des torches illuminent le jardin"
+  ]
+},
 
       "points": 1,
 
@@ -9144,37 +9113,32 @@ export const lessons5eP3 = [
 
       "expected": "le serviteur porte un flambeau et se tait",
 
-      "acceptedAnswers": [
-
-        "le serviteur porte un flambeau et se tait",
-
-        "le serviteur porte le flambeau et se tait",
-
-        "le serviteur porte une torche et se tait",
-
-        "le serviteur porte la torche et se tait"
-
-      ],
-
-      "answerConfig": {
-
-        "type": "translation-segment",
-
-        "language": "fr",
-
-        "accepted": [
-
-          "le serviteur porte un flambeau et se tait",
-
-          "le serviteur porte le flambeau et se tait",
-
-          "le serviteur porte une torche et se tait",
-
-          "le serviteur porte la torche et se tait"
-
-        ]
-
-      },
+    "acceptedAnswers": [
+  "le serviteur porte un flambeau et se tait",
+  "le serviteur porte le flambeau et se tait",
+  "le serviteur porte une torche et se tait",
+  "le serviteur porte la torche et se tait",
+  "le serviteur porte ce flambeau et se tait",
+  "le serviteur porte cette torche et se tait",
+  "l'esclave porte un flambeau et se tait",
+  "l'esclave porte une torche et se tait"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "accepted": [
+    "le serviteur porte un flambeau et se tait",
+    "le serviteur porte le flambeau et se tait",
+    "le serviteur porte une torche et se tait",
+    "le serviteur porte la torche et se tait",
+    "le serviteur porte ce flambeau et se tait",
+    "le serviteur porte cette torche et se tait"
+  ],
+  "synonyms": [
+    "l'esclave porte un flambeau et se tait",
+    "l'esclave porte une torche et se tait"
+  ]
+},
 
       "points": 1,
 
