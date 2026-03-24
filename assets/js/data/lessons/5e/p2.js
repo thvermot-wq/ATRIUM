@@ -188,121 +188,53 @@ export const lessons5eP2 = [
 
       },
 
-      {
-
-        "id": "p2-l1-t3",
-
-        "type": "singleChoice",
-
-        "prompt": "« 𝑉𝑖𝑐𝑖𝑛𝑢𝑠 𝑆𝑒𝑥𝑡𝑢𝑚 𝑎𝑐𝑐𝑢𝑠𝑎𝑡 » : qui accuse ?",
-
-        "options": [
-
-          "le voisin",
-
-          "Sextus",
-
-          "l’autel",
-
-          "le chien"
-
-        ],
-
-        "expected": "le voisin",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-      {
-
-        "id": "p2-l1-t4",
-
-        "type": "multipleChoice",
-
-        "prompt": "Coche les trois traductions recevables de « 𝑉𝑖𝑐𝑖𝑛𝑢𝑠 𝑆𝑒𝑥𝑡𝑢𝑚 𝑎𝑐𝑐𝑢𝑠𝑎𝑡 ».",
-
-        "options": [
-
-          "Le voisin accuse Sextus",
-
-          "Le voisin met Sextus en cause",
-
-          "Sextus accuse le voisin",
-
-          "Sextus est accusé par le voisin"
-
-        ],
-
-        "expected": [
-
-          "Le voisin accuse Sextus",
-
-          "Le voisin met Sextus en cause",
-
-          "Sextus est accusé par le voisin"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-      {
-
-  "id": "p2-l1-t5",
-
+   {
+  "id": "p2-l1-t3",
   "type": "singleChoice",
-
-  "prompt": "Dans « 𝑉𝑖𝑐𝑖𝑛𝑢𝑠 𝑎𝑟𝑎𝑚 𝑣𝑖𝑑𝑒𝑡 », quel mot est le complément d’objet direct ?",
-
-  "options": [
-
-    "vicinus",
-
-    "aram",
-
-    "videt"
-
-  ],
-
-  "expected": "aram",
-
+  "prompt": "« Vicinus Sextum accusat » : qui accuse ?",
+  "options": [ "le voisin", "Sextus", "l’autel", "le chien" ],
+  "expected": "le voisin",
+  "shuffle": true,
   "points": 1
+},
 
+     {
+  "id": "p2-l1-t4",
+  "type": "multipleChoice",
+  "prompt": "Coche les trois traductions recevables de « Vicinus Sextum accusat ».",
+  "options": [
+    "Le voisin accuse Sextus",
+    "Le voisin met Sextus en cause",
+    "Sextus accuse le voisin",
+    "Sextus est accusé par le voisin"
+  ],
+  "expected": [
+    "Le voisin accuse Sextus",
+    "Le voisin met Sextus en cause",
+    "Sextus est accusé par le voisin"
+  ],
+  "shuffle": true,
+  "points": 1
+},
+
+     {
+  "id": "p2-l1-t5",
+  "type": "singleChoice",
+  "prompt": "Dans « Vicinus aram videt », quel mot est le complément d’objet direct ?",
+  "options": [ "vicinus", "aram", "videt" ],
+  "expected": "aram",
+  "points": 1
 },
 
       {
-
-        "id": "p2-l1-t6",
-
-        "type": "singleChoice",
-
-        "prompt": "Repère le verbe dans « 𝐷𝑜𝑛𝑢𝑚 𝑣𝑖𝑐𝑖𝑛𝑢𝑠 𝑣𝑖𝑑𝑒𝑡 ».",
-
-        "options": [
-
-          "donum",
-
-          "vicinus",
-
-          "videt",
-
-          "nullum"
-
-        ],
-
-        "expected": "videt",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+  "id": "p2-l1-t6",
+  "type": "singleChoice",
+  "prompt": "Repère le verbe dans « Vicinus aram videt ».",
+  "options": [ "donum", "vicinus", "videt", "nullum" ],
+  "expected": "videt",
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -344,133 +276,45 @@ export const lessons5eP2 = [
 
     "production": [
 
-           {
-
-        "id": "p2-l1-p1",
-
-        "type": "textInput",
-
-        "prompt": "Traduis en français : 𝑞𝑢𝑖𝑠 𝑑𝑜𝑛𝑢𝑚 𝑣𝑖𝑑𝑒𝑡 ?",
-
-        "expected": "qui voit l'offrande ?",
-
-        "acceptedAnswers": [
-
-          "qui voit l'offrande ?",
-
-          "qui voit l'offrande",
-
-          "qui voit le cadeau ?",
-
-          "qui voit le cadeau",
-
-          "qui voit le don ?",
-
-          "qui voit le don",
-
-          "qui aperçoit l'offrande ?",
-
-          "qui aperçoit l'offrande",
-
-          "qui aperçoit le cadeau ?",
-
-          "qui aperçoit le cadeau",
-
-          "qui aperçoit le don ?",
-
-          "qui aperçoit le don"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "qui voit l'offrande ?",
-
-            "qui voit l'offrande",
-
-            "qui voit le cadeau ?",
-
-            "qui voit le cadeau",
-
-            "qui voit le don ?",
-
-            "qui voit le don",
-
-            "qui aperçoit l'offrande ?",
-
-            "qui aperçoit l'offrande",
-
-            "qui aperçoit le cadeau ?",
-
-            "qui aperçoit le cadeau",
-
-            "qui aperçoit le don ?",
-
-            "qui aperçoit le don"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "qui voit l'offrande ?",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "qui voit l'offrande ?",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
+         {
+  "id": "p2-l1-p1",
+  "type": "textInput",
+  "prompt": "Traduis en français : Quis donum videt ?",
+  "expected": "qui voit l'offrande ?",
+  "acceptedAnswers": [
+    "qui voit l'offrande ?",
+    "qui voit l'offrande",
+    "qui voit le cadeau ?",
+    "qui voit le cadeau",
+    "qui voit le don ?",
+    "qui voit le don",
+    "qui aperçoit l'offrande ?",
+    "qui aperçoit l'offrande",
+    "qui aperçoit le cadeau ?",
+    "qui aperçoit le cadeau",
+    "qui aperçoit le don ?",
+    "qui aperçoit le don"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "qui voit l'offrande ?",
+      "qui voit l'offrande",
+      "qui voit le cadeau ?",
+      "qui voit le cadeau",
+      "qui voit le don ?",
+      "qui voit le don",
+      "qui aperçoit l'offrande ?",
+      "qui aperçoit l'offrande",
+      "qui aperçoit le cadeau ?",
+      "qui aperçoit le cadeau",
+      "qui aperçoit le don ?",
+      "qui aperçoit le don"
+    ]
+  },
+  "points": 1
+},
 
       {
 
@@ -764,33 +608,15 @@ export const lessons5eP2 = [
 
     "training": [
 
-      {
-
-        "id": "p2-l2-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "𝑎𝑑 signifie…",
-
-        "options": [
-
-          "vers",
-
-          "dans",
-
-          "hors de",
-
-          "devant"
-
-        ],
-
-        "expected": "vers",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+    {
+  "id": "p2-l2-t1",
+  "type": "singleChoice",
+  "prompt": "« ad » signifie…",
+  "options": [ "vers", "dans", "hors de", "devant" ],
+  "expected": "vers",
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -865,60 +691,24 @@ export const lessons5eP2 = [
       },
 
       {
-
-        "id": "p2-l2-t3",
-
-        "type": "singleChoice",
-
-        "prompt": "« 𝑆𝑒𝑟𝑣𝑢𝑠 𝑎𝑑 𝑡𝑒𝑚𝑝𝑙𝑢𝑚 𝑣𝑒𝑛𝑖𝑡 » : où va le serviteur ?",
-
-        "options": [
-
-          "vers le temple",
-
-          "dans la boutique",
-
-          "hors de la rue",
-
-          "devant la fontaine"
-
-        ],
-
-        "expected": "vers le temple",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+  "id": "p2-l2-t3",
+  "type": "singleChoice",
+  "prompt": "« Servus ad templum venit » : où va le serviteur ?",
+  "options": [ "vers le temple", "dans la boutique", "hors de la rue", "devant la fontaine" ],
+  "expected": "vers le temple",
+  "shuffle": true,
+  "points": 1
+},
 
       {
-
-        "id": "p2-l2-t4",
-
-        "type": "singleChoice",
-
-        "prompt": "« 𝐸𝑥 𝑡𝑎𝑏𝑒𝑟𝑛𝑎 𝑠𝑒𝑟𝑣𝑎 𝑐𝑢𝑟𝑟𝑖𝑡 » : la servante…",
-
-        "options": [
-
-          "sort de la boutique",
-
-          "entre dans la boutique",
-
-          "reste devant la boutique",
-
-          "va au temple"
-
-        ],
-
-        "expected": "sort de la boutique",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+  "id": "p2-l2-t4",
+  "type": "singleChoice",
+  "prompt": "« Ancilla ex taberna exit » : la servante…",
+  "options": [ "sort de la boutique", "entre dans la boutique", "reste devant la boutique", "va au temple" ],
+  "expected": "sort de la boutique",
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -956,39 +746,23 @@ export const lessons5eP2 = [
 
       },
 
-      {
-
-        "id": "p2-l2-t6",
-
-        "type": "multipleChoice",
-
-        "prompt": "Traductions possibles de « 𝐴𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝑐𝑎𝑛𝑖𝑠 𝑠𝑡𝑎𝑡 ».",
-
-        "options": [
-
-          "Le chien est devant la porte",
-
-          "Le chien se tient devant la porte",
-
-          "La porte est devant le chien",
-
-          "Le chien entre par la porte"
-
-        ],
-
-        "expected": [
-
-          "Le chien est devant la porte",
-
-          "Le chien se tient devant la porte"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+    {
+  "id": "p2-l2-t6",
+  "type": "multipleChoice",
+  "prompt": "Coche les deux traductions possibles de « Canis ante ianuam stat ».",
+  "options": [
+    "Le chien est devant la porte",
+    "Le chien se tient devant la porte",
+    "La porte est devant le chien",
+    "Le chien entre par la porte"
+  ],
+  "expected": [
+    "Le chien est devant la porte",
+    "Le chien se tient devant la porte"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
     {
 
@@ -1043,116 +817,36 @@ export const lessons5eP2 = [
     "production": [
 
       {
-
-        "id": "p2-l2-p1",
-
-        "type": "textInput",
-
-        "prompt": "Traduis : 𝑓𝑒𝑚𝑖𝑛𝑎 𝑖𝑛 𝑣𝑖𝑎 𝑎𝑚𝑏𝑢𝑙𝑎𝑡",
-
-        "expected": "la femme marche dans la rue",
-
-        "acceptedAnswers": [
-
-          "la femme marche dans la rue",
-
-          "une femme marche dans la rue",
-
-          "la dame marche dans la rue",
-
-          "une dame marche dans la rue",
-
-          "la femme se promène dans la rue",
-
-          "une femme se promène dans la rue",
-
-          "la dame se promène dans la rue",
-
-          "une dame se promène dans la rue"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "la femme marche dans la rue",
-
-            "une femme marche dans la rue",
-
-            "la dame marche dans la rue",
-
-            "une dame marche dans la rue",
-
-            "la femme se promène dans la rue",
-
-            "une femme se promène dans la rue",
-
-            "la dame se promène dans la rue",
-
-            "une dame se promène dans la rue"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "la femme marche dans la rue",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "la femme marche dans la rue",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
+  "id": "p2-l2-p1",
+  "type": "textInput",
+  "prompt": "Traduis en français : Femina in via ambulat",
+  "expected": "la femme marche dans la rue",
+  "acceptedAnswers": [
+    "la femme marche dans la rue",
+    "une femme marche dans la rue",
+    "la dame marche dans la rue",
+    "une dame marche dans la rue",
+    "la femme se promène dans la rue",
+    "une femme se promène dans la rue",
+    "la dame se promène dans la rue",
+    "une dame se promène dans la rue"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "la femme marche dans la rue",
+      "une femme marche dans la rue",
+      "la dame marche dans la rue",
+      "une dame marche dans la rue",
+      "la femme se promène dans la rue",
+      "une femme se promène dans la rue",
+      "la dame se promène dans la rue",
+      "une dame se promène dans la rue"
+    ]
+  },
+  "points": 1
+},
 
       {
 
@@ -1716,38 +1410,22 @@ export const lessons5eP2 = [
 
       },
 
-     {
-
+    {
   "id": "p2-l3-t7",
-
   "type": "multipleChoice",
-
-  "prompt": "Mini-texte : « 𝐹𝑒𝑚𝑖𝑛𝑎 𝑎𝑑 𝑓𝑜𝑛𝑡𝑒𝑚 𝑠𝑡𝑎𝑡. 𝐴𝑚𝑖𝑐𝑎 𝑝𝑜𝑟𝑡𝑎𝑚 𝑠𝑝𝑒𝑐𝑡𝑎𝑡. » Coche les deux traductions exactes.",
-
+  "prompt": "Mini-texte : « Femina fontem spectat. Servus ad viam venit. » Coche les deux traductions exactes.",
   "options": [
-
-    "Une amie porte un grand seau",
-
-    "L’amie regarde la porte",
-
-    "Le chien se tient devant la fontaine",
-
-    "Une femme se tient vers la fontaine"
-
+    "La femme regarde la fontaine",
+    "Le serviteur vient vers la rue",
+    "La femme quitte la fontaine",
+    "Le serviteur entre dans la maison"
   ],
-
   "expected": [
-
-    "L’amie regarde la porte",
-
-    "Une femme se tient vers la fontaine"
-
+    "La femme regarde la fontaine",
+    "Le serviteur vient vers la rue"
   ],
-
   "shuffle": true,
-
   "points": 1
-
 }
 
     ],
