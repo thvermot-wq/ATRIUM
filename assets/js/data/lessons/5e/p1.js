@@ -1098,45 +1098,39 @@ export const lessons5eP1 = [
 
         "expected": "marcus habite dans l'insula",
 
-        "acceptedAnswers": [
-
-          "marcus habite dans l'insula",
-
-          "marcus habite dans l'immeuble",
-
-          "marcus habite dans une insula",
-
-          "marcus habite dans un immeuble",
-
-          "marcus habite en insula",
-
-          "marcus habite en immeuble"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "marcus habite dans l'insula",
-
-            "marcus habite dans l'immeuble",
-
-            "marcus habite dans une insula",
-
-            "marcus habite dans un immeuble",
-
-            "marcus habite en insula",
-
-            "marcus habite en immeuble"
-
-          ]
-
-        },
+       "acceptedAnswers": [
+  "marcus habite dans l'insula",
+  "marcus habite dans l'immeuble",
+  "marcus habite dans une insula",
+  "marcus habite dans un immeuble",
+  "marcus habite en insula",
+  "marcus habite en immeuble",
+  "marcus vit dans l'insula",
+  "marcus vit dans l'immeuble",
+  "marcus vit dans une insula",
+  "marcus vit dans un immeuble",
+  "marcus vit en insula",
+  "marcus vit en immeuble"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "tolerateArticles": true,
+  "accepted": [
+    "marcus habite dans l'insula",
+    "marcus habite dans l'immeuble",
+    "marcus habite dans une insula",
+    "marcus habite dans un immeuble",
+    "marcus habite en insula",
+    "marcus habite en immeuble",
+    "marcus vit dans l'insula",
+    "marcus vit dans l'immeuble",
+    "marcus vit dans une insula",
+    "marcus vit dans un immeuble",
+    "marcus vit en insula",
+    "marcus vit en immeuble"
+  ]
+},
 
         "points": 1,
 
@@ -5643,30 +5637,24 @@ export const lessons5eP1 = [
   "prompt": " Traduis en français : Marcus respondet",
   "expected": "marcus répond",
   "acceptedAnswers": [
+  "marcus répond",
+  "marcus donne une réponse",
+  "marcus donne sa réponse",
+  "marcus fait une réponse",
+  "marcus apporte une réponse"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "tolerateArticles": true,
+  "accepted": [
     "marcus répond",
     "marcus donne une réponse",
     "marcus donne sa réponse",
-    "marcus répond.",
-    "marcus répond maintenant"
-  ],
-  "answerConfig": {
-    "type": "translation-segment",
-    "language": "fr",
-    "tolerateArticles": true,
-    "accepted": [
-      "marcus répond",
-      "marcus donne une réponse",
-      "marcus donne sa réponse",
-      "marcus répond maintenant",
-      "marcus fait une réponse"
-    ],
-    "synonyms": [
-      "marcus apporte une réponse",
-      "marcus répond bien",
-      "marcus donne une réponse",
-      "marcus donne sa réponse"
-    ]
-  },
+    "marcus fait une réponse",
+    "marcus apporte une réponse"
+  ]
+},
   "points": 1,
   "canonicalAnswer": "marcus répond",
   "normalization": {
@@ -6776,49 +6764,27 @@ export const lessons5eP1 = [
 
         "expected": "un nom est sur le mur",
 
-        "acceptedAnswers": [
-
-          "un nom est sur le mur",
-
-          "un nom est sur un mur",
-
-          "le nom est sur le mur",
-
-          "un nom est écrit sur le mur",
-
-          "le nom est écrit sur le mur",
-
-          "un nom est écrit sur un mur",
-
-          "le nom est écrit sur un mur"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "un nom est sur le mur",
-
-            "un nom est sur un mur",
-
-            "le nom est sur le mur",
-
-            "un nom est écrit sur le mur",
-
-            "le nom est écrit sur le mur",
-
-            "un nom est écrit sur un mur",
-
-            "le nom est écrit sur un mur"
-
-          ]
-
-        },
+      "acceptedAnswers": [
+  "un nom est sur le mur",
+  "le nom est sur le mur",
+  "un nom est inscrit sur le mur",
+  "le nom est inscrit sur le mur",
+  "un nom est gravé sur le mur",
+  "le nom est gravé sur le mur"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "tolerateArticles": true,
+  "accepted": [
+    "un nom est sur le mur",
+    "le nom est sur le mur",
+    "un nom est inscrit sur le mur",
+    "le nom est inscrit sur le mur",
+    "un nom est gravé sur le mur",
+    "le nom est gravé sur le mur"
+  ]
+},
 
         "points": 1,
 
