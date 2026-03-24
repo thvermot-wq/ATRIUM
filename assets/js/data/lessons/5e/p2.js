@@ -8314,39 +8314,56 @@ export const lessons5eP2 = [
 
       },
 
-      {
-
-        "id": "p2-l12-p3",
-
-        "type": "textInput",
-
-        "prompt": "Quelle divinité a troublé Subure ? (en un mot)",
-
-        "expected": "la Discorde",
-
-        "acceptedAnswers": [
-
-          "la Discorde",
-
-          "Discordia"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "la Discorde",
-
-            "Discordia"
-
-          ]
-
-        },
+     {
+  "id": "p2-l12-p3",
+  "type": "textInput",
+  "prompt": "Quelle divinité a troublé Subure ? Écris seulement le nom, en français ou en latin.",
+  "expected": "la Discorde",
+  "acceptedAnswers": [
+    "la Discorde",
+    "Discorde",
+    "Discordia"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "la Discorde",
+      "Discorde",
+      "Discordia"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "la Discorde",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Identifier précisément la divinité responsable ; aucune reformulation narrative vague n’est acceptée.",
+  "rejectIf": [
+    "réponse narrative vague",
+    "réponse hors-sujet",
+    "confusion entre cause divine et conséquences humaines"
+  ],
+  "tests": [
+    {
+      "input": "la Discorde",
+      "isCorrect": true
+    },
+    {
+      "input": "Discordia",
+      "isCorrect": true
+    },
+    {
+      "input": "les conflits entre voisins",
+      "isCorrect": false
+    }
+  ]
+},
 
         "points": 1,
 
