@@ -603,6 +603,7 @@ export const lessons5eP2 = [
       "venit = il/elle vient",
 
       "exit = il/elle sort",
+      "sto, stas, stat = je me tiens, tu te tiens, il/elle se tient",
       "ambulo, ambulas : je marche, tu marches"
 
     ],
@@ -719,7 +720,7 @@ export const lessons5eP2 = [
 
         "type": "ordering",
 
-        "prompt": "Traduis en suivant l'ordre de la phrase française : Le voisin est devant la porte.",
+        "prompt": "Traduis en suivant l'ordre de la phrase française : Le voisin se tient devant la porte.",
 
         "options": [
 
