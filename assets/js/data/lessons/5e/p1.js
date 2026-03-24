@@ -24,7 +24,7 @@ const headerContexts5eP1 = {
 
   "p1-l11": "Sur le mur, des accusations ont été griffés si fort que la chaux s’est soulevée. « Joli courage : écrire ça dehors et se taire dedans », souffle Flavia, puis elle relit le nom une seconde fois.",
 
-  "p1-l12": "Le soir, ils étalent pain, tablette et souvenirs du jour sur la même table. « On ne cherche plus un voleur, on cherche ce qui fait dérailler tout le monde », note Marcus, puis le silence tombe d’un coup.",
+  "p1-l12": "Le soir, dans une popina, ils étalent pain, tablette et souvenirs du jour sur la même table. « On ne cherche plus un voleur, on cherche ce qui fait dérailler tout le monde », note Marcus, puis le silence tombe d’un coup.",
 
   "p1-l13": "Le soir tombe sur Subure. Marcus vérifie qui est là, qui manque encore, et chacun apprend enfin à dire simplement : je suis, tu es, il est ; je suis là, tu es là, il est là."
 
@@ -7155,7 +7155,7 @@ export const lessons5eP1 = [
 
         "type": "multipleChoice",
 
-        "prompt": "🧩 Sélectionne les éléments-clés de la scène finale.",
+        "prompt": "🧩 Coche les trois mots latins explicitement présents dans cette scène finale.",
 
         "options": [
 
@@ -7193,7 +7193,7 @@ export const lessons5eP1 = [
 
         "type": "matching",
 
-        "prompt": "🧩 Associe phrase et rôle narratif.",
+        "prompt": "🧩 Associe chaque phrase à son rôle dans la scène.",
 
         "pairs": [
 
