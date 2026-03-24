@@ -11,9 +11,9 @@ const HOME_LEVEL_META = {
     ambience:
       "On entre dans Subure par les portes du quotidien : saluer, repérer, lire une piste simple, comprendre qui agit et où l’action se joue.",
     referentielLabel: "Référentiel",
-    referentielUrl: "assets/docs/referentiel-5e.pdf",
+    referentielUrl: "assets/docs/pdf/referentiel-5e.pdf",
     outilsLabel: "Outils",
-    outilsUrl: "assets/docs/outils-5e.pdf",
+    outilsUrl: "assets/docs/pdf/outils-5e.pdf",
   },
   "4e": {
     dashboardLabel: "🏛️ LCA 4e",
@@ -24,10 +24,10 @@ const HOME_LEVEL_META = {
       "Consolidation morphologique et syntaxique, lecture suivie plus sûre, thème guidé.",
     ambience:
       "Le décor s’élargit : le latin devient plus structuré, les textes s’allongent, et les liens entre langue, cité, politique et récit deviennent plus clairs.",
-    referentielLabel: "Référentiel",
-    referentielUrl: "assets/docs/referentiel-4e.pdf",
+      referentielLabel: "Référentiel",
+    referentielUrl: "assets/docs/pdf/referentiel-4e.pdf",
     outilsLabel: "Outils",
-    outilsUrl: "assets/docs/outils-4e.pdf",
+    outilsUrl: "assets/docs/pdf/outils-4e.pdf",
   },
   "3e": {
     dashboardLabel: "🏛️ LCA 3e",
@@ -39,9 +39,9 @@ const HOME_LEVEL_META = {
     ambience:
       "On vise une lecture plus sûre et un regard plus vaste : texte, culture, héritage, et réemploi des notions se répondent à hauteur de fin de cycle.",
     referentielLabel: "Référentiel",
-    referentielUrl: "assets/docs/referentiel-3e.pdf",
+    referentielUrl: "assets/docs/pdf/referentiel-3e.pdf",
     outilsLabel: "Outils",
-    outilsUrl: "assets/docs/outils-3e.pdf",
+    outilsUrl: "assets/docs/pdf/outils-3e.pdf",
   },
 };
 
