@@ -1,6 +1,3 @@
-ATRIUM 5e — p2 patché
-Version HTML du fichier JS patché, avec numéros de ligne et contenu inchangé.
-
 // Données de leçons 5E · Période 2 — Discordia in Subure.
 
 const headerContexts5eP2 = {
