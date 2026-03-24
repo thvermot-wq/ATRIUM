@@ -137,43 +137,50 @@ levels.forEach((level) => {
   const ambition = level.ambition || "";
 
   card.innerHTML = `
-    <p class="eyebrow">${meta.dashboardLabel}</p>
-    <h3>${meta.latinGrade}</h3>
+  <p class="eyebrow">${meta.dashboardLabel}</p>
+  <h3>${meta.latinGrade}</h3>
 
-    <p>${meta.summary || description}</p>
-    <p class="muted">${meta.ambience || ambition || description}</p>
+  <p>${meta.summary || description}</p>
+  <p class="muted">${meta.ambience || ambition || description}</p>
 
-    <div class="metrics">
-      ${createMetric("Euroclassica", meta.euroclassica)}
-      ${createMetric("CECRL adapté", meta.cecrl)}
-    </div>
+  <div class="metrics">
+    ${createMetric("Euroclassica", meta.euroclassica)}
+    ${createMetric("CECRL adapté", meta.cecrl)}
+  </div>
 
-    <div class="actions-row">
-      <a
-        class="btn btn-secondary"
-        href="${meta.referentielUrl}"
-        target="_blank"
-        rel="noopener"
-        download
-      >
-        ${meta.referentielLabel}
-      </a>
+  <div class="level-card__tools" aria-label="Ressources du niveau ${level.id}">
+    <a
+      class="btn btn-secondary level-card__tool"
+      href="${meta.referentielUrl}"
+      target="_blank"
+      rel="noopener"
+      download
+    >
+      <span class="level-card__tool-emoji" aria-hidden="true">📘</span>
+      <span>${meta.referentielLabel}</span>
+    </a>
 
-      <a
-        class="btn btn-secondary"
-        href="${meta.outilsUrl}"
-        target="_blank"
-        rel="noopener"
-        download
-      >
-        ${meta.outilsLabel}
-      </a>
-    </div>
+    <a
+      class="btn btn-secondary level-card__tool"
+      href="${meta.outilsUrl}"
+      target="_blank"
+      rel="noopener"
+      download
+    >
+      <span class="level-card__tool-emoji" aria-hidden="true">🧰</span>
+      <span>${meta.outilsLabel}</span>
+    </a>
+  </div>
 
-    <button type="button" class="btn btn-primary" data-action="open-dashboard">
-      🚩 Ouvrir le dashboard
-    </button>
-  `;
+  <button
+    type="button"
+    class="btn btn-primary level-card__cta"
+    data-action="open-dashboard"
+  >
+    <span class="level-card__cta-emoji" aria-hidden="true">🛡️</span>
+    <span>Entrer dans le parcours</span>
+  </button>
+`;
 
   card
     .querySelector('[data-action="open-dashboard"]')
