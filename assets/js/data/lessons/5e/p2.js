@@ -6919,45 +6919,33 @@ export const lessons5eP2 = [
 
         "expected": "l'eau dans la fontaine est sale",
 
-        "acceptedAnswers": [
-
-          "l'eau dans la fontaine est sale",
-
-          "l'eau de la fontaine est sale",
-
-          "l'eau est sale dans la fontaine",
-
-          "l'eau dans la fontaine est souillée",
-
-          "l'eau de la fontaine est souillée",
-
-          "l'eau est souillée dans la fontaine"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "l'eau dans la fontaine est sale",
-
-            "l'eau de la fontaine est sale",
-
-            "l'eau est sale dans la fontaine",
-
-            "l'eau dans la fontaine est souillée",
-
-            "l'eau de la fontaine est souillée",
-
-            "l'eau est souillée dans la fontaine"
-
-          ]
-
-        },
+       "acceptedAnswers": [
+  "l'eau dans la fontaine est sale",
+  "l'eau de la fontaine est sale",
+  "l'eau est sale dans la fontaine",
+  "l'eau dans la fontaine est souillée",
+  "l'eau de la fontaine est souillée",
+  "l'eau est souillée dans la fontaine",
+  "l'eau dans la fontaine est trouble",
+  "l'eau de la fontaine est trouble",
+  "l'eau est trouble dans la fontaine"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "tolerateArticles": true,
+  "accepted": [
+    "l'eau dans la fontaine est sale",
+    "l'eau de la fontaine est sale",
+    "l'eau est sale dans la fontaine",
+    "l'eau dans la fontaine est souillée",
+    "l'eau de la fontaine est souillée",
+    "l'eau est souillée dans la fontaine",
+    "l'eau dans la fontaine est trouble",
+    "l'eau de la fontaine est trouble",
+    "l'eau est trouble dans la fontaine"
+  ]
+},
 
         "points": 1,
 
