@@ -152,7 +152,7 @@ export const lessons5eP1 = [
 
         "type": "multipleChoice",
 
-        "prompt": "👋 Sélectionne les formules pour dire 'Au revoir'.",
+        "prompt": "👋 Coche les deux formules pour dire « Au revoir ».",
 
         "options": [
 
@@ -818,7 +818,7 @@ export const lessons5eP1 = [
 
   "type": "multipleChoice",
 
-  "prompt": "🏠 Mini-scène : « Niger ante ianuam stat. Lucius per fenestram spectat. » Quels mots désignent des éléments de la maison ?",
+  "prompt": "🏠 Mini-scène : « Niger ante ianuam stat. Lucius per fenestram spectat. » Coche les deux mots qui désignent des éléments de la maison.",
 
   "options": [
 
@@ -1492,7 +1492,7 @@ export const lessons5eP1 = [
 
   "type": "multipleChoice",
 
-  "prompt": "🛍️ Mini-scène : « Mercator panem et vinum portat. » Quels objets le marchand porte-t-il ?",
+  "prompt": "🛍️ Mini-scène : « Mercator panem et vinum portat. » Coche les deux objets que porte le marchand.",
 
   "options": [
 
@@ -2124,7 +2124,7 @@ export const lessons5eP1 = [
 
         "type": "multipleChoice",
 
-        "prompt": "🏺 Choisis les mots liés au sanctuaire.",
+        "prompt": "🏺 Coche les quatre mots liés au sanctuaire.",
 
         "options": [
 
@@ -2784,7 +2784,7 @@ export const lessons5eP1 = [
 
         "type": "multipleChoice",
 
-        "prompt": "🐕 Choisis les phrases possibles liées à cette scène : Niger aboie devant une porte fermée, et attire l'attention de Marcus et Livia.",
+        "prompt": "🐕 Coche les quatre phrases possibles liées à cette scène : Niger aboie devant une porte fermée et attire l’attention de Marcus et Livia."
 
         "options": [
 
@@ -3431,7 +3431,7 @@ export const lessons5eP1 = [
 
   "type": "multipleChoice",
 
-  "prompt": "📜 Coche les groupes verbe + complément cohérents avec la leçon.",
+  "prompt": "📜 Coche les trois groupes verbe + complément cohérents avec la leçon."
 
   "options": [
 
