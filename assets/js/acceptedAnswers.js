@@ -22,6 +22,9 @@ function normalizeFr(value) {
 function stripFrenchArticles(value) {
   return value
     .replace(/(^|\s)(l'|l’)/giu, " ")
+    .replace(/\bde la\b/giu, " ")
+    .replace(/(^|\s)de (l'|l’)/giu, " ")
+    .replace(/\b(du|au|aux)\b/giu, " ")
     .replace(/\b(le|la|les|un|une|des)\b/giu, " ")
     .replace(/\s+/g, " ")
     .trim();
