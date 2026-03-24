@@ -2452,7 +2452,7 @@ export const lessons5eP3 = [
 
   "id": "p3-l4-t7",
 
-  "type": "multipleChoice",
+  "type": "singleChoice",
 
   "prompt": "Mini-texte : « In macello rumor crescit : vir oleum emit noctu. » Pourquoi cet achat paraît-il inquiétant ?",
 
@@ -3110,7 +3110,7 @@ export const lessons5eP3 = [
 
         "id": "p3-l5-t7",
 
-        "type": "multipleChoice",
+        "type": "singleChoice",
 
         "prompt": "Mini-texte : « Sero virum tabernarius videt. Amicus dubitat. » Qui a vu l’homme tard dans la nuit ?",
 
