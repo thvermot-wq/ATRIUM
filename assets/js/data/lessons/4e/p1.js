@@ -182,17 +182,18 @@ const lessonL10 = {
     {
       id: "4e-p1-l10-t6",
       type: "multipleChoice",
-      prompt: "🌆 Mini-texte : « Amici conveniunt. Tabella traditur. Timor tamen manet. » Quels éléments montrent que la scène mêle retrouvaille et tension ?",
+      prompt: "🌆 Mini-texte : « Amici conveniunt. Tabella traditur. Timor tamen manet. » Quelles analyses sont justes ?",
       options: [
-        "les amis se retrouvent",
-        "une tablette circule",
-        "la peur demeure",
-        "la scène se passe en pleine bataille"
+        "conveniunt est un actif pluriel",
+        "traditur est un passif singulier",
+        "manet est un actif singulier",
+        "timor est un accusatif",
+        "tabella est un verbe"
       ],
       expected: [
-        "les amis se retrouvent",
-        "une tablette circule",
-        "la peur demeure"
+        "conveniunt est un actif pluriel",
+        "traditur est un passif singulier",
+        "manet est un actif singulier"
       ],
       shuffle: true,
       points: 1
