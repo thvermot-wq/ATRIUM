@@ -583,28 +583,21 @@ export const lessons5eP2 = [
     "lexicon": [
 
       "ad + accusatif = vers",
-
       "in + ablatif = dans",
-
       "ex + ablatif = hors de, depuis",
-
       "ante + accusatif = devant",
-
       "templum = temple",
-
       "taberna = boutique",
-
       "via = rue",
-
+      "servus = esclave, serviteur",
       "fons = fontaine",
       "ancilla, ancillae = servante",
-"femina, feminae = femme",
-"fons, fontis = fontaine, source",
-      "venit = il/elle vient",
-
-      "exit = il/elle sort",
+      "femina, feminae = femme",
+      "fons, fontis = fontaine, source",
+      "venio, venis, venit = je viens, tu viens, il/elle vient",
+      "exeo, exis, exit = je sors, tu sors, il/elle sort",
       "sto, stas, stat = je me tiens, tu te tiens, il/elle se tient",
-      "ambulo, ambulas : je marche, tu marches"
+      "ambulo, ambulas, ambulat : je marche, tu marches, il/elle marche"
 
     ],
 
@@ -4902,26 +4895,17 @@ export const lessons5eP2 = [
     "lexicon": [
 
       "tabella (nom.), tabellam (acc.) = tablette",
-
-      "falsus, falsa, falsum = faux, fausse",
-
-      "scribo, scribit = j’écris ; il/elle écrit",
-
-      "muto, mutat = je change ; il/elle change",
-
-      "verum (nom./acc.) = vrai",
-
-      "falsum (nom./acc.) = faux",
-
-      "nomen (nom./acc.) = nom",
-
-      "signum (nom./acc.) = signe",
-      "vicina (nom.), vicinae (gén.) = voisine",
-      "mutatum est = est changé",
-
-      "lego, legit = je lis ; il/elle lit",
-
-      "ostendo, ostendit = je montre ; il/elle montre"
+"falsus, falsa, falsum = faux, fausse",
+"scribo, scribit = j’écris ; il/elle écrit",
+"muto, mutat = je change ; il/elle change",
+"mutatum est = a été changé, est changé",
+"verum (nom./acc.) = vrai",
+"falsum (nom./acc.) = faux",
+"nomen (nom./acc.) = nom",
+"signum (nom./acc.) = signe",
+"vicina, vicinae f. = voisine",
+"lego, legit = je lis ; il/elle lit",
+"ostendo, ostendit = je montre ; il/elle montre"
 
     ],
 
