@@ -2834,15 +2834,15 @@ export const lessons5eP3 = [
 
       "sero = tard, tardivement",
 
-      "dubito, dubitas : je doute, tu doutes",
+"dubito, dubitas, dubitat = je doute, tu doutes, il/elle doute",
+      
+"audio, audis, audit = j’entends ; tu entends ; il/elle entend",
+      
+      "voco, vocas, vocat = j’appelle, tu appelles, il/elle appelle",
 
-      "audio, audit = j’entends ; il/elle entend",
+      "accuso, accusas, accusat = j’accuse, tu accuses, il/elle accuse",
 
-      "voco, vocat = j’appelle ; il/elle appelle",
-
-      "accuso, accusat = j’accuse ; il/elle accuse",
-
-      "timeo, timet = je crains ; il/elle craint"
+      "timeo, times, timet = je crains, tu crains, il/elle craint"
 
     ],
 
