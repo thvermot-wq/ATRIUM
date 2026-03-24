@@ -127,66 +127,62 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
   const cards = document.createElement("div");
   cards.className = "level-grid";
 
-  levels.forEach((level) => {
-    const meta = getLevelMeta(level);
-    const card = document.createElement("article");
-    card.className = "card level-card";
-    card.dataset.level = level.id;
+levels.forEach((level) => {
+  const meta = getLevelMeta(level);
+  const card = document.createElement("article");
+  card.className = "card level-card";
+  card.dataset.level = level.id;
 
-    const description = level.description || meta.summary || "";
-    const ambition = level.ambition || "";
+  const description = level.description || meta.summary || "";
+  const ambition = level.ambition || "";
 
-    card.innerHTML = `
-      <div class="level-card__eyebrow">${meta.dashboardLabel}</div>
-      <h3 class="level-card__title">${meta.latinGrade}</h3>
-      <p class="level-card__summary">${meta.summary || description}</p>
-      <p class="level-card__ambience">${meta.ambience || ambition || description}</p>
+  card.innerHTML = `
+    <p class="eyebrow">${meta.dashboardLabel}</p>
+    <h3>${meta.latinGrade}</h3>
 
-      <div class="level-card__metrics">
-        ${createMetric("Euroclassica", meta.euroclassica)}
-        ${createMetric("CECRL adapté", meta.cecrl)}
-      </div>
+    <p>${meta.summary || description}</p>
+    <p class="muted">${meta.ambience || ambition || description}</p>
 
-      <div class="level-docs">
-        <a
-          href="${meta.referentielUrl}"
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-          data-action="open-referentiel"
-          aria-label="${meta.referentielLabel} ${level.classLabel || level.id || ""}"
-          class="btn-chip"
-        >
-          <span aria-hidden="true">📘</span>
-          <span>${meta.referentielLabel}</span>
-        </a>
-        <a
-          href="${meta.outilsUrl}"
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-          data-action="open-outils"
-          aria-label="${meta.outilsLabel} ${level.classLabel || level.id || ""}"
-          class="btn-chip"
-        >
-          <span aria-hidden="true">🧰</span>
-          <span>${meta.outilsLabel}</span>
-        </a>
-      </div>
+    <div class="metrics">
+      ${createMetric("Euroclassica", meta.euroclassica)}
+      ${createMetric("CECRL adapté", meta.cecrl)}
+    </div>
 
-      <div class="level-card__footer">
-        <button type="button" class="btn btn-primary" data-action="open-dashboard">
-          Ouvrir le dashboard
-        </button>
-      </div>
-    `;
+    <div class="actions-row">
+      <a
+        class="btn btn-secondary"
+        href="${meta.referentielUrl}"
+        target="_blank"
+        rel="noopener"
+        download
+      >
+        ${meta.referentielLabel}
+      </a>
 
-    card.querySelector('[data-action="open-dashboard"]').addEventListener("click", () => {
+      <a
+        class="btn btn-secondary"
+        href="${meta.outilsUrl}"
+        target="_blank"
+        rel="noopener"
+        download
+      >
+        ${meta.outilsLabel}
+      </a>
+    </div>
+
+    <button type="button" class="btn btn-primary" data-action="open-dashboard">
+      Ouvrir le dashboard
+    </button>
+  `;
+
+  card
+    .querySelector('[data-action="open-dashboard"]')
+    .addEventListener("click", () => {
       onOpenLevel(level.id);
     });
 
-    cards.appendChild(card);
-  });
+  cards.appendChild(card);
+});
 
   const actions = document.createElement("div");
   actions.className = "actions-row";
