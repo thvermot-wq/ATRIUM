@@ -4406,7 +4406,7 @@ export const lessons5eP2 = [
 
         "type": "multipleChoice",
 
-        "prompt": "Mini-texte : « 𝑄𝑢𝑎𝑒𝑟𝑖𝑚𝑢𝑠 𝑑𝑜𝑛𝑢𝑚. 𝑅𝑜𝑔𝑎𝑡𝑖𝑠 𝑡𝑒𝑠𝑡𝑒𝑚. 𝑉𝑖𝑐𝑖𝑛𝑖 𝑟𝑒𝑠𝑝𝑜𝑛𝑑𝑒𝑛𝑡. » Quelles formulations désignent bien des groupes qui parlent ou agissent collectivement ?",
+        "prompt": "Mini-texte : « 𝑄𝑢𝑎𝑒𝑟𝑖𝑚𝑢𝑠 𝑑𝑜𝑛𝑢𝑚. 𝑅𝑜𝑔𝑎𝑡𝑖𝑠 𝑡𝑒𝑠𝑡𝑒𝑚. 𝑉𝑖𝑐𝑖𝑛𝑖 𝑟𝑒𝑠𝑝𝑜𝑛𝑑𝑒𝑛𝑡. » Quels sujets, ici, parlent ou agissent collectivement ?",
 
         "options": [
 
