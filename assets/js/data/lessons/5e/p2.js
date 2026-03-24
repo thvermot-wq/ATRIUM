@@ -597,10 +597,13 @@ export const lessons5eP2 = [
       "via = rue",
 
       "fons = fontaine",
-
+      "ancilla, ancillae : servante",
+"femina, feminae : femme",
+"fons, fontis : fontaine, source",
       "venit = il/elle vient",
 
-      "exit = il/elle sort"
+      "exit = il/elle sort",
+      "ambulo, ambulas : je marche, tu marches"
 
     ],
 
@@ -1147,6 +1150,9 @@ export const lessons5eP2 = [
       "aqua (nom.), aquam (acc.) = eau",
 
       "ad fontem = vers la fontaine",
+      "cena (nom.), cenae (gén.) : repas, dîner",
+"rosa (nom.), rosae (gén.) : rose",
+"venio, venis : je viens, tu viens",
 
       "porto, portat = je porte ; il/elle porte",
 
@@ -3488,6 +3494,7 @@ export const lessons5eP2 = [
       "narro, narras, narrat = je raconte, tu racontes, il/elle raconte",
 
       "habito, habitas, habitat = j’habite, tu habites, il/elle habite",
+      "clamo, clamas : je crie, tu cries",
 
       "ego, tu, ille / illa = je, tu, il / elle",
 
@@ -4908,6 +4915,7 @@ export const lessons5eP2 = [
       "nomen (nom./acc.) = nom",
 
       "signum (nom./acc.) = signe",
+      "vicina (nom.), vicinae (gén.) : voisine",
 
       "lego, legit = je lis ; il/elle lit",
 
@@ -6306,7 +6314,7 @@ export const lessons5eP2 = [
       "turpis = sale, souillé",
 
       "mano, manat = je coule ; il/elle coule",
-
+"video, vides : je vois, tu vois",
       "polluo, polluit = je salis ; il/elle salit"
 
     ],
@@ -6984,7 +6992,7 @@ export const lessons5eP2 = [
       "pax (nom.), pacem (acc.) = paix",
 
       "vicus (nom.), vicum (acc.) = quartier, rue",
-
+ "incola, incolae : habitant",
       "intro, intrat = j’entre ; il/elle entre",
 
       "turbo, turbat = je trouble ; il/elle trouble",
@@ -6994,6 +7002,8 @@ export const lessons5eP2 = [
       "terreo, terret = j’effraie ; il/elle effraie",
 
       "maneo, manet = je demeure ; il/elle demeure",
+     
+"timeo, times : je crains, tu crains",
 
       "fugio, fugit = je fuis ; il/elle fuit",
 
@@ -7796,6 +7806,10 @@ export const lessons5eP2 = [
       "canis (nom.), canem (acc.) = chien",
 
       "fons (nom.), fontem (acc.) = fontaine",
+"signum, signi : signe, marque",
+"falsus, falsa, falsum : faux, fausse",
+"turpis, turpis, turpe : laid, honteux, sale",
+"recuso, recusas : je refuse, tu refuses",
 
       "video, videt, vident = je vois ; il/elle voit ; ils/elles voient",
 
