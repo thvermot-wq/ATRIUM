@@ -4501,7 +4501,7 @@ export const lessons5eP3 = [
 
         "type": "multipleChoice",
 
-        "prompt": "Mini-texte : « Vicini clamant, mercatores respondent, puellae audiunt. » Quels personnages du quartier échangent leurs points de vue ?",
+        "prompt": "Mini-texte : « Vicini clamant, mercatores respondent, puellae audiunt. » Coche les trois groupes de personnages qui échangent leurs points de vue.",
 
         "options": [
 
@@ -4511,7 +4511,7 @@ export const lessons5eP3 = [
 
           "les jeunes filles",
 
-          "un seul homme"
+          "les quatre sénateurs"
 
         ],
 
@@ -6007,7 +6007,7 @@ export const lessons5eP3 = [
 
       "type": "multipleChoice",
 
-      "prompt": "Mini-dossier : « Vir per vias currit. In villam intrat. Sub porticu latet. » Coche toutes les étapes de la fuite.",
+      "prompt": "Mini-dossier : « Vir per vias currit. In villam intrat. Sub porticu latet. » Coche les trois étapes de la fuite.",
 
       "options": [
 
@@ -6823,7 +6823,7 @@ export const lessons5eP3 = [
 
       "type": "multipleChoice",
 
-      "prompt": "Mini-texte : « In atrio villae servus advocati tacet. Cena advocati parata est. » Coche toutes les informations justes.",
+      "prompt": "Mini-texte : « In atrio villae servus advocati tacet. Cena advocati parata est. » Coche les deux informations justes.",
 
       "options": [
 
@@ -7511,7 +7511,7 @@ export const lessons5eP3 = [
 
       "type": "multipleChoice",
 
-      "prompt": "Mini-texte : « Servus virum videt. Non clamat. Ianuam aperit. » Coche tous les signes qui font penser que l’homme n’est peut-être pas considéré comme un intrus.",
+      "prompt": "Mini-texte : « Servus virum videt. Non clamat. Ianuam aperit. » Coche les trois signes qui font penser que l’homme n’est peut-être pas considéré comme un intrus.",
 
       "options": [
 
@@ -8178,7 +8178,7 @@ export const lessons5eP3 = [
 
       "type": "multipleChoice",
 
-      "prompt": "Mini-texte : « Servus advocati candelas portat. Puella vestigium videt. Vicini hortum quaerunt. » Coche toutes les informations justes.",
+      "prompt": "Mini-texte : « Servus advocati candelas portat. Puella vestigium videt. Vicini hortum quaerunt. » Coche les trois informations justes.",
 
       "options": [
 
@@ -8925,7 +8925,7 @@ export const lessons5eP3 = [
 
       "type": "multipleChoice",
 
-      "prompt": "Mini-texte : « Marcus et Livia ad portam villae stant. Servus taedam portat et tacet. In horto vestigium apparet. » Coche les informations justes.",
+      "prompt": "Mini-texte : « Marcus et Livia ad portam villae stant. Servus taedam portat et tacet. In horto vestigium apparet. » Coche les trois informations justes.",
 
       "options": [
 
