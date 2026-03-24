@@ -4237,7 +4237,8 @@ export const lessons5eP3 = [
 
       "in foro = sur le forum",
 
-      "audio, audis = j'entends, tu entends",
+      "audio, audis, audit = j’entends ; tu entends ; il/elle entend",
+"audimus, auditis, audiunt = nous entendons ; vous entendez ; ils/elles entendent",
 
       "video, videmus = je vois ; nous voyons",
 
