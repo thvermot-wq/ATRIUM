@@ -4468,17 +4468,19 @@ export const lessons5eP3 = [
 
         "type": "multipleChoice",
 
-        "prompt": "Mini-texte : « Vicini clamant, mercatores respondent, puellae audiunt. » Coche les trois groupes de personnages qui échangent leurs points de vue.",
+        "prompt": "Mini-texte : « Vicini clamant, mercatores respondent, puellae audiunt. » Coche les trois groupes de personnages mentionnés dans la scène.",
 
         "options": [
 
           "les voisins",
 
+          "Les vaincus",
+          
           "les marchands",
 
           "les jeunes filles",
 
-          "les quatre sénateurs"
+          "les marcheurs"
 
         ],
 
@@ -5948,7 +5950,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Lis : « Vir currit ; sub porticu latet. » Quelle lecture suit bien la scène ?",
+      "prompt": "Lis : « Vir currit ; sub porticu latet. » Quelle reformulation correspond exactement à la scène ?",
 
       "options": [
 
