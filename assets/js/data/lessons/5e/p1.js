@@ -7089,35 +7089,20 @@ export const lessons5eP1 = [
 
     "training": [
 
-      {
-
-        "id": "p1-l12-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "🧩 Dans la scène finale, quel semble être le nom du / de la coupable ?",
-
-        "options": [
-
-          "Discordia",
-
-          "Minerva",
-
-          "Marcus",
-
-          "Subura",
-
-          "Niger"
-
-        ],
-
-        "expected": "Discordia",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+     {
+  "id": "p1-l12-t1",
+  "type": "singleChoice",
+  "prompt": "🧩 Dans « Marcus nomen Discordiae videt », que signifie « Discordiae » ?",
+  "options": [
+    "de Discordia",
+    "Discordia agit",
+    "à Discordia",
+    "avec Discordia"
+  ],
+  "expected": "de Discordia",
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
