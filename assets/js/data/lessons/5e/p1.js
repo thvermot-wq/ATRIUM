@@ -1949,6 +1949,7 @@ export const lessons5eP1 = [
       "dea = déesse",
 
       "sacerdos = prêtre, prêtresse",
+      "vetus = vieux, vieille",
 
       "ponit = il/elle pose",
 
