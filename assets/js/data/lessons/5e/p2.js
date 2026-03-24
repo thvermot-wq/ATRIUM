@@ -5906,38 +5906,20 @@ export const lessons5eP2 = [
 
 },
 
-      {
-
-        "id": "p2-l9-t7",
-
-        "type": "singleChoice",
-
-        "prompt": "Mini-texte : « 𝐶𝑎𝑛𝑖𝑠 𝑎𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝐴 𝑚𝑎𝑛𝑒𝑡, 𝑎𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝐵 𝑟𝑒𝑐𝑢𝑠𝑎𝑡. » Que refuse le chien ?",
-
-        "options": [
-
-          "la porte B",
-
-          "la porte A",
-
-          "la fontaine",
-
-          "la tablette"
-
-        ],
-
-        "expected": [
-
-          "la porte B"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      }
-
+     {
+  "id": "p2-l9-t7",
+  "type": "singleChoice",
+  "prompt": "Mini-texte : « 𝐶𝑎𝑛𝑖𝑠 𝑎𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝐴 𝑚𝑎𝑛𝑒𝑡, 𝑎𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝐵 𝑟𝑒𝑐𝑢𝑠𝑎𝑡. » Que refuse le chien ?",
+  "options": [
+    "la porte B",
+    "la porte A",
+    "la fontaine",
+    "la tablette"
+  ],
+  "expected": "la porte B",
+  "shuffle": true,
+  "points": 1
+}
     ],
 
     "production": [
