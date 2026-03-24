@@ -77,6 +77,7 @@ export const lessons5eP3 = [
       "vicus, vici m. = quartier",
 
       "noctu = de nuit",
+      "multum = beaucoup",
 
       "exeo, exit = je sors ; il/elle sort",
 
@@ -769,6 +770,9 @@ export const lessons5eP3 = [
       "ex + abl. = hors de, depuis",
 
       "ante + acc. = devant",
+
+"vir, viri = homme",
+"exeo, exis = je sors, tu sors",
 
       "curro, currit = je cours ; il/elle court",
 
@@ -2165,6 +2169,11 @@ export const lessons5eP3 = [
 
       "vir, viri m. = homme",
 
+      "donum, doni = cadeau, don",
+"rumor, rumoris = rumeur",
+"noctu = de nuit",
+"cresco, crescis = je grandis, tu grandis",
+
       "emo, emit = j’achète ; il/elle achète",
 
       "porto, portat = je porte ; il/elle porte",
@@ -2824,6 +2833,8 @@ export const lessons5eP3 = [
       "murus, muri m. = mur",
 
       "sero = tard, tardivement",
+
+      "dubito, dubitas : je doute, tu doutes",
 
       "audio, audit = j’entends ; il/elle entend",
 
@@ -3551,6 +3562,9 @@ export const lessons5eP3 = [
 
       "in balneo = aux bains",
 
+      "ego = moi, je",
+"ille, illa, illud = ce, cet, celui-là",
+
       "video, vides, videt = je vois, tu vois, il/elle voit",
 
       "audio, audis, audit = j'entends, tu entends, il/elle entend",
@@ -4239,6 +4253,8 @@ export const lessons5eP3 = [
       "forum, fori n. = forum",
 
       "in foro = sur le forum",
+
+      "audio, audis = j'entends, tu entends",
 
       "video, videmus = je vois ; nous voyons",
 
@@ -5712,6 +5728,8 @@ export const lessons5eP3 = [
 
       "advocatus, advocati m. = avocat",
 
+    "porticus, porticus = portique, porche",
+
       "magnus, magna, magnum = grand",
 
       "per + acc. = à travers",
@@ -6436,6 +6454,8 @@ export const lessons5eP3 = [
 
     "sub + abl. = sous (lieu où l’on est)",
 
+    "paratus, parata, paratum = préparé, prête, préparé",
+
     "intro, intras, intrat = j’entre, tu entres, il/elle entre",
 
     "porto, portas, portat = je porte, tu portes, il/elle porte",
@@ -7093,6 +7113,7 @@ export const lessons5eP3 = [
     "tabella, tabellae f. = tablette",
 
     "amicus, amici m. = ami",
+    "eum = le, lui",
 
     "periculosus, periculosa, periculosum = dangereux",
 
@@ -8407,6 +8428,10 @@ export const lessons5eP3 = [
       "servus, servi m. = serviteur",
 
       "taeda, taedae f. = flambeau",
+
+    "oppidum, oppidi = ville, bourg",
+"vir, viri = homme",
+"dico, dicis = je dis, tu dis",
 
       "sto, stas, stat = je me tiens, tu te tiens, il/elle se tient",
 
