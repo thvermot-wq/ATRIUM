@@ -3068,37 +3068,20 @@ export const lessons5eP3 = [
 
       },
 
-      {
-
-        "id": "p3-l5-t7",
-
-        "type": "singleChoice",
-
-        "prompt": "Mini-texte : « Sero virum tabernarius videt. Amicus dubitat. » Qui a vu l’homme tard dans la nuit ?",
-
-        "options": [
-
-          "le boutiquier",
-
-          "l’ami",
-
-          "la voisine",
-
-          "le maître"
-
-        ],
-
-        "expected": [
-
-          "le boutiquier"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      }
+     {
+  "id": "p3-l5-t7",
+  "type": "singleChoice",
+  "prompt": "Mini-texte : « Sero virum tabernarius videt. Amicus dubitat. » Qui a vu l’homme tard dans la nuit ?",
+  "options": [
+    "le boutiquier",
+    "l’ami",
+    "le videur",
+    "le serrurier"
+  ],
+  "expected": "le boutiquier",
+  "shuffle": true,
+  "points": 1
+}
 
     ],
 
