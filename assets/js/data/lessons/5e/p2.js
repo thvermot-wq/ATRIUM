@@ -2548,37 +2548,26 @@ export const lessons5eP2 = [
 
         "expected": "le voisin accuse le serviteur",
 
-        "acceptedAnswers": [
-
-          "le voisin accuse le serviteur",
-
-          "le voisin accuse l'esclave",
-
-          "le voisin met en cause le serviteur",
-
-          "le voisin met en cause l'esclave"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "le voisin accuse le serviteur",
-
-            "le voisin accuse l'esclave",
-
-            "le voisin met en cause le serviteur",
-
-            "le voisin met en cause l'esclave"
-
-          ]
-
-        },
+      "acceptedAnswers": [
+  "le voisin accuse le serviteur",
+  "le voisin accuse l'esclave",
+  "le voisin accuse ce serviteur",
+  "le voisin accuse cet esclave",
+  "le voisin met en cause le serviteur",
+  "le voisin met en cause l'esclave"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "accepted": [
+    "le voisin accuse le serviteur",
+    "le voisin accuse l'esclave",
+    "le voisin accuse ce serviteur",
+    "le voisin accuse cet esclave",
+    "le voisin met en cause le serviteur",
+    "le voisin met en cause l'esclave"
+  ]
+},
 
         "points": 1,
 
@@ -4172,31 +4161,23 @@ export const lessons5eP2 = [
 
         "expected": "j'entends le chien",
 
-        "acceptedAnswers":           [
-
-            "j'entends le chien",
-
-            "j'écoute le chien"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted":             [
-
-              "j'entends le chien",
-
-              "j'écoute le chien"
-
-            ],
-
-          "synonyms": []
-
-        },
+       "acceptedAnswers": [
+  "j'entends le chien",
+  "j'entends ce chien",
+  "j'écoute le chien",
+  "j'écoute ce chien"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "accepted": [
+    "j'entends le chien",
+    "j'entends ce chien",
+    "j'écoute le chien",
+    "j'écoute ce chien"
+  ],
+  "synonyms": []
+},
 
         "points": 1,
 
@@ -6284,35 +6265,27 @@ export const lessons5eP2 = [
 
         "expected": "le chien craint la porte",
 
-        "acceptedAnswers":           [
-
-            "le chien craint la porte",
-
-            "le chien a peur de la porte",
-
-            "le chien redoute la porte"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted":             [
-
-              "le chien craint la porte",
-
-              "le chien a peur de la porte",
-
-              "le chien redoute la porte"
-
-            ],
-
-          "synonyms": []
-
-        },
+     "acceptedAnswers": [
+  "le chien craint la porte",
+  "le chien craint cette porte",
+  "le chien a peur de la porte",
+  "le chien a peur de cette porte",
+  "le chien redoute la porte",
+  "le chien redoute cette porte"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "accepted": [
+    "le chien craint la porte",
+    "le chien craint cette porte",
+    "le chien a peur de la porte",
+    "le chien a peur de cette porte",
+    "le chien redoute la porte",
+    "le chien redoute cette porte"
+  ],
+  "synonyms": []
+},
 
         "points": 1,
 
@@ -9204,41 +9177,28 @@ export const lessons5eP2 = [
 
       "expected": "la mère lit le nom",
 
-      "acceptedAnswers":         [
-
-          "la mère lit le nom",
-
-          "une mère lit le nom",
-
-          "la maman lit le nom",
-
-          "une maman lit le nom"
-
-        ],
-
-      "answerConfig": {
-
-        "type": "translation-segment",
-
-        "language": "fr",
-
-        "accepted":           [
-
-            "la mère lit le nom",
-
-            "une mère lit le nom"
-
-          ],
-
-        "synonyms":           [
-
-            "la maman lit le nom",
-
-            "une maman lit le nom"
-
-          ]
-
-      },
+     "acceptedAnswers": [
+  "la mère lit le nom",
+  "la mère lit ce nom",
+  "une mère lit le nom",
+  "la maman lit le nom",
+  "la maman lit ce nom",
+  "une maman lit le nom"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "accepted": [
+    "la mère lit le nom",
+    "la mère lit ce nom",
+    "une mère lit le nom"
+  ],
+  "synonyms": [
+    "la maman lit le nom",
+    "la maman lit ce nom",
+    "une maman lit le nom"
+  ]
+},
 
       "points": 1,
 
