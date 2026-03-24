@@ -10,9 +10,9 @@ const HOME_LEVEL_META = {
       "Acclimatation à la langue, premiers automatismes, premières lectures guidées.",
     ambience:
       "On entre dans Subure par les portes du quotidien : saluer, repérer, lire une piste simple, comprendre qui agit et où l’action se joue.",
-    referentielLabel: "📘 Référentiel",
+    referentielLabel: "Référentiel",
     referentielUrl: "assets/pdf/referentiel-5e.pdf",
-    outilsLabel: "🛠️ Outils",
+    outilsLabel: "Outils",
     outilsUrl: "assets/pdf/outils-5e.pdf",
   },
   "4e": {
@@ -24,9 +24,9 @@ const HOME_LEVEL_META = {
       "Consolidation morphologique et syntaxique, lecture suivie plus sûre, thème guidé.",
     ambience:
       "Le décor s’élargit : le latin devient plus structuré, les textes s’allongent, et les liens entre langue, cité, politique et récit deviennent plus clairs.",
-      referentielLabel: "📘 Référentiel",
+      referentielLabel: "Référentiel",
     referentielUrl: "assets/pdf/referentiel-4e.pdf",
-    outilsLabel: "🛠️ Outils",
+    outilsLabel: "Outils",
     outilsUrl: "assets/pdf/outils-4e.pdf",
   },
   "3e": {
@@ -38,9 +38,9 @@ const HOME_LEVEL_META = {
       "Lecture, version guidée, thème simple, liens plus autonomes entre langue et civilisation.",
     ambience:
       "On vise une lecture plus sûre et un regard plus vaste : texte, culture, héritage, et réemploi des notions se répondent à hauteur de fin de cycle.",
-    referentielLabel: "📘 Référentiel",
+    referentielLabel: "Référentiel",
     referentielUrl: "assets/pdf/referentiel-3e.pdf",
-    outilsLabel: "🛠️ Outils",
+    outilsLabel: "Outils",
     outilsUrl: "assets/pdf/outils-3e.pdf",
   },
 };
@@ -167,7 +167,7 @@ levels.forEach((level) => {
       rel="noopener"
       download
     >
-      <span class="level-card__tool-emoji" aria-hidden="true">🧰</span>
+      <span class="level-card__tool-emoji" aria-hidden="true">🛠️</span>
       <span>${meta.outilsLabel}</span>
     </a>
   </div>
