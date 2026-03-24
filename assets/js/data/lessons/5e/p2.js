@@ -4916,6 +4916,7 @@ export const lessons5eP2 = [
 
       "signum (nom./acc.) = signe",
       "vicina (nom.), vicinae (gén.) = voisine",
+      "mutatum est = est changé",
 
       "lego, legit = je lis ; il/elle lit",
 
