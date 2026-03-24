@@ -220,39 +220,23 @@ export const lessons5eP3 = [
 
       },
 
-      {
-
-        "id": "p3-l1-t4",
-
-        "type": "multipleChoice",
-
-        "prompt": "Traductions recevables de « vir noctu exit ».",
-
-        "options": [
-
-          "L’homme sort pendant la nuit",
-
-          "Un homme sort la nuit",
-
-          "La nuit sort de l’homme",
-
-          "L’homme entre dans la nuit"
-
-        ],
-
-        "expected": [
-
-          "L’homme sort pendant la nuit",
-
-          "Un homme sort la nuit"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+   {
+  "id": "p3-l1-t4",
+  "type": "multipleChoice",
+  "prompt": "Coche les deux traductions recevables de « vir noctu exit ».",
+  "options": [
+    "L’homme sort de nuit",
+    "Un homme sort pendant la nuit",
+    "L’homme entre de nuit",
+    "La nuit sort avec l’homme"
+  ],
+  "expected": [
+    "L’homme sort de nuit",
+    "Un homme sort pendant la nuit"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -984,41 +968,24 @@ export const lessons5eP3 = [
 
       },
 
-      {
-
-        "id": "p3-l2-t6",
-
-        "type": "multipleChoice",
-
-        "prompt": "Traductions recevables de « vir ad forum currit ».",
-
-        "options": [
-
-          "L’homme court vers le forum",
-
-          "L’homme va vers le forum",
-
-          "Le forum court vers l’homme",
-
-          "L’homme se dirige vers la place publique"
-
-        ],
-
-        "expected": [
-
-          "L’homme court vers le forum",
-
-          "L’homme va vers le forum",
-
-          "L’homme se dirige vers la place publique"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+     {
+  "id": "p3-l2-t6",
+  "type": "multipleChoice",
+  "prompt": "Coche les trois traductions recevables de « servus ad villam currit ».",
+  "options": [
+    "Le serviteur court vers la villa",
+    "L’esclave court vers la villa",
+    "Le serviteur va vers la villa",
+    "Le serviteur sort de la villa"
+  ],
+  "expected": [
+    "Le serviteur court vers la villa",
+    "L’esclave court vers la villa",
+    "Le serviteur va vers la villa"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
      {
 
@@ -1743,38 +1710,22 @@ export const lessons5eP3 = [
       },
 
       {
-
-        "id": "p3-l3-t6",
-
-        "type": "multipleChoice",
-
-        "prompt": "Traductions recevables de « amica lucernam portat ».",
-
-        "options": [
-
-          "L’amie porte une lampe",
-
-          "L’amie transporte la lampe",
-
-          "La lampe porte l’amie",
-
-          "L’amie cache la lampe"
-
-        ],
-
-        "expected": [
-
-          "L’amie porte une lampe",
-
-          "L’amie transporte la lampe"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+  "id": "p3-l3-t6",
+  "type": "multipleChoice",
+  "prompt": "Coche les deux traductions recevables de « amica lucernam portat ».",
+  "options": [
+    "L’amie porte la lampe",
+    "Une amie porte une lampe",
+    "L’amie casse la lampe",
+    "La lampe porte l’amie"
+  ],
+  "expected": [
+    "L’amie porte la lampe",
+    "Une amie porte une lampe"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
     {
 
