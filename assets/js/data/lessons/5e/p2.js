@@ -222,7 +222,7 @@ export const lessons5eP2 = [
 
         "type": "multipleChoice",
 
-        "prompt": "Choisis les traductions recevables de « 𝑉𝑖𝑐𝑖𝑛𝑢𝑠 𝑆𝑒𝑥𝑡𝑢𝑚 𝑎𝑐𝑐𝑢𝑠𝑎𝑡 ».",
+        "prompt": "Coche les trois traductions recevables de « 𝑉𝑖𝑐𝑖𝑛𝑢𝑠 𝑆𝑒𝑥𝑡𝑢𝑚 𝑎𝑐𝑐𝑢𝑠𝑎𝑡 ».",
 
         "options": [
 
@@ -310,7 +310,7 @@ export const lessons5eP2 = [
 
         "type": "multipleChoice",
 
-        "prompt": "Quels mots servent à poser des questions ?",
+        "prompt": "Coche les trois mots qui servent à poser des questions.",
 
         "options": [
 
@@ -2506,7 +2506,7 @@ export const lessons5eP2 = [
 
         "type": "multipleChoice",
 
-        "prompt": "Mini-texte : « 𝑆𝑒𝑟𝑣𝑢𝑠 𝑐𝑎𝑛𝑒𝑚 𝑡𝑖𝑚𝑒𝑡. 𝐷𝑜𝑚𝑖𝑛𝑢𝑠 𝑠𝑒𝑟𝑣𝑢𝑚 𝑣𝑜𝑐𝑎𝑡. » Que comprend-on ?",
+        "prompt": "Mini-texte : « 𝑆𝑒𝑟𝑣𝑢𝑠 𝑐𝑎𝑛𝑒𝑚 𝑡𝑖𝑚𝑒𝑡. 𝐷𝑜𝑚𝑖𝑛𝑢𝑠 𝑠𝑒𝑟𝑣𝑢𝑚 𝑣𝑜𝑐𝑎𝑡. » Coche les deux informations explicitement données par le texte.",
 
         "options": [
 
@@ -3341,7 +3341,7 @@ export const lessons5eP2 = [
 
   "type": "multipleChoice",
 
-  "prompt": "Mini-texte : « 𝘋𝘰𝘯𝘶𝘮 𝘪𝘯 𝘵𝘦𝘮𝘱𝘭𝘰 𝘦𝘴𝘵. 𝘚𝘪𝘨𝘯𝘶𝘮 𝘪𝘯 𝘮𝘶𝘳𝘰 𝘦𝘴𝘵. » Quels noms du dictionnaire sont neutres ?",
+  "prompt": "Mini-texte : « 𝘋𝘰𝘯𝘶𝘮 𝘪𝘯 𝘵𝘦𝘮𝘱𝘭𝘰 𝘦𝘴𝘵. 𝘚𝘪𝘨𝘯𝘶𝘮 𝘪𝘯 𝘮𝘶𝘳𝘰 𝘦𝘴𝘵. » Coche les trois noms du dictionnaire qui sont neutres.",
 
   "options": [
 
@@ -7511,7 +7511,7 @@ export const lessons5eP2 = [
 
   "type": "multipleChoice",
 
-  "prompt": "Texte : « Discordia vicum turbat. Discordia vicinos separat. Incolae timent. Pax non manet. » Quelles informations sont données par ce texte ?",
+  "prompt": "Texte : « Discordia vicum turbat. Discordia vicinos separat. Incolae timent. Pax non manet. » Coche les quatre informations données par ce texte.",
 
   "options": [
 
@@ -7643,7 +7643,7 @@ export const lessons5eP2 = [
 
         "type": "multipleChoice",
 
-        "prompt": "Texte (4 phrases) : « 𝐷𝑖𝑠𝑐𝑜𝑟𝑑𝑖𝑎 𝑖𝑛𝑡𝑟𝑎𝑡. 𝑃𝑎𝑥 𝑓𝑢𝑔𝑖𝑡. 𝑉𝑖𝑐𝑖𝑛𝑖 𝑐𝑙𝑎𝑚𝑎𝑛𝑡. 𝐶𝑎𝑛𝑖𝑠 𝑚𝑎𝑛𝑒𝑡. » Qu’est-ce qui est vrai ?",
+        "prompt": "Court texte : « 𝐷𝑖𝑠𝑐𝑜𝑟𝑑𝑖𝑎 𝑖𝑛𝑡𝑟𝑎𝑡. 𝑃𝑎𝑥 𝑓𝑢𝑔𝑖𝑡. 𝑉𝑖𝑐𝑖𝑛𝑖 𝑐𝑙𝑎𝑚𝑎𝑛𝑡. 𝐶𝑎𝑛𝑖𝑠 𝑚𝑎𝑛𝑒𝑡. » Coche les trois affirmations vraies.",
 
         "options": [
 
@@ -8177,7 +8177,7 @@ export const lessons5eP2 = [
 
   "type": "multipleChoice",
 
-  "prompt": "Quelles phrases sont de vraies questions utiles pour l’enquête finale ?",
+  "prompt": "Coche les quatre phrases qui sont de vraies questions utiles pour l’enquête finale.",
 
   "options": [
 
@@ -9129,7 +9129,7 @@ export const lessons5eP2 = [
 
   "type": "multipleChoice",
 
-  "prompt": "Mini-scène : « Mater nomen legit. Rex urbem videt. Corpus in via est. » Quels mots de 3e déclinaison apparaissent dans ce mini-texte ?",
+  "prompt": "Mini-scène : « Mater nomen legit. Rex urbem videt. Corpus in via est. » Coche les quatre mots de 3e déclinaison qui apparaissent dans ce mini-texte.",
 
   "options": [
 
