@@ -3080,41 +3080,32 @@ export const lessons5eP1 = [
 
         "expected": "livia voit le chien",
 
-        "acceptedAnswers":           [
-
-            "livia voit le chien",
-
-            "livia regarde le chien",
-
-            "livia aperçoit le chien",
-
-            "livia observe le chien"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted":             [
-
-              "livia voit le chien",
-
-              "livia regarde le chien"
-
-            ],
-
-          "synonyms":             [
-
-              "livia aperçoit le chien",
-
-              "livia observe le chien"
-
-            ]
-
-        },
+       "acceptedAnswers": [
+  "livia voit le chien",
+  "livia voit ce chien",
+  "livia regarde le chien",
+  "livia regarde ce chien",
+  "livia aperçoit le chien",
+  "livia aperçoit ce chien",
+  "livia observe le chien",
+  "livia observe ce chien"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "accepted": [
+    "livia voit le chien",
+    "livia voit ce chien",
+    "livia regarde le chien",
+    "livia regarde ce chien"
+  ],
+  "synonyms": [
+    "livia aperçoit le chien",
+    "livia aperçoit ce chien",
+    "livia observe le chien",
+    "livia observe ce chien"
+  ]
+},
 
         "points": 1,
 
@@ -4275,36 +4266,25 @@ export const lessons5eP1 = [
         "expected": "aurélia vient vers la fontaine",
 
         "acceptedAnswers": [
-
-          "aurélia vient vers la fontaine",
-
-          "aurélia se dirige vers la fontaine",
-
-          "aurelia vient à la fontaine",
-
-          "aurélia va à la fontaine"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "aurélia vient vers la fontaine",
-
-            "aurélia se dirige vers la fontaine",
-
-            "aurelia vient à la fontaine",
-
-            "aurélia va à la fontaine"
-
-          ]
-
-        },
+  "aurélia vient vers la fontaine",
+  "aurélia vient à la fontaine",
+  "aurélia va à la fontaine",
+  "aurélia se dirige vers la fontaine",
+  "aurélia se rend à la fontaine",
+  "aurélia arrive à la fontaine"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "accepted": [
+    "aurélia vient vers la fontaine",
+    "aurélia vient à la fontaine",
+    "aurélia va à la fontaine",
+    "aurélia se dirige vers la fontaine",
+    "aurélia se rend à la fontaine",
+    "aurélia arrive à la fontaine"
+  ]
+},
 
         "points": 1,
 
@@ -5580,41 +5560,28 @@ export const lessons5eP1 = [
 
         "expected": "le maître lit",
 
-        "acceptedAnswers":           [
-
-            "le maître lit",
-
-            "un maître lit",
-
-            "le professeur lit",
-
-            "un professeur lit"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted":             [
-
-              "le maître lit",
-
-              "un maître lit"
-
-            ],
-
-          "synonyms":             [
-
-              "le professeur lit",
-
-              "un professeur lit"
-
-            ]
-
-        },
+      "acceptedAnswers": [
+  "le maître lit",
+  "un maître lit",
+  "le professeur lit",
+  "un professeur lit",
+  "l'enseignant lit",
+  "un enseignant lit"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "accepted": [
+    "le maître lit",
+    "un maître lit"
+  ],
+  "synonyms": [
+    "le professeur lit",
+    "un professeur lit",
+    "l'enseignant lit",
+    "un enseignant lit"
+  ]
+},
 
         "points": 1,
 
@@ -6294,37 +6261,30 @@ export const lessons5eP1 = [
 
         "expected": "livia reste dans les thermes",
 
-        "acceptedAnswers": [
-
-          "livia reste dans les thermes",
-
-          "livia se repose dans les thermes",
-
-          "livia se trouve dans les thermes",
-
-          "livia demeure dans les thermes"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "livia reste dans les thermes",
-
-            "livia se repose dans les thermes",
-
-            "livia se trouve dans les thermes",
-
-            "livia demeure dans les thermes"
-
-          ]
-
-        },
+      "acceptedAnswers": [
+  "livia reste dans les thermes",
+  "livia reste aux thermes",
+  "livia demeure dans les thermes",
+  "livia demeure aux thermes",
+  "livia se trouve dans les thermes",
+  "livia se trouve aux thermes",
+  "livia est dans les thermes",
+  "livia est aux thermes"
+],
+"answerConfig": {
+  "type": "translation-segment",
+  "language": "fr",
+  "accepted": [
+    "livia reste dans les thermes",
+    "livia reste aux thermes",
+    "livia demeure dans les thermes",
+    "livia demeure aux thermes",
+    "livia se trouve dans les thermes",
+    "livia se trouve aux thermes",
+    "livia est dans les thermes",
+    "livia est aux thermes"
+  ]
+},
 
         "points": 1,
 
