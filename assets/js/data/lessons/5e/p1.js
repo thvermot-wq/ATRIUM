@@ -7075,7 +7075,7 @@ export const lessons5eP1 = [
       "murus = mur",
 
       "nomen = nom",
-      "tabelle = tablette",
+      "tabella = tablette",
 
       "portat = il/elle porte",
 
