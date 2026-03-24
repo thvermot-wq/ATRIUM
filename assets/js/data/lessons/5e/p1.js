@@ -70,7 +70,8 @@ export const lessons5eP1 = [
 
       "adsum = je suis là, je suis présent",
 
-      "salutat = il/elle salue",
+      "saluto, salutas, salutat = je salue, tu salues, il/elle salue",
+      "habito, habitas, habitat = j'habite, tu habites, il/elle habite",
 
       "Subura = Subure",
 
@@ -685,7 +686,8 @@ export const lessons5eP1 = [
 
       "ante ianuam = devant la porte",
 
-      "stat = il/elle se tient",
+      "sto, stas, stat = je me tiens, tu te tiens, il/elle se tient",
+      "specto, spectas, spectat = je regarde, tu regardes, il/elle regard",
 
       "habitat = il/elle habite",
 
@@ -1953,7 +1955,8 @@ export const lessons5eP1 = [
 
       "ponit = il/elle pose",
 
-      "movet = il/elle bouge, déplace"
+      "moveo, moves, movet = je bouge, tu bouges, il/elle bouge | déplace",
+      "specto, spectas, spectat = je regarde, tu regardes, il/elle regarde"
 
     ],
 
@@ -2613,7 +2616,8 @@ export const lessons5eP1 = [
 
       "videt = il/elle voit",
 
-      "currit = il/elle court"
+      "curro, curris, currit = je cours, tu cours, il/elle court",
+      "sto, stas, stat = je me tiens, tu te tiens, il/elle se tient"
 
     ],
 
@@ -3912,7 +3916,8 @@ export const lessons5eP1 = [
 
       "manet = il/elle reste",
 
-      "turbat = il/elle trouble"
+      "turbat = il/elle trouble",
+      "porto, portas, portat = je porte, tu portes, il/elle porte"
 
     ],
 
@@ -7056,6 +7061,7 @@ export const lessons5eP1 = [
       "murus = mur",
 
       "nomen = nom",
+      "tabelle = tablette",
 
       "portat = il/elle porte",
 
