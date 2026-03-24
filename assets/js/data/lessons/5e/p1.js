@@ -2778,7 +2778,7 @@ export const lessons5eP1 = [
 
         "type": "multipleChoice",
 
-        "prompt": "🐕 Coche les quatre phrases possibles liées à cette scène : Niger aboie devant une porte fermée et attire l’attention de Marcus et Livia."
+        "prompt": "🐕 Coche les quatre phrases possibles liées à cette scène : Niger aboie devant une porte fermée et attire l’attention de Marcus et Livia.",
 
         "options": [
 
