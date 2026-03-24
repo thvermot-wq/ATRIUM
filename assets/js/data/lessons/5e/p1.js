@@ -3425,7 +3425,7 @@ export const lessons5eP1 = [
 
   "type": "multipleChoice",
 
-  "prompt": "📜 Coche les trois groupes verbe + complément cohérents avec la leçon."
+  "prompt": "📜 Coche les trois groupes verbe + complément cohérents avec la leçon.",
 
   "options": [
 
