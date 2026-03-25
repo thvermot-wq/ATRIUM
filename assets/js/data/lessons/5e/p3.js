@@ -6758,24 +6758,36 @@ export const lessons5eP3 = [
   "expected": "dans la villa de l’avocat, le serviteur prépare le dîner ; l’homme reste sous le porche",
 
  "acceptedAnswers": [
-  "dans la villa de l'avocat, le serviteur prépare le dîner et l'homme reste sous le porche",
-  "dans la villa de l'avocat, l'esclave prépare le dîner et l'homme reste sous le porche",
-  "dans la villa de l'avocat, le serviteur prépare le repas et l'homme reste sous le porche",
-  "dans la villa de l'avocat, le serviteur prépare le dîner et l'homme reste sous le portique",
-  "dans la villa de l'avocat, le serviteur prépare le dîner, et l'homme reste sous le porche",
-  "dans la villa de l'avocat ; le serviteur prépare le dîner et l'homme reste sous le porche"
+  "dans la villa de l'avocat le serviteur prépare le dîner et l'homme reste sous le porche",
+"dans la villa de l'avocat l'esclave prépare le dîner et l'homme reste sous le porche",
+"dans la villa de l'avocat le serviteur prépare le repas et l'homme reste sous le porche",
+"dans la villa de l'avocat le serviteur prépare le dîner et l'homme reste sous le portique",
+"dans la demeure de l'avocat le serviteur prépare le dîner et l'homme reste sous le porche",
+"dans la demeure de l'avocat l'esclave prépare le dîner et l'homme reste sous le porche",
+"dans la demeure de l'avocat le serviteur prépare le repas et l'homme reste sous le porche",
+"dans la demeure de l'avocat le serviteur prépare le dîner et l'homme reste sous le portique",
+"dans la grande maison de l'avocat le serviteur prépare le dîner et l'homme reste sous le porche",
+"dans la grande maison de l'avocat l'esclave prépare le dîner et l'homme reste sous le porche",
+"dans la grande maison de l'avocat le serviteur prépare le repas et l'homme reste sous le porche",
+"dans la grande maison de l'avocat le serviteur prépare le dîner et l'homme reste sous le portique"
 ],
 "answerConfig": {
   "type": "translation-segment",
   "language": "fr",
   "tolerateArticles": true,
   "accepted": [
-    "dans la villa de l'avocat, le serviteur prépare le dîner et l'homme reste sous le porche",
-    "dans la villa de l'avocat, l'esclave prépare le dîner et l'homme reste sous le porche",
-    "dans la villa de l'avocat, le serviteur prépare le repas et l'homme reste sous le porche",
-    "dans la villa de l'avocat, le serviteur prépare le dîner et l'homme reste sous le portique",
-    "dans la villa de l'avocat, le serviteur prépare le dîner, et l'homme reste sous le porche",
-    "dans la villa de l'avocat ; le serviteur prépare le dîner et l'homme reste sous le porche"
+    "dans la villa de l'avocat le serviteur prépare le dîner et l'homme reste sous le porche",
+"dans la villa de l'avocat l'esclave prépare le dîner et l'homme reste sous le porche",
+"dans la villa de l'avocat le serviteur prépare le repas et l'homme reste sous le porche",
+"dans la villa de l'avocat le serviteur prépare le dîner et l'homme reste sous le portique",
+"dans la demeure de l'avocat le serviteur prépare le dîner et l'homme reste sous le porche",
+"dans la demeure de l'avocat l'esclave prépare le dîner et l'homme reste sous le porche",
+"dans la demeure de l'avocat le serviteur prépare le repas et l'homme reste sous le porche",
+"dans la demeure de l'avocat le serviteur prépare le dîner et l'homme reste sous le portique",
+"dans la grande maison de l'avocat le serviteur prépare le dîner et l'homme reste sous le porche",
+"dans la grande maison de l'avocat l'esclave prépare le dîner et l'homme reste sous le porche",
+"dans la grande maison de l'avocat le serviteur prépare le repas et l'homme reste sous le porche",
+"dans la grande maison de l'avocat le serviteur prépare le dîner et l'homme reste sous le portique"
   ]
 },
 
@@ -7394,9 +7406,7 @@ export const lessons5eP3 = [
      "acceptedAnswers": [
   "le serviteur de l'avocat ouvre la porte et l'homme est un ami de l'avocat",
   "l'esclave de l'avocat ouvre la porte et l'homme est un ami de l'avocat",
-  "le serviteur de l'avocat ouvre la porte et l'homme est l'ami de l'avocat",
-  "le serviteur de l'avocat ouvre la porte, et l'homme est un ami de l'avocat",
-  "le serviteur de l'avocat ouvre la porte ; l'homme est un ami de l'avocat"
+  "le serviteur de l'avocat ouvre la porte et l'homme est l'ami de l'avocat"
 ],
 "answerConfig": {
   "type": "translation-segment",
@@ -7404,10 +7414,8 @@ export const lessons5eP3 = [
   "tolerateArticles": true,
   "accepted": [
     "le serviteur de l'avocat ouvre la porte et l'homme est un ami de l'avocat",
-    "l'esclave de l'avocat ouvre la porte et l'homme est un ami de l'avocat",
-    "le serviteur de l'avocat ouvre la porte et l'homme est l'ami de l'avocat",
-    "le serviteur de l'avocat ouvre la porte, et l'homme est un ami de l'avocat",
-    "le serviteur de l'avocat ouvre la porte ; l'homme est un ami de l'avocat"
+  "l'esclave de l'avocat ouvre la porte et l'homme est un ami de l'avocat",
+  "le serviteur de l'avocat ouvre la porte et l'homme est l'ami de l'avocat"
   ]
 },
 
@@ -7991,9 +7999,7 @@ export const lessons5eP3 = [
   "les habitants de subure portent des flambeaux et la piste mène hors de la ville",
   "les habitants de subure portent des torches et la piste mène hors de la ville",
   "les voisins de subure portent des flambeaux et la piste mène hors de la ville",
-  "les voisins de subure portent des torches et la piste mène hors de la ville",
-  "les habitants de subure portent des flambeaux, et la trace mène hors de la ville",
-  "les habitants de subure portent des flambeaux ; la trace mène hors de la ville"
+  "les voisins de subure portent des torches et la piste mène hors de la ville"
 ],
 "answerConfig": {
   "type": "translation-segment",
@@ -8011,9 +8017,7 @@ export const lessons5eP3 = [
     "les habitants de subure portent des flambeaux et la piste mène hors de la ville",
     "les habitants de subure portent des torches et la piste mène hors de la ville",
     "les voisins de subure portent des flambeaux et la piste mène hors de la ville",
-    "les voisins de subure portent des torches et la piste mène hors de la ville",
-    "les habitants de subure portent des flambeaux, et la trace mène hors de la ville",
-    "les habitants de subure portent des flambeaux ; la trace mène hors de la ville"
+    "les voisins de subure portent des torches et la piste mène hors de la ville"
   ]
 },
 
@@ -8630,24 +8634,33 @@ export const lessons5eP3 = [
   "expected": "dans le ciel le signe de discordia apparaît marcus se tait",
 
  "acceptedAnswers": [
-  "dans le ciel, le signe de discordia apparaît et marcus se tait",
-  "dans le ciel, le signe de discordia apparaît, et marcus se tait",
-  "dans le ciel, le signe de discordia apparaît ; marcus se tait",
   "dans le ciel le signe de discordia apparaît et marcus se tait",
-  "le signe de discordia apparaît dans le ciel et marcus se tait",
-  "le signe de discordia apparaît dans le ciel, et marcus se tait"
+"le signe de discordia apparaît dans le ciel et marcus se tait",
+"dans le ciel le signe de discordia surgit et marcus se tait",
+"le signe de discordia surgit dans le ciel et marcus se tait",
+"dans le ciel le signe de discordia se montre et marcus se tait",
+"le signe de discordia se montre dans le ciel et marcus se tait",
+"dans le ciel le signe de discordia apparaît et marcus garde le silence",
+"le signe de discordia apparaît dans le ciel et marcus garde le silence",
+"dans le ciel le signe de discordia apparaît et marcus reste silencieux",
+"le signe de discordia apparaît dans le ciel et marcus reste silencieux"
+
 ],
 "answerConfig": {
   "type": "translation-segment",
   "language": "fr",
   "tolerateArticles": true,
   "accepted": [
-    "dans le ciel, le signe de discordia apparaît et marcus se tait",
-    "dans le ciel, le signe de discordia apparaît, et marcus se tait",
-    "dans le ciel, le signe de discordia apparaît ; marcus se tait",
-    "dans le ciel le signe de discordia apparaît et marcus se tait",
-    "le signe de discordia apparaît dans le ciel et marcus se tait",
-    "le signe de discordia apparaît dans le ciel, et marcus se tait"
+     "dans le ciel le signe de discordia apparaît et marcus se tait",
+"le signe de discordia apparaît dans le ciel et marcus se tait",
+"dans le ciel le signe de discordia surgit et marcus se tait",
+"le signe de discordia surgit dans le ciel et marcus se tait",
+"dans le ciel le signe de discordia se montre et marcus se tait",
+"le signe de discordia se montre dans le ciel et marcus se tait",
+"dans le ciel le signe de discordia apparaît et marcus garde le silence",
+"le signe de discordia apparaît dans le ciel et marcus garde le silence",
+"dans le ciel le signe de discordia apparaît et marcus reste silencieux",
+"le signe de discordia apparaît dans le ciel et marcus reste silencieux"
   ]
 },
 
