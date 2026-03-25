@@ -357,22 +357,10 @@ export const lessons5eP3 = [
         "expected": "qui voit l'homme ?",
 
         "acceptedAnswers": [
-
-          "qui voit l'homme",
-
-          "qui voit l'homme ?",
-
-          "qui voit cet homme",
-
-          "qui voit cet homme ?",
-
-          "qui aperçoit l'homme",
-
-          "qui aperçoit l'homme ?",
-
-          "qui aperçoit cet homme",
-
-          "qui aperçoit cet homme ?"
+"qui voit l'homme",
+"qui voit cet homme",
+"qui aperçoit l'homme",
+"qui aperçoit cet homme"
 
         ],
 
@@ -383,22 +371,10 @@ export const lessons5eP3 = [
           "language": "fr",
 
           "accepted": [
-
-            "qui voit l'homme",
-
-            "qui voit l'homme ?",
-
-            "qui voit cet homme",
-
-            "qui voit cet homme ?",
-
-            "qui aperçoit l'homme",
-
-            "qui aperçoit l'homme ?",
-
-            "qui aperçoit cet homme",
-
-            "qui aperçoit cet homme ?"
+"qui voit l'homme",
+"qui voit cet homme",
+"qui aperçoit l'homme",
+"qui aperçoit cet homme"
 
           ]
 
@@ -4644,13 +4620,7 @@ export const lessons5eP3 = [
 
         "acceptedAnswers": [
 
-          "quaerimus ; auditis ; respondent",
-
-          "quaerimus, auditis, respondent",
-
-          "quaerimus / auditis / respondent",
-
-          "quaerimus auditis respondent"
+          "quaerimus ; auditis ; respondent"
 
         ],
 
@@ -4662,13 +4632,7 @@ export const lessons5eP3 = [
 
           "accepted": [
 
-            "quaerimus ; auditis ; respondent",
-
-            "quaerimus, auditis, respondent",
-
-            "quaerimus / auditis / respondent",
-
-            "quaerimus auditis respondent"
+            "quaerimus ; auditis ; respondent"
 
           ]
 
@@ -6145,13 +6109,12 @@ export const lessons5eP3 = [
 
   "acceptedAnswers": [
   "l'homme entre dans la villa et l'avocat prépare un grand dîner",
+  "l'homme pénètre dans la villa et l'avocat prépare un grand dîner",
+  "l'homme pénètre dans la demeure et l'avocat prépare un grand dîner",
   "un homme entre dans la villa et l'avocat prépare un grand dîner",
   "l'homme entre dans une villa et l'avocat prépare un grand dîner",
-  "l'homme entre dans la grande maison et l'avocat prépare un grand dîner",
-  "l'homme entre dans la villa, et l'avocat prépare un grand dîner",
-  "l'homme entre dans la villa ; l'avocat prépare un grand dîner",
-  "l'homme entre dans la villa et l'avocat prépare le dîner",
-  "un homme entre dans la villa et l'avocat prépare le dîner"
+  "l'homme pénètre dans la grande maison et l'avocat prépare un grand dîner",
+  "l'homme entre dans la grande maison et l'avocat prépare un grand dîner"
 ],
 "answerConfig": {
   "type": "translation-segment",
@@ -6159,13 +6122,12 @@ export const lessons5eP3 = [
   "tolerateArticles": true,
   "accepted": [
     "l'homme entre dans la villa et l'avocat prépare un grand dîner",
-    "un homme entre dans la villa et l'avocat prépare un grand dîner",
-    "l'homme entre dans une villa et l'avocat prépare un grand dîner",
-    "l'homme entre dans la grande maison et l'avocat prépare un grand dîner",
-    "l'homme entre dans la villa, et l'avocat prépare un grand dîner",
-    "l'homme entre dans la villa ; l'avocat prépare un grand dîner",
-    "l'homme entre dans la villa et l'avocat prépare le dîner",
-    "un homme entre dans la villa et l'avocat prépare le dîner"
+  "l'homme pénètre dans la villa et l'avocat prépare un grand dîner",
+  "l'homme pénètre dans la demeure et l'avocat prépare un grand dîner",
+  "un homme entre dans la villa et l'avocat prépare un grand dîner",
+  "l'homme entre dans une villa et l'avocat prépare un grand dîner",
+  "l'homme pénètre dans la grande maison et l'avocat prépare un grand dîner",
+  "l'homme entre dans la grande maison et l'avocat prépare un grand dîner"
   ]
 },
 
