@@ -80,8 +80,8 @@ export const lessons5eP1 = [
       "in via = sur la route/dans la rue",
 
       "amicus = ami",
-
-      "canis = chien"
+      "Flavia (nom.), Flaviam (acc.) = Flavia (personnage)",
+      "canis (nom.), canem (acc.) = chien"
 
     ],
 
@@ -1918,8 +1918,7 @@ export const lessons5eP1 = [
 
       "sacellum = petit sanctuaire",
 
-      "ara = autel",
-
+      "ara (nom.), aram (acc.) = autel",
       "donum = offrande",
 
       "corona = couronne",
@@ -2548,7 +2547,7 @@ export const lessons5eP1 = [
 
       "Niger = le nom du petit chien",
 
-      "canis = chien",
+      "canis (nom.), canem (acc.) = chien",
 
       "latrat = il/elle aboie",
 
@@ -3194,9 +3193,8 @@ export const lessons5eP1 = [
 
     "lexicon": [
 
-      "tabella = tablette",
-
-      "epistula = lettre",
+      "tabella (nom.), tabellam (acc.) = tablette",
+      "epistula (nom.), epistulam (acc.) = lettre",
 
       "scribit = il/elle écrit",
 
@@ -4464,9 +4462,8 @@ export const lessons5eP1 = [
 
       "pistor = meunier / boulanger",
 
-      "panis = pain",
-
-      "farina = farine",
+      "panis (nom.), panem (acc.) = pain",
+      "farina (nom.), farinam (acc.) = farine",
 
       "taberna = boutique",
 
@@ -5097,9 +5094,8 @@ export const lessons5eP1 = [
 
       "ludus = l'école",
 
-      "magister = le maître d'école",
-
-      "discipulus = l'élève",
+      "magister (nom.), magistrum (acc.) = le maître d'école",
+      "discipulus (nom.), discipulum (acc.) = l'élève",
 
       "tabella = tablette",
 
@@ -5652,6 +5648,10 @@ export const lessons5eP1 = [
     "lexicon": [
 
       "thermae = les thermes",
+      "in thermas (accusatif) = dans les thermes (mouvement / direction)",
+      "ad thermas (accusatif = vers les thermes (mouvement / direction)",
+
+      "in thermis (ablatif) = aux thermes (situation fixe)",
 
       "aqua = eau",
 
@@ -5659,9 +5659,8 @@ export const lessons5eP1 = [
 
       "frigida = froide",
 
-      "in thermis = aux thermes",
+      
 
-      "ad thermas = vers les thermes",
 
       "intrat = il/elle entre",
 
@@ -5815,34 +5814,21 @@ export const lessons5eP1 = [
       },
 
            {
-
-        "id": "p1-l10-t5",
-
-        "type": "singleChoice",
-
-        "prompt": "🛁 Piège : « Thermas Marcus intrat » signifie :",
-
-        "options": [
-
-          "Marcus entre dans les thermes",
-
-          "Les thermes entrent dans Marcus",
-
-          "Marcus sort des thermes",
-
-          "Marcus regarde les thermes",
-
-          "Dans les thermes, Marcus est un ingrat"
-
-        ],
-
-        "expected": "Marcus entre dans les thermes",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+  "id": "p1-l10-t5",
+  "type": "singleChoice",
+  "prompt": "🛁 Piège : « Marcus in thermas intrat » signifie :",
+  "options": [
+    "Marcus entre dans les thermes",
+    "Marcus reste dans les thermes",
+    "Marus se trouve dans les thermes",
+    "Marcus court vers les thermes",
+    "Marcus sort des thermes",
+    "Marcus voit les thermes"
+  ],
+  "expected": "Marcus entre dans les thermes",
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -5874,19 +5860,25 @@ export const lessons5eP1 = [
 
       },
 
-      {
-
-        "id": "p1-l10-t7",
-
-        "type": "textInput",
-
-        "prompt": "🛁 Écris en latin : « eau chaude ».",
-
-        "expected": ["aqua calida", "calida aqua"],
-
-        "points": 1
-
-      }
+     {
+  "id": "p1-l10-t7",
+  "type": "textInput",
+  "prompt": "🛁 Écris en latin : « eau chaude ».",
+  "expected": "aqua calida",
+  "acceptedAnswers": [
+    "aqua calida",
+    "calida aqua"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "aqua calida",
+      "calida aqua"
+    ]
+  },
+  "points": 1
+}
 
     ],
 
@@ -6098,108 +6090,52 @@ export const lessons5eP1 = [
       },
 
             {
-
-        "id": "p1-l10-p3",
-
-        "type": "textInput",
-
-        "prompt": "🛁 Traduis en latin : Titus entre dans les thermes",
-
-        "expected": "Titus thermas intrat",
-
-        "acceptedAnswers": [
-
-          "Titus thermas intrat",
-
-          "Titus intrat thermas",
-
-          "thermas Titus intrat",
-
-          "thermas intrat Titus",
-
-          "intrat Titus thermas",
-
-          "intrat thermas Titus"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "one-of",
-
-          "language": "latin",
-
-          "accepted": [
-
-            "Titus thermas intrat",
-
-            "Titus intrat thermas",
-
-            "thermas Titus intrat",
-
-            "thermas intrat Titus",
-
-            "intrat Titus thermas",
-
-            "intrat thermas Titus"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "Titus thermas intrat",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "Titus thermas intrat",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "lorem ipsum",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      }
+  "id": "p1-l10-p3",
+  "type": "textInput",
+  "prompt": "🛁 Traduis en latin : Titus entre dans les thermes",
+  "expected": "Titus in thermas intrat",
+  "acceptedAnswers": [
+    "Titus in thermas intrat",
+    "Titus intrat in thermas",
+    "in thermas Titus intrat",
+    "in thermas intrat Titus",
+    "intrat Titus in thermas",
+    "intrat in thermas Titus"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "Titus in thermas intrat",
+      "Titus intrat in thermas",
+      "in thermas Titus intrat",
+      "in thermas intrat Titus",
+      "intrat Titus in thermas",
+      "intrat in thermas Titus"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "Titus in thermas intrat",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Préposition de direction correcte + verbe correct ; ordre latin flexible accepté.",
+  "rejectIf": [
+    "verbe incorrect",
+    "sens inversé sujet/objet",
+    "forme latine impossible au niveau de la leçon"
+  ],
+  "tests": [
+    { "input": "Titus in thermas intrat", "isCorrect": true },
+    { "input": "intrat Titus in thermas", "isCorrect": true },
+    { "input": "réponse hors-sujet", "isCorrect": false }
+  ]
+}
 
     ],
 
@@ -6847,14 +6783,12 @@ export const lessons5eP1 = [
 
     "periodId": "p1",
 
-    "title": "Le nom de Discordia - Synthèse",
+    "title": "La piste Discordia - Synthèse",
 
     subtitle: headerContexts5eP1["p1-l12"],
 
-    "objective": "Synthétiser les acquis de P1 dans une scène finale où le nom de Discordia est identifié.",
-
-    "lessonPoint": "Je combine lexique récurrent, verbe et repères de lieu pour comprendre la scène finale.",
-
+    "objective": "Synthétiser les acquis de P1 dans une scène finale de taverne, sans ajouter de notion nouvelle.",
+    "lessonPoint": "Je combine sujet, verbe, COD et groupe de lieu pour comprendre la scène finale.",
     "canDo": [
 
       "Je comprends une micro-scène complète.",
@@ -6865,50 +6799,36 @@ export const lessons5eP1 = [
 
     ],
 
-    "lexicon": [
-
-      "Discordia = Discorde (déesse)",
-
-      "nomen Discordiae = le nom de Discordia",
-
-      "Subura = Subure (quartier)",
-
-      "popina = taverne",
-
-      "ad popinam = vers la taverne",
-
-      "in foro = sur le forum",
-
-      "domus = maison",
-
-      "murus = mur",
-
-      "nomen = nom",
-      "tabella = tablette",
-
-      "portat = il/elle porte",
-
-      "videt = il/elle voit",
-
-      "timet = il/elle craint"
-
-    ],
+   "lexicon": [
+  "Discordia (nom.), Discordiam (acc.) = Discordia / Discorde",
+  "nomen Discordiae = le nom de Discordia",
+  "Subura = Subure (quartier)",
+  "popina = taverne",
+  "ad popinam = vers la taverne",
+  "domus = maison",
+  "murus = mur",
+  "nomen = nom",
+  "tabella (nom.), tabellam (acc.) = tablette",
+  "portat = il/elle porte",
+  "videt = il/elle voit",
+  "timet = il/elle craint"
+],
 
     "maxScore": 10,
 
     "training": [
 
-     {
+   {
   "id": "p1-l12-t1",
   "type": "singleChoice",
-  "prompt": "🧩 Dans « Marcus nomen Discordiae videt », que signifie « Discordiae » ?",
+  "prompt": "🧩 Dans « Marcus nomen Discordiae videt », quel mot est le verbe ?",
   "options": [
-    "de Discordia",
-    "Discordia agit",
-    "à Discordia",
-    "avec Discordia"
+    "Marcus",
+    "nomen",
+    "Discordiae",
+    "videt"
   ],
-  "expected": "de Discordia",
+  "expected": "videt",
   "shuffle": true,
   "points": 1
 },
@@ -6981,18 +6901,18 @@ export const lessons5eP1 = [
 
       },
 
-      {
+     {
   "id": "p1-l12-t4",
   "type": "matching",
-  "prompt": "🧩 Dans « Marcus nomen Discordiae videt », associe chaque élément à sa fonction.",
+  "prompt": "🧩 Dans « Marcus nomen videt in popina », associe chaque élément à sa fonction.",
   "pairs": [
+    {
+      "left": "Marcus",
+      "right": "sujet"
+    },
     {
       "left": "nomen",
       "right": "COD"
-    },
-    {
-      "left": "Discordiae",
-      "right": "complément du nom"
     },
     {
       "left": "videt",
@@ -7001,12 +6921,12 @@ export const lessons5eP1 = [
   ],
   "rightOptions": [
     "verbe",
-    "complément du nom",
+    "sujet",
     "COD"
   ],
   "expected": {
+    "Marcus": "sujet",
     "nomen": "COD",
-    "Discordiae": "complément du nom",
     "videt": "verbe"
   },
   "points": 1
@@ -7045,32 +6965,45 @@ export const lessons5eP1 = [
     {
   "id": "p1-l12-t6",
   "type": "singleChoice",
-  "prompt": "🧩 Dans « Marcus nomen Discordiae videt », quel groupe COD Marcus voit-il ?",
+  "prompt": "🧩 Dans « Marcus nomen Discordiae videt », quel élément Marcus voit-il ?",
   "options": [
-    "nomen Discordiae",
-    "Marcus nomen",
-    "Discordiae videt",
-    "Discordiae videt"
+    "Marcus",
+    "nomen",
+    "Discordiae",
+    "videt"
   ],
-  "expected": "nomen Discordiae",
+  "expected": "nomen",
   "shuffle": true,
   "points": 1
 },
 
-      {
-
-        "id": "p1-l12-t7",
-
-        "type": "textInput",
-
-        "prompt": "🧩 Écris en latin : « Le nom de Discordia » (deux mots).",
-
-        "expected": "nomen Discordiae",
-
-        "points": 1
-
-      }
-
+     {
+  "id": "p1-l12-t7",
+  "type": "textInput",
+  "prompt": "🧩 Écris en latin : « Marcus voit le nom ».",
+  "expected": "Marcus nomen videt",
+  "acceptedAnswers": [
+    "Marcus nomen videt",
+    "Marcus videt nomen",
+    "nomen Marcus videt",
+    "nomen videt Marcus",
+    "videt Marcus nomen",
+    "videt nomen Marcus"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "Marcus nomen videt",
+      "Marcus videt nomen",
+      "nomen Marcus videt",
+      "nomen videt Marcus",
+      "videt Marcus nomen",
+      "videt nomen Marcus"
+    ]
+  },
+  "points": 1
+}
     ],
 
     "production": [
