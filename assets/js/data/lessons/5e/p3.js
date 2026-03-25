@@ -760,6 +760,8 @@ export const lessons5eP3 = [
       "insula, insulae f. = immeuble",
 
       "via, viae f. = rue",
+      "villa, villae, f. = demeure, villa",
+      "vir, viri, m. = homme",
 
       "ad + acc. = vers",
 
@@ -770,9 +772,7 @@ export const lessons5eP3 = [
       "ex + abl. = hors de, depuis",
 
       "ante + acc. = devant",
-
-"vir, viri = homme",
-"exeo, exis = je sors, tu sors",
+      "exeo, exis = je sors, tu sors",
 
       "curro, currit = je cours ; il/elle court",
 
@@ -2820,23 +2820,23 @@ export const lessons5eP3 = [
 
     "lexicon": [
 
-      "servus, servi m. = esclave, serviteur",
+      "servus, servi, m. = esclave, serviteur",
 
-      "dominus, domini m. = maître, maître de maison",
+      "dominus, domini, m. = maître, maître de maison",
 
-      "vicinus, vicini m. = voisin",
+      "vicinus, vicini, m. = voisin",
 
-      "amicus, amici m. = ami",
+      "amicus, amici, m. = ami",
 
-      "tabernarius, tabernarii m. = boutiquier",
+      "tabernarius, tabernarii, m. = boutiquier",
 
-      "murus, muri m. = mur",
+      "murus, muri, m. = mur",
 
       "sero = tard, tardivement",
 
-"dubito, dubitas, dubitat = je doute, tu doutes, il/elle doute",
+      "dubito, dubitas, dubitat = je doute, tu doutes, il/elle doute",
       
-"audio, audis, audit = j’entends ; tu entends ; il/elle entend",
+      "audio, audis, audit = j’entends ; tu entends ; il/elle entend",
       
       "voco, vocas, vocat = j’appelle, tu appelles, il/elle appelle",
 
@@ -3542,28 +3542,17 @@ export const lessons5eP3 = [
     "lexicon": [
 
       "balneum = thermes, bains",
-
       "in balneo = aux bains",
-
       "ego = moi, je",
-"ille, illa, illud = ce, cet, celui-là",
-
+      "ille, illa, illud = ce, cet, celui-là",
       "video, vides, videt = je vois, tu vois, il/elle voit",
-
       "audio, audis, audit = j'entends, tu entends, il/elle entend",
-
       "narro, narras, narrat = je raconte, tu racontes, il/elle raconte",
-
       "nego, negas, negat = je nie, tu nies, il/elle nie",
-
       "timeo, times, timet = je crains, tu crains, il/elle craint",
-
       "intro, intras, intrat = j'entre, tu entres, il/elle entre",
-
       "exeo, exis, exit = je sors, tu sors, il/elle sort",
-
       "rogo, rogas, rogat = je demande, tu demandes, il/elle demande",
-
       "habito, habitas, habitat = j’habite, tu habites, il/elle habite"
 
     ],
@@ -4233,32 +4222,19 @@ export const lessons5eP3 = [
 
     "lexicon": [
 
-      "forum, fori n. = forum",
-
-      "in foro = sur le forum",
-
-      "audio, audis, audit = j’entends ; tu entends ; il/elle entend",
-"audimus, auditis, audiunt = nous entendons ; vous entendez ; ils/elles entendent",
-
-      "video, videmus = je vois ; nous voyons",
-
-      "audio, auditis = j’entends ; vous entendez",
-
-      "clamo, clamant = je crie ; ils/elles crient",
-
-      "respondeo, respondent = je réponds ; ils/elles répondent",
-
-      "quaero, quaerimus = je cherche ; nous cherchons",
-
+      "forum, fori, n. = forum",
       "vicinus (sg.), vicini (pl.) = voisin, voisins",
-
       "mercator (sg.), mercatores (pl.) = marchand, marchands",
-
       "puella (sg.), puellae (pl.) = jeune fille, jeunes filles",
-
       "rumor (sg.), rumores (pl.) = rumeur, rumeurs",
-
-      "verum (nom./acc.) = le vrai, la vérité"
+      "verum (nom./acc.) = le vrai, la vérité",
+      "in foro = sur le forum",
+      "audio, audis, audit = j’entends, tu entends, il/elle entend",
+      "audimus, auditis, audiunt = nous entendons, vous entendez, ils/elles entendent",
+      "video, videmus = je vois ; nous voyons",
+      "clamo, clamant = je crie ; ils/elles crient",
+      "respondeo, respondent = je réponds ; ils/elles répondent",
+      "quaero, quaerimus = je cherche ; nous cherchons"
 
     ],
 
@@ -5702,34 +5678,19 @@ export const lessons5eP3 = [
 
   "lexicon": [
 
-      "vir, viri m. = homme",
-
-      "via, viae f. = rue",
-
-      "villa, villae f. = villa, grande maison",
-
-      "porticus, porticus f. = porche, portique",
-
-      "cena, cenae f. = dîner, repas",
-
-      "advocatus, advocati m. = avocat",
-
-    "porticus, porticus = portique, porche",
-
+      "vir, viri, m. = homme",
+      "via, viae, f. = rue",
+      "villa, villae, f. = villa, grande maison",
+      "porticus, porticus, f. = porche, portique",
+      "cena, cenae, f. = dîner, repas",
+      "advocatus, advocati, m. = avocat",
       "magnus, magna, magnum = grand",
-
-      "per + acc. = à travers",
-
+      "per + acc. = par, à travers",
       "in + acc. = dans, vers (mouvement vers un lieu)",
-
       "sub + abl. = sous (lieu où l’on est)",
-
       "curro, curris, currit = je cours, tu cours, il/elle court",
-
       "intro, intras, intrat = j’entre, tu entres, il/elle entre",
-
       "lateo, lates, latet = je me cache, tu te caches, il/elle se cache",
-
       "paro, paras, parat = je prépare, tu prépares, il/elle prépare"
 
 ],
