@@ -7209,10 +7209,12 @@ export const lessons5eP1 = [
         "acceptedAnswers":           [
 
             "marcus voit le nom de discordia",
+            "marcus voit le nom de discorde",
 
             "marcus voit le nom discordia",
 
             "marcus aperçoit le nom de discordia",
+            "marcus aperçoit le nom de discorde",
 
             "marcus voit le nom de la discorde",
 
@@ -7233,6 +7235,7 @@ export const lessons5eP1 = [
               "marcus voit le nom de discordia",
 
               "marcus voit le nom discordia"
+              "marcus voit le nom de discorde",
 
             ],
 
@@ -7243,6 +7246,8 @@ export const lessons5eP1 = [
               "marcus voit le nom de la discorde",
 
               "marcus aperçoit le nom de la discorde",
+              "marcus aperçoit le nom de discorde",
+
 
               "marcus aperçoit le nom discordia"
 
