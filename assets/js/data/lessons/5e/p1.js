@@ -699,35 +699,24 @@ export const lessons5eP1 = [
 
     "training": [
 
-      {
-
-        "id": "p1-l2-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "🏠 Aurelia vit dans une grande maison. Quel nom latin choisir pour 'maison' ?",
-
-        "options": [
-
-          "domus",
-
-          "insula",
-
-          "forum",
-
-          "taberna",
-
-          "templum"
-
-        ],
-
-        "expected": "domus",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+   {
+  "id": "p1-l2-t1",
+  "type": "multipleChoice",
+  "prompt": "🏠 Mini-scène : « Aurelia in domo manet. Marcus in insula habitat. » Coche les deux mots qui désignent des lieux d’habitation.",
+  "options": [
+    "domo",
+    "insula",
+    "Marcus",
+    "manet",
+    "ianuam"
+  ],
+  "expected": [
+    "domo",
+    "insula"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -1982,74 +1971,42 @@ export const lessons5eP1 = [
       },
 
       {
+  "id": "p1-l4-t2",
+  "type": "multipleChoice",
+  "prompt": "🏺 Mini-scène : « Vetus sacerdos donum ponit. Livia coronam movet. » Coche les deux objets manipulés dans la scène.",
+  "options": [
+    "donum",
+    "coronam",
+    "sacerdos",
+    "Livia",
+    "movet"
+  ],
+  "expected": [
+    "donum",
+    "coronam"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
-        "id": "p1-l4-t2",
-
-        "type": "singleChoice",
-
-        "prompt": "🏺 Une offrande est :",
-
-        "options": [
-
-          "donum",
-
-          "murus",
-
-          "canis",
-
-          "ludus",
-
-          "porta"
-
-        ],
-
-        "expected": "donum",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-      {
-
-        "id": "p1-l4-t3",
-
-        "type": "multipleChoice",
-
-        "prompt": "🏺 Coche les quatre mots liés au sanctuaire.",
-
-        "options": [
-
-          "ara",
-
-          "corona",
-
-          "dea",
-
-          "panis",
-
-          "sacerdos"
-
-        ],
-
-        "expected": [
-
-          "ara",
-
-          "corona",
-
-          "dea",
-
-          "sacerdos"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+     {
+  "id": "p1-l4-t3",
+  "type": "multipleChoice",
+  "prompt": "🏺 Mini-scène : « Livia aram spectat. Sextus coronam movet. » Coche les deux mots qui désignent ce que les personnages regardent ou déplacent.",
+  "options": [
+    "aram",
+    "coronam",
+    "Livia",
+    "Sextus",
+    "movet"
+  ],
+  "expected": [
+    "aram",
+    "coronam"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -3961,43 +3918,24 @@ export const lessons5eP1 = [
 
       },
 
-      {
-
-        "id": "p1-l7-t3",
-
-        "type": "multipleChoice",
-
-        "prompt": "⛲ Sélectionne les noms liés à cette scène de la fontaine.",
-
-        "options": [
-
-          "aqua",
-
-          "situla",
-
-          "fons",
-
-          "tabella",
-
-          "venit"
-
-        ],
-
-        "expected": [
-
-          "aqua",
-
-          "situla",
-
-          "fons"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+     {
+  "id": "p1-l7-t3",
+  "type": "multipleChoice",
+  "prompt": "⛲ Mini-scène : « Lucius aquam portat. Niger situlam turbat. » Coche les deux compléments d'objet.",
+  "options": [
+    "aquam",
+    "situlam",
+    "Lucius",
+    "Niger",
+    "turbat"
+  ],
+  "expected": [
+    "aquam",
+    "situlam"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -4606,43 +4544,24 @@ export const lessons5eP1 = [
 
       },
 
-      {
-
-        "id": "p1-l8-t3",
-
-        "type": "multipleChoice",
-
-        "prompt": "🍞 Choisis les mots de la boulangerie.",
-
-        "options": [
-
-          "pistor",
-
-          "panis",
-
-          "farina",
-
-          "sacellus",
-
-          "tabella"
-
-        ],
-
-        "expected": [
-
-          "pistor",
-
-          "panis",
-
-          "farina"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+     {
+  "id": "p1-l8-t3",
+  "type": "multipleChoice",
+  "prompt": "🍞 Mini-scène : « Pistor panem portat. Flavia farinam accipit. » Coche les deux compléments d’objet.",
+  "options": [
+    "panem",
+    "farinam",
+    "Pistor",
+    "Flavia",
+    "accipit"
+  ],
+  "expected": [
+    "panem",
+    "farinam"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
           {
 
@@ -5258,43 +5177,24 @@ export const lessons5eP1 = [
 
       },
 
-      {
-
-        "id": "p1-l9-t3",
-
-        "type": "multipleChoice",
-
-        "prompt": "🎓 Sélectionne des verbes de travail scolaire.",
-
-        "options": [
-
-          "legit",
-
-          "scribit",
-
-          "audit",
-
-          "portat",
-
-          "salutat"
-
-        ],
-
-        "expected": [
-
-          "legit",
-
-          "scribit",
-
-          "audit"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+     {
+  "id": "p1-l9-t3",
+  "type": "multipleChoice",
+  "prompt": "🎓 Mini-scène : « Discipulus magistrum audit. Magister discipulum audit. » Coche les deux personnes qui sont écoutées.",
+  "options": [
+    "magistrum",
+    "discipulum",
+    "discipulus",
+    "Magister",
+    "audit"
+  ],
+  "expected": [
+    "magistrum",
+    "discipulum"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -5835,45 +5735,24 @@ export const lessons5eP1 = [
 
       },
 
-      {
-
-        "id": "p1-l10-t3",
-
-        "type": "multipleChoice",
-
-        "prompt": "🛁 Choisis les mots de la scène des thermes.",
-
-        "options": [
-
-          "thermae",
-
-          "aqua",
-
-          "calida",
-
-          "ianua",
-
-          "frigidus"
-
-        ],
-
-        "expected": [
-
-          "thermae",
-
-          "aqua",
-
-          "calida",
-
-          "frigidus"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+    {
+  "id": "p1-l10-t3",
+  "type": "multipleChoice",
+  "prompt": "🛁 Coche les deux groupes correctement formés pour parler de l’eau aux thermes.",
+  "options": [
+    "aqua calida",
+    "aqua frigida",
+    "aqua calidus",
+    "aqua frigidus",
+    "thermae frigida"
+  ],
+  "expected": [
+    "aqua calida",
+    "aqua frigida"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
