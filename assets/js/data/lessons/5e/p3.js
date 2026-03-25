@@ -6591,33 +6591,23 @@ export const lessons5eP3 = [
 
     },
 
-    {
-
-      "id": "p3-l10-t7",
-
-      "type": "singleChoice",
-
-      "prompt": "Mini-dossier : « Vir in villam advocati intrat. Servus advocati tacet. » Quelle information est bien présente dans ce court texte ?",
-
-      "options": [
-
-        "L’homme entre dans une maison bien précise, celle de l’avocat",
-
-        "Le serviteur quitte la villa pour courir au forum",
-
-        "L’avocat entre chez le serviteur",
-
-        "Le dîner se déroule dans la rue"
-
-      ],
-
-      "expected": "L’homme entre dans une maison bien précise, celle de l’avocat",
-
-      "shuffle": true,
-
-      "points": 1
-
-    }
+   {
+  "id": "p3-l10-t7",
+  "type": "multipleChoice",
+  "prompt": "Mini-dossier : « Vir in villam advocati intrat. Servus advocati tacet. » Coche les deux groupes qui contiennent un complément du nom au génitif.",
+  "options": [
+    "Villam advocati",
+    "Servus advocati",
+    "Vir in villam",
+    "Servus tacet"
+  ],
+  "expected": [
+    "villam advocati",
+    "servus advocati"
+  ],
+  "shuffle": true,
+  "points": 1
+}
 
   ],
 
