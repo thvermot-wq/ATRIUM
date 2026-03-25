@@ -3314,101 +3314,48 @@ export const lessons5eP2 = [
 
       },
 
-      {
-
-        "id": "p2-l5-p3",
-
-        "type": "textInput",
-
-        "prompt": "2e déclinaison / Règle courte : au neutre singulier, nominatif et accusatif sont…",
-
-        "expected": "identiques",
-
-        "acceptedAnswers": [
-
-          "identiques",
-
-          "pareils",
-
-          "semblables",
-
-          "les mêmes"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "identiques",
-
-            "pareils",
-
-            "semblables",
-
-            "les mêmes"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "identiques",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "identiques",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      }
+    {
+  "id": "p2-l5-p3",
+  "type": "textInput",
+  "prompt": "Complète en latin : « Le temple cache un danger » = Templum ____ celat.",
+  "expected": "periculum",
+  "acceptedAnswers": [
+    "periculum"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "periculum"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "periculum",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Produire correctement un neutre singulier employé comme complément objet.",
+  "rejectIf": [
+    "mot hors leçon",
+    "forme inexistante",
+    "réponse vide"
+  ],
+  "tests": [
+    {
+      "input": "periculum",
+      "isCorrect": true
+    },
+    {
+      "input": "periculus",
+      "isCorrect": false
+    }
+  ]
+}
 
     ],
 
@@ -7775,7 +7722,7 @@ export const lessons5eP2 = [
       "canis (nom.), canem (acc.) = chien",
 
       "fons (nom.), fontem (acc.) = fontaine",
-"signum, signi = signe, marque",
+"signum, signi = signe, marque, indice",
 "falsus, falsa, falsum = faux, fausse",
 "turpis, turpis, turpe = laid, honteux, sale",
 "recuso, recusas = je refuse, tu refuses",
@@ -8268,27 +8215,33 @@ export const lessons5eP2 = [
 
       },
 
-    {
+   {
   "id": "p2-l12-p3",
   "type": "textInput",
-  "prompt": "Quelle divinité a troublé Subure ? Écris seulement le nom, en français ou en latin.",
-  "expected": "la Discorde",
+  "prompt": "Traduis en latin : 'Le peuple voit l'indice.'",
+  "expected": "populus signum videt",
   "acceptedAnswers": [
-    "la Discorde",
-    "Discorde",
-    "Discordia"
+    "populus signum videt",
+    "populus videt signum",
+    "signum populus videt",
+    "signum videt populus",
+    "videt populus signum",
+    "videt signum populus"
   ],
   "answerConfig": {
-    "type": "translation-segment",
-    "language": "fr",
+    "type": "one-of",
+    "language": "latin",
     "accepted": [
-      "la Discorde",
-      "Discorde",
-      "Discordia"
+      "populus signum videt",
+    "populus videt signum",
+    "signum populus videt",
+    "signum videt populus",
+    "videt populus signum",
+    "videt signum populus"
     ]
   },
   "points": 1,
-  "canonicalAnswer": "la Discorde",
+  "canonicalAnswer": "populus signum videt",
   "normalization": {
     "trim": true,
     "collapseSpaces": true,
@@ -8297,27 +8250,19 @@ export const lessons5eP2 = [
     "normalizeApostrophes": true,
     "ignoreDiacritics": true
   },
-  "gradingFocus": "Identifier précisément la divinité responsable ; aucune reformulation narrative vague n’est acceptée.",
+  "gradingFocus": "Réinvestir une phrase simple de synthèse avec sujet, COD neutre et verbe.",
   "rejectIf": [
-    "réponse narrative vague",
-    "réponse hors-sujet",
-    "confusion entre cause divine et conséquences humaines"
+    "forme incorrecte de signum",
+    "sens inversé sujet/objet",
+    "réponse hors-sujet"
   ],
   "tests": [
     {
-      "input": "la Discorde",
+      "input": "populus signum videt",
       "isCorrect": true
     },
     {
-      "input": "Discordia",
-      "isCorrect": true
-    },
-    {
-      "input": "les conflits entre voisins",
-      "isCorrect": false
-    },
-    {
-      "input": "la querelle",
+      "input": "populum signus videt",
       "isCorrect": false
     }
   ]
@@ -8692,43 +8637,40 @@ export const lessons5eP2 = [
     },
 
    {
-
   "id": "p2-l13-t7",
-
-  "type": "multipleChoice",
-
-  "prompt": "Mini-scène : « Mater nomen legit. Rex urbem videt. Corpus in via est. » Coche les quatre mots de 3e déclinaison qui apparaissent dans ce mini-texte.",
-
-  "options": [
-
-    "mater",
-
-    "nomen",
-
-    "rex",
-
-    "urbem",
-
-    "via"
-
+  "type": "matching",
+  "prompt": "Mini-scène : « Mater nomen legit. Rex urbem videt. Corpus in via est. » Associe chaque mot de 3e déclinaison à sa fonction dans sa proposition.",
+  "pairs": [
+    {
+      "left": "mater",
+      "right": "sujet de legit"
+    },
+    {
+      "left": "nomen",
+      "right": "COD de legit"
+    },
+    {
+      "left": "rex",
+      "right": "sujet de videt"
+    },
+    {
+      "left": "urbem",
+      "right": "COD de videt"
+    }
   ],
-
-  "expected": [
-
-    "mater",
-
-    "nomen",
-
-    "rex",
-
-    "urbem"
-
+  "rightOptions": [
+    "COD de videt",
+    "sujet de legit",
+    "COD de legit",
+    "sujet de videt"
   ],
-
-  "shuffle": true,
-
+  "expected": {
+    "mater": "sujet de legit",
+    "nomen": "COD de legit",
+    "rex": "sujet de videt",
+    "urbem": "COD de videt"
+  },
   "points": 1
-
 }
 
   ],
