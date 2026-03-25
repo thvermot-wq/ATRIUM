@@ -313,7 +313,41 @@ export const lessons5eP2 = [
       "qui aperçoit le don"
     ]
   },
-  "points": 1
+  "points": 1,
+  "canonicalAnswer": "qui voit l'offrande ?",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
+  },
+  "gradingFocus": "Comprendre une question simple avec interrogatif, verbe et COD.",
+  "rejectIf": [
+    "interrogatif mal compris",
+    "verbe principal mal compris",
+    "contre-sens sur donum"
+  ],
+  "tests": [
+    {
+      "input": "qui voit l'offrande ?",
+      "isCorrect": true
+    },
+    {
+      "input": "qui aperçoit le don",
+      "isCorrect": true
+    },
+    {
+      "input": "qui porte le don ?",
+      "isCorrect": false
+    },
+    {
+      "input": "qui voient le don ?",
+      "isCorrect": false
+    }
+  ]
 },
 
       {
