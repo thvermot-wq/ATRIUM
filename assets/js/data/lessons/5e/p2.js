@@ -75,6 +75,7 @@ export const lessons5eP2 = [
       "ara (nom.), aram (acc.) = autel",
 
       "vicinus (nom.), vicinum (acc.) = voisin",
+      "Sextus (nom.), Sextum (acc.) = Sextus",
 
       "video, videt = je vois ; il/elle voit",
 
