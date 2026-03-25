@@ -237,40 +237,32 @@ export const lessons5eP2 = [
 },
 
       {
-
-        "id": "p2-l1-t7",
-
-        "type": "multipleChoice",
-
-        "prompt": "Coche les trois mots qui servent à poser des questions.",
-
-        "options": [
-
-          "quis",
-
-          "quid",
-
-          "cur",
-
-          "donum"
-
-        ],
-
-        "expected": [
-
-          "quis",
-
-          "quid",
-
-          "cur"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      }
+  "id": "p2-l1-t7",
+  "type": "textInput",
+  "prompt": "Traduis en français : Cur vicinus negat ?",
+  "expected": "pourquoi le voisin nie-t-il ?",
+  "acceptedAnswers": [
+    "pourquoi le voisin nie-t-il ?",
+    "pourquoi le voisin nie t il ?",
+    "pourquoi le voisin nie-t-il",
+    "pourquoi le voisin nie",
+    "pour quelle raison le voisin nie ?",
+    "pour quelle raison le voisin nie"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "pourquoi le voisin nie-t-il ?",
+      "pourquoi le voisin nie t il ?",
+      "pourquoi le voisin nie-t-il",
+      "pourquoi le voisin nie",
+      "pour quelle raison le voisin nie ?",
+      "pour quelle raison le voisin nie"
+    ]
+  },
+  "points": 1
+}
 
     ],
 
@@ -455,88 +447,62 @@ export const lessons5eP2 = [
       },
 
       {
-
-        "id": "p2-l1-p3",
-
-        "type": "textInput",
-
-        "prompt": "Lexique : 𝑣𝑖𝑐𝑖𝑛𝑢𝑠 = ?",
-
-        "expected": "voisin",
-
-        "acceptedAnswers": [
-
-          "voisin"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "voisin"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "voisin",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "voisin",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      }
+  "id": "p2-l1-p3",
+  "type": "textInput",
+  "prompt": "Traduis en latin : Pourquoi le voisin accuse-t-il ?",
+  "expected": "cur vicinus accusat",
+  "acceptedAnswers": [
+    "cur vicinus accusat",
+    "cur accusat vicinus",
+    "vicinus cur accusat",
+    "accusat cur vicinus"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "cur vicinus accusat",
+      "cur accusat vicinus",
+      "vicinus cur accusat",
+      "accusat cur vicinus"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "cur vicinus accusat",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Produire une question simple en latin avec interrogatif, sujet et verbe au présent.",
+  "rejectIf": [
+    "interrogatif absent ou incorrect",
+    "verbe incorrect",
+    "forme de sujet incorrecte",
+    "réponse hors lexique de la leçon"
+  ],
+  "tests": [
+    {
+      "input": "cur vicinus accusat",
+      "isCorrect": true
+    },
+    {
+      "input": "cur accusat vicinus",
+      "isCorrect": true
+    },
+    {
+      "input": "quid vicinus accusat",
+      "isCorrect": false
+    },
+    {
+      "input": "cur vicinum accusat",
+      "isCorrect": false
+    }
+  ]
+}
 
     ],
 
@@ -742,41 +708,23 @@ export const lessons5eP2 = [
   "points": 1
 },
 
-      {
-
-        "id": "p2-l2-t5",
-
-        "type": "ordering",
-
-        "prompt": "Traduis en suivant l'ordre de la phrase française : Le voisin se tient devant la porte.",
-
-        "options": [
-
-          "ante",
-
-          "vicinus",
-
-          "ianuam",
-
-          "stat"
-
-        ],
-
-        "expected": [
-
-          "vicinus",
-
-          "stat",
-
-          "ante",
-
-          "ianuam"
-
-        ],
-
-        "points": 1
-
-      },
+    {
+  "id": "p2-l2-t5",
+  "type": "multipleChoice",
+  "prompt": "Mini-texte : « Ancilla ex taberna exit et ad fontem venit. » Coche les deux informations justes.",
+  "options": [
+    "La servante sort de la boutique",
+    "La servante va vers la fontaine",
+    "La servante reste dans la boutique",
+    "La servante vient de la fontaine"
+  ],
+  "expected": [
+    "La servante sort de la boutique",
+    "La servante va vers la fontaine"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
     {
   "id": "p2-l2-t6",
@@ -5116,7 +5064,7 @@ export const lessons5eP2 = [
 
         "type": "multipleChoice",
 
-        "prompt": "Texte court : « 𝑁𝑜𝑚𝑒𝑛 𝑚𝑢𝑡𝑎𝑡𝑢𝑚 𝑒𝑠𝑡. 𝑉𝑒𝑟𝑢𝑚 𝑛𝑜𝑛 𝑒𝑠𝑡. » Quelles phrases sont vraies ?",
+        "prompt": "Texte court : « 𝑁𝑜𝑚𝑒𝑛 𝑚𝑢𝑡𝑎𝑡𝑢𝑚 𝑒𝑠𝑡. 𝑉𝑒𝑟𝑢𝑚 𝑛𝑜𝑛 𝑒𝑠𝑡. » Quelles propositions sont exactes ?",
 
         "options": [
 
@@ -5233,37 +5181,21 @@ export const lessons5eP2 = [
       },
 
        {
-
   "id": "p2-l8-t7",
-
   "type": "multipleChoice",
-
-  "prompt": "Mini-texte : « Nomen mutatum est. Tabella falsa est. » Quels éléments montrent que la tablette est suspecte ?",
-
+  "prompt": "Mini-texte : « Vicina tabellam legit et signum ostendit. » Coche les deux informations justes.",
   "options": [
-
-    "Un nom a été changé",
-
-    "La tablette est fausse",
-
-    "La tablette est propre",
-
-    "Le mutant apparaît"
-
+    "La voisine lit la tablette",
+    "La voisine montre un signe",
+    "Le voisin cache la tablette",
+    "Le signe disparaît"
   ],
-
   "expected": [
-
-    "Un nom a été changé",
-
-    "La tablette est fausse"
-
+    "La voisine lit la tablette",
+    "La voisine montre un signe"
   ],
-
   "shuffle": true,
-
   "points": 1
-
 }
 
     ],
@@ -8056,104 +7988,72 @@ export const lessons5eP2 = [
 
       },
 
-      {
-
+    {
   "id": "p2-l12-t6",
-
   "type": "matching",
-
-  "prompt": "Associe chaque indice latin à sa bonne interprétation.",
-
+  "prompt": "Associe chaque indice latin à sa traduction la plus littérale.",
   "pairs": [
-
     {
-
       "left": "Donum non est.",
-
-      "right": "Le donum a disparu."
-
+      "right": "Le don n’est pas là."
     },
-
     {
-
       "left": "Tabella falsa est.",
-
       "right": "La tablette est fausse."
-
     },
-
     {
-
       "left": "Canis ianuam recusat.",
-
       "right": "Le chien refuse la porte."
-
     },
-
     {
-
       "left": "Aqua in fonte turpis est.",
-
-      "right": "L'eau de la fontaine est souillée."
-
+      "right": "L’eau de la fontaine est souillée."
     }
-
   ],
-
   "rightOptions": [
-
+    "Le don n’est pas là.",
     "La tablette est fausse.",
-
     "Le chien refuse la porte.",
-
-    "L'eau de la fontaine est souillée.",
-
-    "Le donum a disparu."
-
+    "L’eau de la fontaine est souillée."
   ],
-
   "expected": {
-
-    "Donum non est.": "Le donum a disparu.",
-
+    "Donum non est.": "Le don n’est pas là.",
     "Tabella falsa est.": "La tablette est fausse.",
-
     "Canis ianuam recusat.": "Le chien refuse la porte.",
-
-    "Aqua in fonte turpis est.": "L'eau de la fontaine est souillée."
-
+    "Aqua in fonte turpis est.": "L’eau de la fontaine est souillée."
   },
-
   "points": 1
-
 },
 
      {
-
   "id": "p2-l12-t7",
-
-  "type": "singleChoice",
-
-  "prompt": "Dans « 𝑣𝑖𝑐𝑖𝑛𝑖 𝑠𝑖𝑔𝑛𝑢𝑚 𝑣𝑖𝑑𝑒𝑛𝑡 », quel mot est le complément d’objet ?",
-
-  "options": [
-
-    "signum",
-
-    "vicini",
-
-    "vident",
-
-    "pax"
-
+  "type": "matching",
+  "prompt": "Dans « Quis donum videt ? », associe chaque mot à sa fonction.",
+  "pairs": [
+    {
+      "left": "quis",
+      "right": "mot interrogatif / sujet"
+    },
+    {
+      "left": "donum",
+      "right": "COD"
+    },
+    {
+      "left": "videt",
+      "right": "verbe"
+    }
   ],
-
-  "expected": "signum",
-
-  "shuffle": true,
-
+  "rightOptions": [
+    "verbe",
+    "COD",
+    "mot interrogatif / sujet"
+  ],
+  "expected": {
+    "quis": "mot interrogatif / sujet",
+    "donum": "COD",
+    "videt": "verbe"
+  },
   "points": 1
-
 }
 
     ],
