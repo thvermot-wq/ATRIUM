@@ -610,9 +610,14 @@ export const lessons5eP2 = [
     {
   "id": "p2-l2-t1",
   "type": "singleChoice",
-  "prompt": "« ad » signifie…",
-  "options": [ "vers", "dans", "hors de", "devant" ],
-  "expected": "vers",
+  "prompt": "Mini-texte : « Servus ad templum venit. » Quel groupe indique la direction ?",
+  "options": [
+    "Servus venit",
+    "ad templum",
+    "templum venit",
+    "Servus templum"
+  ],
+  "expected": "ad templum",
   "shuffle": true,
   "points": 1
 },
@@ -2781,33 +2786,20 @@ export const lessons5eP2 = [
 
     "training": [
 
-      {
-
-        "id": "p2-l5-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "Quel mot est neutre ?",
-
-        "options": [
-
-          "donum",
-
-          "dominus",
-
-          "femina",
-
-          "servus"
-
-        ],
-
-        "expected": "donum",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+     {
+  "id": "p2-l5-t1",
+  "type": "singleChoice",
+  "prompt": "Mini-texte : « Donum in templo est. » Quel mot peut garder la même forme comme sujet ou comme complément d’objet ?",
+  "options": [
+    "donum",
+    "dominus",
+    "femina",
+    "servus"
+  ],
+  "expected": "donum",
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -3675,120 +3667,47 @@ export const lessons5eP2 = [
 
       },
 
-   {
-
+  {
   "id": "p2-l6-t7",
-
   "type": "textInput",
-
   "prompt": "Traduis en latin en plaçant le verbe à la fin : « Je crie dans la rue. »",
-
-  "expected": [
-
-    "ego in via clamo",
-
-    "in via ego clamo",
-
-    "in via clamo"
-
-  ],
-
+  "expected": "ego in via clamo",
   "acceptedAnswers": [
-
     "ego in via clamo",
-
     "in via ego clamo",
-
     "in via clamo"
-
   ],
-
   "answerConfig": {
-
-    "type": "translation-segment",
-
+    "type": "one-of",
     "language": "latin",
-
     "accepted": [
-
       "ego in via clamo",
-
       "in via ego clamo",
-
       "in via clamo"
-
     ]
-
   },
-
   "points": 1,
-
   "canonicalAnswer": "ego in via clamo",
-
   "normalization": {
-
     "trim": true,
-
     "collapseSpaces": true,
-
     "ignoreCase": true,
-
     "ignorePunctuation": true,
-
     "normalizeApostrophes": true,
-
     "ignoreDiacritics": true
-
   },
-
   "gradingFocus": "Produire une phrase latine correcte avec le verbe placé à la fin.",
-
   "rejectIf": [
-
     "verbe non placé en fin de phrase",
-
     "préposition séparée de son groupe",
-
     "forme latine impossible au niveau de la leçon"
-
   ],
-
   "tests": [
-
-    {
-
-      "input": "ego in via clamo",
-
-      "isCorrect": true
-
-    },
-
-    {
-
-      "input": "in via ego clamo",
-
-      "isCorrect": true
-
-    },
-
-    {
-
-      "input": "in via clamo",
-
-      "isCorrect": true
-
-    },
-
-    {
-
-      "input": "ego clamo in via",
-
-      "isCorrect": false
-
-    }
-
+    { "input": "ego in via clamo", "isCorrect": true },
+    { "input": "in via ego clamo", "isCorrect": true },
+    { "input": "in via clamo", "isCorrect": true },
+    { "input": "ego clamo in via", "isCorrect": false }
   ]
-
 }
 
     ],
@@ -7741,32 +7660,19 @@ export const lessons5eP2 = [
     "training": [
 
       {
-
-        "id": "p2-l12-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "Quel mot signifie « paix » ?",
-
-        "options": [
-
-          "pax",
-
-          "populus",
-
-          "fons",
-
-          "tabella"
-
-        ],
-
-        "expected": "pax",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+  "id": "p2-l12-t1",
+  "type": "singleChoice",
+  "prompt": "Mini-texte : « Pax in vico redit ». Quelle traduction est exacte ?",
+  "options": [
+    "la paix revient dans le quartier",
+    "le quartier revient dans la paix",
+    "la paix voit le quartier",
+    "le voisin revient dans le quartier"
+  ],
+  "expected": "la paix revient dans le quartier",
+  "shuffle": true,
+  "points": 1
+},
 
     {
 
