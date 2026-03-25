@@ -97,14 +97,14 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
     </p>
 
     <p class="home-hero__lead">
-      Choisissez votre niveau puis entrez dans un dashboard pensé comme un itinéraire continu : 3 périodes,
-      36 leçons, une progression indépendante, des outils de cours et un fil narratif qui accompagne la langue.
+      Choisissez votre niveau puis entrez dans un parcours pensé comme un itinéraire continu : 3 périodes,
+      une progression indépendante, des outils de cours et un fil narratif qui accompagne la langue.
     </p>
 
     <div class="home-hero__meta">
       <span class="meta-pill">3 niveaux collège</span>
       <span class="meta-pill">3 périodes par niveau</span>
-      <span class="meta-pill">36 leçons progressives</span>
+      <span class="meta-pill">39 à 45 leçons progressives</span>
       <span class="meta-pill">Repères CECRL et Euroclassica</span>
     </div>
 
