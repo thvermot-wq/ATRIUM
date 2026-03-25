@@ -7040,7 +7040,7 @@ export const lessons5eP1 = [
 
         "type": "singleChoice",
 
-        "prompt": "🧩 « Marcus nomen videt » : Marcus…",
+        "prompt": "🧩 Traduction. « Marcus nomen videt » : Marcus…",
 
         "options": [
 
@@ -7234,7 +7234,7 @@ export const lessons5eP1 = [
 
               "marcus voit le nom de discordia",
 
-              "marcus voit le nom discordia"
+              "marcus voit le nom discordia",
               "marcus voit le nom de discorde",
 
             ],
