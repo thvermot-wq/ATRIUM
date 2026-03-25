@@ -8300,7 +8300,7 @@ export const lessons5eP2 = [
 
       },
 
-     {
+    {
   "id": "p2-l12-p3",
   "type": "textInput",
   "prompt": "Quelle divinité a troublé Subure ? Écris seulement le nom, en français ou en latin.",
@@ -8347,63 +8347,13 @@ export const lessons5eP2 = [
     {
       "input": "les conflits entre voisins",
       "isCorrect": false
+    },
+    {
+      "input": "la querelle",
+      "isCorrect": false
     }
   ]
-},
-
-        "points": 1,
-
-        "canonicalAnswer": "la Discorde",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "la Discorde",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      }
+}
 
     ],
 
