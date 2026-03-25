@@ -30,8 +30,8 @@ function run() {
   assert.deepEqual(computeLessonScore({ trainingScore: 7, productionScore: 3 }).totalScore, 10);
   assert.deepEqual(computeLessonScore({ trainingScore: 9, productionScore: 5 }).totalScore, 10);
 
-  const periodData = computePeriodScore({ lessonScores: Array(12).fill(10), periodMax: 120 });
-  assert.equal(periodData.totalScore, 120);
+  const periodData = computePeriodScore({ lessonScores: Array(13).fill(10), periodMax: 130 });
+  assert.equal(periodData.totalScore, 130);
   assert.equal(periodData.percent, 100);
 
   assert.equal(getPeriodStatus(80), "période validée");
@@ -40,6 +40,7 @@ function run() {
   assert.equal(getPeriodStatus(59), "période à reprendre");
 
   let progress = createInitialProgress({ lessons, periods });
+
   progress = saveLessonProgress({
     progress,
     lessonId: "5e-p1-l1",
@@ -48,6 +49,7 @@ function run() {
     lessons,
     periods,
   });
+
   assert.equal(progress.lessons["5e-p1-l1"].current.totalScore, 10);
   assert.equal(progress.lessons["5e-p1-l1"].best.totalScore, 10);
   assert.equal(typeof progress.lessons["5e-p1-l1"].playedAt, "string");
@@ -60,14 +62,16 @@ function run() {
     lessons,
     periods,
   });
+
   assert.equal(progress.lessons["5e-p1-l1"].current.totalScore, 3);
   assert.equal(progress.lessons["5e-p1-l1"].best.totalScore, 10);
-
   assert.equal(progress.periods["5e-p1"].totalScore >= 10, true);
 
   saveProgress(progress, { levelId: "5e" });
+
   const raw = globalThis.localStorage.getItem("atrium:progress:5e");
   assert.equal(typeof raw, "string");
+
   const loaded = loadProgress({ lessons, periods, levelId: "5e" });
   assert.equal(loaded.lessons["5e-p1-l1"].best.totalScore, 10);
   assert.equal(typeof loaded.lessons["5e-p1-l1"].playedAt, "string");
