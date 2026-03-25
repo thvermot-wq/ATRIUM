@@ -246,36 +246,20 @@ export const lessons5eP1 = [
       },
 
       {
-
-        "id": "p1-l1-t5",
-
-        "type": "singleChoice",
-
-        "prompt": "👋 Dans « Flavia in via est », que signifie via ?",
-
-        "options": [
-
-          "route",
-
-          "maison",
-
-          "fontaine",
-
-          "mur",
-
-          "temple"
-
-        ],
-
-        "expected": "route",
-
-        "shuffle": true,
-
-        "points": 1,
-
-        "feedback": "Le groupe nominal aide : in via = dans la rue."
-
-      },
+  "id": "p1-l1-t5",
+  "type": "singleChoice",
+  "prompt": "👋 Dans « Flavia in via est », quel groupe indique où se trouve Flavia ?",
+  "options": [
+    "in via",
+    "Flavia",
+    "est",
+    "via"
+  ],
+  "expected": "in via",
+  "shuffle": true,
+  "points": 1,
+  "feedback": "On lit un groupe de lieu : in via = dans la rue."
+},
 
       {
 
@@ -6509,42 +6493,23 @@ export const lessons5eP1 = [
       },
 
       {
-
-        "id": "p1-l11-t3",
-
-        "type": "multipleChoice",
-
-        "prompt": "🧱 Choisis les mots liés à cette petite scène du graffiti.",
-
-        "options": [
-
-          "scriptum",
-
-          "nomen",
-
-          "murus",
-
-          "mercator",
-
-          "panis"
-
-        ],
-
-        "expected": [
-
-          "scriptum",
-
-          "nomen",
-
-          "murus"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+  "id": "p1-l11-t3",
+  "type": "multipleChoice",
+  "prompt": "🧱 Dans la phrase « Marcus nomen legit in muro », coche l'objet (COD) et le verbe.",
+  "options": [
+    "legit",
+    "nomen",
+    "Marcus",
+    "muro",
+    "timet"
+  ],
+  "expected": [
+    "legit",
+    "nomen"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -7175,64 +7140,35 @@ export const lessons5eP1 = [
       },
 
       {
-
-        "id": "p1-l12-t4",
-
-        "type": "matching",
-
-        "prompt": "🧩 Associe chaque phrase à son rôle dans la scène.",
-
-        "pairs": [
-
-          {
-
-            "left": "Marcus nomen videt",
-
-            "right": "découverte"
-
-          },
-
-          {
-
-            "left": "Livia Discordiam timet",
-
-            "right": "réaction"
-
-          },
-
-          {
-
-            "left": "Titus tabellam portat",
-
-            "right": "indice"
-
-          }
-
-        ],
-
-        "rightOptions": [
-
-          "indice",
-
-          "découverte",
-
-          "réaction"
-
-        ],
-
-        "expected": {
-
-          "Marcus nomen videt": "découverte",
-
-          "Livia Discordiam timet": "réaction",
-
-          "Titus tabellam portat": "indice"
-
-        },
-
-        "points": 1
-
-      },
+  "id": "p1-l12-t4",
+  "type": "matching",
+  "prompt": "🧩 Dans « Marcus nomen Discordiae videt », associe chaque élément à sa fonction.",
+  "pairs": [
+    {
+      "left": "nomen",
+      "right": "COD"
+    },
+    {
+      "left": "Discordiae",
+      "right": "complément du nom"
+    },
+    {
+      "left": "videt",
+      "right": "verbe"
+    }
+  ],
+  "rightOptions": [
+    "verbe",
+    "complément du nom",
+    "COD"
+  ],
+  "expected": {
+    "nomen": "COD",
+    "Discordiae": "complément du nom",
+    "videt": "verbe"
+  },
+  "points": 1
+},
 
       {
 
