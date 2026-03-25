@@ -939,8 +939,6 @@ export const lessons5eP1 = [
 
           "aurélia reste dans la maison",
 
-          "aurelia reste dans la maison",
-
           "aurélia demeure dans la maison",
 
           "aurélia reste à la maison",
@@ -958,8 +956,6 @@ export const lessons5eP1 = [
           "accepted": [
 
             "aurélia reste dans la maison",
-
-            "aurelia reste dans la maison",
 
             "aurélia demeure dans la maison",
 
@@ -1555,9 +1551,7 @@ export const lessons5eP1 = [
     "le marchand vend un pain",
     "un marchand vend du pain",
     "un marchand vend le pain",
-    "un marchand vend un pain",
-    "le marchand vend du pain.",
-    "un marchand vend du pain."
+    "un marchand vend un pain"
   ],
   "answerConfig": {
     "type": "translation-segment",
