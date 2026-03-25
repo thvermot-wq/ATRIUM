@@ -877,7 +877,41 @@ export const lessons5eP2 = [
       "une dame se promène dans la rue"
     ]
   },
-  "points": 1
+  "points": 1,
+  "canonicalAnswer": "la femme marche dans la rue",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
+  },
+  "gradingFocus": "Lire correctement un sujet, un groupe de lieu et un verbe de déplacement simple.",
+  "rejectIf": [
+    "contre-sens sur le lieu",
+    "verbe principal mal compris",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    {
+      "input": "une femme marche dans la rue",
+      "isCorrect": true
+    },
+    {
+      "input": "la dame se promène dans la rue",
+      "isCorrect": true
+    },
+    {
+      "input": "la femme marche vers la rue",
+      "isCorrect": false
+    },
+    {
+      "input": "les femmes marchent dans la rue",
+      "isCorrect": false
+    }
+  ]
 },
 
       {
