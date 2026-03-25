@@ -94,32 +94,19 @@ export const lessons5eP3 = [
     "training": [
 
       {
-
-        "id": "p3-l1-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "Quel mot signifie « qui ? »",
-
-        "options": [
-
-          "quis",
-
-          "quid",
-
-          "cur",
-
-          "ubi"
-
-        ],
-
-        "expected": "quis",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+  "id": "p3-l1-t1",
+  "type": "singleChoice",
+  "prompt": "Mini-texte : « Vicina virum noctu videt. » Quel mot est le complément d’objet direct ?",
+  "options": [
+    "Vicina",
+    "virum",
+    "noctu",
+    "videt"
+  ],
+  "expected": "virum",
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -2161,33 +2148,20 @@ export const lessons5eP3 = [
 
     "training": [
 
-      {
-
-        "id": "p3-l4-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "macellum signifie…",
-
-        "options": [
-
-          "marché",
-
-          "forum",
-
-          "thermes",
-
-          "porte"
-
-        ],
-
-        "expected": "marché",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+     {
+  "id": "p3-l4-t1",
+  "type": "singleChoice",
+  "prompt": "Mini-texte : « In macello rumor crescit. » Quel groupe indique le lieu ?",
+  "options": [
+    "In macello",
+    "rumor",
+    "crescit",
+    "macello"
+  ],
+  "expected": "In macello",
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -8330,77 +8304,20 @@ export const lessons5eP3 = [
 
   "training": [
 
-    {
-
-      "id": "p3-l13-t1",
-
-      "type": "matching",
-
-      "prompt": "Associe chaque mot du texte à sa bonne traduction.",
-
-      "pairs": [
-
-        {
-
-          "left": "vestigium",
-
-          "right": "trace"
-
-        },
-
-        {
-
-          "left": "taeda",
-
-          "right": "flambeau"
-
-        },
-
-        {
-
-          "left": "via",
-
-          "right": "route"
-
-        },
-
-        {
-
-          "left": "fugit",
-
-          "right": "il / elle fuit"
-
-        }
-
-      ],
-
-      "rightOptions": [
-
-        "il / elle fuit",
-
-        "trace",
-
-        "route",
-
-        "flambeau"
-
-      ],
-
-      "expected": {
-
-        "vestigium": "trace",
-
-        "taeda": "flambeau",
-
-        "via": "route",
-
-        "fugit": "il / elle fuit"
-
-      },
-
-      "points": 1
-
-    },
+  {
+  "id": "p3-l13-t1",
+  "type": "singleChoice",
+  "prompt": "Mini-texte : « Marcus et Livia ad portam villae stant. » Quel mot est au génitif ?",
+  "options": [
+    "portam",
+    "villae",
+    "stant",
+    "Marcus"
+  ],
+  "expected": "villae",
+  "shuffle": true,
+  "points": 1
+},
 
     {
 
