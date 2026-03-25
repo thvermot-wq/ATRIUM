@@ -309,7 +309,7 @@ export const lessons5eP3 = [
 
       "left": "vicina",
 
-      "right": "celle qui voit"
+      "right": "celui/celle qui voit"
 
     },
 
@@ -317,7 +317,7 @@ export const lessons5eP3 = [
 
       "left": "virum",
 
-      "right": "celui qui est vu"
+      "right": "celui/celle qui est vu"
 
     },
 
@@ -325,7 +325,7 @@ export const lessons5eP3 = [
 
       "left": "servus",
 
-      "right": "celui qui parle"
+      "right": "celui/celle qui parle"
 
     }
 
@@ -333,21 +333,21 @@ export const lessons5eP3 = [
 
   "rightOptions": [
 
-    "celui qui est vu",
+    "celui/celle qui est vu",
 
-    "celle qui voit",
+    "celui/celle qui voit",
 
-    "celui qui parle"
+    "celui/celle qui parle"
 
   ],
 
   "expected": {
 
-    "vicina": "celle qui voit",
+    "vicina": "celui/celle qui voit",
 
-    "virum": "celui qui est vu",
+    "virum": "celui/celle qui est vu",
 
-    "servus": "celui qui parle"
+    "servus": "celui/celle qui parle"
 
   },
 
@@ -1732,63 +1732,34 @@ export const lessons5eP3 = [
 },
 
     {
-
   "id": "p3-l3-t7",
-
   "type": "matching",
-
   "prompt": "Mini-texte : « Vicina ad ianuam stat et viam spectat. » Associe chaque élément à sa fonction dans la phrase.",
-
   "pairs": [
-
     {
-
       "left": "vicina",
-
-      "right": "celle qui agit"
-
+      "right": "sujet"
     },
-
     {
-
       "left": "ad ianuam",
-
-      "right": "près de la porte"
-
+      "right": "groupe de lieu"
     },
-
     {
-
       "left": "viam",
-
-      "right": "ce qui est regardé"
-
+      "right": "COD"
     }
-
   ],
-
   "rightOptions": [
-
-    "celle qui agit",
-
-    "près de la porte",
-
-    "ce qui est regardé"
-
+    "sujet",
+    "groupe de lieu",
+    "COD"
   ],
-
   "expected": {
-
-    "vicina": "celle qui agit",
-
-    "ad ianuam": "près de la porte",
-
-    "viam": "ce qui est regardé"
-
+    "vicina": "sujet",
+    "ad ianuam": "groupe de lieu",
+    "viam": "COD"
   },
-
   "points": 1
-
 }
 
     ],
@@ -7204,40 +7175,26 @@ export const lessons5eP3 = [
     },
 
     {
-
-      "id": "p3-l11-t4",
-
-      "type": "multipleChoice",
-
-      "prompt": "Mini-texte : « Servus virum videt. Non clamat. Ianuam aperit. » Coche les trois signes qui font penser que l’homme n’est peut-être pas considéré comme un intrus.",
-
-      "options": [
-
-        "le serviteur voit l’homme",
-
-        "il ne crie pas",
-
-        "il ouvre la porte",
-
-        "il fuit jusqu’au forum"
-
-      ],
-
-      "expected": [
-
-        "le serviteur voit l’homme",
-
-        "il ne crie pas",
-
-        "il ouvre la porte"
-
-      ],
-
-      "shuffle": true,
-
-      "points": 1
-
-    },
+  "id": "p3-l11-t4",
+  "type": "multipleChoice",
+  "prompt": "Mini-texte : « Servus virum videt. Non clamat. Ianuam aperit. » Coche les trois actions explicitement attribuées au serviteur.",
+  "options": [
+    "il voit l’homme",
+    "il ne crie pas",
+    "il fouette l'esclave",
+    "il ouvre la porte",
+    "il ferme la porte",
+    "il salue l'homme",
+    "il fuit jusqu’au forum"
+  ],
+  "expected": [
+    "il voit l’homme",
+    "il ne crie pas",
+    "il ouvre la porte"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
         {
 
@@ -8635,32 +8592,20 @@ export const lessons5eP3 = [
 
 },
 
-   {
-
+ {
   "id": "p3-l13-t7",
-
   "type": "singleChoice",
-
   "prompt": "Mini-récit complet : « Marcus et Livia ad portam villae stant. Servus taedam portat et tacet. In horto vestigium apparet. Vestigium ad viam ducit. Marcus dicit : “Vir extra oppidum fugit.” » Quelle traduction exacte de « Vir extra oppidum fugit » ?",
-
   "options": [
-
     "L’homme fuit hors de la ville",
-
-    "L’homme revient dans la ville",
-
-    "L'homme s'est pris la porte en pleine poire",
-
-    "Le fugitif retourne au forum"
-
+    "L’homme fuit vers la ville",
+    "l'homme conduit Marcus et Livia dans le jardin",
+    "Le serviteur fuit hors de la ville",
+    "L’homme mène le serviteur hors de la ville"
   ],
-
   "expected": "L’homme fuit hors de la ville",
-
   "shuffle": true,
-
   "points": 1
-
 }
 
   ],
