@@ -75,6 +75,7 @@ export const lessons5eP1 = [
       "habito, habitas, habitat = j'habite, tu habites, il/elle habite",
 
       "Subura = Subure",
+      "in Subura = à Subure",
 
       "in via = sur la route/dans la rue",
 
@@ -330,7 +331,7 @@ export const lessons5eP1 = [
 
         "type": "textInput",
 
-        "prompt": "👋 Traduis en français : Flavia Suburae habitat",
+        "prompt": "👋 Traduis en français : Flavia in Subura habitat",
 
         "expected": "Flavia habite dans Subure",
 
@@ -691,6 +692,7 @@ export const lessons5eP1 = [
       "ianua = porte",
 
       "fenestra = fenêtre",
+      "per + accusatif = par, à travers",
 
       "cella = cellier",
 
@@ -701,7 +703,7 @@ export const lessons5eP1 = [
       "ante ianuam = devant la porte",
 
       "sto, stas, stat = je me tiens, tu te tiens, il/elle se tient",
-      "specto, spectas, spectat = je regarde, tu regardes, il/elle regard",
+      "specto, spectas, spectat = je regarde, tu regardes, il/elle regarde",
 
       "habitat = il/elle habite",
 
