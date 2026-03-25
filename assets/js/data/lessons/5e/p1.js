@@ -1330,35 +1330,22 @@ export const lessons5eP1 = [
 
     "training": [
 
-      {
-
-        "id": "p1-l3-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "🛍️ Le lieu principal des échanges est :",
-
-        "options": [
-
-          "forum",
-
-          "domus",
-
-          "thermae",
-
-          "ludus",
-
-          "templum"
-
-        ],
-
-        "expected": "forum",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+     {
+  "id": "p1-l3-t1",
+  "type": "singleChoice",
+  "prompt": "🛍️ Dans « Mercator ad forum currit », quel groupe indique vers quel lieu court le marchand ?",
+  "options": [
+    "ad forum",
+    "mercator",
+    "currit",
+    "forum",
+    "panem"
+  ],
+  "expected": "ad forum",
+  "shuffle": true,
+  "points": 1,
+  "feedback": "ad forum forme un groupe de déplacement : vers le forum."
+},
 
       {
 
@@ -3272,35 +3259,24 @@ export const lessons5eP1 = [
 
     "training": [
 
-      {
-
-        "id": "p1-l6-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "📜 La tablette se dit :",
-
-        "options": [
-
-          "tabella",
-
-          "taberna",
-
-          "templum",
-
-          "porta",
-
-          "fontis"
-
-        ],
-
-        "expected": "tabella",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+     {
+  "id": "p1-l6-t1",
+  "type": "multipleChoice",
+  "prompt": "📜 Mini-scène : « Marcus tabellam habet. Lucius epistulam legit. » Coche les deux compléments d'objet.",
+  "options": [
+    "tabellam",
+    "epistulam",
+    "Marcus",
+    "Lucius",
+    "legit"
+  ],
+  "expected": [
+    "tabellam",
+    "epistulam"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -6433,34 +6409,21 @@ export const lessons5eP1 = [
     "training": [
 
       {
-
-        "id": "p1-l11-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "🧱 Le mur se dit :",
-
-        "options": [
-
-          "murus",
-
-          "porta",
-
-          "domus",
-
-          "via",
-
-          "ara"
-
-        ],
-
-        "expected": "murus",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+  "id": "p1-l11-t1",
+  "type": "singleChoice",
+  "prompt": "🧱 Dans « Nomen in muro est », quel groupe indique où se trouve le nom ?",
+  "options": [
+    "in muro",
+    "nomen",
+    "est",
+    "muro",
+    "Marcus"
+  ],
+  "expected": "in muro",
+  "shuffle": true,
+  "points": 1,
+  "feedback": "in muro indique le lieu où se trouve le nom."
+},
 
       {
 
@@ -7200,35 +7163,20 @@ export const lessons5eP1 = [
 
       },
 
-      {
-
-        "id": "p1-l12-t6",
-
-        "type": "singleChoice",
-
-        "prompt": "🧩 Quand on essaie de traduire, quel réflexe méthodologique est le plus juste ?",
-
-        "options": [
-
-          "Cherche d’abord le verbe",
-
-          "Traduis mot à mot dans l'ordre de la phrase",
-
-          "Dans un premier temps, ignore les terminaisons",
-
-          "L’ordre latin est le même que l'ordre français",
-
-          "Le sujet est toujours au début"
-
-        ],
-
-        "expected": "Cherche d’abord le verbe",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+    {
+  "id": "p1-l12-t6",
+  "type": "singleChoice",
+  "prompt": "🧩 Dans « Marcus nomen Discordiae videt », quel groupe COD Marcus voit-il ?",
+  "options": [
+    "nomen Discordiae",
+    "Marcus nomen",
+    "Discordiae videt",
+    "Discordiae videt"
+  ],
+  "expected": "nomen Discordiae",
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
