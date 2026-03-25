@@ -1,13 +1,14 @@
-import { LESSONS_SPEC } from "./lessons.js";
+import { getLessonSpecForLevel } from "./lessons.js";
 
-export function getScoringContract() {
+export function getScoringContract(levelId = "5e") {
+  const spec = getLessonSpecForLevel(levelId);
   return {
-    lessonMax: LESSONS_SPEC.lessonMax,
-    trainingMax: LESSONS_SPEC.trainingMax,
-    productionMax: LESSONS_SPEC.productionMax,
-    periodMax: LESSONS_SPEC.periodMax,
-    validationPercent: LESSONS_SPEC.validationPercent,
-    validationMinScore: LESSONS_SPEC.validationMinScore,
+    lessonMax: spec.lessonMax,
+    trainingMax: spec.trainingMax,
+    productionMax: spec.productionMax,
+    periodMax: spec.periodMax,
+    validationPercent: spec.validationPercent,
+    validationMinScore: spec.validationMinScore,
   };
 }
 
@@ -17,9 +18,12 @@ function clampScore(value, min, max) {
   return Math.max(min, Math.min(max, Math.round(num)));
 }
 
-export function computeLessonScore({ trainingScore = 0, productionScore = 0 } = {}) {
-  const contract = getScoringContract();
-
+export function computeLessonScore({
+  trainingScore = 0,
+  productionScore = 0,
+  levelId = "5e",
+} = {}) {
+  const contract = getScoringContract(levelId);
   const safeTraining = clampScore(trainingScore, 0, contract.trainingMax);
   const safeProduction = clampScore(productionScore, 0, contract.productionMax);
   const totalScore = safeTraining + safeProduction;
@@ -42,18 +46,33 @@ export function getPeriodStatus(percent) {
   return "période à reprendre";
 }
 
-export function computePeriodScore({ lessonScores = [], periodMax = LESSONS_SPEC.periodMax } = {}) {
+export function computePeriodScore({
+  lessonScores = [],
+  periodMax = null,
+  levelId = "5e",
+} = {}) {
+  const contract = getScoringContract(levelId);
+  const resolvedPeriodMax =
+    periodMax == null ? contract.periodMax : Number(periodMax);
+  const safePeriodMax = Number.isFinite(resolvedPeriodMax)
+    ? resolvedPeriodMax
+    : contract.periodMax;
+
   const totalScore = clampScore(
-    lessonScores.reduce((sum, score) => sum + clampScore(score, 0, LESSONS_SPEC.lessonMax), 0),
+    lessonScores.reduce(
+      (sum, score) => sum + clampScore(score, 0, contract.lessonMax),
+      0,
+    ),
     0,
-    periodMax,
+    safePeriodMax,
   );
 
-  const percent = periodMax > 0 ? Math.round((totalScore / periodMax) * 100) : 0;
+  const percent =
+    safePeriodMax > 0 ? Math.round((totalScore / safePeriodMax) * 100) : 0;
 
   return {
     totalScore,
-    maxScore: periodMax,
+    maxScore: safePeriodMax,
     percent,
     status: getPeriodStatus(percent),
   };
