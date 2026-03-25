@@ -7636,76 +7636,19 @@ export const lessons5eP3 = [
   "training": [
 
     {
-
-      "id": "p3-l12-t1",
-
-      "type": "matching",
-
-      "prompt": "Associe chaque mot latin à sa bonne traduction.",
-
-      "pairs": [
-
-        {
-
-          "left": "hortus",
-
-          "right": "jardin"
-
-        },
-
-        {
-
-          "left": "taeda",
-
-          "right": "flambeau"
-
-        },
-
-        {
-
-          "left": "vestigium",
-
-          "right": "trace"
-
-        },
-
-        {
-
-          "left": "oppidum",
-
-          "right": "ville"
-
-        }
-
-      ],
-
-      "rightOptions": [
-
-        "trace",
-
-        "ville",
-
-        "jardin",
-
-        "flambeau"
-
-      ],
-
-      "expected": {
-
-        "hortus": "jardin",
-
-        "taeda": "flambeau",
-
-        "vestigium": "trace",
-
-        "oppidum": "ville"
-
-      },
-
-      "points": 1
-
-    },
+  "id": "p3-l12-t1",
+  "type": "singleChoice",
+  "prompt": "Mini-texte : « Servus ad portam villae currit. » Quel groupe signifie exactement « de la maison » ?",
+  "options": [
+    "ad portam",
+    "portam",
+    "villae",
+    "servus"
+  ],
+  "expected": "villae",
+  "shuffle": true,
+  "points": 1
+},
 
     {
 
