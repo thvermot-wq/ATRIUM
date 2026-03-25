@@ -1,24 +1,73 @@
 import assert from "node:assert/strict";
-import { LESSONS_SPEC, periods, lessons } from "../assets/js/lessons.js";
+import {
+  LEVEL_LESSONS_SPEC,
+  LESSONS_SPEC,
+  periods,
+  lessons,
+  periodsByLevel,
+  lessonsByLevel,
+} from "../assets/js/lessons.js";
+
+const EXPECTED_SPECS = {
+  "5e": {
+    periods: 3,
+    lessonsPerPeriod: 13,
+    lessonsTotal: 39,
+    lessonMax: 10,
+    trainingMax: 7,
+    productionMax: 3,
+    periodMax: 130,
+    validationPercent: 80,
+    validationMinScore: 104,
+  },
+  "4e": {
+    periods: 3,
+    lessonsPerPeriod: 15,
+    lessonsTotal: 45,
+    lessonMax: 13,
+    trainingMax: 7,
+    productionMax: 6,
+    periodMax: 195,
+    validationPercent: 80,
+    validationMinScore: 156,
+  },
+  "3e": {
+    periods: 3,
+    lessonsPerPeriod: 15,
+    lessonsTotal: 45,
+    lessonMax: 13,
+    trainingMax: 7,
+    productionMax: 6,
+    periodMax: 195,
+    validationPercent: 80,
+    validationMinScore: 156,
+  },
+};
+
+function assertLevelContract(levelId) {
+  const expected = EXPECTED_SPECS[levelId];
+  const spec = LEVEL_LESSONS_SPEC[levelId];
+  const levelPeriods = periodsByLevel[levelId];
+  const levelLessons = lessonsByLevel[levelId];
+
+  assert.deepEqual(spec, expected);
+  assert.equal(levelPeriods.length, expected.periods);
+  assert.equal(levelLessons.length, expected.lessonsTotal);
+
+  levelPeriods.forEach((period) => {
+    const periodLessons = levelLessons.filter((lesson) => lesson.periodId === period.id);
+    assert.equal(periodLessons.length, expected.lessonsPerPeriod);
+    assert.equal(period.maxScore, expected.periodMax);
+  });
+}
 
 function run() {
-  assert.equal(LESSONS_SPEC.periods, 3);
-  assert.equal(LESSONS_SPEC.lessonsPerPeriod, 13);
-  assert.equal(LESSONS_SPEC.lessonsTotal, 39);
-  assert.equal(LESSONS_SPEC.lessonMax, 10);
-  assert.equal(LESSONS_SPEC.trainingMax, 7);
-  assert.equal(LESSONS_SPEC.productionMax, 3);
-  assert.equal(LESSONS_SPEC.periodMax, 130);
-  assert.equal(LESSONS_SPEC.validationPercent, 80);
-  assert.equal(LESSONS_SPEC.validationMinScore, 104);
+  // Compat descendante : les exports non namespacés restent ceux de la 5e
+  assert.deepEqual(LESSONS_SPEC, LEVEL_LESSONS_SPEC["5e"]);
   assert.equal(periods.length, 3);
   assert.equal(lessons.length, 39);
 
-  periods.forEach((period) => {
-    const periodLessons = lessons.filter((lesson) => lesson.periodId === period.id);
-    assert.equal(periodLessons.length, 13);
-    assert.equal(period.maxScore, 130);
-  });
+  ["5e", "4e", "3e"].forEach(assertLevelContract);
 
   console.log("spec-invariants assertions passed");
 }
