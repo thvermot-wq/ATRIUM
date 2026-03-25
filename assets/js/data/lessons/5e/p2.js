@@ -586,6 +586,7 @@ export const lessons5eP2 = [
       "in + ablatif = dans",
       "ex + ablatif = hors de, depuis",
       "ante + accusatif = devant",
+      "ianua = porte",
       "templum = temple",
       "taberna = boutique",
       "via = rue",
@@ -4903,7 +4904,7 @@ export const lessons5eP2 = [
 "falsum (nom./acc.) = faux",
 "nomen (nom./acc.) = nom",
 "signum (nom./acc.) = signe",
-"vicina, vicinae f. = voisine",
+"vicina, vicinae, f. = voisine",
 "lego, legit = je lis ; il/elle lit",
 "ostendo, ostendit = je montre ; il/elle montre"
 
