@@ -243,22 +243,16 @@ export const lessons5eP2 = [
   "prompt": "Traduis en français : Cur vicinus negat ?",
   "expected": "pourquoi le voisin nie-t-il ?",
   "acceptedAnswers": [
-    "pourquoi le voisin nie-t-il ?",
-    "pourquoi le voisin nie t il ?",
     "pourquoi le voisin nie-t-il",
     "pourquoi le voisin nie",
-    "pour quelle raison le voisin nie ?",
     "pour quelle raison le voisin nie"
   ],
   "answerConfig": {
     "type": "translation-segment",
     "language": "fr",
     "accepted": [
-      "pourquoi le voisin nie-t-il ?",
-      "pourquoi le voisin nie t il ?",
       "pourquoi le voisin nie-t-il",
       "pourquoi le voisin nie",
-      "pour quelle raison le voisin nie ?",
       "pour quelle raison le voisin nie"
     ]
   },
@@ -275,39 +269,27 @@ export const lessons5eP2 = [
   "prompt": "Traduis en français : Quis donum videt ?",
   "expected": "qui voit l'offrande ?",
   "acceptedAnswers": [
-    "qui voit l'offrande ?",
     "qui voit l'offrande",
-    "qui voit le cadeau ?",
     "qui voit le cadeau",
-    "qui voit le don ?",
     "qui voit le don",
-    "qui aperçoit l'offrande ?",
     "qui aperçoit l'offrande",
-    "qui aperçoit le cadeau ?",
     "qui aperçoit le cadeau",
-    "qui aperçoit le don ?",
     "qui aperçoit le don"
   ],
   "answerConfig": {
     "type": "translation-segment",
     "language": "fr",
     "accepted": [
-      "qui voit l'offrande ?",
-      "qui voit l'offrande",
-      "qui voit le cadeau ?",
-      "qui voit le cadeau",
-      "qui voit le don ?",
-      "qui voit le don",
-      "qui aperçoit l'offrande ?",
-      "qui aperçoit l'offrande",
-      "qui aperçoit le cadeau ?",
-      "qui aperçoit le cadeau",
-      "qui aperçoit le don ?",
-      "qui aperçoit le don"
+       "qui voit l'offrande",
+       "qui voit le cadeau",
+       "qui voit le don",
+       "qui aperçoit l'offrande",
+       "qui aperçoit le cadeau",
+       "qui aperçoit le don"
     ]
   },
   "points": 1,
-  "canonicalAnswer": "qui voit l'offrande ?",
+  "canonicalAnswer": "qui voit l'offrande",
   "normalization": {
     "trim": true,
     "collapseSpaces": true,
@@ -984,13 +966,7 @@ export const lessons5eP2 = [
 
   "acceptedAnswers": [
 
-    "ad templum ; in via ; ex taberna ; ante ianuam",
-
-    "ad templum, in via, ex taberna, ante ianuam",
-
-    "ad templum / in via / ex taberna / ante ianuam",
-
-    "ad templum in via ex taberna ante ianuam"
+    "ad templum ; in via ; ex taberna ; ante ianuam"
 
   ],
 
@@ -1002,13 +978,7 @@ export const lessons5eP2 = [
 
     "accepted": [
 
-      "ad templum ; in via ; ex taberna ; ante ianuam",
-
-      "ad templum, in via, ex taberna, ante ianuam",
-
-      "ad templum / in via / ex taberna / ante ianuam",
-
-      "ad templum in via ex taberna ante ianuam"
+      "ad templum ; in via ; ex taberna ; ante ianuam"
 
     ]
 
@@ -3808,13 +3778,7 @@ export const lessons5eP2 = [
 
   "acceptedAnswers": [
 
-    "clamo ; clamas ; clamat",
-
-    "clamo, clamas, clamat",
-
-    "clamo / clamas / clamat",
-
-    "clamo clamas clamat"
+    "clamo ; clamas ; clamat"
 
   ],
 
@@ -3826,13 +3790,7 @@ export const lessons5eP2 = [
 
     "accepted": [
 
-      "clamo ; clamas ; clamat",
-
-      "clamo, clamas, clamat",
-
-      "clamo / clamas / clamat",
-
-      "clamo clamas clamat"
+      "clamo ; clamas ; clamat"
 
     ]
 
@@ -4608,13 +4566,7 @@ export const lessons5eP2 = [
 
   "acceptedAnswers": [
 
-    "clamamus ; clamatis ; clamant",
-
-    "clamamus, clamatis, clamant",
-
-    "clamamus / clamatis / clamant",
-
-    "clamamus clamatis clamant"
+    "clamamus ; clamatis ; clamant"
 
   ],
 
@@ -4626,13 +4578,7 @@ export const lessons5eP2 = [
 
     "accepted": [
 
-      "clamamus ; clamatis ; clamant",
-
-      "clamamus, clamatis, clamant",
-
-      "clamamus / clamatis / clamant",
-
-      "clamamus clamatis clamant"
+      "clamamus ; clamatis ; clamant"
 
     ]
 
