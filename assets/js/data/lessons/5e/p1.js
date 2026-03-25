@@ -7229,181 +7229,91 @@ export const lessons5eP1 = [
 
       },
 
-      {
-
-        "id": "p1-l12-p3",
-
-        "type": "textInput",
-
-        "prompt": "🧩 Traduis en latin : Titus porte la tablette au forum",
-
-        "expected": "Titus tabellam ad forum portat",
-
-        "acceptedAnswers": [
-
-          "Titus tabellam ad forum portat",
-
-          "Titus tabellam portat ad forum",
-
-          "Titus ad forum tabellam portat",
-
-          "Titus ad forum portat tabellam",
-
-          "Titus portat tabellam ad forum",
-
-          "Titus portat ad forum tabellam",
-
-          "tabellam Titus ad forum portat",
-
-          "tabellam Titus portat ad forum",
-
-          "tabellam ad forum Titus portat",
-
-          "tabellam ad forum portat Titus",
-
-          "tabellam portat Titus ad forum",
-
-          "tabellam portat ad forum Titus",
-
-          "ad forum Titus tabellam portat",
-
-          "ad forum Titus portat tabellam",
-
-          "ad forum tabellam Titus portat",
-
-          "ad forum tabellam portat Titus",
-
-          "ad forum portat Titus tabellam",
-
-          "ad forum portat tabellam Titus",
-
-          "portat Titus tabellam ad forum",
-
-          "portat Titus ad forum tabellam",
-
-          "portat tabellam Titus ad forum",
-
-          "portat tabellam ad forum Titus",
-
-          "portat ad forum Titus tabellam",
-
-          "portat ad forum tabellam Titus"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "one-of",
-
-          "language": "latin",
-
-          "accepted": [
-
-            "Titus tabellam ad forum portat",
-
-            "Titus tabellam portat ad forum",
-
-            "Titus ad forum tabellam portat",
-
-            "Titus ad forum portat tabellam",
-
-            "Titus portat tabellam ad forum",
-
-            "Titus portat ad forum tabellam",
-
-            "tabellam Titus ad forum portat",
-
-            "tabellam Titus portat ad forum",
-
-            "tabellam ad forum Titus portat",
-
-            "tabellam ad forum portat Titus",
-
-            "tabellam portat Titus ad forum",
-
-            "tabellam portat ad forum Titus",
-
-            "ad forum Titus tabellam portat",
-
-            "ad forum Titus portat tabellam",
-
-            "ad forum tabellam Titus portat",
-
-            "ad forum tabellam portat Titus",
-
-            "ad forum portat Titus tabellam",
-
-            "ad forum portat tabellam Titus",
-
-            "portat Titus tabellam ad forum",
-
-            "portat Titus ad forum tabellam",
-
-            "portat tabellam Titus ad forum",
-
-            "portat tabellam ad forum Titus",
-
-            "portat ad forum Titus tabellam",
-
-            "portat ad forum tabellam Titus"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "Titus tabellam ad forum portat",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "Titus tabellam ad forum portat",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "lorem ipsum",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      }
+     {
+  "id": "p1-l12-p3",
+  "type": "textInput",
+  "prompt": "🧩 Traduis en latin : Titus porte la tablette vers la taverne",
+  "expected": "Titus tabellam ad popinam portat",
+  "acceptedAnswers": [
+    "Titus tabellam ad popinam portat",
+    "Titus tabellam portat ad popinam",
+    "Titus ad popinam tabellam portat",
+    "Titus ad popinam portat tabellam",
+    "Titus portat tabellam ad popinam",
+    "Titus portat ad popinam tabellam",
+    "tabellam Titus ad popinam portat",
+    "tabellam Titus portat ad popinam",
+    "tabellam ad popinam Titus portat",
+    "tabellam ad popinam portat Titus",
+    "tabellam portat Titus ad popinam",
+    "tabellam portat ad popinam Titus",
+    "ad popinam Titus tabellam portat",
+    "ad popinam Titus portat tabellam",
+    "ad popinam tabellam Titus portat",
+    "ad popinam tabellam portat Titus",
+    "ad popinam portat Titus tabellam",
+    "ad popinam portat tabellam Titus",
+    "portat Titus tabellam ad popinam",
+    "portat Titus ad popinam tabellam",
+    "portat tabellam Titus ad popinam",
+    "portat tabellam ad popinam Titus",
+    "portat ad popinam Titus tabellam",
+    "portat ad popinam tabellam Titus"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "Titus tabellam ad popinam portat",
+      "Titus tabellam portat ad popinam",
+      "Titus ad popinam tabellam portat",
+      "Titus ad popinam portat tabellam",
+      "Titus portat tabellam ad popinam",
+      "Titus portat ad popinam tabellam",
+      "tabellam Titus ad popinam portat",
+      "tabellam Titus portat ad popinam",
+      "tabellam ad popinam Titus portat",
+      "tabellam ad popinam portat Titus",
+      "tabellam portat Titus ad popinam",
+      "tabellam portat ad popinam Titus",
+      "ad popinam Titus tabellam portat",
+      "ad popinam Titus portat tabellam",
+      "ad popinam tabellam Titus portat",
+      "ad popinam tabellam portat Titus",
+      "ad popinam portat Titus tabellam",
+      "ad popinam portat tabellam Titus",
+      "portat Titus tabellam ad popinam",
+      "portat Titus ad popinam tabellam",
+      "portat tabellam Titus ad popinam",
+      "portat tabellam ad popinam Titus",
+      "portat ad popinam Titus tabellam",
+      "portat ad popinam tabellam Titus"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "Titus tabellam ad popinam portat",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Réinvestissement guidé de P1 : COD + groupe de direction + ordre latin flexible.",
+  "rejectIf": [
+    "verbe incorrect",
+    "sens inversé sujet/objet",
+    "cas incorrect",
+    "forme latine impossible au niveau de la leçon",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    { "input": "Titus tabellam ad popinam portat", "isCorrect": true },
+    { "input": "portat Titus tabellam ad popinam", "isCorrect": true },
+    { "input": "réponse hors-sujet", "isCorrect": false }
+  ]
+}
 
     ],
 
