@@ -907,18 +907,19 @@ export const lessons5eP1 = [
       },
 
       {
-
-        "id": "p1-l2-t7",
-
-        "type": "textInput",
-
-        "prompt": "🏠 Écris en latin : « porte » (nom).",
-
-        "expected": "ianua",
-
-        "points": 1
-
-      }
+  "id": "p1-l2-t7",
+  "type": "singleChoice",
+  "prompt": "🏠 Mini-scène : « Niger ________ stat. » Quel groupe signifierait exactement « devant la porte » ?",
+  "options": [
+    "ante ianuam",
+    "prope ianuam",
+    "in ianua",
+    "per fenestram"
+  ],
+  "expected": "ante ianuam",
+  "shuffle": true,
+  "points": 1
+}
 
     ],
 
@@ -1524,19 +1525,20 @@ export const lessons5eP1 = [
 
       },
 
-      {
-
-        "id": "p1-l3-t7",
-
-        "type": "textInput",
-
-        "prompt": "🛍️ Écris en latin : « marchand ».",
-
-        "expected": "mercator",
-
-        "points": 1
-
-      }
+     {
+  "id": "p1-l3-t7",
+  "type": "singleChoice",
+  "prompt": "🛍️ Mini-scène : « Currit Mercator ad forum. » Quel mot est le verbe conjugué ?",
+  "options": [
+    "Mercator",
+    "ad forum",
+    "currit",
+    "forum"
+  ],
+  "expected": "currit",
+  "shuffle": true,
+  "points": 1
+}
 
     ],
 
@@ -1940,34 +1942,19 @@ export const lessons5eP1 = [
     "training": [
 
       {
-
-        "id": "p1-l4-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "🏺 Le petit sanctuaire se dit :",
-
-        "options": [
-
-          "sacellum",
-
-          "forum",
-
-          "insula",
-
-          "thermae",
-
-          "taberna"
-
-        ],
-
-        "expected": "sacellum",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+  "id": "p1-l4-t1",
+  "type": "singleChoice",
+  "prompt": "🏺 Mini-scène : « Vetus sacerdos donum ponit. » Quel mot est le verbe ?",
+  "options": [
+    "vetus",
+    "sacerdos",
+    "donum",
+    "ponit"
+  ],
+  "expected": "ponit",
+  "shuffle": true,
+  "points": 1
+},
 
       {
   "id": "p1-l4-t2",
@@ -2795,18 +2782,19 @@ export const lessons5eP1 = [
       },
 
       {
-
-        "id": "p1-l5-t7",
-
-        "type": "textInput",
-
-        "prompt": "🐕 Écris en latin : « chien ».",
-
-        "expected": "canis",
-
-        "points": 1
-
-      }
+  "id": "p1-l5-t7",
+  "type": "singleChoice",
+  "prompt": "🐕 Dans quelle phrase le chien est-il le complément d’objet direct ?",
+  "options": [
+    "Niger latrat.",
+    "Livia canem videt.",
+    "Canis currit.",
+    "Canis ante ianuam stat."
+  ],
+  "expected": "Livia canem videt.",
+  "shuffle": true,
+  "points": 1
+}
 
     ],
 
@@ -3856,35 +3844,20 @@ export const lessons5eP1 = [
 
     "training": [
 
-      {
-
-        "id": "p1-l7-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "⛲ La fontaine se dit :",
-
-        "options": [
-
-          "fons",
-
-          "forum",
-
-          "domus",
-
-          "murus",
-
-          "via"
-
-        ],
-
-        "expected": "fons",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+    {
+  "id": "p1-l7-t1",
+  "type": "singleChoice",
+  "prompt": "⛲ Dans « Marcus ad fontem venit », quel mot indique la direction ?",
+  "options": [
+    "Marcus",
+    "ad",
+    "venit",
+    "fontem"
+  ],
+  "expected": "ad",
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -4482,34 +4455,18 @@ export const lessons5eP1 = [
     "training": [
 
       {
-
-        "id": "p1-l8-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "🍞 Le 'boulanger' se dit :",
-
-        "options": [
-
-          "pistor",
-
-          "mercator",
-
-          "agricola",
-
-          "poeta",
-
-          "servus"
-
-        ],
-
-        "expected": "pistor",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+  "id": "p1-l8-t1",
+  "type": "singleChoice",
+  "prompt": "🍞 Dans « Pistor panem portat », quel mot est le complément d’objet direct ?",
+  "options": [
+    "Pistor",
+    "panem",
+    "portat",
+  ],
+  "expected": "panem",
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -5312,19 +5269,13 @@ export const lessons5eP1 = [
 
       },
 
-      {
-
-        "id": "p1-l9-t7",
-
-        "type": "textInput",
-
-        "prompt": "🎓 Écris en latin : « élève ».",
-
-        "expected": "discipulus",
-
-        "points": 1
-
-      }
+     {
+  "id": "p1-l9-t7",
+  "type": "textInput",
+  "prompt": "🎓 Complète en latin : « L’élève écoute le maître » = Discipulus ____ audit.",
+  "expected": "magistrum",
+  "points": 1
+}
 
     ],
 
@@ -7424,32 +7375,19 @@ export const lessons5eP1 = [
   "training": [
 
     {
-
-      "id": "p1-l13-t1",
-
-      "type": "singleChoice",
-
-      "prompt": "🟢 « sum » signifie :",
-
-      "options": [
-
-        "je suis",
-
-        "tu es",
-
-        "il est",
-
-        "je vois"
-
-      ],
-
-      "expected": "je suis",
-
-      "shuffle": true,
-
-      "points": 1
-
-    },
+  "id": "p1-l13-t1",
+  "type": "singleChoice",
+  "prompt": "🟢 Dans « ego sum, Marcus est », quelle forme signifie « il est » ?",
+  "options": [
+    "sum",
+    "Marcus",
+    "est",
+    "ego"
+  ],
+  "expected": "est",
+  "shuffle": true,
+  "points": 1
+},
 
     {
 
