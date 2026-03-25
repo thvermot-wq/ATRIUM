@@ -2409,35 +2409,18 @@ export const lessons5eP3 = [
       },
 
       {
-
   "id": "p3-l4-t7",
-
   "type": "singleChoice",
-
-  "prompt": "Mini-texte : « In macello rumor crescit : vir oleum emit noctu. » Pourquoi cet achat effectué par l'homme paraît-il inquiétant ?",
-
+  "prompt": "Mini-texte : « In macello rumor crescit : noctu vir oleum emit. » Quel mot indique le moment ?",
   "options": [
-
-    "parce qu’il achète de l’huile en pleine nuit",
-
-    "parce qu’il vend du blé au marché",
-
-    "parce qu’il prie dans un temple",
-
-    "parce qu’il parle avec ses voisins"
-
+    "noctu",
+    "oleum",
+    "vir",
+    "macello"
   ],
-
-  "expected": [
-
-    "parce qu’il achète de l’huile en pleine nuit"
-
-  ],
-
+  "expected": "noctu",
   "shuffle": true,
-
   "points": 1
-
 }
 
     ],
@@ -3068,15 +3051,15 @@ export const lessons5eP3 = [
 
       },
 
-     {
+    {
   "id": "p3-l5-t7",
   "type": "singleChoice",
   "prompt": "Mini-texte : « Sero virum tabernarius videt. Amicus dubitat. » Qui a vu l’homme tard dans la nuit ?",
   "options": [
     "le boutiquier",
     "l’ami",
-    "le videur",
-    "le serrurier"
+    "la voisine",
+    "le maître"
   ],
   "expected": "le boutiquier",
   "shuffle": true,
