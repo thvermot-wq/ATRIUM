@@ -4620,19 +4620,21 @@ export const lessons5eP3 = [
 
         "acceptedAnswers": [
 
-          "quaerimus ; auditis ; respondent"
+          "quaerimus ; auditis ; respondent",
+          "quaerimus, auditis, respondent"
 
         ],
 
         "answerConfig": {
 
-          "type": "translation-segment",
+          "type": "one-of",
 
           "language": "latin",
 
           "accepted": [
 
-            "quaerimus ; auditis ; respondent"
+            "quaerimus ; auditis ; respondent",
+            "quaerimus, auditis, respondent"
 
           ]
 
@@ -4675,6 +4677,14 @@ export const lessons5eP3 = [
           {
 
             "input": "quaerimus ; auditis ; respondent",
+
+            "isCorrect": true
+
+          },
+
+          {
+
+            "input": "quaerimus, auditis, respondent",
 
             "isCorrect": true
 
@@ -5787,25 +5797,26 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Lis : « Vir currit ; sub porticu latet. » Quelle reformulation correspond exactement à la scène ?",
+      "prompt": "Dans « Vir currit ; sub porticu latet », quel verbe dit l’action accomplie sous le porche ?",
 
       "options": [
 
-        "Il fuit puis se cache",
+        "latet",
 
-        "Il dîne puis s’endort",
+        "currit",
 
-        "Il parle puis rit",
+        "intrat",
 
-        "Il prépare puis vend un dîner"
+        "parat"
 
       ],
 
-      "expected": "Il fuit puis se cache",
+      "expected": "latet",
 
       "shuffle": true,
 
-      "points": 1
+      "points": 1,
+      "feedback": "sub porticu indique le lieu ; le verbe associé à cette action est latet."
 
     },
 
