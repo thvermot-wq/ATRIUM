@@ -1296,7 +1296,8 @@ export const lessons5eP1 = [
 
       "mercator = marchand",
 
-      "panis = pain",
+      "panis = pain (nominatif/sujet)",
+      "panem = pain (accusatif/COD)",
 
       "vinum = vin",
 
