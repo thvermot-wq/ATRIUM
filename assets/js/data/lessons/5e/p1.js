@@ -3838,11 +3838,9 @@ export const lessons5eP1 = [
 
     "lexicon": [
 
-      "fons = fontaine",
-
-      "aqua = eau",
-
-      "situla = seau",
+      "fons (nom.), fontem (acc.) = fontaine",
+      "aqua (nom.), aquam (acc.) = eau",
+      "situla (nom.), situlam (acc.) = seau",
 
       "in fonte = à la fontaine",
 
@@ -3955,7 +3953,7 @@ export const lessons5eP1 = [
 
             "left": "aquam portat",
 
-            "right": "porte de l’eau"
+            "right": "il porte de l’eau"
 
           }
 
@@ -3965,7 +3963,7 @@ export const lessons5eP1 = [
 
           "vers la fontaine",
 
-          "porte de l’eau",
+          "il porte de l’eau",
 
           "à la fontaine"
 
@@ -3977,7 +3975,7 @@ export const lessons5eP1 = [
 
           "ad fontem": "vers la fontaine",
 
-          "aquam portat": "porte de l’eau"
+          "aquam portat": "il porte de l’eau"
 
         },
 
@@ -5850,24 +5848,23 @@ export const lessons5eP1 = [
 
       },
 
-     {
+    {
   "id": "p1-l10-t7",
   "type": "textInput",
-  "prompt": "🛁 Écris en latin : « eau chaude ».",
-  "expected": "aqua calida",
+  "prompt": "🛁 Complète en latin : « Livia ... manet » = « Livia reste aux thermes ».",
+  "expected": "in thermis",
   "acceptedAnswers": [
-    "aqua calida",
-    "calida aqua"
+    "in thermis"
   ],
   "answerConfig": {
     "type": "one-of",
     "language": "latin",
     "accepted": [
-      "aqua calida",
-      "calida aqua"
+      "in thermis"
     ]
   },
-  "points": 1
+  "points": 1,
+  "feedback": "Avec manet, on indique ici le lieu où l’on reste : in thermis."
 }
 
     ],
