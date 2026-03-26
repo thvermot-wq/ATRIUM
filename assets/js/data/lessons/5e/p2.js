@@ -966,7 +966,9 @@ export const lessons5eP2 = [
 
   "acceptedAnswers": [
 
-    "ad templum ; in via ; ex taberna ; ante ianuam"
+    "ad templum ; in via ; ex taberna ; ante ianuam",
+    "ad templum, in via, ex taberna, ante ianuam",
+    "ad templum / in via / ex taberna / ante ianuam"
 
   ],
 
@@ -978,7 +980,9 @@ export const lessons5eP2 = [
 
     "accepted": [
 
-      "ad templum ; in via ; ex taberna ; ante ianuam"
+      "ad templum ; in via ; ex taberna ; ante ianuam",
+      "ad templum, in via, ex taberna, ante ianuam",
+      "ad templum / in via / ex taberna / ante ianuam"
 
     ]
 
@@ -1029,6 +1033,14 @@ export const lessons5eP2 = [
     {
 
       "input": "ad templum, in via, ex taberna, ante ianuam",
+
+      "isCorrect": true
+
+    },
+
+    {
+
+      "input": "ad templum / in via / ex taberna / ante ianuam",
 
       "isCorrect": true
 
@@ -3778,19 +3790,21 @@ export const lessons5eP2 = [
 
   "acceptedAnswers": [
 
-    "clamo ; clamas ; clamat"
+    "clamo ; clamas ; clamat",
+    "clamo, clamas, clamat"
 
   ],
 
   "answerConfig": {
 
-    "type": "translation-segment",
+    "type": "one-of",
 
     "language": "latin",
 
     "accepted": [
 
-      "clamo ; clamas ; clamat"
+      "clamo ; clamas ; clamat",
+      "clamo, clamas, clamat"
 
     ]
 
@@ -3840,7 +3854,7 @@ export const lessons5eP2 = [
 
     {
 
-      "input": "clamo clamas clamat",
+      "input": "clamo, clamas, clamat",
 
       "isCorrect": true
 
@@ -4566,19 +4580,21 @@ export const lessons5eP2 = [
 
   "acceptedAnswers": [
 
-    "clamamus ; clamatis ; clamant"
+    "clamamus ; clamatis ; clamant",
+    "clamamus, clamatis, clamant"
 
   ],
 
   "answerConfig": {
 
-    "type": "translation-segment",
+    "type": "one-of",
 
     "language": "latin",
 
     "accepted": [
 
-      "clamamus ; clamatis ; clamant"
+      "clamamus ; clamatis ; clamant",
+      "clamamus, clamatis, clamant"
 
     ]
 
@@ -4604,7 +4620,7 @@ export const lessons5eP2 = [
 
   },
 
-  "gradingFocus": "Produire correctement les तीन formes du pluriel : 1re, 2e et 3e personne.",
+  "gradingFocus": "Produire correctement les trois formes du pluriel : 1re, 2e et 3e personne.",
 
   "rejectIf": [
 
@@ -4628,7 +4644,7 @@ export const lessons5eP2 = [
 
     {
 
-      "input": "clamamus clamatis clamant",
+      "input": "clamamus, clamatis, clamant",
 
       "isCorrect": true
 
@@ -6805,25 +6821,27 @@ export const lessons5eP2 = [
 
         "type": "singleChoice",
 
-        "prompt": "Dans l’histoire, Discordia est…",
+        "prompt": "Dans « Discordia vicum turbat », quel mot accomplit l’action ?",
 
         "options": [
 
-          "une force qui divise",
+          "Discordia",
 
-          "une voisine",
+          "vicum",
 
-          "un chien",
+          "turbat",
 
-          "une jumelle maléfique de Flavia"
+          "pax"
 
         ],
 
-        "expected": "une force qui divise",
+        "expected": "Discordia",
 
         "shuffle": true,
 
-        "points": 1
+        "points": 1,
+
+        "feedback": "Le sujet est le mot qui fait l’action ; ici, Discordia trouble le quartier."
 
       },
 
@@ -8868,3 +8886,4 @@ export const lessons5eP2 = [
 ];
 
       
+
