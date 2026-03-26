@@ -2272,7 +2272,7 @@ export const lessons5eP1 = [
 
         "type": "textInput",
 
-        "prompt": "🏺 Traduis en français : Sextus coronam movet",
+        "prompt": "🏺 Si 'Sextus gemmam spectat' signifie 'Sextus regarde la pierre précieuse', traduis donc en français : 'Sextus coronam movet'",
 
         "expected": "sextus déplace la couronne",
 
@@ -2376,7 +2376,7 @@ export const lessons5eP1 = [
 
         "type": "textInput",
 
-        "prompt": "🏺 Traduis en latin : Livia regarde l’autel",
+        "prompt": "🏺 Traduis en latin : 'Livia regarde l’autel'",
 
         "expected": "Livia aram spectat",
 
