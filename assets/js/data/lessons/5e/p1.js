@@ -675,7 +675,8 @@ export const lessons5eP1 = [
 
       "ianua = porte",
 
-      "fenestra = fenêtre",
+      "fenestra (nominatif) = fenêtre (sujet)",
+      "fenestram (accusatif) = fenêtre (COD)",
       "per + accusatif = par, à travers",
 
       "cella = cellier",
@@ -850,29 +851,29 @@ export const lessons5eP1 = [
 
         "type": "singleChoice",
 
-        "prompt": "🏠 « Niger ante ianuam stat » : Niger est…",
+        "prompt": "🏠 « Niger prope ianuam stat » : Niger se tient…",
 
         "options": [
 
-          "devant la porte",
+          "près de la porte",
 
           "dans le forum",
 
           "sur le mur",
 
-          "à la fontaine",
+          "devant la porte",
 
           "dans l’école"
 
         ],
 
-        "expected": "devant la porte",
+        "expected": "près de la porte",
 
         "shuffle": true,
 
         "points": 1,
 
-        "feedback": "Cherche le verbe stat puis le lieu ante ianuam."
+        "feedback": "Dans le lexique, cherche le verbe stat puis le lieu prope ianuam."
 
       },
 
@@ -1088,35 +1089,23 @@ export const lessons5eP1 = [
 
         "type": "textInput",
 
-        "prompt": "🏠 Traduis en latin : Niger est devant la porte",
+        "prompt": "🏠 Traduis en latin : Niger regarde par la fenêtre",
 
-        "expected": "Niger ante ianuam stat",
+        "expected": "Niger per fenestram spectat",
 
         "acceptedAnswers": [
 
-          "Niger ante ianuam stat",
+          "Niger per fenestram spectat",
 
-          "Niger stat ante ianuam",
+          "Niger spectat per fenestram",
 
-          "ante ianuam Niger stat",
+          "per fenestram Niger spectat",
 
-          "ante ianuam stat Niger",
+          "per fenestram spectat Niger",
 
-          "stat Niger ante ianuam",
+          "spectat Niger per fenestram",
 
-          "stat ante ianuam Niger",
-
-          "Niger ante ianuam est",
-
-          "Niger est ante ianuam",
-
-          "ante ianuam Niger est",
-
-          "ante ianuam est Niger",
-
-          "est Niger ante ianuam",
-
-          "est ante ianuam Niger"
+          "spectat per fenestram Niger"
 
         ],
 
@@ -1128,29 +1117,17 @@ export const lessons5eP1 = [
 
           "accepted": [
 
-            "Niger ante ianuam stat",
+           "Niger per fenestram spectat",
 
-            "Niger stat ante ianuam",
+          "Niger spectat per fenestram",
 
-            "ante ianuam Niger stat",
+          "per fenestram Niger spectat",
 
-            "ante ianuam stat Niger",
+          "per fenestram spectat Niger",
 
-            "stat Niger ante ianuam",
+          "spectat Niger per fenestram",
 
-            "stat ante ianuam Niger",
-
-            "Niger ante ianuam est",
-
-            "Niger est ante ianuam",
-
-            "ante ianuam Niger est",
-
-            "ante ianuam est Niger",
-
-            "est Niger ante ianuam",
-
-            "est ante ianuam Niger"
+          "spectat per fenestram Niger"
 
           ]
 
@@ -1158,7 +1135,7 @@ export const lessons5eP1 = [
 
         "points": 1,
 
-        "canonicalAnswer": "Niger ante ianuam stat",
+        "canonicalAnswer": "Niger per fenestram spectat",
 
         "normalization": {
 
@@ -1192,7 +1169,7 @@ export const lessons5eP1 = [
 
           {
 
-            "input": "Niger ante ianuam stat",
+            "input": "Niger per fenestram spectat",
 
             "isCorrect": true
 
@@ -1228,7 +1205,9 @@ export const lessons5eP1 = [
 
         "in insula",
 
-        "ante ianuam"
+        "ante ianuam",
+
+        "per fenestram"
 
       ],
 
@@ -1238,7 +1217,9 @@ export const lessons5eP1 = [
 
         "insula",
 
-        "localisation"
+        "ianua",
+
+        "fenestra"
 
       ]
 
