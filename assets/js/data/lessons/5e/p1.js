@@ -1932,7 +1932,8 @@ export const lessons5eP1 = [
 
       "moveo, moves, movet = je bouge, tu bouges, il/elle bouge | déplace",
       "quaero, quaeris, quaerit = je cherche, tu cherches, il/elle cherche",
-      "specto, spectas, spectat = je regarde, tu regardes, il/elle regarde"
+      "specto, spectas, spectat = je regarde, tu regardes, il/elle regarde",
+      "timeo, times, timet = je m'inquiète, tu t'inquiètes, il/elle s'inquiète"
 
     ],
 
@@ -1977,17 +1978,17 @@ export const lessons5eP1 = [
      {
   "id": "p1-l4-t3",
   "type": "multipleChoice",
-  "prompt": "🏺 Mini-scène : « Livia aram spectat. Sextus gemmam quaerit. » Coche les deux mots qui désignent ce que les personnages regardent ou cherchent.",
+  "prompt": "🏺 Mini-scène : « Sacerdos timet ; Livia aram spectat et Sextus gemmam quaerit. » Coche les deux mots qui désignent ce que les personnages regardent ou cherchent.",
   "options": [
-    "aram",
-    "coronam",
+    "l'autel",
+    "une pierre précieuse",
     "Livia",
     "Sextus",
-    "movet"
+    "une couronne sacrée"
   ],
   "expected": [
-    "aram",
-    "coronam"
+    "une pierre précieuse",
+    "l'autel"
   ],
   "shuffle": true,
   "points": 1
