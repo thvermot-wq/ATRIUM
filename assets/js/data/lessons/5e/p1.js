@@ -489,7 +489,7 @@ export const lessons5eP1 = [
 
         "type": "textInput",
 
-        "prompt": "👋 Traduis en latin : Marcus salue Flavia",
+        "prompt": "👋 Si 'Flavia Sextum salutat' signifie 'Flavia salue Sextus' et 'Sextus Marcum salutat' signifie 'Sextus salue Marcus', traduis alors en latin : Marcus salue Flavia",
 
         "expected": "Marcus Flaviam salutat",
 
