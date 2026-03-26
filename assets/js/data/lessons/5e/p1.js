@@ -1918,6 +1918,8 @@ export const lessons5eP1 = [
 
       "ara (nom.), aram (acc.) = autel",
       "donum = offrande",
+      "libum = petit gâteau",
+      "gemma = pierre précieuse, gemme",
 
       "corona (nom.), coronam (acc.) = couronne",
 
@@ -1929,6 +1931,7 @@ export const lessons5eP1 = [
       "ponit = il/elle pose",
 
       "moveo, moves, movet = je bouge, tu bouges, il/elle bouge | déplace",
+      "quaero, quaeris, quaerit = je cherche, tu cherches, il/elle cherche",
       "specto, spectas, spectat = je regarde, tu regardes, il/elle regarde"
 
     ],
@@ -1974,7 +1977,7 @@ export const lessons5eP1 = [
      {
   "id": "p1-l4-t3",
   "type": "multipleChoice",
-  "prompt": "🏺 Mini-scène : « Livia aram spectat. Sextus coronam movet. » Coche les deux mots qui désignent ce que les personnages regardent ou déplacent.",
+  "prompt": "🏺 Mini-scène : « Livia aram spectat. Sextus gemmam quaerit. » Coche les deux mots qui désignent ce que les personnages regardent ou cherchent.",
   "options": [
     "aram",
     "coronam",
@@ -2056,19 +2059,19 @@ export const lessons5eP1 = [
 
         "type": "singleChoice",
 
-        "prompt": "🏺 « Vetus sacerdos donum ponit » : qui pose l’offrande ?",
+        "prompt": "🏺 « Livia ad sacellum venit. Vetus sacerdos donum ponit ; Sextus libum portat. » : qui pose l’offrande ?",
 
         "options": [
 
-          "la vieille prêtresse",
+          "La vieille prêtresse",
 
-          "l’offrande",
+          "Livia",
 
-          "la déesse",
+          "Un porteur",
 
-          "Marcus",
+          "Un poney",
 
-          "Niger"
+          "Sextus"
 
         ],
 
@@ -2086,7 +2089,7 @@ export const lessons5eP1 = [
 
         "type": "singleChoice",
 
-        "prompt": "🏺 « Donum Sextus movet » :",
+        "prompt": "🏺 Choisis la bonne traduction : « Donum Sextus movet » :",
 
         "options": [
 
@@ -2096,9 +2099,9 @@ export const lessons5eP1 = [
 
           "Sextus regarde l’offrande",
 
-          "Sextus crie",
+          "Sextus crie dans le temple",
 
-          "L’offrande est sacrée"
+          "Il y a six offrandes"
 
         ],
 
@@ -2118,7 +2121,7 @@ export const lessons5eP1 = [
 
         "type": "textInput",
 
-        "prompt": "🏺 Complète : « Sextus ... movet » pour dire « Sextus déplace la couronne ».",
+        "prompt": "🏺 Complète : « In sacellum Sextus _____________ movet », pour dire : « Dans le petit sanctuaire, Sextus déplace la couronne ».",
 
         "expected": "coronam",
 
@@ -2476,7 +2479,9 @@ export const lessons5eP1 = [
 
       "retains": [
 
-        "Les noms de cette leçon tournent autour du champ lexical du sacré, du religieux."
+        "Les noms de cette leçon tournent autour du champ lexical du sacré, du religieux.",
+        "Première introduction à l'accusatif latin (= COD), avec la terminaison -m."
+        
 
       ],
 
@@ -2486,7 +2491,9 @@ export const lessons5eP1 = [
 
         "corona",
 
-        "Vetus sacerdos donum ponit"
+        "Vetus sacerdos donum ponit",
+        "Sextus gemmam quaerit",
+        "Livia aram spectat"
 
       ],
 
