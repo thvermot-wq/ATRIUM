@@ -1272,23 +1272,41 @@ export const lessons5eP1 = [
     "lexicon": [
 
       "forum = forum, place",
+      "prima luce = à l'aube, au petit matin, dès les premières lueurs",
 
-      "taberna = boutique",
+      "taberna (nom.) = boutique",
+      "tabernam (acc.) = boutique (COD)",
+      "in tabernam = dans la boutique (mouvement)",
+
+      "lucerna (nom.) = lampe (sujet)",
+      "lucernam (acc.) = lampe (COD)",
+
+      "amphora (nom.) = amphore (sujet)",
+      "amphoram (acc.) = amphore (COD)",
+
+      "tunica (nom.) = tunique (sujet)",
+      "tunicam (acc.) = tunique (COD)",
+
+      "panis (nom.) = pain (sujet)",
+      "panem (acc.) = pain (COD)",
 
       "mercator = marchand",
 
-      "panis = pain (nominatif/sujet)",
-      "panem = pain (accusatif/COD)",
+      "panis (nominatif) = pain (sujet)",
+      "panem (accusatif) = pain (COD)",
 
       "vinum = vin",
 
       "portat = il/elle porte",
 
       "currit = il/elle court",
+      "considerat = il/elle regarde, examine",
+      "entrat = il/elle entre",
 
       "spectat = il/elle regarde",
 
       "vendit = il/elle vend",
+      "emit = il/elle achète",
 
       "ad forum = vers le forum"
 
@@ -1353,7 +1371,7 @@ export const lessons5eP1 = [
 
   "type": "multipleChoice",
 
-  "prompt": "🛍️ Mini-scène : « Mercator panem et vinum portat. » Coche les deux objets que porte le marchand.",
+  "prompt": "🛍️ Mini-scène : « Lucius tunicam considerat. Mercator panem et vinum portat. Flavia in tabernam entrat. » Coche les deux objets que porte le marchand.",
 
   "options": [
 
@@ -1449,15 +1467,15 @@ export const lessons5eP1 = [
 
         "type": "singleChoice",
 
-        "prompt": "🛍️ « Mercator panem portat » : qui porte le pain ?",
+        "prompt": "🛍️ « Panem Flavia emit. Niger currit in tabernam. Mercator amphoram portat » : qui achète le pain ?",
 
         "options": [
 
           "mercator",
 
-          "panem",
+          "un porteur",
 
-          "forum",
+          "un émissaire",
 
           "Flavia",
 
@@ -1465,7 +1483,7 @@ export const lessons5eP1 = [
 
         ],
 
-        "expected": "mercator",
+        "expected": "Flavia",
 
         "shuffle": true,
 
@@ -1508,12 +1526,12 @@ export const lessons5eP1 = [
      {
   "id": "p1-l3-t7",
   "type": "singleChoice",
-  "prompt": "🛍️ Mini-scène : « Currit Mercator ad forum. » Quel mot est le verbe conjugué ?",
+  "prompt": "🛍️ Mini-scène : « Prima luce currit mercator ad forum. » Quel mot est le verbe conjugué ?",
   "options": [
     "Mercator",
     "ad forum",
     "currit",
-    "forum"
+    "prima luce"
   ],
   "expected": "currit",
   "shuffle": true,
