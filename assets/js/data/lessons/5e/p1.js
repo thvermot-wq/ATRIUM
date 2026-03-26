@@ -2,29 +2,29 @@
 
 const headerContexts5eP1 = {
 
-  "p1-l1": "Les pavés sont encore mouillés quand Niger rase les jambes des passants. « Ton chien a déjà choisi la bagarre », souffle Marcus, et l’animal file vers une porte entrouverte.",
+  "p1-l1": "Les pavés sont encore mouillés quand Niger rase les jambes des passants. «Ton chien a déjà choisi la bagarre», souffle Marcus, et l’animal file vers une porte entrouverte.",
 
-  "p1-l2": "Aurelia reste sur le seuil pendant que Lucius écoute la rue d’un air distrait. « Une maison tranquille, ça n’existe que vue de dehors », dit-il en relevant la tête vers l’étage.",
+  "p1-l2": "Aurelia reste sur le seuil pendant que Lucius écoute la rue d’un air distrait. «Une maison tranquille, ça n’existe que vue de dehors», dit-il en relevant la tête vers l’étage.",
 
-  "p1-l3": "Sur la place, le marchand range son pain et son vin avec une hâte suspecte. « Celui-là vend, oui, mais il cache mieux qu’il ne compte », glisse Flavia, puis elle passe derrière l’étal.",
+  "p1-l3": "Sur la place, le marchand range son pain et son vin avec une hâte suspecte. «Celui-là vend, oui, mais il cache mieux qu’il ne compte», glisse Flavia, puis elle passe derrière l’étal.",
 
-  "p1-l4": "Près du petit autel, la pierre porte une marque nette là où l’offrande manquait. « Quelqu’un a déplacé ça sans trembler », dit Livia, et elle redresse la couronne du bout des doigts.",
+  "p1-l4": "Près du petit autel, la pierre porte une marque nette là où l’offrande manquait. «Quelqu’un a déplacé ça sans trembler», dit Livia, et elle redresse la couronne du bout des doigts.",
 
-  "p1-l5": "Niger s’arrête devant un mur blanchi et renifle jusqu’à coller sa truffe au crépi. « Tu as trouvé quoi, cette fois ? » demande Marcus, puis il suit la fissure jusqu’à un tournant de ruelle.",
+  "p1-l5": "Niger s’arrête devant un mur blanchi et renifle jusqu’à coller sa truffe au crépi. «Tu as trouvé quoi, cette fois ?» demande Marcus, puis il suit la fissure jusqu’à un tournant de ruelle.",
 
-  "p1-l6": "Une tablette de cire circule enfin de main en main, graisseuse sur un coin. « On a écrit vite, mais on savait très bien où piquer », tranche Flavia, puis elle la retourne d’un geste sec.",
+  "p1-l6": "Une tablette de cire circule enfin de main en main, graisseuse sur un coin. «On a écrit ça à la va-vite, mais on savait très bien où piquer», tranche Flavia, puis elle la retourne d’un geste sec.",
 
-  "p1-l7": "À la fontaine, l’eau claque dans les seaux et personne ne raconte la même chose. « Une rumeur, ça assoiffe tout un quartier », lâche Marcus, en interrompant la troisième version.",
+  "p1-l7": "À la fontaine, l’eau claque dans les seaux et personne ne raconte la même chose. «Une rumeur, ça assoiffe tout un quartier», lâche Marcus, en interrompant la troisième version.",
 
-  "p1-l8": "Devant la boutique du boulanger, la chaleur sort jusque dans la rue. « Si le mystère se cache dans ce pain, il a déjà trop cuit », dit Flavia, et elle suit de l'oeil le client qui s’éclipse.",
+  "p1-l8": "Devant la boutique du boulanger, la chaleur sort jusque dans la rue. «Si le mystère se cache dans ce pain, il a déjà trop cuit», dit Flavia, et elle suit de l'oeil le client qui s’éclipse.",
 
-  "p1-l9": "Dans la petite école, le maître lit haut et les élèves n’écoutent qu’à moitié. « Quand un enfant baisse les yeux comme ça, c’est qu’il sait quelque chose en plus », murmure Livia.",
+  "p1-l9": "Dans la petite école, le maître lit haut et les élèves n’écoutent qu’à moitié. «Quand un enfant baisse les yeux comme ça, c’est qu’il sait quelque chose en plus», murmure Livia.",
 
-  "p1-l10": "Aux bains, la buée colle aux bras et les voix passent d’un bassin à l’autre. « Ici, les gens lavent leur peau, jamais leur langue », dit Marcus, puis il se rapproche du bord sans faire de bruit.",
+  "p1-l10": "Aux bains, la buée colle aux bras et les voix passent d’un bassin à l’autre. «Ici, les gens lavent leur peau, jamais leur langue», dit Marcus, puis il se rapproche du bord sans faire de bruit.",
 
-  "p1-l11": "Sur le mur, des accusations ont été griffés si fort que la chaux s’est soulevée. « Joli courage : écrire ça dehors et se taire dedans », souffle Flavia, puis elle relit le nom une seconde fois.",
+  "p1-l11": "Sur le mur, des accusations ont été griffés si fort que la chaux s’est soulevée. «Joli courage : écrire ça dehors et se taire dedans!», souffle Flavia, puis elle relit le nom une seconde fois.",
 
-  "p1-l12": "Le soir, dans une popina, ils étalent pain, tablette et souvenirs du jour sur la même table. « On ne cherche plus un voleur, on cherche ce qui fait dérailler tout le monde », note Marcus, puis le silence tombe d’un coup.",
+  "p1-l12": "Le soir, dans une popina, ils étalent pain, tablette et souvenirs du jour sur la même table. «On ne cherche plus un voleur, on cherche ce qui fait dérailler tout le monde», note Marcus, puis le silence tombe d’un coup.",
 
   "p1-l13": "Le soir tombe sur Subure. Marcus vérifie qui est là, qui manque encore, et chacun apprend enfin à dire simplement : je suis, tu es, il est ; je suis là, tu es là, il est là."
 
