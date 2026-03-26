@@ -1339,19 +1339,19 @@ export const lessons5eP1 = [
 
         "type": "singleChoice",
 
-        "prompt": "🛍️ Une boutique se dit :",
+        "prompt": "🛍️ Parmi les mots de la leçon, lequel désigne le lieu où le marchand vend ?",
 
         "options": [
 
           "taberna",
 
-          "insula",
+          "mercator",
 
-          "via",
+          "panis",
 
-          "porta",
+          "vinum",
 
-          "aqua"
+          "portat"
 
         ],
 
@@ -1359,7 +1359,9 @@ export const lessons5eP1 = [
 
         "shuffle": true,
 
-        "points": 1
+        "points": 1,
+
+        "feedback": "taberna nomme le lieu du commerce ; mercator la personne ; panis et vinum les objets."
 
       },
 
@@ -1917,7 +1919,7 @@ export const lessons5eP1 = [
       "ara (nom.), aram (acc.) = autel",
       "donum = offrande",
 
-      "corona = couronne",
+      "corona (nom.), coronam (acc.) = couronne",
 
       "dea = déesse",
 
@@ -2116,9 +2118,29 @@ export const lessons5eP1 = [
 
         "type": "textInput",
 
-        "prompt": "🏺 Écris en latin : « couronne ».",
+        "prompt": "🏺 Complète : « Sextus ... movet » pour dire « Sextus déplace la couronne ».",
 
-        "expected": "corona",
+        "expected": "coronam",
+
+        "acceptedAnswers": [
+
+          "coronam"
+
+        ],
+
+        "answerConfig": {
+
+          "type": "one-of",
+
+          "language": "latin",
+
+          "accepted": [
+
+            "coronam"
+
+          ]
+
+        },
 
         "points": 1
 
@@ -4030,9 +4052,29 @@ export const lessons5eP1 = [
 
         "type": "textInput",
 
-        "prompt": "⛲ Écris en latin : « eau ».",
+        "prompt": "⛲ Complète : « Aurelia ... manet » pour dire « Aurélia reste à la fontaine ».",
 
-        "expected": "aqua",
+        "expected": "in fonte",
+
+        "acceptedAnswers": [
+
+          "in fonte"
+
+        ],
+
+        "answerConfig": {
+
+          "type": "one-of",
+
+          "language": "latin",
+
+          "accepted": [
+
+            "in fonte"
+
+          ]
+
+        },
 
         "points": 1
 
@@ -5594,7 +5636,7 @@ export const lessons5eP1 = [
 
       "thermae = les thermes",
       "in thermas (accusatif) = dans les thermes (mouvement / direction)",
-      "ad thermas (accusatif = vers les thermes (mouvement / direction)",
+      "ad thermas (accusatif) = vers les thermes (mouvement / direction)",
 
       "in thermis (ablatif) = aux thermes (situation fixe)",
 
@@ -5625,27 +5667,29 @@ export const lessons5eP1 = [
 
         "type": "singleChoice",
 
-        "prompt": "🛁 Le lieu des bains publics est :",
+        "prompt": "🛁 Quel groupe indique qu’on va vers les thermes, et non qu’on y reste déjà ?",
 
         "options": [
 
+          "ad thermas",
+
+          "in thermis",
+
+          "aqua calida",
+
           "thermae",
 
-          "taberna",
-
-          "forum",
-
-          "sacellum",
-
-          "insula"
+          "manet"
 
         ],
 
-        "expected": "thermae",
+        "expected": "ad thermas",
 
         "shuffle": true,
 
-        "points": 1
+        "points": 1,
+
+        "feedback": "ad thermas marque ici le mouvement vers le lieu ; in thermis indique le lieu où l’on se trouve."
 
       },
 
