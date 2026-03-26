@@ -8,7 +8,7 @@ const headerContexts5eP1 = {
 
   "p1-l3": "Sur la place, le marchand range son pain et son vin avec une hâte suspecte. «Celui-là vend, oui, mais il cache mieux qu’il ne compte», glisse Flavia, puis elle passe derrière l’étal.",
 
-  "p1-l4": "Près du petit autel, la pierre porte une marque nette là où l’offrande manquait. «Quelqu’un a déplacé ça sans trembler», dit Livia, et elle redresse la couronne du bout des doigts.",
+  "p1-l4": "Près du petit autel, la pierre porte une marque nette là où l’offrande manquait. «Quelqu’un a déplacé ça sans craindre qui que ce soit!», dit Livia, et elle redresse la couronne du bout des doigts.",
 
   "p1-l5": "Niger s’arrête devant un mur blanchi et renifle jusqu’à coller sa truffe au crépi. «Tu as trouvé quoi, cette fois ?» demande Marcus, puis il suit la fissure jusqu’à un tournant de ruelle.",
 
