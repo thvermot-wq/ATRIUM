@@ -2000,7 +2000,7 @@ export const lessons5eP1 = [
 
         "type": "matching",
 
-        "prompt": "🏺 Associe latin et sens.",
+        "prompt": "🏺 Associe mot latin et sens en français.",
 
         "pairs": [
 
@@ -2100,7 +2100,7 @@ export const lessons5eP1 = [
 
           "Sextus regarde l’offrande",
 
-          "Sextus crie dans le temple",
+          "Sextus mugit dans le temple",
 
           "Il y a six offrandes"
 
