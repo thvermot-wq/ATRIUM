@@ -2579,35 +2579,24 @@ export const lessons5eP1 = [
 
     "training": [
 
-      {
-
-        "id": "p1-l5-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "🐕 Niger est :",
-
-        "options": [
-
-          "le chien",
-
-          "le marchand",
-
-          "la prêtresse",
-
-          "la tablette",
-
-          "la rue"
-
-        ],
-
-        "expected": "le chien",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+   {
+  "id": "p1-l5-t1",
+  "type": "multipleChoice",
+  "prompt": "🐕 Mini-scène : « Niger ianuam spectat. Vicini canem vocant. » Coche les deux mots qui désignent le chien.",
+  "options": [
+    "Niger",
+    "canem",
+    "ianuam",
+    "vicini",
+    "vocant"
+  ],
+  "expected": [
+    "Niger",
+    "canem"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -2619,19 +2608,19 @@ export const lessons5eP1 = [
 
         "options": [
 
-          "aboie",
+          "j'aboie",
 
-          "court",
+          "tu aboies",
 
-          "porte",
+          "il aboie",
 
-          "écrit",
+          "nous aboyons",
 
-          "regarde"
+          "vous aboyez"
 
         ],
 
-        "expected": "aboie",
+        "expected": "il aboie",
 
         "shuffle": true,
 
@@ -2749,7 +2738,7 @@ export const lessons5eP1 = [
 
         "type": "singleChoice",
 
-        "prompt": "🐕 Piège : « Canem Livia videt » signifie :",
+        "prompt": "🐕 Piège : « Canem videt Livia » signifie :",
 
         "options": [
 
@@ -2761,7 +2750,7 @@ export const lessons5eP1 = [
 
           "Le chien court",
 
-          "Livia aboie"
+          "Le chien aboie après Livia"
 
         ],
 
@@ -2776,34 +2765,35 @@ export const lessons5eP1 = [
       },
 
       {
-
-        "id": "p1-l5-t6",
-
-        "type": "singleChoice",
-
-        "prompt": "🐕 Dans « Niger currit cum Livia », le sujet est :",
-
-        "options": [
-
-          "Niger",
-
-          "currit",
-
-          "ianua",
-
-          "canem",
-
-          "Livia"
-
-        ],
-
-        "expected": "Niger",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+  "id": "p1-l5-t6",
+  "type": "matching",
+  "prompt": "🐕 Dans « Niger currit cum Livia », associe chaque élément à son rôle.",
+  "pairs": [
+    {
+      "left": "Niger",
+      "right": "sujet"
+    },
+    {
+      "left": "currit",
+      "right": "verbe"
+    },
+    {
+      "left": "cum Livia",
+      "right": "CC d'accompagnement"
+    }
+  ],
+  "rightOptions": [
+    "sujet",
+    "verbe",
+    "CC d'accompagnement"
+  ],
+  "expected": {
+    "Niger": "sujet",
+    "currit": "verbe",
+    "cum Livia": "CC d'accompagnement"
+  },
+  "points": 1
+},
 
       {
   "id": "p1-l5-t7",
@@ -2825,112 +2815,77 @@ export const lessons5eP1 = [
     "production": [
 
       {
-
-        "id": "p1-l5-p1",
-
-        "type": "textInput",
-
-        "prompt": "🐕 Traduis en français : Niger ante ianuam stat",
-
-        "expected": "niger est devant la porte",
-
-        "acceptedAnswers":           [
-
-            "niger est devant la porte",
-
-            "niger se tient devant la porte",
-
-            "niger reste devant la porte",
-
-            "niger se trouve devant la porte",
-
-            "le chien niger est devant la porte",
-
-            "le chien niger se tient devant la porte"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted":             [
-
-              "niger est devant la porte",
-
-              "niger se tient devant la porte",
-
-              "niger reste devant la porte"
-
-            ],
-
-          "synonyms":             [
-
-              "niger se trouve devant la porte",
-
-              "le chien niger est devant la porte",
-
-              "le chien niger se tient devant la porte"
-
-            ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "niger est devant la porte",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "niger est devant la porte",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
+  "id": "p1-l5-p1",
+  "type": "textInput",
+  "prompt": "🐕 Traduis en français : Niger ante ianuam stat",
+  "expected": "niger est devant la porte",
+  "acceptedAnswers": [
+    "niger est devant la porte",
+    "niger se tient devant la porte",
+    "niger se trouve devant la porte",
+    "niger est debout devant la porte",
+    "niger est devant une porte",
+    "niger se tient devant une porte",
+    "niger se trouve devant une porte",
+    "le chien niger est devant la porte",
+    "le chien niger se tient devant la porte",
+    "le chien est devant la porte",
+    "le chien se tient devant la porte",
+    "le chien se trouve devant la porte"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "niger est devant la porte",
+      "niger se tient devant la porte",
+      "niger se trouve devant la porte",
+      "niger est debout devant la porte",
+      "niger est devant une porte",
+      "niger se tient devant une porte",
+      "niger se trouve devant une porte",
+      "le chien niger est devant la porte",
+      "le chien niger se tient devant la porte",
+      "le chien est devant la porte",
+      "le chien se tient devant la porte",
+      "le chien se trouve devant la porte"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "niger est devant la porte",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Traduire correctement le sujet, le groupe de lieu ante ianuam et le verbe stat.",
+  "rejectIf": [
+    "verbe français incompatible avec stat",
+    "groupe de lieu absent ou incorrect",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    {
+      "input": "niger est devant la porte",
+      "isCorrect": true
+    },
+    {
+      "input": "le chien se tient devant la porte",
+      "isCorrect": true
+    },
+    {
+      "input": "niger attend à la porte",
+      "isCorrect": false
+    },
+    {
+      "input": "niger est dans la porte",
+      "isCorrect": false
+    }
+  ]
+},
 
       {
 
@@ -3023,109 +2978,83 @@ export const lessons5eP1 = [
 
       },
 
-      {
-
-        "id": "p1-l5-p3",
-
-        "type": "textInput",
-
-        "prompt": "🐕 Traduis en latin : Marcus regarde le chien",
-
-        "expected": "Marcus canem spectat",
-
-        "acceptedAnswers": [
-
-          "Marcus canem spectat",
-
-          "Marcus spectat canem",
-
-          "canem Marcus spectat",
-
-          "canem spectat Marcus",
-
-          "spectat Marcus canem",
-
-          "spectat canem Marcus"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "one-of",
-
-          "language": "latin",
-
-          "accepted": [
-
-            "Marcus canem spectat",
-
-            "Marcus spectat canem",
-
-            "canem Marcus spectat",
-
-            "canem spectat Marcus",
-
-            "spectat Marcus canem",
-
-            "spectat canem Marcus"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "Marcus canem spectat",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "Marcus canem spectat",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "lorem ipsum",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      }
+     {
+  "id": "p1-l5-p3",
+  "type": "textInput",
+  "prompt": "🐕 Traduis en latin : Marcus regarde le chien",
+  "expected": "Marcus canem spectat",
+  "acceptedAnswers": [
+    "Marcus canem spectat",
+    "Marcus spectat canem",
+    "canem Marcus spectat",
+    "canem spectat Marcus",
+    "spectat Marcus canem",
+    "spectat canem Marcus",
+    "Marcus canem videt",
+    "Marcus videt canem",
+    "canem Marcus videt",
+    "canem videt Marcus",
+    "videt Marcus canem",
+    "videt canem Marcus"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "Marcus canem spectat",
+      "Marcus spectat canem",
+      "canem Marcus spectat",
+      "canem spectat Marcus",
+      "spectat Marcus canem",
+      "spectat canem Marcus",
+      "Marcus canem videt",
+      "Marcus videt canem",
+      "canem Marcus videt",
+      "canem videt Marcus",
+      "videt Marcus canem",
+      "videt canem Marcus"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "Marcus canem spectat",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Produire correctement un sujet au nominatif, un COD à l'accusatif et un verbe de perception correct, avec ordre latin flexible.",
+  "rejectIf": [
+    "verbe incorrect",
+    "sens inversé sujet/objet",
+    "forme latine impossible au niveau de la leçon",
+    "réponse incomplète"
+  ],
+  "tests": [
+    {
+      "input": "Marcus canem spectat",
+      "isCorrect": true
+    },
+    {
+      "input": "Marcus canem videt",
+      "isCorrect": true
+    },
+    {
+      "input": "Marcus canis videt",
+      "isCorrect": false
+    },
+    {
+      "input": "canem Marcus amat",
+      "isCorrect": false
+    },
+    {
+      "input": "Marcus videt",
+      "isCorrect": false
+    }
+  ]
+}
 
     ],
 
