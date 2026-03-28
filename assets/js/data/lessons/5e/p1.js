@@ -3138,17 +3138,17 @@ export const lessons5eP1 = [
       "tabella (nom.), tabellam (acc.) = tablette",
       "epistula (nom.), epistulam (acc.) = lettre",
 
-      "scribit = il/elle écrit",
+      "scribo, scribis, scribit = j'écris, tu écris, il/elle écrit",
 
-      "legit = il/elle lit",
+      "lego, legis, legit = je lis, tu lis, il/elle lit",
 
-      "portat = il/elle porte",
+      "porto, portas, portat = je porte, tu portes, il/elle porte",
 
-      "habet = il/elle a",
+      "habeo, habes, habet = j'ai, tu as, il/elle a",
 
-      "quaerit = il/elle cherche",
+      "quaero, quaeris, quaerit = je cherche, tu cherches, il/elle cherche",
 
-      "invenit = il/elle trouve"
+      "invenio, invenis, invenit = je trouve, tu trouves il/elle trouve"
 
     ],
 
@@ -3193,7 +3193,7 @@ export const lessons5eP1 = [
 
           "échange la lettre",
 
-          "crie"
+          "recopie une lettre"
 
         ],
 
@@ -3205,42 +3205,26 @@ export const lessons5eP1 = [
 
       },
 
-     {
-
+   {
   "id": "p1-l6-t3",
-
-  "type": "multipleChoice",
-
-  "prompt": "📜 Coche les trois groupes verbe + complément cohérents avec la leçon.",
-
-  "options": [
-
+  "type": "textInput",
+  "prompt": "📜 Mini-texte : « Marcus tabellam legit, epistulam quaerit, servus tabellam portat. » Recopie, au choix, un des groupes 'verbe + complément' :",
+  "expected": "tabellam legit",
+  "acceptedAnswers": [
     "tabellam legit",
-
+    "legit tabellam",
     "epistulam quaerit",
-
+    "quaerit epistulam",
     "tabellam portat",
-
-    "forum scribit",
-
-    "ianuam invenit"
-
+    "portat tabellam"
   ],
-
-  "expected": [
-
-    "tabellam legit",
-
-    "epistulam quaerit",
-
-    "tabellam portat"
-
-  ],
-
-  "shuffle": true,
-
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "ignoreCase": true,
+    "ignorePunctuation": true
+  },
   "points": 1
-
 },
 
       {
@@ -3309,7 +3293,7 @@ export const lessons5eP1 = [
 
         "type": "singleChoice",
 
-        "prompt": "📜 Piège : « Tabellam Marcus portat » signifie :",
+        "prompt": "📜 Piège : « Tabellam portat Marcus » signifie :",
 
         "options": [
 
@@ -3317,11 +3301,11 @@ export const lessons5eP1 = [
 
           "La tablette porte Marcus",
 
-          "Marcus écrit la tablette",
+          "Marcus écrit sur la tablette",
 
           "Marcus voit la tablette",
 
-          "Lucius porte la tablette"
+          "La tablette est apportée par Marcus"
 
         ],
 
@@ -3341,7 +3325,7 @@ export const lessons5eP1 = [
 
         "type": "singleChoice",
 
-        "prompt": "📜 Dans la scène, quel verbe dit qu’on trouve l’objet ?",
+        "prompt": "📜 Dans la scène, quel verbe indique qu’on trouve l’objet ?",
 
         "options": [
 
@@ -3365,19 +3349,22 @@ export const lessons5eP1 = [
 
       },
 
-      {
-
-        "id": "p1-l6-t7",
-
-        "type": "textInput",
-
-        "prompt": "📜 Écris en latin : « lettre ».",
-
-        "expected": "epistula",
-
-        "points": 1
-
-      }
+     {
+  "id": "p1-l6-t7",
+  "type": "textInput",
+  "prompt": "📜 « Je cherche la lettre avec Marcus ». Complète en latin : « Cum Marco epistulam ... »",
+  "expected": "quaero",
+  "acceptedAnswers": [
+    "quaero"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "ignoreCase": true,
+    "ignorePunctuation": true
+  },
+  "points": 1
+}
 
     ],
 
@@ -3389,7 +3376,7 @@ export const lessons5eP1 = [
 
         "type": "textInput",
 
-        "prompt": "📜 Traduis en français : Marcus tabellam portat",
+        "prompt": "📜 Traduis en français : « Marcus tabellam portat »",
 
         "expected": "marcus porte la tablette",
 
@@ -3488,108 +3475,79 @@ export const lessons5eP1 = [
       },
 
       {
-
-        "id": "p1-l6-p2",
-
-        "type": "textInput",
-
-        "prompt": "📜 Traduis en français : Lucius epistulam invenit",
-
-        "expected": "lucius trouve la lettre",
-
-        "acceptedAnswers": [
-
-          "lucius trouve la lettre",
-
-          "lucius retrouve la lettre",
-
-          "lucius découvre la lettre",
-
-          "lucius trouve une lettre",
-
-          "lucius retrouve une lettre",
-
-          "lucius découvre une lettre"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "lucius trouve la lettre",
-
-            "lucius retrouve la lettre",
-
-            "lucius découvre la lettre",
-
-            "lucius trouve une lettre",
-
-            "lucius retrouve une lettre",
-
-            "lucius découvre une lettre"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "lucius trouve la lettre",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "lucius trouve la lettre",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
+  "id": "p1-l6-p2",
+  "type": "textInput",
+  "prompt": "📜 Traduis en français : « Lucius epistulam habet »",
+  "expected": "lucius a la lettre",
+  "acceptedAnswers": [
+    "lucius a la lettre",
+    "lucius a une lettre",
+    "lucius possède la lettre",
+    "lucius possède une lettre",
+    "lucius détient la lettre",
+    "lucius détient une lettre"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "lucius a la lettre",
+      "lucius a une lettre",
+      "lucius possède la lettre",
+      "lucius possède une lettre",
+      "lucius détient la lettre",
+      "lucius détient une lettre"
+    ],
+    "ignoreDeterminers": true,
+    "ignoreContractions": true,
+    "allowPartialAnswer": "core-meaning-only"
+  },
+  "points": 1,
+  "canonicalAnswer": "lucius a la lettre",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "normalizeFrenchContractions": true,
+    "ignoreFrenchDeterminers": true
+  },
+  "gradingFocus": "Compréhension correcte en français ; déterminants non discriminants ; variantes lexicales recevables.",
+  "rejectIf": [
+    "verbe incorrect",
+    "sens inversé sujet/objet",
+    "contre-sens global",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    {
+      "input": "lucius a la lettre",
+      "isCorrect": true
+    },
+    {
+      "input": "lucius a lettre",
+      "isCorrect": true
+    },
+    {
+      "input": "lucius possède une lettre",
+      "isCorrect": true
+    },
+    {
+      "input": "lucius détient la lettre",
+      "isCorrect": true
+    },
+    {
+      "input": "lucius trouve la lettre",
+      "isCorrect": false
+    },
+    {
+      "input": "réponse hors-sujet",
+      "isCorrect": false
+    }
+  ]
+},
 
       {
 
@@ -3597,7 +3555,7 @@ export const lessons5eP1 = [
 
         "type": "textInput",
 
-        "prompt": "📜 Traduis en latin : Livia cherche la tablette",
+        "prompt": "📜 Traduis en latin : « Livia cherche la tablette »",
 
         "expected": "Livia tabellam quaerit",
 
