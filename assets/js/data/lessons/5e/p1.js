@@ -2565,10 +2565,11 @@ export const lessons5eP1 = [
       "ianua = porte",
 
       "domus = maison",
+      "cum + ablatif = avec (CC d'accompagnement)",
 
-      "spectat = il/elle regarde",
+      "specto, spectas, spectat = je regarde, tu regardes, il/elle regarde",
 
-      "videt = il/elle voit",
+      "video, vides, videt = je vois, tu vois, il/elle voit",
 
       "curro, curris, currit = je cours, tu cours, il/elle court",
       "sto, stas, stat = je me tiens, tu te tiens, il/elle se tient"
