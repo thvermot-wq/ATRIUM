@@ -16,7 +16,7 @@ const headerContexts5eP1 = {
 
   "p1-l7": "À la fontaine, l’eau claque dans les seaux et personne ne raconte la même chose. «Une rumeur, ça assoiffe tout un quartier», lâche Marcus, en interrompant la troisième version.",
 
-  "p1-l8": "Devant la boutique du boulanger, la chaleur sort jusque dans la rue. «Si le mystère se cache dans ce pain, il a déjà trop cuit», dit Flavia, et elle suit de l'oeil le client qui s’éclipse.",
+  "p1-l8": "Devant la boulangerie, l’odeur chaude attire du monde, mais Flavia ne regarde pas les miches : elle regarde les mains. « Ici, tout le monde prend, reçoit ou porte quelque chose. Si tu veux comprendre la scène, regarde ce que chacun a dans les bras. »",
 
   "p1-l9": "Dans la petite école, le maître lit haut et les élèves n’écoutent qu’à moitié. «Quand un enfant baisse les yeux comme ça, c’est qu’il sait quelque chose en plus», murmure Livia.",
 
@@ -4138,7 +4138,7 @@ export const lessons5eP1 = [
 
   },
 
-  {
+   {
 
     "id": "p1-l8",
 
@@ -4146,32 +4146,33 @@ export const lessons5eP1 = [
 
     "periodId": "p1",
 
-    "title": "Chez le boulanger - Sujet/Complément",
+    "title": "Chez le boulanger - COD",
 
     subtitle: headerContexts5eP1["p1-l8"],
 
-    "objective": "Lire une micro-scène dans une boulangerie et consolider sujet/complément.",
+    "objective": "Lire une scène de boutique et repérer le COD même quand l’ordre latin varie.",
 
-    "lessonPoint": "Le verbe et la terminaison du nom guident la fonction dans la phrase.",
+    "lessonPoint": "Le COD se lit souvent à l’accusatif. Je pars du verbe, puis je distingue le sujet et le mot qui reçoit l’action.",
 
     "canDo": [
 
-      "Je comprends une scène de métier.",
+      "Je repère le COD dans une phrase courte.",
 
-      "Je repère qui agit et ce qui est transporté.",
+      "Je distingue le sujet et le COD même si l’ordre des mots change.",
 
-      "Je traduis des phrases courtes du quotidien."
+      "Je produis un accusatif simple dans une scène du quotidien."
 
     ],
 
     "lexicon": [
 
-      "pistor = meunier / boulanger",
+      "pistor = boulanger",
 
       "panis (nom.), panem (acc.) = pain",
+
       "farina (nom.), farinam (acc.) = farine",
 
-      "taberna = boutique",
+      "taberna (nom.), tabernam (acc.) = boutique",
 
       "emit = il/elle achète",
 
@@ -4188,200 +4189,119 @@ export const lessons5eP1 = [
     "training": [
 
       {
-  "id": "p1-l8-t1",
-  "type": "singleChoice",
-  "prompt": "🍞 Dans « Pistor panem portat », quel mot est le complément d’objet direct ?",
-  "options": [
-    "Pistor",
-    "panem",
-    "portat",
-  ],
-  "expected": "panem",
-  "shuffle": true,
-  "points": 1
-},
+        "id": "p1-l8-t1",
+        "type": "singleChoice",
+        "prompt": "🍞 Dans « Panem pistor portat », quel mot est le COD ?",
+        "options": [
+          "Panem",
+          "pistor",
+          "portat"
+        ],
+        "expected": "Panem",
+        "shuffle": true,
+        "points": 1
+      },
 
       {
-
         "id": "p1-l8-t2",
-
         "type": "singleChoice",
-
-        "prompt": "🍞 « Flavia panem emit » : Flavia…",
-
+        "prompt": "🍞 « Panem Flavia emit » signifie :",
         "options": [
-
-          "achète du pain",
-
-          "porte du pain",
-
-          "voit du pain",
-
-          "écrit du pain",
-
-          "crie"
-
-        ],
-
-        "expected": "achète du pain",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-     {
-  "id": "p1-l8-t3",
-  "type": "multipleChoice",
-  "prompt": "🍞 Mini-scène : « Pistor panem portat. Flavia farinam accipit. » Coche les deux compléments d’objet.",
-  "options": [
-    "panem",
-    "farinam",
-    "Pistor",
-    "Flavia",
-    "accipit"
-  ],
-  "expected": [
-    "panem",
-    "farinam"
-  ],
-  "shuffle": true,
-  "points": 1
-},
-
-          {
-
-        "id": "p1-l8-t4",
-
-        "type": "matching",
-
-        "prompt": "🍞 Associe phrase et sens.",
-
-        "pairs": [
-
-          {
-
-            "left": "Pistor panem portat",
-
-            "right": "Le boulanger porte le pain"
-
-          },
-
-          {
-
-            "left": "Flavia panem emit",
-
-            "right": "Flavia achète du pain"
-
-          },
-
-          {
-
-            "left": "Marcus panem videt",
-
-            "right": "Marcus voit le pain"
-
-          }
-
-        ],
-
-        "rightOptions": [
-
-          "Marcus voit le pain",
-
-          "Flavia achète du pain",
-
-          "Le boulanger porte le pain"
-
-        ],
-
-        "expected": {
-
-          "Pistor panem portat": "Le boulanger porte le pain",
-
-          "Flavia panem emit": "Flavia achète du pain",
-
-          "Marcus panem videt": "Marcus voit le pain"
-
-        },
-
-        "points": 1
-
-      },
-
-      {
-
-        "id": "p1-l8-t5",
-
-        "type": "singleChoice",
-
-        "prompt": "🍞 Piège : « Panem pistor portat » signifie :",
-
-        "options": [
-
-          "Le boulanger porte le pain",
-
-          "Le pain porte le boulanger",
-
-          "Le boulanger vend le pain",
-
+          "Flavia achète le pain",
+          "Le pain achète Flavia",
           "Flavia porte le pain",
-
-          "Le four porte le pain"
-
+          "Flavia voit le pain"
         ],
-
-        "expected": "Le boulanger porte le pain",
-
+        "expected": "Flavia achète le pain",
         "shuffle": true,
-
         "points": 1
-
       },
 
       {
-
-        "id": "p1-l8-t6",
-
-        "type": "singleChoice",
-
-        "prompt": "🍞 Dans « Titus farinam accipit », accipit signifie :",
-
+        "id": "p1-l8-t3",
+        "type": "multipleChoice",
+        "prompt": "🍞 Mini-scène : « Pistor panem portat. Flavia farinam accipit. Marcus tabernam videt. » Coche les trois COD.",
         "options": [
-
-          "reçoit",
-
-          "apporte",
-
-          "regarde",
-
-          "dérange",
-
-          "salue"
-
+          "Pistor",
+          "panem",
+          "Flavia",
+          "farinam",
+          "Marcus",
+          "tabernam"
         ],
-
-        "expected": "reçoit",
-
+        "expected": [
+          "panem",
+          "farinam",
+          "tabernam"
+        ],
         "shuffle": true,
-
         "points": 1
-
       },
 
       {
-
-        "id": "p1-l8-t7",
-
+        "id": "p1-l8-t4",
         "type": "textInput",
-
-        "prompt": "🍞 Écris en latin : « pain ».",
-
-        "expected": "panis",
-
+        "prompt": "🍞 Complète avec la bonne forme : « Pistor ... portat » pour dire « Le boulanger porte la farine ».",
+        "expected": "farinam",
+        "acceptedAnswers": [
+          "farinam"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "farinam"
+          ]
+        },
         "points": 1
+      },
 
+      {
+        "id": "p1-l8-t5",
+        "type": "singleChoice",
+        "prompt": "🍞 Piège : « Farinam Flavia portat » signifie :",
+        "options": [
+          "Flavia porte la farine",
+          "La farine porte Flavia",
+          "Flavia achète la farine",
+          "Le boulanger porte la farine"
+        ],
+        "expected": "Flavia porte la farine",
+        "shuffle": true,
+        "points": 1
+      },
+
+      {
+        "id": "p1-l8-t6",
+        "type": "singleChoice",
+        "prompt": "🍞 Mini-texte : « Panem pistor portat. Farinam Flavia accipit. » Dans la deuxième phrase, quel mot est le sujet ?",
+        "options": [
+          "Farinam",
+          "Flavia",
+          "accipit",
+          "panem"
+        ],
+        "expected": "Flavia",
+        "shuffle": true,
+        "points": 1
+      },
+
+      {
+        "id": "p1-l8-t7",
+        "type": "textInput",
+        "prompt": "🍞 Complète avec la bonne forme : « Marcus ... videt » pour dire « Marcus voit la boutique ».",
+        "expected": "tabernam",
+        "acceptedAnswers": [
+          "tabernam"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "tabernam"
+          ]
+        },
+        "points": 1
       }
 
     ],
@@ -4389,319 +4309,194 @@ export const lessons5eP1 = [
     "production": [
 
       {
-
         "id": "p1-l8-p1",
-
         "type": "textInput",
-
-        "prompt": "🍞 Traduis en français : Pistor panem portat",
-
+        "prompt": "🍞 Traduis en français : Panem pistor portat",
         "expected": "le boulanger porte le pain",
-
         "acceptedAnswers": [
-
           "le boulanger porte le pain",
-
           "le boulanger apporte le pain",
-
           "le boulanger transporte le pain",
-
           "le boulanger porte du pain",
-
           "le boulanger apporte du pain",
-
           "le boulanger transporte du pain"
-
         ],
-
         "answerConfig": {
-
           "type": "translation-segment",
-
           "language": "fr",
-
           "accepted": [
-
             "le boulanger porte le pain",
-
             "le boulanger apporte le pain",
-
             "le boulanger transporte le pain",
-
             "le boulanger porte du pain",
-
             "le boulanger apporte du pain",
-
             "le boulanger transporte du pain"
-
-          ]
-
+          ],
+          "ignoreDeterminers": true,
+          "ignoreContractions": true,
+          "allowPartialAnswer": "core-meaning-only"
         },
-
         "points": 1,
-
         "canonicalAnswer": "le boulanger porte le pain",
-
         "normalization": {
-
           "trim": true,
-
           "collapseSpaces": true,
-
           "ignoreCase": true,
-
           "ignorePunctuation": true,
-
           "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
+          "ignoreDiacritics": true,
+          "normalizeFrenchContractions": true,
+          "ignoreFrenchDeterminers": true
         },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
+        "gradingFocus": "Compréhension correcte en français ; déterminants non discriminants ; variantes lexicales recevables.",
         "rejectIf": [
-
           "verbe incorrect",
-
           "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
+          "contre-sens global",
+          "réponse hors-sujet"
         ],
-
         "tests": [
-
           {
-
             "input": "le boulanger porte le pain",
-
             "isCorrect": true
-
           },
-
           {
-
-            "input": "réponse hors-sujet",
-
+            "input": "boulanger porte pain",
+            "isCorrect": true
+          },
+          {
+            "input": "le pain porte le boulanger",
             "isCorrect": false
-
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
           }
-
         ]
-
       },
 
       {
-
         "id": "p1-l8-p2",
-
         "type": "textInput",
-
-        "prompt": "🍞 Traduis en français : Flavia panem emit",
-
-        "expected": "flavia achète du pain",
-
-        "acceptedAnswers":           [
-
-            "flavia achète du pain",
-
-            "flavia achète le pain",
-
-            "flavia achète un pain",
-
-            "flavia prend du pain",
-
-            "flavia prend le pain",
-
-            "flavia prend un pain"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted":             [
-
-              "flavia achète du pain",
-
-              "flavia achète le pain",
-
-              "flavia achète un pain"
-
-            ],
-
-          "synonyms":             [
-
-              "flavia prend du pain",
-
-              "flavia prend le pain",
-
-              "flavia prend un pain"
-
-            ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "flavia achète du pain",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
+        "prompt": "🍞 Traduis en latin : Flavia reçoit la farine",
+        "expected": "Flavia farinam accipit",
+        "acceptedAnswers": [
+          "Flavia farinam accipit",
+          "Flavia accipit farinam",
+          "farinam Flavia accipit",
+          "farinam accipit Flavia",
+          "accipit Flavia farinam",
+          "accipit farinam Flavia"
         ],
-
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "Flavia farinam accipit",
+            "Flavia accipit farinam",
+            "farinam Flavia accipit",
+            "farinam accipit Flavia",
+            "accipit Flavia farinam",
+            "accipit farinam Flavia"
+          ]
+        },
+        "points": 1,
+        "canonicalAnswer": "Flavia farinam accipit",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "cas incorrect",
+          "forme latine impossible au niveau de la leçon"
+        ],
         "tests": [
-
           {
-
-            "input": "flavia achète du pain",
-
+            "input": "Flavia farinam accipit",
             "isCorrect": true
-
           },
-
           {
-
-            "input": "réponse hors-sujet",
-
+            "input": "farinam accipit Flavia",
+            "isCorrect": true
+          },
+          {
+            "input": "Flavia farina accipit",
             "isCorrect": false
-
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
           }
-
         ]
-
       },
 
-           {
-
+      {
         "id": "p1-l8-p3",
-
         "type": "textInput",
-
-        "prompt": "🍞 Traduis en latin : Marcus voit le pain",
-
-        "expected": "Marcus panem videt",
-
+        "prompt": "🍞 Traduis en latin : Marcus voit la boutique",
+        "expected": "Marcus tabernam videt",
         "acceptedAnswers": [
-
-          "Marcus panem videt",
-
-          "Marcus videt panem",
-
-          "panem Marcus videt",
-
-          "panem videt Marcus",
-
-          "videt Marcus panem",
-
-          "videt panem Marcus"
-
+          "Marcus tabernam videt",
+          "Marcus videt tabernam",
+          "tabernam Marcus videt",
+          "tabernam videt Marcus",
+          "videt Marcus tabernam",
+          "videt tabernam Marcus"
         ],
-
         "answerConfig": {
-
           "type": "one-of",
-
           "language": "latin",
-
           "accepted": [
-
-            "Marcus panem videt",
-
-            "Marcus videt panem",
-
-            "panem Marcus videt",
-
-            "panem videt Marcus",
-
-            "videt Marcus panem",
-
-            "videt panem Marcus"
-
+            "Marcus tabernam videt",
+            "Marcus videt tabernam",
+            "tabernam Marcus videt",
+            "tabernam videt Marcus",
+            "videt Marcus tabernam",
+            "videt tabernam Marcus"
           ]
-
         },
-
         "points": 1,
-
-        "canonicalAnswer": "Marcus panem videt",
-
+        "canonicalAnswer": "Marcus tabernam videt",
         "normalization": {
-
           "trim": true,
-
           "collapseSpaces": true,
-
           "ignoreCase": true,
-
           "ignorePunctuation": true,
-
           "normalizeApostrophes": true,
-
           "ignoreDiacritics": true
-
         },
-
         "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-
         "rejectIf": [
-
           "verbe incorrect",
-
           "sens inversé sujet/objet",
-
+          "cas incorrect",
           "forme latine impossible au niveau de la leçon"
-
         ],
-
         "tests": [
-
           {
-
-            "input": "Marcus panem videt",
-
+            "input": "Marcus tabernam videt",
             "isCorrect": true
-
           },
-
           {
-
-            "input": "lorem ipsum",
-
+            "input": "videt Marcus tabernam",
+            "isCorrect": true
+          },
+          {
+            "input": "Marcus taberna videt",
             "isCorrect": false
-
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
           }
-
         ]
-
       }
 
     ],
@@ -4710,17 +4505,19 @@ export const lessons5eP1 = [
 
       "retains": [
 
-        "La scène de métier consolide les mêmes repères grammaticaux : sujet, verbe, complément.",
+        "Le COD reçoit l’action du verbe et se lit souvent à l’accusatif.",
 
-        "Pour traduire : je pars du verbe, je trouve le sujet... et tout le reste est du complément !"
+        "L’ordre latin peut changer : pour traduire, je pars du verbe puis je distingue sujet et COD grâce aux formes."
 
       ],
 
       "cahier": [
 
-        "Pistor panem portat",
+        "Panem pistor portat",
 
-        "Flavia panem emit"
+        "Flavia farinam accipit",
+
+        "Marcus tabernam videt"
 
       ],
 
@@ -4728,9 +4525,9 @@ export const lessons5eP1 = [
 
         "boulanger",
 
-        "panis",
+        "cod",
 
-        "quotidien"
+        "accusatif"
 
       ]
 
@@ -4745,6 +4542,8 @@ export const lessons5eP1 = [
         "metier",
 
         "boutique",
+
+        "cod",
 
         "p1-l8"
 
