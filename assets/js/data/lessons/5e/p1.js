@@ -3717,36 +3717,45 @@ export const lessons5eP1 = [
 
     subtitle: headerContexts5eP1["p1-l7"],
 
-    "objective": "Comprendre une scène de fontaine perturbée et les actions du quotidien.",
+    "objective": "Suivre une micro-scène de fontaine en distinguant arrivée, présence, sortie et accompagnement.",
 
-    "lessonPoint": "Je lis les lieux avec in/ad pour suivre le déplacement.",
+    "lessonPoint": "Je lis ad + accusatif, in + ablatif, ex + ablatif et cum + ablatif pour suivre qui va, qui reste, qui vient de quelque part et avec qui.",
 
     "canDo": [
 
-      "Je comprends une scène autour de l’eau.",
+      "Je distingue vers, à, de et avec dans une scène simple.",
 
-      "Je distingue position et mouvement.",
+      "Je repère un groupe prépositionnel et sa valeur.",
 
-      "Je traduis des phrases courtes de lieu."
+      "Je traduis des phrases courtes de déplacement et de présence."
 
     ],
 
     "lexicon": [
 
-      "fons (nom.), fontem (acc.) = fontaine",
+      "fons (nom.), fontem (acc.), fonte (abl.) = fontaine",
+
       "aqua (nom.), aquam (acc.) = eau",
-      "situla (nom.), situlam (acc.) = seau",
+
+      "situla (nom.), situlam (acc.), situla (abl.) = seau",
+
+      "ad fontem = vers la fontaine",
 
       "in fonte = à la fontaine",
 
-      "ad fontem = vers la fontaine",
+      "ex fonte = de la fontaine",
+
+      "cum situla = avec un seau",
+
+      "cum Livia = avec Livia",
 
       "venit = il/elle vient",
 
       "manet = il/elle reste",
 
-      "turbat = il/elle trouble",
-      "porto, portas, portat = je porte, tu portes, il/elle porte"
+      "portat = il/elle porte",
+
+      "turbat = il/elle trouble"
 
     ],
 
@@ -3754,224 +3763,142 @@ export const lessons5eP1 = [
 
     "training": [
 
-    {
-  "id": "p1-l7-t1",
-  "type": "singleChoice",
-  "prompt": "⛲ Dans « Marcus ad fontem venit », quel mot indique la direction ?",
-  "options": [
-    "Marcus",
-    "ad",
-    "venit",
-    "fontem"
-  ],
-  "expected": "ad",
-  "shuffle": true,
-  "points": 1
-},
+      {
+        "id": "p1-l7-t1",
+        "type": "singleChoice",
+        "prompt": "⛲ Dans « Lucius ex fonte venit », quel groupe indique le lieu d’où l’on vient ?",
+        "options": [
+          "ex fonte",
+          "ad fontem",
+          "in fonte",
+          "cum situla"
+        ],
+        "expected": "ex fonte",
+        "shuffle": true,
+        "points": 1
+      },
 
       {
-
         "id": "p1-l7-t2",
-
         "type": "singleChoice",
-
-        "prompt": "⛲ « Marcus ad fontem venit » : Marcus va…",
-
+        "prompt": "⛲ « Marcus cum situla ad fontem venit » : Marcus…",
         "options": [
-
-          "vers la fontaine",
-
-          "dans la maison",
-
-          "sous le mur",
-
-          "au sanctuaire",
-
-          "au four"
-
+          "vient vers la fontaine avec un seau",
+          "vient de la fontaine avec un seau",
+          "reste à la fontaine avec un seau",
+          "vient vers la fontaine avec de l’eau"
         ],
-
-        "expected": "vers la fontaine",
-
+        "expected": "vient vers la fontaine avec un seau",
         "shuffle": true,
-
         "points": 1
-
       },
 
-     {
-  "id": "p1-l7-t3",
-  "type": "multipleChoice",
-  "prompt": "⛲ Mini-scène : « Lucius aquam portat. Niger situlam turbat. » Coche les deux compléments d'objet.",
-  "options": [
-    "aquam",
-    "situlam",
-    "Lucius",
-    "Niger",
-    "turbat"
-  ],
-  "expected": [
-    "aquam",
-    "situlam"
-  ],
-  "shuffle": true,
-  "points": 1
-},
+      {
+        "id": "p1-l7-t3",
+        "type": "multipleChoice",
+        "prompt": "⛲ Mini-texte : « Aurelia in fonte manet. Lucius ex fonte venit. Flavia ad fontem venit cum situla. » Coche les deux groupes qui montrent un déplacement.",
+        "options": [
+          "in fonte",
+          "ex fonte",
+          "ad fontem",
+          "cum situla",
+          "manet"
+        ],
+        "expected": [
+          "ex fonte",
+          "ad fontem"
+        ],
+        "shuffle": true,
+        "points": 1
+      },
 
       {
-
         "id": "p1-l7-t4",
-
         "type": "matching",
-
-        "prompt": "⛲ Associe expression et sens.",
-
+        "prompt": "⛲ Associe chaque groupe à sa valeur.",
         "pairs": [
-
           {
-
-            "left": "in fonte",
-
-            "right": "à la fontaine"
-
-          },
-
-          {
-
             "left": "ad fontem",
-
-            "right": "vers la fontaine"
-
+            "right": "direction"
           },
-
           {
-
-            "left": "aquam portat",
-
-            "right": "il porte de l’eau"
-
+            "left": "in fonte",
+            "right": "lieu où l’on est"
+          },
+          {
+            "left": "ex fonte",
+            "right": "origine"
+          },
+          {
+            "left": "cum Livia",
+            "right": "accompagnement"
           }
-
         ],
-
         "rightOptions": [
-
-          "vers la fontaine",
-
-          "il porte de l’eau",
-
-          "à la fontaine"
-
+          "direction",
+          "lieu où l’on est",
+          "origine",
+          "accompagnement"
         ],
-
         "expected": {
-
-          "in fonte": "à la fontaine",
-
-          "ad fontem": "vers la fontaine",
-
-          "aquam portat": "il porte de l’eau"
-
+          "ad fontem": "direction",
+          "in fonte": "lieu où l’on est",
+          "ex fonte": "origine",
+          "cum Livia": "accompagnement"
         },
-
         "points": 1
-
       },
 
       {
-
         "id": "p1-l7-t5",
-
         "type": "singleChoice",
-
-        "prompt": "⛲ « Aquam Lucius portat » : qui porte l’eau ?",
-
+        "prompt": "⛲ Dans « Marcus ad fontem venit », le groupe « ad fontem » indique…",
         "options": [
-
-          "Lucius",
-
-          "aquam",
-
-          "fons",
-
-          "Niger",
-
-          "Aurelia"
-
+          "où Marcus va",
+          "où Marcus reste",
+          "ce que Marcus porte",
+          "qui vient avec Marcus"
         ],
-
-        "expected": "Lucius",
-
+        "expected": "où Marcus va",
         "shuffle": true,
-
-        "points": 1
-
-      },
-
-      {
-
-        "id": "p1-l7-t6",
-
-        "type": "singleChoice",
-
-        "prompt": "⛲ Le verbe « turbat » veut dire :",
-
-        "options": [
-
-          "trouble",
-
-          "calme",
-
-          "regarde",
-
-          "écrit",
-
-          "salue"
-
-        ],
-
-        "expected": "trouble",
-
-        "shuffle": true,
-
         "points": 1,
-
-        "feedback": "Ce verbe sert pour les scènes de discorde."
-
+        "feedback": "ad + accusatif sert ici à indiquer la direction."
       },
 
       {
-
-        "id": "p1-l7-t7",
-
+        "id": "p1-l7-t6",
         "type": "textInput",
-
-        "prompt": "⛲ Complète : « Aurelia ... manet » pour dire « Aurélia reste à la fontaine ».",
-
-        "expected": "in fonte",
-
+        "prompt": "⛲ Mini-texte : « Marcus ad fontem venit. Livia in fonte manet. Lucius ex fonte venit cum situla. » Recopie seulement le groupe qui montre l’accompagnement.",
+        "expected": "cum situla",
         "acceptedAnswers": [
-
-          "in fonte"
-
+          "cum situla"
         ],
-
         "answerConfig": {
-
           "type": "one-of",
-
           "language": "latin",
-
           "accepted": [
-
-            "in fonte"
-
+            "cum situla"
           ]
-
         },
-
         "points": 1
+      },
 
+      {
+        "id": "p1-l7-t7",
+        "type": "textInput",
+        "prompt": "⛲ Complète : « Flavia ... venit » pour dire « Flavia vient de la fontaine ».",
+        "expected": "ex fonte",
+        "acceptedAnswers": [
+          "ex fonte"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "ex fonte"
+          ]
+        },
+        "points": 1
       }
 
     ],
@@ -3979,308 +3906,180 @@ export const lessons5eP1 = [
     "production": [
 
       {
-
         "id": "p1-l7-p1",
-
         "type": "textInput",
-
-        "prompt": "⛲ Traduis en français : Aurelia ad fontem venit",
-
-        "expected": "aurélia vient vers la fontaine",
-
+        "prompt": "⛲ Traduis en français : Lucius ex fonte venit cum situla",
+        "expected": "lucius vient de la fontaine avec un seau",
         "acceptedAnswers": [
-  "aurélia vient vers la fontaine",
-  "aurélia vient à la fontaine",
-  "aurélia va à la fontaine",
-  "aurélia se dirige vers la fontaine",
-  "aurélia se rend à la fontaine",
-  "aurélia arrive à la fontaine"
-],
-"answerConfig": {
-  "type": "translation-segment",
-  "language": "fr",
-  "accepted": [
-    "aurélia vient vers la fontaine",
-    "aurélia vient à la fontaine",
-    "aurélia va à la fontaine",
-    "aurélia se dirige vers la fontaine",
-    "aurélia se rend à la fontaine",
-    "aurélia arrive à la fontaine"
-  ]
-},
-
-        "points": 1,
-
-        "canonicalAnswer": "aurélia vient vers la fontaine",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
+          "lucius vient de la fontaine avec un seau",
+          "lucius arrive de la fontaine avec un seau",
+          "lucius vient avec un seau de la fontaine",
+          "lucius arrive avec un seau de la fontaine"
         ],
-
-        "tests": [
-
-          {
-
-            "input": "aurélia vient vers la fontaine",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
-
-            {
-
-        "id": "p1-l7-p2",
-
-        "type": "textInput",
-
-        "prompt": "⛲ Traduis en français : Lucius situlam portat",
-
-        "expected": "lucius porte le seau",
-
-        "acceptedAnswers": [
-
-          "lucius porte le seau",
-
-          "lucius apporte le seau",
-
-          "lucius transporte le seau",
-
-          "lucius porte un seau",
-
-          "lucius apporte un seau",
-
-          "lucius transporte un seau",
-
-          "lucius porte son seau",
-
-          "lucius apporte son seau",
-
-          "lucius transporte son seau"
-
-        ],
-
         "answerConfig": {
-
           "type": "translation-segment",
-
           "language": "fr",
-
           "accepted": [
-
-            "lucius porte le seau",
-
-            "lucius apporte le seau",
-
-            "lucius transporte le seau",
-
-            "lucius porte un seau",
-
-            "lucius apporte un seau",
-
-            "lucius transporte un seau",
-
-            "lucius porte son seau",
-
-            "lucius apporte son seau",
-
-            "lucius transporte son seau"
-
-          ]
-
+            "lucius vient de la fontaine avec un seau",
+            "lucius arrive de la fontaine avec un seau",
+            "lucius vient avec un seau de la fontaine",
+            "lucius arrive avec un seau de la fontaine"
+          ],
+          "ignoreDeterminers": true,
+          "ignoreContractions": true,
+          "allowPartialAnswer": "core-meaning-only"
         },
-
         "points": 1,
-
-        "canonicalAnswer": "lucius porte le seau",
-
+        "canonicalAnswer": "lucius vient de la fontaine avec un seau",
         "normalization": {
-
           "trim": true,
-
           "collapseSpaces": true,
-
           "ignoreCase": true,
-
           "ignorePunctuation": true,
-
           "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
+          "ignoreDiacritics": true,
+          "normalizeFrenchContractions": true,
+          "ignoreFrenchDeterminers": true
         },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
+        "gradingFocus": "Compréhension correcte en français ; déterminants non discriminants ; variantes lexicales recevables.",
         "rejectIf": [
-
           "verbe incorrect",
-
           "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
+          "contre-sens global",
+          "réponse hors-sujet"
         ],
-
         "tests": [
-
           {
-
-            "input": "lucius porte le seau",
-
+            "input": "lucius vient de la fontaine avec un seau",
             "isCorrect": true
-
           },
-
           {
-
+            "input": "lucius vient fontaine avec un seau",
+            "isCorrect": true
+          },
+          {
+            "input": "lucius arrive avec un seau de la fontaine",
+            "isCorrect": true
+          },
+          {
             "input": "réponse hors-sujet",
-
             "isCorrect": false
-
           }
-
         ]
-
       },
 
       {
-
-        "id": "p1-l7-p3",
-
+        "id": "p1-l7-p2",
         "type": "textInput",
-
-        "prompt": "⛲ Traduis en latin : Niger trouble la fontaine",
-
-        "expected": "Niger fontem turbat",
-
+        "prompt": "⛲ Traduis en latin : Livia reste à la fontaine",
+        "expected": "Livia in fonte manet",
         "acceptedAnswers": [
-
-          "Niger fontem turbat",
-
-          "Niger turbat fontem",
-
-          "fontem Niger turbat",
-
-          "fontem turbat Niger",
-
-          "turbat Niger fontem",
-
-          "turbat fontem Niger"
-
+          "Livia in fonte manet",
+          "Livia manet in fonte",
+          "in fonte Livia manet",
+          "in fonte manet Livia",
+          "manet Livia in fonte",
+          "manet in fonte Livia"
         ],
-
         "answerConfig": {
-
           "type": "one-of",
-
           "language": "latin",
-
           "accepted": [
-
-            "Niger fontem turbat",
-
-            "Niger turbat fontem",
-
-            "fontem Niger turbat",
-
-            "fontem turbat Niger",
-
-            "turbat Niger fontem",
-
-            "turbat fontem Niger"
-
+            "Livia in fonte manet",
+            "Livia manet in fonte",
+            "in fonte Livia manet",
+            "in fonte manet Livia",
+            "manet Livia in fonte",
+            "manet in fonte Livia"
           ]
-
         },
-
         "points": 1,
-
-        "canonicalAnswer": "Niger fontem turbat",
-
+        "canonicalAnswer": "Livia in fonte manet",
         "normalization": {
-
           "trim": true,
-
           "collapseSpaces": true,
-
           "ignoreCase": true,
-
           "ignorePunctuation": true,
-
           "normalizeApostrophes": true,
-
           "ignoreDiacritics": true
-
         },
-
         "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-
         "rejectIf": [
-
           "verbe incorrect",
-
           "sens inversé sujet/objet",
-
           "forme latine impossible au niveau de la leçon"
-
         ],
-
         "tests": [
-
           {
-
-            "input": "Niger fontem turbat",
-
+            "input": "Livia in fonte manet",
             "isCorrect": true
-
           },
-
           {
-
+            "input": "manet Livia in fonte",
+            "isCorrect": true
+          },
+          {
             "input": "lorem ipsum",
-
             "isCorrect": false
-
           }
-
         ]
+      },
 
+      {
+        "id": "p1-l7-p3",
+        "type": "textInput",
+        "prompt": "⛲ Traduis en latin : Marcus vient vers la fontaine",
+        "expected": "Marcus ad fontem venit",
+        "acceptedAnswers": [
+          "Marcus ad fontem venit",
+          "Marcus venit ad fontem",
+          "ad fontem Marcus venit",
+          "ad fontem venit Marcus",
+          "venit Marcus ad fontem",
+          "venit ad fontem Marcus"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "Marcus ad fontem venit",
+            "Marcus venit ad fontem",
+            "ad fontem Marcus venit",
+            "ad fontem venit Marcus",
+            "venit Marcus ad fontem",
+            "venit ad fontem Marcus"
+          ]
+        },
+        "points": 1,
+        "canonicalAnswer": "Marcus ad fontem venit",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Marcus ad fontem venit",
+            "isCorrect": true
+          },
+          {
+            "input": "venit Marcus ad fontem",
+            "isCorrect": true
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
 
     ],
@@ -4289,9 +4088,9 @@ export const lessons5eP1 = [
 
       "retains": [
 
-        "in et ad sont des prépositions : elles permettent de préciser un mouvement.",
+        "ad + accusatif indique vers où l’on va ; in + ablatif indique où l’on est ; ex + ablatif indique d’où l’on vient ; cum + ablatif indique l’accompagnement.",
 
-        "= Je repère mouvement, lieu, action dans une même phrase."
+        "Je suis une scène simple en lisant les groupes prépositionnels plutôt qu’en devinant l’ambiance."
 
       ],
 
@@ -4301,7 +4100,9 @@ export const lessons5eP1 = [
 
         "in fonte",
 
-        "Lucius aquam portat"
+        "ex fonte",
+
+        "cum situla"
 
       ],
 
@@ -4309,9 +4110,9 @@ export const lessons5eP1 = [
 
         "fontaine",
 
-        "aqua",
+        "prépositions",
 
-        "mouvement"
+        "déplacement"
 
       ]
 
@@ -4325,7 +4126,9 @@ export const lessons5eP1 = [
 
         "fontaine",
 
-        "in-ad",
+        "prepositions",
+
+        "in-ad-ex-cum",
 
         "p1-l7"
 
