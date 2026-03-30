@@ -4553,7 +4553,7 @@ export const lessons5eP1 = [
 
   },
 
-  {
+    {
 
     "id": "p1-l9",
 
@@ -4561,38 +4561,43 @@ export const lessons5eP1 = [
 
     "periodId": "p1",
 
-    "title": "L’école du quartier - Verbes scolaires",
+    "title": "L’école du quartier - Verbe, sujet, COD",
 
     subtitle: headerContexts5eP1["p1-l9"],
 
-    "objective": "Comprendre de petites consignes et scènes de classe dans la petite école de Subure.",
+    "objective": "Lire de petites scènes de classe en partant du verbe, puis en distinguant sujet, COD et complément de lieu.",
 
-    "lessonPoint": "Je cherche le verbe d’énoncé (legit, scribit, audit) pour comprendre la tâche.",
+    "lessonPoint": "Je cherche d’abord le verbe. Ensuite, je repère le sujet et je vérifie s’il y a un COD exprimé.",
 
     "canDo": [
 
-      "Je lis une mini-scène de classe.",
+      "Je repère le verbe d’une phrase scolaire.",
 
-      "Je relie action d’étude et personnage.",
+      "Je distingue sujet et COD même si l’ordre des mots change.",
 
-      "Je traduis des phrases scolaires courtes."
+      "Je comprends qu’un verbe peut avoir un COD… ou non."
 
     ],
 
     "lexicon": [
 
-      "ludus = l'école",
+      "ludus (nom.), ludum (acc.), ludo (abl.) = école",
 
-      "magister (nom.), magistrum (acc.) = le maître d'école",
-      "discipulus (nom.), discipulum (acc.) = l'élève",
+      "magister (nom.), magistrum (acc.) = maître d’école",
 
-      "tabella = tablette",
+      "discipulus (nom.), discipulum (acc.) = élève",
+
+      "tabella (nom.), tabellam (acc.), tabella (abl.) = tablette",
+
+      "littera (nom.), litteram (acc.) = lettre",
+
+      "in ludo = dans l’école",
 
       "legit = il/elle lit",
 
       "scribit = il/elle écrit",
 
-      "audit = il/elle écoute",
+      "audit = il/elle écoute / entend",
 
       "respondet = il/elle répond"
 
@@ -4603,453 +4608,310 @@ export const lessons5eP1 = [
     "training": [
 
       {
-
         "id": "p1-l9-t1",
-
         "type": "singleChoice",
-
-        "prompt": "🎓 Le lieu de classe est :",
-
+        "prompt": "🎓 Dans « Discipulus magistrum audit », quel mot dit l’action ?",
         "options": [
-
-          "ludus",
-
-          "forum",
-
-          "thermae",
-
-          "taberna",
-
-          "domus"
-
+          "Discipulus",
+          "magistrum",
+          "audit"
         ],
-
-        "expected": "ludus",
-
+        "expected": "audit",
         "shuffle": true,
-
         "points": 1
-
       },
 
       {
-
         "id": "p1-l9-t2",
-
         "type": "singleChoice",
-
-        "prompt": "🎓 Le magister est :",
-
+        "prompt": "🎓 « Magistrum discipulus audit » signifie :",
         "options": [
-
-          "le maître",
-
-          "l’élève",
-
-          "le marchand",
-
-          "le chien",
-
-          "la prêtresse"
-
+          "L’élève écoute le maître",
+          "Le maître écoute l’élève",
+          "L’élève répond au maître",
+          "Le maître lit l’élève"
         ],
-
-        "expected": "le maître",
-
+        "expected": "L’élève écoute le maître",
         "shuffle": true,
-
         "points": 1
-
       },
 
-     {
-  "id": "p1-l9-t3",
-  "type": "multipleChoice",
-  "prompt": "🎓 Mini-scène : « Discipulus magistrum audit. Magister discipulum audit. » Coche les deux personnes qui sont écoutées.",
-  "options": [
-    "magistrum",
-    "discipulum",
-    "discipulus",
-    "Magister",
-    "audit"
-  ],
-  "expected": [
-    "magistrum",
-    "discipulum"
-  ],
-  "shuffle": true,
-  "points": 1
-},
+      {
+        "id": "p1-l9-t3",
+        "type": "multipleChoice",
+        "prompt": "🎓 Coche les trois phrases où un COD est exprimé.",
+        "options": [
+          "Magister tabellam legit",
+          "Discipulus magistrum audit",
+          "Marcus respondet",
+          "Flavia litteram scribit"
+        ],
+        "expected": [
+          "Magister tabellam legit",
+          "Discipulus magistrum audit",
+          "Flavia litteram scribit"
+        ],
+        "shuffle": true,
+        "points": 1
+      },
 
       {
-
         "id": "p1-l9-t4",
-
-        "type": "matching",
-
-        "prompt": "🎓 Associe phrase et sens.",
-
-        "pairs": [
-
-          {
-
-            "left": "Discipulus in tabella scribit",
-
-            "right": "L'élève écrit sur la tablette"
-
-          },
-
-          {
-
-            "left": "Magister legit",
-
-            "right": "Le maître lit"
-
-          },
-
-          {
-
-            "left": "Marcus respondet",
-
-            "right": "Marcus répond"
-
-          }
-
+        "type": "textInput",
+        "prompt": "🎓 Mini-texte : « In ludo magister legit. Discipulus magistrum audit. Marcus respondet. » Recopie seulement le sujet de la deuxième phrase.",
+        "expected": "discipulus",
+        "acceptedAnswers": [
+          "discipulus",
+          "Discipulus"
         ],
-
-        "rightOptions": [
-
-          "Marcus répond",
-
-          "Le maître lit",
-
-          "L'élève écrit sur la tablette"
-
-        ],
-
-        "expected": {
-
-          "Discipulus in tabella scribit": "L'élève écrit sur la tablette",
-
-          "Magister legit": "Le maître lit",
-
-          "Marcus respondet": "Marcus répond"
-
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "discipulus",
+            "Discipulus"
+          ]
         },
-
         "points": 1
-
       },
 
       {
-
         "id": "p1-l9-t5",
-
         "type": "singleChoice",
-
-        "prompt": "🎓 Piège : « In tabella discipulus scribit » veut dire :",
-
+        "prompt": "🎓 Piège : « Tabellam magister legit » veut dire :",
         "options": [
-
-          "L’élève écrit sur la tablette",
-
-          "La tablette écrit sur l’élève",
-
-          "L’élève lit la tablette",
-
+          "Le maître lit la tablette",
+          "La tablette lit le maître",
           "Le maître écrit sur la tablette",
-
-          "L’élève répond au maître"
-
+          "L’élève lit la tablette"
         ],
-
-        "expected": "L’élève écrit sur la tablette",
-
+        "expected": "Le maître lit la tablette",
         "shuffle": true,
-
         "points": 1
-
       },
 
       {
-
         "id": "p1-l9-t6",
-
         "type": "singleChoice",
-
-        "prompt": "🎓 Dans « Titus audit », audit signifie :",
-
+        "prompt": "🎓 Dans « Marcus respondet », combien y a-t-il de COD exprimé ?",
         "options": [
-
-          "écoute",
-
-          "écrit",
-
-          "porte",
-
-          "court",
-
-          "salue"
-
+          "un",
+          "deux",
+          "aucun",
+          "on ne peut pas savoir"
         ],
-
-        "expected": "écoute",
-
+        "expected": "aucun",
         "shuffle": true,
-
         "points": 1
-
       },
 
-     {
-  "id": "p1-l9-t7",
-  "type": "textInput",
-  "prompt": "🎓 Complète en latin : « L’élève écoute le maître » = Discipulus ____ audit.",
-  "expected": "magistrum",
-  "points": 1
-}
+      {
+        "id": "p1-l9-t7",
+        "type": "textInput",
+        "prompt": "🎓 Complète avec la bonne forme : « Magister ... legit » pour dire « Le maître lit la tablette ».",
+        "expected": "tabellam",
+        "acceptedAnswers": [
+          "tabellam"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "tabellam"
+          ]
+        },
+        "points": 1
+      }
 
     ],
 
     "production": [
 
       {
-
         "id": "p1-l9-p1",
-
         "type": "textInput",
-
-        "prompt": "🎓 Traduis en français : Magister legit",
-
-        "expected": "le maître lit",
-
-      "acceptedAnswers": [
-  "le maître lit",
-  "un maître lit",
-  "le professeur lit",
-  "un professeur lit",
-  "l'enseignant lit",
-  "un enseignant lit"
-],
-"answerConfig": {
-  "type": "translation-segment",
-  "language": "fr",
-  "accepted": [
-    "le maître lit",
-    "un maître lit"
-  ],
-  "synonyms": [
-    "le professeur lit",
-    "un professeur lit",
-    "l'enseignant lit",
-    "un enseignant lit"
-  ]
-},
-
-        "points": 1,
-
-        "canonicalAnswer": "le maître lit",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
+        "prompt": "🎓 Traduis en français : Magistrum discipulus audit",
+        "expected": "l'élève écoute le maître",
+        "acceptedAnswers": [
+          "l'élève écoute le maître",
+          "l'élève entend le maître",
+          "l'élève écoute un maître",
+          "l'élève entend un maître"
         ],
-
+        "answerConfig": {
+          "type": "translation-segment",
+          "language": "fr",
+          "accepted": [
+            "l'élève écoute le maître",
+            "l'élève entend le maître",
+            "l'élève écoute un maître",
+            "l'élève entend un maître"
+          ],
+          "ignoreDeterminers": true,
+          "ignoreContractions": true,
+          "allowPartialAnswer": "core-meaning-only"
+        },
+        "points": 1,
+        "canonicalAnswer": "l'élève écoute le maître",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true,
+          "normalizeFrenchContractions": true,
+          "ignoreFrenchDeterminers": true
+        },
+        "gradingFocus": "Compréhension correcte en français ; déterminants non discriminants ; verbe et fonctions bien compris malgré l’ordre latin.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "contre-sens global",
+          "réponse hors-sujet"
+        ],
         "tests": [
-
           {
-
-            "input": "le maître lit",
-
+            "input": "l'élève écoute le maître",
             "isCorrect": true
-
           },
-
           {
-
-            "input": "réponse hors-sujet",
-
+            "input": "élève écoute maître",
+            "isCorrect": true
+          },
+          {
+            "input": "le maître écoute l'élève",
             "isCorrect": false
-
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
           }
-
         ]
-
       },
 
       {
-  "id": "p1-l9-p2",
-  "type": "textInput",
-  "prompt": " Traduis en français : Marcus respondet",
-  "expected": "marcus répond",
-  "acceptedAnswers": [
-  "marcus répond",
-  "marcus donne une réponse",
-  "marcus donne sa réponse",
-  "marcus fait une réponse",
-  "marcus apporte une réponse"
-],
-"answerConfig": {
-  "type": "translation-segment",
-  "language": "fr",
-  "tolerateArticles": true,
-  "accepted": [
-    "marcus répond",
-    "marcus donne une réponse",
-    "marcus donne sa réponse",
-    "marcus fait une réponse",
-    "marcus apporte une réponse"
-  ]
-},
-  "points": 1,
-  "canonicalAnswer": "marcus répond",
-  "normalization": {
-    "trim": true,
-    "collapseSpaces": true,
-    "ignoreCase": true,
-    "ignorePunctuation": true,
-    "normalizeApostrophes": true,
-    "ignoreDiacritics": true
-  },
-  "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-  "rejectIf": [
-    "verbe incorrect",
-    "sens inversé sujet/objet",
-    "forme latine impossible au niveau de la leçon"
-  ],
-  "tests": [
-    { "input": "marcus répond", "isCorrect": true },
-    { "input": "marcus donne sa réponse", "isCorrect": true },
-    { "input": "marcus fait une réponse", "isCorrect": true },
-    { "input": "réponse hors-sujet", "isCorrect": false }
-  ]
-},
+        "id": "p1-l9-p2",
+        "type": "textInput",
+        "prompt": "🎓 Traduis en latin : Le maître lit la tablette",
+        "expected": "Magister tabellam legit",
+        "acceptedAnswers": [
+          "Magister tabellam legit",
+          "Magister legit tabellam",
+          "tabellam Magister legit",
+          "tabellam legit Magister",
+          "legit Magister tabellam",
+          "legit tabellam Magister"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "Magister tabellam legit",
+            "Magister legit tabellam",
+            "tabellam Magister legit",
+            "tabellam legit Magister",
+            "legit Magister tabellam",
+            "legit tabellam Magister"
+          ]
+        },
+        "points": 1,
+        "canonicalAnswer": "Magister tabellam legit",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; accusatif juste ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "cas incorrect",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Magister tabellam legit",
+            "isCorrect": true
+          },
+          {
+            "input": "tabellam legit Magister",
+            "isCorrect": true
+          },
+          {
+            "input": "Magister tabella legit",
+            "isCorrect": false
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
+      },
 
       {
-
         "id": "p1-l9-p3",
-
         "type": "textInput",
-
-        "prompt": "🎓 Traduis en latin : l’élève écoute le maître",
-
-        "expected": "Discipulus magistrum audit",
-
+        "prompt": "🎓 Traduis en latin : Dans l’école, Marcus répond",
+        "expected": "In ludo Marcus respondet",
         "acceptedAnswers": [
-
-          "Discipulus magistrum audit",
-
-          "Discipulus audit magistrum",
-
-          "magistrum Discipulus audit",
-
-          "magistrum audit Discipulus",
-
-          "audit Discipulus magistrum",
-
-          "audit magistrum Discipulus"
-
+          "In ludo Marcus respondet",
+          "In ludo respondet Marcus",
+          "Marcus in ludo respondet",
+          "Marcus respondet in ludo",
+          "respondet Marcus in ludo",
+          "respondet in ludo Marcus"
         ],
-
         "answerConfig": {
-
           "type": "one-of",
-
           "language": "latin",
-
           "accepted": [
-
-            "Discipulus magistrum audit",
-
-            "Discipulus audit magistrum",
-
-            "magistrum Discipulus audit",
-
-            "magistrum audit Discipulus",
-
-            "audit Discipulus magistrum",
-
-            "audit magistrum Discipulus"
-
+            "In ludo Marcus respondet",
+            "In ludo respondet Marcus",
+            "Marcus in ludo respondet",
+            "Marcus respondet in ludo",
+            "respondet Marcus in ludo",
+            "respondet in ludo Marcus"
           ]
-
         },
-
         "points": 1,
-
-        "canonicalAnswer": "Discipulus magistrum audit",
-
+        "canonicalAnswer": "In ludo Marcus respondet",
         "normalization": {
-
           "trim": true,
-
           "collapseSpaces": true,
-
           "ignoreCase": true,
-
           "ignorePunctuation": true,
-
           "normalizeApostrophes": true,
-
           "ignoreDiacritics": true
-
         },
-
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-
+        "gradingFocus": "Réemploi correct de in + ablatif ; verbe intransitif bien identifié ; ordre latin flexible.",
         "rejectIf": [
-
           "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
+          "préposition incorrecte",
+          "forme latine impossible au niveau de la leçon",
+          "réponse hors-sujet"
         ],
-
         "tests": [
-
           {
-
-            "input": "Discipulus magistrum audit",
-
+            "input": "In ludo Marcus respondet",
             "isCorrect": true
-
           },
-
           {
-
-            "input": "lorem ipsum",
-
+            "input": "Marcus respondet in ludo",
+            "isCorrect": true
+          },
+          {
+            "input": "In ludum Marcus respondet",
             "isCorrect": false
-
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
           }
-
         ]
-
       }
 
     ],
@@ -5058,17 +4920,21 @@ export const lessons5eP1 = [
 
       "retains": [
 
-        "En classe aussi, je lis en cherchant d’abord le verbe.",
+        "Pour lire une phrase, je commence par le verbe, puis je cherche le sujet.",
 
-        "Le complément peut passer avant le sujet en latin."
+        "Je vérifie ensuite s’il y a un COD exprimé : certains verbes en ont un, d’autres non.",
+
+        "L’ordre latin peut changer sans changer les fonctions."
 
       ],
 
       "cahier": [
 
-        "Magister legit",
+        "Magistrum discipulus audit",
 
-        "Discipulus magistrum audit"
+        "Magister tabellam legit",
+
+        "In ludo Marcus respondet"
 
       ],
 
@@ -5076,9 +4942,9 @@ export const lessons5eP1 = [
 
         "ludus",
 
-        "magister",
+        "verbe",
 
-        "lecture"
+        "cod"
 
       ]
 
@@ -5092,7 +4958,9 @@ export const lessons5eP1 = [
 
         "ecole",
 
-        "lecture",
+        "verbe",
+
+        "cod",
 
         "p1-l9"
 
@@ -5114,42 +4982,43 @@ export const lessons5eP1 = [
 
     subtitle: headerContexts5eP1["p1-l10"],
 
-    "objective": "Lire une scène simple aux thermes et repérer actions et lieux.",
+    "objective": "Lire une scène aux thermes en distinguant approche, entrée, présence, sortie et accompagnement.",
 
-    "lessonPoint": "Les prépositions et le verbe suffisent souvent pour comprendre la situation.",
+    "lessonPoint": "Je combine le verbe et le groupe prépositionnel pour comprendre le trajet : ad + accusatif, in + accusatif, in + ablatif, ex + ablatif, cum + ablatif.",
 
     "canDo": [
 
-      "Je comprends une phrase de déplacement aux thermes.",
+      "Je distingue vers, dans, hors de et avec dans une phrase simple.",
 
-      "Je repère une action collective simple.",
+      "Je comprends la différence entre aller vers, entrer, rester et revenir.",
 
-      "Je traduis des phrases brèves de scène urbaine."
+      "Je traduis et je produis de petites phrases de déplacement."
 
     ],
 
     "lexicon": [
 
-      "thermae = les thermes",
-      "in thermas (accusatif) = dans les thermes (mouvement / direction)",
-      "ad thermas (accusatif) = vers les thermes (mouvement / direction)",
+      "thermae (nom.), thermas (acc.), thermis (abl.) = les thermes",
 
-      "in thermis (ablatif) = aux thermes (situation fixe)",
+      "ad thermas = vers les thermes",
 
-      "aqua = eau",
+      "in thermas = dans les thermes (entrée, mouvement)",
 
-      "calida = chaude",
+      "in thermis = dans / aux thermes (position fixe)",
 
-      "frigida = froide",
+      "ex thermis = hors des thermes / des thermes",
 
-      
+      "amicus (nom.), amico (abl.) = ami",
 
+      "cum amico = avec un ami",
 
       "intrat = il/elle entre",
 
       "currit = il/elle court",
 
-      "manet = il/elle reste"
+      "manet = il/elle reste",
+
+      "venit = il/elle vient"
 
     ],
 
@@ -5158,488 +5027,365 @@ export const lessons5eP1 = [
     "training": [
 
       {
-
         "id": "p1-l10-t1",
-
         "type": "singleChoice",
-
-        "prompt": "🛁 Quel groupe indique qu’on va vers les thermes, et non qu’on y reste déjà ?",
-
+        "prompt": "🛁 Quel groupe montre qu’on entre dans les thermes, et non qu’on va seulement vers eux ?",
         "options": [
-
           "ad thermas",
-
+          "in thermas",
           "in thermis",
-
-          "aqua calida",
-
-          "thermae",
-
-          "manet"
-
+          "ex thermis"
         ],
-
-        "expected": "ad thermas",
-
+        "expected": "in thermas",
         "shuffle": true,
-
-        "points": 1,
-
-        "feedback": "ad thermas marque ici le mouvement vers le lieu ; in thermis indique le lieu où l’on se trouve."
-
+        "points": 1
       },
 
       {
-
         "id": "p1-l10-t2",
-
         "type": "singleChoice",
-
-        "prompt": "🛁 « Marcus ad thermas currit » : Marcus court…",
-
+        "prompt": "🛁 « Marcus ad thermas currit » signifie :",
         "options": [
-
-          "vers les thermes",
-
-          "dans la maison",
-
-          "vers le forum",
-
-          "sous le mur",
-
-          "à l’école"
-
+          "Marcus court vers les thermes",
+          "Marcus entre dans les thermes",
+          "Marcus reste aux thermes",
+          "Marcus vient des thermes"
         ],
-
-        "expected": "vers les thermes",
-
+        "expected": "Marcus court vers les thermes",
         "shuffle": true,
-
         "points": 1
-
       },
 
-    {
-  "id": "p1-l10-t3",
-  "type": "multipleChoice",
-  "prompt": "🛁 Coche les deux groupes correctement formés pour parler de l’eau aux thermes.",
-  "options": [
-    "aqua calida",
-    "aqua frigida",
-    "aqua calidus",
-    "aqua frigidus",
-    "thermae frigida"
-  ],
-  "expected": [
-    "aqua calida",
-    "aqua frigida"
-  ],
-  "shuffle": true,
-  "points": 1
-},
+      {
+        "id": "p1-l10-t3",
+        "type": "multipleChoice",
+        "prompt": "🛁 Mini-scène : « Titus ad thermas currit. Livia in thermas intrat. Flavia in thermis manet. Marcus ex thermis venit cum amico. » Coche les trois groupes qui montrent un déplacement.",
+        "options": [
+          "ad thermas",
+          "in thermas",
+          "in thermis",
+          "ex thermis",
+          "cum amico"
+        ],
+        "expected": [
+          "ad thermas",
+          "in thermas",
+          "ex thermis"
+        ],
+        "shuffle": true,
+        "points": 1
+      },
 
       {
-
         "id": "p1-l10-t4",
-
         "type": "matching",
-
-        "prompt": "🛁 Associe expression et sens.",
-
+        "prompt": "🛁 Associe chaque groupe à sa valeur.",
         "pairs": [
-
           {
-
-            "left": "in thermis",
-
-            "right": "dans les thermes"
-
-          },
-
-          {
-
             "left": "ad thermas",
-
-            "right": "vers les thermes"
-
+            "right": "approche"
           },
-
           {
-
-            "left": "aqua calida",
-
-            "right": "eau chaude"
-
+            "left": "in thermas",
+            "right": "entrée"
+          },
+          {
+            "left": "in thermis",
+            "right": "position fixe"
+          },
+          {
+            "left": "ex thermis",
+            "right": "origine / sortie"
+          },
+          {
+            "left": "cum amico",
+            "right": "accompagnement"
           }
-
         ],
-
         "rightOptions": [
-
-          "eau chaude",
-
-          "dans les thermes",
-
-          "vers les thermes"
-
+          "approche",
+          "entrée",
+          "position fixe",
+          "origine / sortie",
+          "accompagnement"
         ],
-
         "expected": {
-
-          "in thermis": "dans les thermes",
-
-          "ad thermas": "vers les thermes",
-
-          "aqua calida": "eau chaude"
-
+          "ad thermas": "approche",
+          "in thermas": "entrée",
+          "in thermis": "position fixe",
+          "ex thermis": "origine / sortie",
+          "cum amico": "accompagnement"
         },
-
         "points": 1
-
       },
-
-           {
-  "id": "p1-l10-t5",
-  "type": "singleChoice",
-  "prompt": "🛁 Piège : « Marcus in thermas intrat » signifie :",
-  "options": [
-    "Marcus entre dans les thermes",
-    "Marcus reste dans les thermes",
-    "Marus se trouve dans les thermes",
-    "Marcus court vers les thermes",
-    "Marcus sort des thermes",
-    "Marcus voit les thermes"
-  ],
-  "expected": "Marcus entre dans les thermes",
-  "shuffle": true,
-  "points": 1
-},
 
       {
-
-        "id": "p1-l10-t6",
-
+        "id": "p1-l10-t5",
         "type": "singleChoice",
-
-        "prompt": "🛁 Dans « Livia in thermis manet », manet signifie :",
-
+        "prompt": "🛁 Piège : « Titus in thermas intrat » signifie :",
         "options": [
-
-          "reste",
-
-          "court",
-
-          "porte",
-
-          "perturbe",
-
-          "écrit"
-
+          "Titus entre dans les thermes",
+          "Titus reste dans les thermes",
+          "Titus court vers les thermes",
+          "Titus vient des thermes"
         ],
-
-        "expected": "reste",
-
+        "expected": "Titus entre dans les thermes",
         "shuffle": true,
-
         "points": 1
-
       },
 
-    {
-  "id": "p1-l10-t7",
-  "type": "textInput",
-  "prompt": "🛁 Complète en latin : « Livia ... manet » = « Livia reste aux thermes ».",
-  "expected": "in thermis",
-  "acceptedAnswers": [
-    "in thermis"
-  ],
-  "answerConfig": {
-    "type": "one-of",
-    "language": "latin",
-    "accepted": [
-      "in thermis"
-    ]
-  },
-  "points": 1,
-  "feedback": "Avec manet, on indique ici le lieu où l’on reste : in thermis."
-}
+      {
+        "id": "p1-l10-t6",
+        "type": "textInput",
+        "prompt": "🛁 Mini-texte : « Livia in thermis manet. Marcus ex thermis venit cum amico. » Recopie seulement le groupe qui indique d’où Marcus vient.",
+        "expected": "ex thermis",
+        "acceptedAnswers": [
+          "ex thermis"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "ex thermis"
+          ]
+        },
+        "points": 1
+      },
+
+      {
+        "id": "p1-l10-t7",
+        "type": "textInput",
+        "prompt": "🛁 Complète avec le bon groupe : « Flavia ... manet » pour dire « Flavia reste aux thermes ».",
+        "expected": "in thermis",
+        "acceptedAnswers": [
+          "in thermis"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "in thermis"
+          ]
+        },
+        "points": 1
+      }
 
     ],
 
     "production": [
 
       {
-
         "id": "p1-l10-p1",
-
         "type": "textInput",
-
-        "prompt": "🛁 Traduis en français : Marcus ad thermas currit",
-
-        "expected": "marcus court vers les thermes",
-
-        "acceptedAnswers":           [
-
-            "marcus court vers les thermes",
-
-            "marcus court aux thermes",
-
-            "marcus va vers les thermes",
-
-            "marcus court jusqu'aux thermes",
-
-            "marcus court en direction des thermes",
-
-            "marcus court vers les bains",
-
-            "marcus court aux bains",
-
-            "marcus va vers les bains"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted":             [
-
-              "marcus court vers les thermes",
-
-              "marcus court aux thermes",
-
-              "marcus va vers les thermes",
-
-              "marcus court jusqu'aux thermes",
-
-              "marcus court en direction des thermes"
-
-            ],
-
-          "synonyms":             [
-
-              "marcus court vers les bains",
-
-              "marcus court aux bains",
-
-              "marcus va vers les bains"
-
-            ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "marcus court vers les thermes",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
+        "prompt": "🛁 Traduis en français : Titus in thermas intrat",
+        "expected": "titus entre dans les thermes",
+        "acceptedAnswers": [
+          "titus entre dans les thermes",
+          "titus entre aux thermes",
+          "titus pénètre dans les thermes",
+          "titus va dans les thermes"
         ],
-
+        "answerConfig": {
+          "type": "translation-segment",
+          "language": "fr",
+          "accepted": [
+            "titus entre dans les thermes",
+            "titus entre aux thermes",
+            "titus pénètre dans les thermes",
+            "titus va dans les thermes"
+          ],
+          "ignoreDeterminers": true,
+          "ignoreContractions": true,
+          "allowPartialAnswer": "core-meaning-only"
+        },
+        "points": 1,
+        "canonicalAnswer": "titus entre dans les thermes",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true,
+          "normalizeFrenchContractions": true,
+          "ignoreFrenchDeterminers": true
+        },
+        "gradingFocus": "Compréhension correcte de in + accusatif : entrée dans le lieu.",
+        "rejectIf": [
+          "verbe incorrect",
+          "contre-sens sur le lieu",
+          "réponse hors-sujet"
+        ],
         "tests": [
-
           {
-
-            "input": "marcus court vers les thermes",
-
+            "input": "titus entre dans les thermes",
             "isCorrect": true
-
           },
-
           {
-
-            "input": "réponse hors-sujet",
-
+            "input": "titus entre aux thermes",
+            "isCorrect": true
+          },
+          {
+            "input": "titus reste aux thermes",
             "isCorrect": false
-
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
           }
-
         ]
-
       },
 
       {
-
         "id": "p1-l10-p2",
-
         "type": "textInput",
-
-        "prompt": "🛁 Traduis en français : Livia in thermis manet",
-
-        "expected": "livia reste dans les thermes",
-
-      "acceptedAnswers": [
-  "livia reste dans les thermes",
-  "livia reste aux thermes",
-  "livia demeure dans les thermes",
-  "livia demeure aux thermes",
-  "livia se trouve dans les thermes",
-  "livia se trouve aux thermes",
-  "livia est dans les thermes",
-  "livia est aux thermes"
-],
-"answerConfig": {
-  "type": "translation-segment",
-  "language": "fr",
-  "accepted": [
-    "livia reste dans les thermes",
-    "livia reste aux thermes",
-    "livia demeure dans les thermes",
-    "livia demeure aux thermes",
-    "livia se trouve dans les thermes",
-    "livia se trouve aux thermes",
-    "livia est dans les thermes",
-    "livia est aux thermes"
-  ]
-},
-
-        "points": 1,
-
-        "canonicalAnswer": "livia reste dans les thermes",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
+        "prompt": "🛁 Traduis en français : Marcus ex thermis venit cum amico",
+        "expected": "marcus vient des thermes avec un ami",
+        "acceptedAnswers": [
+          "marcus vient des thermes avec un ami",
+          "marcus vient des bains avec un ami",
+          "marcus revient des thermes avec un ami",
+          "marcus revient des bains avec un ami",
+          "marcus sort des thermes avec un ami",
+          "marcus sort des bains avec un ami"
         ],
-
+        "answerConfig": {
+          "type": "translation-segment",
+          "language": "fr",
+          "accepted": [
+            "marcus vient des thermes avec un ami",
+            "marcus vient des bains avec un ami",
+            "marcus revient des thermes avec un ami",
+            "marcus revient des bains avec un ami",
+            "marcus sort des thermes avec un ami",
+            "marcus sort des bains avec un ami"
+          ],
+          "ignoreDeterminers": true,
+          "ignoreContractions": true,
+          "allowPartialAnswer": "core-meaning-only"
+        },
+        "points": 1,
+        "canonicalAnswer": "marcus vient des thermes avec un ami",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true,
+          "normalizeFrenchContractions": true,
+          "ignoreFrenchDeterminers": true
+        },
+        "gradingFocus": "Compréhension correcte de ex + ablatif et de cum + ablatif.",
+        "rejectIf": [
+          "verbe incorrect",
+          "contre-sens sur l’origine",
+          "contre-sens sur l’accompagnement",
+          "réponse hors-sujet"
+        ],
         "tests": [
-
           {
-
-            "input": "livia reste dans les thermes",
-
+            "input": "marcus vient des thermes avec un ami",
             "isCorrect": true
-
           },
-
           {
-
-            "input": "réponse hors-sujet",
-
+            "input": "marcus sort des bains avec un ami",
+            "isCorrect": true
+          },
+          {
+            "input": "marcus va vers les thermes avec un ami",
             "isCorrect": false
-
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
           }
-
         ]
-
       },
 
-            {
-  "id": "p1-l10-p3",
-  "type": "textInput",
-  "prompt": "🛁 Traduis en latin : Titus entre dans les thermes",
-  "expected": "Titus in thermas intrat",
-  "acceptedAnswers": [
-    "Titus in thermas intrat",
-    "Titus intrat in thermas",
-    "in thermas Titus intrat",
-    "in thermas intrat Titus",
-    "intrat Titus in thermas",
-    "intrat in thermas Titus"
-  ],
-  "answerConfig": {
-    "type": "one-of",
-    "language": "latin",
-    "accepted": [
-      "Titus in thermas intrat",
-      "Titus intrat in thermas",
-      "in thermas Titus intrat",
-      "in thermas intrat Titus",
-      "intrat Titus in thermas",
-      "intrat in thermas Titus"
-    ]
-  },
-  "points": 1,
-  "canonicalAnswer": "Titus in thermas intrat",
-  "normalization": {
-    "trim": true,
-    "collapseSpaces": true,
-    "ignoreCase": true,
-    "ignorePunctuation": true,
-    "normalizeApostrophes": true,
-    "ignoreDiacritics": true
-  },
-  "gradingFocus": "Préposition de direction correcte + verbe correct ; ordre latin flexible accepté.",
-  "rejectIf": [
-    "verbe incorrect",
-    "sens inversé sujet/objet",
-    "forme latine impossible au niveau de la leçon"
-  ],
-  "tests": [
-    { "input": "Titus in thermas intrat", "isCorrect": true },
-    { "input": "intrat Titus in thermas", "isCorrect": true },
-    { "input": "réponse hors-sujet", "isCorrect": false }
-  ]
-}
+      {
+        "id": "p1-l10-p3",
+        "type": "textInput",
+        "prompt": "🛁 Traduis en latin : Livia reste aux thermes",
+        "expected": "Livia in thermis manet",
+        "acceptedAnswers": [
+          "Livia in thermis manet",
+          "Livia manet in thermis",
+          "in thermis Livia manet",
+          "in thermis manet Livia",
+          "manet Livia in thermis",
+          "manet in thermis Livia"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "Livia in thermis manet",
+            "Livia manet in thermis",
+            "in thermis Livia manet",
+            "in thermis manet Livia",
+            "manet Livia in thermis",
+            "manet in thermis Livia"
+          ]
+        },
+        "points": 1,
+        "canonicalAnswer": "Livia in thermis manet",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Réemploi correct de in + ablatif avec un verbe de position.",
+        "rejectIf": [
+          "verbe incorrect",
+          "préposition incorrecte",
+          "cas incorrect",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Livia in thermis manet",
+            "isCorrect": true
+          },
+          {
+            "input": "manet Livia in thermis",
+            "isCorrect": true
+          },
+          {
+            "input": "Livia in thermas manet",
+            "isCorrect": false
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
+      }
 
     ],
 
-       "summary": {
+    "summary": {
 
       "retains": [
 
-        "AD + accusatif marque un déplacement, IN + ablatif une position fixe.",
+        "ad + accusatif marque l’approche ; in + accusatif l’entrée ; in + ablatif la position ; ex + ablatif l’origine ; cum + ablatif l’accompagnement.",
 
-        "Même en contexte culturel, je garde mes réflexes de lecture."
+        "Je combine le verbe et le groupe prépositionnel pour comprendre précisément le trajet."
 
       ],
 
       "cahier": [
 
-        "ad thermas",
+        "Titus ad thermas currit",
 
-        "in thermis",
+        "Titus in thermas intrat",
 
-        "Titus thermas intrat"
+        "Livia in thermis manet",
+
+        "Marcus ex thermis venit cum amico"
 
       ],
 
@@ -5647,17 +5393,35 @@ export const lessons5eP1 = [
 
         "thermes",
 
-        "lieux",
+        "trajet",
 
         "prépositions"
 
-       ]
+      ]
+
+    },
+
+    "meta": {
+
+      "status": "ready",
+
+      "tags": [
+
+        "thermes",
+
+        "prepositions",
+
+        "trajet",
+
+        "p1-l10"
+
+      ]
 
     }
 
   },
 
-  {
+   {
 
     "id": "p1-l11",
 
@@ -5665,33 +5429,33 @@ export const lessons5eP1 = [
 
     "periodId": "p1",
 
-    "title": "Un graffiti sur le mur ! - Lecture globale",
+    "title": "Un graffiti sur le mur ! - Lire une inscription",
 
     subtitle: headerContexts5eP1["p1-l11"],
 
-    "objective": "Comprendre une inscription sur le mur et relier lecture, sens et contexte narratif.",
+    "objective": "Lire une courte inscription en distinguant ce qui est écrit, où c’est écrit, qui le lit et qui le craint.",
 
-    "lessonPoint": "Je lis mot à mot puis je recompose le sens global.",
+    "lessonPoint": "Je pars du verbe, puis je repère le sujet, le COD éventuel et le groupe de lieu.",
 
     "canDo": [
 
-      "Je déchiffre une courte inscription latine.",
+      "Je lis une courte inscription latine.",
 
-      "Je distingue message et commentaire.",
+      "Je distingue ce qui est écrit, qui le lit et où c’est écrit.",
 
-      "Je traduis une phrase d’alerte."
+      "Je traduis une phrase brève liée à l’alerte."
 
     ],
 
     "lexicon": [
 
-      "murus = mur",
+      "murus (nom.), muro (abl.) = mur",
 
-      "scriptum = inscription",
+      "scriptum (nom./acc.) = inscription, écrit",
 
-      "nomen = le nom",
+      "Discordia (nom.), Discordiam (acc.) = Discordia / la Discorde",
 
-      "Discordia = Discorde (déesse)",
+      "in muro = sur le mur / dans le mur",
 
       "videt = il/elle voit",
 
@@ -5708,203 +5472,121 @@ export const lessons5eP1 = [
     "training": [
 
       {
-  "id": "p1-l11-t1",
-  "type": "singleChoice",
-  "prompt": "🧱 Dans « Nomen in muro est », quel groupe indique où se trouve le nom ?",
-  "options": [
-    "in muro",
-    "nomen",
-    "est",
-    "muro",
-    "Marcus"
-  ],
-  "expected": "in muro",
-  "shuffle": true,
-  "points": 1,
-  "feedback": "in muro indique le lieu où se trouve le nom."
-},
+        "id": "p1-l11-t1",
+        "type": "singleChoice",
+        "prompt": "🧱 Dans « Scriptum in muro est », quel groupe indique où se trouve l’inscription ?",
+        "options": [
+          "in muro",
+          "Scriptum",
+          "est"
+        ],
+        "expected": "in muro",
+        "shuffle": true,
+        "points": 1,
+        "feedback": "in muro indique ici le lieu où se trouve l’inscription."
+      },
 
       {
-
         "id": "p1-l11-t2",
-
         "type": "singleChoice",
-
-        "prompt": "🧱 « Marcus scriptum legit » : Marcus…",
-
+        "prompt": "🧱 « Marcus scriptum legit » signifie :",
         "options": [
-
-          "lit une inscription",
-
-          "écrit une inscription",
-
-          "voit un chien",
-
-          "porte une inscription",
-
-          "court"
-
+          "Marcus lit l’inscription",
+          "Marcus écrit l’inscription",
+          "Marcus craint l’inscription",
+          "Marcus voit le mur"
         ],
-
-        "expected": "lit une inscription",
-
+        "expected": "Marcus lit l’inscription",
         "shuffle": true,
-
         "points": 1
-
       },
 
       {
-  "id": "p1-l11-t3",
-  "type": "multipleChoice",
-  "prompt": "🧱 Dans la phrase « Marcus nomen legit in muro », coche l'objet (COD) et le verbe.",
-  "options": [
-    "legit",
-    "nomen",
-    "Marcus",
-    "muro",
-    "timet"
-  ],
-  "expected": [
-    "legit",
-    "nomen"
-  ],
-  "shuffle": true,
-  "points": 1
-},
+        "id": "p1-l11-t3",
+        "type": "multipleChoice",
+        "prompt": "🧱 Coche les deux phrases où un COD est exprimé.",
+        "options": [
+          "Scriptum in muro est",
+          "Marcus scriptum legit",
+          "Livia Discordiam timet",
+          "Marcus legit"
+        ],
+        "expected": [
+          "Marcus scriptum legit",
+          "Livia Discordiam timet"
+        ],
+        "shuffle": true,
+        "points": 1
+      },
 
       {
-
         "id": "p1-l11-t4",
-
-        "type": "matching",
-
-        "prompt": "🧱 Associe phrase et sens.",
-
-        "pairs": [
-
-          {
-
-            "left": "Nomen in muro est",
-
-            "right": "Un nom est sur le mur"
-
-          },
-
-          {
-
-            "left": "Marcus legit",
-
-            "right": "Marcus lit"
-
-          },
-
-          {
-
-            "left": "Livia timet",
-
-            "right": "Livia a peur"
-
-          }
-
-        ],
-
-        "rightOptions": [
-
-          "Livia a peur",
-
-          "Marcus lit",
-
-          "Un nom est sur le mur"
-
-        ],
-
-        "expected": {
-
-          "Nomen in muro est": "Un nom est sur le mur",
-
-          "Marcus legit": "Marcus lit",
-
-          "Livia timet": "Livia a peur"
-
-        },
-
-        "points": 1
-
-      },
-
-      {
-
-        "id": "p1-l11-t5",
-
-        "type": "singleChoice",
-
-        "prompt": "🧱 Piège : « Discordiam Marcus legit » signifie :",
-
-        "options": [
-
-          "Marcus lit le nom Discordia",
-
-          "Discordia lit Marcus",
-
-          "Marcus écrit le nom Discordia",
-
-          "La discorde de Marcus est légitime",
-
-          "Discordia aboie devant le mur"
-
-        ],
-
-        "expected": "Marcus lit le nom Discordia",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-      {
-
-        "id": "p1-l11-t6",
-
-        "type": "singleChoice",
-
-        "prompt": "🧱 Quel verbe signifie « craint » ?",
-
-        "options": [
-
-          "timet",
-
-          "legit",
-
-          "scribit",
-
-          "portat",
-
-          "manet"
-
-        ],
-
-        "expected": "timet",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-      {
-
-        "id": "p1-l11-t7",
-
         "type": "textInput",
-
-        "prompt": "🧱 Écris en latin : « nom ».",
-
-        "expected": "nomen",
-
+        "prompt": "🧱 Mini-texte : « Discordia in muro est. Marcus scriptum legit. » Recopie seulement le mot écrit sur le mur.",
+        "expected": "Discordia",
+        "acceptedAnswers": [
+          "Discordia",
+          "discordia"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "Discordia",
+            "discordia"
+          ]
+        },
         "points": 1
+      },
 
+      {
+        "id": "p1-l11-t5",
+        "type": "singleChoice",
+        "prompt": "🧱 Piège : « Discordiam Marcus legit » signifie :",
+        "options": [
+          "Marcus lit le nom Discordia",
+          "Discordia lit Marcus",
+          "Marcus écrit le nom Discordia",
+          "Marcus craint Discordia"
+        ],
+        "expected": "Marcus lit le nom Discordia",
+        "shuffle": true,
+        "points": 1
+      },
+
+      {
+        "id": "p1-l11-t6",
+        "type": "singleChoice",
+        "prompt": "🧱 Mini-texte : « Scriptum in muro est. Livia timet. » Quel groupe montre où se trouve l’inscription ?",
+        "options": [
+          "Scriptum",
+          "in muro",
+          "Livia",
+          "timet"
+        ],
+        "expected": "in muro",
+        "shuffle": true,
+        "points": 1
+      },
+
+      {
+        "id": "p1-l11-t7",
+        "type": "textInput",
+        "prompt": "🧱 Complète avec la bonne forme : « Livia ... timet » pour dire « Livia craint Discordia ».",
+        "expected": "Discordiam",
+        "acceptedAnswers": [
+          "Discordiam",
+          "discordiam"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "Discordiam",
+            "discordiam"
+          ]
+        },
+        "points": 1
       }
 
     ],
@@ -5912,301 +5594,196 @@ export const lessons5eP1 = [
     "production": [
 
       {
-
         "id": "p1-l11-p1",
-
         "type": "textInput",
-
-        "prompt": "🧱 Traduis en français : Nomen in muro est",
-
-        "expected": "un nom est sur le mur",
-
-      "acceptedAnswers": [
-  "un nom est sur le mur",
-  "le nom est sur le mur",
-  "un nom est inscrit sur le mur",
-  "le nom est inscrit sur le mur",
-  "un nom est gravé sur le mur",
-  "le nom est gravé sur le mur"
-],
-"answerConfig": {
-  "type": "translation-segment",
-  "language": "fr",
-  "tolerateArticles": true,
-  "accepted": [
-    "un nom est sur le mur",
-    "le nom est sur le mur",
-    "un nom est inscrit sur le mur",
-    "le nom est inscrit sur le mur",
-    "un nom est gravé sur le mur",
-    "le nom est gravé sur le mur"
-  ]
-},
-
-        "points": 1,
-
-        "canonicalAnswer": "un nom est sur le mur",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "un nom est sur le mur",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
-
-      {
-
-        "id": "p1-l11-p2",
-
-        "type": "textInput",
-
-        "prompt": "🧱 Traduis en français : Livia Discordiam timet",
-
-        "expected": "livia craint discordia",
-
-        "acceptedAnswers":           [
-
-            "livia craint discordia",
-
-            "livia a peur de discordia",
-
-            "livia redoute discordia",
-
-            "livia craint la discorde",
-
-            "livia a peur de la discorde",
-
-            "livia redoute la discorde"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted":             [
-
-              "livia craint discordia",
-
-              "livia a peur de discordia",
-
-              "livia redoute discordia"
-
-            ],
-
-          "synonyms":             [
-
-              "livia craint la discorde",
-
-              "livia a peur de la discorde",
-
-              "livia redoute la discorde"
-
-            ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "livia craint discordia",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "livia craint discordia",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
-
-      {
-
-        "id": "p1-l11-p3",
-
-        "type": "textInput",
-
-        "prompt": "🧱 Traduis en latin : Marcus lit l’inscription",
-
-        "expected": "Marcus scriptum legit",
-
+        "prompt": "🧱 Traduis en français : Scriptum in muro est",
+        "expected": "une inscription est sur le mur",
         "acceptedAnswers": [
-
-          "Marcus scriptum legit",
-
-          "Marcus legit scriptum",
-
-          "scriptum Marcus legit",
-
-          "scriptum legit Marcus",
-
-          "legit Marcus scriptum",
-
-          "legit scriptum Marcus"
-
+          "une inscription est sur le mur",
+          "l'inscription est sur le mur",
+          "une inscription est écrite sur le mur",
+          "l'inscription est écrite sur le mur",
+          "une inscription est inscrite sur le mur",
+          "l'inscription est inscrite sur le mur"
         ],
-
         "answerConfig": {
-
-          "type": "one-of",
-
-          "language": "latin",
-
+          "type": "translation-segment",
+          "language": "fr",
           "accepted": [
-
-            "Marcus scriptum legit",
-
-            "Marcus legit scriptum",
-
-            "scriptum Marcus legit",
-
-            "scriptum legit Marcus",
-
-            "legit Marcus scriptum",
-
-            "legit scriptum Marcus"
-
-          ]
-
+            "une inscription est sur le mur",
+            "l'inscription est sur le mur",
+            "une inscription est écrite sur le mur",
+            "l'inscription est écrite sur le mur",
+            "une inscription est inscrite sur le mur",
+            "l'inscription est inscrite sur le mur"
+          ],
+          "ignoreDeterminers": true,
+          "ignoreContractions": true,
+          "allowPartialAnswer": "core-meaning-only"
         },
-
         "points": 1,
-
-        "canonicalAnswer": "Marcus scriptum legit",
-
+        "canonicalAnswer": "une inscription est sur le mur",
         "normalization": {
-
           "trim": true,
-
           "collapseSpaces": true,
-
           "ignoreCase": true,
-
           "ignorePunctuation": true,
-
           "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
+          "ignoreDiacritics": true,
+          "normalizeFrenchContractions": true,
+          "ignoreFrenchDeterminers": true
         },
-
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-
+        "gradingFocus": "Compréhension correcte de la phrase de lieu ; déterminants non discriminants.",
         "rejectIf": [
-
           "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
+          "contre-sens sur le lieu",
+          "réponse hors-sujet"
         ],
-
         "tests": [
-
           {
-
-            "input": "Marcus scriptum legit",
-
+            "input": "une inscription est sur le mur",
             "isCorrect": true
-
           },
-
           {
-
-            "input": "lorem ipsum",
-
+            "input": "l'inscription est écrite sur le mur",
+            "isCorrect": true
+          },
+          {
+            "input": "une inscription lit le mur",
             "isCorrect": false
-
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
           }
-
         ]
+      },
 
+      {
+        "id": "p1-l11-p2",
+        "type": "textInput",
+        "prompt": "🧱 Traduis en français : Livia Discordiam timet",
+        "expected": "livia craint discordia",
+        "acceptedAnswers": [
+          "livia craint discordia",
+          "livia a peur de discordia",
+          "livia redoute discordia",
+          "livia craint la discorde",
+          "livia a peur de la discorde",
+          "livia redoute la discorde"
+        ],
+        "answerConfig": {
+          "type": "translation-segment",
+          "language": "fr",
+          "accepted": [
+            "livia craint discordia",
+            "livia a peur de discordia",
+            "livia redoute discordia",
+            "livia craint la discorde",
+            "livia a peur de la discorde",
+            "livia redoute la discorde"
+          ],
+          "ignoreDeterminers": true,
+          "ignoreContractions": true,
+          "allowPartialAnswer": "core-meaning-only"
+        },
+        "points": 1,
+        "canonicalAnswer": "livia craint discordia",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true,
+          "normalizeFrenchContractions": true,
+          "ignoreFrenchDeterminers": true
+        },
+        "gradingFocus": "Compréhension correcte du verbe timet et du COD Discordiam.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "réponse hors-sujet"
+        ],
+        "tests": [
+          {
+            "input": "livia craint discordia",
+            "isCorrect": true
+          },
+          {
+            "input": "livia a peur de la discorde",
+            "isCorrect": true
+          },
+          {
+            "input": "discordia craint livia",
+            "isCorrect": false
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
+      },
+
+      {
+        "id": "p1-l11-p3",
+        "type": "textInput",
+        "prompt": "🧱 Traduis en latin : Marcus lit l’inscription",
+        "expected": "Marcus scriptum legit",
+        "acceptedAnswers": [
+          "Marcus scriptum legit",
+          "Marcus legit scriptum",
+          "scriptum Marcus legit",
+          "scriptum legit Marcus",
+          "legit Marcus scriptum",
+          "legit scriptum Marcus"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "Marcus scriptum legit",
+            "Marcus legit scriptum",
+            "scriptum Marcus legit",
+            "scriptum legit Marcus",
+            "legit Marcus scriptum",
+            "legit scriptum Marcus"
+          ]
+        },
+        "points": 1,
+        "canonicalAnswer": "Marcus scriptum legit",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "forme latine impossible au niveau de la leçon"
+        ],
+        "tests": [
+          {
+            "input": "Marcus scriptum legit",
+            "isCorrect": true
+          },
+          {
+            "input": "legit Marcus scriptum",
+            "isCorrect": true
+          },
+          {
+            "input": "Marcus scriptum scribit",
+            "isCorrect": false
+          },
+          {
+            "input": "lorem ipsum",
+            "isCorrect": false
+          }
+        ]
       }
 
     ],
@@ -6215,17 +5792,19 @@ export const lessons5eP1 = [
 
       "retains": [
 
-        "Discordia est une déesse redoutable, qui sème.. la discorde.",
+        "Je lis d’abord le verbe, puis je cherche le sujet, le COD éventuel et le groupe de lieu.",
 
-        "Le sens global se construit à partir de mots simples bien reconnus."
+        "Une inscription peut être sur le mur ; quelqu’un peut la lire ; quelqu’un peut craindre ce qu’elle annonce."
 
       ],
 
       "cahier": [
 
-        "Nomen in muro est",
+        "Scriptum in muro est",
 
-        "Marcus scriptum legit"
+        "Marcus scriptum legit",
+
+        "Livia Discordiam timet"
 
       ],
 
@@ -6233,7 +5812,7 @@ export const lessons5eP1 = [
 
         "murus",
 
-        "inscription",
+        "scriptum",
 
         "Discordia"
 
@@ -6249,6 +5828,8 @@ export const lessons5eP1 = [
 
         "inscription",
 
+        "mur",
+
         "discordia",
 
         "p1-l11"
@@ -6258,7 +5839,7 @@ export const lessons5eP1 = [
     }
 
   },
-
+  
   {
 
     "id": "p1-l12",
@@ -6317,487 +5898,438 @@ export const lessons5eP1 = [
   "points": 1
 },
 
-      {
+       {
 
+    "id": "p1-l12",
+
+    "period": 1,
+
+    "periodId": "p1",
+
+    "title": "La piste Discordia - Synthèse",
+
+    subtitle: headerContexts5eP1["p1-l12"],
+
+    "objective": "Réinvestir les acquis de P1 dans une scène finale de taverne sans ajouter de notion nouvelle.",
+
+    "lessonPoint": "Je lis d’abord le verbe, puis je repère le sujet, le COD éventuel, et le groupe de lieu ou de direction.",
+
+    "canDo": [
+
+      "Je lis une micro-scène complète en combinant plusieurs repères.",
+
+      "Je distingue sujet, verbe, COD et groupe de lieu ou de direction.",
+
+      "Je traduis et je produis une phrase de synthèse sans me fier seulement à l’ordre des mots."
+
+    ],
+
+    "lexicon": [
+
+      "popina (nom.), popinam (acc.), popina (abl.) = taverne",
+
+      "in popina = dans la taverne",
+
+      "ad popinam = vers la taverne",
+
+      "tabella (nom.), tabellam (acc.) = tablette",
+
+      "scriptum (nom./acc.) = inscription, écrit",
+
+      "Discordia (nom.), Discordiam (acc.) = Discordia / la Discorde",
+
+      "nomen Discordiae = le nom de Discordia",
+
+      "legit = il/elle lit",
+
+      "videt = il/elle voit",
+
+      "timet = il/elle craint",
+
+      "portat = il/elle porte",
+
+      "manet = il/elle reste"
+
+    ],
+
+    "maxScore": 10,
+
+    "training": [
+
+      {
+        "id": "p1-l12-t1",
+        "type": "singleChoice",
+        "prompt": "🧩 Dans « Marcus scriptum legit in popina », quel mot est le verbe ?",
+        "options": [
+          "Marcus",
+          "scriptum",
+          "legit",
+          "popina"
+        ],
+        "expected": "legit",
+        "shuffle": true,
+        "points": 1
+      },
+
+      {
         "id": "p1-l12-t2",
-
         "type": "singleChoice",
-
-        "prompt": "🧩 Traduction. « Marcus nomen videt » : Marcus…",
-
+        "prompt": "🧩 Traduction. « Marcus scriptum legit in popina » : Marcus…",
         "options": [
-
-          "voit le nom",
-
-          "porte le nom",
-
-          "écrit le nom",
-
-          "craint le nom",
-
-          "appelle le nom"
-
+          "lit l’inscription dans la taverne",
+          "écrit l’inscription dans la taverne",
+          "porte l’inscription vers la taverne",
+          "craint l’inscription dans la taverne"
         ],
-
-        "expected": "voit le nom",
-
+        "expected": "lit l’inscription dans la taverne",
         "shuffle": true,
-
         "points": 1
-
       },
 
       {
-
         "id": "p1-l12-t3",
-
         "type": "multipleChoice",
-
-        "prompt": "🧩 Coche les trois mots latins explicitement présents dans cette scène finale.",
-
+        "prompt": "🧩 Coche les trois phrases où un COD est exprimé.",
         "options": [
-
-          "popina",
-
-          "nomen",
-
-          "candela",
-
-          "ludus",
-
-          "discordia"
-
+          "Marcus scriptum legit in popina",
+          "Livia Discordiam timet",
+          "Titus tabellam ad popinam portat",
+          "Marcus in popina manet"
         ],
-
         "expected": [
-
-          "popina",
-
-          "nomen",
-
-          "discordia"
-
+          "Marcus scriptum legit in popina",
+          "Livia Discordiam timet",
+          "Titus tabellam ad popinam portat"
         ],
-
         "shuffle": true,
-
         "points": 1
-
       },
-
-     {
-  "id": "p1-l12-t4",
-  "type": "matching",
-  "prompt": "🧩 Dans « Marcus nomen videt in popina », associe chaque élément à sa fonction.",
-  "pairs": [
-    {
-      "left": "Marcus",
-      "right": "sujet"
-    },
-    {
-      "left": "nomen",
-      "right": "COD"
-    },
-    {
-      "left": "videt",
-      "right": "verbe"
-    }
-  ],
-  "rightOptions": [
-    "verbe",
-    "sujet",
-    "COD"
-  ],
-  "expected": {
-    "Marcus": "sujet",
-    "nomen": "COD",
-    "videt": "verbe"
-  },
-  "points": 1
-},
 
       {
-
-        "id": "p1-l12-t5",
-
-        "type": "singleChoice",
-
-        "prompt": "🧩 Piège : « Discordiam Livia timet » signifie :",
-
-        "options": [
-
-          "Livia craint Discordia",
-
-          "Discordia craint Livia",
-
-          "Livia voit Discordia",
-
-          "Livia écrit Discordia",
-
-          "Discordia porte Livia"
-
+        "id": "p1-l12-t4",
+        "type": "matching",
+        "prompt": "🧩 Dans « Titus tabellam ad popinam portat », associe chaque élément à sa fonction.",
+        "pairs": [
+          {
+            "left": "Titus",
+            "right": "sujet"
+          },
+          {
+            "left": "tabellam",
+            "right": "COD"
+          },
+          {
+            "left": "portat",
+            "right": "verbe"
+          },
+          {
+            "left": "ad popinam",
+            "right": "groupe de direction"
+          }
         ],
-
-        "expected": "Livia craint Discordia",
-
-        "shuffle": true,
-
+        "rightOptions": [
+          "verbe",
+          "sujet",
+          "COD",
+          "groupe de direction"
+        ],
+        "expected": {
+          "Titus": "sujet",
+          "tabellam": "COD",
+          "portat": "verbe",
+          "ad popinam": "groupe de direction"
+        },
         "points": 1
-
       },
 
-    {
-  "id": "p1-l12-t6",
-  "type": "singleChoice",
-  "prompt": "🧩 Dans « Marcus nomen Discordiae videt », quel élément Marcus voit-il ?",
-  "options": [
-    "Marcus",
-    "nomen",
-    "Discordiae",
-    "videt"
-  ],
-  "expected": "nomen",
-  "shuffle": true,
-  "points": 1
-},
+      {
+        "id": "p1-l12-t5",
+        "type": "singleChoice",
+        "prompt": "🧩 Piège : « Tabellam Titus ad popinam portat » signifie :",
+        "options": [
+          "Titus porte la tablette vers la taverne",
+          "La tablette porte Titus vers la taverne",
+          "Titus lit la tablette dans la taverne",
+          "Titus reste dans la taverne avec la tablette"
+        ],
+        "expected": "Titus porte la tablette vers la taverne",
+        "shuffle": true,
+        "points": 1
+      },
 
-     {
-  "id": "p1-l12-t7",
-  "type": "textInput",
-  "prompt": "🧩 Écris en latin : « Marcus voit le nom ».",
-  "expected": "Marcus nomen videt",
-  "acceptedAnswers": [
-    "Marcus nomen videt",
-    "Marcus videt nomen",
-    "nomen Marcus videt",
-    "nomen videt Marcus",
-    "videt Marcus nomen",
-    "videt nomen Marcus"
-  ],
-  "answerConfig": {
-    "type": "one-of",
-    "language": "latin",
-    "accepted": [
-      "Marcus nomen videt",
-      "Marcus videt nomen",
-      "nomen Marcus videt",
-      "nomen videt Marcus",
-      "videt Marcus nomen",
-      "videt nomen Marcus"
-    ]
-  },
-  "points": 1
-}
+      {
+        "id": "p1-l12-t6",
+        "type": "singleChoice",
+        "prompt": "🧩 Dans « Marcus nomen Discordiae legit », quel bloc faut-il traduire ensemble par « le nom de Discordia » ?",
+        "options": [
+          "Marcus legit",
+          "nomen Discordiae",
+          "Discordiam legit",
+          "in popina"
+        ],
+        "expected": "nomen Discordiae",
+        "shuffle": true,
+        "points": 1
+      },
+
+      {
+        "id": "p1-l12-t7",
+        "type": "textInput",
+        "prompt": "🧩 Complète en latin : « Marcus ... legit » pour dire « Marcus lit le nom de Discordia ».",
+        "expected": "nomen Discordiae",
+        "acceptedAnswers": [
+          "nomen Discordiae",
+          "nomen discordiae"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "nomen Discordiae",
+            "nomen discordiae"
+          ]
+        },
+        "points": 1
+      }
+
     ],
 
     "production": [
 
       {
-
         "id": "p1-l12-p1",
-
         "type": "textInput",
-
-        "prompt": "🧩 Traduis en français : Marcus nomen Discordiae videt",
-
-        "expected": "marcus voit le nom de discordia",
-
-        "acceptedAnswers":           [
-
-            "marcus voit le nom de discordia",
-            "marcus voit le nom de discorde",
-
-            "marcus voit le nom discordia",
-
-            "marcus aperçoit le nom de discordia",
-            "marcus aperçoit le nom de discorde",
-
-            "marcus voit le nom de la discorde",
-
-            "marcus aperçoit le nom de la discorde",
-
-            "marcus aperçoit le nom discordia"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted":             [
-
-              "marcus voit le nom de discordia",
-
-              "marcus voit le nom discordia",
-              "marcus voit le nom de discorde",
-
-            ],
-
-          "synonyms":             [
-
-              "marcus aperçoit le nom de discordia",
-
-              "marcus voit le nom de la discorde",
-
-              "marcus aperçoit le nom de la discorde",
-              "marcus aperçoit le nom de discorde",
-
-
-              "marcus aperçoit le nom discordia"
-
-            ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "marcus voit le nom de discordia",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
+        "prompt": "🧩 Traduis en français : Marcus nomen Discordiae legit in popina",
+        "expected": "marcus lit le nom de discordia dans la taverne",
+        "acceptedAnswers": [
+          "marcus lit le nom de discordia dans la taverne",
+          "marcus lit le nom de discordia à la taverne",
+          "marcus lit le nom de discorde dans la taverne",
+          "marcus lit le nom de discorde à la taverne",
+          "marcus lit le nom de la discorde dans la taverne",
+          "marcus lit le nom de la discorde à la taverne",
+          "marcus déchiffre le nom de discordia dans la taverne",
+          "marcus déchiffre le nom de la discorde dans la taverne"
         ],
-
+        "answerConfig": {
+          "type": "translation-segment",
+          "language": "fr",
+          "accepted": [
+            "marcus lit le nom de discordia dans la taverne",
+            "marcus lit le nom de discordia à la taverne",
+            "marcus lit le nom de discorde dans la taverne",
+            "marcus lit le nom de discorde à la taverne",
+            "marcus lit le nom de la discorde dans la taverne",
+            "marcus lit le nom de la discorde à la taverne",
+            "marcus déchiffre le nom de discordia dans la taverne",
+            "marcus déchiffre le nom de la discorde dans la taverne"
+          ],
+          "ignoreDeterminers": true,
+          "ignoreContractions": true,
+          "allowPartialAnswer": "core-meaning-only"
+        },
+        "points": 1,
+        "canonicalAnswer": "marcus lit le nom de discordia dans la taverne",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true,
+          "normalizeFrenchContractions": true,
+          "ignoreFrenchDeterminers": true
+        },
+        "gradingFocus": "Compréhension correcte du verbe, du bloc lexical et du groupe de lieu.",
+        "rejectIf": [
+          "verbe incorrect",
+          "contre-sens sur le lieu",
+          "réponse hors-sujet"
+        ],
         "tests": [
-
           {
-
-            "input": "marcus voit le nom de discordia",
-
+            "input": "marcus lit le nom de discordia dans la taverne",
             "isCorrect": true
-
           },
-
           {
-
-            "input": "réponse hors-sujet",
-
+            "input": "marcus lit le nom de la discorde à la taverne",
+            "isCorrect": true
+          },
+          {
+            "input": "marcus craint discordia dans la taverne",
             "isCorrect": false
-
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
           }
-
         ]
-
       },
 
       {
-
         "id": "p1-l12-p2",
-
         "type": "textInput",
-
         "prompt": "🧩 Traduis en français : Livia Discordiam timet",
-
         "expected": "livia craint discordia",
-
-        "acceptedAnswers":           [
-
-            "livia craint discordia",
-
-            "livia a peur de discordia",
-
-            "livia redoute discordia",
-
-            "livia craint la discorde",
-
-            "livia a peur de la discorde",
-
-            "livia redoute la discorde"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted":             [
-
-              "livia craint discordia",
-
-              "livia a peur de discordia",
-
-              "livia redoute discordia"
-
-            ],
-
-          "synonyms":             [
-
-              "livia craint la discorde",
-
-              "livia a peur de la discorde",
-
-              "livia redoute la discorde"
-
-            ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "livia craint discordia",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
+        "acceptedAnswers": [
+          "livia craint discordia",
+          "livia a peur de discordia",
+          "livia redoute discordia",
+          "livia craint la discorde",
+          "livia a peur de la discorde",
+          "livia redoute la discorde"
         ],
-
+        "answerConfig": {
+          "type": "translation-segment",
+          "language": "fr",
+          "accepted": [
+            "livia craint discordia",
+            "livia a peur de discordia",
+            "livia redoute discordia",
+            "livia craint la discorde",
+            "livia a peur de la discorde",
+            "livia redoute la discorde"
+          ],
+          "ignoreDeterminers": true,
+          "ignoreContractions": true,
+          "allowPartialAnswer": "core-meaning-only"
+        },
+        "points": 1,
+        "canonicalAnswer": "livia craint discordia",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true,
+          "normalizeFrenchContractions": true,
+          "ignoreFrenchDeterminers": true
+        },
+        "gradingFocus": "Compréhension correcte de timet et du COD Discordiam.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "réponse hors-sujet"
+        ],
         "tests": [
-
           {
-
             "input": "livia craint discordia",
-
             "isCorrect": true
-
           },
-
           {
-
-            "input": "réponse hors-sujet",
-
+            "input": "livia a peur de la discorde",
+            "isCorrect": true
+          },
+          {
+            "input": "discordia craint livia",
             "isCorrect": false
-
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
           }
-
         ]
-
       },
 
-     {
-  "id": "p1-l12-p3",
-  "type": "textInput",
-  "prompt": "🧩 Traduis en latin : Titus porte la tablette vers la taverne",
-  "expected": "Titus tabellam ad popinam portat",
-  "acceptedAnswers": [
-    "Titus tabellam ad popinam portat",
-    "Titus tabellam portat ad popinam",
-    "Titus ad popinam tabellam portat",
-    "Titus ad popinam portat tabellam",
-    "Titus portat tabellam ad popinam",
-    "Titus portat ad popinam tabellam",
-    "tabellam Titus ad popinam portat",
-    "tabellam Titus portat ad popinam",
-    "tabellam ad popinam Titus portat",
-    "tabellam ad popinam portat Titus",
-    "tabellam portat Titus ad popinam",
-    "tabellam portat ad popinam Titus",
-    "ad popinam Titus tabellam portat",
-    "ad popinam Titus portat tabellam",
-    "ad popinam tabellam Titus portat",
-    "ad popinam tabellam portat Titus",
-    "ad popinam portat Titus tabellam",
-    "ad popinam portat tabellam Titus",
-    "portat Titus tabellam ad popinam",
-    "portat Titus ad popinam tabellam",
-    "portat tabellam Titus ad popinam",
-    "portat tabellam ad popinam Titus",
-    "portat ad popinam Titus tabellam",
-    "portat ad popinam tabellam Titus"
-  ],
-  "answerConfig": {
-    "type": "one-of",
-    "language": "latin",
-    "accepted": [
-      "Titus tabellam ad popinam portat",
-      "Titus tabellam portat ad popinam",
-      "Titus ad popinam tabellam portat",
-      "Titus ad popinam portat tabellam",
-      "Titus portat tabellam ad popinam",
-      "Titus portat ad popinam tabellam",
-      "tabellam Titus ad popinam portat",
-      "tabellam Titus portat ad popinam",
-      "tabellam ad popinam Titus portat",
-      "tabellam ad popinam portat Titus",
-      "tabellam portat Titus ad popinam",
-      "tabellam portat ad popinam Titus",
-      "ad popinam Titus tabellam portat",
-      "ad popinam Titus portat tabellam",
-      "ad popinam tabellam Titus portat",
-      "ad popinam tabellam portat Titus",
-      "ad popinam portat Titus tabellam",
-      "ad popinam portat tabellam Titus",
-      "portat Titus tabellam ad popinam",
-      "portat Titus ad popinam tabellam",
-      "portat tabellam Titus ad popinam",
-      "portat tabellam ad popinam Titus",
-      "portat ad popinam Titus tabellam",
-      "portat ad popinam tabellam Titus"
-    ]
-  },
-  "points": 1,
-  "canonicalAnswer": "Titus tabellam ad popinam portat",
-  "normalization": {
-    "trim": true,
-    "collapseSpaces": true,
-    "ignoreCase": true,
-    "ignorePunctuation": true,
-    "normalizeApostrophes": true,
-    "ignoreDiacritics": true
-  },
-  "gradingFocus": "Réinvestissement guidé de P1 : COD + groupe de direction + ordre latin flexible.",
-  "rejectIf": [
-    "verbe incorrect",
-    "sens inversé sujet/objet",
-    "cas incorrect",
-    "forme latine impossible au niveau de la leçon",
-    "réponse hors-sujet"
-  ],
-  "tests": [
-    { "input": "Titus tabellam ad popinam portat", "isCorrect": true },
-    { "input": "portat Titus tabellam ad popinam", "isCorrect": true },
-    { "input": "réponse hors-sujet", "isCorrect": false }
-  ]
-}
+      {
+        "id": "p1-l12-p3",
+        "type": "textInput",
+        "prompt": "🧩 Traduis en latin : Titus porte la tablette vers la taverne",
+        "expected": "Titus tabellam ad popinam portat",
+        "acceptedAnswers": [
+          "Titus tabellam ad popinam portat",
+          "Titus tabellam portat ad popinam",
+          "Titus ad popinam tabellam portat",
+          "Titus ad popinam portat tabellam",
+          "Titus portat tabellam ad popinam",
+          "Titus portat ad popinam tabellam",
+          "tabellam Titus ad popinam portat",
+          "tabellam Titus portat ad popinam",
+          "tabellam ad popinam Titus portat",
+          "tabellam ad popinam portat Titus",
+          "tabellam portat Titus ad popinam",
+          "tabellam portat ad popinam Titus",
+          "ad popinam Titus tabellam portat",
+          "ad popinam Titus portat tabellam",
+          "ad popinam tabellam Titus portat",
+          "ad popinam tabellam portat Titus",
+          "ad popinam portat Titus tabellam",
+          "ad popinam portat tabellam Titus",
+          "portat Titus tabellam ad popinam",
+          "portat Titus ad popinam tabellam",
+          "portat tabellam Titus ad popinam",
+          "portat tabellam ad popinam Titus",
+          "portat ad popinam Titus tabellam",
+          "portat ad popinam tabellam Titus"
+        ],
+        "answerConfig": {
+          "type": "one-of",
+          "language": "latin",
+          "accepted": [
+            "Titus tabellam ad popinam portat",
+            "Titus tabellam portat ad popinam",
+            "Titus ad popinam tabellam portat",
+            "Titus ad popinam portat tabellam",
+            "Titus portat tabellam ad popinam",
+            "Titus portat ad popinam tabellam",
+            "tabellam Titus ad popinam portat",
+            "tabellam Titus portat ad popinam",
+            "tabellam ad popinam Titus portat",
+            "tabellam ad popinam portat Titus",
+            "tabellam portat Titus ad popinam",
+            "tabellam portat ad popinam Titus",
+            "ad popinam Titus tabellam portat",
+            "ad popinam Titus portat tabellam",
+            "ad popinam tabellam Titus portat",
+            "ad popinam tabellam portat Titus",
+            "ad popinam portat Titus tabellam",
+            "ad popinam portat tabellam Titus",
+            "portat Titus tabellam ad popinam",
+            "portat Titus ad popinam tabellam",
+            "portat tabellam Titus ad popinam",
+            "portat tabellam ad popinam Titus",
+            "portat ad popinam Titus tabellam",
+            "portat ad popinam tabellam Titus"
+          ]
+        },
+        "points": 1,
+        "canonicalAnswer": "Titus tabellam ad popinam portat",
+        "normalization": {
+          "trim": true,
+          "collapseSpaces": true,
+          "ignoreCase": true,
+          "ignorePunctuation": true,
+          "normalizeApostrophes": true,
+          "ignoreDiacritics": true
+        },
+        "gradingFocus": "Réinvestissement guidé de P1 : COD + groupe de direction + ordre latin flexible.",
+        "rejectIf": [
+          "verbe incorrect",
+          "sens inversé sujet/objet",
+          "cas incorrect",
+          "forme latine impossible au niveau de la leçon",
+          "réponse hors-sujet"
+        ],
+        "tests": [
+          {
+            "input": "Titus tabellam ad popinam portat",
+            "isCorrect": true
+          },
+          {
+            "input": "portat Titus tabellam ad popinam",
+            "isCorrect": true
+          },
+          {
+            "input": "Titus tabella ad popinam portat",
+            "isCorrect": false
+          },
+          {
+            "input": "réponse hors-sujet",
+            "isCorrect": false
+          }
+        ]
+      }
 
     ],
 
@@ -6805,19 +6337,21 @@ export const lessons5eP1 = [
 
       "retains": [
 
-        "Je peux lire une petite scène complète en latin simple avec cohérence narrative.",
+        "Dans une scène complète, je pars du verbe, puis je repère sujet, COD et groupe de lieu ou de direction.",
 
-        "Validation de la période : 80 % et plus."
+        "Je ne me fie pas seulement à l’ordre des mots : les fonctions restent lisibles.",
+
+        "Je peux réinvestir ensemble plusieurs acquis de P1 dans une même phrase."
 
       ],
 
       "cahier": [
 
-        "Marcus nomen Discordiae videt",
+        "Marcus nomen Discordiae legit in popina",
 
         "Livia Discordiam timet",
 
-        "Titus tabellam ad forum portat"
+        "Titus tabellam ad popinam portat"
 
       ],
 
@@ -6825,13 +6359,11 @@ export const lessons5eP1 = [
 
         "Discordia",
 
-        "Subura",
+        "popina",
 
         "synthèse",
 
-        "lecture",
-
-        "validation"
+        "lecture"
 
       ]
 
@@ -6847,6 +6379,8 @@ export const lessons5eP1 = [
 
         "discordia",
 
+        "popina",
+
         "p1-l12"
 
       ]
@@ -6854,7 +6388,7 @@ export const lessons5eP1 = [
     }
 
   },
-
+      
   {
 
   "id": "p1-l13",
@@ -6988,7 +6522,7 @@ export const lessons5eP1 = [
 
       "type": "singleChoice",
 
-      "prompt": "🟢 « adest » signifie surtout :",
+      "prompt": "🟢 « Adest » signifie surtout :",
 
       "options": [
 
@@ -7016,7 +6550,7 @@ export const lessons5eP1 = [
 
       "type": "multipleChoice",
 
-      "prompt": "🟢 Quelles phrases parlent de présence ?",
+      "prompt": "🟢 Quelles phrases utilisent des verbes d'état (être, paraître, se tenir...) ?",
 
       "options": [
 
@@ -7026,7 +6560,7 @@ export const lessons5eP1 = [
 
         "Lucius tabellam portat.",
 
-        "Flavia adest."
+        "Flavia in thermis stat."
 
       ],
 
@@ -7036,7 +6570,7 @@ export const lessons5eP1 = [
 
         "Livia in domo est.",
 
-        "Flavia adest."
+        "Flavia in thermis stat."
 
       ],
 
@@ -7172,7 +6706,7 @@ export const lessons5eP1 = [
 
       "type": "textInput",
 
-      "prompt": "🟢 Traduis en français : Marcus adest.",
+      "prompt": "🟢 Traduis en français : « Adest Marcus ».",
 
       "expected": "marcus est là",
 
