@@ -3914,7 +3914,7 @@ export const lessons5eP1 = [
 
         "type": "singleChoice",
 
-        "prompt": "⛲ Le verbe turbat veut dire :",
+        "prompt": "⛲ Le verbe « turbat » veut dire :",
 
         "options": [
 
