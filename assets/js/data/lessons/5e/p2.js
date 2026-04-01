@@ -5347,7 +5347,7 @@ export const lessons5eP2 = [
 
         ],
 
-        "expected": "aboie",
+        "expected": "Il/elle aboie",
 
         "shuffle": true,
 
@@ -7660,7 +7660,7 @@ export const lessons5eP2 = [
   ],
   "expected": {
     "quis": "mot interrogatif / sujet",
-    "donum": "COD",
+    "vicinum": "COD",
     "videt": "verbe"
   },
   "points": 1
