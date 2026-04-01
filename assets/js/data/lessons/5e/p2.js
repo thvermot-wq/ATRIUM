@@ -733,51 +733,40 @@ export const lessons5eP2 = [
 },
 
     {
-
   "id": "p2-l2-t7",
-
   "type": "matching",
-
-  "prompt": "Mini-texte : « 𝐹𝑒𝑚𝑖𝑛𝑎 𝑖𝑛 𝑣𝑖𝑎 𝑒𝑠𝑡. 𝑆𝑒𝑟𝑣𝑢𝑠 𝑎𝑑 𝑓𝑜𝑛𝑡𝑒𝑚 𝑣𝑒𝑛𝑖𝑡. » Associe chaque groupe au bon sens.",
-
+  "prompt": "Mini-texte : « Femina in via ambulat. Servus ad fontem venit. Ancilla ex taberna exit. Canis ante ianuam stat. » Associe chaque groupe à sa valeur.",
   "pairs": [
-
     {
-
       "left": "in via",
-
       "right": "lieu où l’on est"
-
     },
-
     {
-
       "left": "ad fontem",
-
       "right": "lieu vers lequel on va"
-
+    },
+    {
+      "left": "ex taberna",
+      "right": "lieu d’où l’on vient"
+    },
+    {
+      "left": "ante ianuam",
+      "right": "position devant"
     }
-
   ],
-
   "rightOptions": [
-
     "lieu où l’on est",
-
-    "lieu vers lequel on va"
-
+    "lieu vers lequel on va",
+    "lieu d’où l’on vient",
+    "position devant"
   ],
-
   "expected": {
-
     "in via": "lieu où l’on est",
-
-    "ad fontem": "lieu vers lequel on va"
-
+    "ad fontem": "lieu vers lequel on va",
+    "ex taberna": "lieu d’où l’on vient",
+    "ante ianuam": "position devant"
   },
-
   "points": 1
-
 }
 
     ],
@@ -1193,105 +1182,41 @@ export const lessons5eP2 = [
 
       },
 
-      {
+     {
+  "id": "p2-l3-t2",
+  "type": "multipleChoice",
+  "prompt": "Coche les deux formes de 1re déclinaison qui peuvent être COD dans une phrase simple.",
+  "options": [
+    "feminam",
+    "amicam",
+    "taberna",
+    "servus"
+  ],
+  "expected": [
+    "feminam",
+    "amicam"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
-        "id": "p2-l3-t2",
-
-        "type": "matching",
-
-        "prompt": "Associe mot et traduction.",
-
-        "pairs": [
-
-          {
-
-            "left": "femina",
-
-            "right": "femme"
-
-          },
-
-          {
-
-            "left": "amica",
-
-            "right": "amie"
-
-          },
-
-          {
-
-            "left": "taberna",
-
-            "right": "boutique"
-
-          },
-
-          {
-
-            "left": "via",
-
-            "right": "rue"
-
-          }
-
-        ],
-
-        "rightOptions": [
-
-          "rue",
-
-          "femme",
-
-          "boutique",
-
-          "amie"
-
-        ],
-
-        "expected": {
-
-          "femina": "femme",
-
-          "amica": "amie",
-
-          "taberna": "boutique",
-
-          "via": "rue"
-
-        },
-
-        "points": 1
-
-      },
-
-      {
-
-        "id": "p2-l3-t3",
-
-        "type": "singleChoice",
-
-        "prompt": "Dans « 𝐹𝑒𝑚𝑖𝑛𝑎 𝑎𝑞𝑢𝑎𝑚 𝑝𝑜𝑟𝑡𝑎𝑡 », quel est l’objet ?",
-
-        "options": [
-
-          "femina",
-
-          "aquam",
-
-          "portat",
-
-          "nullus"
-
-        ],
-
-        "expected": "aquam",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+     {
+  "id": "p2-l3-t5",
+  "type": "multipleChoice",
+  "prompt": "Mini-texte : « Femina aquam portat. » Choisis les deux affirmations justes.",
+  "options": [
+    "femina est le sujet",
+    "aquam est le COD",
+    "portat est le sujet",
+    "aquam est au nominatif"
+  ],
+  "expected": [
+    "femina est le sujet",
+    "aquam est le COD"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -3470,64 +3395,19 @@ export const lessons5eP2 = [
       },
 
       {
-
-        "id": "p2-l6-t2",
-
-        "type": "matching",
-
-        "prompt": "Associe la terminaison et la personne.",
-
-        "pairs": [
-
-          {
-
-            "left": "-o",
-
-            "right": "je"
-
-          },
-
-          {
-
-            "left": "-s",
-
-            "right": "tu"
-
-          },
-
-          {
-
-            "left": "-t",
-
-            "right": "il/elle"
-
-          }
-
-        ],
-
-        "rightOptions": [
-
-          "il/elle",
-
-          "je",
-
-          "tu"
-
-        ],
-
-        "expected": {
-
-          "-o": "je",
-
-          "-s": "tu",
-
-          "-t": "il/elle"
-
-        },
-
-        "points": 1
-
-      },
+  "id": "p2-l6-t2",
+  "type": "singleChoice",
+  "prompt": "Quelle série contient seulement des formes de 2e personne du singulier ?",
+  "options": [
+    "audis, negas, rogas",
+    "audio, nego, rogo",
+    "audit, negat, rogat",
+    "habito, audis, timet"
+  ],
+  "expected": "audis, negas, rogas",
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -6217,7 +6097,7 @@ export const lessons5eP2 = [
 
           {
 
-            "left": "rosa",
+            "left": "puella",
 
             "right": "1re déclinaison"
 
@@ -6253,7 +6133,7 @@ export const lessons5eP2 = [
 
         "expected": {
 
-          "rosa": "1re déclinaison",
+          "puella": "1re déclinaison",
 
           "dominus": "2e masc.",
 
@@ -6302,63 +6182,27 @@ export const lessons5eP2 = [
       },
 
          {
-
   "id": "p2-l10-t6",
-
-  "type": "matching",
-
-  "prompt": "Associe chaque nominatif (= sujet) à son accusatif (= COD).",
-
-  "pairs": [
-
-    {
-
-      "left": "rosa",
-
-      "right": "rosam"
-
-    },
-
-    {
-
-      "left": "dominus",
-
-      "right": "dominum"
-
-    },
-
-    {
-
-      "left": "donum",
-
-      "right": "donum"
-
-    }
-
+  "type": "textInput",
+  "prompt": "Passe ces trois mots à la forme COD, dans l’ordre : rosa ; dominus ; donum",
+  "expected": "rosam ; dominum ; donum",
+  "acceptedAnswers": [
+    "rosam ; dominum ; donum",
+    "rosam, dominum, donum",
+    "rosam / dominum / donum",
+    "rosam dominum donum"
   ],
-
-  "rightOptions": [
-
-    "rosam",
-
-    "dominum",
-
-    "donum"
-
-  ],
-
-  "expected": {
-
-    "rosa": "rosam",
-
-    "dominus": "dominum",
-
-    "donum": "donum"
-
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "rosam ; dominum ; donum",
+      "rosam, dominum, donum",
+      "rosam / dominum / donum",
+      "rosam dominum donum"
+    ]
   },
-
   "points": 1
-
 },
 
       {
@@ -8253,77 +8097,20 @@ export const lessons5eP2 = [
 
   "training": [
 
-    {
-
-      "id": "p2-l13-t1",
-
-      "type": "matching",
-
-      "prompt": "Associe chaque mot latin à sa traduction.",
-
-      "pairs": [
-
-        {
-
-          "left": "rex",
-
-          "right": "roi"
-
-        },
-
-        {
-
-          "left": "mater",
-
-          "right": "mère"
-
-        },
-
-        {
-
-          "left": "urbs",
-
-          "right": "ville"
-
-        },
-
-        {
-
-          "left": "corpus",
-
-          "right": "corps"
-
-        }
-
-      ],
-
-      "rightOptions": [
-
-        "ville",
-
-        "corps",
-
-        "roi",
-
-        "mère"
-
-      ],
-
-      "expected": {
-
-        "rex": "roi",
-
-        "mater": "mère",
-
-        "urbs": "ville",
-
-        "corpus": "corps"
-
-      },
-
-      "points": 1
-
-    },
+   {
+  "id": "p2-l13-t1",
+  "type": "singleChoice",
+  "prompt": "Quel mot garde la même forme comme sujet et comme COD ?",
+  "options": [
+    "rex",
+    "mater",
+    "urbs",
+    "corpus"
+  ],
+  "expected": "corpus",
+  "shuffle": true,
+  "points": 1
+},
 
     {
 
@@ -8364,64 +8151,19 @@ export const lessons5eP2 = [
     },
 
     {
-
-      "id": "p2-l13-t3",
-
-      "type": "matching",
-
-      "prompt": "Associe le sujet à sa forme de complément objet.",
-
-      "pairs": [
-
-        {
-
-          "left": "rex",
-
-          "right": "regem"
-
-        },
-
-        {
-
-          "left": "mater",
-
-          "right": "matrem"
-
-        },
-
-        {
-
-          "left": "urbs",
-
-          "right": "urbem"
-
-        }
-
-      ],
-
-      "rightOptions": [
-
-        "regem",
-
-        "matrem",
-
-        "urbem"
-
-      ],
-
-      "expected": {
-
-        "rex": "regem",
-
-        "mater": "matrem",
-
-        "urbs": "urbem"
-
-      },
-
-      "points": 1
-
-    },
+  "id": "p2-l13-t3",
+  "type": "singleChoice",
+  "prompt": "Choisis le seul trio où les trois mots sont à la forme complément objet.",
+  "options": [
+    "regem, matrem, urbem",
+    "rex, mater, urbs",
+    "regem, mater, urbs",
+    "rex, matrem, urbem"
+  ],
+  "expected": "regem, matrem, urbem",
+  "shuffle": true,
+  "points": 1
+},
 
     {
 
