@@ -5852,64 +5852,6 @@ export const lessons5eP1 = [
 
     subtitle: headerContexts5eP1["p1-l12"],
 
-    "objective": "Synthétiser les acquis de P1 dans une scène finale de taverne, sans ajouter de notion nouvelle.",
-    "lessonPoint": "Je combine sujet, verbe, COD et groupe de lieu pour comprendre la scène finale.",
-    "canDo": [
-
-      "Je comprends une micro-scène complète.",
-
-      "Je repère rapidement sujet, verbe, complément.",
-
-      "Je traduis des phrases de synthèse en restant précis."
-
-    ],
-
-   "lexicon": [
-  "Discordia (nom.), Discordiam (acc.) = Discordia / Discorde",
-  "nomen Discordiae = le nom de Discordia",
-  "Subura = Subure (quartier)",
-  "popina = taverne",
-  "ad popinam = vers la taverne",
-  "domus = maison",
-  "murus = mur",
-  "nomen = nom",
-  "tabella (nom.), tabellam (acc.) = tablette",
-  "portat = il/elle porte",
-  "videt = il/elle voit",
-  "timet = il/elle craint"
-],
-
-    "maxScore": 10,
-
-    "training": [
-
-   {
-  "id": "p1-l12-t1",
-  "type": "singleChoice",
-  "prompt": "🧩 Dans « Marcus nomen Discordiae videt », quel mot est le verbe ?",
-  "options": [
-    "Marcus",
-    "nomen",
-    "Discordiae",
-    "videt"
-  ],
-  "expected": "videt",
-  "shuffle": true,
-  "points": 1
-},
-
-       {
-
-    "id": "p1-l12",
-
-    "period": 1,
-
-    "periodId": "p1",
-
-    "title": "La piste Discordia - Synthèse",
-
-    subtitle: headerContexts5eP1["p1-l12"],
-
     "objective": "Réinvestir les acquis de P1 dans une scène finale de taverne sans ajouter de notion nouvelle.",
 
     "lessonPoint": "Je lis d’abord le verbe, puis je repère le sujet, le COD éventuel, et le groupe de lieu ou de direction.",
