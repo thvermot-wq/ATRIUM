@@ -7044,6 +7044,6 @@ export const lessons5eP1 = [
     ]
   }
 }
-]
+];
 
       
