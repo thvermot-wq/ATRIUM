@@ -4668,76 +4668,22 @@ export const lessons5eP2 = [
       },
 
       {
-
-        "id": "p2-l8-t2",
-
-        "type": "matching",
-
-        "prompt": "Associe mot et sens.",
-
-        "pairs": [
-
-          {
-
-            "left": "verum",
-
-            "right": "vrai"
-
-          },
-
-          {
-
-            "left": "falsum",
-
-            "right": "faux"
-
-          },
-
-          {
-
-            "left": "nomen",
-
-            "right": "nom"
-
-          },
-
-          {
-
-            "left": "signum",
-
-            "right": "signe"
-
-          }
-
-        ],
-
-        "rightOptions": [
-
-          "nom",
-
-          "vrai",
-
-          "signe",
-
-          "faux"
-
-        ],
-
-        "expected": {
-
-          "verum": "vrai",
-
-          "falsum": "faux",
-
-          "nomen": "nom",
-
-          "signum": "signe"
-
-        },
-
-        "points": 1
-
-      },
+  "id": "p2-l8-t2",
+  "type": "multipleChoice",
+  "prompt": "Mini-texte : « Tabella falsa est. Nomen mutatum est. Signum manet. » Coche les deux informations explicitement données.",
+  "options": [
+    "La tablette est fausse",
+    "Le nom a été changé",
+    "Le signe a disparu",
+    "La voisine s’enfuit"
+  ],
+  "expected": [
+    "La tablette est fausse",
+    "Le nom a été changé"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -4877,7 +4823,7 @@ export const lessons5eP2 = [
 
           "vicina",
 
-          "nullus"
+          "Il s'agit d'une phrase non-verbale"
 
         ],
 
@@ -5391,13 +5337,13 @@ export const lessons5eP2 = [
 
         "options": [
 
-          "aboie",
+          "Il/ elle aboie",
 
-          "entre",
+          "Il/elle entre",
 
-          "écoute",
+          "Il/elle écoute",
 
-          "fuit"
+          "Il/elle fuit"
 
         ],
 
@@ -5604,12 +5550,12 @@ export const lessons5eP2 = [
    {
   "id": "p2-l9-t7",
   "type": "singleChoice",
-  "prompt": "Mini-texte : « Canis ante ianuam A manet, ante ianuam B recusat. » Que refuse le chien ?",
+  "prompt": "Mini-texte : « Canis ex fonte venit et ante ianuam A manet, ante ianuam B recusat, et per vias currit.  » Quel endroit suspect est dénoncé par le chien ?",
   "options": [
     "la porte B",
     "la porte A",
     "la fontaine",
-    "la tablette"
+    "les rues"
   ],
   "expected": "la porte B",
   "shuffle": true,
@@ -6871,7 +6817,7 @@ export const lessons5eP2 = [
 
   "type": "textInput",
 
-  "prompt": "Passe de la 3e à la 1re personne : « 𝑉𝑖𝑐𝑢𝑚 𝑡𝑢𝑟𝑏𝑎𝑡 » devient « 𝑉𝑖𝑐𝑢𝑚 ... »",
+  "prompt": "Passe de la 3e à la 1re personne du singulier : « 𝑉𝑖𝑐𝑢𝑚 𝑡𝑢𝑟𝑏𝑎𝑡 » devient « 𝑉𝑖𝑐𝑢𝑚 ... »",
 
   "expected": "turbo",
 
@@ -7494,6 +7440,8 @@ export const lessons5eP2 = [
 
     "Quis tabellam videt ?",
 
+    "Populum videmus ?",
+
     "Quid falsum est ?",
 
     "Cur pax non redit ?",
@@ -7690,14 +7638,14 @@ export const lessons5eP2 = [
      {
   "id": "p2-l12-t7",
   "type": "matching",
-  "prompt": "Dans « Quis donum videt ? », associe chaque mot à sa fonction.",
+  "prompt": "Dans « Quis vicinum videt ? », associe chaque mot à sa fonction.",
   "pairs": [
     {
       "left": "quis",
       "right": "mot interrogatif / sujet"
     },
     {
-      "left": "donum",
+      "left": "vicinum",
       "right": "COD"
     },
     {
