@@ -6386,7 +6386,7 @@ export const lessons5eP1 = [
     {
   "id": "p1-l13-t1",
   "type": "singleChoice",
-  "prompt": "🟢 Dans « ego sum, Marcus est », quelle forme signifie « il est » ?",
+  "prompt": "🟢 Dans « Ego sum, Marcus est », quelle forme signifie « il est » ?",
   "options": [
     "sum",
     "Marcus",
@@ -6752,7 +6752,7 @@ export const lessons5eP1 = [
 
       "type": "textInput",
 
-      "prompt": "🟢 Traduis en latin : Livia est dans la maison.",
+      "prompt": "🟢 Traduis en latin : « Livia est dans la maison »",
 
       "expected": "Livia in domo est",
 
@@ -6856,13 +6856,13 @@ export const lessons5eP1 = [
 
       "type": "textInput",
 
-      "prompt": "🟢 Traduis en latin : Je suis là.",
+      "prompt": "🟢 Traduis en latin : « Tu es là ».",
 
-      "expected": "adsum",
+      "expected": "ades",
 
       "acceptedAnswers": [
 
-        "adsum"
+        "ades"
 
       ],
 
@@ -6874,7 +6874,7 @@ export const lessons5eP1 = [
 
         "accepted": [
 
-          "adsum"
+          "ades"
 
         ]
 
@@ -6882,7 +6882,7 @@ export const lessons5eP1 = [
 
       "points": 1,
 
-      "canonicalAnswer": "adsum",
+      "canonicalAnswer": "ades",
 
       "normalization": {
 
@@ -6916,7 +6916,7 @@ export const lessons5eP1 = [
 
         {
 
-          "input": "adsum",
+          "input": "ades",
 
           "isCorrect": true
 
@@ -6940,9 +6940,9 @@ export const lessons5eP1 = [
 
     "retains": [
 
-      "sum / es / est = je suis / tu es / il est",
+      "sum / es / est = je suis / tu es / il/elle est",
 
-      "adsum / ades / adest = je suis là / tu es là / il est là"
+      "adsum / ades / adest = je suis là / tu es là / il/elle est là"
 
     ],
 
@@ -6952,7 +6952,8 @@ export const lessons5eP1 = [
 
       "Livia in domo est",
 
-      "adsum = je suis là"
+      "adsum = je suis là",
+      "ades = tu es là"
 
     ],
 
