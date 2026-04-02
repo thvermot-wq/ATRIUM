@@ -186,7 +186,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "« vicina virum noctu videt » : qui voit l’homme ?",
+        "prompt": "« Vicina virum noctu videt » : qui voit l’homme ?",
 
         "options": [
 
@@ -211,7 +211,7 @@ export const lessons5eP3 = [
    {
   "id": "p3-l1-t4",
   "type": "multipleChoice",
-  "prompt": "Coche les deux traductions recevables de « vir noctu exit ».",
+  "prompt": "Coche les deux traductions recevables de « Vir noctu exit ».",
   "options": [
     "L’homme sort de nuit",
     "Un homme sort pendant la nuit",
@@ -232,7 +232,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "Dans « noctu vir exit », quel mot indique le moment ?",
+        "prompt": "Dans « Noctu vir exit », quel mot indique le moment ?",
 
         "options": [
 
@@ -260,7 +260,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "Dans « rumor vicum turbat », le verbe est…",
+        "prompt": "Dans « Rumor vicum turbat », le verbe est…",
 
         "options": [
 
@@ -352,7 +352,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : Quis virum videt ?",
+        "prompt": "Traduis : « Quis virum videt » ?",
 
         "expected": "qui voit l'homme ?",
 
@@ -440,7 +440,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis en latin : La voisine voit l’homme.",
+        "prompt": "Traduis en latin : « La voisine voit l’homme ».",
 
         "expected": "vicina virum videt",
 
@@ -544,7 +544,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : rumor vicum turbat.",
+        "prompt": "Traduis : « Rumor vicum turbat ».",
 
         "expected": "la rumeur trouble le quartier",
 
@@ -757,7 +757,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "ex signifie…",
+        "prompt": "« Ex » signifie…",
 
         "options": [
 
@@ -785,7 +785,7 @@ export const lessons5eP3 = [
 
         "type": "matching",
 
-        "prompt": "Associe ad/in/ex/ante et leur sens.",
+        "prompt": "Associe « ad / in / ex / ante » et leur sens.",
 
         "pairs": [
 
@@ -857,7 +857,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "« vir ex insula exit » : d’où sort l’homme ?",
+        "prompt": "« Vir ex insula exit » : d’où sort l’homme ?",
 
         "options": [
 
@@ -885,7 +885,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "« ante ianuam vir stat » : que fait-il ?",
+        "prompt": "« Ante ianuam vir stat » : que fait-il ?",
 
         "options": [
 
@@ -913,7 +913,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "Dans « vir in via currit », quel mot ou groupe indique le lieu ?",
+        "prompt": "Dans « Vir in via currit », quel mot ou groupe de mots indique le lieu ?",
 
         "options": [
 
@@ -938,7 +938,7 @@ export const lessons5eP3 = [
      {
   "id": "p3-l2-t6",
   "type": "multipleChoice",
-  "prompt": "Coche les trois traductions recevables de « servus ad villam currit ».",
+  "prompt": "Coche les trois traductions recevables de « Servus ad villam currit ».",
   "options": [
     "Le serviteur court vers la villa",
     "L’esclave court vers la villa",
@@ -1012,7 +1012,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : vir ante insulam manet",
+        "prompt": "Traduis : « Vir ante insulam manet » :",
 
         "expected": "l'homme reste devant l'immeuble",
 
@@ -1140,7 +1140,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis en latin : L’homme entre dans l’immeuble.",
+        "prompt": "Traduis en latin : « L’homme entre dans l’immeuble ».",
 
         "expected": "vir in insulam intrat",
 
@@ -1244,7 +1244,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : vir ex insula exit et ante ianuam stat.",
+        "prompt": "Traduis : « Vir ex insula exit et ante ianuam stat ».",
 
         "expected": "l’homme sort de l’immeuble et se tient devant la porte",
 
@@ -1566,7 +1566,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "Dans « vicina viam spectat », le complément d'objet est…",
+        "prompt": "Dans « Vicina viam spectat », le complément d'objet est…",
 
         "options": [
 
@@ -1594,7 +1594,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "La terminaison à l'accusatif singulier, dans la première déclinaison, est…",
+        "prompt": "La terminaison à l'accusatif singulier, dans la première déclinaison, est presque toujours…",
 
         "options": [
 
@@ -1622,7 +1622,7 @@ export const lessons5eP3 = [
 
         "type": "matching",
 
-        "prompt": "Associe chaque mot à sa fonction dans « vicina viam spectat ».",
+        "prompt": "Associe chaque mot à sa fonction dans « Vicina viam spectat ».",
 
         "pairs": [
 
@@ -1679,7 +1679,7 @@ export const lessons5eP3 = [
       {
   "id": "p3-l3-t6",
   "type": "multipleChoice",
-  "prompt": "Coche les deux traductions recevables de « amica lucernam portat ».",
+  "prompt": "Coche les deux traductions recevables de « Amica lucernam portat ».",
   "options": [
     "L’amie porte la lampe",
     "Une amie porte une lampe",
@@ -1735,7 +1735,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : vicina ianuam aperit",
+        "prompt": "Traduis : « Vicina ianuam aperit »",
 
         "expected": "la voisine ouvre la porte",
 
@@ -1835,7 +1835,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis en latin : La femme regarde la rue.",
+        "prompt": "Traduis en latin : « La femme regarde la rue ».",
 
         "expected": "femina viam spectat",
 
@@ -1939,7 +1939,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Complète en latin : « La voisine porte la lampe » = « vicina ... portat »",
+        "prompt": "Complète en latin : « La voisine porte la lampe » = « Vicina ... portat »",
 
         "expected": "lucernam",
 
@@ -2217,7 +2217,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "« vir oleum emit » : que fait l’homme ?",
+        "prompt": "« Vir oleum emit » : que fait l’homme ?",
 
         "options": [
 
@@ -2273,7 +2273,7 @@ export const lessons5eP3 = [
 
         "type": "multipleChoice",
 
-        "prompt": "Traductions recevables de « oleum vir portat ».",
+        "prompt": "Traductions recevables de « Oleum vir portat ».",
 
         "options": [
 
@@ -2307,7 +2307,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "Dans « vir oleum emit », quel mot est le complément d’objet direct ?",
+        "prompt": "Dans « Vir oleum emit », quel mot est le complément d’objet direct ?",
 
         "options": [
 
@@ -2354,7 +2354,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : vir oleum celat",
+        "prompt": "Traduis : « Vir oleum celat » : ",
 
         "expected": "l'homme cache l'huile",
 
@@ -2466,7 +2466,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis en latin : Le marchand voit l’homme.",
+        "prompt": "Traduis en latin : « Le marchand voit l’homme ».",
 
         "expected": "mercator virum videt",
 
@@ -2570,7 +2570,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Complète en latin : « vicinus ... invenit » (l’indice).",
+        "prompt": "Complète en latin : « Vicinus ... invenit » (l’indice).",
 
         "expected": "signum",
 
