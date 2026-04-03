@@ -2679,6 +2679,8 @@ export const lessons5eP2 = [
 
       "malum (nom./acc.) = mal, mauvaise chose",
 
+      "sum, est, sunt = je suis, il/elle est, ils/elles sont",
+
       "video, videt = je vois ; il/elle voit",
 
       "habeo, habet = j’ai ; il/elle a",
@@ -2696,7 +2698,7 @@ export const lessons5eP2 = [
      {
   "id": "p2-l5-t1",
   "type": "singleChoice",
-  "prompt": "Mini-texte : « Donum in templo est. » Quel mot peut garder la même forme comme sujet ou comme complément d’objet ?",
+  "prompt": "Mini-texte : « Femina, servus, dominus et donum in templo sunt. » Quel mot peut garder la même forme comme sujet ou comme complément d’objet ?",
   "options": [
     "donum",
     "dominus",
@@ -2818,17 +2820,17 @@ export const lessons5eP2 = [
 
         "options": [
 
-          "nominatif = accusatif",
+          "Nominatif = accusatif",
 
-          "le mot finit toujours en -a",
+          "Le mot finit toujours en -a",
 
-          "le verbe disparaît",
+          "Le verbe disparaît",
 
-          "ordre fixe"
+          "L'ordre des mots est toujours fixe"
 
         ],
 
-        "expected": "nominatif = accusatif",
+        "expected": "Nominatif = accusatif",
 
         "shuffle": true,
 
@@ -2976,7 +2978,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : 𝑑𝑜𝑛𝑢𝑚 𝑖𝑛 𝑡𝑒𝑚𝑝𝑙𝑜 𝑒𝑠𝑡",
+        "prompt": "Traduis : « 𝑑𝑜𝑛𝑢𝑚 𝑖𝑛 𝑡𝑒𝑚𝑝𝑙𝑜 𝑒𝑠𝑡 »",
 
         "expected": "l'offrande est dans le temple",
 
@@ -3116,7 +3118,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis en latin : Le voisin trouve le signe.",
+        "prompt": "Traduis en latin : « Le voisin trouve le signe ».",
 
         "expected": "vicinus signum invenit",
 
@@ -3217,7 +3219,7 @@ export const lessons5eP2 = [
     {
   "id": "p2-l5-p3",
   "type": "textInput",
-  "prompt": "Complète en latin : « Le temple cache un danger » = Templum ____ celat.",
+  "prompt": "Complète en latin : « Le temple cache un danger » = « Templum ____ celat ».",
   "expected": "periculum",
   "acceptedAnswers": [
     "periculum"
@@ -3582,7 +3584,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : 𝑎𝑢𝑑𝑖𝑜 𝑐𝑎𝑛𝑒𝑚",
+        "prompt": "Traduis : « Audio canem »",
 
         "expected": "j'entends le chien",
 
@@ -3672,6 +3674,7 @@ export const lessons5eP2 = [
 
     "clamo ; clamas ; clamat",
     "clamo, clamas, clamat"
+    "clamo clamas clamat"
 
   ],
 
@@ -3685,6 +3688,7 @@ export const lessons5eP2 = [
 
       "clamo ; clamas ; clamat",
       "clamo, clamas, clamat"
+      "clamo clamas clamat"
 
     ]
 
@@ -3956,7 +3960,7 @@ export const lessons5eP2 = [
 
         "type": "singleChoice",
 
-        "prompt": "Quel mot signifie « nous voyons » ?",
+        "prompt": "Quel mot signifie « Nous voyons » ?",
 
         "options": [
 
@@ -3984,7 +3988,7 @@ export const lessons5eP2 = [
 
         "type": "matching",
 
-        "prompt": "Associe la terminaison et la personne plurielle.",
+        "prompt": "Associe la terminaison et la personne au pluriel.",
 
         "pairs": [
 
@@ -4054,7 +4058,7 @@ export const lessons5eP2 = [
 
           "la voisine",
 
-          "le chien"
+          "les voisines"
 
         ],
 
@@ -4105,8 +4109,10 @@ export const lessons5eP2 = [
         "options": [
 
           "videmus",
+          "audit",
 
           "auditis",
+          "vides",
 
           "clamant",
 
@@ -4246,7 +4252,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : 𝑑𝑜𝑛𝑢𝑚 𝑞𝑢𝑎𝑒𝑟𝑖𝑚𝑢𝑠",
+        "prompt": "Traduis : « 𝑑𝑜𝑛𝑢𝑚 𝑞𝑢𝑎𝑒𝑟𝑖𝑚𝑢𝑠 »",
 
         "expected": "nous cherchons l'offrande",
 
@@ -4350,7 +4356,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis en latin : Les voisins crient devant la porte.",
+        "prompt": "Traduis en latin : « Les voisins crient devant la porte. »",
 
         "expected": "vicini ante ianuam clamant",
 
