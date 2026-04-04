@@ -1201,7 +1201,7 @@ export const lessons5eP2 = [
 },
 
      {
-  "id": "p2-l3-t5",
+  "id": "p2-l3-t3",
   "type": "multipleChoice",
   "prompt": "Mini-texte : « Femina aquam portat. » Choisis les deux affirmations justes.",
   "options": [
@@ -7621,7 +7621,7 @@ export const lessons5eP2 = [
 
       },
 
-   {
+  {
   "id": "p2-l12-p3",
   "type": "textInput",
   "prompt": "Traduis en latin : « Pourquoi le peuple ne voit-il pas le vrai ? »",
@@ -7682,11 +7682,44 @@ export const lessons5eP2 = [
       "isCorrect": false
     }
   ]
-},
+}
+
+    ],
+
+    "summary": {
+      "retains": [
+        "Je mobilise toutes les notions de la période.",
+        "Je peux lire et expliquer un mini-dossier narratif."
+      ],
+      "cahier": [
+        "Interrogatifs : quis/quid/cur/ubi",
+        "Prépositions : ad/in/ex/ante",
+        "Déclinaisons : 1re + 2e masc. + 2e neutre",
+        "Présent : -o/-s/-t/-mus/-tis/-nt",
+        "Ordre latin flexible",
+        "Civilisation : Subure est un quartier populaire vivant et bruyant de Rome"
+      ],
+      "keywords": [
+        "révision",
+        "enquête finale",
+        "Subure",
+        "pax"
+      ]
+    },
+
+    "meta": {
+      "status": "ready",
+      "tags": [
+        "p2",
+        "final",
+        "discordia"
+      ]
+    }
+
+  },
 
   {
-
-  "id": "p2-l13",
+    "id": "p2-l13",
 
   "period": 2,
 
