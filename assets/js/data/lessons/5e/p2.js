@@ -7741,67 +7741,89 @@ export const lessons5eP2 = [
    {
   "id": "p2-l13-t1",
   "type": "singleChoice",
-  "prompt": "Quel mot garde la même forme comme sujet et comme COD ?",
+  "prompt": "Quel groupe ne contient que des noms dont le nominatif et l’accusatif singulier sont identiques ?",
   "options": [
-    "rex",
-    "mater",
-    "urbs",
-    "corpus"
+    "nomen, corpus",
+    "rex, mater",
+    "urbs, corpus",
+    "mater, nomen"
   ],
-  "expected": "corpus",
+  "expected": "nomen, corpus",
   "shuffle": true,
   "points": 1
 },
 
     {
-
-      "id": "p2-l13-t2",
-
-      "type": "multipleChoice",
-
-      "prompt": "Quels mots appartiennent à la 3e déclinaison ?",
-
-      "options": [
-
-        "rex",
-
-        "mater",
-
-        "urbs",
-
-        "dominus",
-
-        "puella"
-
-      ],
-
-      "expected": [
-
-        "rex",
-
-        "mater",
-
-        "urbs"
-
-      ],
-
-      "shuffle": true,
-
-      "points": 1
-
+  "id": "p2-l13-t2",
+  "type": "textInput",
+  "prompt": "Écris les accusatifs singuliers, dans l’ordre, de : rex, mater, urbs.",
+  "expected": "regem, matrem, urbem",
+  "acceptedAnswers": [
+    "regem, matrem, urbem",
+    "regem matrem urbem",
+    "regem ; matrem ; urbem",
+    "regem; matrem; urbem",
+    "regem,matrem,urbem"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "regem, matrem, urbem",
+      "regem matrem urbem",
+      "regem ; matrem ; urbem",
+      "regem; matrem; urbem",
+      "regem,matrem,urbem"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "regem, matrem, urbem",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Produire trois accusatifs singuliers de 3e déclinaison non neutres à partir du nominatif.",
+  "rejectIf": [
+    "forme incorrecte",
+    "ordre non respecté",
+    "réponse incomplète",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    {
+      "input": "regem, matrem, urbem",
+      "isCorrect": true
     },
+    {
+      "input": "regem matrem urbem",
+      "isCorrect": true
+    },
+    {
+      "input": "rex, mater, urbs",
+      "isCorrect": false
+    },
+    {
+      "input": "regem, urbem, matrem",
+      "isCorrect": false
+    }
+  ]
+},
 
     {
   "id": "p2-l13-t3",
   "type": "singleChoice",
-  "prompt": "Choisis le seul trio où les trois mots sont à la forme complément objet.",
+  "prompt": "Choisis la traduction exacte de : « rex matrem audit ».",
   "options": [
-    "regem, matrem, urbem",
-    "rex, mater, urbs",
-    "regem, mater, urbs",
-    "rex, matrem, urbem"
+    "Le roi entend la mère.",
+    "La mère entend le roi.",
+    "Le roi lit la mère.",
+    "La ville entend la mère."
   ],
-  "expected": "regem, matrem, urbem",
+  "expected": "Le roi entend la mère.",
   "shuffle": true,
   "points": 1
 },
@@ -7812,7 +7834,7 @@ export const lessons5eP2 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « mater nomen legit », qui lit ?",
+      "prompt": "Dans « Nomen legit mater », qui lit ?",
 
       "options": [
 
@@ -7840,7 +7862,7 @@ export const lessons5eP2 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « rex urbem videt », quel mot est le complément objet ?",
+      "prompt": "Dans « Rex urbem videt », quel mot est le complément objet ?",
 
       "options": [
 
@@ -7862,33 +7884,20 @@ export const lessons5eP2 = [
 
     },
 
-    {
-
-      "id": "p2-l13-t6",
-
-      "type": "singleChoice",
-
-      "prompt": "Quel mot garde la même forme comme sujet et comme complément objet ?",
-
-      "options": [
-
-        "nomen",
-
-        "rex",
-
-        "mater",
-
-        "urbs"
-
-      ],
-
-      "expected": "nomen",
-
-      "shuffle": true,
-
-      "points": 1
-
-    },
+  {
+  "id": "p2-l13-t6",
+  "type": "singleChoice",
+  "prompt": "Mini-texte : « Mater corpus portat ». Quel mot de genre neutre est COD, même s’il garde la même forme qu’au nominatif ?",
+  "options": [
+    "mater",
+    "corpus",
+    "portat",
+    "corpum"
+  ],
+  "expected": "corpus",
+  "shuffle": true,
+  "points": 1
+},
 
    {
   "id": "p2-l13-t7",
@@ -7969,18 +7978,13 @@ export const lessons5eP2 = [
       "canonicalAnswer": "la mère lit le nom",
 
       "normalization": {
-
-        "trim": true,
-
-        "collapseSpaces": true,
-
-        "ignoreCase": true,
-
-        "ignorePunctuation": true,
-
-        "normalizeApostrophes": true,
-
-        "ignoreDiacritics": true
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
       },
 
@@ -8024,7 +8028,7 @@ export const lessons5eP2 = [
 
       "type": "textInput",
 
-      "prompt": "Traduis en latin : Le roi voit la ville.",
+      "prompt": "Traduis en latin : « Le roi voit la ville ».",
 
       "expected": "rex urbem videt",
 
@@ -8128,7 +8132,7 @@ export const lessons5eP2 = [
 
       "type": "textInput",
 
-      "prompt": "Complète : « La mère entend le roi » = Mater ____ audit.",
+      "prompt": "Complète : « La mère entend le roi » = « Mater ____ audit ».",
 
       "expected": "regem",
 
