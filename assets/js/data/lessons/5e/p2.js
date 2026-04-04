@@ -5325,8 +5325,6 @@ export const lessons5eP2 = [
 
   "maneo, manet = je reste ; il/elle reste"
 
-]
-
     ],
 
     "maxScore": 10,
