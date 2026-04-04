@@ -3687,7 +3687,7 @@ export const lessons5eP2 = [
     "accepted": [
 
       "clamo ; clamas ; clamat",
-      "clamo, clamas, clamat"
+      "clamo, clamas, clamat",
       "clamo clamas clamat"
 
     ]
