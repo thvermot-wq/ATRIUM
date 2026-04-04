@@ -4651,21 +4651,21 @@ export const lessons5eP2 = [
 
         "type": "singleChoice",
 
-        "prompt": "« 𝑇𝑎𝑏𝑒𝑙𝑙𝑎 𝑓𝑎𝑙𝑠𝑎 » signifie…",
+        "prompt": "Le contraire de « 𝑇𝑎𝑏𝑒𝑙𝑙𝑎 𝑓𝑎𝑙𝑠𝑎 » est…",
 
         "options": [
 
-          "tablette falsifiée",
+          "Tabella vera",
 
-          "tablette neuve",
+          "Tabella falsum",
 
-          "autel cassé",
+          "Tabella mutata",
 
-          "chien calme"
+          "Tabella signum"
 
         ],
 
-        "expected": "tablette falsifiée",
+        "expected": "Tabella vera",
 
         "shuffle": true,
 
@@ -4869,7 +4869,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : 𝑡𝑎𝑏𝑒𝑙𝑙𝑎 𝑓𝑎𝑙𝑠𝑎 𝑒𝑠𝑡",
+        "prompt": "Traduis : « Tabella falsa est »",
 
         "expected": "la tablette est falsifiée",
 
@@ -4926,18 +4926,13 @@ export const lessons5eP2 = [
         "canonicalAnswer": "la tablette est falsifiée",
 
         "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
         },
 
@@ -4981,7 +4976,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis en latin : La voisine montre la tablette.",
+        "prompt": "Traduis en latin : « La voisine montre la tablette ».",
 
         "expected": "vicina tabellam ostendit",
 
@@ -5162,18 +5157,13 @@ export const lessons5eP2 = [
   "canonicalAnswer": "le nom a été changé",
 
   "normalization": {
-
     "trim": true,
-
     "collapseSpaces": true,
-
     "ignoreCase": true,
-
     "ignorePunctuation": true,
-
     "normalizeApostrophes": true,
-
-    "ignoreDiacritics": true
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
   },
 
@@ -5305,27 +5295,37 @@ export const lessons5eP2 = [
 
     "lexicon": [
 
-      "canis (nom.), canem (acc.) = chien",
+  "canis (nom.), canem (acc.) = chien",
 
-      "ianua (nom.), ianuam (acc.) = porte",
+  "ianua (nom.), ianuam (acc.) = porte",
 
-      "ante + acc. = devant",
+  "ante + acc. = devant",
+  "post + acc. = derrière",
 
-      "in + acc. = dans, vers (mouvement)",
+  "in + acc. = dans, vers (mouvement)",
 
-      "latro, latrat = j’aboie ; il/elle aboie",
+  "intus = dedans",
+  "foris = dehors",
 
-      "sto, stat = je me tiens ; il/elle se tient",
+  "apertus,aperta = ouvert, ouverte",
+  "clausus, clausa = fermé, fermée",
 
-      "recuso, recusat = je refuse ; il/elle refuse",
+  "latro, latrat = j’aboie ; il/elle aboie",
+  "taceo, tacet = je me tais ; il/elle se tait",
 
-      "intro, intrat = j’entre ; il/elle entre",
+  "sto, stat = je me tiens ; il/elle se tient",
 
-      "timeo, timet = je crains ; il/elle craint",
+  "recuso, recusat = je refuse ; il/elle refuse",
 
-      "audio, audit = j’entends ; il/elle entend",
+  "intro, intrat = j’entre ; il/elle entre",
 
-      "maneo, manet = je reste ; il/elle reste"
+  "timeo, timet = je crains ; il/elle craint",
+
+  "audio, audit = j’entends ; il/elle entend",
+
+  "maneo, manet = je reste ; il/elle reste"
+
+]
 
     ],
 
@@ -5339,7 +5339,7 @@ export const lessons5eP2 = [
 
         "type": "singleChoice",
 
-        "prompt": "𝑙𝑎𝑡𝑟𝑎𝑡 signifie…",
+        "prompt": "« 𝑙𝑎𝑡𝑟𝑎𝑡 » signifie…",
 
         "options": [
 
@@ -5361,77 +5361,42 @@ export const lessons5eP2 = [
 
       },
 
-      {
-
-        "id": "p2-l9-t2",
-
-        "type": "matching",
-
-        "prompt": "Associe mot et sens.",
-
-        "pairs": [
-
-          {
-
-            "left": "canis",
-
-            "right": "chien"
-
-          },
-
-          {
-
-            "left": "ianua",
-
-            "right": "porte"
-
-          },
-
-          {
-
-            "left": "ante",
-
-            "right": "devant"
-
-          },
-
-          {
-
-            "left": "latrat",
-
-            "right": "aboie"
-
-          }
-
-        ],
-
-        "rightOptions": [
-
-          "porte",
-
-          "aboie",
-
-          "devant",
-
-          "chien"
-
-        ],
-
-        "expected": {
-
-          "canis": "chien",
-
-          "ianua": "porte",
-
-          "ante": "devant",
-
-          "latrat": "aboie"
-
-        },
-
-        "points": 1
-
-      },
+     {
+  "id": "p2-l9-t2",
+  "type": "matching",
+  "prompt": "Trouve dans le lexique le contraire de chaque mot ou expression.",
+  "pairs": [
+    {
+      "left": "ante",
+      "right": "post"
+    },
+    {
+      "left": "intus",
+      "right": "foris"
+    },
+    {
+      "left": "aperta",
+      "right": "clausa"
+    },
+    {
+      "left": "latrat",
+      "right": "tacet"
+    }
+  ],
+  "rightOptions": [
+    "post",
+    "foris",
+    "clausa",
+    "tacet"
+  ],
+  "expected": {
+    "ante": "post",
+    "intus": "foris",
+    "aperta": "clausa",
+    "latrat": "tacet"
+  },
+  "points": 1
+},
 
       {
 
@@ -5531,7 +5496,7 @@ export const lessons5eP2 = [
 
   "type": "singleChoice",
 
-  "prompt": "Dans « 𝐼𝑎𝑛𝑢𝑎𝑚 𝑎𝑛𝑡𝑒 𝑚𝑎𝑛𝑒𝑡 𝑐𝑎𝑛𝑖𝑠 », quel mot est le sujet ?",
+  "prompt": "Dans « Ante ianuam manet canis », quel mot est le sujet ?",
 
   "options": [
 
@@ -5577,7 +5542,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : 𝑐𝑎𝑛𝑖𝑠 𝑖𝑎𝑛𝑢𝑎𝑚 𝑡𝑖𝑚𝑒𝑡",
+        "prompt": "Traduis : « Canis ianuam timet »",
 
         "expected": "le chien craint la porte",
 
@@ -5608,18 +5573,13 @@ export const lessons5eP2 = [
         "canonicalAnswer": "le chien craint la porte",
 
         "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
         },
 
@@ -5663,7 +5623,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis en latin : Le chien reste devant la porte.",
+        "prompt": "Traduis en latin : « Le chien reste devant la porte ».",
 
         "expected": "canis ante ianuam manet",
 
@@ -5712,18 +5672,13 @@ export const lessons5eP2 = [
         "canonicalAnswer": "canis ante ianuam manet",
 
         "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
         },
 
@@ -5800,18 +5755,13 @@ export const lessons5eP2 = [
   "canonicalAnswer": "devant la porte",
 
   "normalization": {
-
     "trim": true,
-
     "collapseSpaces": true,
-
     "ignoreCase": true,
-
     "ignorePunctuation": true,
-
     "normalizeApostrophes": true,
-
-    "ignoreDiacritics": true
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
   },
 
@@ -6015,7 +5965,7 @@ export const lessons5eP2 = [
 
         "type": "singleChoice",
 
-        "prompt": "Quel mot est neutre ?",
+        "prompt": "Quel mot parmi cette liste est neutre ?",
 
         "options": [
 
@@ -6136,7 +6086,7 @@ export const lessons5eP2 = [
          {
   "id": "p2-l10-t6",
   "type": "textInput",
-  "prompt": "Passe ces trois mots à la forme COD, dans l’ordre : rosa ; dominus ; donum",
+  "prompt": "Transforme ces trois noms à la forme COD, dans l’ordre : rosa ; dominus ; donum",
   "expected": "rosam ; dominum ; donum",
   "acceptedAnswers": [
     "rosam ; dominum ; donum",
@@ -6195,7 +6145,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : 𝑎𝑞𝑢𝑎 𝑖𝑛 𝑓𝑜𝑛𝑡𝑒 𝑡𝑢𝑟𝑝𝑖𝑠 𝑒𝑠𝑡",
+        "prompt": "Traduis : « Aqua in fonte turpis est »",
 
         "expected": "l'eau dans la fontaine est sale",
 
@@ -6232,18 +6182,13 @@ export const lessons5eP2 = [
         "canonicalAnswer": "l'eau dans la fontaine est sale",
 
         "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
         },
 
@@ -6287,7 +6232,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis en latin : La jeune fille voit l’eau.",
+        "prompt": "Traduis en latin : « La jeune fille voit l’eau ».",
 
         "expected": "puella aquam videt",
 
@@ -6391,9 +6336,9 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Complète les accusatifs dans les cartouches : 𝑟𝑜𝑠𝑎 / … ; 𝑑𝑜𝑚𝑖𝑛𝑢𝑠 / … ; 𝑑𝑜𝑛𝑢𝑚 / …",
+        "prompt": "Complète les accusatifs dans les cartouches : fons / … ; servus / … ; taberna / …",
 
-        "placeholder": "rosam dominum donum",
+        "placeholder": "fontem servum tabernam",
 
         "uiVariant": "chipsCompletion",
 
@@ -6401,35 +6346,35 @@ export const lessons5eP2 = [
 
           {
 
-            "label": "rosa /",
+            "label": "fons /",
 
-            "expected": "rosam"
-
-          },
-
-          {
-
-            "label": "dominus /",
-
-            "expected": "dominum"
+            "expected": "fontem"
 
           },
 
           {
 
-            "label": "donum /",
+            "label": "servus /",
 
-            "expected": "donum"
+            "expected": "servum"
+
+          },
+
+          {
+
+            "label": "taberna /",
+
+            "expected": "tabernam"
 
           }
 
         ],
 
-        "expected": "rosam dominum donum",
+        "expected": "fontem servum tabernam",
 
         "acceptedAnswers": [
 
-          "rosam dominum donum"
+          "fontem servum tabernam"
 
         ],
 
@@ -6441,7 +6386,7 @@ export const lessons5eP2 = [
 
           "accepted": [
 
-            "rosam dominum donum"
+            "fontem servum tabernam"
 
           ]
 
@@ -6449,7 +6394,7 @@ export const lessons5eP2 = [
 
         "points": 1,
 
-        "canonicalAnswer": "rosam dominum donum",
+        "canonicalAnswer": "fontem servum tabernam",
 
         "normalization": {
 
@@ -6481,7 +6426,7 @@ export const lessons5eP2 = [
 
           {
 
-            "input": "rosam dominum donum",
+            "input": "fontem servum tabernam",
 
             "isCorrect": true
 
@@ -6489,7 +6434,7 @@ export const lessons5eP2 = [
 
           {
 
-            "input": "rosa dominus donum",
+            "input": "fons servi tabernae",
 
             "isCorrect": false
 
@@ -6513,13 +6458,13 @@ export const lessons5eP2 = [
 
       "cahier": [
 
-        "rosa / rosam",
+        "fons (nominatif) / fontem (accusatif)",
 
-        "dominus / dominum",
+        "servus (nominatif) / servum (accusatif)",
 
-        "donum / donum",
+        "taberna (nominatif) / tabernam (accusatif)",
 
-        "Sujet souvent en forme de base ; complément objet souvent en forme modifiée ; au neutre les deux se ressemblent"
+        "Le nominatif correspond à la fonction sujet ; l'accusatif à la fonction COD. En latin , le genre neutre existe ; nominatif et accusatif prennent la même terminaison (donum / donum, templum / templum)."
 
       ],
 
