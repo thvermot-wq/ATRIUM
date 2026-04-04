@@ -3673,7 +3673,7 @@ export const lessons5eP2 = [
   "acceptedAnswers": [
 
     "clamo ; clamas ; clamat",
-    "clamo, clamas, clamat"
+    "clamo, clamas, clamat",
     "clamo clamas clamat"
 
   ],
@@ -6531,6 +6531,8 @@ export const lessons5eP2 = [
       "pax (nom.), pacem (acc.) = paix",
 
       "vicus (nom.), vicum (acc.) = quartier, rue",
+      "in vicum (acc.) = dans le quartier (mouvement)",
+      "in vico (abl.) = dans le quartier (pas de mouvement)",
  "incola, incolae = habitant",
       "intro, intrat = j’entre ; il/elle entre",
 
@@ -6586,77 +6588,20 @@ export const lessons5eP2 = [
 
       },
 
-      {
-
-        "id": "p2-l11-t2",
-
-        "type": "matching",
-
-        "prompt": "Associe mot et sens.",
-
-        "pairs": [
-
-          {
-
-            "left": "pax",
-
-            "right": "paix"
-
-          },
-
-          {
-
-            "left": "turbat",
-
-            "right": "trouble"
-
-          },
-
-          {
-
-            "left": "separat",
-
-            "right": "sépare"
-
-          },
-
-          {
-
-            "left": "terret",
-
-            "right": "effraie"
-
-          }
-
-        ],
-
-        "rightOptions": [
-
-          "sépare",
-
-          "paix",
-
-          "effraie",
-
-          "trouble"
-
-        ],
-
-        "expected": {
-
-          "pax": "paix",
-
-          "turbat": "trouble",
-
-          "separat": "sépare",
-
-          "terret": "effraie"
-
-        },
-
-        "points": 1
-
-      },
+    {
+  "id": "p2-l11-t2",
+  "type": "singleChoice",
+  "prompt": "🕊️ Mini-texte : « Pax non manet. Discordia amicos separat et terret. » Quel verbe montre le plus clairement que l’union du groupe est brisée ?",
+  "options": [
+    "separat",
+    "terret",
+    "manet",
+    "pax"
+  ],
+  "expected": "separat",
+  "shuffle": true,
+  "points": 1
+},
 
      {
 
@@ -6728,7 +6673,7 @@ export const lessons5eP2 = [
 
   "type": "multipleChoice",
 
-  "prompt": "Texte : « Discordia vicum turbat. Discordia vicinos separat. Incolae timent. Pax non manet. » Coche les quatre informations données par ce texte.",
+  "prompt": "Texte : « Discordia vicum turbat et vicinos separat. Incolae timent. Pax non manet. » Coche les quatre informations données par ce texte.",
 
   "options": [
 
@@ -6739,6 +6684,8 @@ export const lessons5eP2 = [
     "les habitants ont peur",
 
     "la paix ne reste pas",
+    "les habitants séparent les voisins",
+    "le quartier reste en paix",
 
     "la fontaine est pure"
 
@@ -6870,7 +6817,9 @@ export const lessons5eP2 = [
 
           "Le chien reste",
 
-          "Discordia protège la paix"
+          "Discordia protège la paix",
+          "La paix entre",
+          "Les voisins se taisent"
 
         ],
 
@@ -6900,7 +6849,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : 𝐷𝑖𝑠𝑐𝑜𝑟𝑑𝑖𝑎 𝑣𝑖𝑐𝑢𝑚 𝑡𝑢𝑟𝑏𝑎𝑡",
+        "prompt": "Traduis : « 𝐷𝑖𝑠𝑐𝑜𝑟𝑑𝑖𝑎 𝑣𝑖𝑐𝑢𝑚 𝑡𝑢𝑟𝑏𝑎𝑡 »",
 
         "expected": "Discordia trouble le quartier",
 
@@ -6999,108 +6948,57 @@ export const lessons5eP2 = [
       },
 
       {
-
-        "id": "p2-l11-p2",
-
-        "type": "textInput",
-
-        "prompt": "Traduis en latin : La paix ne reste pas dans la rue.",
-
-        "expected": "pax in via non manet",
-
-        "acceptedAnswers": [
-
-          "pax in via non manet",
-
-          "pax non manet in via",
-
-          "in via pax non manet",
-
-          "in via non manet pax",
-
-          "non manet pax in via",
-
-          "non manet in via pax"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "one-of",
-
-          "language": "latin",
-
-          "accepted": [
-
-            "pax in via non manet",
-
-            "pax non manet in via",
-
-            "in via pax non manet",
-
-            "in via non manet pax",
-
-            "non manet pax in via",
-
-            "non manet in via pax"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "pax in via non manet",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "pax in via non manet",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "lorem ipsum",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
+  "id": "p2-l11-p2",
+  "type": "textInput",
+  "prompt": "Traduis en latin : « La paix ne reste pas dans le quartier ».",
+  "expected": "pax in vico non manet",
+  "acceptedAnswers": [
+    "pax in vico non manet",
+    "pax non manet in vico",
+    "in vico pax non manet",
+    "in vico non manet pax",
+    "non manet pax in vico",
+    "non manet in vico pax"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "pax in vico non manet",
+      "pax non manet in vico",
+      "in vico pax non manet",
+      "in vico non manet pax",
+      "non manet pax in vico",
+      "non manet in vico pax"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "pax in vico non manet",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
+  "rejectIf": [
+    "verbe incorrect",
+    "sens inversé sujet/objet",
+    "forme latine impossible au niveau de la leçon"
+  ],
+  "tests": [
+    {
+      "input": "pax in vico non manet",
+      "isCorrect": true
+    },
+    {
+      "input": "lorem ipsum",
+      "isCorrect": false
+    }
+  ]
+},
 
     {
 
@@ -7189,18 +7087,13 @@ export const lessons5eP2 = [
   "canonicalAnswer": "Discordia effraie les voisins",
 
   "normalization": {
-
     "trim": true,
-
     "collapseSpaces": true,
-
     "ignoreCase": true,
-
     "ignorePunctuation": true,
-
     "normalizeApostrophes": true,
-
-    "ignoreDiacritics": true
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
   },
 
@@ -7379,119 +7272,53 @@ export const lessons5eP2 = [
   "points": 1
 },
 
-    {
-
+  {
   "id": "p2-l12-t2",
-
-  "type": "multipleChoice",
-
-  "prompt": "Coche les quatre phrases qui sont de vraies questions utiles pour l’enquête finale.",
-
-  "options": [
-
-    "Quis tabellam videt ?",
-
-    "Populum videmus ?",
-
-    "Quid falsum est ?",
-
-    "Cur pax non redit ?",
-
-    "Ubi donum est ?",
-
-    "Senator timet ?"
-
+  "type": "matching",
+  "prompt": "Associe chaque question latine au type de réponse attendu.",
+  "pairs": [
+    { "left": "Quis tabellam videt ?", "right": "un personnage" },
+    { "left": "Quid falsum est ?", "right": "une chose" },
+    { "left": "Cur pax non redit ?", "right": "une raison" },
+    { "left": "Ubi donum est ?", "right": "un lieu" }
   ],
-
-  "expected": [
-
-    "Quis tabellam videt ?",
-
-    "Quid falsum est ?",
-
-    "Cur pax non redit ?",
-
-    "Ubi donum est ?"
-
+  "rightOptions": [
+    "un lieu",
+    "une raison",
+    "une chose",
+    "un personnage"
   ],
-
-  "shuffle": true,
-
+  "expected": {
+    "Quis tabellam videt ?": "un personnage",
+    "Quid falsum est ?": "une chose",
+    "Cur pax non redit ?": "une raison",
+    "Ubi donum est ?": "un lieu"
+  },
   "points": 1
-
 },
 
       {
-
-        "id": "p2-l12-t3",
-
-        "type": "matching",
-
-        "prompt": "Associe mot et traduction.",
-
-        "pairs": [
-
-          {
-
-            "left": "tabella",
-
-            "right": "tablette"
-
-          },
-
-          {
-
-            "left": "canis",
-
-            "right": "chien"
-
-          },
-
-          {
-
-            "left": "fons",
-
-            "right": "fontaine"
-
-          },
-
-          {
-
-            "left": "verum",
-
-            "right": "vrai"
-
-          }
-
-        ],
-
-        "rightOptions": [
-
-          "vrai",
-
-          "fontaine",
-
-          "tablette",
-
-          "chien"
-
-        ],
-
-        "expected": {
-
-          "tabella": "tablette",
-
-          "canis": "chien",
-
-          "fons": "fontaine",
-
-          "verum": "vrai"
-
-        },
-
-        "points": 1
-
-      },
+  "id": "p2-l12-t3",
+  "type": "matching",
+  "prompt": "Associe chaque forme latine au bon nombre.",
+  "pairs": [
+    { "left": "videt", "right": "singulier" },
+    { "left": "vident", "right": "pluriel" },
+    { "left": "vicinus", "right": "singulier" },
+    { "left": "vicini", "right": "pluriel" }
+  ],
+  "rightOptions": [
+    "pluriel",
+    "singulier"
+  ],
+  "expected": {
+    "videt": "singulier",
+    "vident": "pluriel",
+    "vicinus": "singulier",
+    "vicini": "pluriel"
+  },
+  "points": 1
+},
 
       {
 
@@ -7549,39 +7376,39 @@ export const lessons5eP2 = [
 
       },
 
-    {
+   {
   "id": "p2-l12-t6",
   "type": "matching",
-  "prompt": "Associe chaque indice latin à sa traduction la plus littérale.",
+  "prompt": "Associe chaque indice latin à ce qu’il permet d’affirmer dans l’enquête.",
   "pairs": [
     {
       "left": "Donum non est.",
-      "right": "Le don n’est pas là."
+      "right": "l’offrande a disparu"
     },
     {
       "left": "Tabella falsa est.",
-      "right": "La tablette est fausse."
+      "right": "la tablette n’est pas fiable"
     },
     {
       "left": "Canis ianuam recusat.",
-      "right": "Le chien refuse la porte."
+      "right": "le chien refuse cette entrée"
     },
     {
       "left": "Aqua in fonte turpis est.",
-      "right": "L’eau de la fontaine est souillée."
+      "right": "la fontaine paraît souillée"
     }
   ],
   "rightOptions": [
-    "Le don n’est pas là.",
-    "La tablette est fausse.",
-    "Le chien refuse la porte.",
-    "L’eau de la fontaine est souillée."
+    "la tablette n’est pas fiable",
+    "la fontaine paraît souillée",
+    "le chien refuse cette entrée",
+    "l’offrande a disparu"
   ],
   "expected": {
-    "Donum non est.": "Le don n’est pas là.",
-    "Tabella falsa est.": "La tablette est fausse.",
-    "Canis ianuam recusat.": "Le chien refuse la porte.",
-    "Aqua in fonte turpis est.": "L’eau de la fontaine est souillée."
+    "Donum non est.": "l’offrande a disparu",
+    "Tabella falsa est.": "la tablette n’est pas fiable",
+    "Canis ianuam recusat.": "le chien refuse cette entrée",
+    "Aqua in fonte turpis est.": "la fontaine paraît souillée"
   },
   "points": 1
 },
@@ -7621,109 +7448,76 @@ export const lessons5eP2 = [
 
     "production": [
 
-      {
-
-        "id": "p2-l12-p1",
-
-        "type": "textInput",
-
-        "prompt": "Traduis : 𝑝𝑎𝑥 𝑖𝑛 𝑣𝑖𝑐𝑜 𝑟𝑒𝑑𝑖𝑡",
-
-        "expected": "la paix revient dans le quartier",
-
-        "acceptedAnswers": [
-
-          "la paix revient dans le quartier",
-
-          "la paix revient dans la rue",
-
-          "la paix revient",
-
-          "le calme revient dans le quartier",
-
-          "le calme revient dans la rue",
-
-          "le calme revient"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-
-          "accepted": [
-
-            "la paix revient dans le quartier",
-
-            "la paix revient dans la rue",
-
-            "la paix revient",
-
-            "le calme revient dans le quartier",
-
-            "le calme revient dans la rue",
-
-            "le calme revient"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "la paix revient dans le quartier",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "la paix revient dans le quartier",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
+    {
+  "id": "p2-l12-p1",
+  "type": "textInput",
+  "prompt": "Traduis en français : « Vicini signum falsum vident »",
+  "expected": "les voisins voient un faux indice",
+  "acceptedAnswers": [
+    "les voisins voient un faux indice",
+    "des voisins voient un faux indice",
+    "les voisins voient un indice faux",
+    "des voisins voient un indice faux",
+    "les voisins voient un faux signe",
+    "des voisins voient un faux signe",
+    "les voisins voient une fausse marque",
+    "des voisins voient une fausse marque",
+    "les voisins aperçoivent un faux indice",
+    "des voisins aperçoivent un faux indice"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "accepted": [
+      "les voisins voient un faux indice",
+      "des voisins voient un faux indice",
+      "les voisins voient un indice faux",
+      "des voisins voient un indice faux",
+      "les voisins voient un faux signe",
+      "des voisins voient un faux signe",
+      "les voisins voient une fausse marque",
+      "des voisins voient une fausse marque",
+      "les voisins aperçoivent un faux indice",
+      "des voisins aperçoivent un faux indice"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "les voisins voient un faux indice",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
+  },
+  "gradingFocus": "Comprendre un sujet au pluriel, un COD au neutre singulier et un adjectif épithète accordé.",
+  "rejectIf": [
+    "verbe incorrect",
+    "sens inversé sujet/objet",
+    "adjectif mal compris",
+    "réponse hors-sujet"
+  ],
+  "tests": [
+    {
+      "input": "les voisins voient un faux indice",
+      "isCorrect": true
+    },
+    {
+      "input": "des voisins aperçoivent un faux indice",
+      "isCorrect": true
+    },
+    {
+      "input": "les voisins voient l'indice",
+      "isCorrect": false
+    },
+    {
+      "input": "le voisin voit un faux indice",
+      "isCorrect": false
+    }
+  ]
+},
 
       {
 
@@ -7731,7 +7525,7 @@ export const lessons5eP2 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis en latin : Les voisins voient le signe.",
+        "prompt": "Traduis en latin : « Les voisins voient le signe ».",
 
         "expected": "vicini signum vident",
 
@@ -7832,30 +7626,30 @@ export const lessons5eP2 = [
    {
   "id": "p2-l12-p3",
   "type": "textInput",
-  "prompt": "Traduis en latin : 'Le peuple voit l'indice.'",
-  "expected": "populus signum videt",
+  "prompt": "Traduis en latin : « Pourquoi le peuple ne voit-il pas le vrai ? »",
+  "expected": "cur populus verum non videt",
   "acceptedAnswers": [
-    "populus signum videt",
-    "populus videt signum",
-    "signum populus videt",
-    "signum videt populus",
-    "videt populus signum",
-    "videt signum populus"
+    "cur populus verum non videt",
+    "cur populus non videt verum",
+    "cur verum populus non videt",
+    "cur verum non videt populus",
+    "cur non videt populus verum",
+    "cur non videt verum populus"
   ],
   "answerConfig": {
     "type": "one-of",
     "language": "latin",
     "accepted": [
-      "populus signum videt",
-    "populus videt signum",
-    "signum populus videt",
-    "signum videt populus",
-    "videt populus signum",
-    "videt signum populus"
+      "cur populus verum non videt",
+      "cur populus non videt verum",
+      "cur verum populus non videt",
+      "cur verum non videt populus",
+      "cur non videt populus verum",
+      "cur non videt verum populus"
     ]
   },
   "points": 1,
-  "canonicalAnswer": "populus signum videt",
+  "canonicalAnswer": "cur populus verum non videt",
   "normalization": {
     "trim": true,
     "collapseSpaces": true,
@@ -7864,83 +7658,33 @@ export const lessons5eP2 = [
     "normalizeApostrophes": true,
     "ignoreDiacritics": true
   },
-  "gradingFocus": "Réinvestir une phrase simple de synthèse avec sujet, COD neutre et verbe.",
+  "gradingFocus": "Réinvestir une question latine avec interrogatif, sujet, COD neutre, négation et verbe au présent.",
   "rejectIf": [
-    "forme incorrecte de signum",
+    "interrogatif incorrect ou absent",
+    "négation absente",
+    "verbe incorrect",
     "sens inversé sujet/objet",
     "réponse hors-sujet"
   ],
   "tests": [
     {
-      "input": "populus signum videt",
+      "input": "cur populus verum non videt",
       "isCorrect": true
     },
     {
-      "input": "populum signus videt",
+      "input": "cur populus non videt verum",
+      "isCorrect": true
+    },
+    {
+      "input": "quid populus verum non videt",
+      "isCorrect": false
+    },
+    {
+      "input": "cur populum verum non videt",
       "isCorrect": false
     }
   ]
-}
-
-    ],
-
-    "summary": {
-
-      "retains": [
-
-        "Je mobilise toutes les notions de la période.",
-
-        "Je peux lire et expliquer un mini-dossier narratif."
-
-      ],
-
-      "cahier": [
-
-        "Interrogatifs : quis/quid/cur/ubi",
-
-        "Prépositions : ad/in/ex/ante",
-
-        "Déclinaisons : 1re + 2e masc. + 2e neutre",
-
-        "Présent : -o/-s/-t/-mus/-tis/-nt",
-
-        "Ordre latin flexible",
-
-        "Civilisation : Subure est un quartier populaire vivant et bruyant de Rome"
-
-      ],
-
-      "keywords": [
-
-        "révision",
-
-        "enquête finale",
-
-        "Subure",
-
-        "pax"
-
-      ]
-
-    },
-
-    "meta": {
-
-      "status": "ready",
-
-      "tags": [
-
-        "p2",
-
-        "final",
-
-        "discordia"
-
-      ]
-
-    }
-
-  },
+},
 
   {
 
