@@ -250,6 +250,7 @@ export const lessons5eP2 = [
   "answerConfig": {
     "type": "translation-segment",
     "language": "fr",
+     "tolerateArticles": true,
     "accepted": [
       "pourquoi le voisin nie-t-il",
       "pourquoi le voisin nie",
@@ -279,6 +280,7 @@ export const lessons5eP2 = [
   "answerConfig": {
     "type": "translation-segment",
     "language": "fr",
+     "tolerateArticles": true,
     "accepted": [
        "qui voit l'offrande",
        "qui voit le cadeau",
@@ -791,6 +793,7 @@ export const lessons5eP2 = [
   "answerConfig": {
     "type": "translation-segment",
     "language": "fr",
+     "tolerateArticles": true,
     "accepted": [
       "la femme marche dans la rue",
       "une femme marche dans la rue",
@@ -1397,6 +1400,7 @@ export const lessons5eP2 = [
           "type": "translation-segment",
 
           "language": "fr",
+           "tolerateArticles": true,
 
           "accepted": [
 
@@ -2142,6 +2146,7 @@ export const lessons5eP2 = [
 "answerConfig": {
   "type": "translation-segment",
   "language": "fr",
+   "tolerateArticles": true,
   "accepted": [
     "le voisin accuse le serviteur",
     "le voisin accuse l'esclave",
@@ -2950,6 +2955,7 @@ export const lessons5eP2 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -3526,6 +3532,7 @@ export const lessons5eP2 = [
 "answerConfig": {
   "type": "translation-segment",
   "language": "fr",
+  "tolerateArticles": true,
   "accepted": [
     "j'entends le chien",
     "j'entends ce chien",
@@ -3707,6 +3714,7 @@ export const lessons5eP2 = [
     "type": "translation-segment",
 
     "language": "fr",
+    "tolerateArticles": true,
 
     "accepted": [
 
@@ -4205,6 +4213,7 @@ export const lessons5eP2 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -4826,6 +4835,7 @@ export const lessons5eP2 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -5047,6 +5057,7 @@ export const lessons5eP2 = [
     "type": "translation-segment",
 
     "language": "fr",
+    "tolerateArticles": true,
 
     "accepted": [
 
@@ -5483,6 +5494,7 @@ export const lessons5eP2 = [
 "answerConfig": {
   "type": "translation-segment",
   "language": "fr",
+  "tolerateArticles": true,
   "accepted": [
     "le chien craint la porte",
     "le chien craint cette porte",
@@ -6793,6 +6805,7 @@ export const lessons5eP2 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -6964,6 +6977,7 @@ export const lessons5eP2 = [
   "answerConfig": {
 
     "type": "translation-segment",
+    "tolerateArticles": true,
 
     "language": "fr",
 
@@ -7387,6 +7401,7 @@ export const lessons5eP2 = [
   "answerConfig": {
     "type": "translation-segment",
     "language": "fr",
+    "tolerateArticles": true,
     "accepted": [
       "les voisins voient un faux indice",
       "des voisins voient un faux indice",
@@ -7915,6 +7930,7 @@ export const lessons5eP2 = [
 "answerConfig": {
   "type": "translation-segment",
   "language": "fr",
+  "tolerateArticles": true,
   "accepted": [
     "la mère lit le nom",
     "la mère lit ce nom",
