@@ -366,7 +366,7 @@ export const lessons5eP1 = [
 
             "flavia vit à subura",
 
-            "flavia vit dans subura"
+            "flavia vit dans subura",
 
               "flavia habite à subura",
 
