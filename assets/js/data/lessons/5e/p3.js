@@ -369,6 +369,7 @@ export const lessons5eP3 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 "qui voit l'homme",
@@ -569,6 +570,7 @@ export const lessons5eP3 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -1049,6 +1051,7 @@ export const lessons5eP3 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -1277,6 +1280,7 @@ export const lessons5eP3 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -1758,6 +1762,7 @@ export const lessons5eP3 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -2383,6 +2388,7 @@ export const lessons5eP3 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -3034,6 +3040,7 @@ export const lessons5eP3 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -3269,6 +3276,7 @@ export const lessons5eP3 = [
     "type": "translation-segment",
 
     "language": "fr",
+    "tolerateArticles": true,
 
     "accepted": [
 
@@ -3768,6 +3776,7 @@ export const lessons5eP3 = [
 "answerConfig": {
   "type": "translation-segment",
   "language": "fr",
+  "tolerateArticles": true,
   "accepted": [
     "j'entends l'homme",
     "j'entends cet homme",
@@ -4407,6 +4416,7 @@ export const lessons5eP3 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted":             [
 
@@ -5100,6 +5110,7 @@ export const lessons5eP3 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -5335,6 +5346,7 @@ export const lessons5eP3 = [
   "answerConfig": {
     "type": "translation-segment",
     "language": "fr",
+    "tolerateArticles": true,
     "accepted": [
       "un homme sort de la porte sombre et crie",
       "l'homme sort de la porte sombre et crie",
@@ -5822,6 +5834,7 @@ export const lessons5eP3 = [
         "type": "translation-segment",
 
         "language": "fr",
+        "tolerateArticles": true,
 
         "accepted": [
 
@@ -6496,6 +6509,7 @@ export const lessons5eP3 = [
         "type": "translation-segment",
 
         "language": "fr",
+        "tolerateArticles": true,
 
         "accepted": [
 
@@ -7150,6 +7164,7 @@ export const lessons5eP3 = [
 "answerConfig": {
   "type": "translation-segment",
   "language": "fr",
+  "tolerateArticles": true,
   "accepted": [
     "le serviteur ouvre la porte",
     "un serviteur ouvre la porte",
@@ -7730,6 +7745,7 @@ export const lessons5eP3 = [
 "answerConfig": {
   "type": "translation-segment",
   "language": "fr",
+  "tolerateArticles": true,
   "accepted": [
     "les flambeaux éclairent le jardin",
     "des flambeaux éclairent le jardin",
@@ -8357,6 +8373,7 @@ export const lessons5eP3 = [
 "answerConfig": {
   "type": "translation-segment",
   "language": "fr",
+  "tolerateArticles": true,
   "accepted": [
     "le serviteur porte un flambeau et se tait",
     "le serviteur porte le flambeau et se tait",
