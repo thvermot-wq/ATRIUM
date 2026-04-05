@@ -6864,7 +6864,7 @@ export const lessons5eP3 = [
     "tabella, tabellae f. = tablette",
 
     "amicus, amici m. = ami",
-    "eum = le, lui",
+    "eum (acc.) = le, lui (=COD)",
 
     "periculosus, periculosa, periculosum = dangereux",
 
@@ -6974,7 +6974,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « servus ianuam aperit », que fait le serviteur ?",
+      "prompt": "Dans « Servus ianuam aperit », que fait le serviteur ?",
 
       "options": [
 
@@ -7002,7 +7002,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « servus virum videt et non clamat », quel indice nouveau apparaît ?",
+      "prompt": "Dans « Servus virum videt et non clamat », quelle information nouvelle apparaît ?",
 
       "options": [
 
@@ -7052,7 +7052,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « amicus advocati », quelle traduction + association de cas latin / fonction française correspond à « advocati » ?",
+      "prompt": "Dans « Amicus advocati », quelle traduction + association de cas latin / fonction française correspond à « advocati » ?",
 
       "options": [
 
@@ -7080,7 +7080,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "« vir amicus advocati est » signifie…",
+      "prompt": "« Vir amicus advocati est » signifie…",
 
       "options": [
 
@@ -7140,7 +7140,7 @@ export const lessons5eP3 = [
 
       "type": "textInput",
 
-      "prompt": "Traduis : servus ianuam aperit.",
+      "prompt": "Traduis : « Servus ianuam aperit ».",
 
       "expected": "le serviteur ouvre la porte",
 
@@ -7227,7 +7227,7 @@ export const lessons5eP3 = [
 
       "type": "textInput",
 
-      "prompt": "'L'homme est un ami de l'avocat.' Complète en latin : vir amicus ____ est.",
+      "prompt": "« L'homme est un ami de l'avocat. » Complète en latin : « Vir amicus ____ est ».",
 
       "expected": "advocati",
 
@@ -7311,7 +7311,7 @@ export const lessons5eP3 = [
 
       "type": "textInput",
 
-      "prompt": "Traduis : Servus advocati ianuam aperit ; vir amicus advocati est.",
+      "prompt": "Traduis : « Servus advocati ianuam aperit ; vir amicus advocati est ».",
 
       "expected": "le serviteur de l’avocat ouvre la porte ; l’homme est un ami de l’avocat",
 
@@ -7566,7 +7566,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « vicini Suburae taedas portant », qui apporte les flambeaux ?",
+      "prompt": "Dans « Vicini Suburae taedas portant », qui apporte les flambeaux ?",
 
       "options": [
 
@@ -7630,7 +7630,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « porta oppidi », quel mot veut dire « de la ville » ?",
+      "prompt": "Dans « Porta oppidi », quel mot veut dire « de la ville » ?",
 
       "options": [
 
@@ -7718,7 +7718,7 @@ export const lessons5eP3 = [
 
       "type": "textInput",
 
-      "prompt": "Traduis : Taedae hortum illuminant.",
+      "prompt": "Traduis : « Taedae hortum illuminant ».",
 
       "expected": "les flambeaux éclairent le jardin",
 
@@ -7740,8 +7740,6 @@ export const lessons5eP3 = [
     "des flambeaux éclairent le jardin",
     "les torches éclairent le jardin",
     "des torches éclairent le jardin"
-  ],
-  "synonyms": [
     "les flambeaux illuminent le jardin",
     "des flambeaux illuminent le jardin",
     "les torches illuminent le jardin",
@@ -7811,7 +7809,7 @@ export const lessons5eP3 = [
 
       "type": "textInput",
 
-      "prompt": "'Les portes de la ville.' - Traduis en latin : ____ oppidi",
+      "prompt": "« Les portes de la ville. » - Traduis en latin : « ____ oppidi »",
 
       "expected": "portae",
 
@@ -7895,7 +7893,7 @@ export const lessons5eP3 = [
 
       "type": "textInput",
 
-      "prompt": "Traduis : Vicini Suburae taedas portant ; vestigium extra oppidum ducit.",
+      "prompt": "Traduis : « Vicini Suburae taedas portant ; vestigium extra oppidum ducit ».",
 
       "expected": "les habitants de Subure portent des flambeaux ; la trace mène hors de la ville",
 
@@ -8103,6 +8101,7 @@ export const lessons5eP3 = [
 
     "oppidum, oppidi = ville, bourg",
 "vir, viri = homme",
+    "et = et :)",
 "dico, dicis = je dis, tu dis",
 
       "sto, stas, stat = je me tiens, tu te tiens, il/elle se tient",
@@ -8346,7 +8345,7 @@ export const lessons5eP3 = [
 
       "type": "textInput",
 
-      "prompt": "Traduis : Servus taedam portat et tacet.",
+      "prompt": "Traduis : « Servus taedam portat et tacet ».",
 
       "expected": "le serviteur porte un flambeau et se tait",
 
@@ -8370,8 +8369,6 @@ export const lessons5eP3 = [
     "le serviteur porte la torche et se tait",
     "le serviteur porte ce flambeau et se tait",
     "le serviteur porte cette torche et se tait"
-  ],
-  "synonyms": [
     "l'esclave porte un flambeau et se tait",
     "l'esclave porte une torche et se tait"
   ]
@@ -8437,7 +8434,7 @@ export const lessons5eP3 = [
 
       "type": "textInput",
 
-      "prompt": "Traduis en latin : La trace mène vers la route.",
+      "prompt": "Traduis en latin : « La trace mène vers la route ».",
 
       "expected": "vestigium ad viam ducit",
 
@@ -8541,7 +8538,7 @@ export const lessons5eP3 = [
 
   "type": "textInput",
 
-  "prompt": "Traduction guidée. Fin du mini-récit : « In caelo signum Discordiae apparet. Marcus tacet. » Traduis les deux phrases, dans l’ordre.",
+  "prompt": "Traduction guidée. Fin du mini-récit : « In caelo signum Discordiae apparet et Marcus tacet. » Traduis les deux phrases, dans l’ordre.",
 
   "expected": "dans le ciel le signe de discordia apparaît marcus se tait",
 
