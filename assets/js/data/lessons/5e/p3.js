@@ -4414,12 +4414,7 @@ export const lessons5eP3 = [
 
               "nous cherchons le vrai",
 
-              "nous cherchons ce qui est vrai"
-
-            ],
-
-          "synonyms":             [
-
+              "nous cherchons ce qui est vrai",
               "nous recherchons la vérité",
 
               "nous recherchons le vrai",
