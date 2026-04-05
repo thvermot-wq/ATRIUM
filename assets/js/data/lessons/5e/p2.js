@@ -3531,8 +3531,7 @@ export const lessons5eP2 = [
     "j'entends ce chien",
     "j'écoute le chien",
     "j'écoute ce chien"
-  ],
-  "synonyms": []
+  ]
 },
 
         "points": 1,
@@ -5491,8 +5490,7 @@ export const lessons5eP2 = [
     "le chien a peur de cette porte",
     "le chien redoute la porte",
     "le chien redoute cette porte"
-  ],
-  "synonyms": []
+  ]
 },
 
         "points": 1,
@@ -7921,8 +7919,6 @@ export const lessons5eP2 = [
     "la mère lit le nom",
     "la mère lit ce nom",
     "une mère lit le nom"
-  ],
-  "synonyms": [
     "la maman lit le nom",
     "la maman lit ce nom",
     "une maman lit le nom"
