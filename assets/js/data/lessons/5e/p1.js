@@ -347,6 +347,7 @@ export const lessons5eP1 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted":             [
             "flavia habite à subure",
@@ -949,6 +950,7 @@ export const lessons5eP1 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -1637,6 +1639,7 @@ export const lessons5eP1 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted":             [
 
@@ -2179,6 +2182,7 @@ export const lessons5eP1 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -2285,6 +2289,7 @@ export const lessons5eP1 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted":             [
 
@@ -2823,6 +2828,7 @@ export const lessons5eP1 = [
   "answerConfig": {
     "type": "translation-segment",
     "language": "fr",
+    "tolerateArticles": true,
     "accepted": [
       "niger est devant la porte",
       "niger se tient devant la porte",
@@ -2897,6 +2903,7 @@ export const lessons5eP1 = [
 "answerConfig": {
   "type": "translation-segment",
   "language": "fr",
+  "tolerateArticles": true,
   "accepted": [
     "livia voit le chien",
     "livia voit ce chien",
@@ -3385,6 +3392,7 @@ export const lessons5eP1 = [
           "type": "translation-segment",
 
           "language": "fr",
+          "tolerateArticles": true,
 
           "accepted": [
 
@@ -3474,6 +3482,7 @@ export const lessons5eP1 = [
   "answerConfig": {
     "type": "translation-segment",
     "language": "fr",
+    "tolerateArticles": true,
     "accepted": [
       "lucius a la lettre",
       "lucius a une lettre",
@@ -3903,6 +3912,7 @@ export const lessons5eP1 = [
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
+          "tolerateArticles": true,
           "accepted": [
             "lucius vient de la fontaine avec un seau",
             "lucius arrive de la fontaine avec un seau",
@@ -4308,6 +4318,7 @@ export const lessons5eP1 = [
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
+          "tolerateArticles": true,
           "accepted": [
             "le boulanger porte le pain",
             "le boulanger apporte le pain",
@@ -4725,6 +4736,7 @@ export const lessons5eP1 = [
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
+          "tolerateArticles": true,
           "accepted": [
             "l'élève écoute le maître",
             "l'élève entend le maître",
@@ -5172,6 +5184,7 @@ export const lessons5eP1 = [
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
+          "tolerateArticles": true,
           "accepted": [
             "titus entre dans les thermes",
             "titus entre aux thermes",
@@ -5236,6 +5249,7 @@ export const lessons5eP1 = [
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
+          "tolerateArticles": true,
           "accepted": [
             "marcus vient des thermes avec un ami",
             "marcus vient des bains avec un ami",
@@ -5593,6 +5607,7 @@ export const lessons5eP1 = [
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
+          "tolerateArticles": true,
           "accepted": [
             "une inscription est sur le mur",
             "l'inscription est sur le mur",
@@ -5659,6 +5674,7 @@ export const lessons5eP1 = [
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
+          "tolerateArticles": true,
           "accepted": [
             "livia craint discordia",
             "livia a peur de discordia",
@@ -6040,6 +6056,7 @@ export const lessons5eP1 = [
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
+          "tolerateArticles": true,
           "accepted": [
             "marcus lit le nom de discordia dans la taverne",
             "marcus lit le nom de discordia à la taverne",
@@ -6108,6 +6125,7 @@ export const lessons5eP1 = [
         "answerConfig": {
           "type": "translation-segment",
           "language": "fr",
+          "tolerateArticles": true,
           "accepted": [
             "livia craint discordia",
             "livia a peur de discordia",
@@ -6655,6 +6673,7 @@ export const lessons5eP1 = [
         "type": "translation-segment",
 
         "language": "fr",
+        "tolerateArticles": true,
 
         "accepted":           [
 
