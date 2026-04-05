@@ -2760,7 +2760,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "Quel mot est de 2e déclinaison masculine ?",
+        "prompt": "Quel mot appartient à la 2e déclinaison ?",
 
         "options": [
 
@@ -2860,7 +2860,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "« tabernarius virum audit » : qui entend l’homme ?",
+        "prompt": "« Tabernarius virum audit » : qui entend l’homme ?",
 
         "options": [
 
@@ -2888,7 +2888,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "« virum vicinus accusat » : qui est accusé ?",
+        "prompt": "« Virum vicinus accusat » : qui est accusé ?",
 
         "options": [
 
@@ -2916,13 +2916,13 @@ export const lessons5eP3 = [
 
         "type": "multipleChoice",
 
-        "prompt": "Traductions recevables de « dominus servum vocat ».",
+        "prompt": "Traductions recevables de « Dominus servum vocat ».",
 
         "options": [
 
           "Le maître appelle le serviteur",
 
-          "Le maître fait venir le serviteur",
+          "Le maître interpelle le serviteur",
 
           "Le serviteur appelle le maître",
 
@@ -2934,7 +2934,7 @@ export const lessons5eP3 = [
 
           "Le maître appelle le serviteur",
 
-          "Le maître fait venir le serviteur"
+          "Le maître interpelle le serviteur"
 
         ],
 
@@ -2950,7 +2950,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "Dans « amicus vicinum timet », qui a peur ?",
+        "prompt": "Dans « Amicus vicinum timet », qui a peur ?",
 
         "options": [
 
@@ -2997,7 +2997,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : amicus vicinum timet",
+        "prompt": "Traduis : « Amicus vicinum timet »",
 
         "expected": "l'ami craint le voisin",
 
@@ -3070,18 +3070,13 @@ export const lessons5eP3 = [
         "canonicalAnswer": "l'ami craint le voisin",
 
         "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
         },
 
@@ -3125,7 +3120,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis en latin : Le voisin appelle le serviteur.",
+        "prompt": "Traduis en latin : « Le voisin appelle le serviteur ».",
 
         "expected": "vicinus servum vocat",
 
@@ -3229,7 +3224,7 @@ export const lessons5eP3 = [
 
   "type": "textInput",
 
-  "prompt": "Traduis : tabernarius vicinum audit.",
+  "prompt": "Traduis : « Tabernarius vicinum audit ».",
 
   "expected": "le boutiquier entend le voisin",
 
@@ -3318,18 +3313,13 @@ export const lessons5eP3 = [
   "canonicalAnswer": "le boutiquier entend le voisin",
 
   "normalization": {
-
     "trim": true,
-
     "collapseSpaces": true,
-
     "ignoreCase": true,
-
     "ignorePunctuation": true,
-
     "normalizeApostrophes": true,
-
-    "ignoreDiacritics": true
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
   },
 
@@ -3471,7 +3461,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "Quelle terminaison marque souvent « je » ?",
+        "prompt": "Quelle terminaison marque toujours le « je » ?",
 
         "options": [
 
@@ -3499,7 +3489,7 @@ export const lessons5eP3 = [
 
         "type": "matching",
 
-        "prompt": "Associe -o / -s / -t et la personne.",
+        "prompt": "Associe la terminaison verbale -o / -s / -t et la personne.",
 
         "pairs": [
 
@@ -3559,7 +3549,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "« nego » signifie…",
+        "prompt": "« Nego » signifie…",
 
         "options": [
 
@@ -3587,7 +3577,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "« tu entends » =",
+        "prompt": "« Tu entends » =",
 
         "options": [
 
@@ -3615,7 +3605,7 @@ export const lessons5eP3 = [
 
         "type": "multipleChoice",
 
-        "prompt": "Choisis les formes de 1re personne.",
+        "prompt": "Choisis les formes conjuguées à la 1re personne.",
 
         "options": [
 
@@ -3679,7 +3669,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Passe de la 1re à la 2e personne : « audio » devient « ... »",
+        "prompt": "Passe de la 1re à la 2e personne : « Audio » devient « ... »",
 
         "expected": "audis",
 
@@ -3765,7 +3755,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : audio virum",
+        "prompt": "Traduis : « Audio virum »",
 
         "expected": "j'entends l'homme",
 
@@ -3791,18 +3781,13 @@ export const lessons5eP3 = [
         "canonicalAnswer": "j'entends l'homme",
 
         "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
         },
 
@@ -3846,7 +3831,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis en latin : Je nie la rumeur.",
+        "prompt": "Traduis en latin : « Je nie la rumeur ».",
 
         "expected": "nego rumorem",
 
@@ -3903,18 +3888,13 @@ export const lessons5eP3 = [
         "canonicalAnswer": "nego rumorem",
 
         "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
         },
 
@@ -4152,7 +4132,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "Quelle forme correspond à « nous » ?",
+        "prompt": "Quelle forme correspond à « Nous » ?",
 
         "options": [
 
@@ -4240,7 +4220,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "« vicini clamant » : qui crie ?",
+        "prompt": "« Vicini clamant » : qui crie ?",
 
         "options": [
 
@@ -4402,7 +4382,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : Quaerimus verum",
+        "prompt": "Traduis : « Quaerimus verum »",
 
         "expected": "nous cherchons la vérité",
 
@@ -4455,18 +4435,13 @@ export const lessons5eP3 = [
         "canonicalAnswer": "nous cherchons la vérité",
 
         "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
         },
 
@@ -4510,7 +4485,7 @@ export const lessons5eP3 = [
 
   "type": "textInput",
 
-  "prompt": "Traduis en latin : Sur le forum, les voisins crient.",
+  "prompt": "Traduis en latin : « Sur le forum, les voisins crient ».",
 
   "expected": "vicini in foro clamant",
 
@@ -4820,7 +4795,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "'latramus' signifie…",
+        "prompt": "« Latramus » signifie…",
 
         "options": [
 
@@ -4920,7 +4895,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "« Ante portam obscuram canis latrat » : sens correct ?",
+        "prompt": "« Ante portam obscuram canis latrat » : quel est le sens correct de cette phrase ?",
 
         "options": [
 
@@ -4942,33 +4917,20 @@ export const lessons5eP3 = [
 
       },
 
-      {
-
-        "id": "p3-l8-t4",
-
-        "type": "singleChoice",
-
-        "prompt": "« Latrat ante obscuram portam canis » : cette phrase garde-t-elle le même sens général ?",
-
-        "options": [
-
-          "oui",
-
-          "non",
-
-          "impossible",
-
-          "on ne sait pas"
-
-        ],
-
-        "expected": "oui",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+    {
+  "id": "p3-l8-t4",
+  "type": "singleChoice",
+  "prompt": "Les phrases « Canis latrat ante obscuram portam » et « Latrat ante obscuram portam canis » ont-elles le même sens ?",
+  "options": [
+    "non, le sens de base reste le même",
+    "oui, la porte devient sujet",
+    "oui, le chien devient complément",
+    "impossible à savoir"
+  ],
+  "expected": "non, le sens de base reste le même",
+  "shuffle": true,
+  "points": 1
+},
 
       {
 
@@ -4986,7 +4948,7 @@ export const lessons5eP3 = [
 
           "manet canis ante portam",
 
-          "porta canem manet"
+          "porta ante canem manet"
 
         ],
 
@@ -5012,7 +4974,7 @@ export const lessons5eP3 = [
 
         "type": "singleChoice",
 
-        "prompt": "Dans « manet ante portam canis », quel mot est le sujet ?",
+        "prompt": "Dans « Manet ante portam canis », quel mot est le sujet ?",
 
         "options": [
 
@@ -5104,7 +5066,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis : canis portam timet",
+        "prompt": "Traduis : « Canis portam timet »",
 
         "expected": "le chien craint la porte",
 
@@ -5181,18 +5143,13 @@ export const lessons5eP3 = [
         "canonicalAnswer": "le chien craint la porte",
 
         "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
         },
 
@@ -5236,7 +5193,7 @@ export const lessons5eP3 = [
 
         "type": "textInput",
 
-        "prompt": "Traduis en latin : Le chien aboie devant la porte sombre.",
+        "prompt": "Traduis en latin : « Le chien aboie devant la porte sombre ».",
 
         "expected": "canis ante portam obscuram latrat",
 
@@ -5335,169 +5292,128 @@ export const lessons5eP3 = [
       },
 
      {
-
   "id": "p3-l8-p3",
-
   "type": "textInput",
-
   "prompt": "Traduis en français : « 𝘌𝘹 𝘱𝘰𝘳𝘵𝘢 𝘰𝘣𝘴𝘤𝘶𝘳𝘢 𝘷𝘪𝘳 𝘦𝘹𝘪𝘵 𝘦𝘵 𝘤𝘭𝘢𝘮𝘢𝘵. »",
-
   "expected": "un homme sort de la porte sombre et crie",
-
   "acceptedAnswers": [
-
     "un homme sort de la porte sombre et crie",
-
     "l'homme sort de la porte sombre et crie",
-
     "un homme sort d'une porte sombre et crie",
-
     "l'homme sort d'une porte sombre et crie",
 
- 
-
     "un homme sort de la porte obscure et crie",
-
     "l'homme sort de la porte obscure et crie",
-
     "un homme sort d'une porte obscure et crie",
-
     "l'homme sort d'une porte obscure et crie",
 
- 
+    "un homme sort de l'entrée sombre et crie",
+    "l'homme sort de l'entrée sombre et crie",
+    "un homme sort d'une entrée sombre et crie",
+    "l'homme sort d'une entrée sombre et crie",
+
+    "un homme sort de l'entrée obscure et crie",
+    "l'homme sort de l'entrée obscure et crie",
+    "un homme sort d'une entrée obscure et crie",
+    "l'homme sort d'une entrée obscure et crie",
 
     "un homme sort de la porte sombre et il crie",
-
     "l'homme sort de la porte sombre et il crie",
-
     "un homme sort d'une porte sombre et il crie",
-
     "l'homme sort d'une porte sombre et il crie",
 
- 
-
     "un homme sort de la porte obscure et il crie",
-
     "l'homme sort de la porte obscure et il crie",
-
     "un homme sort d'une porte obscure et il crie",
+    "l'homme sort d'une porte obscure et il crie",
 
-    "l'homme sort d'une porte obscure et il crie"
+    "un homme sort de l'entrée sombre et il crie",
+    "l'homme sort de l'entrée sombre et il crie",
+    "un homme sort d'une entrée sombre et il crie",
+    "l'homme sort d'une entrée sombre et il crie",
 
+    "un homme sort de l'entrée obscure et il crie",
+    "l'homme sort de l'entrée obscure et il crie",
+    "un homme sort d'une entrée obscure et il crie",
+    "l'homme sort d'une entrée obscure et il crie"
   ],
-
   "answerConfig": {
-
     "type": "translation-segment",
-
     "language": "fr",
-
     "accepted": [
-
       "un homme sort de la porte sombre et crie",
-
       "l'homme sort de la porte sombre et crie",
-
       "un homme sort d'une porte sombre et crie",
-
       "l'homme sort d'une porte sombre et crie",
 
- 
-
       "un homme sort de la porte obscure et crie",
-
       "l'homme sort de la porte obscure et crie",
-
       "un homme sort d'une porte obscure et crie",
-
       "l'homme sort d'une porte obscure et crie",
 
- 
+      "un homme sort de l'entrée sombre et crie",
+      "l'homme sort de l'entrée sombre et crie",
+      "un homme sort d'une entrée sombre et crie",
+      "l'homme sort d'une entrée sombre et crie",
+
+      "un homme sort de l'entrée obscure et crie",
+      "l'homme sort de l'entrée obscure et crie",
+      "un homme sort d'une entrée obscure et crie",
+      "l'homme sort d'une entrée obscure et crie",
 
       "un homme sort de la porte sombre et il crie",
-
       "l'homme sort de la porte sombre et il crie",
-
       "un homme sort d'une porte sombre et il crie",
-
       "l'homme sort d'une porte sombre et il crie",
 
- 
-
       "un homme sort de la porte obscure et il crie",
-
       "l'homme sort de la porte obscure et il crie",
-
       "un homme sort d'une porte obscure et il crie",
+      "l'homme sort d'une porte obscure et il crie",
 
-      "l'homme sort d'une porte obscure et il crie"
+      "un homme sort de l'entrée sombre et il crie",
+      "l'homme sort de l'entrée sombre et il crie",
+      "un homme sort d'une entrée sombre et il crie",
+      "l'homme sort d'une entrée sombre et il crie",
 
+      "un homme sort de l'entrée obscure et il crie",
+      "l'homme sort de l'entrée obscure et il crie",
+      "un homme sort d'une entrée obscure et il crie",
+      "l'homme sort d'une entrée obscure et il crie"
     ]
-
   },
-
   "points": 1,
-
   "canonicalAnswer": "un homme sort de la porte sombre et crie",
-
   "normalization": {
-
     "trim": true,
-
     "collapseSpaces": true,
-
     "ignoreCase": true,
-
     "ignorePunctuation": true,
-
     "normalizeApostrophes": true,
-
-    "ignoreDiacritics": true
-
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
   },
-
   "gradingFocus": "Comprendre ex + ablatif, identifier le sujet vir et traduire correctement les deux verbes exit et clamat.",
-
   "rejectIf": [
-
     "contre-sens sur ex",
-
     "porta prise pour sujet",
-
     "omission d'un des deux verbes",
-
     "réponse hors-sujet"
-
   ],
-
   "tests": [
-
     {
-
       "input": "un homme sort de la porte sombre et crie",
-
       "isCorrect": true
-
     },
-
     {
-
-      "input": "l'homme sort de la porte obscure et il crie",
-
+      "input": "l'homme sort de l'entrée obscure et il crie",
       "isCorrect": true
-
     },
-
     {
-
       "input": "la porte sombre sort et l'homme crie",
-
       "isCorrect": false
-
     }
-
   ]
-
 }
 
     ],
@@ -5679,7 +5595,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « vir per vias currit », que fait l’homme ?",
+      "prompt": "Dans « Vir per vias currit », que fait l’homme ?",
 
       "options": [
 
@@ -5707,7 +5623,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « vir in villam intrat », où va l’homme ?",
+      "prompt": "Dans « Vir in villam intrat », où va l’homme ?",
 
       "options": [
 
@@ -5735,7 +5651,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « vir sub porticu latet », quel groupe de mots indique précisément où l’homme se cache ?",
+      "prompt": "Dans « Vir sub porticu latet », quel groupe de mots indique précisément où l’homme se cache ?",
 
       "options": [
 
@@ -5866,7 +5782,7 @@ export const lessons5eP3 = [
 
       "type": "textInput",
 
-      "prompt": "Traduis : vir sub porticu latet.",
+      "prompt": "Traduis : « Vir sub porticu latet ».",
 
       "expected": "l’homme se cache sous le porche",
 
@@ -5955,18 +5871,13 @@ export const lessons5eP3 = [
       "canonicalAnswer": "l’homme se cache sous le porche",
 
       "normalization": {
-
-        "trim": true,
-
-        "collapseSpaces": true,
-
-        "ignoreCase": true,
-
-        "ignorePunctuation": true,
-
-        "normalizeApostrophes": true,
-
-        "ignoreDiacritics": true
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
       },
 
@@ -6010,7 +5921,7 @@ export const lessons5eP3 = [
 
       "type": "textInput",
 
-      "prompt": "Traduis en latin : L’homme entre dans la villa.",
+      "prompt": "Traduis en latin : « L’homme entre dans la villa ».",
 
       "expected": "vir in villam intrat",
 
@@ -6114,7 +6025,7 @@ export const lessons5eP3 = [
 
   "type": "textInput",
 
-  "prompt": "Traduis : Vir in villam intrat ; advocatus cenam magnam parat.",
+  "prompt": "Traduis : « Vir in villam intrat ; advocatus cenam magnam parat ».",
 
  "expected": "un homme entre dans la villa ; l’avocat prépare un grand dîner",
 
@@ -6147,18 +6058,13 @@ export const lessons5eP3 = [
   "canonicalAnswer": "un homme entre dans la villa ; l’avocat prépare un grand dîner",
 
   "normalization": {
-
     "trim": true,
-
     "collapseSpaces": true,
-
     "ignoreCase": true,
-
     "ignorePunctuation": true,
-
     "normalizeApostrophes": true,
-
-    "ignoreDiacritics": true
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
   },
 
@@ -6398,7 +6304,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « vir in villam advocati intrat », où l’homme entre-t-il ?",
+      "prompt": "Dans « Vir in villam advocati intrat », où l’homme entre-t-il ?",
 
       "options": [
 
@@ -6426,7 +6332,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « servus advocati tabellam portat », qui porte la tablette ?",
+      "prompt": "Dans « Servus advocati tabellam portat », qui porte la tablette ?",
 
       "options": [
 
@@ -6454,7 +6360,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « servus advocati », quel mot veut dire « de l’avocat » ?",
+      "prompt": "Dans « Servus advocati », quel mot veut dire « de l’avocat » ?",
 
       "options": [
 
@@ -6482,7 +6388,7 @@ export const lessons5eP3 = [
 
       "type": "singleChoice",
 
-      "prompt": "Dans « ianua villae », quel mot est au génitif ?",
+      "prompt": "Dans « Ianua villae », quel mot est au génitif ?",
 
       "options": [
 
@@ -6566,7 +6472,7 @@ export const lessons5eP3 = [
 
       "type": "textInput",
 
-      "prompt": "Traduis : Servus advocati tacet.",
+      "prompt": "Traduis : « Servus advocati tacet ».",
 
       "expected": "le serviteur de l’avocat se tait",
 
@@ -6680,7 +6586,7 @@ export const lessons5eP3 = [
 
       "type": "textInput",
 
-      "prompt": "'Le serviteur de l'avocat porte une tablette.' Complète en latin : servus ____ tabellam portat.",
+      "prompt": "« Le serviteur de l'avocat porte une tablette. » Complète en latin : « Servus ____ tabellam portat ».",
 
       "expected": "advocati",
 
@@ -6764,7 +6670,7 @@ export const lessons5eP3 = [
 
   "type": "textInput",
 
-  "prompt": "Traduis : In villa advocati servus cenam parat ; vir sub porticu manet.",
+  "prompt": "Traduis : « In villa advocati servus cenam parat ; vir sub porticu manet ».",
 
   "expected": "dans la villa de l’avocat, le serviteur prépare le dîner ; l’homme reste sous le porche",
 
@@ -6807,18 +6713,13 @@ export const lessons5eP3 = [
   "canonicalAnswer": "dans la villa de l’avocat le serviteur prépare le dîner l’homme reste sous le porche",
 
   "normalization": {
-
     "trim": true,
-
     "collapseSpaces": true,
-
     "ignoreCase": true,
-
     "ignorePunctuation": true,
-
     "normalizeApostrophes": true,
-
-    "ignoreDiacritics": true
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
 
   },
 
