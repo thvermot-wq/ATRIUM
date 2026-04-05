@@ -1633,56 +1633,31 @@ export const lessons5eP2 = [
   ],
 
   "answerConfig": {
+  "type": "one-of",
+  "language": "latin",
+  "accepted": [
+    "femina aquam portat",
+    "femina portat aquam",
+    "aquam femina portat",
+    "aquam portat femina",
+    "portat femina aquam",
+    "portat aquam femina",
 
-    "type": "translation-segment",
+    "femina rosam portat",
+    "femina portat rosam",
+    "rosam femina portat",
+    "rosam portat femina",
+    "portat femina rosam",
+    "portat rosam femina",
 
-    "language": "latin",
-
-    "accepted": [
-
-      "femina aquam portat",
-
-      "femina portat aquam",
-
-      "aquam femina portat",
-
-      "aquam portat femina",
-
-      "portat femina aquam",
-
-      "portat aquam femina",
-
- 
-
-      "femina rosam portat",
-
-      "femina portat rosam",
-
-      "rosam femina portat",
-
-      "rosam portat femina",
-
-      "portat femina rosam",
-
-      "portat rosam femina",
-
- 
-
-      "femina cenam portat",
-
-      "femina portat cenam",
-
-      "cenam femina portat",
-
-      "cenam portat femina",
-
-      "portat femina cenam",
-
-      "portat cenam femina"
-
-    ]
-
-  },
+    "femina cenam portat",
+    "femina portat cenam",
+    "cenam femina portat",
+    "cenam portat femina",
+    "portat femina cenam",
+    "portat cenam femina"
+  ]
+},
 
   "points": 1,
 
@@ -2431,99 +2406,53 @@ export const lessons5eP2 = [
 
   ],
 
-  "answerConfig": {
+ "answerConfig": {
+  "type": "one-of",
+  "language": "latin",
+  "accepted": [
+    "dominus vicinum accusat",
+    "dominus accusat vicinum",
+    "vicinum dominus accusat",
+    "vicinum accusat dominus",
+    "accusat dominus vicinum",
+    "accusat vicinum dominus",
 
-    "type": "translation-segment",
+    "dominus servum accusat",
+    "dominus accusat servum",
+    "servum dominus accusat",
+    "servum accusat dominus",
+    "accusat dominus servum",
+    "accusat servum dominus",
 
-    "language": "latin",
+    "vicinus dominum accusat",
+    "vicinus accusat dominum",
+    "dominum vicinus accusat",
+    "dominum accusat vicinus",
+    "accusat vicinus dominum",
+    "accusat dominum vicinus",
 
-    "accepted": [
+    "vicinus servum accusat",
+    "vicinus accusat servum",
+    "servum vicinus accusat",
+    "servum accusat vicinus",
+    "accusat vicinus servum",
+    "accusat servum vicinus",
 
-      "dominus vicinum accusat",
+    "servus dominum accusat",
+    "servus accusat dominum",
+    "dominum servus accusat",
+    "dominum accusat servus",
+    "accusat servus dominum",
+    "accusat dominum servus",
 
-      "dominus accusat vicinum",
-
-      "vicinum dominus accusat",
-
-      "vicinum accusat dominus",
-
-      "accusat dominus vicinum",
-
-      "accusat vicinum dominus",
-
- 
-
-      "dominus servum accusat",
-
-      "dominus accusat servum",
-
-      "servum dominus accusat",
-
-      "servum accusat dominus",
-
-      "accusat dominus servum",
-
-      "accusat servum dominus",
-
- 
-
-      "vicinus dominum accusat",
-
-      "vicinus accusat dominum",
-
-      "dominum vicinus accusat",
-
-      "dominum accusat vicinus",
-
-      "accusat vicinus dominum",
-
-      "accusat dominum vicinus",
-
- 
-
-      "vicinus servum accusat",
-
-      "vicinus accusat servum",
-
-      "servum vicinus accusat",
-
-      "servum accusat vicinus",
-
-      "accusat vicinus servum",
-
-      "accusat servum vicinus",
-
- 
-
-      "servus dominum accusat",
-
-      "servus accusat dominum",
-
-      "dominum servus accusat",
-
-      "dominum accusat servus",
-
-      "accusat servus dominum",
-
-      "accusat dominum servus",
-
- 
-
-      "servus vicinum accusat",
-
-      "servus accusat vicinum",
-
-      "vicinum servus accusat",
-
-      "vicinum accusat servus",
-
-      "accusat servus vicinum",
-
-      "accusat vicinum servus"
-
-    ]
-
-  },
+    "servus vicinum accusat",
+    "servus accusat vicinum",
+    "vicinum servus accusat",
+    "vicinum accusat servus",
+    "accusat servus vicinum",
+    "accusat vicinum servus"
+  ]
+},
 
   "points": 1,
 
@@ -6376,19 +6305,13 @@ export const lessons5eP2 = [
 
         ],
 
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "latin",
-
-          "accepted": [
-
-            "fontem servum tabernam"
-
-          ]
-
-        },
+       "answerConfig": {
+  "type": "one-of",
+  "language": "latin",
+  "accepted": [
+    "fontem servum tabernam"
+  ]
+},
 
         "points": 1,
 
