@@ -3956,7 +3956,7 @@ export const lessons5eP3 = [
 
         "answerConfig": {
 
-          "type": "translation-segment",
+          "type": "one-of",
 
           "language": "latin",
 
@@ -6455,8 +6455,8 @@ export const lessons5eP3 = [
     "Servus tacet"
   ],
   "expected": [
-    "villam advocati",
-    "servus advocati"
+    "Villam advocati",
+    "Servus advocati"
   ],
   "shuffle": true,
   "points": 1
@@ -7739,7 +7739,7 @@ export const lessons5eP3 = [
     "les flambeaux éclairent le jardin",
     "des flambeaux éclairent le jardin",
     "les torches éclairent le jardin",
-    "des torches éclairent le jardin"
+    "des torches éclairent le jardin",
     "les flambeaux illuminent le jardin",
     "des flambeaux illuminent le jardin",
     "les torches illuminent le jardin",
@@ -8368,7 +8368,7 @@ export const lessons5eP3 = [
     "le serviteur porte une torche et se tait",
     "le serviteur porte la torche et se tait",
     "le serviteur porte ce flambeau et se tait",
-    "le serviteur porte cette torche et se tait"
+    "le serviteur porte cette torche et se tait",
     "l'esclave porte un flambeau et se tait",
     "l'esclave porte une torche et se tait"
   ]
