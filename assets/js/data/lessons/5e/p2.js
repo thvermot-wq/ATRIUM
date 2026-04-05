@@ -7918,7 +7918,7 @@ export const lessons5eP2 = [
   "accepted": [
     "la mère lit le nom",
     "la mère lit ce nom",
-    "une mère lit le nom"
+    "une mère lit le nom",
     "la maman lit le nom",
     "la maman lit ce nom",
     "une maman lit le nom"
