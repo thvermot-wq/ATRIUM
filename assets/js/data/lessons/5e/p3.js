@@ -4922,12 +4922,12 @@ export const lessons5eP3 = [
   "type": "singleChoice",
   "prompt": "Les phrases « Canis latrat ante obscuram portam » et « Latrat ante obscuram portam canis » ont-elles le même sens ?",
   "options": [
-    "non, le sens de base reste le même",
-    "oui, la porte devient sujet",
-    "oui, le chien devient complément",
-    "impossible à savoir"
+    "oui, car « le chien » est toujours sujet et « la porte » COD",
+    "non, « la porte » devient sujet",
+    "non, « le chien » devient complément",
+    "oui, car « la porte » est toujours le sujet et « le chien » COD"
   ],
-  "expected": "non, le sens de base reste le même",
+  "expected": "oui, car « le chien » est toujours sujet et « la porte » COD",
   "shuffle": true,
   "points": 1
 },
