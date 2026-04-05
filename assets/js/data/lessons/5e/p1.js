@@ -368,10 +368,6 @@ export const lessons5eP1 = [
 
             "flavia vit dans subura"
 
-            ],
-
-          "synonyms":             [
-
               "flavia habite à subura",
 
               "flavia habite dans subura",
@@ -1565,9 +1561,7 @@ export const lessons5eP1 = [
       "le marchand vend un pain",
       "un marchand vend du pain",
       "un marchand vend le pain",
-      "un marchand vend un pain"
-    ],
-    "synonyms": [
+      "un marchand vend un pain",
       "le marchand vend du pain",
       "un marchand vend du pain",
       "le marchand vend du pain frais",
@@ -1652,11 +1646,7 @@ export const lessons5eP1 = [
 
               "flavia voit la boutique",
 
-              "flavia aperçoit la boutique"
-
-            ],
-
-          "synonyms":             [
+              "flavia aperçoit la boutique",
 
               "flavia regarde l'échoppe",
 
@@ -2302,11 +2292,7 @@ export const lessons5eP1 = [
 
               "sextus bouge la couronne",
 
-              "sextus remue la couronne"
-
-            ],
-
-          "synonyms":             [
+              "sextus remue la couronne",
 
               "sextus dérange la couronne",
 
@@ -2915,9 +2901,7 @@ export const lessons5eP1 = [
     "livia voit le chien",
     "livia voit ce chien",
     "livia regarde le chien",
-    "livia regarde ce chien"
-  ],
-  "synonyms": [
+    "livia regarde ce chien",
     "livia aperçoit le chien",
     "livia aperçoit ce chien",
     "livia observe le chien",
@@ -6678,11 +6662,7 @@ export const lessons5eP1 = [
 
             "marcus est présent",
 
-            "marcus est ici"
-
-          ],
-
-        "synonyms":           [
+            "marcus est ici",
 
             "marcus est bien là",
 
