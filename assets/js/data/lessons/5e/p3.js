@@ -7246,31 +7246,18 @@ export const lessons5eP3 = [
     },
 
   {
-
   "id": "p3-l12-t7",
-
   "type": "singleChoice",
-
-  "prompt": "Mini-dossier : « Taedae hortum illuminant. Vicini Suburae hortum quaerunt. Puella vestigium invenit. Vestigium extra oppidum ducit. » Où mène explicitement la trace ?",
-
+  "prompt": "Mini-dossier : « Taedae hortum illuminant. Vicini Suburae hortum quaerunt. Puella vestigium invenit. Vestigium extra oppidum ducit. » Quel groupe latin montre explicitement où mène la trace ?",
   "options": [
-
-    "hors de la ville",
-
-    "dans la villa",
-
-    "au dîner de l’avocat",
-
-    "au forum"
-
+    "Extra oppidum",
+    "Suburae hortum",
+    "Vicini Suburae",
+    "Taedae hortum"
   ],
-
-  "expected": "hors de la ville",
-
+  "expected": "extra oppidum",
   "shuffle": true,
-
   "points": 1
-
 }
 
   ],
@@ -7663,8 +7650,8 @@ export const lessons5eP3 = [
 
     "oppidum, oppidi = ville, bourg",
 "vir, viri = homme",
-    "et = et :)",
-"dico, dicis = je dis, tu dis",
+    "et = et",
+"dico, dicis, dicit = je dis, tu dis, il/elle dit",
 
       "sto, stas, stat = je me tiens, tu te tiens, il/elle se tient",
 
