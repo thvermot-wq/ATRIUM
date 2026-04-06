@@ -1141,8 +1141,8 @@ export const lessons5eP2 = [
       "aqua (nom.), aquam (acc.) = eau",
 
       "ad fontem = vers la fontaine",
-      "cena (nom.), cenae (gén.) = repas, dîner",
-"rosa (nom.), rosae (gén.) = rose",
+      "cena (nom.), cenam (acc.) = repas, dîner",
+"rosa (nom.), rosam (acc.) = rose",
 "venio, venis = je viens, tu viens",
 
       "porto, portat = je porte ; il/elle porte",
@@ -5815,12 +5815,14 @@ export const lessons5eP2 = [
     "lexicon": [
 
       "aqua (nom.), aquam (acc.) = eau",
+      "rosa (nom.), rosam (acc.) = rose",
 
       "fons (nom.), fontem (acc.) = fontaine",
 
       "puella (nom.), puellam (acc.) = jeune fille",
 
       "servus (nom.), servum (acc.) = serviteur",
+      "dominus (nom.), dominum (acc.) = maître",
 
       "donum (nom./acc.) = offrande",
 
