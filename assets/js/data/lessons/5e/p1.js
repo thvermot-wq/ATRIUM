@@ -2976,12 +2976,10 @@ export const lessons5eP1 = [
       ],
 
       "cahier": [
-
-        "Niger latrat",
-
-        "Canem Livia videt"
-
-      ],
+  "Je pars du verbe, puis je distingue le sujet et le COD.",
+  "Niger latrat = Niger aboie",
+  "Canem Livia videt = Livia voit le chien"
+],
 
       "keywords": [
 
