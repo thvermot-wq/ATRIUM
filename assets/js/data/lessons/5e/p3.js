@@ -1373,12 +1373,10 @@ export const lessons5eP3 = [
       ],
 
       "cahier": [
-
-        "ad = vers ; in = dans ; ex = hors de ; ante = devant",
-
-        "vir ex insula exit et ante ianuam stat"
-
-      ],
+  "Je lis la préposition avec son nom pour suivre un trajet.",
+  "ad = vers ; in = dans ; ex = hors de ; ante = devant",
+  "Vir ex insula exit et ante ianuam stat = l’homme sort de l’immeuble et se tient devant la porte"
+],
 
       "keywords": [
 
@@ -2029,12 +2027,10 @@ export const lessons5eP3 = [
       ],
 
       "cahier": [
-
-        "vicina viam spectat",
-
-        "-a : sujet fréquent ; -am : COD fréquent"
-
-      ],
+  "En 1re déclinaison, -a est souvent le sujet ; -am est souvent le COD.",
+  "Vicina viam spectat = la voisine regarde la rue",
+  "Lucernam amica portat = l’amie porte la lampe"
+],
 
       "keywords": [
 
@@ -3374,12 +3370,10 @@ export const lessons5eP3 = [
       ],
 
       "cahier": [
-
-        "dominus servum vocat",
-
-        "-us : sujet fréquent ; -um : COD fréquent"
-
-      ],
+  "En 2e déclinaison masculine, -us est souvent le sujet ; -um est souvent le COD.",
+  "Dominus servum vocat = le maître appelle le serviteur",
+  "Vicinus amicum audit = le voisin entend l’ami"
+],
 
       "keywords": [
 
@@ -4689,12 +4683,10 @@ export const lessons5eP3 = [
       ],
 
       "cahier": [
-
-        "-mus = nous ; -tis = vous ; -nt = ils/elles",
-
-        "quaerimus / auditis / respondent"
-
-      ],
+  "Au présent pluriel, la terminaison du verbe indique la personne.",
+  "-mus = nous ; -tis = vous ; -nt = ils / elles",
+  "quaerimus = nous cherchons ; auditis = vous entendez ; respondent = ils / elles répondent"
+],
 
       "keywords": [
 
@@ -5705,14 +5697,10 @@ export const lessons5eP3 = [
     ],
 
     "cahier": [
-
-      "in + accusatif = mouvement, direction",
-
-      "per vias = à travers les rues ; in villam = dans la villa ; sub porticu = sous le porche",
-
-      "Vir per vias currit, in villam intrat, sub porticu latet."
-
-    ],
+  "Je distingue le mouvement du lieu où l’on est grâce à la préposition et au cas.",
+  "in + accusatif = mouvement ; sub + ablatif = lieu où l’on est",
+  "Vir per vias currit, in villam intrat, sub porticu latet = l’homme court à travers les rues, entre dans la villa, se cache sous le porche"
+],
 
     "keywords": [
 
@@ -6373,7 +6361,7 @@ export const lessons5eP3 = [
     ],
 
     "cahier": [
-  "Le génitif letin est le complément du nom en français.",
+  "Le génitif latin est le complément du nom en français.",
   "servus advocati = le serviteur de l’avocat",
   "ianua villae = la porte de la villa"
 ],
@@ -7582,14 +7570,10 @@ export const lessons5eP3 = [
     ],
 
     "cahier": [
-
-      "vicini Suburae = les habitants de Subure",
-
-      "porta oppidi = la porte de la ville",
-
-      "vestigium extra oppidum ducit = la trace mène hors de la ville"
-
-    ],
+  "Dans une synthèse, je lis d’abord les groupes importants : sujet (nominatif), complément du nom (génitif), groupe de lieu, verbe.",
+  "vicini Suburae = les habitants de Subure ; porta oppidi = la porte de la ville",
+  "vestigium extra oppidum ducit = la trace mène hors de la ville"
+],
 
     "keywords": [
 
