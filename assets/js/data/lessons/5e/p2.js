@@ -4879,19 +4879,15 @@ export const lessons5eP2 = [
 
     subtitle: headerContexts5eP2["p2-l9"],
 
-    "objective": "Comprendre explicitement la souplesse de l’ordre latin.",
+    "objective": "Lire une phrase latine malgré l’ordre variable en repérant d’abord le verbe, puis le sujet et le groupe de lieu.",
 
-    "lessonPoint": "Je ne traduis pas mot à mot dans l’ordre ; je repère formes et verbe.",
+"lessonPoint": "L’ordre des mots varie ; je garde le sens si je repère le verbe, le sujet et le groupe de lieu.",
 
-    "canDo": [
-
-      "Je lis S/C/V, V/S/C, C/V/S.",
-
-      "Je garde le même sens malgré l’ordre variable.",
-
-      "Je justifie ma traduction."
-
-    ],
+"canDo": [
+  "Je repère le verbe même s’il est placé au début ou à la fin.",
+  "Je retrouve le sujet malgré l’ordre variable.",
+  "Je lis le groupe de lieu d’un seul bloc."
+],
 
     "lexicon": [
 
@@ -4932,67 +4928,35 @@ export const lessons5eP2 = [
     "training": [
 
       {
-
-        "id": "p2-l9-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "« 𝑙𝑎𝑡𝑟𝑎𝑡 » signifie…",
-
-        "options": [
-
-          "Il/ elle aboie",
-
-          "Il/elle entre",
-
-          "Il/elle écoute",
-
-          "Il/elle fuit"
-
-        ],
-
-        "expected": "Il/elle aboie",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+  "id": "p2-l9-t1",
+  "type": "singleChoice",
+  "prompt": "Dans « Latrat ante ianuam canis », quel mot est le verbe conjugué ?",
+  "options": [
+    "latrat",
+    "ianuam",
+    "canis",
+    "ante"
+  ],
+  "expected": "latrat",
+  "shuffle": true,
+  "points": 1
+},
 
      {
   "id": "p2-l9-t2",
-  "type": "matching",
-  "prompt": "Trouve dans le lexique le contraire de chaque mot ou expression.",
-  "pairs": [
-    {
-      "left": "ante",
-      "right": "post"
-    },
-    {
-      "left": "intus",
-      "right": "foris"
-    },
-    {
-      "left": "aperta",
-      "right": "clausa"
-    },
-    {
-      "left": "latrat",
-      "right": "tacet"
-    }
+  "type": "multipleChoice",
+  "prompt": "Coche les deux phrases qui peuvent signifier exactement « Le chien se tient devant la porte ».",
+  "options": [
+    "canis ante ianuam stat",
+    "ante ianuam stat canis",
+    "canem ante ianuam stat",
+    "stat canem ante ianuam"
   ],
-  "rightOptions": [
-    "post",
-    "foris",
-    "clausa",
-    "tacet"
+  "expected": [
+    "canis ante ianuam stat",
+    "ante ianuam stat canis"
   ],
-  "expected": {
-    "ante": "post",
-    "intus": "foris",
-    "aperta": "clausa",
-    "latrat": "tacet"
-  },
+  "shuffle": true,
   "points": 1
 },
 
@@ -5024,32 +4988,19 @@ export const lessons5eP2 = [
 
       },
 
-     {
-
+    {
   "id": "p2-l9-t4",
-
   "type": "singleChoice",
-
-  "prompt": "Dans « 𝐿𝑎𝑡𝑟𝑎𝑡 𝑎𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝑐𝑎𝑛𝑖𝑠 », le sens change-t-il par rapport à « 𝐶𝑎𝑛𝑖𝑠 𝑎𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝑙𝑎𝑡𝑟𝑎𝑡 » ?",
-
+  "prompt": "Dans « Ante ianuam manet canis », quel groupe faut-il lire ensemble pour comprendre le lieu ?",
   "options": [
-
-    "non, le sens de base reste le même",
-
-    "oui, le chien devient complément",
-
-    "oui, la porte devient sujet",
-
-    "impossible à savoir"
-
+    "ante ianuam",
+    "manet canis",
+    "ante canis",
+    "ianuam canis"
   ],
-
-  "expected": "non, le sens de base reste le même",
-
+  "expected": "ante ianuam",
   "shuffle": true,
-
   "points": 1
-
 },
 
       {
@@ -5314,87 +5265,51 @@ export const lessons5eP2 = [
 
       },
 
-     {
-
+    {
   "id": "p2-l9-p3",
-
   "type": "textInput",
-
-  "prompt": "Complète la traduction : « 𝑀𝑎𝑛𝑒𝑡 𝑎𝑛𝑡𝑒 𝑖𝑎𝑛𝑢𝑎𝑚 𝑐𝑎𝑛𝑖𝑠 » = « Le chien reste ... »",
-
-  "expected": "devant la porte",
-
+  "prompt": "Complète en latin : « Le chien se tait derrière la porte » = « Canis ____ tacet ».",
+  "expected": "post ianuam",
   "acceptedAnswers": [
-
-    "devant la porte",
-
-    "devant une porte"
-
+    "post ianuam"
   ],
-
   "answerConfig": {
-
     "type": "one-of",
-
-    "language": "fr",
-
+    "language": "latin",
     "accepted": [
-
-      "devant la porte",
-
-      "devant une porte"
-
+      "post ianuam"
     ]
-
   },
-
   "points": 1,
-
-  "canonicalAnswer": "devant la porte",
-
+  "canonicalAnswer": "post ianuam",
   "normalization": {
     "trim": true,
     "collapseSpaces": true,
     "ignoreCase": true,
     "ignorePunctuation": true,
     "normalizeApostrophes": true,
-    "ignoreDiacritics": true,
-    "ignoreFrenchDeterminers": true
-
+    "ignoreDiacritics": true
   },
-
-  "gradingFocus": "Identifier correctement le groupe de lieu malgré l’ordre latin.",
-
+  "gradingFocus": "Produire correctement un groupe de lieu avec post + accusatif.",
   "rejectIf": [
-
-    "lieu faux",
-
-    "ianuam mal compris",
-
+    "préposition incorrecte",
+    "groupe de lieu faux",
     "réponse hors-sujet"
-
   ],
-
   "tests": [
-
     {
-
-      "input": "devant la porte",
-
+      "input": "post ianuam",
       "isCorrect": true
-
     },
-
     {
-
-      "input": "dans la porte",
-
+      "input": "ante ianuam",
       "isCorrect": false
-
+    },
+    {
+      "input": "in ianuam",
+      "isCorrect": false
     }
-
   ]
-
 }
 
     ],
