@@ -657,12 +657,10 @@ export const lessons5eP3 = [
       ],
 
       "cahier": [
-
-        "quis / quid / ubi / cur",
-
-        "rumor vicum turbat = la rumeur trouble le quartier"
-
-      ],
+  "Je commence par trouver le verbe, puis j’utilise le bon interrogatif.",
+  "quis = qui ? quid = quoi ? ubi = où ? cur = pourquoi ?",
+  "Quis virum videt ? = Qui voit l’homme ?"
+],
 
       "keywords": [
 
@@ -2665,12 +2663,10 @@ export const lessons5eP3 = [
       ],
 
       "cahier": [
-
-        "mercator virum videt",
-
-        "signum : même forme au neutre comme sujet ou COD"
-
-      ],
+  "Au neutre singulier, le sujet et le COD ont la même forme.",
+  "signum = un indice (sujet ou COD) ; oleum = de l’huile (sujet ou COD)",
+  "Vicinus signum invenit = le voisin trouve l’indice"
+],
 
       "keywords": [
 
@@ -4050,12 +4046,10 @@ export const lessons5eP3 = [
       ],
 
       "cahier": [
-
-        "Je lis la terminaison du verbe pour savoir qui parle. 1ère conjugaison : -o = je, -as = tu, -at = il/elle, -amus = nous, -atis = vous, -ant = ils/elles.",
-
-        "Je peux produire les trois personnes du singulier dans une mini-déposition. (Video = je vois, audis = tu entends, narrat = elle raconte...)"
-
-      ],
+  "Au présent singulier, la terminaison du verbe indique qui parle ou agit.",
+  "-o = je ; -s = tu ; -t = il / elle",
+  "video = je vois ; audis = tu entends ; narrat = il / elle raconte"
+],
 
       "keywords": [
 
@@ -6379,12 +6373,10 @@ export const lessons5eP3 = [
     ],
 
     "cahier": [
-
-      "servus advocati = le serviteur de l’avocat",
-
-      "ianua villae = la porte de la villa"
-
-    ],
+  "Le génitif letin est le complément du nom en français.",
+  "servus advocati = le serviteur de l’avocat",
+  "ianua villae = la porte de la villa"
+],
 
     "keywords": [
 
@@ -6985,7 +6977,7 @@ export const lessons5eP3 = [
     ],
 
     "cahier": [
-
+      "Le génitif latin est le complément du nom en français.",
       "servus advocati = le serviteur de l’avocat",
 
       "amicus advocati = l’ami de l’avocat",
@@ -8243,16 +8235,10 @@ export const lessons5eP3 = [
     ],
 
     "cahier": [
-
-      "Servus taedam portat et tacet",
-
-      "In horto vestigium apparet",
-
-      "Vestigium ad viam ducit",
-
-      "Vir extra oppidum fugit"
-
-    ],
+  "Je lis phrase après phrase : je repère le verbe, puis le lieu ou l’objet important.",
+  "Servus taedam portat et tacet = le serviteur porte une torche et se tait",
+  "Vestigium ad viam ducit = la trace mène vers la route"
+],
 
     "keywords": [
 
