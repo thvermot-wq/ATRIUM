@@ -4486,12 +4486,10 @@ export const lessons5eP2 = [
       ],
 
       "cahier": [
-
-        "-mus / -tis / -nt, sont les terminaisons du pluriel au présent.",
-
-        "Videmus/auditis/clamant"
-
-      ],
+  "Au présent pluriel, la terminaison du verbe indique la personne.",
+  "-mus = nous ; -tis = vous ; -nt = ils / elles",
+  "videmus = nous voyons ; auditis = vous entendez ; clamant = ils / elles crient"
+],
 
       "keywords": [
 
@@ -6049,16 +6047,10 @@ export const lessons5eP2 = [
       ],
 
       "cahier": [
-
-        "fons (nominatif) / fontem (accusatif)",
-
-        "servus (nominatif) / servum (accusatif)",
-
-        "taberna (nominatif) / tabernam (accusatif)",
-
-        "Le nominatif correspond à la fonction sujet ; l'accusatif à la fonction COD. En latin , le genre neutre existe ; nominatif et accusatif prennent la même terminaison (donum / donum, templum / templum)."
-
-      ],
+  "Le nominatif sert souvent de sujet ; l’accusatif sert souvent de COD.",
+  "fons / fontem ; servus / servum ; taberna / tabernam",
+  "Au neutre singulier, sujet et COD ont la même forme : donum / donum ; templum / templum"
+],
 
       "keywords": [
 
