@@ -4611,18 +4611,18 @@ export const lessons5eP2 = [
         },
         {
           "left": "Nomen mutatum est.",
-          "right": "constat de changement"
+          "right": "constat de changement avec participe passé"
         }
       ],
       "rightOptions": [
         "action avec sujet + COD + verbe",
         "constat avec nom + adjectif + est",
-        "constat de changement"
+        "constat de changement avec participe passé"
       ],
       "expected": {
         "Vicina tabellam legit.": "action avec sujet + COD + verbe",
         "Tabella falsa est.": "constat avec nom + adjectif + est",
-        "Nomen mutatum est.": "constat de changement"
+        "Nomen mutatum est.": "constat de changement avec participe passé"
       },
       "points": 1
     },
@@ -4781,57 +4781,59 @@ export const lessons5eP2 = [
     },
 
     {
-      "id": "p2-l8-p3",
-      "type": "textInput",
-      "prompt": "Traduis en latin : « Le nom a été changé ».",
-      "expected": "nomen mutatum est",
-      "acceptedAnswers": [
-        "nomen mutatum est",
-        "mutatum est nomen"
-      ],
-      "answerConfig": {
-        "type": "one-of",
-        "language": "latin",
-        "accepted": [
-          "nomen mutatum est",
-          "mutatum est nomen"
-        ]
-      },
-      "points": 1,
-      "canonicalAnswer": "nomen mutatum est",
-      "normalization": {
-        "trim": true,
-        "collapseSpaces": true,
-        "ignoreCase": true,
-        "ignorePunctuation": true,
-        "normalizeApostrophes": true,
-        "ignoreDiacritics": true
-      },
-      "gradingFocus": "Réinvestir correctement le bloc figé mutatum est sans casser la cohérence du groupe verbal.",
-      "rejectIf": [
-        "bloc verbal incorrect",
-        "réponse hors-sujet",
-        "forme latine impossible au niveau de la leçon"
-      ],
-      "tests": [
-        {
-          "input": "nomen mutatum est",
-          "isCorrect": true
-        },
-        {
-          "input": "mutatum est nomen",
-          "isCorrect": true
-        },
-        {
-          "input": "nomen mutat",
-          "isCorrect": false
-        },
-        {
-          "input": "nomen est mutatum",
-          "isCorrect": false
-        }
-      ]
+  "id": "p2-l8-p3",
+  "type": "textInput",
+  "prompt": "Traduis en latin : « Le nom a été changé ».",
+  "expected": "nomen mutatum est",
+  "acceptedAnswers": [
+    "nomen mutatum est",
+    "nomen est mutatum",
+    "mutatum est nomen"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "nomen mutatum est",
+      "nomen est mutatum",
+      "mutatum est nomen"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "nomen mutatum est",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "gradingFocus": "Réinvestir correctement un constat de changement avec nomen et le bloc verbal mutatum est.",
+  "rejectIf": [
+    "bloc verbal incorrect",
+    "réponse hors-sujet",
+    "forme latine impossible au niveau de la leçon"
+  ],
+  "tests": [
+    {
+      "input": "nomen mutatum est",
+      "isCorrect": true
+    },
+    {
+      "input": "nomen est mutatum",
+      "isCorrect": true
+    },
+    {
+      "input": "mutatum est nomen",
+      "isCorrect": true
+    },
+    {
+      "input": "nomen mutat",
+      "isCorrect": false
     }
+  ]
+}
   ],
 
   "summary": {
