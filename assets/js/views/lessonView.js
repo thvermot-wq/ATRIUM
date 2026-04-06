@@ -753,7 +753,7 @@ function getAdjacentLesson(levelId, lessonId, offset = 1) {
   };
 }
 
-export function renderLessonView({ level, lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults, onRestartLesson }) {
+export function renderLessonView({ level, lessonId, progress, onSaveLessonScore, onBackDashboard, onOpenResults, onRestartLesson, onRecordLessonOpen, onRecordLessonSubmission }) {
   const lesson = getLessonById(lessonId, level?.id);
   const wrapper = document.createElement("section");
   wrapper.className = "stack lesson-view";
@@ -779,6 +779,8 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     lessonTitle: lesson.title,
     path: buildLessonHash({ levelId, lessonId: lesson.id }),
   });
+
+  onRecordLessonOpen?.({ lesson });
 
   const progressEntry = progress?.lessons?.[lesson.id];
   const savedCurrent = progressEntry?.current?.totalScore ?? 0;
@@ -1031,6 +1033,7 @@ export function renderLessonView({ level, lessonId, progress, onSaveLessonScore,
     });
 
     const currentScore = saved?.lessonProgress?.current?.totalScore ?? latestTraining.score + latestProduction.score;
+    onRecordLessonSubmission?.({ lesson, score: currentScore });
     const bestScore = saved?.lessonProgress?.best?.totalScore ?? currentScore;
     const summary = getLessonSummary(lesson);
     const nextLessonTarget = getAdjacentLesson(levelId, lesson.id, 1);

@@ -2965,3 +2965,21 @@ a.btn-secondary:focus-visible * {
   }
 }
 
+
+.teacher-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.teacher-table th,
+.teacher-table td {
+  border-bottom: 1px solid var(--color-border, #d9dce8);
+  padding: 0.45rem 0.4rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.teacher-table th {
+  white-space: nowrap;
+}

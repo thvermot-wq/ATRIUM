@@ -3,6 +3,8 @@ import { renderHomeView } from "./views/homeView.js";
 import { renderDashboardView } from "./views/dashboardView.js";
 import { renderLessonView } from "./views/lessonView.js";
 import { renderResultsView } from "./views/resultsView.js";
+import { renderLoginView } from "./views/loginView.js";
+import { renderTeacherDashboardView } from "./teacher/teacherDashboardView.js";
 
 let backToTopInstalled = false;
 let backToTopButton = null;
@@ -94,6 +96,9 @@ function createTopNav({ navigate, currentRouteName, levelId }) {
     { label: "Accueil", path: "#/", name: "home" },
     { label: "Dashboard", path: levelPath, name: "dashboard" },
     { label: "Résultats", path: `${levelPath}/results`, name: "results" },
+    { label: "Login élève", path: "#/login/student", name: "login" },
+    { label: "Login enseignant", path: "#/login/teacher", name: "login" },
+    { label: "Vue enseignant", path: "#/teacher-dashboard", name: "teacherDashboard" },
   ];
 
   links.forEach((link) => {
@@ -146,7 +151,7 @@ function renderNotFoundView({ onOpenHome }) {
   return section;
 }
 
-export function renderApp(rootElement, { router, route, level, progress, onSaveLessonScore }) {
+export function renderApp(rootElement, { router, route, level, progress, onSaveLessonScore, authContext, onTeacherLogin, onStudentLogin, teacherDashboardData, onTeacherPinReset, onRecordLessonOpen, onRecordLessonSubmission }) {
   installBackToTopControl();
   scrollToTopImmediate();
 
@@ -178,6 +183,8 @@ export function renderApp(rootElement, { router, route, level, progress, onSaveL
         router.navigate(`#/${levelId}/lesson/${lessonId}`);
       }, 0);
     },
+    onRecordLessonOpen,
+    onRecordLessonSubmission,
   };
 
   let viewNode;
@@ -192,6 +199,24 @@ export function renderApp(rootElement, { router, route, level, progress, onSaveL
       level,
       lessonId: route.params.lessonId,
       progress,
+    });
+  } else if (route.name === "login") {
+    viewNode = renderLoginView({
+      role: route.params?.role || "student",
+      onBackHome: callbacks.onOpenHome,
+      onSubmit: ({ loginId, secret }) => {
+        if ((route.params?.role || "student") === "teacher") {
+          return onTeacherLogin({ teacherId: loginId, password: secret });
+        }
+        return onStudentLogin({ studentId: loginId, pin: secret });
+      },
+    });
+  } else if (route.name === "teacherDashboard") {
+    viewNode = renderTeacherDashboardView({
+      students: teacherDashboardData?.students || [],
+      progressRows: teacherDashboardData?.progressRows || [],
+      onBackHome: callbacks.onOpenHome,
+      onResetPin: onTeacherPinReset,
     });
   } else if (route.name === "results") {
     viewNode = renderResultsView({ ...callbacks, level, progress });

@@ -160,3 +160,21 @@ ATRIUM/
             p1.js
             p2.js
             p3.js
+
+## Intégration Supabase (auth minimale + suivi enseignant)
+
+Variables à exposer côté navigateur (ex: `window.ATRIUM_SUPABASE_URL`, `window.ATRIUM_SUPABASE_ANON_KEY`) :
+
+- URL du projet Supabase
+- clé publique anon
+
+Migration SQL : `supabase/migrations/20260406_auth_progress.sql`.
+
+Brique serveur de confiance (opérations Auth Admin) : `supabase/functions/auth-admin/index.ts` (service role).
+
+Cette couche ajoute uniquement :
+- authentification enseignant (`teacher_id + password`),
+- authentification élève (`student_id + PIN 6 chiffres`),
+- progression élève par leçon,
+- dashboard enseignant synthétique,
+- file de synchronisation locale IndexedDB vers Supabase.
