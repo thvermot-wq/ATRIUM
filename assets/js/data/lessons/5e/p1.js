@@ -292,148 +292,111 @@ export const lessons5eP1 = [
       },
 
       {
-
-        "id": "p1-l1-t7",
-
-        "type": "textInput",
-
-        "prompt": "👋 Écris en latin : « je suis présent ».",
-
-        "expected": "adsum",
-
-        "points": 1
-
-      }
+  "id": "p1-l1-t7",
+  "type": "textInput",
+  "prompt": "👋 Écris en latin : « je suis présent ».",
+  "expected": "adsum",
+  "acceptedAnswers": [
+    "adsum"
+  ],
+  "answerConfig": {
+    "type": "one-of",
+    "language": "latin",
+    "accepted": [
+      "adsum"
+    ]
+  },
+  "points": 1,
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "tests": [
+    {
+      "input": "adsum",
+      "isCorrect": true
+    },
+    {
+      "input": "adsum.",
+      "isCorrect": true
+    },
+    {
+      "input": "sum",
+      "isCorrect": false
+    }
+  ]
+}
 
     ],
 
     "production": [
 
       {
-
-        "id": "p1-l1-p1",
-
-        "type": "textInput",
-
-        "prompt": "👋 Traduis en français : Flavia in Subura habitat",
-
-        "expected": "Flavia habite dans Subure",
-
-        "acceptedAnswers":           [
-
-            "flavia habite à subure",
-
-            "flavia habite dans subure",
-            "flavia demeure à subure",
-
-            "flavia demeure à subura",
-
-            "flavia vit à subure",
-
-            "flavia vit dans subure",
-
-            "flavia habite à subura",
-
-            "flavia habite dans subura",
-
-            "flavia vit à subura",
-
-            "flavia vit dans subura"
-
-          ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-          "tolerateArticles": true,
-
-          "accepted":             [
-            "flavia habite à subure",
-
-            "flavia habite dans subure",
-            "flavia demeure à subure",
-
-            "flavia demeure à subura",
-
-            "flavia vit à subure",
-
-            "flavia vit dans subure",
-
-            "flavia habite à subura",
-
-            "flavia habite dans subura",
-
-            "flavia vit à subura",
-
-            "flavia vit dans subura",
-
-              "flavia habite à subura",
-
-              "flavia habite dans subura",
-
-              "flavia vit à subura",
-
-              "flavia vit dans subura"
-
-            ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "Flavia habite dans Subure",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "Flavia habite dans Subure",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
+  "id": "p1-l1-p1",
+  "type": "textInput",
+  "prompt": "👋 Traduis en français : Flavia in Subura habitat",
+  "expected": "flavia habite à subure",
+  "acceptedAnswers": [
+    "flavia habite à subure",
+    "flavia habite dans subure",
+    "flavia habite à subura",
+    "flavia habite dans subura",
+    "flavia vit à subure",
+    "flavia vit dans subure",
+    "flavia vit à subura",
+    "flavia vit dans subura"
+  ],
+  "answerConfig": {
+    "type": "translation-segment",
+    "language": "fr",
+    "tolerateArticles": true,
+    "accepted": [
+      "flavia habite à subure",
+      "flavia habite dans subure",
+      "flavia habite à subura",
+      "flavia habite dans subura",
+      "flavia vit à subure",
+      "flavia vit dans subure",
+      "flavia vit à subura",
+      "flavia vit dans subura"
+    ]
+  },
+  "points": 1,
+  "canonicalAnswer": "flavia habite à subure",
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
+  },
+  "gradingFocus": "Compréhension correcte d’un verbe d’habitation et d’un groupe de lieu simple.",
+  "rejectIf": [
+    "verbe incorrect",
+    "sens inversé sujet/objet",
+    "forme latine impossible au niveau de la leçon"
+  ],
+  "tests": [
+    {
+      "input": "Flavia habite à Subure",
+      "isCorrect": true
+    },
+    {
+      "input": "Flavia vit dans Subura",
+      "isCorrect": true
+    },
+    {
+      "input": "Flavia salue Subure",
+      "isCorrect": false
+    }
+  ]
+},
 
     {
   "id": "p1-l1-p2",
@@ -1460,36 +1423,21 @@ export const lessons5eP1 = [
       },
 
       {
-
-        "id": "p1-l3-t5",
-
-        "type": "singleChoice",
-
-        "prompt": "🛍️ « Panem Flavia emit. Niger currit in tabernam. Mercator amphoram portat » : qui achète le pain ?",
-
-        "options": [
-
-          "mercator",
-
-          "un porteur",
-
-          "un émissaire",
-
-          "Flavia",
-
-          "Niger"
-
-        ],
-
-        "expected": "Flavia",
-
-        "shuffle": true,
-
-        "points": 1,
-
-        "feedback": "Cherche d’abord le verbe portat, puis son sujet."
-
-      },
+  "id": "p1-l3-t5",
+  "type": "singleChoice",
+  "prompt": "🛍️ « Panem Flavia emit. Niger currit in tabernam. Mercator amphoram portat » : qui achète le pain ?",
+  "options": [
+    "mercator",
+    "un porteur",
+    "un émissaire",
+    "Flavia",
+    "Niger"
+  ],
+  "expected": "Flavia",
+  "shuffle": true,
+  "points": 1,
+  "feedback": "Cherche d’abord le verbe « emit », puis son sujet."
+},
 
       {
 
@@ -1540,10 +1488,10 @@ export const lessons5eP1 = [
 
     "production": [
 
-     {
+    {
   "id": "p1-l3-p1",
   "type": "textInput",
-  "prompt": " Traduis en français : Mercator panem vendit",
+  "prompt": "🛍️ Traduis en français : Mercator panem vendit",
   "expected": "le marchand vend du pain",
   "acceptedAnswers": [
     "le marchand vend du pain",
@@ -1563,13 +1511,7 @@ export const lessons5eP1 = [
       "le marchand vend un pain",
       "un marchand vend du pain",
       "un marchand vend le pain",
-      "un marchand vend un pain",
-      "le marchand vend du pain",
-      "un marchand vend du pain",
-      "le marchand vend du pain frais",
-      "un marchand vend du pain frais",
-      "le marchand vend des pains",
-      "un marchand vend des pains"
+      "un marchand vend un pain"
     ]
   },
   "points": 1,
@@ -1580,19 +1522,32 @@ export const lessons5eP1 = [
     "ignoreCase": true,
     "ignorePunctuation": true,
     "normalizeApostrophes": true,
-    "ignoreDiacritics": true
+    "ignoreDiacritics": true,
+    "ignoreFrenchDeterminers": true
   },
-  "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
+  "gradingFocus": "Compréhension correcte du verbe vendit et du COD panem.",
   "rejectIf": [
     "verbe incorrect",
     "sens inversé sujet/objet",
     "forme latine impossible au niveau de la leçon"
   ],
   "tests": [
-    { "input": "le marchand vend du pain", "isCorrect": true },
-    { "input": "un marchand vend du pain", "isCorrect": true },
-    { "input": "le marchand vend le pain", "isCorrect": true },
-    { "input": "réponse hors-sujet", "isCorrect": false }
+    {
+      "input": "le marchand vend du pain",
+      "isCorrect": true
+    },
+    {
+      "input": "un marchand vend le pain",
+      "isCorrect": true
+    },
+    {
+      "input": "le marchand vend du pain frais",
+      "isCorrect": false
+    },
+    {
+      "input": "le marchand vend des pains",
+      "isCorrect": false
+    }
   ]
 },
 
@@ -1988,64 +1943,35 @@ export const lessons5eP1 = [
 },
 
       {
-
-        "id": "p1-l4-t4",
-
-        "type": "matching",
-
-        "prompt": "🏺 Associe mot latin et sens en français.",
-
-        "pairs": [
-
-          {
-
-            "left": "ara",
-
-            "right": "autel"
-
-          },
-
-          {
-
-            "left": "sacerdos",
-
-            "right": "prêtresse"
-
-          },
-
-          {
-
-            "left": "corona",
-
-            "right": "couronne"
-
-          }
-
-        ],
-
-        "rightOptions": [
-
-          "couronne",
-
-          "autel",
-
-          "prêtresse"
-
-        ],
-
-        "expected": {
-
-          "ara": "autel",
-
-          "sacerdos": "prêtresse",
-
-          "corona": "couronne"
-
-        },
-
-        "points": 1
-
-      },
+  "id": "p1-l4-t4",
+  "type": "matching",
+  "prompt": "🏺 Associe mot latin et sens en français.",
+  "pairs": [
+    {
+      "left": "ara",
+      "right": "autel"
+    },
+    {
+      "left": "sacerdos",
+      "right": "prêtre ou prêtresse"
+    },
+    {
+      "left": "corona",
+      "right": "couronne"
+    }
+  ],
+  "rightOptions": [
+    "couronne",
+    "autel",
+    "prêtre ou prêtresse"
+  ],
+  "expected": {
+    "ara": "autel",
+    "sacerdos": "prêtre ou prêtresse",
+    "corona": "couronne"
+  },
+  "points": 1
+},
 
       {
 
@@ -3196,10 +3122,10 @@ export const lessons5eP1 = [
 
       },
 
-   {
+  {
   "id": "p1-l6-t3",
   "type": "textInput",
-  "prompt": "📜 Mini-texte : « Marcus tabellam legit, epistulam quaerit, servus tabellam portat. » Recopie, au choix, un des groupes 'verbe + complément' :",
+  "prompt": "📜 Mini-texte : « Marcus tabellam legit, epistulam quaerit, servus tabellam portat. » Recopie, au choix, un groupe formé du verbe et de son complément :",
   "expected": "tabellam legit",
   "acceptedAnswers": [
     "tabellam legit",
@@ -3212,10 +3138,46 @@ export const lessons5eP1 = [
   "answerConfig": {
     "type": "one-of",
     "language": "latin",
-    "ignoreCase": true,
-    "ignorePunctuation": true
+    "accepted": [
+      "tabellam legit",
+      "legit tabellam",
+      "epistulam quaerit",
+      "quaerit epistulam",
+      "tabellam portat",
+      "portat tabellam"
+    ]
   },
-  "points": 1
+  "points": 1,
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "tests": [
+    {
+      "input": "tabellam legit",
+      "isCorrect": true
+    },
+    {
+      "input": "quaerit epistulam",
+      "isCorrect": true
+    },
+    {
+      "input": "portat tabellam",
+      "isCorrect": true
+    },
+    {
+      "input": "Marcus tabellam legit",
+      "isCorrect": false
+    },
+    {
+      "input": "epistulam",
+      "isCorrect": false
+    }
+  ]
 },
 
       {
@@ -3311,50 +3273,58 @@ export const lessons5eP1 = [
       },
 
       {
+  "id": "p1-l6-t6",
+  "type": "singleChoice",
+  "prompt": "📜 Mini-texte : « Lucius epistulam quaerit. Flavia tabellam habet. Marcus epistulam invenit. » Quel verbe indique qu’on trouve l’objet ?",
+  "options": [
+    "invenit",
+    "quaerit",
+    "habet",
+    "portat"
+  ],
+  "expected": "invenit",
+  "shuffle": true,
+  "points": 1
+},
 
-        "id": "p1-l6-t6",
-
-        "type": "singleChoice",
-
-        "prompt": "📜 Dans la scène, quel verbe indique qu’on trouve l’objet ?",
-
-        "options": [
-
-          "invenit",
-
-          "quaerit",
-
-          "habet",
-
-          "manet",
-
-          "latrat"
-
-        ],
-
-        "expected": "invenit",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-     {
+  {
   "id": "p1-l6-t7",
   "type": "textInput",
-  "prompt": "📜 « Je cherche la lettre avec Marcus ». Complète en latin : « Cum Marco epistulam ... »",
-  "expected": "quaero",
+  "prompt": "📜 Complète : « Lucius epistulam _________ » pour dire : « Lucius cherche la lettre ».",
+  "expected": "quaerit",
   "acceptedAnswers": [
-    "quaero"
+    "quaerit"
   ],
   "answerConfig": {
     "type": "one-of",
     "language": "latin",
-    "ignoreCase": true,
-    "ignorePunctuation": true
+    "accepted": [
+      "quaerit"
+    ]
   },
-  "points": 1
+  "points": 1,
+  "normalization": {
+    "trim": true,
+    "collapseSpaces": true,
+    "ignoreCase": true,
+    "ignorePunctuation": true,
+    "normalizeApostrophes": true,
+    "ignoreDiacritics": true
+  },
+  "tests": [
+    {
+      "input": "quaerit",
+      "isCorrect": true
+    },
+    {
+      "input": "quaerit.",
+      "isCorrect": true
+    },
+    {
+      "input": "legit",
+      "isCorrect": false
+    }
+  ]
 }
 
     ],
