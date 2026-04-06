@@ -4523,676 +4523,349 @@ export const lessons5eP2 = [
 
   },
 
-  {
-
-    "id": "p2-l8",
-
-    "period": 2,
-
-    "periodId": "p2",
-
-    "title": "Tabella falsa - Vrai et faux",
-
-    subtitle: headerContexts5eP2["p2-l8"],
-
-    "objective": "Lire un court texte suspect autour d’une tablette falsifiée.",
-
-    "lessonPoint": "Je lis un petit texte en vérifiant les mots-clés verum/falsum et les verbes d’action.",
-
-    "canDo": [
-
-      "Je lis un micro-texte continu.",
-
-      "Je repère vrai/faux.",
-
-      "Je formule une hypothèse simple."
-
-    ],
-
-    "lexicon": [
-
-      "tabella (nom.), tabellam (acc.) = tablette",
-"falsus, falsa, falsum = faux, fausse",
-"scribo, scribit = j’écris ; il/elle écrit",
-"muto, mutat = je change ; il/elle change",
-"mutatum est = a été changé, est changé",
-"verum (nom./acc.) = vrai",
-"falsum (nom./acc.) = faux",
-"nomen (nom./acc.) = nom",
-"signum (nom./acc.) = signe",
-"vicina, vicinae, f. = voisine",
-"lego, legit = je lis ; il/elle lit",
-"ostendo, ostendit = je montre ; il/elle montre"
-
-    ],
-
-    "maxScore": 10,
-
-    "training": [
-
-      {
-
-        "id": "p2-l8-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "Le contraire de « 𝑇𝑎𝑏𝑒𝑙𝑙𝑎 𝑓𝑎𝑙𝑠𝑎 » est…",
-
-        "options": [
-
-          "Tabella vera",
-
-          "Tabella falsum",
-
-          "Tabella mutata",
-
-          "Tabella signum"
-
-        ],
-
-        "expected": "Tabella vera",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-      {
-  "id": "p2-l8-t2",
-  "type": "multipleChoice",
-  "prompt": "Mini-texte : « Tabella falsa est. Nomen mutatum est. Signum manet. » Coche les deux informations explicitement données.",
-  "options": [
-    "La tablette est fausse",
-    "Le nom a été changé",
-    "Le signe a disparu",
-    "La voisine s’enfuit"
+ {
+  "id": "p2-l8",
+  "period": 2,
+  "periodId": "p2",
+  "title": "Tabella falsa - Lecture d’indices",
+  "subtitle": headerContexts5eP2["p2-l8"],
+  "objective": "Lire un micro-dossier autour d’une tablette suspecte en distinguant phrase d’action, phrase d’état et bloc de changement.",
+  "lessonPoint": "Je distingue trois lectures : une action (sujet + COD + verbe), un constat (nom + adjectif + est), et un bloc figé de changement (mutatum est).",
+  "canDo": [
+    "Je repère le verbe, le sujet et le COD dans une phrase d’action.",
+    "Je lis un adjectif qui qualifie un nom dans une phrase simple.",
+    "Je reconnais le bloc mutatum est et je le traduis correctement."
   ],
-  "expected": [
-    "La tablette est fausse",
-    "Le nom a été changé"
+  "lexicon": [
+    "tabella (nom.), tabellam (acc.) = tablette",
+    "vicina (nom.), vicinam (acc.) = voisine",
+    "nomen (nom./acc.) = nom",
+    "signum (nom./acc.) = signe, marque",
+    "verus, vera, verum = vrai, vraie",
+    "falsus, falsa, falsum = faux, fausse",
+    "lego, legit = je lis ; il/elle lit",
+    "ostendo, ostendit = je montre ; il/elle montre",
+    "scribo, scribit = j’écris ; il/elle écrit",
+    "muto, mutat = je change ; il/elle change",
+    "mutatum est = a été changé / est changé"
   ],
-  "shuffle": true,
-  "points": 1
-},
+  "maxScore": 10,
 
-      {
-
-        "id": "p2-l8-t3",
-
-        "type": "singleChoice",
-
-        "prompt": "Texte : « 𝑉𝑖𝑐𝑖𝑛𝑎 𝑡𝑎𝑏𝑒𝑙𝑙𝑎𝑚 𝑙𝑒𝑔𝑖𝑡 𝑒𝑡 𝑜𝑠𝑡𝑒𝑛𝑑𝑖𝑡. » Qui lit la tablette ?",
-
-        "options": [
-
-          "la voisine",
-
-          "le voisin",
-
-          "le chien",
-
-          "le maître"
-
-        ],
-
-        "expected": "la voisine",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-           {
-
-        "id": "p2-l8-t4",
-
-        "type": "multipleChoice",
-
-        "prompt": "Texte court : « 𝑁𝑜𝑚𝑒𝑛 𝑚𝑢𝑡𝑎𝑡𝑢𝑚 𝑒𝑠𝑡. 𝑉𝑒𝑟𝑢𝑚 𝑛𝑜𝑛 𝑒𝑠𝑡. » Quelles propositions sont exactes ?",
-
-        "options": [
-
-          "Le nom est changé",
-
-          "Le texte n'est pas vrai",
-
-          "Le texte est sûr",
-
-          "Personne ne change"
-
-        ],
-
-        "expected": [
-
-          "Le nom est changé",
-
-          "Le texte n'est pas vrai"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-      {
-
-  "id": "p2-l8-t5",
-
-  "type": "matching",
-
-  "prompt": "Associe chaque mot à sa fonction dans « 𝘝𝘪𝘤𝘪𝘯𝘶𝘴 𝘵𝘢𝘣𝘦𝘭𝘭𝘢𝘮 𝘭𝘦𝘨𝘪𝘵 ».",
-
-  "pairs": [
-
+  "training": [
     {
-
-      "left": "vicinus",
-
-      "right": "sujet"
-
+      "id": "p2-l8-t1",
+      "type": "singleChoice",
+      "prompt": "Mini-texte : « Vicina tabellam legit. » Quel mot est le verbe ?",
+      "options": [
+        "vicina",
+        "tabellam",
+        "legit",
+        "tabella"
+      ],
+      "expected": "legit",
+      "shuffle": true,
+      "points": 1
     },
 
     {
-
-      "left": "tabellam",
-
-      "right": "COD"
-
+      "id": "p2-l8-t2",
+      "type": "singleChoice",
+      "prompt": "Mini-texte : « Vicina tabellam legit. » Quel mot est le complément d’objet direct ?",
+      "options": [
+        "vicina",
+        "tabellam",
+        "legit",
+        "signum"
+      ],
+      "expected": "tabellam",
+      "shuffle": true,
+      "points": 1
     },
 
     {
+      "id": "p2-l8-t3",
+      "type": "singleChoice",
+      "prompt": "Mini-texte : « Tabella falsa est. » Quel mot indique l'état de la tablette ?",
+      "options": [
+        "tabella",
+        "falsa",
+        "est",
+        "vera"
+      ],
+      "expected": "falsa",
+      "shuffle": true,
+      "points": 1,
+      "feedback": "falsa qualifie tabella : ce n’est pas l’action, c’est une information sur l’objet."
+    },
 
-      "left": "legit",
+    {
+      "id": "p2-l8-t4",
+      "type": "matching",
+      "prompt": "Associe chaque phrase au type de lecture attendu.",
+      "pairs": [
+        {
+          "left": "Vicina tabellam legit.",
+          "right": "action avec sujet + COD + verbe"
+        },
+        {
+          "left": "Tabella falsa est.",
+          "right": "constat avec nom + adjectif + est"
+        },
+        {
+          "left": "Nomen mutatum est.",
+          "right": "constat de changement"
+        }
+      ],
+      "rightOptions": [
+        "action avec sujet + COD + verbe",
+        "constat avec nom + adjectif + est",
+        "constat de changement"
+      ],
+      "expected": {
+        "Vicina tabellam legit.": "action avec sujet + COD + verbe",
+        "Tabella falsa est.": "constat avec nom + adjectif + est",
+        "Nomen mutatum est.": "constat de changement"
+      },
+      "points": 1
+    },
 
-      "right": "verbe"
+    {
+      "id": "p2-l8-t5",
+      "type": "singleChoice",
+      "prompt": "Mini-texte : « Nomen mutatum est. » Quel mot est le sujet de la phrase ?",
+      "options": [
+        "nomen",
+        "mutatum",
+        "est",
+        "signum"
+      ],
+      "expected": "nomen",
+      "shuffle": true,
+      "points": 1
+    },
 
+    {
+      "id": "p2-l8-t6",
+      "type": "singleChoice",
+      "prompt": "Mini-texte : « Nomen mutatum est. » Quel bloc faut-il lire ensemble pour comprendre l’idée de changement ?",
+      "options": [
+        "nomen mutatum",
+        "mutatum est",
+        "nomen est",
+        "est nomen"
+      ],
+      "expected": "mutatum est",
+      "shuffle": true,
+      "points": 1,
+      "feedback": "Ici, mutatum est se lit comme un bloc : « a été changé / est changé »."
+    },
+
+    {
+      "id": "p2-l8-t7",
+      "type": "multipleChoice",
+      "prompt": "Mini-texte : « Vicina tabellam legit. Tabella falsa est. Nomen mutatum est. » Coche les trois informations explicitement données.",
+      "options": [
+        "La voisine lit la tablette",
+        "La tablette est fausse",
+        "Le nom a été changé",
+        "Le signe a disparu",
+        "La voisine écrit la tablette"
+      ],
+      "expected": [
+        "La voisine lit la tablette",
+        "La tablette est fausse",
+        "Le nom a été changé"
+      ],
+      "shuffle": true,
+      "points": 1
     }
-
   ],
 
-  "rightOptions": [
-
-    "verbe",
-
-    "sujet",
-
-    "COD"
-
-  ],
-
-  "expected": {
-
-    "vicinus": "sujet",
-
-    "tabellam": "COD",
-
-    "legit": "verbe"
-
-  },
-
-  "points": 1
-
-},
-
-      {
-
-        "id": "p2-l8-t6",
-
-        "type": "singleChoice",
-
-        "prompt": "Dans « 𝐿𝑒𝑔𝑖𝑡 𝑡𝑎𝑏𝑒𝑙𝑙𝑎𝑚 𝑣𝑖𝑐𝑖𝑛𝑎 », quel est le verbe ?",
-
-        "options": [
-
-          "legit",
-
-          "tabellam",
-
-          "vicina",
-
-          "Il s'agit d'une phrase non-verbale"
-
-        ],
-
-        "expected": "legit",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-       {
-  "id": "p2-l8-t7",
-  "type": "multipleChoice",
-  "prompt": "Mini-texte : « Vicina tabellam legit et signum ostendit. » Coche les deux informations justes.",
-  "options": [
-    "La voisine lit la tablette",
-    "La voisine montre un signe",
-    "Le voisin cache la tablette",
-    "Le signe disparaît"
-  ],
-  "expected": [
-    "La voisine lit la tablette",
-    "La voisine montre un signe"
-  ],
-  "shuffle": true,
-  "points": 1
-}
-
-    ],
-
-    "production": [
-
-      {
-
-        "id": "p2-l8-p1",
-
-        "type": "textInput",
-
-        "prompt": "Traduis : « Tabella falsa est »",
-
-        "expected": "la tablette est falsifiée",
-
-        "acceptedAnswers": [
-
-          "la tablette est falsifiée",
-
-          "la tablette est fausse",
-
-          "la tablette est truquée",
-
-          "la tablette est trafiquée",
-
-          "une tablette est falsifiée",
-
-          "une tablette est fausse",
-
-          "une tablette est truquée",
-
-          "une tablette est trafiquée"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-          "tolerateArticles": true,
-
-          "accepted": [
-
-            "la tablette est falsifiée",
-
-            "la tablette est fausse",
-
-            "la tablette est truquée",
-
-            "la tablette est trafiquée",
-
-            "une tablette est falsifiée",
-
-            "une tablette est fausse",
-
-            "une tablette est truquée",
-
-            "une tablette est trafiquée"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "la tablette est falsifiée",
-
-        "normalization": {
-    "trim": true,
-    "collapseSpaces": true,
-    "ignoreCase": true,
-    "ignorePunctuation": true,
-    "normalizeApostrophes": true,
-    "ignoreDiacritics": true,
-    "ignoreFrenchDeterminers": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "la tablette est falsifiée",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
+  "production": [
+    {
+      "id": "p2-l8-p1",
+      "type": "textInput",
+      "prompt": "Traduis en français : « Vicina tabellam legit »",
+      "expected": "la voisine lit la tablette",
+      "acceptedAnswers": [
+        "la voisine lit la tablette",
+        "une voisine lit la tablette",
+        "la voisine lit une tablette",
+        "une voisine lit une tablette"
+      ],
+      "answerConfig": {
+        "type": "translation-segment",
+        "language": "fr",
+        "tolerateArticles": true,
+        "accepted": [
+          "la voisine lit la tablette",
+          "une voisine lit la tablette",
+          "la voisine lit une tablette",
+          "une voisine lit une tablette"
         ]
-
       },
-
-      {
-
-        "id": "p2-l8-p2",
-
-        "type": "textInput",
-
-        "prompt": "Traduis en latin : « La voisine montre la tablette ».",
-
-        "expected": "vicina tabellam ostendit",
-
-        "acceptedAnswers": [
-
-          "vicina tabellam ostendit",
-
-          "vicina ostendit tabellam",
-
-          "tabellam vicina ostendit",
-
-          "tabellam ostendit vicina",
-
-          "ostendit vicina tabellam",
-
-          "ostendit tabellam vicina"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "one-of",
-
-          "language": "latin",
-
-          "accepted": [
-
-            "vicina tabellam ostendit",
-
-            "vicina ostendit tabellam",
-
-            "tabellam vicina ostendit",
-
-            "tabellam ostendit vicina",
-
-            "ostendit vicina tabellam",
-
-            "ostendit tabellam vicina"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "vicina tabellam ostendit",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "vicina tabellam ostendit",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "lorem ipsum",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
+      "points": 1,
+      "canonicalAnswer": "la voisine lit la tablette",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true,
+        "ignoreFrenchDeterminers": true
       },
+      "gradingFocus": "Lire une phrase d’action avec sujet, COD et verbe.",
+      "rejectIf": [
+        "sens inversé sujet/objet",
+        "verbe incorrect",
+        "réponse hors-sujet"
+      ],
+      "tests": [
+        {
+          "input": "la voisine lit la tablette",
+          "isCorrect": true
+        },
+        {
+          "input": "la tablette lit la voisine",
+          "isCorrect": false
+        }
+      ]
+    },
 
     {
+      "id": "p2-l8-p2",
+      "type": "textInput",
+      "prompt": "Traduis en latin : « La tablette est fausse ».",
+      "expected": "tabella falsa est",
+      "acceptedAnswers": [
+        "tabella falsa est",
+        "falsa tabella est",
+        "tabella est falsa",
+        "falsa est tabella"
+      ],
+      "answerConfig": {
+        "type": "one-of",
+        "language": "latin",
+        "accepted": [
+          "tabella falsa est",
+          "falsa tabella est",
+          "tabella est falsa",
+          "falsa est tabella"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "tabella falsa est",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Produire correctement un constat simple avec nom, adjectif et est.",
+      "rejectIf": [
+        "adjectif incorrect",
+        "verbe absent ou incorrect",
+        "forme latine impossible au niveau de la leçon"
+      ],
+      "tests": [
+        {
+          "input": "tabella falsa est",
+          "isCorrect": true
+        },
+        {
+          "input": "tabella falsum est",
+          "isCorrect": false
+        }
+      ]
+    },
 
-  "id": "p2-l8-p3",
-
-  "type": "textInput",
-
-  "prompt": "Traduis en français : « 𝘕𝘰𝘮𝘦𝘯 𝘮𝘶𝘵𝘢𝘵𝘶𝘮 𝘦𝘴𝘵. »",
-
-  "expected": "le nom a été changé",
-
-  "acceptedAnswers": [
-
-    "le nom a été changé",
-
-    "un nom a été changé",
-
-    "le nom est changé",
-
-    "un nom est changé",
-
-    "le nom fut changé",
-
-    "un nom fut changé",
-
- 
-
-    "le nom a été modifié",
-
-    "un nom a été modifié",
-
-    "le nom est modifié",
-
-    "un nom est modifié",
-
-    "le nom fut modifié",
-
-    "un nom fut modifié"
-
+    {
+      "id": "p2-l8-p3",
+      "type": "textInput",
+      "prompt": "Traduis en latin : « Le nom a été changé ».",
+      "expected": "nomen mutatum est",
+      "acceptedAnswers": [
+        "nomen mutatum est",
+        "mutatum est nomen"
+      ],
+      "answerConfig": {
+        "type": "one-of",
+        "language": "latin",
+        "accepted": [
+          "nomen mutatum est",
+          "mutatum est nomen"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "nomen mutatum est",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Réinvestir correctement le bloc figé mutatum est sans casser la cohérence du groupe verbal.",
+      "rejectIf": [
+        "bloc verbal incorrect",
+        "réponse hors-sujet",
+        "forme latine impossible au niveau de la leçon"
+      ],
+      "tests": [
+        {
+          "input": "nomen mutatum est",
+          "isCorrect": true
+        },
+        {
+          "input": "mutatum est nomen",
+          "isCorrect": true
+        },
+        {
+          "input": "nomen mutat",
+          "isCorrect": false
+        },
+        {
+          "input": "nomen est mutatum",
+          "isCorrect": false
+        }
+      ]
+    }
   ],
 
-  "answerConfig": {
-
-    "type": "translation-segment",
-
-    "language": "fr",
-    "tolerateArticles": true,
-
-    "accepted": [
-
-      "le nom a été changé",
-
-      "un nom a été changé",
-
-      "le nom est changé",
-
-      "un nom est changé",
-
-      "le nom fut changé",
-
-      "un nom fut changé",
-
- 
-
-      "le nom a été modifié",
-
-      "un nom a été modifié",
-
-      "le nom est modifié",
-
-      "un nom est modifié",
-
-      "le nom fut modifié",
-
-      "un nom fut modifié"
-
+  "summary": {
+    "retains": [
+      "Je distingue une phrase d’action d’une phrase de constat.",
+      "Je lis mutatum est comme un bloc qui signale un changement."
+    ],
+    "cahier": [
+      "Vicina tabellam legit = la voisine lit la tablette",
+      "Tabella falsa est = la tablette est fausse",
+      "Nomen mutatum est = le nom a été changé. ",
+      "« Mutatum est » = forme au participe passé = a changé / a été changé.",
+      "« Mutatum est » = « Mutata est » au féminin."
+    ],
+    "keywords": [
+      "tablette",
+      "constat",
+      "action",
+      "changement"
     ]
-
   },
 
-  "points": 1,
-
-  "canonicalAnswer": "le nom a été changé",
-
-  "normalization": {
-    "trim": true,
-    "collapseSpaces": true,
-    "ignoreCase": true,
-    "ignorePunctuation": true,
-    "normalizeApostrophes": true,
-    "ignoreDiacritics": true,
-    "ignoreFrenchDeterminers": true
-
-  },
-
-  "gradingFocus": "Comprendre que nomen mutatum est signale une modification du nom, avec plusieurs rendus français recevables.",
-
-  "rejectIf": [
-
-    "contre-sens",
-
-    "réponse hors-sujet",
-
-    "confusion sur mutatum"
-
-  ],
-
-  "tests": [
-
-    {
-
-      "input": "le nom a été changé",
-
-      "isCorrect": true
-
-    },
-
-    {
-
-      "input": "un nom est modifié",
-
-      "isCorrect": true
-
-    },
-
-    {
-
-      "input": "le nom fut changé",
-
-      "isCorrect": true
-
-    },
-
-    {
-
-      "input": "le nom est vrai",
-
-      "isCorrect": false
-
-    }
-
-  ]
-
-}
-
-    ],
-
-    "summary": {
-
-      "retains": [
-
-        "Je peux lire un texte court continu.",
-
-        "Je justifie une suspicion avec des indices précis."
-
-      ],
-
-      "cahier": [
-
-        "Verum/falsum = vrai/faux | Vera/falsa = vraie/fausse",
-
-        "Tabella falsa : nomen mutat = La tablette est fausse, le nom change"
-
-      ],
-
-      "keywords": [
-
-        "tablette",
-
-        "faux",
-
-        "indices"
-
-      ]
-
-    },
-
-    "meta": {
-
-      "status": "ready",
-
-      "tags": [
-
-        "p2",
-
-        "lecture",
-
-        "discordia"
-
-      ]
-
-    }
-
-  },
+  "meta": {
+    "status": "ready",
+    "tags": [
+      "p2",
+      "tablette",
+      "lecture",
+      "discordia"
+    ]
+  }
+},
 
   {
 
