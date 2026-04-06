@@ -35,6 +35,14 @@ function parseHashRoute() {
     return { name: "dashboard", path, params: { levelId: "5e" } };
   }
 
+  if (segments[0] === "teacher-dashboard") {
+    return { name: "teacherDashboard", path, params: {} };
+  }
+
+  if (segments[0] === "login" && (segments[1] === "student" || segments[1] === "teacher")) {
+    return { name: "login", path, params: { role: segments[1] } };
+  }
+
   if (segments[0] === "lesson" && segments[1]) {
     return { name: "lesson", path, params: { levelId: "5e", lessonId: segments[1] } };
   }
