@@ -615,7 +615,7 @@ export const lessons5eP1 = [
 
     "objective": "Identifier les lieux d’habitation et les objets proches dans le quartier.",
 
-    "lessonPoint": "Je lis le groupe de lieu d’un seul bloc : préposition + nom."
+    "lessonPoint": "Je lis le groupe de lieu d’un seul bloc : préposition + nom.",
   
     "canDo": [
 
