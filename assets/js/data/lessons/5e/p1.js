@@ -1161,16 +1161,10 @@ export const lessons5eP1 = [
       ],
 
       "cahier": [
-
-        "in domo",
-
-        "in insula",
-
-        "ante ianuam",
-
-        "per fenestram"
-
-      ],
+  "Je lis le groupe de lieu d’un seul bloc : préposition + nom.",
+  "in domo = dans la maison ; in insula = dans l’immeuble",
+  "ante ianuam = devant la porte ; per fenestram = par la fenêtre"
+],
 
       "keywords": [
 
@@ -1797,12 +1791,10 @@ export const lessons5eP1 = [
       ],
 
       "cahier": [
-
-        "Mercator panem portat",
-
-        "Marcus ad forum currit"
-
-      ],
+  "Je cherche d’abord le verbe : c’est lui qui donne l’action centrale.",
+  "Mercator panem portat = le marchand porte le pain",
+  "Marcus ad forum currit = Marcus court vers le forum"
+],
 
       "keywords": [
 
@@ -2407,16 +2399,10 @@ export const lessons5eP1 = [
       ],
 
       "cahier": [
-
-        "donum",
-
-        "corona",
-
-        "Vetus sacerdos donum ponit",
-        "Sextus gemmam quaerit",
-        "Livia aram spectat"
-
-      ],
+  "Je lis ensemble les mots qui vont ensemble dans le groupe nominal.",
+  "vetus sacerdos = le vieux prêtre / la vieille prêtresse",
+  "sacrum donum = l’offrande sacrée ; parva ara = le petit autel"
+],
 
       "keywords": [
 
@@ -3632,14 +3618,10 @@ export const lessons5eP1 = [
       ],
 
       "cahier": [
-
-        "tabella",
-
-        "epistula",
-
-        "Livia tabellam quaerit"
-
-      ],
+  "Je relie le verbe à son objet pour comprendre l’action.",
+  "Livia tabellam quaerit = Livia cherche la tablette",
+  "Marcus epistulam legit = Marcus lit la lettre"
+],
 
       "keywords": [
 
@@ -4062,16 +4044,10 @@ export const lessons5eP1 = [
       ],
 
       "cahier": [
-
-        "ad fontem",
-
-        "in fonte",
-
-        "ex fonte",
-
-        "cum situla"
-
-      ],
+  "Je lis les prépositions avec leur nom : elles disent vers où, où, d’où et avec qui.",
+  "ad fontem = vers la fontaine ; in fonte = dans la fontaine",
+  "ex fonte = hors de la fontaine ; cum situla = avec un seau"
+],
 
       "keywords": [
 
@@ -4480,14 +4456,10 @@ export const lessons5eP1 = [
       ],
 
       "cahier": [
-
-        "Panem pistor portat",
-
-        "Flavia farinam accipit",
-
-        "Marcus tabernam videt"
-
-      ],
+  "Le COD reçoit l’action du verbe : je le repère après avoir trouvé le verbe.",
+  "Panem pistor portat = le boulanger porte le pain",
+  "Flavia farinam accipit = Flavia reçoit la farine"
+],
 
       "keywords": [
 
@@ -4898,14 +4870,10 @@ export const lessons5eP1 = [
       ],
 
       "cahier": [
-
-        "Magistrum discipulus audit",
-
-        "Magister tabellam legit",
-
-        "In ludo Marcus respondet"
-
-      ],
+  "Je commence par le verbe, puis je cherche le sujet ; ensuite je vérifie s’il y a un COD.",
+  "Magistrum discipulus audit = l’élève écoute le maître",
+  "In ludo Marcus respondet = dans l’école Marcus répond"
+],
 
       "keywords": [
 
@@ -5349,16 +5317,10 @@ export const lessons5eP1 = [
       ],
 
       "cahier": [
-
-        "Titus ad thermas currit",
-
-        "Titus in thermas intrat",
-
-        "Livia in thermis manet",
-
-        "Marcus ex thermis venit cum amico"
-
-      ],
+  "Je combine le verbe et le groupe prépositionnel pour suivre le trajet.",
+  "ad thermas = vers les thermes ; in thermas = dans les thermes (mouvement)",
+  "in thermis = dans les thermes (lieu où l’on est) ; ex thermis = hors des thermes"
+],
 
       "keywords": [
 
@@ -5772,14 +5734,10 @@ export const lessons5eP1 = [
       ],
 
       "cahier": [
-
-        "Scriptum in muro est",
-
-        "Marcus scriptum legit",
-
-        "Livia Discordiam timet"
-
-      ],
+  "Je lis d’abord le verbe, puis le sujet, le COD éventuel et le groupe de lieu.",
+  "Scriptum in muro est = il y a un écrit sur le mur",
+  "Marcus scriptum legit = Marcus lit l’inscription"
+],
 
       "keywords": [
 
@@ -6263,14 +6221,10 @@ export const lessons5eP1 = [
       ],
 
       "cahier": [
-
-        "Marcus nomen Discordiae legit in popina",
-
-        "Livia Discordiam timet",
-
-        "Titus tabellam ad popinam portat"
-
-      ],
+  "Je réutilise ensemble verbe, sujet, COD et groupe de lieu.",
+  "Marcus nomen Discordiae legit in popina = Marcus lit le nom de Discordia dans la taverne",
+  "Titus tabellam ad popinam portat = Titus porte la tablette vers la taverne"
+],
 
       "keywords": [
 
@@ -6919,15 +6873,10 @@ export const lessons5eP1 = [
     ],
 
     "cahier": [
-
-      "Marcus adest",
-
-      "Livia in domo est",
-
-      "adsum = je suis là",
-      "ades = tu es là"
-
-    ],
+  "sum / es / est = je suis / tu es / il-elle est",
+  "adsum / ades / adest = je suis là / tu es là / il-elle est là",
+  "Livia in domo est = Livia est dans la maison ; Marcus adest = Marcus est là"
+],
 
     "keywords": [
 
