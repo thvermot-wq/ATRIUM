@@ -615,8 +615,8 @@ export const lessons5eP1 = [
 
     "objective": "Identifier les lieux d’habitation et les objets proches dans le quartier.",
 
-    "lessonPoint": "Le groupe nominal se lit ensemble : nom + adjectif ou complément.",
-
+    "lessonPoint": "Je lis le groupe de lieu d’un seul bloc : préposition + nom."
+  
     "canDo": [
 
       "Je distingue domus et insula dans une scène.",
@@ -1873,6 +1873,9 @@ export const lessons5eP1 = [
 
       "dea = déesse",
 
+      "sacer, sacra, sacrum = sacré, sacrée",
+      "parvus, parva, parvum = petit, petite",
+
       "sacerdos = prêtre, prêtresse",
       "vetus = vieux, vieille",
 
@@ -1942,33 +1945,33 @@ export const lessons5eP1 = [
   "points": 1
 },
 
-      {
+     {
   "id": "p1-l4-t4",
   "type": "matching",
-  "prompt": "🏺 Associe mot latin et sens en français.",
+  "prompt": "🏺 Associe chaque groupe nominal à son sens.",
   "pairs": [
     {
-      "left": "ara",
-      "right": "autel"
+      "left": "vetus sacerdos",
+      "right": "le vieux prêtre / la vieille prêtresse"
     },
     {
-      "left": "sacerdos",
-      "right": "prêtre ou prêtresse"
+      "left": "sacrum donum",
+      "right": "l’offrande sacrée"
     },
     {
-      "left": "corona",
-      "right": "couronne"
+      "left": "parva ara",
+      "right": "le petit autel"
     }
   ],
   "rightOptions": [
-    "couronne",
-    "autel",
-    "prêtre ou prêtresse"
+    "l’offrande sacrée",
+    "le vieux prêtre / la vieille prêtresse",
+    "le petit autel"
   ],
   "expected": {
-    "ara": "autel",
-    "sacerdos": "prêtre ou prêtresse",
-    "corona": "couronne"
+    "vetus sacerdos": "le vieux prêtre / la vieille prêtresse",
+    "sacrum donum": "l’offrande sacrée",
+    "parva ara": "le petit autel"
   },
   "points": 1
 },
