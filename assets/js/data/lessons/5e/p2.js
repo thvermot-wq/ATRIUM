@@ -6489,35 +6489,26 @@ export const lessons5eP2 = [
 
     "training": [
 
-      {
-
-        "id": "p2-l11-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "Dans « Discordia vicum turbat », quel mot accomplit l’action ?",
-
-        "options": [
-
-          "Discordia",
-
-          "vicum",
-
-          "turbat",
-
-          "pax"
-
-        ],
-
-        "expected": "Discordia",
-
-        "shuffle": true,
-
-        "points": 1,
-
-        "feedback": "Le sujet est le mot qui fait l’action ; ici, Discordia trouble le quartier."
-
-      },
+     {
+  "id": "p2-l11-t1",
+  "type": "multipleChoice",
+  "prompt": "🕊️ Court texte : « Discordia intrat. Pax fugit. Vicini clamant. » Coche les trois verbes au présent qui font avancer le récit.",
+  "options": [
+    "Discordia",
+    "intrat",
+    "pax",
+    "fugit",
+    "vicini",
+    "clamant"
+  ],
+  "expected": [
+    "intrat",
+    "fugit",
+    "clamant"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
     {
   "id": "p2-l11-t2",
