@@ -129,7 +129,7 @@ function boot() {
   }
 
   let authContext = { session: null, profile: null };
-  let teacherDashboardData = { students: [], progressRows: [] };
+  let teacherDashboardData = { classes: [], students: [], progressRows: [] };
 
   getCurrentAuthContext()
     .then((ctx) => {

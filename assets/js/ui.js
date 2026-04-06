@@ -213,6 +213,7 @@ export function renderApp(rootElement, { router, route, level, progress, onSaveL
     });
   } else if (route.name === "teacherDashboard") {
     viewNode = renderTeacherDashboardView({
+      classes: teacherDashboardData?.classes || [],
       students: teacherDashboardData?.students || [],
       progressRows: teacherDashboardData?.progressRows || [],
       onBackHome: callbacks.onOpenHome,

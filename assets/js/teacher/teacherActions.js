@@ -7,15 +7,15 @@ export async function fetchTeacherDashboardData(teacherUserId) {
 
   const { data: classes } = await supabase
     .from("classes")
-    .select("id")
+    .select("id,name,subject,level_label")
     .eq("teacher_user_id", teacherUserId);
 
   const classIds = (classes || []).map((c) => c.id);
-  if (!classIds.length) return { students: [], progressRows: [] };
+  if (!classIds.length) return { classes: [], students: [], progressRows: [] };
 
   const { data: students } = await supabase
     .from("user_profiles")
-    .select("user_id,class_id,display_name,login_id")
+    .select("user_id,class_id,display_name,login_id,level")
     .eq("role", "student")
     .in("class_id", classIds);
 
@@ -27,7 +27,7 @@ export async function fetchTeacherDashboardData(teacherUserId) {
       .in("student_user_id", studentIds)
     : { data: [] };
 
-  return { students: students || [], progressRows: progressRows || [] };
+  return { classes: classes || [], students: students || [], progressRows: progressRows || [] };
 }
 
 export function generateTemporaryPin() {
