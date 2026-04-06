@@ -16,7 +16,7 @@ const headerContexts5eP3 = {
 
   "p3-l7": "Sur la place, les voisins crient, les marchands répliquent, les enfants ramassent des bribes. « Vous êtes nombreux ; essayez maintenant d’être utiles », lance Flavia, puis elle sépare le groupe en deux.",
 
-  "p3-l8": "Devant la porte sombre, Niger gratte le bois et recule aussitôt. « Même lui n’aime pas l’odeur, et il mange pourtant n’importe quoi », dit Livia, puis Marcus colle l’oreille au battant.",
+  "p3-l8": "Devant la porte sombre, une voisine tend sa lampe pendant que Marcus examine le seuil. « Cette fois, on n'examine pas seulement un indice ; on devine aussi à qui appartient l'objet... », dit Livia en montrant la porte, le coffret et la statue.",
 
   "p3-l9": "Sous le portique de la grande maison, le sol sonne plus sec et les murs sentent la cire. « Un homme ne finit pas ici sans y être attendu », dit Marcus, puis il longe la galerie à petits pas.",
 
@@ -4732,748 +4732,336 @@ export const lessons5eP3 = [
 
   },
 
-  {
-
-    "id": "p3-l8",
-
-    "period": 3,
-
-    "periodId": "p3",
-
-    "title": "Canis et porta obscura - Ordre des mots",
-
-    "subtitle": "Niger retourne à la porte louche, gratte le bois, refuse d’entrer, et plus personne n’ose traiter ce manège comme un simple caprice.",
-
-    "objective": "Lire une phrase à ordre variable sans se tromper sur le sens.",
-
-    "lessonPoint": "Le sens dépend des formes et du verbe, pas seulement de la position des mots.",
-
-    "canDo": [
-
-      "Je lis des ordres variés.",
-
-      "Je garde le même sens malgré l’ordre.",
-
-      "Je produis une phrase latine correcte."
-
-    ],
-
-    "lexicon": [
-
-      "canis, canis m. = chien",
-
-      "porta, portae f. = porte",
-
-      "vir, viri m. = homme",
-
-      "obscurus, obscura, obscurum = sombre",
-
-      "ante + acc. = devant",
-
-      "ex + abl. = hors de, depuis",
-
-      "clamo, clamas, clamat = je crie, tu cries, il/elle crie",
-
-      "exeo, exis, exit = je sors, tu sors, il/elle sort",
-
-      "latro, latras, latrat = j’aboie, tu aboies, il/elle aboie",
-
-      "maneo, manes, manet = je reste, tu restes, il/elle reste",
-
-      "timeo, times, timet = je crains, tu crains, il/elle craint",
-
-      "recuso, recusas, recusat = je refuse, tu refuses, il/elle refuse",
-
-      "intro, intras, intrat = j’entre, tu entres, il/elle entre",
-
-      "audio, audis, audit = j’entends, tu entends, il/elle entend"
-
-    ],
-
-    "maxScore": 10,
-
-    "training": [
-
-      {
-
-        "id": "p3-l8-t1",
-
-        "type": "singleChoice",
-
-        "prompt": "« Latramus » signifie…",
-
-        "options": [
-
-          "J'aboie",
-
-          "Vous volez",
-
-          "Elles volent",
-
-          "Nous aboyons"
-
-        ],
-
-        "expected": "Nous aboyons",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-      {
-
-        "id": "p3-l8-t2",
-
-        "type": "matching",
-
-        "prompt": "Associe les mots-clés de la scène.",
-
-        "pairs": [
-
-          {
-
-            "left": "canis",
-
-            "right": "chien"
-
-          },
-
-          {
-
-            "left": "porta",
-
-            "right": "porte"
-
-          },
-
-          {
-
-            "left": "ante",
-
-            "right": "devant"
-
-          },
-
-          {
-
-            "left": "obscura",
-
-            "right": "sombre"
-
-          }
-
-        ],
-
-        "rightOptions": [
-
-          "sombre",
-
-          "chien",
-
-          "devant",
-
-          "porte"
-
-        ],
-
-        "expected": {
-
-          "canis": "chien",
-
-          "porta": "porte",
-
-          "ante": "devant",
-
-          "obscura": "sombre"
-
-        },
-
-        "points": 1
-
-      },
-
-      {
-
-        "id": "p3-l8-t3",
-
-        "type": "singleChoice",
-
-        "prompt": "« Ante portam obscuram canis latrat » : quel est le sens correct de cette phrase ?",
-
-        "options": [
-
-          "Le chien aboie devant la porte sombre",
-
-          "La porte aboie devant le chien obscur",
-
-          "Le chien passe par la porte obscure",
-
-          "Le chien dort devant l'obscure latrine"
-
-        ],
-
-        "expected": "Le chien aboie devant la porte sombre",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-    {
-  "id": "p3-l8-t4",
-  "type": "singleChoice",
-  "prompt": "Les phrases « Canis latrat ante obscuram portam » et « Latrat ante obscuram portam canis » ont-elles le même sens ?",
-  "options": [
-    "oui, car « le chien » est toujours sujet et « la porte » COD",
-    "non, « la porte » devient sujet",
-    "non, « le chien » devient complément",
-    "oui, car « la porte » est toujours le sujet et « le chien » COD"
+ {
+  "id": "p3-l8",
+  "period": 3,
+  "periodId": "p3",
+  "title": "Ad ianuam obscuram - Le génitif (-ae) = complément du nom",
+  "subtitle": "Marcus et Livia apprennent à lire un nom principal, puis le génitif qui le complète comme un complément du nom en français.",
+  "objective": "Comprendre et automatiser que le génitif latin de 1re déclinaison correspond souvent à un complément du nom en français.",
+  "lessonPoint": "Le génitif complète un nom. En français, je le rends souvent par un complément du nom avec « de / du / de la / de l’ ».",
+  "canDo": [
+    "Je reconnais un génitif de 1re déclinaison en -ae.",
+    "Je distingue le nom principal et le complément du nom.",
+    "Je traduis le génitif latin par un complément du nom en français.",
+    "Je produis un groupe latin de type nom principal + génitif."
   ],
-  "expected": "oui, car « le chien » est toujours sujet et « la porte » COD",
-  "shuffle": true,
-  "points": 1
-},
-
-      {
-
-        "id": "p3-l8-t5",
-
-        "type": "multipleChoice",
-
-        "prompt": "Quelles phrases peuvent signifier « Le chien reste devant la porte » ?",
-
-        "options": [
-
-          "canis ante portam manet",
-
-          "ante portam canis manet",
-
-          "manet canis ante portam",
-
-          "porta ante canem manet"
-
-        ],
-
-        "expected": [
-
-          "canis ante portam manet",
-
-          "ante portam canis manet",
-
-          "manet canis ante portam"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-      {
-
-        "id": "p3-l8-t6",
-
-        "type": "singleChoice",
-
-        "prompt": "Dans « Manet ante portam canis », quel mot est le sujet ?",
-
-        "options": [
-
-          "manet",
-
-          "ante",
-
-          "portam",
-
-          "canis"
-
-        ],
-
-        "expected": "canis",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-     {
-
-  "id": "p3-l8-t7",
-
-  "type": "matching",
-
-  "prompt": "Associe chaque mot à sa fonction dans « 𝘊𝘢𝘯𝘪𝘴 𝘱𝘰𝘳𝘵𝘢𝘮 𝘰𝘣𝘴𝘤𝘶𝘳𝘢𝘮 𝘵𝘪𝘮𝘦𝘵 𝘦𝘵 𝘳𝘦𝘤𝘶𝘴𝘢𝘵 ».",
-
-  "pairs": [
+  "lexicon": [
+    "ianua, ianuae f. = porte",
+    "insula, insulae f. = immeuble",
+    "vicina, vicinae f. = voisine",
+    "puella, puellae f. = jeune fille",
+    "lucerna, lucernae f. = lampe",
+    "cista, cistae f. = coffret, boîte",
+    "statua, statuae f. = statue",
+    "dea, deae f. = déesse",
+    "Discordia, Discordiae f. = Discordia, la Discorde",
+    "nomen, nominis n. = nom",
+    "filia, filiae f. = fille",
+    "umbra, umbrae f. = ombre",
+    "obscurus, obscura, obscurum = sombre",
+    "ante + acc. = devant",
+    "in + abl. = dans (lieu où l’on est)",
+    "prope + acc. = près de",
+    "sum, es, est = je suis, tu es, il/elle est",
+    "video, vides, videt = je vois, tu vois, il/elle voit",
+    "teneo, tenes, tenet = je tiens, tu tiens, il/elle tient",
+    "maneo, manes, manet = je reste, tu restes, il/elle reste"
+  ],
+  "maxScore": 10,
+  "training": [
 
     {
-
-      "left": "canis",
-
-      "right": "sujet"
-
+      "id": "p3-l8-t1",
+      "type": "singleChoice",
+      "prompt": "Dans « Ianua insulae », quel mot est le génitif latin, donc le complément du nom ?",
+      "options": [
+        "ianua",
+        "insulae",
+        "ante",
+        "est"
+      ],
+      "expected": "insulae",
+      "shuffle": true,
+      "points": 1
     },
-
     {
-
-      "left": "portam obscuram",
-
-      "right": "COD"
-
+      "id": "p3-l8-t2",
+      "type": "singleChoice",
+      "prompt": "Dans « Ianua insulae », quel mot est le nom principal, celui que le complément du nom vient préciser ?",
+      "options": [
+        "ianua",
+        "insulae",
+        "in",
+        "videt"
+      ],
+      "expected": "ianua",
+      "shuffle": true,
+      "points": 1
     },
-
     {
-
-      "left": "timet et recusat",
-
-      "right": "verbes"
-
+      "id": "p3-l8-t3",
+      "type": "matching",
+      "prompt": "Associe chaque groupe latin à sa traduction française. Dans chaque réponse, le génitif latin est un complément du nom français.",
+      "pairs": [
+        { "left": "lucerna vicinae", "right": "la lampe de la voisine" },
+        { "left": "cista puellae", "right": "le coffret de la jeune fille" },
+        { "left": "statua deae", "right": "la statue de la déesse" },
+        { "left": "nomen Discordiae", "right": "le nom de Discordia" }
+      ],
+      "rightOptions": [
+        "la statue de la déesse",
+        "la lampe de la voisine",
+        "le nom de Discordia",
+        "le coffret de la jeune fille"
+      ],
+      "expected": {
+        "lucerna vicinae": "la lampe de la voisine",
+        "cista puellae": "le coffret de la jeune fille",
+        "statua deae": "la statue de la déesse",
+        "nomen Discordiae": "le nom de Discordia"
+      },
+      "points": 1
+    },
+    {
+      "id": "p3-l8-t4",
+      "type": "singleChoice",
+      "prompt": "Quelle traduction rend bien le génitif comme complément du nom dans « Statua deae » ?",
+      "options": [
+        "la statue de la déesse",
+        "la statue près de la déesse",
+        "la statue dans la déesse",
+        "la déesse de la statue"
+      ],
+      "expected": "la statue de la déesse",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l8-t5",
+      "type": "multipleChoice",
+      "prompt": "Coche les deux groupes latins où le second mot est un génitif servant de complément du nom, et non un complément de lieu.",
+      "options": [
+        "ianua insulae",
+        "lucerna vicinae",
+        "ante ianuam",
+        "in umbra"
+      ],
+      "expected": [
+        "ianua insulae",
+        "lucerna vicinae"
+      ],
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l8-t6",
+      "type": "singleChoice",
+      "prompt": "Mini-texte : « Ante ianuam insulae vicina lucernam tenet. Cista puellae in umbra est. » Quel groupe français correspond à un complément du nom, et non à un complément de lieu ?",
+      "options": [
+        "de l’immeuble",
+        "devant la porte",
+        "dans l’ombre",
+        "avec la lampe"
+      ],
+      "expected": "de l’immeuble",
+      "shuffle": true,
+      "points": 1
+    },
+    {
+      "id": "p3-l8-t7",
+      "type": "multipleChoice",
+      "prompt": "Mini-texte : « Ante ianuam insulae vicina lucernam tenet. Cista puellae in umbra est. Statua deae prope ianuam manet. » Coche les deux traductions françaises qui font apparaître un complément du nom issu d’un génitif latin.",
+      "options": [
+        "la porte de l’immeuble",
+        "le coffret de la jeune fille",
+        "devant la porte",
+        "près de la porte"
+      ],
+      "expected": [
+        "la porte de l’immeuble",
+        "le coffret de la jeune fille"
+      ],
+      "shuffle": true,
+      "points": 1
     }
-
   ],
-
-  "rightOptions": [
-
-    "sujet",
-
-    "COD",
-
-    "verbes"
-
+  "production": [
+    {
+      "id": "p3-l8-p1",
+      "type": "textInput",
+      "prompt": "Traduis : « Ianua insulae obscura est. » En français, le génitif latin doit devenir un complément du nom.",
+      "expected": "la porte de l'immeuble est sombre",
+      "acceptedAnswers": [
+        "la porte de l'immeuble est sombre",
+        "une porte de l'immeuble est sombre",
+        "la porte d'un immeuble est sombre",
+        "une porte d'un immeuble est sombre",
+        "la porte de l'immeuble est obscure",
+        "une porte de l'immeuble est obscure",
+        "la porte d'un immeuble est obscure",
+        "une porte d'un immeuble est obscure"
+      ],
+      "answerConfig": {
+        "type": "translation-segment",
+        "language": "fr",
+        "tolerateArticles": true,
+        "accepted": [
+          "la porte de l'immeuble est sombre",
+          "une porte de l'immeuble est sombre",
+          "la porte d'un immeuble est sombre",
+          "une porte d'un immeuble est sombre",
+          "la porte de l'immeuble est obscure",
+          "une porte de l'immeuble est obscure",
+          "la porte d'un immeuble est obscure",
+          "une porte d'un immeuble est obscure"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "la porte de l'immeuble est sombre",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true,
+        "ignoreFrenchDeterminers": true
+      },
+      "gradingFocus": "Faire apparaître clairement en français le complément du nom correspondant au génitif latin.",
+      "rejectIf": [
+        "génitif ignoré",
+        "complément du nom absent",
+        "contre-sens sur obscura",
+        "réponse hors-sujet"
+      ],
+      "tests": [
+        { "input": "la porte de l'immeuble est sombre", "isCorrect": true },
+        { "input": "la porte est dans l'immeuble sombre", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "p3-l8-p2",
+      "type": "textInput",
+      "prompt": "Traduis en latin : « Le nom de Discordia ». Tu dois écrire un nom principal suivi d’un génitif qui joue le rôle de complément du nom.",
+      "expected": "nomen Discordiae",
+      "acceptedAnswers": [
+        "nomen Discordiae"
+      ],
+      "answerConfig": {
+        "type": "one-of",
+        "language": "latin",
+        "accepted": [
+          "nomen Discordiae"
+        ]
+      },
+      "points": 1,
+      "canonicalAnswer": "nomen Discordiae",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Produire explicitement un génitif latin comme complément du nom.",
+      "rejectIf": [
+        "nominatif au lieu du génitif",
+        "complément du nom absent",
+        "mot hors leçon",
+        "réponse vide"
+      ],
+      "tests": [
+        { "input": "nomen Discordiae", "isCorrect": true },
+        { "input": "nomen Discordia", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "p3-l8-p3",
+      "type": "textInput",
+      "prompt": "Traduis en latin : « Marcus voit le coffret de la jeune fille. » Le groupe français « de la jeune fille » est un complément du nom : il doit donc devenir un génitif latin.",
+      "expected": "Marcus cistam puellae videt",
+      "acceptedAnswers": [
+        "Marcus cistam puellae videt",
+        "Marcus videt cistam puellae",
+        "cistam puellae Marcus videt",
+        "cistam puellae videt Marcus",
+        "videt Marcus cistam puellae",
+        "videt cistam puellae Marcus"
+      ],
+      "answerConfig": {
+        "type": "one-of",
+        "language": "latin",
+        "accepted": [
+          "Marcus cistam puellae videt",
+          "Marcus videt cistam puellae",
+          "cistam puellae Marcus videt",
+          "cistam puellae videt Marcus",
+          "videt Marcus cistam puellae",
+          "videt cistam puellae Marcus"
+        ],
+        "orderMode": "chunk-permutation"
+      },
+      "points": 1,
+      "canonicalAnswer": "Marcus cistam puellae videt",
+      "normalization": {
+        "trim": true,
+        "collapseSpaces": true,
+        "ignoreCase": true,
+        "ignorePunctuation": true,
+        "normalizeApostrophes": true,
+        "ignoreDiacritics": true
+      },
+      "gradingFocus": "Réinvestir dans une phrase complète le lien constant : complément du nom en français = génitif en latin.",
+      "rejectIf": [
+        "accusatif absent ou faux",
+        "génitif absent ou faux",
+        "complément du nom non formé",
+        "verbe incorrect",
+        "réponse hors-sujet"
+      ],
+      "tests": [
+        { "input": "Marcus cistam puellae videt", "isCorrect": true },
+        { "input": "cistam puellae Marcus videt", "isCorrect": true },
+        { "input": "Marcus cista puellae videt", "isCorrect": false },
+        { "input": "Marcus cistam puella videt", "isCorrect": false }
+      ]
+    }
   ],
-
-  "expected": {
-
-    "canis": "sujet",
-
-    "portam obscuram": "COD",
-
-    "timet et recusat": "verbes"
-
-  },
-
-  "points": 1
-
-}
-
+  "summary": {
+    "retains": [
+      "Le génitif latin sert souvent de complément du nom.",
+      "En français, je le traduis souvent par « de / du / de la / de l’ ».",
+      "Dans un groupe comme « cista puellae », « cista » est le nom principal et « puellae » est le complément du nom.",
+      "Je ne confonds pas le complément du nom avec un complément de lieu comme « devant la porte » ou « dans l’ombre »."
     ],
-
-    "production": [
-
-      {
-
-        "id": "p3-l8-p1",
-
-        "type": "textInput",
-
-        "prompt": "Traduis : « Canis portam timet »",
-
-        "expected": "le chien craint la porte",
-
-        "acceptedAnswers": [
-
-          "le chien craint la porte",
-
-  "le chien craint une porte",
-
-  "le chien a peur de la porte",
-
-  "le chien a peur d'une porte",
-
-  "le chien redoute la porte",
-
-  "le chien redoute une porte",
-
- 
-
-  "un chien craint la porte",
-
-  "un chien craint une porte",
-
-  "un chien a peur de la porte",
-
-  "un chien a peur d'une porte",
-
-  "un chien redoute la porte",
-
-  "un chien redoute une porte"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "translation-segment",
-
-          "language": "fr",
-          "tolerateArticles": true,
-
-          "accepted": [
-
-            "le chien craint la porte",
-
-  "le chien craint une porte",
-
-  "le chien a peur de la porte",
-
-  "le chien a peur d'une porte",
-
-  "le chien redoute la porte",
-
-  "le chien redoute une porte",
-
- 
-
-  "un chien craint la porte",
-
-  "un chien craint une porte",
-
-  "un chien a peur de la porte",
-
-  "un chien a peur d'une porte",
-
-  "un chien redoute la porte",
-
-  "un chien redoute une porte"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "le chien craint la porte",
-
-        "normalization": {
-    "trim": true,
-    "collapseSpaces": true,
-    "ignoreCase": true,
-    "ignorePunctuation": true,
-    "normalizeApostrophes": true,
-    "ignoreDiacritics": true,
-    "ignoreFrenchDeterminers": true
-
-        },
-
-        "gradingFocus": "Compréhension correcte en français ; variantes lexicales recevables.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "le chien craint la porte",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "réponse hors-sujet",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
-
-            {
-
-        "id": "p3-l8-p2",
-
-        "type": "textInput",
-
-        "prompt": "Traduis en latin : « Le chien aboie devant la porte sombre ».",
-
-        "expected": "canis ante portam obscuram latrat",
-
-        "acceptedAnswers": [
-
-          "canis ante portam obscuram latrat",
-
-          "canis latrat ante portam obscuram",
-
-          "ante portam obscuram canis latrat",
-
-          "ante portam obscuram latrat canis",
-
-          "latrat canis ante portam obscuram",
-
-          "latrat ante portam obscuram canis"
-
-        ],
-
-        "answerConfig": {
-
-          "type": "one-of",
-
-          "language": "latin",
-
-          "accepted": [
-
-            "canis ante portam obscuram latrat",
-
-            "canis latrat ante portam obscuram",
-
-            "ante portam obscuram canis latrat",
-
-            "ante portam obscuram latrat canis",
-
-            "latrat canis ante portam obscuram",
-
-            "latrat ante portam obscuram canis"
-
-          ]
-
-        },
-
-        "points": 1,
-
-        "canonicalAnswer": "canis ante portam obscuram latrat",
-
-        "normalization": {
-
-          "trim": true,
-
-          "collapseSpaces": true,
-
-          "ignoreCase": true,
-
-          "ignorePunctuation": true,
-
-          "normalizeApostrophes": true,
-
-          "ignoreDiacritics": true
-
-        },
-
-        "gradingFocus": "Morphologie et sens latin corrects ; ordre flexible accepté.",
-
-        "rejectIf": [
-
-          "verbe incorrect",
-
-          "sens inversé sujet/objet",
-
-          "forme latine impossible au niveau de la leçon"
-
-        ],
-
-        "tests": [
-
-          {
-
-            "input": "canis ante portam obscuram latrat",
-
-            "isCorrect": true
-
-          },
-
-          {
-
-            "input": "lorem ipsum",
-
-            "isCorrect": false
-
-          }
-
-        ]
-
-      },
-
-     {
-  "id": "p3-l8-p3",
-  "type": "textInput",
-  "prompt": "Traduis en français : « 𝘌𝘹 𝘱𝘰𝘳𝘵𝘢 𝘰𝘣𝘴𝘤𝘶𝘳𝘢 𝘷𝘪𝘳 𝘦𝘹𝘪𝘵 𝘦𝘵 𝘤𝘭𝘢𝘮𝘢𝘵. »",
-  "expected": "un homme sort de la porte sombre et crie",
-  "acceptedAnswers": [
-    "un homme sort de la porte sombre et crie",
-    "l'homme sort de la porte sombre et crie",
-    "un homme sort d'une porte sombre et crie",
-    "l'homme sort d'une porte sombre et crie",
-
-    "un homme sort de la porte obscure et crie",
-    "l'homme sort de la porte obscure et crie",
-    "un homme sort d'une porte obscure et crie",
-    "l'homme sort d'une porte obscure et crie",
-
-    "un homme sort de l'entrée sombre et crie",
-    "l'homme sort de l'entrée sombre et crie",
-    "un homme sort d'une entrée sombre et crie",
-    "l'homme sort d'une entrée sombre et crie",
-
-    "un homme sort de l'entrée obscure et crie",
-    "l'homme sort de l'entrée obscure et crie",
-    "un homme sort d'une entrée obscure et crie",
-    "l'homme sort d'une entrée obscure et crie",
-
-    "un homme sort de la porte sombre et il crie",
-    "l'homme sort de la porte sombre et il crie",
-    "un homme sort d'une porte sombre et il crie",
-    "l'homme sort d'une porte sombre et il crie",
-
-    "un homme sort de la porte obscure et il crie",
-    "l'homme sort de la porte obscure et il crie",
-    "un homme sort d'une porte obscure et il crie",
-    "l'homme sort d'une porte obscure et il crie",
-
-    "un homme sort de l'entrée sombre et il crie",
-    "l'homme sort de l'entrée sombre et il crie",
-    "un homme sort d'une entrée sombre et il crie",
-    "l'homme sort d'une entrée sombre et il crie",
-
-    "un homme sort de l'entrée obscure et il crie",
-    "l'homme sort de l'entrée obscure et il crie",
-    "un homme sort d'une entrée obscure et il crie",
-    "l'homme sort d'une entrée obscure et il crie"
-  ],
-  "answerConfig": {
-    "type": "translation-segment",
-    "language": "fr",
-    "tolerateArticles": true,
-    "accepted": [
-      "un homme sort de la porte sombre et crie",
-      "l'homme sort de la porte sombre et crie",
-      "un homme sort d'une porte sombre et crie",
-      "l'homme sort d'une porte sombre et crie",
-
-      "un homme sort de la porte obscure et crie",
-      "l'homme sort de la porte obscure et crie",
-      "un homme sort d'une porte obscure et crie",
-      "l'homme sort d'une porte obscure et crie",
-
-      "un homme sort de l'entrée sombre et crie",
-      "l'homme sort de l'entrée sombre et crie",
-      "un homme sort d'une entrée sombre et crie",
-      "l'homme sort d'une entrée sombre et crie",
-
-      "un homme sort de l'entrée obscure et crie",
-      "l'homme sort de l'entrée obscure et crie",
-      "un homme sort d'une entrée obscure et crie",
-      "l'homme sort d'une entrée obscure et crie",
-
-      "un homme sort de la porte sombre et il crie",
-      "l'homme sort de la porte sombre et il crie",
-      "un homme sort d'une porte sombre et il crie",
-      "l'homme sort d'une porte sombre et il crie",
-
-      "un homme sort de la porte obscure et il crie",
-      "l'homme sort de la porte obscure et il crie",
-      "un homme sort d'une porte obscure et il crie",
-      "l'homme sort d'une porte obscure et il crie",
-
-      "un homme sort de l'entrée sombre et il crie",
-      "l'homme sort de l'entrée sombre et il crie",
-      "un homme sort d'une entrée sombre et il crie",
-      "l'homme sort d'une entrée sombre et il crie",
-
-      "un homme sort de l'entrée obscure et il crie",
-      "l'homme sort de l'entrée obscure et il crie",
-      "un homme sort d'une entrée obscure et il crie",
-      "l'homme sort d'une entrée obscure et il crie"
+    "cahier": [
+      "ianua insulae = la porte de l’immeuble",
+      "lucerna vicinae = la lampe de la voisine",
+      "cista puellae = le coffret de la jeune fille",
+      "statua deae = la statue de la déesse",
+      "nomen Discordiae = le nom de Discordia",
+      "complément du nom en français = génitif en latin"
+    ],
+    "keywords": [
+      "génitif",
+      "complément du nom",
+      "-ae",
+      "de"
     ]
   },
-  "points": 1,
-  "canonicalAnswer": "un homme sort de la porte sombre et crie",
-  "normalization": {
-    "trim": true,
-    "collapseSpaces": true,
-    "ignoreCase": true,
-    "ignorePunctuation": true,
-    "normalizeApostrophes": true,
-    "ignoreDiacritics": true,
-    "ignoreFrenchDeterminers": true
-  },
-  "gradingFocus": "Comprendre ex + ablatif, identifier le sujet vir et traduire correctement les deux verbes exit et clamat.",
-  "rejectIf": [
-    "contre-sens sur ex",
-    "porta prise pour sujet",
-    "omission d'un des deux verbes",
-    "réponse hors-sujet"
-  ],
-  "tests": [
-    {
-      "input": "un homme sort de la porte sombre et crie",
-      "isCorrect": true
-    },
-    {
-      "input": "l'homme sort de l'entrée obscure et il crie",
-      "isCorrect": true
-    },
-    {
-      "input": "la porte sombre sort et l'homme crie",
-      "isCorrect": false
-    }
-  ]
-}
-
-    ],
-
-    "summary": {
-
-      "retains": [
-
-        "Je ne me fais pas piéger par l’ordre des mots.",
-
-        "J'essaie de repérer les groupes de mots qui fonctionnent ensemble : 'ante portam'.",
-
-        "Je regarde le verbe et les terminaisons avant de traduire."
-
-      ],
-
-      "cahier": [
-
-        "canis ante portam obscuram manet",
-
-        "Le sens dépend des terminaisons et du verbe, pas seulement de la place des mots."
-
-      ],
-
-      "keywords": [
-
-        "ordre variable",
-
-        "porte sombre",
-
-        "canis"
-
-      ]
-
-    },
-
-    "meta": {
-
-      "status": "ready",
-
-      "tags": [
-
-        "p3",
-
-        "word-order",
-
-        "porta-obscura"
-
-      ]
-
-    }
-
-  },
+  "meta": {
+    "status": "ready",
+    "tags": [
+      "p3",
+      "genitif",
+      "complement-du-nom",
+      "premiere-declinaison",
+      "Discordia"
+    ]
+  }
+},
 
  {
 
@@ -7006,32 +6594,19 @@ export const lessons5eP3 = [
     },
 
     {
-
-      "id": "p3-l11-t3",
-
-      "type": "singleChoice",
-
-      "prompt": "Dans « Servus virum videt et non clamat », quelle information nouvelle apparaît ?",
-
-      "options": [
-
-        "le serviteur voit l’homme mais ne crie pas",
-
-        "le serviteur court dans la rue en criant",
-
-        "l’homme porte l’avocat qui hurle",
-
-        "la tablette ouvre la porte qui grince"
-
-      ],
-
-      "expected": "le serviteur voit l’homme mais ne crie pas",
-
-      "shuffle": true,
-
-      "points": 1
-
-    },
+  "id": "p3-l11-t3",
+  "type": "singleChoice",
+  "prompt": "Dans « Servus villae ianuam aperit », quel mot est au génitif ?",
+  "options": [
+    "servus",
+    "villae",
+    "ianuam",
+    "aperit"
+  ],
+  "expected": "villae",
+  "shuffle": true,
+  "points": 1
+},
 
     {
   "id": "p3-l11-t4",
