@@ -66,8 +66,9 @@ export const lessons5eP1 = [
 
       "salvete = bonjour à tous",
 
-      "vale = au revoir",
-      "sum, es, est = je suis, tu es, il/elle est",
+"vale = au revoir",
+"valete = au revoir à tous",
+"sum, es, est = je suis, tu es, il/elle est",
 
       "adsum = je suis là, je suis présent",
 
@@ -119,71 +120,39 @@ export const lessons5eP1 = [
 
       },
 
-      {
+     {
+  "id": "p1-l1-t2",
+  "type": "singleChoice",
+  "prompt": "👋 Flavia parle à trois voisins. Que dit-elle ?",
+  "options": [
+    "salve",
+    "salvete",
+    "vale",
+    "adsum"
+  ],
+  "expected": "salvete",
+  "shuffle": true,
+  "points": 1
+},
 
-        "id": "p1-l1-t2",
-
-        "type": "singleChoice",
-
-        "prompt": "👋 Titus parle à trois voisins. Il dit :",
-
-        "options": [
-
-          "salve",
-
-          "salvete",
-
-          "vale",
-
-          "adsum",
-
-          "bene"
-
-        ],
-
-        "expected": "salvete",
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
-
-      {
-
-        "id": "p1-l1-t3",
-
-        "type": "multipleChoice",
-
-        "prompt": "👋 Coche les deux formules pour dire « Au revoir ».",
-
-        "options": [
-
-          "vale",
-
-          "valete",
-
-          "salve",
-
-          "adsum",
-
-          "male"
-
-        ],
-
-        "expected": [
-
-          "vale",
-
-          "valete"
-
-        ],
-
-        "shuffle": true,
-
-        "points": 1
-
-      },
+    {
+  "id": "p1-l1-t3",
+  "type": "multipleChoice",
+  "prompt": "👋 Coche les deux formules qui servent à dire « au revoir ».",
+  "options": [
+    "vale",
+    "valete",
+    "salve",
+    "salvete",
+    "adsum"
+  ],
+  "expected": [
+    "vale",
+    "valete"
+  ],
+  "shuffle": true,
+  "points": 1
+},
 
             {
 
