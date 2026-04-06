@@ -502,12 +502,10 @@ export const lessons5eP2 = [
       ],
 
       "cahier": [
-
-        "quis/quid/cur/ubi",
-
-        "L’ordre latin peut changer sans changer le sens."
-
-      ],
+  "J’utilise l’interrogatif qui convient pour poser la bonne question.",
+  "quis = qui ? quid = quoi ? ubi = où ? cur = pourquoi ?",
+  "Quis donum videt ? = Qui voit l’offrande ?"
+],
 
       "keywords": [
 
@@ -1063,12 +1061,10 @@ export const lessons5eP2 = [
       ],
 
       "cahier": [
-
-        "ad/in/ex/ante",
-
-        "Dans l’enquête, les déplacements comptent."
-
-      ],
+  "Je lis la préposition avec son nom pour savoir où l’on va, où l’on est ou d’où l’on vient.",
+  "ad templum = vers le temple ; in via = dans la rue",
+  "ex taberna = hors de la boutique ; ante ianuam = devant la porte"
+],
 
       "keywords": [
 
@@ -1746,12 +1742,10 @@ export const lessons5eP2 = [
       ],
 
       "cahier": [
-
-        "femina/amicam",
-
-        "-a sujet fréquent, -am objet fréquent"
-
-      ],
+  "En 1re déclinaison, -a est souvent le sujet ; -am est souvent le COD.",
+  "Femina aquam portat = la femme porte l’eau",
+  "Amica tabernam spectat = l’amie regarde la boutique"
+],
 
       "keywords": [
 
@@ -2536,12 +2530,10 @@ export const lessons5eP2 = [
       ],
 
       "cahier": [
-
-        "servus/servum",
-
-        "dominus/dominum"
-
-      ],
+  "En 2e déclinaison masculine, -us est souvent le sujet ; -um est souvent le COD.",
+  "Dominus servum vocat = le maître appelle le serviteur",
+  "Vicinus amicum audit = le voisin entend l’ami"
+],
 
       "keywords": [
 
@@ -3207,12 +3199,10 @@ export const lessons5eP2 = [
       ],
 
       "cahier": [
-
-        "donum/signum/templum",
-
-        "Neutre : même forme sujet/objet"
-
-      ],
+  "Au neutre singulier, le nominatif et l’accusatif ont la même forme.",
+  "signum = un indice (sujet ou COD) ; donum = une offrande (sujet ou COD)",
+  "Signum in templo est = l’indice est dans le temple ; Vir signum videt = l’homme voit l’indice"
+],
 
       "keywords": [
 
@@ -3799,12 +3789,10 @@ export const lessons5eP2 = [
       ],
 
       "cahier": [
-
-        "Présent, au singulier : -o / -s / -t",
-
-        "1re conjugaison (repère) : -o / -as / -at / -amus / -atis / -ant"
-
-      ],
+  "Au présent singulier, la terminaison du verbe indique la personne.",
+  "-o = je ; -s = tu ; -t = il / elle",
+  "video = je vois ; audis = tu entends ; accusat = il / elle accuse"
+],
 
       "keywords": [
 
@@ -4499,7 +4487,7 @@ export const lessons5eP2 = [
 
       "cahier": [
 
-        "-mus / -tis / -nt",
+        "-mus / -tis / -nt, sont les terminaisons du pluriel au présent.",
 
         "Videmus/auditis/clamant"
 
@@ -5749,12 +5737,10 @@ export const lessons5eP2 = [
       ],
 
       "cahier": [
-
-        "S/C/V possible",
-
-        "Repérer verbe + terminaisons"
-
-      ],
+  "L’ordre latin peut varier : je pars du verbe et des terminaisons, pas de la place des mots dans la phrase.",
+  "Canis ante ianuam latrat = le chien aboie devant la porte",
+  "Servus vicinum accusat = le serviteur accuse le voisin"
+],
 
       "keywords": [
 
@@ -7086,12 +7072,10 @@ export const lessons5eP2 = [
       ],
 
       "cahier": [
-
-        "Discordia intrat, pax fugit",
-
-        "présent : relier forme et sens dans le récit"
-
-      ],
+  "Dans un récit, plusieurs verbes au présent peuvent faire avancer l’action.",
+  "Discordia intrat, pax fugit = Discordia entre, la paix s’enfuit",
+  "Je relie chaque verbe au changement qu’il provoque dans la scène."
+],
 
       "keywords": [
 
@@ -8184,16 +8168,10 @@ export const lessons5eP2 = [
     ],
 
     "cahier": [
-
-      "rex / regem",
-
-      "mater / matrem",
-
-      "urbs / urbem",
-
-      "nomen garde la même forme au neutre"
-
-    ],
+  "En 3e déclinaison, le mot change souvent de forme entre le sujet et le COD.",
+  "rex / regem ; mater / matrem ; urbs / urbem",
+  "nomen est neutre : il garde la même forme comme sujet et comme COD"
+],
 
     "keywords": [
 
