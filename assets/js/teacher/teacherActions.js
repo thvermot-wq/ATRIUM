@@ -80,3 +80,36 @@ export async function resetStudentPinByTeacher({ teacherUserId, studentUserId })
     provisionalPin: result.ok ? pin : null,
   };
 }
+
+export function buildSuggestedClassCode({ className, levelLabel }) {
+  const base = `${String(className || "").trim()}-${String(levelLabel || "").trim()}`
+    .toUpperCase()
+    .replace(/[^A-Z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 20);
+  const suffix = Math.random().toString(36).slice(2, 6).toUpperCase();
+  return `${base || "CLASSE"}-${suffix}`;
+}
+
+export async function createTeacherClass({ className, levelLabel, subject, classCode }) {
+  const supabase = getSupabaseClient();
+  if (!supabase) return { ok: false, message: "Supabase non configuré." };
+
+  const payload = {
+    action: "teacher_create_class",
+    name: String(className || "").trim(),
+    level_label: String(levelLabel || "").trim(),
+    subject: String(subject || "").trim() || "latin",
+    class_code: String(classCode || "").trim(),
+  };
+
+  const { data, error } = await supabase.functions.invoke("auth-admin", {
+    body: payload,
+  });
+
+  if (error || !data?.ok) {
+    return { ok: false, message: data?.error || "Création de classe impossible." };
+  }
+
+  return { ok: true, classRow: data.class };
+}

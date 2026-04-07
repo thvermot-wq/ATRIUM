@@ -15,11 +15,11 @@ import { loadProgress, saveLessonProgress, saveProgress } from "./storage.js";
 import { initRouter } from "./router.js";
 import { renderApp } from "./ui.js";
 import { initTheme } from "./theme.js";
-import { getCurrentAuthContext, loginStudent, loginTeacher, studentSelfRegister } from "./auth/authService.js";
+import { getCurrentAuthContext, loginStudent, loginTeacher, studentSelfRegister, teacherSelfRegister } from "./auth/authService.js";
 import { canAccessTeacherDashboard, isStudentProfile } from "./auth/roleGuards.js";
 import { startProgressSync } from "./progress/progressSync.js";
 import { recordLessonOpen, recordLessonSubmission } from "./progress/progressStore.js";
-import { fetchTeacherDashboardData, resetStudentPinByTeacher } from "./teacher/teacherActions.js";
+import { createTeacherClass, fetchTeacherDashboardData, resetStudentPinByTeacher } from "./teacher/teacherActions.js";
 
 function getLevelDisplayLabel(level) {
   return level?.classLabel || level?.title || level?.id || "Niveau";
@@ -222,6 +222,16 @@ function boot() {
         }
         return result;
       },
+      onTeacherRegister: async ({ displayName, teacherId, password, passwordConfirm, activationCode }) => {
+        const result = await teacherSelfRegister({ displayName, teacherId, password, passwordConfirm, activationCode });
+        if (result.ok) {
+          authContext = await getCurrentAuthContext();
+          teacherDashboardData = await fetchTeacherDashboardData(authContext.profile.user_id);
+          router.navigate("#/teacher-dashboard");
+          return { ok: true, message: result.message || "Compte enseignant créé." };
+        }
+        return result;
+      },
       onStudentLogin: async ({ studentId, pin }) => {
         const result = await loginStudent({ studentId, pin });
         if (result.ok) {
@@ -248,6 +258,18 @@ function boot() {
         });
         if (result.ok) return result.provisionalPin;
         return null;
+      },
+      onCreateFirstClass: async ({ className, levelLabel, subject, classCode }) => {
+        if (!canAccessTeacherDashboard(authContext.profile)) {
+          return { ok: false, message: "Action non autorisée." };
+        }
+        const result = await createTeacherClass({ className, levelLabel, subject, classCode });
+        if (result.ok) {
+          teacherDashboardData = await fetchTeacherDashboardData(authContext.profile.user_id);
+          router.navigate("#/teacher-dashboard");
+          return { ok: true, message: "Classe créée et liée à votre compte." };
+        }
+        return result;
       },
       onRecordLessonOpen: ({ lesson }) => {
         if (!isStudentProfile(authContext.profile)) return;

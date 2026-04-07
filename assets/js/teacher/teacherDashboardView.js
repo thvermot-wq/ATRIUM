@@ -1,4 +1,5 @@
 import { buildTeacherSnapshotRows } from "../progress/progressSelectors.js";
+import { buildSuggestedClassCode } from "./teacherActions.js";
 
 function formatNumber(value) {
   return Number.isFinite(value) ? String(value) : "—";
@@ -8,7 +9,7 @@ function normalizeValue(value) {
   return String(value || "").trim();
 }
 
-export function renderTeacherDashboardView({ classes = [], students, progressRows, onResetPin, onBackHome }) {
+export function renderTeacherDashboardView({ classes = [], students, progressRows, onResetPin, onBackHome, onCreateFirstClass }) {
   const rows = buildTeacherSnapshotRows({ students, progressRows });
   const classById = new Map((classes || []).map((entry) => [entry.id, entry]));
 
@@ -24,6 +25,72 @@ export function renderTeacherDashboardView({ classes = [], students, progressRow
 
   const wrapper = document.createElement("section");
   wrapper.className = "stack";
+
+  if (!(classes || []).length) {
+    const firstClassCard = document.createElement("article");
+    firstClassCard.className = "card stack";
+    firstClassCard.innerHTML = `
+      <h2>Créer ma première classe</h2>
+      <p class="muted">Aucune classe n’est encore rattachée à votre compte enseignant.</p>
+      <form class="stack" data-role="first-class-form">
+        <label>Nom de la classe
+          <input required name="className" placeholder="ex: 5e A" />
+        </label>
+        <label>Niveau
+          <input required name="levelLabel" value="5e" />
+        </label>
+        <label>Matière
+          <input required name="subject" value="latin" />
+        </label>
+        <label>Code classe
+          <input required name="classCode" />
+        </label>
+        <div class="actions-row">
+          <button class="btn btn-primary" type="submit">Créer ma classe</button>
+          <button class="btn btn-link" type="button" data-action="home">← Retour</button>
+        </div>
+      </form>
+      <p class="muted" data-role="first-class-message"></p>
+    `;
+
+    const form = firstClassCard.querySelector('[data-role="first-class-form"]');
+    const messageNode = firstClassCard.querySelector('[data-role="first-class-message"]');
+    const classNameInput = form.querySelector('[name="className"]');
+    const levelInput = form.querySelector('[name="levelLabel"]');
+    const codeInput = form.querySelector('[name="classCode"]');
+    let codeWasEdited = false;
+
+    function refreshSuggestedCode() {
+      if (codeWasEdited) return;
+      codeInput.value = buildSuggestedClassCode({
+        className: classNameInput.value,
+        levelLabel: levelInput.value,
+      });
+    }
+
+    refreshSuggestedCode();
+    classNameInput.addEventListener("input", refreshSuggestedCode);
+    levelInput.addEventListener("input", refreshSuggestedCode);
+    codeInput.addEventListener("input", () => {
+      codeWasEdited = true;
+    });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const fd = new FormData(form);
+      const result = await onCreateFirstClass?.({
+        className: String(fd.get("className") || "").trim(),
+        levelLabel: String(fd.get("levelLabel") || "").trim(),
+        subject: String(fd.get("subject") || "").trim(),
+        classCode: String(fd.get("classCode") || "").trim(),
+      });
+      messageNode.textContent = result?.message || "";
+    });
+
+    firstClassCard.querySelector('[data-action="home"]').addEventListener("click", onBackHome);
+    wrapper.appendChild(firstClassCard);
+    return wrapper;
+  }
 
   const controls = document.createElement("article");
   controls.className = "card";
