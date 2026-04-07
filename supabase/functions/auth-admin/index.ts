@@ -222,6 +222,96 @@ async function studentSelfRegister(body: Record<string, unknown>) {
   return json(200, { ok: true, user_id: userId, class_id: classRow.id });
 }
 
+async function teacherSelfRegister(body: Record<string, unknown>) {
+  const displayName = String(body.display_name || "").trim();
+  const teacherId = String(body.teacher_id || "").trim();
+  const password = String(body.password || "");
+  const activationCode = String(body.activation_code || "").trim().toUpperCase();
+
+  if (!displayName || !teacherId || !password || !activationCode) {
+    return json(400, { ok: false, error: "Payload invalide." });
+  }
+
+  const { data: activation } = await admin
+    .from("teacher_activation_codes")
+    .select("code,used_at")
+    .eq("code", activationCode)
+    .maybeSingle();
+
+  if (!activation) return json(404, { ok: false, error: "Code d'activation introuvable." });
+  if (activation.used_at) return json(409, { ok: false, error: "Code d'activation déjà utilisé." });
+
+  const { data: existingTeacher } = await admin
+    .from("teacher_accounts")
+    .select("user_id")
+    .eq("teacher_id", teacherId)
+    .maybeSingle();
+
+  if (existingTeacher) return json(409, { ok: false, error: "Teacher ID déjà utilisé." });
+
+  const email = technicalEmail("teacher", teacherId);
+  const { data: created, error: createErr } = await admin.auth.admin.createUser({
+    email,
+    password,
+    email_confirm: true,
+    user_metadata: {
+      role: "teacher",
+      login_id: teacherId,
+      display_name: displayName,
+    },
+  });
+
+  if (createErr || !created.user) {
+    return json(400, { ok: false, error: createErr?.message || "Création Auth impossible." });
+  }
+
+  const userId = created.user.id;
+
+  const { error: profileError } = await admin.from("user_profiles").insert({
+    user_id: userId,
+    role: "teacher",
+    login_id: teacherId,
+    display_name: displayName,
+    class_id: null,
+    is_active: true,
+  });
+
+  if (profileError) {
+    await admin.auth.admin.deleteUser(userId);
+    return json(400, { ok: false, error: profileError.message || "Création profil impossible." });
+  }
+
+  const { error: teacherAccountError } = await admin.from("teacher_accounts").insert({
+    user_id: userId,
+    teacher_id: teacherId,
+  });
+
+  if (teacherAccountError) {
+    await admin.from("user_profiles").delete().eq("user_id", userId);
+    await admin.auth.admin.deleteUser(userId);
+    return json(400, { ok: false, error: teacherAccountError.message || "Création compte enseignant impossible." });
+  }
+
+  const { error: activationUpdateError } = await admin
+    .from("teacher_activation_codes")
+    .update({
+      used_by_user_id: userId,
+      used_teacher_id: teacherId,
+      used_at: new Date().toISOString(),
+    })
+    .eq("code", activationCode)
+    .is("used_at", null);
+
+  if (activationUpdateError) {
+    await admin.from("teacher_accounts").delete().eq("user_id", userId);
+    await admin.from("user_profiles").delete().eq("user_id", userId);
+    await admin.auth.admin.deleteUser(userId);
+    return json(400, { ok: false, error: "Impossible de valider le code d'activation." });
+  }
+
+  return json(200, { ok: true, user_id: userId });
+}
+
 async function provisionAccount(body: Record<string, unknown>, actor: { user_id: string; role: string; class_id?: string | null }) {
   const actorTeacherId = String(body.actor_teacher_id || "").trim();
   if (actorTeacherId && actorTeacherId !== actor.user_id) return json(403, { ok: false, error: "actor_teacher_id invalide." });
@@ -426,6 +516,7 @@ Deno.serve(async (req) => {
 
   if (action === "student_login_attempt") return studentLoginAttempt(body);
   if (action === "student_self_register") return studentSelfRegister(body);
+  if (action === "teacher_self_register") return teacherSelfRegister(body);
 
   const actor = await getActorFromJwt(req);
   if (!actor) return json(401, { ok: false, error: "JWT invalide." });

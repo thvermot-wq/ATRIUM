@@ -47,6 +47,51 @@ export async function loginTeacher({ teacherId, password }) {
   return { ok: true, profile };
 }
 
+export async function teacherSelfRegister({ displayName, teacherId, password, passwordConfirm, activationCode }) {
+  const supabase = getSupabaseClient();
+  if (!supabase) return { ok: false, message: "Supabase non configuré." };
+
+  const cleanDisplayName = String(displayName || "").trim();
+  const cleanTeacherId = String(teacherId || "").trim();
+  const cleanActivationCode = String(activationCode || "").trim();
+
+  if (!cleanDisplayName || !cleanTeacherId || !password || !cleanActivationCode) {
+    return { ok: false, message: "Tous les champs sont obligatoires." };
+  }
+
+  if (String(password) !== String(passwordConfirm || "")) {
+    return { ok: false, message: "La confirmation mot de passe ne correspond pas." };
+  }
+
+  const { data, error } = await supabase.functions.invoke("auth-admin", {
+    body: {
+      action: "teacher_self_register",
+      display_name: cleanDisplayName,
+      teacher_id: cleanTeacherId,
+      password,
+      activation_code: cleanActivationCode,
+    },
+  });
+
+  if (error || !data?.ok) {
+    return { ok: false, message: data?.error || "Création de compte enseignant impossible." };
+  }
+
+  const login = resolveTeacherLogin(cleanTeacherId);
+  const { error: signInError } = await supabase.auth.signInWithPassword({
+    email: login.technicalEmail,
+    password,
+  });
+
+  if (signInError) {
+    return { ok: true, message: "Compte créé. Connectez-vous avec vos identifiants." };
+  }
+
+  const { data: account } = await fetchSingle("teacher_accounts", "teacher_id", login.loginId);
+  const profile = account?.user_id ? await loadProfileByUserId(account.user_id) : null;
+  return { ok: true, profile, message: "Compte enseignant créé et connexion réussie." };
+}
+
 export async function loginStudent({ studentId, pin }) {
   const supabase = getSupabaseClient();
   if (!supabase) return { ok: false, message: "Supabase non configuré." };

@@ -76,35 +76,90 @@ function createResumeLabel(target, levels) {
   return `${levelLabel} · ${lessonTitle}`;
 }
 
-function createTeacherLoginCard({ onSubmit }) {
+function createTeacherAuthCard({ onLoginSubmit, onRegisterSubmit }) {
+  let mode = "login";
   const card = document.createElement("article");
   card.className = "card home-login-card";
   card.innerHTML = `
     <h3>Connexion enseignant</h3>
-    <form class="stack" data-role="form">
+    <form class="stack" data-role="form"></form>
+    <p class="muted" data-role="message"></p>
+  `;
+
+  const form = card.querySelector('[data-role="form"]');
+  const messageNode = card.querySelector('[data-role="message"]');
+
+  function renderForm() {
+    if (mode === "register") {
+      form.innerHTML = `
+        <label>Nom affiché
+          <input required name="displayName" autocomplete="name" />
+        </label>
+        <label>Teacher ID
+          <input required name="teacherId" autocomplete="username" />
+        </label>
+        <label>Mot de passe
+          <input required name="password" type="password" autocomplete="new-password" />
+        </label>
+        <label>Confirmation mot de passe
+          <input required name="passwordConfirm" type="password" autocomplete="new-password" />
+        </label>
+        <label>Code d’activation
+          <input required name="activationCode" />
+        </label>
+        <div class="home-login-card__actions">
+          <button class="btn btn-secondary" type="button" data-action="toggle">Retour connexion</button>
+          <button class="btn btn-primary" type="submit">Créer un compte</button>
+        </div>
+      `;
+      return;
+    }
+
+    form.innerHTML = `
       <label>Teacher ID
         <input required name="loginId" autocomplete="username" />
       </label>
       <label>Mot de passe
         <input required name="secret" type='password' autocomplete='current-password' />
       </label>
-      <button class="btn btn-primary" type="submit">Se connecter</button>
-      <p class="muted" data-role="message"></p>
-    </form>
-  `;
+      <div class="home-login-card__actions">
+        <button class="btn btn-secondary" type="button" data-action="toggle">Créer un compte</button>
+        <button class="btn btn-primary" type="submit">Se connecter</button>
+      </div>
+    `;
+  }
 
-  const form = card.querySelector('[data-role="form"]');
-  const messageNode = card.querySelector('[data-role="message"]');
+  form.addEventListener("click", (event) => {
+    const target = event.target.closest('[data-action="toggle"]');
+    if (!target) return;
+    mode = mode === "login" ? "register" : "login";
+    messageNode.textContent = "";
+    renderForm();
+  });
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const fd = new FormData(form);
+
+    if (mode === "register") {
+      const result = await onRegisterSubmit({
+        displayName: String(fd.get("displayName") || "").trim(),
+        teacherId: String(fd.get("teacherId") || "").trim(),
+        password: String(fd.get("password") || "").trim(),
+        passwordConfirm: String(fd.get("passwordConfirm") || "").trim(),
+        activationCode: String(fd.get("activationCode") || "").trim(),
+      });
+      messageNode.textContent = result?.message || "";
+      return;
+    }
+
     const loginId = String(fd.get("loginId") || "").trim();
     const secret = String(fd.get("secret") || "").trim();
-    const result = await onSubmit({ loginId, secret });
+    const result = await onLoginSubmit({ loginId, secret });
     messageNode.textContent = result?.message || "";
   });
 
+  renderForm();
   return card;
 }
 
@@ -196,7 +251,7 @@ function createStudentAuthCard({ onLoginSubmit, onRegisterSubmit }) {
   return card;
 }
 
-export function renderHomeView({ levels, onOpenLevel, onOpenResults, onTeacherLogin, onStudentLogin, onStudentRegister }) {
+export function renderHomeView({ levels, onOpenLevel, onOpenResults, onTeacherLogin, onTeacherRegister, onStudentLogin, onStudentRegister }) {
   const section = document.createElement("section");
   section.className = "stack home-view";
 
@@ -253,8 +308,10 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults, onTeacherLo
       onStudentRegister({ displayName, studentId, classCode, pin, pinConfirm }),
   });
 
-  const teacherLoginCard = createTeacherLoginCard({
-    onSubmit: ({ loginId, secret }) => onTeacherLogin({ teacherId: loginId, password: secret }),
+  const teacherLoginCard = createTeacherAuthCard({
+    onLoginSubmit: ({ loginId, secret }) => onTeacherLogin({ teacherId: loginId, password: secret }),
+    onRegisterSubmit: ({ displayName, teacherId, password, passwordConfirm, activationCode }) =>
+      onTeacherRegister({ displayName, teacherId, password, passwordConfirm, activationCode }),
   });
 
   homeLogins.append(studentLoginCard, teacherLoginCard);

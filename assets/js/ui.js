@@ -151,7 +151,7 @@ function renderNotFoundView({ onOpenHome }) {
   return section;
 }
 
-export function renderApp(rootElement, { router, route, level, progress, onSaveLessonScore, authContext, onTeacherLogin, onStudentLogin, onStudentRegister, teacherDashboardData, onTeacherPinReset, onCreateFirstClass, onRecordLessonOpen, onRecordLessonSubmission }) {
+export function renderApp(rootElement, { router, route, level, progress, onSaveLessonScore, authContext, onTeacherLogin, onTeacherRegister, onStudentLogin, onStudentRegister, teacherDashboardData, onTeacherPinReset, onCreateFirstClass, onRecordLessonOpen, onRecordLessonSubmission }) {
   installBackToTopControl();
   scrollToTopImmediate();
 
@@ -194,6 +194,7 @@ export function renderApp(rootElement, { router, route, level, progress, onSaveL
       ...callbacks,
       levels,
       onTeacherLogin,
+      onTeacherRegister,
       onStudentLogin,
       onStudentRegister,
     });

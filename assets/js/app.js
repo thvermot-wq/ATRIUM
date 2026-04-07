@@ -15,7 +15,7 @@ import { loadProgress, saveLessonProgress, saveProgress } from "./storage.js";
 import { initRouter } from "./router.js";
 import { renderApp } from "./ui.js";
 import { initTheme } from "./theme.js";
-import { getCurrentAuthContext, loginStudent, loginTeacher, studentSelfRegister } from "./auth/authService.js";
+import { getCurrentAuthContext, loginStudent, loginTeacher, studentSelfRegister, teacherSelfRegister } from "./auth/authService.js";
 import { canAccessTeacherDashboard, isStudentProfile } from "./auth/roleGuards.js";
 import { startProgressSync } from "./progress/progressSync.js";
 import { recordLessonOpen, recordLessonSubmission } from "./progress/progressStore.js";
@@ -219,6 +219,16 @@ function boot() {
           teacherDashboardData = await fetchTeacherDashboardData(authContext.profile.user_id);
           router.navigate("#/teacher-dashboard");
           return { ok: true, message: "Connexion enseignant réussie." };
+        }
+        return result;
+      },
+      onTeacherRegister: async ({ displayName, teacherId, password, passwordConfirm, activationCode }) => {
+        const result = await teacherSelfRegister({ displayName, teacherId, password, passwordConfirm, activationCode });
+        if (result.ok) {
+          authContext = await getCurrentAuthContext();
+          teacherDashboardData = await fetchTeacherDashboardData(authContext.profile.user_id);
+          router.navigate("#/teacher-dashboard");
+          return { ok: true, message: result.message || "Compte enseignant créé." };
         }
         return result;
       },
