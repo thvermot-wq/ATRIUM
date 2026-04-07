@@ -76,7 +76,298 @@ function createResumeLabel(target, levels) {
   return `${levelLabel} · ${lessonTitle}`;
 }
 
-export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
+function createTeacherAuthCard({ onLoginSubmit, onRegisterSubmit }) {
+  let mode = "login";
+  const card = document.createElement("article");
+  card.className = "card home-login-card";
+  card.innerHTML = `
+    <h3>Connexion enseignant</h3>
+    <form class="stack" data-role="form"></form>
+    <p class="muted" data-role="message"></p>
+  `;
+
+  const form = card.querySelector('[data-role="form"]');
+  const messageNode = card.querySelector('[data-role="message"]');
+
+  function renderForm() {
+    if (mode === "register") {
+      form.innerHTML = `
+        <label>Nom affiché
+          <input required name="displayName" autocomplete="name" />
+        </label>
+        <label>Teacher ID
+          <input required name="teacherId" autocomplete="username" />
+        </label>
+        <label>Mot de passe
+          <input required name="password" type="password" autocomplete="new-password" />
+        </label>
+        <label>Confirmation mot de passe
+          <input required name="passwordConfirm" type="password" autocomplete="new-password" />
+        </label>
+        <label>Code d’activation
+          <input required name="activationCode" />
+        </label>
+        <div class="home-login-card__actions">
+          <button class="btn btn-secondary" type="button" data-action="toggle">Retour connexion</button>
+          <button class="btn btn-primary" type="submit">Créer un compte</button>
+        </div>
+      `;
+      return;
+    }
+
+    form.innerHTML = `
+      <label>Teacher ID
+        <input required name="loginId" autocomplete="username" />
+      </label>
+      <label>Mot de passe
+        <input required name="secret" type='password' autocomplete='current-password' />
+      </label>
+      <div class="home-login-card__actions">
+        <button class="btn btn-secondary" type="button" data-action="toggle">Créer un compte</button>
+        <button class="btn btn-primary" type="submit">Se connecter</button>
+      </div>
+    `;
+  }
+
+  form.addEventListener("click", (event) => {
+    const target = event.target.closest('[data-action="toggle"]');
+    if (!target) return;
+    mode = mode === "login" ? "register" : "login";
+    messageNode.textContent = "";
+    renderForm();
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const fd = new FormData(form);
+
+    if (mode === "register") {
+      const result = await onRegisterSubmit({
+        displayName: String(fd.get("displayName") || "").trim(),
+        teacherId: String(fd.get("teacherId") || "").trim(),
+        password: String(fd.get("password") || "").trim(),
+        passwordConfirm: String(fd.get("passwordConfirm") || "").trim(),
+        activationCode: String(fd.get("activationCode") || "").trim(),
+      });
+      messageNode.textContent = result?.message || "";
+      return;
+    }
+
+    const loginId = String(fd.get("loginId") || "").trim();
+    const secret = String(fd.get("secret") || "").trim();
+    const result = await onLoginSubmit({ loginId, secret });
+    messageNode.textContent = result?.message || "";
+  });
+
+  renderForm();
+  card.__setMode = (nextMode) => {
+    if (!["login", "register"].includes(nextMode)) return;
+    mode = nextMode;
+    messageNode.textContent = "";
+    renderForm();
+  };
+  return card;
+}
+
+function createStudentAuthCard({ onLoginSubmit, onRegisterSubmit }) {
+  let mode = "login";
+  const card = document.createElement("article");
+  card.className = "card home-login-card";
+  card.innerHTML = `
+    <h3>Connexion élève</h3>
+    <form class="stack" data-role="form"></form>
+    <p class="muted" data-role="message"></p>
+  `;
+
+  const form = card.querySelector('[data-role="form"]');
+  const messageNode = card.querySelector('[data-role="message"]');
+
+  function renderForm() {
+    if (mode === "register") {
+      form.innerHTML = `
+        <label>Nom affiché
+          <input required name="displayName" autocomplete="name" />
+        </label>
+        <label>Student ID
+          <input required name="studentId" autocomplete="username" />
+        </label>
+        <label>Code classe
+          <input required name="classCode" />
+        </label>
+        <label>PIN (6 chiffres)
+          <input required name="pin" inputmode="numeric" pattern="\\d{6}" maxlength="6" />
+        </label>
+        <label>Confirmation PIN
+          <input required name="pinConfirm" inputmode="numeric" pattern="\\d{6}" maxlength="6" />
+        </label>
+        <div class="home-login-card__actions">
+          <button class="btn btn-secondary" type="button" data-action="toggle">Retour connexion</button>
+          <button class="btn btn-primary" type="submit">Créer un compte</button>
+        </div>
+      `;
+      return;
+    }
+
+    form.innerHTML = `
+      <label>Student ID
+        <input required name="studentId" autocomplete="username" />
+      </label>
+      <label>PIN (6 chiffres)
+        <input required name="pin" inputmode="numeric" pattern="\\d{6}" maxlength="6" />
+      </label>
+      <div class="home-login-card__actions">
+        <button class="btn btn-secondary" type="button" data-action="toggle">Créer un compte</button>
+        <button class="btn btn-primary" type="submit">Se connecter</button>
+      </div>
+    `;
+  }
+
+  form.addEventListener("click", (event) => {
+    const target = event.target.closest('[data-action="toggle"]');
+    if (!target) return;
+    mode = mode === "login" ? "register" : "login";
+    messageNode.textContent = "";
+    renderForm();
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const fd = new FormData(form);
+
+    if (mode === "register") {
+      const result = await onRegisterSubmit({
+        displayName: String(fd.get("displayName") || "").trim(),
+        studentId: String(fd.get("studentId") || "").trim(),
+        classCode: String(fd.get("classCode") || "").trim(),
+        pin: String(fd.get("pin") || "").trim(),
+        pinConfirm: String(fd.get("pinConfirm") || "").trim(),
+      });
+      messageNode.textContent = result?.message || "";
+      return;
+    }
+
+    const result = await onLoginSubmit({
+      studentId: String(fd.get("studentId") || "").trim(),
+      pin: String(fd.get("pin") || "").trim(),
+    });
+    messageNode.textContent = result?.message || "";
+  });
+
+  renderForm();
+  card.__setMode = (nextMode) => {
+    if (!["login", "register"].includes(nextMode)) return;
+    mode = nextMode;
+    messageNode.textContent = "";
+    renderForm();
+  };
+  return card;
+}
+
+function createAuthPortalCard({ title, description, onOpen }) {
+  const card = document.createElement("article");
+  card.className = "card home-auth-entry";
+  card.innerHTML = `
+    <h3>${title}</h3>
+    <p class="muted">${description}</p>
+    <button type="button" class="btn btn-primary">Ouvrir</button>
+  `;
+  card.addEventListener("click", onOpen);
+  card.querySelector("button").addEventListener("click", onOpen);
+  return card;
+}
+
+function createAuthModal({ onClose }) {
+  const overlay = document.createElement("section");
+  overlay.className = "auth-modal-overlay";
+  overlay.setAttribute("role", "dialog");
+  overlay.setAttribute("aria-modal", "true");
+  overlay.setAttribute("aria-label", "Espace de connexion");
+  overlay.innerHTML = `
+    <div class="auth-modal-backdrop" data-action="close"></div>
+    <article class="auth-modal card stack">
+      <header class="auth-modal__header">
+        <h3 data-role="title">Espace</h3>
+        <button type="button" class="btn btn-link" data-action="close" aria-label="Fermer">✕</button>
+      </header>
+      <div class="auth-modal__switches">
+        <button type="button" class="btn btn-secondary" data-action="register">Créer un compte</button>
+        <button type="button" class="btn btn-secondary" data-action="login">Se connecter</button>
+      </div>
+      <div data-role="content"></div>
+    </article>
+  `;
+
+  const titleNode = overlay.querySelector('[data-role="title"]');
+  const contentNode = overlay.querySelector('[data-role="content"]');
+  const registerBtn = overlay.querySelector('[data-action="register"]');
+  const loginBtn = overlay.querySelector('[data-action="login"]');
+  let currentSpace = null;
+  let currentMode = null;
+  let studentCard = null;
+  let teacherCard = null;
+
+  function setActiveSwitch(nextMode) {
+    currentMode = nextMode;
+    registerBtn.classList.toggle("active", nextMode === "register");
+    loginBtn.classList.toggle("active", nextMode === "login");
+  }
+
+  function renderContent() {
+    contentNode.innerHTML = "";
+    if (!currentMode) return;
+    if (currentSpace === "student") {
+      if (!studentCard) return;
+      studentCard.__setMode?.(currentMode);
+      contentNode.appendChild(studentCard);
+      return;
+    }
+    if (!teacherCard) return;
+    teacherCard.__setMode?.(currentMode);
+    contentNode.appendChild(teacherCard);
+  }
+
+  overlay.addEventListener("click", (event) => {
+    const closeTrigger = event.target.closest('[data-action="close"]');
+    if (!closeTrigger) return;
+    onClose();
+  });
+
+  function onEscape(event) {
+    if (event.key !== "Escape") return;
+    onClose();
+  }
+
+  registerBtn.addEventListener("click", () => {
+    setActiveSwitch("register");
+    renderContent();
+  });
+  loginBtn.addEventListener("click", () => {
+    setActiveSwitch("login");
+    renderContent();
+  });
+
+  return {
+    node: overlay,
+    open({ space, studentAuthCard, teacherAuthCard }) {
+      currentSpace = space;
+      studentCard = studentAuthCard;
+      teacherCard = teacherAuthCard;
+      currentMode = null;
+      titleNode.textContent = space === "student" ? "Espace élève" : "Espace enseignant";
+      setActiveSwitch(null);
+      renderContent();
+      document.addEventListener("keydown", onEscape);
+      window.setTimeout(() => {
+        registerBtn.focus();
+      }, 0);
+    },
+    close() {
+      document.removeEventListener("keydown", onEscape);
+    },
+  };
+}
+
+export function renderHomeView({ levels, onOpenLevel, onOpenResults, onTeacherLogin, onTeacherRegister, onStudentLogin, onStudentRegister }) {
   const section = document.createElement("section");
   section.className = "stack home-view";
 
@@ -123,6 +414,53 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
     });
     heroActions.appendChild(resumeButton);
   }
+
+  const homeAuthPortals = document.createElement("section");
+  homeAuthPortals.className = "home-auth-portals";
+
+  const studentLoginCard = createStudentAuthCard({
+    onLoginSubmit: ({ studentId, pin }) => onStudentLogin({ studentId, pin }),
+    onRegisterSubmit: ({ displayName, studentId, classCode, pin, pinConfirm }) =>
+      onStudentRegister({ displayName, studentId, classCode, pin, pinConfirm }),
+  });
+
+  const teacherLoginCard = createTeacherAuthCard({
+    onLoginSubmit: ({ loginId, secret }) => onTeacherLogin({ teacherId: loginId, password: secret }),
+    onRegisterSubmit: ({ displayName, teacherId, password, passwordConfirm, activationCode }) =>
+      onTeacherRegister({ displayName, teacherId, password, passwordConfirm, activationCode }),
+  });
+
+  let authModal = null;
+  function closeModal() {
+    if (!authModal) return;
+    authModal.close();
+    authModal.node.remove();
+    authModal = null;
+  }
+  function openModal(space) {
+    closeModal();
+    authModal = createAuthModal({ onClose: closeModal });
+    section.appendChild(authModal.node);
+    authModal.open({
+      space,
+      studentAuthCard: studentLoginCard,
+      teacherAuthCard: teacherLoginCard,
+    });
+  }
+
+  const studentPortal = createAuthPortalCard({
+    title: "Espace élève",
+    description: "Rejoins ta classe, reprends tes leçons et suis ta progression.",
+    onOpen: () => openModal("student"),
+  });
+
+  const teacherPortal = createAuthPortalCard({
+    title: "Espace enseignant",
+    description: "Gère tes classes, les comptes et la progression des élèves.",
+    onOpen: () => openModal("teacher"),
+  });
+
+  homeAuthPortals.append(studentPortal, teacherPortal);
 
   const cards = document.createElement("div");
   cards.className = "level-grid";
@@ -202,7 +540,7 @@ levels.forEach((level) => {
   resultsButton.addEventListener("click", onOpenResults);
 
   actions.appendChild(resultsButton);
-  section.append(intro, cards, actions);
+  section.append(intro, homeAuthPortals, cards, actions);
 
   return section;
 }
