@@ -190,7 +190,12 @@ export function renderApp(rootElement, { router, route, level, progress, onSaveL
   let viewNode;
 
   if (route.name === "home") {
-    viewNode = renderHomeView({ ...callbacks, levels });
+    viewNode = renderHomeView({
+      ...callbacks,
+      levels,
+      onTeacherLogin,
+      onStudentLogin,
+    });
   } else if (route.name === "dashboard") {
     viewNode = renderDashboardView({ ...callbacks, level, progress });
   } else if (route.name === "lesson") {

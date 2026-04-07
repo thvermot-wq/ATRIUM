@@ -2983,3 +2983,19 @@ a.btn-secondary:focus-visible * {
 .teacher-table th {
   white-space: nowrap;
 }
+
+.home-logins {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.home-login-card form {
+  gap: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .home-logins {
+    grid-template-columns: 1fr;
+  }
+}
