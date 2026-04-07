@@ -2994,6 +2994,16 @@ a.btn-secondary:focus-visible * {
   gap: 0.75rem;
 }
 
+.home-login-card__actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.home-login-card__actions .btn {
+  margin: 0;
+}
+
 @media (max-width: 900px) {
   .home-logins {
     grid-template-columns: 1fr;

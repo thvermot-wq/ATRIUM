@@ -89,6 +89,55 @@ export async function loginStudent({ studentId, pin }) {
   return { ok: true, profile };
 }
 
+export async function studentSelfRegister({ displayName, studentId, classCode, pin, pinConfirm }) {
+  const supabase = getSupabaseClient();
+  if (!supabase) return { ok: false, message: "Supabase non configuré." };
+
+  const cleanDisplayName = String(displayName || "").trim();
+  const cleanStudentId = String(studentId || "").trim();
+  const cleanClassCode = String(classCode || "").trim();
+
+  if (!cleanDisplayName || !cleanStudentId || !cleanClassCode) {
+    return { ok: false, message: "Tous les champs sont obligatoires." };
+  }
+
+  if (!isValidStudentPin(pin)) {
+    return { ok: false, message: "PIN invalide (6 chiffres)." };
+  }
+
+  if (String(pin || "") !== String(pinConfirm || "")) {
+    return { ok: false, message: "La confirmation PIN ne correspond pas." };
+  }
+
+  const { data, error } = await supabase.functions.invoke("auth-admin", {
+    body: {
+      action: "student_self_register",
+      display_name: cleanDisplayName,
+      student_id: cleanStudentId,
+      class_code: cleanClassCode,
+      pin,
+    },
+  });
+
+  if (error || !data?.ok) {
+    return { ok: false, message: data?.error || "Création de compte impossible." };
+  }
+
+  const login = resolveStudentLogin(cleanStudentId);
+  const { error: signInError } = await supabase.auth.signInWithPassword({
+    email: login.technicalEmail,
+    password: pin,
+  });
+
+  if (signInError) {
+    return { ok: true, message: "Compte créé. Connectez-vous avec vos identifiants." };
+  }
+
+  const { data: account } = await fetchSingle("student_accounts", "student_id", login.loginId);
+  const profile = account?.user_id ? await loadProfileByUserId(account.user_id) : null;
+  return { ok: true, profile, message: "Compte créé et connexion réussie." };
+}
+
 export async function provisionTechnicalAccount({ actorTeacherId, role, loginId, displayName, classId = null, secret }) {
   const supabase = getSupabaseClient();
   if (!supabase) return { ok: false, message: "Supabase non configuré." };

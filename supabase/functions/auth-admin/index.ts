@@ -142,6 +142,86 @@ async function studentLoginAttempt(body: Record<string, unknown>) {
   });
 }
 
+async function studentSelfRegister(body: Record<string, unknown>) {
+  const displayName = String(body.display_name || "").trim();
+  const studentId = String(body.student_id || "").trim();
+  const classCode = String(body.class_code || "").trim();
+  const pin = String(body.pin || "").trim();
+
+  if (!displayName || !studentId || !classCode || !/^\d{6}$/.test(pin)) {
+    return json(400, { ok: false, error: "Payload invalide." });
+  }
+
+  const { data: existingStudent } = await admin
+    .from("student_accounts")
+    .select("user_id")
+    .eq("student_id", studentId)
+    .maybeSingle();
+
+  if (existingStudent) {
+    return json(409, { ok: false, error: "Student ID déjà utilisé." });
+  }
+
+  const { data: classRow } = await admin
+    .from("classes")
+    .select("id")
+    .eq("class_code", classCode)
+    .maybeSingle();
+
+  if (!classRow) {
+    return json(404, { ok: false, error: "Code classe introuvable." });
+  }
+
+  const email = technicalEmail("student", studentId);
+
+  const { data: created, error: createErr } = await admin.auth.admin.createUser({
+    email,
+    password: pin,
+    email_confirm: true,
+    user_metadata: {
+      role: "student",
+      login_id: studentId,
+      display_name: displayName,
+    },
+  });
+
+  if (createErr || !created.user) {
+    return json(400, { ok: false, error: createErr?.message || "Création Auth impossible." });
+  }
+
+  const userId = created.user.id;
+
+  const { error: profileError } = await admin.from("user_profiles").insert({
+    user_id: userId,
+    role: "student",
+    login_id: studentId,
+    display_name: displayName,
+    class_id: classRow.id,
+    is_active: true,
+  });
+
+  if (profileError) {
+    await admin.auth.admin.deleteUser(userId);
+    return json(400, { ok: false, error: profileError.message || "Création profil impossible." });
+  }
+
+  const { error: accountError } = await admin.from("student_accounts").insert({
+    user_id: userId,
+    student_id: studentId,
+    pin_failed_attempts: 0,
+    locked_until: null,
+    pin_reset_required: false,
+  });
+
+  if (accountError) {
+    await admin.from("user_profiles").delete().eq("user_id", userId);
+    await admin.auth.admin.deleteUser(userId);
+    return json(400, { ok: false, error: accountError.message || "Création compte élève impossible." });
+  }
+
+  return json(200, { ok: true, user_id: userId, class_id: classRow.id });
+}
+
 async function provisionAccount(body: Record<string, unknown>, actor: { user_id: string; role: string; class_id?: string | null }) {
   const actorTeacherId = String(body.actor_teacher_id || "").trim();
   if (actorTeacherId && actorTeacherId !== actor.user_id) return json(403, { ok: false, error: "actor_teacher_id invalide." });
@@ -299,6 +379,7 @@ Deno.serve(async (req) => {
   const action = String(body.action || "");
 
   if (action === "student_login_attempt") return studentLoginAttempt(body);
+  if (action === "student_self_register") return studentSelfRegister(body);
 
   const actor = await getActorFromJwt(req);
   if (!actor) return json(401, { ok: false, error: "JWT invalide." });

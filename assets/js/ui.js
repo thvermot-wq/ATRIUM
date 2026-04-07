@@ -151,7 +151,7 @@ function renderNotFoundView({ onOpenHome }) {
   return section;
 }
 
-export function renderApp(rootElement, { router, route, level, progress, onSaveLessonScore, authContext, onTeacherLogin, onStudentLogin, teacherDashboardData, onTeacherPinReset, onRecordLessonOpen, onRecordLessonSubmission }) {
+export function renderApp(rootElement, { router, route, level, progress, onSaveLessonScore, authContext, onTeacherLogin, onStudentLogin, onStudentRegister, teacherDashboardData, onTeacherPinReset, onRecordLessonOpen, onRecordLessonSubmission }) {
   installBackToTopControl();
   scrollToTopImmediate();
 
@@ -195,6 +195,7 @@ export function renderApp(rootElement, { router, route, level, progress, onSaveL
       levels,
       onTeacherLogin,
       onStudentLogin,
+      onStudentRegister,
     });
   } else if (route.name === "dashboard") {
     viewNode = renderDashboardView({ ...callbacks, level, progress });

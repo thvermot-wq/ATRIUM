@@ -76,17 +76,17 @@ function createResumeLabel(target, levels) {
   return `${levelLabel} · ${lessonTitle}`;
 }
 
-function createHomeLoginCard({ title, loginLabel, secretLabel, secretInputAttrs = "", onSubmit }) {
+function createTeacherLoginCard({ onSubmit }) {
   const card = document.createElement("article");
   card.className = "card home-login-card";
   card.innerHTML = `
-    <h3>${title}</h3>
+    <h3>Connexion enseignant</h3>
     <form class="stack" data-role="form">
-      <label>${loginLabel}
+      <label>Teacher ID
         <input required name="loginId" autocomplete="username" />
       </label>
-      <label>${secretLabel}
-        <input required name="secret" ${secretInputAttrs} />
+      <label>Mot de passe
+        <input required name="secret" type='password' autocomplete='current-password' />
       </label>
       <button class="btn btn-primary" type="submit">Se connecter</button>
       <p class="muted" data-role="message"></p>
@@ -108,7 +108,95 @@ function createHomeLoginCard({ title, loginLabel, secretLabel, secretInputAttrs 
   return card;
 }
 
-export function renderHomeView({ levels, onOpenLevel, onOpenResults, onTeacherLogin, onStudentLogin }) {
+function createStudentAuthCard({ onLoginSubmit, onRegisterSubmit }) {
+  let mode = "login";
+  const card = document.createElement("article");
+  card.className = "card home-login-card";
+  card.innerHTML = `
+    <h3>Connexion élève</h3>
+    <form class="stack" data-role="form"></form>
+    <p class="muted" data-role="message"></p>
+  `;
+
+  const form = card.querySelector('[data-role="form"]');
+  const messageNode = card.querySelector('[data-role="message"]');
+
+  function renderForm() {
+    if (mode === "register") {
+      form.innerHTML = `
+        <label>Nom affiché
+          <input required name="displayName" autocomplete="name" />
+        </label>
+        <label>Student ID
+          <input required name="studentId" autocomplete="username" />
+        </label>
+        <label>Code classe
+          <input required name="classCode" />
+        </label>
+        <label>PIN (6 chiffres)
+          <input required name="pin" inputmode="numeric" pattern="\\d{6}" maxlength="6" />
+        </label>
+        <label>Confirmation PIN
+          <input required name="pinConfirm" inputmode="numeric" pattern="\\d{6}" maxlength="6" />
+        </label>
+        <div class="home-login-card__actions">
+          <button class="btn btn-secondary" type="button" data-action="toggle">Retour connexion</button>
+          <button class="btn btn-primary" type="submit">Créer un compte</button>
+        </div>
+      `;
+      return;
+    }
+
+    form.innerHTML = `
+      <label>Student ID
+        <input required name="studentId" autocomplete="username" />
+      </label>
+      <label>PIN (6 chiffres)
+        <input required name="pin" inputmode="numeric" pattern="\\d{6}" maxlength="6" />
+      </label>
+      <div class="home-login-card__actions">
+        <button class="btn btn-secondary" type="button" data-action="toggle">Créer un compte</button>
+        <button class="btn btn-primary" type="submit">Se connecter</button>
+      </div>
+    `;
+  }
+
+  form.addEventListener("click", (event) => {
+    const target = event.target.closest('[data-action="toggle"]');
+    if (!target) return;
+    mode = mode === "login" ? "register" : "login";
+    messageNode.textContent = "";
+    renderForm();
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const fd = new FormData(form);
+
+    if (mode === "register") {
+      const result = await onRegisterSubmit({
+        displayName: String(fd.get("displayName") || "").trim(),
+        studentId: String(fd.get("studentId") || "").trim(),
+        classCode: String(fd.get("classCode") || "").trim(),
+        pin: String(fd.get("pin") || "").trim(),
+        pinConfirm: String(fd.get("pinConfirm") || "").trim(),
+      });
+      messageNode.textContent = result?.message || "";
+      return;
+    }
+
+    const result = await onLoginSubmit({
+      studentId: String(fd.get("studentId") || "").trim(),
+      pin: String(fd.get("pin") || "").trim(),
+    });
+    messageNode.textContent = result?.message || "";
+  });
+
+  renderForm();
+  return card;
+}
+
+export function renderHomeView({ levels, onOpenLevel, onOpenResults, onTeacherLogin, onStudentLogin, onStudentRegister }) {
   const section = document.createElement("section");
   section.className = "stack home-view";
 
@@ -159,19 +247,13 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults, onTeacherLo
   const homeLogins = document.createElement("section");
   homeLogins.className = "home-logins";
 
-  const studentLoginCard = createHomeLoginCard({
-    title: "Connexion élève",
-    loginLabel: "Student ID",
-    secretLabel: "PIN (6 chiffres)",
-    secretInputAttrs: "inputmode='numeric' pattern='\\d{6}' maxlength='6'",
-    onSubmit: ({ loginId, secret }) => onStudentLogin({ studentId: loginId, pin: secret }),
+  const studentLoginCard = createStudentAuthCard({
+    onLoginSubmit: ({ studentId, pin }) => onStudentLogin({ studentId, pin }),
+    onRegisterSubmit: ({ displayName, studentId, classCode, pin, pinConfirm }) =>
+      onStudentRegister({ displayName, studentId, classCode, pin, pinConfirm }),
   });
 
-  const teacherLoginCard = createHomeLoginCard({
-    title: "Connexion enseignant",
-    loginLabel: "Teacher ID",
-    secretLabel: "Mot de passe",
-    secretInputAttrs: "type='password' autocomplete='current-password'",
+  const teacherLoginCard = createTeacherLoginCard({
     onSubmit: ({ loginId, secret }) => onTeacherLogin({ teacherId: loginId, password: secret }),
   });
 

@@ -15,7 +15,7 @@ import { loadProgress, saveLessonProgress, saveProgress } from "./storage.js";
 import { initRouter } from "./router.js";
 import { renderApp } from "./ui.js";
 import { initTheme } from "./theme.js";
-import { getCurrentAuthContext, loginStudent, loginTeacher } from "./auth/authService.js";
+import { getCurrentAuthContext, loginStudent, loginTeacher, studentSelfRegister } from "./auth/authService.js";
 import { canAccessTeacherDashboard, isStudentProfile } from "./auth/roleGuards.js";
 import { startProgressSync } from "./progress/progressSync.js";
 import { recordLessonOpen, recordLessonSubmission } from "./progress/progressStore.js";
@@ -228,6 +228,15 @@ function boot() {
           authContext = await getCurrentAuthContext();
           router.navigate(`#/${DEFAULT_LEVEL_ID}`);
           return { ok: true, message: "Connexion élève réussie." };
+        }
+        return result;
+      },
+      onStudentRegister: async ({ displayName, studentId, classCode, pin, pinConfirm }) => {
+        const result = await studentSelfRegister({ displayName, studentId, classCode, pin, pinConfirm });
+        if (result.ok) {
+          authContext = await getCurrentAuthContext();
+          router.navigate(`#/${DEFAULT_LEVEL_ID}`);
+          return { ok: true, message: result.message || "Compte élève créé." };
         }
         return result;
       },
