@@ -76,7 +76,39 @@ function createResumeLabel(target, levels) {
   return `${levelLabel} · ${lessonTitle}`;
 }
 
-export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
+function createHomeLoginCard({ title, loginLabel, secretLabel, secretInputAttrs = "", onSubmit }) {
+  const card = document.createElement("article");
+  card.className = "card home-login-card";
+  card.innerHTML = `
+    <h3>${title}</h3>
+    <form class="stack" data-role="form">
+      <label>${loginLabel}
+        <input required name="loginId" autocomplete="username" />
+      </label>
+      <label>${secretLabel}
+        <input required name="secret" ${secretInputAttrs} />
+      </label>
+      <button class="btn btn-primary" type="submit">Se connecter</button>
+      <p class="muted" data-role="message"></p>
+    </form>
+  `;
+
+  const form = card.querySelector('[data-role="form"]');
+  const messageNode = card.querySelector('[data-role="message"]');
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const fd = new FormData(form);
+    const loginId = String(fd.get("loginId") || "").trim();
+    const secret = String(fd.get("secret") || "").trim();
+    const result = await onSubmit({ loginId, secret });
+    messageNode.textContent = result?.message || "";
+  });
+
+  return card;
+}
+
+export function renderHomeView({ levels, onOpenLevel, onOpenResults, onTeacherLogin, onStudentLogin }) {
   const section = document.createElement("section");
   section.className = "stack home-view";
 
@@ -123,6 +155,27 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults }) {
     });
     heroActions.appendChild(resumeButton);
   }
+
+  const homeLogins = document.createElement("section");
+  homeLogins.className = "home-logins";
+
+  const studentLoginCard = createHomeLoginCard({
+    title: "Connexion élève",
+    loginLabel: "Student ID",
+    secretLabel: "PIN (6 chiffres)",
+    secretInputAttrs: "inputmode='numeric' pattern='\\d{6}' maxlength='6'",
+    onSubmit: ({ loginId, secret }) => onStudentLogin({ studentId: loginId, pin: secret }),
+  });
+
+  const teacherLoginCard = createHomeLoginCard({
+    title: "Connexion enseignant",
+    loginLabel: "Teacher ID",
+    secretLabel: "Mot de passe",
+    secretInputAttrs: "type='password' autocomplete='current-password'",
+    onSubmit: ({ loginId, secret }) => onTeacherLogin({ teacherId: loginId, password: secret }),
+  });
+
+  homeLogins.append(studentLoginCard, teacherLoginCard);
 
   const cards = document.createElement("div");
   cards.className = "level-grid";
@@ -202,7 +255,7 @@ levels.forEach((level) => {
   resultsButton.addEventListener("click", onOpenResults);
 
   actions.appendChild(resultsButton);
-  section.append(intro, cards, actions);
+  section.append(intro, homeLogins, cards, actions);
 
   return section;
 }
