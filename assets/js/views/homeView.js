@@ -160,6 +160,12 @@ function createTeacherAuthCard({ onLoginSubmit, onRegisterSubmit }) {
   });
 
   renderForm();
+  card.__setMode = (nextMode) => {
+    if (!["login", "register"].includes(nextMode)) return;
+    mode = nextMode;
+    messageNode.textContent = "";
+    renderForm();
+  };
   return card;
 }
 
@@ -248,7 +254,117 @@ function createStudentAuthCard({ onLoginSubmit, onRegisterSubmit }) {
   });
 
   renderForm();
+  card.__setMode = (nextMode) => {
+    if (!["login", "register"].includes(nextMode)) return;
+    mode = nextMode;
+    messageNode.textContent = "";
+    renderForm();
+  };
   return card;
+}
+
+function createAuthPortalCard({ title, description, onOpen }) {
+  const card = document.createElement("article");
+  card.className = "card home-auth-entry";
+  card.innerHTML = `
+    <h3>${title}</h3>
+    <p class="muted">${description}</p>
+    <button type="button" class="btn btn-primary">Ouvrir</button>
+  `;
+  card.addEventListener("click", onOpen);
+  card.querySelector("button").addEventListener("click", onOpen);
+  return card;
+}
+
+function createAuthModal({ onClose }) {
+  const overlay = document.createElement("section");
+  overlay.className = "auth-modal-overlay";
+  overlay.setAttribute("role", "dialog");
+  overlay.setAttribute("aria-modal", "true");
+  overlay.setAttribute("aria-label", "Espace de connexion");
+  overlay.innerHTML = `
+    <div class="auth-modal-backdrop" data-action="close"></div>
+    <article class="auth-modal card stack">
+      <header class="auth-modal__header">
+        <h3 data-role="title">Espace</h3>
+        <button type="button" class="btn btn-link" data-action="close" aria-label="Fermer">✕</button>
+      </header>
+      <div class="auth-modal__switches">
+        <button type="button" class="btn btn-secondary" data-action="register">Créer un compte</button>
+        <button type="button" class="btn btn-secondary" data-action="login">Se connecter</button>
+      </div>
+      <div data-role="content"></div>
+    </article>
+  `;
+
+  const titleNode = overlay.querySelector('[data-role="title"]');
+  const contentNode = overlay.querySelector('[data-role="content"]');
+  const registerBtn = overlay.querySelector('[data-action="register"]');
+  const loginBtn = overlay.querySelector('[data-action="login"]');
+  let currentSpace = null;
+  let currentMode = null;
+  let studentCard = null;
+  let teacherCard = null;
+
+  function setActiveSwitch(nextMode) {
+    currentMode = nextMode;
+    registerBtn.classList.toggle("active", nextMode === "register");
+    loginBtn.classList.toggle("active", nextMode === "login");
+  }
+
+  function renderContent() {
+    contentNode.innerHTML = "";
+    if (!currentMode) return;
+    if (currentSpace === "student") {
+      if (!studentCard) return;
+      studentCard.__setMode?.(currentMode);
+      contentNode.appendChild(studentCard);
+      return;
+    }
+    if (!teacherCard) return;
+    teacherCard.__setMode?.(currentMode);
+    contentNode.appendChild(teacherCard);
+  }
+
+  overlay.addEventListener("click", (event) => {
+    const closeTrigger = event.target.closest('[data-action="close"]');
+    if (!closeTrigger) return;
+    onClose();
+  });
+
+  function onEscape(event) {
+    if (event.key !== "Escape") return;
+    onClose();
+  }
+
+  registerBtn.addEventListener("click", () => {
+    setActiveSwitch("register");
+    renderContent();
+  });
+  loginBtn.addEventListener("click", () => {
+    setActiveSwitch("login");
+    renderContent();
+  });
+
+  return {
+    node: overlay,
+    open({ space, studentAuthCard, teacherAuthCard }) {
+      currentSpace = space;
+      studentCard = studentAuthCard;
+      teacherCard = teacherAuthCard;
+      currentMode = null;
+      titleNode.textContent = space === "student" ? "Espace élève" : "Espace enseignant";
+      setActiveSwitch(null);
+      renderContent();
+      document.addEventListener("keydown", onEscape);
+      window.setTimeout(() => {
+        registerBtn.focus();
+      }, 0);
+    },
+    close() {
+      document.removeEventListener("keydown", onEscape);
+    },
+  };
 }
 
 export function renderHomeView({ levels, onOpenLevel, onOpenResults, onTeacherLogin, onTeacherRegister, onStudentLogin, onStudentRegister }) {
@@ -299,8 +415,8 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults, onTeacherLo
     heroActions.appendChild(resumeButton);
   }
 
-  const homeLogins = document.createElement("section");
-  homeLogins.className = "home-logins";
+  const homeAuthPortals = document.createElement("section");
+  homeAuthPortals.className = "home-auth-portals";
 
   const studentLoginCard = createStudentAuthCard({
     onLoginSubmit: ({ studentId, pin }) => onStudentLogin({ studentId, pin }),
@@ -314,7 +430,37 @@ export function renderHomeView({ levels, onOpenLevel, onOpenResults, onTeacherLo
       onTeacherRegister({ displayName, teacherId, password, passwordConfirm, activationCode }),
   });
 
-  homeLogins.append(studentLoginCard, teacherLoginCard);
+  let authModal = null;
+  function closeModal() {
+    if (!authModal) return;
+    authModal.close();
+    authModal.node.remove();
+    authModal = null;
+  }
+  function openModal(space) {
+    closeModal();
+    authModal = createAuthModal({ onClose: closeModal });
+    section.appendChild(authModal.node);
+    authModal.open({
+      space,
+      studentAuthCard: studentLoginCard,
+      teacherAuthCard: teacherLoginCard,
+    });
+  }
+
+  const studentPortal = createAuthPortalCard({
+    title: "Espace élève",
+    description: "Rejoins ta classe, reprends tes leçons et suis ta progression.",
+    onOpen: () => openModal("student"),
+  });
+
+  const teacherPortal = createAuthPortalCard({
+    title: "Espace enseignant",
+    description: "Gère tes classes, les comptes et la progression des élèves.",
+    onOpen: () => openModal("teacher"),
+  });
+
+  homeAuthPortals.append(studentPortal, teacherPortal);
 
   const cards = document.createElement("div");
   cards.className = "level-grid";
@@ -394,7 +540,7 @@ levels.forEach((level) => {
   resultsButton.addEventListener("click", onOpenResults);
 
   actions.appendChild(resultsButton);
-  section.append(intro, homeLogins, cards, actions);
+  section.append(intro, homeAuthPortals, cards, actions);
 
   return section;
 }
