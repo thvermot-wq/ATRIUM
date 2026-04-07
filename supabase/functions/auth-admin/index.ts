@@ -232,15 +232,6 @@ async function teacherSelfRegister(body: Record<string, unknown>) {
     return json(400, { ok: false, error: "Payload invalide." });
   }
 
-  const { data: activation } = await admin
-    .from("teacher_activation_codes")
-    .select("code,used_at")
-    .eq("code", activationCode)
-    .maybeSingle();
-
-  if (!activation) return json(404, { ok: false, error: "Code d'activation introuvable." });
-  if (activation.used_at) return json(409, { ok: false, error: "Code d'activation déjà utilisé." });
-
   const { data: existingTeacher } = await admin
     .from("teacher_accounts")
     .select("user_id")
@@ -292,7 +283,7 @@ async function teacherSelfRegister(body: Record<string, unknown>) {
     return json(400, { ok: false, error: teacherAccountError.message || "Création compte enseignant impossible." });
   }
 
-  const { error: activationUpdateError } = await admin
+  const { data: activationConsume, error: activationUpdateError } = await admin
     .from("teacher_activation_codes")
     .update({
       used_by_user_id: userId,
@@ -300,12 +291,23 @@ async function teacherSelfRegister(body: Record<string, unknown>) {
       used_at: new Date().toISOString(),
     })
     .eq("code", activationCode)
-    .is("used_at", null);
+    .is("used_at", null)
+    .select("code")
+    .maybeSingle();
 
-  if (activationUpdateError) {
+  if (activationUpdateError || !activationConsume) {
     await admin.from("teacher_accounts").delete().eq("user_id", userId);
     await admin.from("user_profiles").delete().eq("user_id", userId);
     await admin.auth.admin.deleteUser(userId);
+
+    const { data: activationState } = await admin
+      .from("teacher_activation_codes")
+      .select("code,used_at")
+      .eq("code", activationCode)
+      .maybeSingle();
+
+    if (!activationState) return json(404, { ok: false, error: "Code d'activation introuvable." });
+    if (activationState.used_at) return json(409, { ok: false, error: "Code d'activation déjà utilisé." });
     return json(400, { ok: false, error: "Impossible de valider le code d'activation." });
   }
 
