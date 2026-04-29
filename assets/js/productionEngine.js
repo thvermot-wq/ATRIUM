@@ -1,32 +1,67 @@
 import { isCorrect } from "./answerChecker.js";
 
 function asNonEmptyArray(value) {
-  if (!Array.isArray(value)) return [];
-  return value.map((item) => String(item ?? "").trim()).filter(Boolean);
+  if (Array.isArray(value)) {
+    return value.map((item) => String(item ?? "").trim()).filter(Boolean);
+  }
+
+  if (value == null) return [];
+
+  return [String(value).trim()].filter(Boolean);
 }
 
 function asPlainObject(value) {
   return value && typeof value === "object" && !Array.isArray(value) ? value : {};
 }
 
+function normalizeAcceptedKey(value) {
+  return String(value ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[.,;:!?…/\\()[\]{}"“”«»]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function uniqueNonEmptyArray(values = []) {
+  const seen = new Set();
+  const output = [];
+
+  values
+    .map((item) => String(item ?? "").trim())
+    .filter(Boolean)
+    .forEach((item) => {
+      const key = normalizeAcceptedKey(item);
+      if (!key || seen.has(key)) return;
+
+      seen.add(key);
+      output.push(item);
+    });
+
+  return output;
+}
+
 function mergeNormalize(item = {}, config = {}) {
   const itemNormalize = asPlainObject(item.normalization);
-  const configNormalize = asPlainObject(config.normalize);
+  const configNormalize = asPlainObject(config.normalize || config.normalization);
   const merged = { ...itemNormalize, ...configNormalize };
+
   return Object.keys(merged).length ? merged : undefined;
+}
+
+function getMergedAccepted(item = {}, config = {}) {
+  return uniqueNonEmptyArray([
+    ...asNonEmptyArray(config.accepted),
+    ...asNonEmptyArray(item.acceptedAnswers),
+    ...asNonEmptyArray(item.accepted),
+    ...(item.expected != null ? [item.expected] : []),
+  ]);
 }
 
 function enrichAnswerConfig(item = {}, baseConfig = {}) {
   const safeConfig = asPlainObject(baseConfig);
-  const acceptedAnswers = asNonEmptyArray(item.acceptedAnswers);
-  const accepted = asNonEmptyArray(item.accepted);
-  const configAccepted = asNonEmptyArray(safeConfig.accepted);
-
-  const mergedAccepted = configAccepted.length
-    ? configAccepted
-    : acceptedAnswers.length
-      ? acceptedAnswers
-      : accepted;
+  const mergedAccepted = getMergedAccepted(item, safeConfig);
 
   const config = {
     ...safeConfig,
@@ -56,6 +91,7 @@ function enrichAnswerConfig(item = {}, baseConfig = {}) {
   }
 
   const normalize = mergeNormalize(item, safeConfig);
+
   if (normalize) {
     config.normalize = normalize;
   }
@@ -78,7 +114,7 @@ export function inferAnswerConfig(item = {}) {
   const type = item.type || "exact";
   const acceptedAnswers = asNonEmptyArray(item.acceptedAnswers);
   const accepted = asNonEmptyArray(item.accepted);
-  const mergedAccepted = acceptedAnswers.length > 0 ? acceptedAnswers : accepted;
+  const mergedAccepted = uniqueNonEmptyArray([...acceptedAnswers, ...accepted]);
 
   if (
     type === "image-to-word" ||
