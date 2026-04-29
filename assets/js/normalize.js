@@ -2,8 +2,12 @@ function stripFinalPunctuation(value) {
   return value.replace(/[\s\u00A0]*[.,;:!?…]+$/u, "");
 }
 
+function stripInternalPunctuation(value) {
+  return value.replace(/[.,;:!?…/\\()[\]{}"“”«»]+/gu, " ");
+}
+
 function harmonizeApostrophes(value) {
-  return value.replace(/[’`´]/g, "'");
+  return value.replace(/[’`´ʼ]/g, "'");
 }
 
 function removeDiacritics(value) {
@@ -17,22 +21,30 @@ function removeDiacritics(value) {
  * - case-insensitive
  * - trims and collapses spaces
  * - ignores final punctuation
- * - harmonizes apostrophes (l’esclave == l'esclave)
+ * - harmonizes apostrophes
+ *
+ * Backward-compatible aliases supported:
+ * - ignoreCase -> toLowerCase
+ * - ignorePunctuation -> stripPunctuation
+ * - normalizeApostrophes -> normalizeApostrophe
  */
 export function normalizeInput(value = "", options = {}) {
-  const {
-    toLowerCase = true,
-    trim = true,
-    collapseSpaces = true,
-    stripTrailingPunctuation = true,
-    normalizeApostrophe = true,
-    ignoreDiacritics = false,
-  } = options;
+  const toLowerCase = options.toLowerCase ?? options.ignoreCase ?? true;
+  const trim = options.trim ?? true;
+  const collapseSpaces = options.collapseSpaces ?? true;
+  const stripTrailingPunctuation = options.stripTrailingPunctuation ?? true;
+  const stripPunctuation = options.stripPunctuation ?? options.ignorePunctuation ?? false;
+  const normalizeApostrophe = options.normalizeApostrophe ?? options.normalizeApostrophes ?? true;
+  const ignoreDiacritics = options.ignoreDiacritics ?? false;
 
   let normalized = String(value);
 
   if (normalizeApostrophe) {
     normalized = harmonizeApostrophes(normalized);
+  }
+
+  if (stripPunctuation) {
+    normalized = stripInternalPunctuation(normalized);
   }
 
   if (trim) {
@@ -43,7 +55,7 @@ export function normalizeInput(value = "", options = {}) {
     normalized = normalized.replace(/\s+/g, " ");
   }
 
-  if (stripTrailingPunctuation) {
+  if (!stripPunctuation && stripTrailingPunctuation) {
     normalized = stripFinalPunctuation(normalized);
   }
 
@@ -53,6 +65,14 @@ export function normalizeInput(value = "", options = {}) {
 
   if (toLowerCase) {
     normalized = normalized.toLowerCase();
+  }
+
+  if (trim) {
+    normalized = normalized.trim();
+  }
+
+  if (collapseSpaces) {
+    normalized = normalized.replace(/\s+/g, " ");
   }
 
   return normalized;
