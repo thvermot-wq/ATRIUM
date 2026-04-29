@@ -8,7 +8,7 @@ const FRENCH_SYNONYMS = {
   "l'esclave porte de l'eau": ["lesclave porte de leau", "l esclave porte de l eau"],
 };
 
-function normalizeFr(value) {
+function normalizeFr(value, normalize = {}) {
   return normalizeInput(value, {
     toLowerCase: true,
     trim: true,
@@ -16,28 +16,34 @@ function normalizeFr(value) {
     stripTrailingPunctuation: true,
     normalizeApostrophe: true,
     ignoreDiacritics: true,
+    ...normalize,
   });
 }
 
 function stripFrenchArticles(value) {
-  return value
+  return String(value ?? "")
     .replace(/(^|\s)(l'|l’)/giu, " ")
     .replace(/\bde la\b/giu, " ")
     .replace(/(^|\s)de (l'|l’)/giu, " ")
+    .replace(/(^|\s)(d'|d’)/giu, " ")
     .replace(/\b(du|au|aux)\b/giu, " ")
     .replace(/\b(le|la|les|un|une|des)\b/giu, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
 
+function unique(values = []) {
+  return [...new Set(values)].filter(Boolean);
+}
+
 export function buildAcceptedFrenchAnswers(
   accepted = [],
-  { tolerateArticles = true, synonyms = [] } = {}
+  { tolerateArticles = true, synonyms = [], normalize = {} } = {},
 ) {
   const set = new Set();
 
   [...accepted, ...synonyms].forEach((candidate) => {
-    const normalized = normalizeFr(candidate);
+    const normalized = normalizeFr(candidate, normalize);
     if (!normalized) return;
 
     set.add(normalized);
@@ -47,8 +53,9 @@ export function buildAcceptedFrenchAnswers(
     }
 
     const lexicalSynonyms = FRENCH_SYNONYMS[normalized] || [];
+
     lexicalSynonyms.forEach((alt) => {
-      const altNormalized = normalizeFr(alt);
+      const altNormalized = normalizeFr(alt, normalize);
       if (!altNormalized) return;
 
       set.add(altNormalized);
@@ -59,11 +66,14 @@ export function buildAcceptedFrenchAnswers(
     });
   });
 
-  return Array.from(set).filter(Boolean);
+  return unique(Array.from(set));
 }
 
-export function normalizeFrenchAnswer(value, { tolerateArticles = true } = {}) {
-  const normalized = normalizeFr(value);
+export function normalizeFrenchAnswer(
+  value,
+  { tolerateArticles = true, normalize = {} } = {},
+) {
+  const normalized = normalizeFr(value, normalize);
   if (!tolerateArticles) return normalized;
   return stripFrenchArticles(normalized);
 }
