@@ -43,7 +43,6 @@ function run() {
   const segmentResult = evaluateProductionItem(segmentItem, "Une fille marche.");
   assert.equal(segmentResult.isCorrect, true);
 
-
   const textInputItem = {
     id: "p6",
     type: "textInput",
@@ -58,7 +57,6 @@ function run() {
   const textInputResult = evaluateProductionItem(textInputItem, "Rosa floret.");
   assert.equal(textInputResult.isCorrect, true);
 
-
   const acceptedAnswersItem = {
     id: "p7",
     type: "textInput",
@@ -70,6 +68,75 @@ function run() {
   };
   const acceptedAnswersResult = evaluateProductionItem(acceptedAnswersItem, "lettre est dans la boîte");
   assert.equal(acceptedAnswersResult.isCorrect, true);
+
+  // Cas release-blocker : acceptedAnswers ne doit plus être écrasé par answerConfig.accepted.
+  const divergentAcceptedItem = {
+    id: "divergent",
+    type: "textInput",
+    expected: "le voisin entend",
+    acceptedAnswers: ["le voisin entend", "un voisin écoute"],
+    answerConfig: {
+      type: "translation-segment",
+      language: "fr",
+      accepted: ["le voisin entend"],
+      tolerateArticles: true,
+    },
+    points: 1,
+  };
+  const divergentAcceptedResult = evaluateProductionItem(divergentAcceptedItem, "un voisin écoute");
+  assert.equal(divergentAcceptedResult.isCorrect, true);
+
+  // Cas P3 typique : séparateurs internes variables.
+  const separatorItem = {
+    id: "p3-l6-p3-test",
+    type: "textInput",
+    expected: "video ; negas ; intrat",
+    acceptedAnswers: [
+      "video ; negas ; intrat",
+      "video, negas, intrat",
+      "video / negas / intrat",
+      "video negas intrat",
+    ],
+    answerConfig: {
+      type: "one-of",
+      language: "latin",
+      accepted: [
+        "video ; negas ; intrat",
+        "video, negas, intrat",
+        "video / negas / intrat",
+        "video negas intrat",
+      ],
+    },
+    normalization: {
+      trim: true,
+      collapseSpaces: true,
+      ignoreCase: true,
+      ignorePunctuation: true,
+      normalizeApostrophes: true,
+      ignoreDiacritics: true,
+    },
+    points: 1,
+  };
+
+  assert.equal(
+    evaluateProductionItem(separatorItem, "video; negas; intrat").isCorrect,
+    true,
+  );
+
+  assert.equal(
+    evaluateProductionItem(separatorItem, "video / negas / intrat").isCorrect,
+    true,
+  );
+
+  assert.equal(
+    evaluateProductionItem(separatorItem, "video negas intrat").isCorrect,
+    true,
+  );
+
+  assert.equal(
+    evaluateProductionItem(separatorItem, "video negat intrat").isCorrect,
+    false,
+  );
 
   const wrongItem = {
     id: "p3",
