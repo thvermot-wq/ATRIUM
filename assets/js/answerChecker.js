@@ -1,6 +1,24 @@
 import { normalizeInput } from "./normalize.js";
 import { buildAcceptedFrenchAnswers, normalizeFrenchAnswer } from "./acceptedAnswers.js";
 
+function normalizeLegacyOptions(options = {}) {
+  const normalized = { ...options };
+
+  if (normalized.ignoreCase != null && normalized.toLowerCase == null) {
+    normalized.toLowerCase = normalized.ignoreCase;
+  }
+
+  if (normalized.ignorePunctuation != null && normalized.stripPunctuation == null) {
+    normalized.stripPunctuation = normalized.ignorePunctuation;
+  }
+
+  if (normalized.normalizeApostrophes != null && normalized.normalizeApostrophe == null) {
+    normalized.normalizeApostrophe = normalized.normalizeApostrophes;
+  }
+
+  return normalized;
+}
+
 function buildNormalizationOptions(answerConfig) {
   const base = {
     toLowerCase: true,
@@ -15,7 +33,10 @@ function buildNormalizationOptions(answerConfig) {
     base.ignoreDiacritics = true;
   }
 
-  return { ...base, ...(answerConfig.normalize || {}) };
+  return normalizeLegacyOptions({
+    ...base,
+    ...(answerConfig.normalize || {}),
+  });
 }
 
 function normalizeWithConfig(value, answerConfig) {
@@ -28,25 +49,50 @@ function asArray(value) {
   return [value];
 }
 
+function getBaseAcceptedList(answerConfig) {
+  const accepted = asArray(answerConfig.accepted);
+
+  if (accepted.length) {
+    return accepted;
+  }
+
+  if (answerConfig.expected != null) {
+    return [answerConfig.expected];
+  }
+
+  return [];
+}
+
 function normalizeCandidateForType(value, answerConfig) {
-  if (answerConfig.language === "fr" && (answerConfig.type === "one-of" || answerConfig.type === "translation-segment")) {
+  const normalize = buildNormalizationOptions(answerConfig);
+
+  if (
+    answerConfig.language === "fr" &&
+    (answerConfig.type === "one-of" || answerConfig.type === "translation-segment")
+  ) {
     return normalizeFrenchAnswer(value, {
       tolerateArticles: answerConfig.tolerateArticles !== false,
+      normalize,
     });
   }
 
-  return normalizeWithConfig(value, answerConfig);
+  return normalizeInput(value, normalize);
 }
 
 function getAcceptedList(answerConfig) {
-  const accepted = asArray(answerConfig.accepted);
+  const accepted = getBaseAcceptedList(answerConfig);
+  const normalize = buildNormalizationOptions(answerConfig);
+
   if (answerConfig.language !== "fr") {
-    return accepted.map((item) => normalizeWithConfig(item, answerConfig)).filter(Boolean);
+    return accepted
+      .map((item) => normalizeInput(item, normalize))
+      .filter(Boolean);
   }
 
   return buildAcceptedFrenchAnswers(accepted, {
     tolerateArticles: answerConfig.tolerateArticles !== false,
     synonyms: asArray(answerConfig.synonyms),
+    normalize,
   });
 }
 
